@@ -1,0 +1,393 @@
+﻿@model MassAutoGarage.Models.CompanyMasterModel
+@{
+    ViewBag.Title = "Attendance";
+    ViewBag.pTitle = "Attendance";
+    ViewBag.pageTitle = "Forms";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<!-- New Dive-->
+<script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
+@section styles{
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+
+
+
+}
+
+@using (Html.BeginForm("Attendance", "HRMS_Attendance", FormMethod.Post, new { enctype = "multipart/form-data", OnSubmit = "return ValidationForm()", @class = "form-validate" }))
+{
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+              
+
+                <div class="card-header main-f">
+                    <div class="row">
+                        <div class="col-md-12 col-12"> <h5 class="card-title mb-0 gp-detail">HRMS-Attendance</h5></div>
+                        @*<div class="col-md-6 col-7">
+                    <a href="@Url.Action("Index", "HRMS_EmployeeBankDetails")" class="btn btn-primary add-new" style="float:right;" tabindex="1"> <i class="fa fa-arrow-left align-middle me-1"></i> BACK TO DELIVERY NOTE LIST</a>
+                </div>*@
+                    </div>
+                </div>
+
+                <!--<div class="card-header align-items-center d-flex">
+    <h4 class="card-title mb-0 flex-grow-1">HRMS-Attendance </h4>
+    <div class="flex-shrink-0">-->
+                @*<div class="form-check form-switch form-switch-right form-switch-md">
+            <a href="@Url.Action("Index", "HRMS_EmployeeBankDetails")" class="btn btn-primary" style="float:right;" tabindex="12"><i class="fa fa-list" aria-hidden="true"></i> BACK TO EMPLOYEE BANK DETAILS LIST</a>
+        </div>*@
+                <!--</div>
+    </div>-->
+                <!-- end card header -->
+                <div class="card-body">
+                    <div class="live-preview">
+                        <div class="row gy-4">
+                            <div class="col-xxl-6 col-md-6">
+                                <div>
+                                    <label for="basiInput" class="form-label">Date <code>*</code></label>
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-xxl-12 col-md-12">
+                                <div class="table-responsive">
+
+                                    <table border="1" id="example" class="display table table-bordered mobile-optimised" style="width:100%;">
+                                        <thead>
+                                            <tr style="background-color: aliceblue;">
+                                                <th style=" white-space: nowrap">Employee Name</th>
+                                                <th style=" white-space: nowrap">Project Name</th>
+                                                <th style=" white-space: nowrap">Client Name</th>
+                                                <th style=" white-space: nowrap">Number of Working Hours</th>
+                                                <th style=" white-space: nowrap">Start Time</th>
+                                                <th style=" white-space: nowrap">End Time</th>
+                                                <th style=" white-space: nowrap">Break Time Start</th>
+                                                <th style=" white-space: nowrap">Break Time End</th>
+                                                <th style=" white-space: nowrap">Start Time</th>
+                                                <th style=" white-space: nowrap">End Time</th>
+                                                <th style=" white-space: nowrap">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <td>
+                                                    <input type="text" name="fromdate" class="form-control txtFromDate" id="txtEmpName" style="width:200px" />
+                                                </td>
+                                                <td>
+                                                    <select id="ddlProjectName" class="form-select" aria-label="Default select example" style="width:200px">
+                                                        <option value="0">Select </option>
+                                                        <option value="1">A </option>
+                                                        <option value="2">B </option>
+                                                    </select>
+                                                </td>
+                                                <td>
+                                                    <select id="ddlClientName" class="form-select" aria-label="Default select example" style="width:200px">
+                                                        <option value="0">Select </option>
+                                                        <option value="1">ABC </option>
+                                                        <option value="2">XYZ </option>
+                                                    </select>
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="target" class="form-control txttarget" id="txtNumbOfWorkingHrs" />
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="target" class="form-control txttarget" id="txtStartTime1" style="width:150px" />
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="target" class="form-control txttarget" id="txtEndTime1" style="width:150px" />
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="target" class="form-control txttarget" id="txtBreakTimeStart" style="width:150px" />
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="target" class="form-control txttarget" id="txtBreakTimeEnd" style="width:150px" />
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="target" class="form-control txttarget" id="txtStartTime2" style="width:150px" />
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="target" class="form-control txttarget" id="txtEndTime2" style="width:150px" />
+                                                </td>
+                                                <td>
+                                                    <button type="button" id="btnAdd" class="btn btn-xs btn-primary classAdd" onclick="Add()">+</button>
+                                                </td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-xxl-4 col-md-4">
+                                <div>
+                                    <input type="button" id="btnsave" value="Save" class="btn btn-success" style=" margin-top: 8%;" />
+                                    <input type="button" id="btnReset" value="Reset" class="btn btn-danger" style=" margin-top: 8%;" />
+                                </div>
+                            </div>
+                            <div class="col-xxl-12 col-md-12">
+                                <div class="form-floating" style="float:left;">
+
+
+                                </div>
+
+                            </div>
+                            <!--end col-->
+                            <div class="col-xxl-12 col-md-12">
+                                <div class="table-responsive">
+
+
+
+                                </div>
+                            </div>
+
+                            <div class="col-xxl-12 col-md-12">
+                                <div class="form-floating" style="float:right;">
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <!--end col-->
+                    </div>
+                    <!--end row-->
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+}
+<!--end col-->
+
+
+
+@section scripts{
+    <!-- prismjs plugin -->
+    <script src="~/assets/libs/prismjs/prism.js"></script>
+    <!-- App js -->
+    <script src="~/assets/js/app.js"></script>
+
+}
+
+@*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>*@
+
+@*<script src="~/Content/js/jquery.min.js"></script>*@
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
+
+@*<script src="~/Content/js/jquery.min.js"></script>*@
+
+<script>
+    $(document).ready(function () {
+
+
+
+    });
+
+
+    $("#btnSave").click(function (e) {
+        debugger;
+        e.preventDefault();
+
+        var _code = $("#Code").val();
+        var _GroupID = $("#GroupID option:selected").val();
+        var _CompanyName = $("#CompanyName").val();
+        var _TRN = $("#TRN").val();
+        var _LocationMapUrl = $("#LocationMapUrl").val();
+        var _Email = $("#Email").val();
+        var _Address = $("#Address").val();
+        var _companyId = $("#HDFID").val();
+        var _CurrentCount = $("#HDFCurrentCount").val();
+        var _IsActive = $("#IsActive option:selected").val();
+
+        if (_code != "" && _GroupID != "" && _CompanyName != "" && _TRN != "" && _Email != "" && _Address != "") {
+
+            var ProductListArr = [];
+            var ProductList = {
+                Id: _companyId,
+                CurrentCount: _CurrentCount,
+                Code: _code,
+                GroupID: _GroupID,
+                CompanyName: _CompanyName,
+                Address: _Address,
+                TRN: _TRN,
+                Email: _Email,
+                LocationMapUrl: _LocationMapUrl,
+                IsActive: _IsActive
+
+            };
+            //ProductListArr.push(ProductList);
+
+            if (confirm("Are you sure you want to continue ?")) {
+                $.ajax({
+                    type: 'POST',
+                    url: '/CompanyMaster/SaveCompanyMaster',
+                    data: JSON.stringify(ProductList),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: 'json',
+                    success: function (data) {
+                        debugger;
+                        if (data == "1") {
+                            debugger;
+                            swal({
+                                title: "Success",
+                                text: "Records Successfully Saved",
+                                type: "success",
+                            }).then(function (isConfirm) {
+                                if (isConfirm) {
+                                    var url = "/CompanyMaster/Index";
+                                    window.location.href = url;
+                                } else {
+
+                                }
+                            });
+
+                        }
+                        else if (data == "2") {
+
+                            swal({
+                                title: "Success",
+                                text: "Records Successfully Updated",
+                                type: "success",
+                            }).then(function (isConfirm) {
+                                if (isConfirm) {
+                                    var url = "/CompanyMaster/Index";
+                                    window.location.href = url;
+                                } else {
+
+                                }
+                            });
+                        }
+                        else if (data == "4") {
+                            swal("Warning", "This Code is Already Exist !", "warning");
+                        } else {
+
+                            swal("Warning", "Record not save!", "warning");
+                        }
+
+                    },
+                    error: function (httpResponse) {
+
+                        swal("Warning", "Something Went to Wrong!", "warning");
+
+                    }
+                })
+            }
+        }
+        else {
+
+            if (_code == "") {
+                swal("Warning", "Please Enter Code !", "warning");
+                return false;
+            }
+            if (_GroupID == "") {
+                swal("Warning", "Please Select Group Name!", "warning");
+                return false;
+            }
+            if (_CompanyName == "") {
+                swal("Warning", "Please Enter Company Name!", "warning");
+                return false;
+            }
+            if (_TRN == "") {
+                swal("Warning", "Please Enter TRN !", "warning");
+                return false;
+            }
+
+            if (_Email == "") {
+                swal("Warning", "Please Enter Email Address!", "warning");
+                $("#Email").val('');
+                return false;
+            }
+            if (_Address == "") {
+                swal("Warning", "Please Enter Address!", "warning");
+                return false;
+            }
+        }
+
+    })
+
+
+</script>
+
+<script type="text/javascript">
+
+
+    function Add() {
+        AddRow($("#txtEmpName").val(), $("#ddlProjectName option:selected").text(), $("#ddlClientName option:selected").text(), $("#txtNumbOfWorkingHrs").val(), $("#txtStartTime1").val(), $("#txtEndTime1").val(), $("#txtBreakTimeStart").val(), $("#txtBreakTimeEnd").val(), $("#txtStartTime2").val(), $("#txtEndTime2").val(),);
+        $("#txtEmpName").val("");
+        $("#ddlProjectName").val(0);
+        $("#ddlClientName").val(0);
+        $("#txtNumbOfWorkingHrs").val(""); $("#txtStartTime1").val(""); $("#txtEndTime1").val(""); $("#txtBreakTimeStart").val(""); $("#txtBreakTimeEnd").val(""); $("#txtStartTime2").val(""); $("#txtEndTime2").val("");
+    };
+
+    function AddRow(EmpName, ProjectName, ClientName, NoOfWorking, StartTime1, EndTime1, BreakTimeStart, BreakTimeEnd, StartTime2, EndTime2) {
+        //Get the reference of the Table's TBODY element.
+        var tBody = $("#example > TBODY")[0];
+
+        row = tBody.insertRow(-1);
+
+        //Add  cell.
+        var cell = $(row.insertCell(-1));
+        cell.html(EmpName);
+        //Add  cell.
+        var cell = $(row.insertCell(-1));
+        cell.html(ProjectName);
+        //Add  cell.
+        cell = $(row.insertCell(-1));
+        cell.html(ClientName);
+        //Add  cell.
+        cell = $(row.insertCell(-1));
+        cell.html(NoOfWorking);
+        //Add  cell.
+        cell = $(row.insertCell(-1));
+        cell.html(StartTime1);
+        //Add  cell.
+        cell = $(row.insertCell(-1));
+        cell.html(EndTime1);
+        //Add  cell.
+        cell = $(row.insertCell(-1));
+        cell.html(BreakTimeStart);
+        //Add  cell.
+        cell = $(row.insertCell(-1));
+        cell.html(BreakTimeEnd);
+        //Add  cell.
+        cell = $(row.insertCell(-1));
+        cell.html(StartTime2);
+        //Add  cell.
+        cell = $(row.insertCell(-1));
+        cell.html(EndTime2);
+
+        //Add Button cell.
+        cell = $(row.insertCell(-1));
+        var btnRemove = $("<input />");
+        btnRemove.attr("type", "button");
+        btnRemove.attr("onclick", "Remove(this);");
+        btnRemove.val("-");
+        cell.append(btnRemove);
+    };
+
+    function Remove(button) {
+        //Determine the reference of the Row using the Button.
+        var row = $(button).closest("TR");
+        var name = $("TD", row).eq(0).html();
+        if (confirm("Do you want to delete: " + name)) {
+
+            //Get the reference of the Table.
+            var table = $("#example")[0];
+
+            //Delete the Table row using it's Index.
+            table.deleteRow(row[0].rowIndex);
+        }
+    };
+</script>

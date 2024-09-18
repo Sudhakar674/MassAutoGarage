@@ -1,0 +1,481 @@
+﻿
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Car Marking</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="~/Webcam_Plugin/WebCam.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <link href="~/imageMaker.min.css" rel="stylesheet" />
+
+    <link href="~/assets/BootstrapDataTable/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/assets/BootstrapDataTable/css/bootstrap.min.css" rel="stylesheet" />
+    <!--<link href="~/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />-->
+    <!-- Icons Css -->
+    <!--<link href="~/assets/css/icons.min.css" rel="stylesheet" type="text/css" />-->
+    <!-- App Css-->
+    <!--<link href="~/assets/css/app.min.css" rel="stylesheet" type="text/css" />-->
+    <!-- custom Css-->
+    <link href="~/assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/assets/js/pages/select2.init.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js"></script>
+    <script src="~/imageMaker.min.js"></script>
+    <script src="~/imageMaker.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#clothe-tshirt-maker').imageMaker({
+                //merge_images: [
+                //{ url: '/assets/design/just_do_it.png', title: 'Just Do it' },
+                //{ url: '/assets/design/starbucks.png', title: 'Starbucks' },
+                //{ url: '/assets/design/kiss.png', title: 'Kiss' },
+                //{ url: '/assets/design/donkey.png', title: 'Donkey 1' },
+                //{ url: '/assets/design/donkey2.png', title: 'Donkey 2' },
+                //],
+                templates: [
+                    { url: '/assets/design/t-shirt-white.png', title: 'Car Marking' },
+                                                                                       /* { url: '/assets/design/t-shirt-black.png', title: 'T-shirt black' },*/],
+                text_boxes_count: 0
+            });
+
+            $('#memegenerator').imageMaker({
+                templates: [
+                    { url: './assets/meme_generator/One-Does-Not-Simply.jpg', title: 'One Does Not Simply' },
+                    { url: './assets/meme_generator/Roll-Safe-Think-About-It.png', title: 'Roll Safe Think About It' },
+                    { url: './assets/meme_generator/The-Rock-Driving.png', title: 'The Rock Driving' },
+                    { url: './assets/meme_generator/Third-World-Skeptical-Kid.png', title: 'Third World Skeptical Kid' },
+                ],
+            });
+
+            $('#birthday-cards').imageMaker({
+                templates: [
+                    { url: './assets/birthday_cards/happy-birthday-greeting-card.jpg', title: 'Happy birthday greeting card with blank place for your wishes and message' },
+                    { url: './assets/birthday_cards/blank-white-floral-card-template-illustration.jpg', title: 'blank white floral card template illustration' },
+                    { url: './assets/birthday_cards/happy-fathers-day-gift.jpg', title: 'Happy fathers day gift' },
+                    { url: './assets/birthday_cards/white-card-sweet-cakes-macaroons.jpg', title: 'White card sweet cakes macaroons' },
+                ], text_boxes_count: 1
+            });
+
+            $('#image-maker').imageMaker();
+            //The following code is for animate scrolling when open the page
+            jQuery([document.documentElement, document.body]).animate({
+                scrollTop: jQuery("#" + jQuery(":target").attr('id')).offset().top
+            }, 1000);
+        });
+    </script>
+
+    <style>
+
+        ul > li {
+            display: inline-block;
+            margin-left: -3%;
+            /* You can also add some margins here to make it look prettier */
+        }
+
+
+        .container {
+            /* display: grid;*/
+            grid-template-columns: 100%;
+            grid-template-rows: 38px;
+            height: 100%;
+            width: 100%;
+            text-align: center;
+        }
+
+        .toggle-outer {
+            height: 29px;
+            width: 93px;
+            border-radius: 16px;
+            border: 1px solid #ccc;
+            background-color: #f4f4f4;
+            margin: auto;
+            position: relative;
+            transition: all 0.3s ease-in;
+            cursor: pointer;
+            background-color: #26cbac;
+        }
+
+            .toggle-outer.checked {
+                background-color: blue;
+            }
+
+        .toggle-inner {
+            height: 27px;
+            width: 27px;
+            border-radius: 50%;
+            position: absolute;
+            left: 0;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            transition: all 0.3s ease-in;
+        }
+
+        .toggle-outer.checked .toggle-inner {
+            left: 65px;
+            background-color: #b6ff00;
+        }
+
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        #toggleLabel {
+            cursor: pointer;
+        }
+
+        #result {
+            display: none;
+        }
+    </style>
+
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Video/css/main.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="row" style=" margin-left: 2%; margin-right: 2%;">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header align-items-center d-flex" style=" text-align: center;">
+                    <h5 class="card-title mb-0 flex-grow-1">CUSTOMER CAR MARKING</h5>
+                </div>
+                <div class="card-body">
+                    <div class="col-lg-12">
+                        <div class="live-preview">
+                            <div class="row gy-4" style=" margin-top: 1%;">
+
+                                <div class="col-xxl-12 col-md-12">
+                                    @*<a href="#" id="btnDefaultimage" class="btn btn-soft-success shadow-none">CAR MARKING BY IMAGE</a>   <a href="#" id="btnvideo" class="btn btn-soft-success shadow-none">CAR MARKING BY VIDEO</a>*@
+                                    <div class="container" style="margin-top: -4%;">
+                                        <div class="toggle-outer">
+                                            <div class="toggle-inner">
+                                                <input type="checkbox" id="toggle">
+                                            </div>
+
+                                        </div>
+
+                                        <label id="toggleLabel" for="toggle">IMAGE MODE</label>
+                                    </div>
+
+                                </div>
+                                <hr />
+                                <div id="webcamdiv" style="margin-top: -1%;">
+                                    <div class="col-xxl-12 col-md-12">
+                                         <a href="#" id="btnlivecameraoff" style=" float: right;"> OFF <img src="~/Webcam_Plugin/icons8-camera.gif" style="width: 23%;" /> </a>   <a href="#" id="btnlivecamera" style=" float: right; padding-right: 2%;">ON <img src="~/Webcam_Plugin/icons8-camera.gif" style="width: 23%;"></a>
+                                    </div>
+                                    <br /><br />
+                                    <div class="col-xxl-12 col-md-12" style="margin-top: 0%;">
+                                        <input type="hidden" id="HDFImageUrl" />
+                                        <div>
+
+                                            <div id="clothe-tshirt-maker" class="col-xxl-12 col-md-12">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="webcamdivvideo" style="display:none" class="table-responsive">
+                                    <div class="col-xxl-12 col-md-12" style="margin-top: 0%;">
+                                        <div id="container" style="text-align:center;">
+
+                                            <video id="gum" playsinline autoplay muted></video>
+                                            <video id="recorded" playsinline loop></video>
+
+                                            <div class="table-responsive">
+                                                <button id="start" class="btn btn-outline-success">Start camera</button>
+                                                <button class="btn btn-outline-warning" id="record" disabled>Start Recording</button>
+                                                <button class="btn btn-outline-info" id="play" disabled>Play</button>
+                                                <button class="btn btn-outline-success" id="download" disabled>Download</button>
+                                            </div>
+
+                                            <div style="display:none">
+                                                <select id="codecPreferences" disabled></select>
+                                            </div>
+                                            <div style="display:none">
+
+                                                <p><input type="checkbox" id="echoCancellation"></p>
+                                            </div>
+
+                                            <div>
+                                                <span id="errorMsg"></span>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <hr />
+                                </div>
+
+
+                                <div class="col-xxl-4 col-md-4">
+                                    <div>
+                                        <label for="labelInput" class="form-label">Number <code>*</code></label>
+                                        <input type="text" class="form-control" readonly="readonly" />
+                                    </div>
+                                </div>
+                                <div class="col-xxl-4 col-md-4">
+                                    <div>
+                                        <label for="labelInput" class="form-label">Customer Name <code>*</code></label>
+                                        <input type="text" class="form-control" readonly="readonly" />
+                                    </div>
+                                </div>
+                                <div class="col-xxl-4 col-md-4">
+                                    <div>
+                                        <label for="labelInput" class="form-label">Plate Number<code>*</code></label>
+                                        <input type="text" class="form-control" readonly="readonly" />
+                                    </div>
+                                </div>
+                                <div class="col-xxl-4 col-md-4" id="divfileupload" style="display:none;">
+                                    <div>
+                                        <label for="labelInput" class="form-label">Upload Video<code>*</code></label>
+                                        <input type="file" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="col-xxl-12 col-md-12">
+                                    <div style="text-align:right;">
+
+                                        <input type="button" id="btnSave" class="btn btn-primary" value="Save" />
+                                        <input type="button" id="btnCancel" class="btn btn-danger" value="Cancel" /><br /><br />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <div id="divLoader" style="display: none; text-align: center; margin-top: -26%;">
+                <img src="~/assets/Loader/loading.gif" alt="Loader" style="width: 8%;" />
+
+                @*<div class="spinner-border" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>*@
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-36251023-1']);
+        _gaq.push(['_setDomainName', 'jqueryscript.net']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+    <script>
+        try {
+            fetch(new Request("https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js", { method: 'HEAD', mode: 'no-cors' })).then(function (response) {
+                return true;
+            }).catch(function (e) {
+                var carbonScript = document.createElement("script");
+                carbonScript.src = "//cdn.carbonads.com/carbon.js?serve=CK7DKKQU&placement=wwwjqueryscriptnet";
+                carbonScript.id = "_carbonads_js";
+                document.getElementById("carbon-block").appendChild(carbonScript);
+            });
+        } catch (error) {
+            console.log(error);
+        }
+
+
+
+    </script>
+
+    <!-- include adapter for srcObject shim -->
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+    <script src="~/Content/Video/js/main.js"></script>
+    <script src="~/Content/Video/js/ga.js"></script>
+
+
+</body>
+
+
+</html>
+
+
+<script>
+
+    $("#btnlivecamera").click(function () {
+        debugger;
+
+        $(function () {
+            Webcam.set({
+                width: 320,
+                height: 240,
+                image_format: 'jpeg',
+                jpeg_quality: 90
+            });
+            Webcam.attach('#webcam');
+            /*$(".table-responsive").css("display", "block");*/
+
+            $("#btnCapture").click(function () {
+                Webcam.snap(function (data_uri) {
+                    $("#imgCapture")[0].src = data_uri;
+                    $("#btnUpload").removeAttr("disabled");
+                });
+            });
+            $("#btnUpload").click(function () {
+
+                debugger;
+                var urlpic = $("#imgCapture")[0].src;
+
+                const base64string = urlpic;
+                const pageImage = new Image();
+                pageImage.src = base64string;  // 'data:image/png;base64,' + base64string;
+                pageImage.onload = function () {
+                    const canvas = document.createElement('canvas');
+                    canvas.width = pageImage.naturalWidth;
+                    canvas.height = pageImage.naturalHeight;
+
+                    const ctx = canvas.getContext('2d');
+                    ctx.imageSmoothingEnabled = false;
+                    ctx.drawImage(pageImage, 0, 0);
+                    console.log(canvas, pageImage)
+                    saveScreenshot(canvas);
+                }
+                function saveScreenshot(canvas) {
+                    let fileName = "image"
+                    const link = document.createElement('a');
+                    link.download = fileName + '.png';
+                    console.log(canvas)
+                    canvas.toBlob(function (blob) {
+                        console.log(blob)
+                        link.href = URL.createObjectURL(blob);
+                        link.click();
+                    });
+                };
+
+
+            });
+        });
+
+
+    })
+
+
+
+    $("#btnlivecameraoff").click(function () {
+
+        window.location.reload();
+
+    })
+
+    $('#btnSave').click(function () {
+        debugger
+        var ur = $("#HDFImageUrl").val();
+
+
+    })
+
+
+    //$('#btnDefaultimage').click(function () {
+    //    debugger;
+    //    var res = $("#btnDefaultimage").text();
+    //    if (res == 'CAR MARKING BY IMAGE') {
+
+    //        $("#webcamdiv").css("display", "block");
+    //        $("#webcamdivvideo").css("display", "none");
+    //        $("#btnDefaultimage").text("CAR MARKING BY VIDEO");
+    //    }
+    //    else {
+    //        $("#webcamdiv").css("display", "none");
+    //        $("#webcamdivvideo").css("display", "block");
+    //        $("#btnDefaultimage").text("CAR MARKING BY IMAGE");
+    //    }
+    //})
+
+
+
+
+    $('.toggle-outer').click(function () {
+
+        $(this).toggleClass('checked');
+        const res = $("#toggleLabel").text();
+        if (res == 'IMAGE MODE') {
+
+            $('#toggle').attr('checked', true);
+            $('#toggleLabel').text('VIDEO MODE');
+
+            $("#webcamdiv").css("display", "none");
+            $("#webcamdivvideo").css("display", "block");
+            $("#divfileupload").css("display", "block");
+        }
+        else {
+            $('#toggle').attr('checked', false);
+
+            $('#toggleLabel').text('IMAGE MODE');
+            $("#webcamdiv").css("display", "block");
+            $("#webcamdivvideo").css("display", "none");
+            $("#divfileupload").css("display", "none");
+        }
+    })
+</script>
+
+@*<script>
+        var videoElem = document.getElementById("video");
+        var btnElm = document.getElementById("btntoggle");
+        var isPlaying = !!videoElem.srcObject;
+        function cameraonoff() {
+            if (!isPlaying) {
+                cameraon();
+            } else {
+                cameraoff();
+            }
+        }
+
+        function cameraon() {
+            if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                navigator.mediaDevices
+                    .getUserMedia({
+                        video: true
+                    })
+                    .then(function (stream) {
+                        videoElem.srcObject = stream;
+                        videoElem.play();
+                    })
+                    .then(() => {
+                        isPlaying = true;
+                        btnElm.innerText = "Off";
+                    });
+            }
+        }
+
+        function cameraoff() {
+            const stream = videoElem.srcObject;
+            if (stream) {
+                const tracks = stream.getTracks();
+
+                tracks.forEach(function (track) {
+                    track.stop();
+                });
+
+                videoElem.srcObject = null;
+                isPlaying = false;
+                btnElm.innerText = "On";
+            }
+        }
+    </script>*@

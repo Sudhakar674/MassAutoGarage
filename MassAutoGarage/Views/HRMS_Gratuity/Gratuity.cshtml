@@ -1,0 +1,946 @@
+﻿@model MassAutoGarage.Models.CompanyMasterModel
+@{
+    ViewBag.Title = "Gratuity";
+    ViewBag.pTitle = "Gratuity";
+    ViewBag.pageTitle = "Forms";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<!-- New Dive-->
+<script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
+@section styles{
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+
+
+
+}
+
+@using (Html.BeginForm("Gratuity", "HRMS_Gratuity", FormMethod.Post, new { enctype = "multipart/form-data", OnSubmit = "return ValidationForm()", @class = "form-validate" }))
+{
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+
+
+                <div class="card-header main-f">
+                    <div class="row">
+                        <div class="col-md-6 col-5"> <h5 class="card-title mb-0 gp-detail">HRMS-GRATUITY</h5></div>
+                        <div class="col-md-6 col-7">
+                            <a href="@Url.Action("Index", "HRMS_Gratuity")" class="btn btn-primary add-new" style="float:right;" tabindex="1"> <i class="fa fa-arrow-left align-middle me-1"></i>  BACK TO GRATUITY LIST</a>
+                        </div>
+                    </div>
+                </div>
+
+                @*<div class="card-header align-items-center d-flex">
+                    <h4 class="card-title mb-0 flex-grow-1">HRMS-GRATUITY </h4>
+                    <div class="flex-shrink-0">
+                        <div class="form-check form-switch form-switch-right form-switch-md">
+                            <a href="@Url.Action("Index", "HRMS_Gratuity")" class="btn btn-primary" style="float:right;" tabindex="12"><i class="fa fa-list" aria-hidden="true"></i> BACK TO GRATUITY LIST</a>
+                        </div>
+                    </div>
+                </div>*@
+
+
+                <!-- end card header -->
+                <div class="card-body">
+                    <div class="live-preview">
+                        <div class="row gy-4">
+                            <div class="col-xxl-4 col-md-4">
+                                <div>
+                                    <label for="basiInput" class="form-label">Company Name <code>*</code></label>
+                                    <select id="ddlCompany" class="form-select" aria-label="Default select example">
+                                        <option value="0">Select </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-xxl-4 col-md-4">
+                                <div>
+                                    <label for="basiInput" class="form-label">Employee Name <code>*</code></label>
+                                    <select id="ddlEmployee" class="form-select" aria-label="Default select example">
+                                        <option value="0">Select </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-xxl-4 col-md-4">
+                                <div>
+                                    <label for="basiInput" class="form-label">Date <code>*</code></label>
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-xxl-4 col-md-4">
+                                <div>
+                                    <label for="basiInput" class="form-label">Employee Code <code>*</code></label>
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-xxl-4 col-md-4">
+                                <div>
+                                    <label for="basiInput" class="form-label">Voucher No <code>*</code></label>
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-xxl-4 col-md-4">
+                                <div>
+                                    <label for="basiInput" class="form-label">Designation <code>*</code></label>
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+
+
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            <i class="ri-send-plane-2-fill"></i> <h6 class="card-title mb-0 flex-grow-1" style=" font-size: 13px;">LEAVE DETAILS</h6>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <div class="row gy-4">
+                                                <div class="col-xxl-3 col-md-4">
+                                                    <div>
+                                                        <label for="labelInput" class="form-label">Leave Pay <code>*</code></label>
+                                                        <input type="text" class="form-control" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-xxl-3 col-md-4">
+                                                    <div>
+                                                        <label for="labelInput" class="form-label">Basic Salary <code>*</code></label>
+                                                        <input type="text" class="form-control" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-xxl-3 col-md-4">
+                                                    <div>
+                                                        <label for="labelInput" class="form-label">Rate Per Day <code>*</code></label>
+                                                        <input type="text" class="form-control" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-xxl-3 col-md-4">
+                                                    <div>
+                                                        <label for="labelInput" class="form-label">From <code>*</code></label>
+                                                        <input type="text" class="form-control" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-xxl-3 col-md-4">
+                                                    <div>
+                                                        <label for="labelInput" class="form-label">TO <code>*</code></label>
+                                                        <input type="text" class="form-control" />
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-xxl-3 col-md-4">
+                                                    <div>
+                                                        <label for="labelInput" class="form-label">Days Deduction <code>*</code></label>
+                                                        <input type="text" class="form-control" />
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xxl-3 col-md-4">
+                                                    <div>
+                                                        <label for="labelInput" class="form-label">Days <code>*</code></label>
+                                                        <input type="text" class="form-control" />
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-xxl-3 col-md-4">
+                                                    <div>
+                                                        <label for="labelInput" class="form-label">Years Of Service <code>*</code></label>
+                                                        <input type="text" class="form-control" />
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-xxl-3 col-md-4">
+                                                    <div>
+                                                        <label for="labelInput" class="form-label">Amount <code>*</code></label>
+                                                        <input type="text" class="form-control" disabled="disabled" />
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-xxl-12 col-md-12" style="text-align:right;">
+                                                    <div>
+                                                        <input type="button" value="ADD" class="btn btn-success" /> <input type="button" value="Reset" class="btn btn-danger" />
+                                                    </div>
+                                                </div>
+                                                <hr />
+                                                <!--end col-->
+                                                <div class="table-responsive">
+
+                                                    <table border="1" id="example" class="display table table-bordered mobile-optimised" style="width:100%;">
+                                                        <thead>
+                                                            <tr>
+                                                                <th style=" white-space: nowrap">Leave Pay</th>
+                                                                <th style=" white-space: nowrap">Basic Salary</th>
+                                                                <th style=" white-space: nowrap">Rate Per Day</th>
+                                                                <th style=" white-space: nowrap">From</th>
+                                                                <th style=" white-space: nowrap">To</th>
+                                                                <th style=" white-space: nowrap">Days Deduction</th>
+                                                                <th style=" white-space: nowrap">Days</th>
+                                                                <th style=" white-space: nowrap">Years Of Service</th>
+                                                                <th style=" white-space: nowrap">Amount</th>
+                                                                <th style=" white-space: nowrap">Action</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td>
+                                                                    <input type="button" value="Remove" class="btn btn-danger btn-sm" />
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+
+                                                    </table>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="accordion" id="accordionPanelsStayOpenExample">
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree" tabindex="11">
+                                            <i class="ri-send-plane-2-fill"></i>  <h6 class="card-title mb-0 flex-grow-1" style=" font-size: 13px;">  SALARY DETAILS</h6>
+                                        </button>
+                                    </h2>
+                                    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                                        <div class="accordion-body">
+
+                                            <div class="row gy-4">
+                                                <div class="col-xxl-12 col-md-12">
+                                                    <div>
+                                                        <label for="labelInput" class="form-label"> Subtotal Leave Pay <code>*</code></label>
+                                                        <input type="text" class="form-control" disabled="disabled" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xxl-3 col-md-4">
+                                                    <div>
+                                                        <label for="labelInput" class="form-label">Salary <code>*</code></label>
+                                                        <input type="text" class="form-control" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-xxl-3 col-md-4">
+                                                    <div>
+                                                        <label for="labelInput" class="form-label">Basic Salary<code>*</code></label>
+                                                        <input type="text" class="form-control" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-xxl-3 col-md-4">
+                                                    <div>
+                                                        <label for="labelInput" class="form-label">Rate Per Day <code>*</code></label>
+                                                        <input type="text" class="form-control" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-xxl-3 col-md-4">
+                                                    <div>
+                                                        <label for="labelInput" class="form-label">From <code>*</code></label>
+                                                        <input type="text" class="form-control" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-xxl-3 col-md-4">
+                                                    <div>
+                                                        <label for="labelInput" class="form-label">To<code>*</code></label>
+                                                        <input type="text" class="form-control" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-xxl-3 col-md-4">
+                                                    <div>
+                                                        <label for="labelInput" class="form-label">Days Deduction <code>*</code></label>
+                                                        <input type="text" class="form-control" />
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-xxl-3 col-md-4">
+                                                    <div>
+                                                        <label for="labelInput" class="form-label">Days <code>*</code></label>
+                                                        <input type="text" class="form-control" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-xxl-3 col-md-4">
+                                                    <div>
+                                                        <label for="labelInput" class="form-label">Years Of Service <code>*</code></label>
+                                                        <input type="text" class="form-control" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-xxl-3 col-md-4">
+                                                    <div>
+                                                        <label for="labelInput" class="form-label">Amount <code>*</code></label>
+                                                        <input type="text" class="form-control" disabled="disabled" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xxl-12 col-md-12" style="text-align:right;">
+                                                    <div>
+                                                        <input type="button" value="ADD" class="btn btn-success" /> <input type="button" value="Reset" class="btn btn-danger" />
+                                                    </div>
+                                                </div>
+                                                <hr />
+                                                <div class="table-responsive">
+
+                                                    <table border="1" id="example_2" class="display table table-bordered mobile-optimised" style="width:100%;">
+                                                        <thead>
+                                                            <tr>
+                                                                <th style=" white-space: nowrap">Salary</th>
+                                                                <th style=" white-space: nowrap">Basic Salary</th>
+                                                                <th style=" white-space: nowrap">Rate Per Day</th>
+                                                                <th style=" white-space: nowrap">From</th>
+                                                                <th style=" white-space: nowrap">To</th>
+                                                                <th style=" white-space: nowrap">Days Deduction</th>
+                                                                <th style=" white-space: nowrap">Days</th>
+                                                                <th style=" white-space: nowrap">Years Of Service</th>
+                                                                <th style=" white-space: nowrap">Amount</th>
+                                                                <th style=" white-space: nowrap">Action</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td>
+                                                                    <input type="button" value="Remove" class="btn btn-danger btn-sm" />
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+
+                                                    </table>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion" id="accordionPanelsStayOpenExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo" tabindex="22">
+                                            <i class="ri-send-plane-2-fill"></i>  <h6 class="card-title mb-0 flex-grow-1" style="font-size: 13px;"> REIMBURSEMENT DETAILS</h6>
+                                        </button>
+                                    </h2>
+                                    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+
+
+                                        <div class="row gy-4" style=" margin: 1% 1% 3% 1%;">
+                                            <div class="col-xxl-12 col-md-12">
+                                                <div>
+                                                    <label for="labelInput" class="form-label"> Subtotal Salary <code>*</code></label>
+                                                    <input type="text" class="form-control" disabled="disabled" />
+                                                </div>
+                                            </div>
+                                            <div class="col-xxl-3 col-md-4">
+                                                <div>
+                                                    <label for="labelInput" class="form-label">Reimbursement <code>*</code></label>
+                                                    <input type="text" class="form-control" />
+                                                </div>
+                                            </div>
+                                            <div class="col-xxl-3 col-md-4">
+                                                <div>
+                                                    <label for="labelInput" class="form-label">Basic Salary<code>*</code></label>
+                                                    <input type="text" class="form-control" />
+                                                </div>
+                                            </div>
+                                            <div class="col-xxl-3 col-md-4">
+                                                <div>
+                                                    <label for="labelInput" class="form-label">Rate Per Day <code>*</code></label>
+                                                    <input type="text" class="form-control" />
+                                                </div>
+                                            </div>
+                                            <div class="col-xxl-3 col-md-4">
+                                                <div>
+                                                    <label for="labelInput" class="form-label">From <code>*</code></label>
+                                                    <input type="text" class="form-control" />
+                                                </div>
+                                            </div>
+                                            <div class="col-xxl-3 col-md-4">
+                                                <div>
+                                                    <label for="labelInput" class="form-label">To<code>*</code></label>
+                                                    <input type="text" class="form-control" />
+                                                </div>
+                                            </div>
+                                            <div class="col-xxl-3 col-md-4">
+                                                <div>
+                                                    <label for="labelInput" class="form-label">Days Deduction <code>*</code></label>
+                                                    <input type="text" class="form-control" />
+
+                                                </div>
+                                            </div>
+                                            <div class="col-xxl-3 col-md-4">
+                                                <div>
+                                                    <label for="labelInput" class="form-label">Days <code>*</code></label>
+                                                    <input type="text" class="form-control" />
+                                                </div>
+                                            </div>
+                                            <div class="col-xxl-3 col-md-4">
+                                                <div>
+                                                    <label for="labelInput" class="form-label">Years Of Service <code>*</code></label>
+                                                    <input type="text" class="form-control" />
+                                                </div>
+                                            </div>
+                                            <div class="col-xxl-3 col-md-4">
+                                                <div>
+                                                    <label for="labelInput" class="form-label">Amount <code>*</code></label>
+                                                    <input type="text" class="form-control" disabled="disabled" />
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xxl-12 col-md-12" style="text-align:right;">
+                                                <div>
+                                                    <button id="btnAddContact" type="button" class="btn btn-success"><i class="ri-add-circle-line align-middle me-1"></i> ADD</button> <input type="button" value="Reset" class="btn btn-danger" />
+                                                </div>
+                                            </div>
+                                            <hr />
+
+
+
+                                            <div class="table-responsive">
+
+                                                <table id="tblContact" class="display table table-bordered" style="width:100%">
+                                                    <thead>
+                                                        <tr>
+                                                            <th style=" white-space: nowrap">Reimbursement</th>
+                                                            <th style=" white-space: nowrap">Basic Salary</th>
+                                                            <th style=" white-space: nowrap">Rate Per Day</th>
+                                                            <th style=" white-space: nowrap">From</th>
+                                                            <th style=" white-space: nowrap">To</th>
+                                                            <th style=" white-space: nowrap">Days Deduction</th>
+                                                            <th style=" white-space: nowrap">Days</th>
+                                                            <th style=" white-space: nowrap">Years Of Service</th>
+                                                            <th style=" white-space: nowrap">Amount</th>
+                                                            <th style=" white-space: nowrap">Action</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td>
+                                                                <input type="button" value="Remove" class="btn btn-danger btn-sm" />
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+
+                                                </table>
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion" id="accordionPanelsStayOpenExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseTFour" tabindex="28">
+                                            <i class="ri-send-plane-2-fill"></i>  <h6 class="card-title mb-0 flex-grow-1" style="font-size: 13px;"> DEDUCTIONS DETAILS</h6>
+                                        </button>
+                                    </h2>
+                                    <div id="panelsStayOpen-collapseTFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-collapseTFour">
+
+
+                                        <div class="row gy-4" style=" margin: 1% 1% 3% 1%;">
+
+                                            <div class="col-xxl-12 col-md-12">
+                                                <div>
+                                                    <label for="labelInput" class="form-label"> Subtotal Reimbursement <code>*</code></label>
+                                                    <input type="text" class="form-control" disabled="disabled" />
+                                                </div>
+                                            </div>
+                                            <div class="col-xxl-3 col-md-4">
+                                                <div>
+                                                    <label for="labelInput" class="form-label">Deductions <code>*</code></label>
+                                                    <input type="text" class="form-control" />
+                                                </div>
+                                            </div>
+                                            <div class="col-xxl-3 col-md-4">
+                                                <div>
+                                                    <label for="labelInput" class="form-label">Basic Salary<code>*</code></label>
+                                                    <input type="text" class="form-control" />
+                                                </div>
+                                            </div>
+                                            <div class="col-xxl-3 col-md-4">
+                                                <div>
+                                                    <label for="labelInput" class="form-label">Rate Per Day <code>*</code></label>
+                                                    <input type="text" class="form-control" />
+                                                </div>
+                                            </div>
+                                            <div class="col-xxl-3 col-md-4">
+                                                <div>
+                                                    <label for="labelInput" class="form-label">From <code>*</code></label>
+                                                    <input type="text" class="form-control" />
+                                                </div>
+                                            </div>
+                                            <div class="col-xxl-3 col-md-4">
+                                                <div>
+                                                    <label for="labelInput" class="form-label">To<code>*</code></label>
+                                                    <input type="text" class="form-control" />
+                                                </div>
+                                            </div>
+                                            <div class="col-xxl-3 col-md-4">
+                                                <div>
+                                                    <label for="labelInput" class="form-label">Days Deduction <code>*</code></label>
+                                                    <input type="text" class="form-control" />
+
+                                                </div>
+                                            </div>
+                                            <div class="col-xxl-3 col-md-4">
+                                                <div>
+                                                    <label for="labelInput" class="form-label">Days <code>*</code></label>
+                                                    <input type="text" class="form-control" />
+                                                </div>
+                                            </div>
+                                            <div class="col-xxl-3 col-md-4">
+                                                <div>
+                                                    <label for="labelInput" class="form-label">Years Of Service <code>*</code></label>
+                                                    <input type="text" class="form-control" />
+                                                </div>
+                                            </div>
+                                            <div class="col-xxl-3 col-md-4">
+                                                <div>
+                                                    <label for="labelInput" class="form-label">Amount <code>*</code></label>
+                                                    <input type="text" class="form-control" disabled="disabled" />
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xxl-12 col-md-12" style="text-align:right;">
+                                                <div>
+                                                    <button id="btnAddContact" type="button" class="btn btn-success"><i class="ri-add-circle-line align-middle me-1"></i> ADD</button> <input type="button" value="Reset" class="btn btn-danger" />
+                                                </div>
+                                            </div>
+                                            <hr />
+
+
+
+                                            <div class="table-responsive">
+
+                                                <table id="tblContact" class="display table table-bordered" style="width:100%">
+                                                    <thead>
+                                                        <tr>
+                                                            <th style=" white-space: nowrap">Deductions</th>
+                                                            <th style=" white-space: nowrap">Basic Salary</th>
+                                                            <th style=" white-space: nowrap">Rate Per Day</th>
+                                                            <th style=" white-space: nowrap">From</th>
+                                                            <th style=" white-space: nowrap">To</th>
+                                                            <th style=" white-space: nowrap">Days Deduction</th>
+                                                            <th style=" white-space: nowrap">Days</th>
+                                                            <th style=" white-space: nowrap">Years Of Service</th>
+                                                            <th style=" white-space: nowrap">Amount</th>
+                                                            <th style=" white-space: nowrap">Action</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td>
+                                                                <input type="button" value="Remove" class="btn btn-danger btn-sm" />
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+
+                                                </table>
+                                            </div>
+
+                                        </div>
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xxl-6 col-md-6">
+                                <div>
+                                    <label for="labelInput" class="form-label">Subtotal Deductions <code>*</code></label>
+                                    <input type="text" class="form-control" disabled="disabled" />
+
+                                </div>
+                            </div>
+                            <div class="col-xxl-6 col-md-6">
+                                <div>
+                                    <label for="labelInput" class="form-label">Total Amount <code>*</code></label>
+                                    <input type="text" class="form-control" disabled="disabled" />
+
+                                </div>
+                            </div>
+                            <div class="col-xxl-12 col-md-12">
+                                <div>
+                                    <label for="labelInput" class="form-label">In Words <code>*</code></label>
+                                    <input type="text" class="form-control" />
+
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="col-xxl-12 col-md-12" style="text-align:center">
+                                <div>
+                                    <input type="button" id="btnsave" value="Save" class="btn btn-success " />
+                                    <input type="button" id="btnReset" value="Reset" class="btn btn-danger" />
+                                </div>
+                            </div>
+
+                            <!--end col-->
+                            <div class="col-xxl-12 col-md-12">
+                                <div class="table-responsive">
+
+
+
+                                </div>
+                            </div>
+
+                            <div class="col-xxl-12 col-md-12">
+                                <div class="form-floating" style="float:right;">
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <!--end col-->
+                    </div>
+                    <!--end row-->
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+}
+<!--end col-->
+
+
+
+@section scripts{
+    <!-- prismjs plugin -->
+    <script src="~/assets/libs/prismjs/prism.js"></script>
+    <!-- App js -->
+    <script src="~/assets/js/app.js"></script>
+
+}
+
+@*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>*@
+
+@*<script src="~/Content/js/jquery.min.js"></script>*@
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
+
+@*<script src="~/Content/js/jquery.min.js"></script>*@
+
+<script>
+    $(document).ready(function () {
+
+
+
+    });
+
+
+    $("#btnSave").click(function (e) {
+        debugger;
+        e.preventDefault();
+
+        var _code = $("#Code").val();
+        var _GroupID = $("#GroupID option:selected").val();
+        var _CompanyName = $("#CompanyName").val();
+        var _TRN = $("#TRN").val();
+        var _LocationMapUrl = $("#LocationMapUrl").val();
+        var _Email = $("#Email").val();
+        var _Address = $("#Address").val();
+        var _companyId = $("#HDFID").val();
+        var _CurrentCount = $("#HDFCurrentCount").val();
+        var _IsActive = $("#IsActive option:selected").val();
+
+        if (_code != "" && _GroupID != "" && _CompanyName != "" && _TRN != "" && _Email != "" && _Address != "") {
+
+            var ProductListArr = [];
+            var ProductList = {
+                Id: _companyId,
+                CurrentCount: _CurrentCount,
+                Code: _code,
+                GroupID: _GroupID,
+                CompanyName: _CompanyName,
+                Address: _Address,
+                TRN: _TRN,
+                Email: _Email,
+                LocationMapUrl: _LocationMapUrl,
+                IsActive: _IsActive
+
+            };
+            //ProductListArr.push(ProductList);
+
+            if (confirm("Are you sure you want to continue ?")) {
+                $.ajax({
+                    type: 'POST',
+                    url: '/CompanyMaster/SaveCompanyMaster',
+                    data: JSON.stringify(ProductList),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: 'json',
+                    success: function (data) {
+                        debugger;
+                        if (data == "1") {
+                            debugger;
+                            swal({
+                                title: "Success",
+                                text: "Records Successfully Saved",
+                                type: "success",
+                            }).then(function (isConfirm) {
+                                if (isConfirm) {
+                                    var url = "/CompanyMaster/Index";
+                                    window.location.href = url;
+                                } else {
+
+                                }
+                            });
+
+                        }
+                        else if (data == "2") {
+
+                            swal({
+                                title: "Success",
+                                text: "Records Successfully Updated",
+                                type: "success",
+                            }).then(function (isConfirm) {
+                                if (isConfirm) {
+                                    var url = "/CompanyMaster/Index";
+                                    window.location.href = url;
+                                } else {
+
+                                }
+                            });
+                        }
+                        else if (data == "4") {
+                            swal("Warning", "This Code is Already Exist !", "warning");
+                        } else {
+
+                            swal("Warning", "Record not save!", "warning");
+                        }
+
+                    },
+                    error: function (httpResponse) {
+
+                        swal("Warning", "Something Went to Wrong!", "warning");
+
+                    }
+                })
+            }
+        }
+        else {
+
+            if (_code == "") {
+                swal("Warning", "Please Enter Code !", "warning");
+                return false;
+            }
+            if (_GroupID == "") {
+                swal("Warning", "Please Select Group Name!", "warning");
+                return false;
+            }
+            if (_CompanyName == "") {
+                swal("Warning", "Please Enter Company Name!", "warning");
+                return false;
+            }
+            if (_TRN == "") {
+                swal("Warning", "Please Enter TRN !", "warning");
+                return false;
+            }
+
+            if (_Email == "") {
+                swal("Warning", "Please Enter Email Address!", "warning");
+                $("#Email").val('');
+                return false;
+            }
+            if (_Address == "") {
+                swal("Warning", "Please Enter Address!", "warning");
+                return false;
+            }
+        }
+
+    })
+
+
+</script>
+
+<script type="text/javascript">
+
+
+    function Add() {
+        AddRow($("#txtLeavePay").val(), $("#txtBasicSalary").val(), $("#txtRateperday").val(), $("#txtFrom").val(), $("#txtTo").val(), $("#txtDaysDeduction").val(), $("#txtDays").val(), $("#txtYearsOfService").val(), $("#txtAmount").val());
+        $("#txtLeavePay").val("");
+        $("#txtBasicSalary").val("");
+        $("#txtRateperday").val("");
+        $("#txtFrom").val(""); $("#txtTo").val(""); $("#txtDaysDeduction").val(""); $("#txtDays").val(""); $("#txtYearsOfService").val(""); $("#txtAmount").val("");
+    };
+
+    function AddRow(LeavePay, BasicSalary, Rateperday, From, To, DaysDeduction, Days, YearsOfService, Amount) {
+        //Get the reference of the Table's TBODY element.
+        var tBody = $("#example > TBODY")[0];
+
+        row = tBody.insertRow(-1);
+
+        //Add  cell.
+        var cell = $(row.insertCell(-1));
+        cell.html(LeavePay);
+        //Add  cell.
+        var cell = $(row.insertCell(-1));
+        cell.html(BasicSalary);
+        //Add  cell.
+        cell = $(row.insertCell(-1));
+        cell.html(Rateperday);
+        //Add  cell.
+        cell = $(row.insertCell(-1));
+        cell.html(From);
+        //Add  cell.
+        cell = $(row.insertCell(-1));
+        cell.html(To);
+        //Add  cell.
+        cell = $(row.insertCell(-1));
+        cell.html(DaysDeduction);
+        //Add  cell.
+        cell = $(row.insertCell(-1));
+        cell.html(Days);
+        //Add  cell.
+        cell = $(row.insertCell(-1));
+        cell.html(YearsOfService);
+        //Add  cell.
+        cell = $(row.insertCell(-1));
+        cell.html(Amount);
+
+
+        //Add Button cell.
+        cell = $(row.insertCell(-1));
+        var btnRemove = $("<input />");
+        btnRemove.attr("type", "button");
+        btnRemove.attr("onclick", "Remove(this);");
+        btnRemove.val("-");
+        cell.append(btnRemove);
+    };
+
+    function Remove(button) {
+        //Determine the reference of the Row using the Button.
+        var row = $(button).closest("TR");
+        var name = $("TD", row).eq(0).html();
+        if (confirm("Do you want to delete: " + name)) {
+
+            //Get the reference of the Table.
+            var table = $("#example")[0];
+
+            //Delete the Table row using it's Index.
+            table.deleteRow(row[0].rowIndex);
+        }
+    };
+
+
+    //===========================================================================================================//
+
+    function Add2() {
+        AddRow_Salary($("#txtSalary").val(), $("#txtBasicSalary").val(), $("#txtRateperday").val(), $("#txtFrom").val(), $("#txtTo").val(), $("#txtDaysDeduction").val(), $("#txtDays").val(), $("#txtYearsOfService").val(), $("#txtAmount").val());
+        $("#txtSalary").val("");
+        $("#txtBasicSalary").val("");
+        $("#txtRateperday").val("");
+        $("#txtFrom").val(""); $("#txtTo").val(""); $("#txtDaysDeduction").val(""); $("#txtDays").val(""); $("#txtYearsOfService").val(""); $("#txtAmount").val("");
+    };
+
+    function AddRow_Salary(Salary, BasicSalary, Rateperday, From, To, DaysDeduction, Days, YearsOfService, Amount) {
+        //Get the reference of the Table's TBODY element.
+        var tBody = $("#example_2 > TBODY")[0];
+
+        row = tBody.insertRow(-1);
+
+        //Add  cell.
+        var cell = $(row.insertCell(-1));
+        cell.html(Salary);
+        //Add  cell.
+        var cell = $(row.insertCell(-1));
+        cell.html(BasicSalary);
+        //Add  cell.
+        cell = $(row.insertCell(-1));
+        cell.html(Rateperday);
+        //Add  cell.
+        cell = $(row.insertCell(-1));
+        cell.html(From);
+        //Add  cell.
+        cell = $(row.insertCell(-1));
+        cell.html(To);
+        //Add  cell.
+        cell = $(row.insertCell(-1));
+        cell.html(DaysDeduction);
+        //Add  cell.
+        cell = $(row.insertCell(-1));
+        cell.html(Days);
+        //Add  cell.
+        cell = $(row.insertCell(-1));
+        cell.html(YearsOfService);
+        //Add  cell.
+        cell = $(row.insertCell(-1));
+        cell.html(Amount);
+
+
+        //Add Button cell.
+        cell = $(row.insertCell(-1));
+        var btnRemove = $("<input />");
+        btnRemove.attr("type", "button");
+        btnRemove.attr("onclick", "Remove2(this);");
+        btnRemove.val("-");
+        cell.append(btnRemove);
+    };
+
+    function Remove2(button) {
+        //Determine the reference of the Row using the Button.
+        var row = $(button).closest("TR");
+        var name = $("TD", row).eq(0).html();
+        if (confirm("Do you want to delete: " + name)) {
+
+            //Get the reference of the Table.
+            var table = $("#example_2")[0];
+
+            //Delete the Table row using it's Index.
+            table.deleteRow(row[0].rowIndex);
+        }
+    };
+
+</script>

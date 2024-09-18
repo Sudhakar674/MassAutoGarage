@@ -1,0 +1,265 @@
+﻿@model MassAutoGarage.Models.ColorMaster.ColorMasterModel
+@{
+    ViewBag.Title = "Approval Petty Cash Payment";
+    ViewBag.pTitle = "Approval Petty Cash Payment";
+    ViewBag.pageTitle = "Forms";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
+@section styles{
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+}
+
+
+@using (Html.BeginForm("Index", "ApprovalPettyCashPayment", FormMethod.Post, new { enctype = "multipart/form-data", OnSubmit = "return ValidationForm()", @class = "form-validate" }))
+{
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+
+
+                <div class="card-header main-f">
+                    <div class="row">
+                        <div class="col-md-6 col-5"> <h5 class="card-title mb-0 gp-detail">APPROVAL PETTY CASH PAYMENT</h5></div>
+                        @*<div class="col-md-6 col-7">
+                            <a href="@Url.Action("AddAccountGroup","AccountGroup")" class="btn btn-primary add-new" style="float:right;" tabindex="1"> <i class="ri-add-circle-line align-middle me-1"></i>ADD ACCOUNT GROUP</a>
+                        </div>*@
+                    </div>
+                </div>
+
+                <!--<div class="card-header align-items-center d-flex">
+        <h4 class="card-title mb-0 flex-grow-1">APPROVAL PETTY CASH PAYMENT</h4>
+        <div class="flex-shrink-0">
+            <div class="form-check form-switch form-switch-right form-switch-md">-->
+                @*<a href="@Url.Action("Index","Group")" class="btn btn-primary" style="float:right;" tabindex="6"><i class="fa fa-list" aria-hidden="true"></i> BACK GROUP LIST</a>*@
+                <!--</div>
+        </div>
+    </div>-->
+                <!-- end card header -->
+                <div class="card-body">
+                    <div class="live-preview">
+                        <div class="row gy-4">
+
+                            <div class="col-xxl-4 col-md-4">
+                                <div>
+                                    <label for="labelInput" class="form-label">From Date <code>*</code></label>
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-xxl-4 col-md-4">
+                                <div>
+                                    <label for="labelInput" class="form-label">To Date <code>*</code></label>
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-xxl-4 col-md-4">
+                                <div>
+                                    <label for="labelInput" class="form-label">Branch Name <code>*</code></label>
+                                    <select id="ddlBranchName" class="js-example-basic-single">
+                                        <option value="Select">Select</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-xxl-4 col-md-4">
+                                <div>
+                                    <label for="labelInput" class="form-label">Status <code>*</code></label>
+                                    <select id="ddlStatus" class="js-example-basic-single">
+                                        <option value="Select">Select</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-xxl-4 col-md-4">
+                                <div>
+                                    <label for="labelInput" class="form-label">Report Type <code>*</code></label>
+                                    <select id="ddlReportType" class="js-example-basic-single">
+                                        <option value="Select">Select</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-xxl-4 col-md-4">
+                                <div>
+                                    <a href="#" id="btnSearch" class="btn btn-success" style=" margin-top: 8%;"><i class="fa fa-search" aria-hidden="true"></i> Search</a>
+                                </div>
+                            </div>
+
+                            <hr />
+                            <div class="col-xxl-12 col-md-12">
+                                <div class="form-floating" style="float: right; padding-right: 2%;">
+
+                                    <a href="#" id="btnSearch" class="btn btn-success"><i class="fa fa-file-excel-o" aria-hidden="true"></i> Export</a>
+                                </div>
+                            </div>
+
+                            <div class="table-responsive">
+
+                                <table id="example" class="display table table-bordered mobile-optimised">
+                                    <thead>
+                                        <tr>
+                                            <th>SL.</th>
+                                            <th style="white-space:nowrap">Voucher No</th>
+                                            <th style="white-space:nowrap">PDate</th>
+                                            <th style="white-space:nowrap">Payment Type</th>
+                                            <th style="white-space:nowrap">Account Name</th>
+                                            <th style="white-space:nowrap">Gross Amt</th>
+                                            <th style="white-space:nowrap">Vat</th>
+                                            <th style="white-space:nowrap">Total Amount</th>
+                                            <th style="white-space:nowrap">Org Name</th>
+                                            <th style="white-space:nowrap">Status</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td data-th="SL.">1.</td>
+                                            <td data-th="Voucher No"></td>
+                                            <td data-th="PDate"></td>
+                                            <td data-th="Payment Type"></td>
+                                            <td data-th="Account Name"></td>
+                                            <td data-th="Gross Amt"></td>
+                                            <td data-th="Vat"></td>
+                                            <td data-th="Total Amount"></td>
+                                            <td data-th="Org Name"></td>
+                                            <td data-th="Status"></td>
+
+
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+
+
+                            </div>
+                        </div>
+                        <!--end row-->
+                    </div>
+
+                </div>
+
+
+                <br />
+            </div>
+
+
+        </div>
+
+        <!--end col-->
+    </div>
+
+
+
+}
+
+
+@section scripts{
+
+
+    <!--select2 cdn-->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script src="~/assets/js/pages/select2.init.js"></script>
+    <script src="~/assets/libs/prismjs/prism.js"></script>
+    <script src="~/assets/js/app.js"></script>
+
+    <!-- prismjs plugin -->
+    <!-- App js -->
+
+
+}
+
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+@*<link rel="stylesheet" href="/resources/demos/style.css">*@
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+        var options = $.extend({},
+            $.datepicker.regional["es"], {
+            dateFormat: "dd/mm/yy",
+            changeMonth: true,
+            changeYear: true,
+            /* yearRange: "-2:+0",*/
+            todayHighlight: true,
+            /*highlightWeek: true,*/
+            /*maxDate: 0*/
+        });
+        $("#txttoDate").datepicker(options);
+
+        var options = $.extend({},
+            $.datepicker.regional["es"], {
+            dateFormat: "dd/mm/yy",
+            changeMonth: true,
+            changeYear: true,
+            /* yearRange: "-2:+0",*/
+            todayHighlight: true,
+            /*highlightWeek: true,*/
+            /*maxDate: 0*/
+        });
+        $("#txtfromDate").datepicker(options);
+
+    })
+    $("#btnAdd").click(function () {
+
+        $("#staticBackdrop").modal("show");
+
+    })
+
+
+
+
+</script>
+
+<script type="text/javascript">
+    //jQuery(function ($) {
+
+
+    //    debugger;
+    //    $("#colorPickerBasic").shieldColorPicker({
+
+    //        value: "#33CC00",
+    //        displayInline: true,
+    //        events: {
+    //            select: function (e) {
+
+
+    //                /*$("#image-container").css("background-color", e.target.value().css());    */
+    //                $("#HDFColorCode").val(e.target.value().css());
+    //                $("#image-container").val(e.target.value().css());
+    //            }
+    //        }
+    //    });
+
+    //    $("#colorPickerAdvanced").shieldColorPicker({
+
+    //        value: "#33CC00",
+    //        palette: "advanced",
+    //        advancedPalette: {
+    //            type: "hex",
+    //            buttons: true
+    //        },
+    //        events: {
+    //            change: function (e) {
+
+    //                /* $("#image-container").css("background-color", e.target.value().css());*/
+    //                $("#HDFColorCode").val(e.target.value().css());
+    //                $("#image-container").val(e.target.value().css());
+    //            }
+    //        }
+    //    });
+    //});
+</script>

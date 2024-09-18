@@ -1,0 +1,468 @@
+﻿@model MassAutoGarage.Models.CustomerMaster.CustomerOpeningBalanceModel
+@{
+    ViewBag.Title = "Customr Opening Balance";
+    ViewBag.pTitle = "Customr Opening Balance Master";
+    ViewBag.pageTitle = "Forms";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
+@section styles{
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+}
+
+
+@using (Html.BeginForm("ADDCustomerOpeningBalance", "CustomerMaster", FormMethod.Post, new { enctype = "multipart/form-data", OnSubmit = "return ValidationForm()", @class = "form-validate" }))
+{
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header align-items-center d-flex">
+                    <h4 class="card-title mb-0 flex-grow-1">CREATE OPENING BALANCE</h4>
+                    <div class="flex-shrink-0">
+                        <div class="form-check form-switch form-switch-right form-switch-md">
+                            <a href="@Url.Action("CustomerOpeningBalance","CustomerMaster")" class="btn btn-primary" style="float:right;" tabindex="6"><i class="fa fa-list" aria-hidden="true"></i> BACK TO OPENING BALANCE LIST</a>
+                        </div>
+                    </div>
+                </div><!-- end card header -->
+                <div class="card-body">
+                    <div class="live-preview">
+                        <div class="row gy-4">
+                            <div class="col-xxl-3 col-md-4">
+                                <div>
+                                    <label for="labelInput" class="form-label">Job Card Date <code>*</code></label>
+                                    @Html.HiddenFor(m => m.ID, new { @class = "form-control", @id = "HDFID" })
+                                    @Html.TextBoxFor(m => m.JobCardDate, new { @class = "form-control", tabindex = 1 })
+                                    @Html.ValidationMessageFor(m => m.JobCardDate, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-md-4">
+                                <div>
+                                    <label for="labelInput" class="form-label">Company Name <code>*</code></label>
+                                    @Html.DropDownListFor(x => x.CompanyID, new SelectList(ViewBag.Company, "Value", "Text"), "--Select Company Name--", new { @class = "js-example-basic-single", tabindex = 2 })
+                                    @Html.HiddenFor(m => m.CompanyID, new { @class = "form-control", })
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-md-4">
+                                <div>
+                                    <label for="labelInput" class="form-label">Job Card Number <code>*</code></label>
+
+                                    @Html.TextBoxFor(m => m.JobCardNumber, new { @class = "form-control", tabindex = 1 })
+                                    @Html.ValidationMessageFor(m => m.JobCardNumber, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-md-4">
+                                <div>
+                                    <label for="labelInput" class="form-label">To Account Name <code>*</code></label>
+                                    @Html.DropDownListFor(x => x.ToAccountName, new List<SelectListItem>{
+                                      new SelectListItem { Text = "---Select---", Value = "0", Selected=true},
+                                      new SelectListItem { Text = "Vijay Kumar", Value = "1"},
+                                      new SelectListItem { Text = "Jamal Ahmad", Value = "0"},
+                                      }, new { @class = "js-example-basic-single", tabindex = 3 })
+
+                                </div>
+                            </div>
+
+                            <div class="col-xxl-3 col-md-4">
+                                <div>
+                                    <label for="labelInput" class="form-label">Invoice Date <code>*</code></label>
+                                    @Html.TextBoxFor(m => m.InvoiceDate, new { @class = "form-control", tabindex = 1 })
+                                    @Html.ValidationMessageFor(m => m.InvoiceNumber, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+
+                                </div>
+                            </div>
+
+                            <div class="col-xxl-3 col-md-4">
+                                <div>
+                                    <label for="labelInput" class="form-label">Invoice Number<code>*</code></label>
+                                    @Html.TextBoxFor(m => m.InvoiceNumber, new { @class = "form-control", tabindex = 1 })
+                                    @Html.ValidationMessageFor(m => m.InvoiceNumber, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+
+                                </div>
+                            </div>
+                            <div class="col-xxl-2 col-md-2">
+                                <div>
+                                    <label for="labelInput" class="form-label">LPO NO.<code>*</code></label>
+                                    @Html.TextBoxFor(m => m.LPONO, new { @class = "form-control", tabindex = 1 })
+                                    @Html.ValidationMessageFor(m => m.LPONO, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+
+                                </div>
+                            </div>
+                            <div class="col-xxl-2 col-md-2">
+                                <div>
+                                    <label for="labelInput" class="form-label">Est NO.<code>*</code></label>
+                                    @Html.TextBoxFor(m => m.EstNo, new { @class = "form-control", tabindex = 1 })
+                                    @Html.ValidationMessageFor(m => m.EstNo, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+
+                                </div>
+                            </div>
+
+                            <div class="col-xxl-2 col-md-2">
+                                <div>
+                                    <label for="labelInput" class="form-label">Total Amount<code>*</code></label>
+                                    @Html.TextBoxFor(m => m.TotalAmount, new { @class = "form-control", tabindex = 1 })
+                                    @Html.ValidationMessageFor(m => m.TotalAmount, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+
+                                </div>
+                            </div>
+                            <div class="col-xxl-2 col-md-2">
+                                <div>
+                                    <label for="labelInput" class="form-label">Paid Amount<code>*</code></label>
+                                    @Html.TextBoxFor(m => m.PaidAmount, new { @class = "form-control", tabindex = 1 })
+                                    @Html.ValidationMessageFor(m => m.PaidAmount, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+
+                                </div>
+                            </div>
+                            <div class="col-xxl-2 col-md-2">
+                                <div>
+                                    <label for="labelInput" class="form-label">Balance Amount<code>*</code></label>
+                                    @Html.TextBoxFor(m => m.BalanceAmount, new { @class = "form-control", tabindex = 1, @readonly = "readonly" })
+                                    @Html.ValidationMessageFor(m => m.BalanceAmount, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+
+                                </div>
+                            </div>
+                            <div class="col-xxl-2 col-md-2">
+                                <div>
+                                    <button id="btnAdd" type="button" class="btn btn-primary" tabindex="1" style="margin-top:18%;"><i class="ri-add-circle-line align-middle me-1"></i> ADD</button>
+                                </div>
+                            </div>
+                            <!--end col-->
+                            <br /><hr />
+
+                            <div class="table-responsive">
+
+                                <table id="example" class="display table table-bordered" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th style=" width: 3%;">SL.</th>
+                                            <th>Code</th>
+                                            <th>Company </th>
+                                            <th>To Account</th>
+                                            <th>InvoiceDate </th>
+                                            <th>Invoice No</th>
+                                            <th>LPO No</th>
+                                            <th>EST No.</th>
+                                            <th>Total Amt.</th>
+                                            <th>Paid Amt.</th>
+                                            <th>Balance Amt.</th>
+                                            <th style=" width:8%">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tBody2">
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                        <!--end row-->
+                    </div>
+
+                </div>
+
+                <div class="col-xxl-12 col-md-12">
+                    <div class="form-floating" style="float: right; padding-right: 2%;">
+                        <a href="@Url.Action("CustomerOpeningBalance","CustomerMaster")" class="btn btn-danger" tabindex="4">Cancel</a>
+                        <input type="button" value="Save" id="btnSave" class="btn btn-primary" tabindex="5" />
+
+                    </div>
+                </div>
+                <br />
+            </div>
+
+
+        </div>
+
+        <!--end col-->
+    </div>
+}
+
+
+@section scripts{
+
+
+    <!--select2 cdn-->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script src="~/assets/js/pages/select2.init.js"></script>
+    <script src="~/assets/libs/prismjs/prism.js"></script>
+    <script src="~/assets/js/app.js"></script>
+
+    <!-- prismjs plugin -->
+    <!-- App js -->
+
+
+}
+
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+@*<link rel="stylesheet" href="/resources/demos/style.css">*@
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+        var options = $.extend({},
+            $.datepicker.regional["es"], {
+            dateFormat: "dd/mm/yy",
+            changeMonth: true,
+            changeYear: true,
+            /* yearRange: "-2:+0",*/
+            todayHighlight: true,
+            /*highlightWeek: true,*/
+            /*maxDate: 0*/
+        });
+        $("#InvoiceDate").datepicker(options);
+        var options = $.extend({},
+            $.datepicker.regional["es"], {
+            dateFormat: "dd/mm/yy",
+            changeMonth: true,
+            changeYear: true,
+            /* yearRange: "-2:+0",*/
+            todayHighlight: true,
+            /*highlightWeek: true,*/
+            /*maxDate: 0*/
+        });
+        $("#JobCardDate").datepicker(options);
+
+
+        /* LoadUserType();*/
+
+        //$("#StartDate").datepicker({
+        //    format: 'dd/mm/yy',
+        //    changeMonth: true,
+        //    changeYear: true,
+        //    todayHighlight: true,
+
+        //});
+
+        
+
+    })
+
+    $("#btnSave").click(function (e) {
+        debugger;
+        e.preventDefault();
+
+
+        var _code = $("#Code").val();
+        var _ColorId = $("#ColorId option:selected").val();
+        var _ColorCode = $("#ColorCode").val();
+        var _IsActive = $("#IsActive option:selected").val();
+        var _Id = $("#HDFID").val();
+
+
+        if (_code != "" && _ColorId != "") {
+            var ProductListArr = [];
+            var ProductList = {
+                ID: _Id,
+                Code: _code,
+                ColorId: _ColorId,
+                ColorCode: _ColorCode,
+                IsActive: _IsActive
+
+            };
+            //ProductListArr.push(ProductList);
+            if (confirm("Are you sure you want to continue ?")) {
+                $.ajax({
+                    type: 'POST',
+                    url: '/ColorMaster/SaveColorMaster',
+                    data: JSON.stringify(ProductList),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: 'json',
+                    success: function (data) {
+                        debugger;
+                        if (data == "1") {
+                            debugger;
+
+                            swal({
+                                title: "Success",
+                                text: "Records Successfully Saved",
+                                type: "success",
+                            }).then(function (isConfirm) {
+                                if (isConfirm) {
+                                    var url = "/ColorMaster/ColorDetails";
+                                    window.location.href = url;
+                                } else {
+
+                                }
+                            });
+
+                        }
+                        else if (data == "2") {
+
+                            swal({
+                                title: "Success",
+                                text: "Records Successfully Updated",
+                                type: "success",
+                            }).then(function (isConfirm) {
+                                if (isConfirm) {
+                                    var url = "/ColorMaster/ColorDetails";
+                                    window.location.href = url;
+                                } else {
+
+                                }
+                            });
+                        }
+                        else if (data == "4") {
+
+                            swal("Warning", "This Color is Already Exist!", "warning");
+                        } else {
+
+                            swal("Warning", "Record not save!", "warning");
+                        }
+
+                    },
+                    error: function (httpResponse) {
+                        swal("Warning", "Something Went to Wrong !", "warning");
+
+                    }
+                })
+            }
+        }
+        else {
+
+
+            if (_code == "") {
+                swal("Warning", " Please Enter Code !", "warning");
+                return false;
+            }
+
+            if (_ColorId == "") {
+                swal("Warning", "Please Select Color !", "warning");
+                return false;
+            }
+
+
+        }
+
+    })
+
+    $("#btnAdd").click(function (e) {
+        debugger;
+        e.preventDefault();
+        var _Code = $("#Code").val();
+        var _CompanyID = $("#CompanyID option:selected").val();
+        var _CompanyName = $("#CompanyID option:selected").text();
+
+        var _SupplierID = $("#SupplierID option:selected").val();
+        var _SupplierName = $("#SupplierID option:selected").text();
+
+        var _InvoiceDate = $("#InvoiceDate").val();
+        var _InvoiceNumber = $("#InvoiceNumber").val();
+        var _ToAccountID = $("#ToAccountID option:selected").val();
+        var _ToAccountName = $("#ToAccountID option:selected").text();
+
+
+        var _LPONO = $("#LPONO").val();
+        var _TotalAmount = $("#TotalAmount").val();
+        var _PaidAmount = $("#PaidAmount").val();
+        var _BalanceAmount = $("#BalanceAmount").val();
+
+
+        var tableLength = $("#example tr").length;
+        var tableLength = $("#tBody2 tr").length;
+
+        if (_Code != "" && _CompanyID != "" && _SupplierID != "" && _InvoiceDate != "" && _InvoiceNumber != "") {
+            $("#example").show();
+            var tr = "<tr>";
+            tr += "<td>" + (tableLength + 1) + "<input type='hidden' class='clsCompanyID' value=" + _CompanyID + " /><input type='hidden' class='clsSupplierID' value=" + _SupplierID + " /><input type='hidden' class='clsToAccountID' value=" + _ToAccountID + " /></td><td>" + _Code + "</td><td>" + _CompanyName + "</td><td>" + _SupplierName + "</td><td>" + _InvoiceDate + "</td><td>" + _InvoiceNumber + "</td><td>" + _ToAccountName + "</td><td>" + _LPONO + "</td><td>" + _TotalAmount + "</td><td>" + _PaidAmount + "</td><td>" + _BalanceAmount + "</td><td><a  class='btn btn-danger view-btn DeleteTr' ><i class='fa fa-trash' aria-hidden='true'></i></a></td>";
+            tr += "</tr>";
+            $("#tBody2").append(tr);
+
+
+
+        }
+        else {
+
+            swal({
+                title: "Warning",
+                text: "All Fields are Required. !",
+                type: "warning",
+            }).then(function (isConfirm) {
+                if (isConfirm) {
+                    
+                } else {
+                    //if no clicked => do something else
+                }
+            });
+
+        }
+
+
+    });
+
+
+    $(document).on("click", ".DeleteTr", function () {
+
+        if (confirm("Are you sure you want to remove ?")) {
+
+            $(this).parents("tr").remove();
+            calculat();
+        }
+    })
+
+
+    $("#PaidAmount,#TotalAmount").change(function () {
+        debugger;
+        var TAmt = parseFloat($("#TotalAmount").val());
+        var pAmt = parseFloat($("#PaidAmount").val());
+        if (TAmt > 0 && pAmt > 0) {
+
+            var balAmt = (TAmt - pAmt);
+            $("#BalanceAmount").val(balAmt.toFixed(2));
+
+        }
+
+    });
+</script>
+
+<script type="text/javascript">
+    //jQuery(function ($) {
+
+
+    //    debugger;
+    //    $("#colorPickerBasic").shieldColorPicker({
+
+    //        value: "#33CC00",
+    //        displayInline: true,
+    //        events: {
+    //            select: function (e) {
+
+
+    //                /*$("#image-container").css("background-color", e.target.value().css());    */
+    //                $("#HDFColorCode").val(e.target.value().css());
+    //                $("#image-container").val(e.target.value().css());
+    //            }
+    //        }
+    //    });
+
+    //    $("#colorPickerAdvanced").shieldColorPicker({
+
+    //        value: "#33CC00",
+    //        palette: "advanced",
+    //        advancedPalette: {
+    //            type: "hex",
+    //            buttons: true
+    //        },
+    //        events: {
+    //            change: function (e) {
+
+    //                /* $("#image-container").css("background-color", e.target.value().css());*/
+    //                $("#HDFColorCode").val(e.target.value().css());
+    //                $("#image-container").val(e.target.value().css());
+    //            }
+    //        }
+    //    });
+    //});
+</script>

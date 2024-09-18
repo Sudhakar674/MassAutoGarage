@@ -1,0 +1,374 @@
+﻿@model MassAutoGarage.Models.ColorMaster.ColorMasterModel
+@{
+    ViewBag.Title = "Fixed Expenses Yearly";
+    ViewBag.pTitle = "Fixed Expenses Yearly";
+    ViewBag.pageTitle = "Forms";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style type="text/css">
+
+    @@media screen and (max-width: 540px) {
+        table.mobile-optimised {
+            word-wrap: break-word;
+            font-size: 1rem;
+            border: none;
+        }
+
+            table.mobile-optimised thead {
+                display: none;
+            }
+
+            table.mobile-optimised td {
+                display: block;
+                float: left; /* ie9 and under hack */
+                width: 100%;
+                clear: both;
+                background: #eee;
+                border: none;
+                padding: 10px 5px;
+                box-sizing: border-box;
+                font-size: 12px;
+            }
+
+            table.mobile-optimised tbody,
+            table.mobile-optimised tr {
+                display: block;
+            }
+
+        .mobile-optimised td:before {
+            content: attr(data-th);
+            display: block;
+            font-weight: bold;
+            margin: 0 0 2px;
+            background: #19937b;
+            color: #fff;
+            padding: 5px;
+        }
+
+        .mobile-optimised tbody tr {
+            border-bottom: 1px solid #000;
+            overflow: hidden;
+        }
+
+        .item-options,
+        .table-heading {
+            font-size: 1rem;
+        }
+
+        .mobile-optimised .numbers {
+            text-align: left;
+        }
+
+        .main-table tbody tr:nth-child(odd) td {
+            background: #ccc;
+        }
+    }
+</style>
+
+<script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
+@section styles{
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+}
+
+
+@using (Html.BeginForm("AddFixedExpensesYearly", "FixedExpensesYearly", FormMethod.Post, new { enctype = "multipart/form-data", OnSubmit = "return ValidationForm()", @class = "form-validate" }))
+{
+
+
+    <div class="row">
+        <div class="col-lg-12">
+
+
+
+            <div class="card">
+                <div class="card-header main-f">
+                    <div class="row">
+                        <div class="col-md-6 col-5"> <h5 class="card-title mb-0 gp-detail"> FIXED EXPENSES YEARLY</h5></div>
+                        <div class="col-md-6 col-7">
+                            <a href="@Url.Action("Index","FixedExpensesYearly")" class="btn btn-primary add-new" style="float:right;" tabindex="1"> <i class="ri-add-circle-line align-middle me-1"></i>BACK TO FIXED EXPENSES YEARLY LIST</a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                @*<div class="card main-f p-2">
+                    <div class="row">
+                        <div class="col-md-6 col-5"> <h5 class="card-title mb-0 gp-detail">FIXED EXPENSES YEARLY</h5></div>
+                        <div class="col-md-6 col-7">
+                            <a href="@Url.Action("Index","FixedExpensesYearly")" class="btn btn-primary add-new" style="float:right;" tabindex="1"> <i class="fa fa-arrow-left  align-middle me-1"></i> BACK TO FIXED EXPENSES YEARLY LIST</a>
+                        </div>
+                    </div>*@
+
+                    @*<div class="card">
+                <div class="card-header align-items-center d-flex">
+                    <h4 class="card-title mb-0 flex-grow-1">FIXED EXPENSES YEARLY</h4>
+                    <div class="flex-shrink-0">
+                        <div class="form-check form-switch form-switch-right form-switch-md">
+                            <a href="@Url.Action("Index","FixedExpensesYearly")" class="btn btn-primary" style="float:right;" tabindex="6"><i class="fa fa-list" aria-hidden="true"></i> BACK TO FIXED EXPENSES YEARLY LIST</a>
+                        </div>
+                    </div>
+                </div>*@
+
+
+                    <!-- end card header -->
+                    <div class="card-body">
+                        <div class="live-preview">
+                            <div class="row gy-4">
+
+                                <div class="col-xxl-4 col-md-4">
+                                    <div>
+                                        <label for="labelInput" class="form-label">Branch Name <code>*</code></label>
+                                        <select id="ddlBranch" class="js-example-basic-single">
+                                            <option value="Select">Select</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-4 col-md-4">
+                                    <div>
+                                        <label for="labelInput" class="form-label">From Date <code>*</code></label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+
+
+                                <div class="col-xxl-4 col-md-4">
+                                    <div>
+                                        <label for="labelInput" class="form-label">Company Name <code>*</code></label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+
+
+                                <div class="col-xxl-4 col-md-4">
+                                    <div>
+                                        <label for="labelInput" class="form-label">To Date <code>*</code></label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+
+                                <div class="col-xxl-4 col-md-4">
+                                    <div>
+                                        <label for="labelInput" class="form-label">Voucher No <code>*</code></label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="col-xxl-4 col-md-4">
+                                    <div>
+                                        <label for="labelInput" class="form-label">Status <code>*</code></label>
+                                        <select id="ddlStatus" class="js-example-basic-single">
+                                            <option value="Select">Select</option>
+                                        </select>
+                                    </div>
+                                </div><br />
+
+                                <hr />
+
+                                <div class="col-xxl-12 col-md-12">
+                                    <div>
+                                        <h5 class="card-title mb-0 flex-grow-1" style=" font-size: 15px;"> <i class="ri-send-plane-2-fill"> </i>  ADD DETAILS</h5>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-xxl-12 col-md-12">
+                                    <div>
+                                        <label for="labelInput" class="form-label">Description <code>*</code></label>
+                                        <textarea class="form-control"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="col-xxl-3 col-md-3">
+                                    <div>
+                                        <label for="labelInput" class="form-label">Yearly Amount<code>*</code></label>
+                                        <input type="text" class="form-control" id="txtyearlyAmt" />
+                                    </div>
+                                </div>
+                                <div class="col-xxl-3 col-md-3">
+                                    <div>
+                                        <label for="labelInput" class="form-label">Monthly Amount<code>*</code></label>
+                                        <input type="text" class="form-control" disabled id="txtmonthly" />
+                                    </div>
+                                </div>
+                                <div class="col-xxl-3 col-md-3">
+                                    <div>
+                                        <label for="labelInput" class="form-label">Daily Amount<code>*</code></label>
+                                        <input type="text" class="form-control" disabled id="txtdaily" />
+                                    </div>
+                                </div>
+
+                                <div class="col-xxl-3 col-md-3">
+                                    <div>
+                                        <a href="#" class="btn btn-success" style=" margin-top: 11%;">Add</a>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="table-responsive">
+
+                                    <table id="addDetails" class="display table table-bordered mobile-optimised">
+                                        <thead>
+                                            <tr style="background-color:aliceblue">
+                                                <th style="white-space:nowrap">S.No. </th>
+                                                <th style="white-space:nowrap">Description </th>
+                                                <th style="white-space:nowrap">Yearly Amount</th>
+                                                <th style="white-space:nowrap">Monthly Amount</th>
+                                                <th style="white-space:nowrap">Daily Amount</th>
+                                                <th style="white-space: nowrap; width: 10%;">Action</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td data-th="S.No.">1.</td>
+                                                <td data-th="Description"></td>
+                                                <td data-th="Yearly Amount"></td>
+                                                <td data-th="Monthly Amount"></td>
+                                                <td data-th="Daily Amount"></td>
+
+                                                <td data-th="Action">
+                                                    <a href="#" class="btn btn-sm btn-danger remove-item-btn" tabindex="6"> Delete</a>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+
+
+                                </div>
+
+                                <div class="col-xxl-4 col-md-4">
+                                    <div>
+                                        <label for="labelInput" class="form-label">Yearly</label>
+                                        <input type="text" class="form-control" disabled id="txttotalYearly" value="0.00" />
+                                    </div>
+                                </div>
+                                <div class="col-xxl-4 col-md-4">
+                                    <div>
+                                        <label for="labelInput" class="form-label">Monthly</label>
+                                        <input type="text" class="form-control" disabled id="txttotamonthly" value="0.00" />
+                                    </div>
+                                </div>
+                                <div class="col-xxl-4 col-md-4">
+                                    <div>
+                                        <label for="labelInput" class="form-label">Daily</label>
+                                        <input type="text" class="form-control" disabled id="txttotalDaily" value="0.00" />
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end row-->
+                        </div>
+
+                    </div>
+
+                    <div class="col-xxl-12 col-md-12">
+                        <div class="form-floating" style="float: right; padding-right: 2%;">
+
+                            <input type="button" value="Save" id="btnSave" class="btn btn-primary" tabindex="5" />
+                            <a href="#" class="btn btn-danger" tabindex="4">Reset</a>
+
+                        </div>
+                    </div>
+                    <br />
+                </div>
+
+
+            </div>
+
+            <!--end col-->
+        </div>
+
+
+
+}
+
+
+@section scripts{
+
+
+    <!--select2 cdn-->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script src="~/assets/js/pages/select2.init.js"></script>
+    <script src="~/assets/libs/prismjs/prism.js"></script>
+    <script src="~/assets/js/app.js"></script>
+
+    <!-- prismjs plugin -->
+    <!-- App js -->
+
+
+}
+
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+@*<link rel="stylesheet" href="/resources/demos/style.css">*@
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+        var options = $.extend({},
+            $.datepicker.regional["es"], {
+            dateFormat: "dd/mm/yy",
+            changeMonth: true,
+            changeYear: true,
+            /* yearRange: "-2:+0",*/
+            todayHighlight: true,
+            /*highlightWeek: true,*/
+            /*maxDate: 0*/
+        });
+        $("#txttoDate").datepicker(options);
+
+        var options = $.extend({},
+            $.datepicker.regional["es"], {
+            dateFormat: "dd/mm/yy",
+            changeMonth: true,
+            changeYear: true,
+            /* yearRange: "-2:+0",*/
+            todayHighlight: true,
+            /*highlightWeek: true,*/
+            /*maxDate: 0*/
+        });
+        $("#txtfromDate").datepicker(options);
+
+    })
+
+    $("#txtyearlyAmt").change(function () {
+        debugger;
+        var yearlyamt = parseFloat($("#txttotalYearly").val());
+        var monthlyamt = parseFloat($("#txttotamonthly").val());
+        var dailyamt = parseFloat($("#txttotalDaily").val());
+
+        var yrly = parseFloat($("#txtyearlyAmt").val());
+        if (!isNaN(parseFloat(yrly))) {
+
+            yearlyamt = (yearlyamt + yrly);
+            monthlyamt = (monthlyamt + (yrly / 12));
+            dailyamt = (dailyamt + (yrly / 365));
+        }
+
+        $("#txttotalYearly").val(yearlyamt);
+        $("#txttotamonthly").val(monthlyamt.toFixed(2));
+        $("#txttotalDaily").val(dailyamt.toFixed(2));
+        $("#txtmonthly").val(monthlyamt.toFixed(2));
+        $("#txtdaily").val(dailyamt.toFixed(2));
+        
+
+    })
+
+
+
+
+
+</script>
+

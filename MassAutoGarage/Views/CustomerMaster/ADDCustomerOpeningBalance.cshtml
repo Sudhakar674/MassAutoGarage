@@ -1,0 +1,401 @@
+﻿@model MassAutoGarage.Models.CustomerMaster.CustomerOpeningBalanceModel
+@{
+    ViewBag.Title = "Customr Opening Balance";
+    ViewBag.pTitle = "Customr Opening Balance Master";
+    ViewBag.pageTitle = "Forms";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int i = 1;
+}
+
+
+
+<script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
+@section styles{
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+}
+
+
+@using (Html.BeginForm("ADDCustomerOpeningBalance", "CustomerMaster", FormMethod.Post, new { enctype = "multipart/form-data", OnSubmit = "return ValidationForm()", @class = "form-validate" }))
+{
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header main-f">
+                    <div class="row">
+                        <div class="col-md-6 col-5"> <h5 class="card-title mb-0 gp-detail">CREATE OPENING BALANCE</h5></div>
+                        <div class="col-md-6 col-7">
+                            <a href="@Url.Action("CustomerOpeningBalance","CustomerMaster")" class="btn btn-primary add-new" style="float:right;" tabindex="1"> <i class="fa fa-arrow-left align-middle me-1"></i> BACK TO LIST</a>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                @*<div class="card-header align-items-center d-flex">
+            <h4 class="card-title mb-0 flex-grow-1">CREATE OPENING BALANCE</h4>
+            <div class="flex-shrink-0">
+                <div class="form-check form-switch form-switch-right form-switch-md">
+                    <a href="@Url.Action("CustomerOpeningBalance","CustomerMaster")" class="btn btn-primary" style="float:right;" tabindex="18"><i class="fa fa-list" aria-hidden="true"></i> BACK TO LIST</a>
+                </div>
+            </div>
+        </div>*@
+
+
+                <!-- end card header -->
+                <div class="card-body">
+                    <div class="live-preview">
+                        <div class="row gy-4">
+                            <div class="col-xxl-3 col-md-4">
+                                <div>
+                                    <label for="labelInput" class="form-label">Company Name <code>*</code></label>
+                                    @Html.DropDownListFor(x => x.CompanyID, new SelectList(ViewBag.Company, "Value", "Text"), "--Select Company Name--", new { @class = "js-example-basic-single", tabindex = 1 })
+                                    @Html.HiddenFor(m => m.CompanyID, new { @class = "form-control", })
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-md-4">
+                                <div>
+                                    <label for="labelInput" class="form-label">Job Card Date <code>*</code></label>
+                                    @Html.HiddenFor(m => m.ID, new { @class = "form-control", @id = "HDFID" })
+                                    @Html.TextBoxFor(m => m.JobCardDate, new { @class = "form-control", tabindex = 2, @readonly = "readonly" })
+                                    @Html.ValidationMessageFor(m => m.JobCardDate, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-md-4">
+                                <div>
+                                    <label for="labelInput" class="form-label">Job Card Number <code>*</code></label>
+
+                                    @Html.TextBoxFor(m => m.JobCardNumber, new { @class = "form-control", tabindex = 3, onkeypress = "return Validate(event);" })
+                                    @Html.ValidationMessageFor(m => m.JobCardNumber, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+
+                                </div>
+                            </div>
+                            <hr />
+
+
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            <i class="ri-send-plane-2-fill"></i> <h6 class="card-title mb-0 flex-grow-1" style=" font-size: 13px;"> ADD DETAILS</h6>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <div class="row gy-4">
+
+                                                <div class="col-xxl-3 col-md-4">
+                                                    <div>
+                                                        <label for="labelInput" class="form-label">To Account Name <code>*</code></label>
+                                                        @Html.DropDownListFor(x => x.ToAccountID, new SelectList(ViewBag.ToAccountNameList, "Value", "Text"), "--Select Company Name--", new { @class = "js-example-basic-single", tabindex = 4 })
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xxl-3 col-md-4">
+                                                    <div>
+                                                        <label for="labelInput" class="form-label">Invoice Date <code>*</code></label>
+                                                        @Html.TextBoxFor(m => m.InvoiceDate, new { @class = "form-control", tabindex = 5, @readonly = true })
+                                                        @Html.ValidationMessageFor(m => m.InvoiceNumber, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xxl-3 col-md-4">
+                                                    <div>
+                                                        <label for="labelInput" class="form-label">Invoice Number<code>*</code></label>
+                                                        @Html.TextBoxFor(m => m.InvoiceNumber, new { @class = "form-control", tabindex = 6, onkeypress = "return Validate(event);" })
+                                                        @Html.ValidationMessageFor(m => m.InvoiceNumber, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xxl-2 col-md-2">
+                                                    <div>
+                                                        <label for="labelInput" class="form-label">LPO NO.<code>*</code></label>
+                                                        @Html.TextBoxFor(m => m.LPONO, new { @class = "form-control", tabindex = 7 })
+                                                        @Html.ValidationMessageFor(m => m.LPONO, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xxl-2 col-md-2">
+                                                    <div>
+                                                        <label for="labelInput" class="form-label">Est NO.<code>*</code></label>
+                                                        @Html.TextBoxFor(m => m.EstNo, new { @class = "form-control", tabindex = 8 })
+                                                        @Html.ValidationMessageFor(m => m.EstNo, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xxl-2 col-md-2">
+                                                    <div>
+                                                        <label for="labelInput" class="form-label">Total Amount<code>*</code></label>
+                                                        @Html.TextBoxFor(m => m.TotalAmount, new { @class = "form-control", tabindex = 9 })
+                                                        @Html.ValidationMessageFor(m => m.TotalAmount, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xxl-2 col-md-2">
+                                                    <div>
+                                                        <label for="labelInput" class="form-label">Paid Amount<code>*</code></label>
+                                                        @Html.TextBoxFor(m => m.PaidAmount, new { @class = "form-control", tabindex = 10 })
+                                                        @Html.ValidationMessageFor(m => m.PaidAmount, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xxl-2 col-md-2">
+                                                    <div>
+                                                        <label for="labelInput" class="form-label">Balance Amount<code>*</code></label>
+                                                        @Html.TextBoxFor(m => m.BalanceAmount, new { @class = "form-control", tabindex = 11, @readonly = "readonly" })
+                                                        @Html.ValidationMessageFor(m => m.BalanceAmount, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xxl-2 col-md-2">
+                                                    <div>
+                                                        <button id="btnAdd" type="button" class="btn btn-primary" tabindex="12" style="margin-top:18%;"><i class="ri-add-circle-line align-middle me-1"></i> ADD</button>
+                                                    </div>
+                                                </div>
+                                                <!--end col-->
+                                                <br /><hr />
+
+                                                <div class="table-responsive">
+
+                                                    <table id="example" class="display table table-bordered" style="width:100%">
+                                                        <thead>
+                                                            <tr>
+                                                                <th style=" width: 3%;">SL.</th>
+
+                                                                <th>To Account</th>
+                                                                <th>InvoiceDate </th>
+                                                                <th>Invoice No</th>
+                                                                <th>LPO No</th>
+                                                                <th>EST No.</th>
+                                                                <th>Total Amt.</th>
+                                                                <th>Paid Amt.</th>
+                                                                <th>Balance Amt.</th>
+                                                                <th style=" width:12%">Action</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody id="tBody2">
+                                                            @if (ViewBag.OpeningBalanceDetails != null)
+                                                            {
+                                                                foreach (var item in ViewBag.OpeningBalanceDetails)
+                                                                {
+
+                                                                    <tr>
+                                                                        <td>
+                                                                            @i
+                                                                            <input type="hidden" class="clsToAccountID" value="@item.ToAccountID" />
+                                                                        </td>
+                                                                        <td>
+                                                                            @item.ToAccountName
+                                                                        </td>
+                                                                        <td>
+                                                                            @item.InvoiceDate
+                                                                        </td>
+                                                                        <td>
+                                                                            @item.InvoiceNumber
+                                                                        </td>
+                                                                        <td>
+                                                                            @item.LPONO
+                                                                        </td>
+                                                                        <td>
+                                                                            @item.EstNo
+                                                                        </td>
+                                                                        <td>
+                                                                            @item.TotalAmount
+                                                                        </td>
+                                                                        <td>
+                                                                            @item.PaidAmount
+                                                                        </td>
+                                                                        <td>
+                                                                            @item.BalanceAmount
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="d-flex gap-2">
+                                                                                <div class="remove">
+                                                                                    <a href="#" class="btn btn-sm btn-danger remove-item-btn DeleteTr" id="btnDelete"><i class="fa fa-trash" aria-hidden="true"></i> Delete </a>
+
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    i++;
+                                                                }
+
+
+                                                            }
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+
+
+                                                <!--end col-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <br />
+
+                            <div class="accordion" id="accordionPanelsStayOpenExample" style="display:none">
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree" tabindex="13">
+                                            <i class="ri-send-plane-2-fill"></i>  <h6 class="card-title mb-0 flex-grow-1" style=" font-size: 13px;">  UPLOAD EXCEL FILE</h6>
+                                        </button>
+                                    </h2>
+                                    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                                        <div class="accordion-body">
+                                            <div class="row gy-4" style=" margin-top: 1%;">
+                                                <div class="col-xxl-3 col-md-4">
+                                                    <div>
+                                                        <label for="labelInput" class="form-label"> Upload Excel File <code>*</code></label>
+                                                        <input type="file" class="form-control" id="ExcelUpload" tabindex="14" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-xxl-3 col-md-4">
+                                                    <div>
+
+                                                        <input type="button" id="btnupload" class="btn btn-primary" value="Upload Excel" style=" margin-top: 9%;" tabindex="15" />
+
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--end row-->
+                    </div>
+
+                </div>
+
+                <div class="col-xxl-12 col-md-12">
+                    <div class="form-floating" style="float: right; padding-right: 2%;">
+                        <a href="@Url.Action("CustomerOpeningBalance","CustomerMaster")" class="btn btn-danger" tabindex="16">Cancel</a>
+                        <input type="button" value="Save" id="btnSave" class="btn btn-primary" tabindex="17" />
+
+                    </div>
+                </div>
+                <br />
+            </div>
+
+
+        </div>
+
+        <!--end col-->
+    </div>
+}
+
+
+@section scripts{
+
+
+    <!--select2 cdn-->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script src="~/assets/js/pages/select2.init.js"></script>
+    <script src="~/assets/libs/prismjs/prism.js"></script>
+    <script src="~/assets/js/app.js"></script>
+
+    <!-- prismjs plugin -->
+    <!-- App js -->
+
+
+}
+
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+@*<link rel="stylesheet" href="/resources/demos/style.css">*@
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="~/MyApp/CustomerOpeningBalance.js"></script>
+<script>
+    $(document).ready(function () {
+
+        var options = $.extend({},
+            $.datepicker.regional["es"], {
+            dateFormat: "dd/mm/yy",
+            changeMonth: true,
+            changeYear: true,
+            /* yearRange: "-2:+0",*/
+            todayHighlight: true,
+            /*highlightWeek: true,*/
+            /*maxDate: 0*/
+        });
+        $("#InvoiceDate").datepicker(options);
+        var options = $.extend({},
+            $.datepicker.regional["es"], {
+            dateFormat: "dd/mm/yy",
+            changeMonth: true,
+            changeYear: true,
+            /* yearRange: "-2:+0",*/
+            todayHighlight: true,
+            /*highlightWeek: true,*/
+            /*maxDate: 0*/
+        });
+        $("#JobCardDate").datepicker(options);
+
+    })
+
+
+</script>
+
+<script type="text/javascript">
+    //jQuery(function ($) {
+
+
+    //    debugger;
+    //    $("#colorPickerBasic").shieldColorPicker({
+
+    //        value: "#33CC00",
+    //        displayInline: true,
+    //        events: {
+    //            select: function (e) {
+
+
+    //                /*$("#image-container").css("background-color", e.target.value().css());    */
+    //                $("#HDFColorCode").val(e.target.value().css());
+    //                $("#image-container").val(e.target.value().css());
+    //            }
+    //        }
+    //    });
+
+    //    $("#colorPickerAdvanced").shieldColorPicker({
+
+    //        value: "#33CC00",
+    //        palette: "advanced",
+    //        advancedPalette: {
+    //            type: "hex",
+    //            buttons: true
+    //        },
+    //        events: {
+    //            change: function (e) {
+
+    //                /* $("#image-container").css("background-color", e.target.value().css());*/
+    //                $("#HDFColorCode").val(e.target.value().css());
+    //                $("#image-container").val(e.target.value().css());
+    //            }
+    //        }
+    //    });
+    //});
+</script>

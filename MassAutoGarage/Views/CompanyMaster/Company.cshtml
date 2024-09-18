@@ -1,0 +1,411 @@
+﻿@model MassAutoGarage.Models.CompanyMasterModel
+@{
+    ViewBag.Title = "Company";
+    ViewBag.pTitle = "Company Master";
+    ViewBag.pageTitle = "Forms";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section styles{
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+}
+<!-- New Dive-->
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+
+            <div class="card-header main-f">
+                <div class="row">
+                    <div class="col-md-6 col-5"> <h5 class="card-title mb-0 gp-detail">GROUP DETAILS</h5></div>
+                    <div class="col-md-6 col-7">
+                        <a href="@Url.Action("GroupMaster","Master")" class="btn btn-primary add-new" style="float:right;" tabindex="1"> <i class="fa fa-arrow-left  align-middle me-1"></i> ADD NEW GROUP</a>
+                    </div>
+                </div>
+                @*<h5 class="card-title mb-0">GROUP DETAILS</h5>*@
+                @*<a href="@Url.Action("GroupMaster","Master")" class="btn btn-primary" style="float:right;" tabindex="1"> <i class="ri-add-circle-line align-middle me-1"></i> ADD NEW GROUP</a>*@
+
+            </div>
+            @*<div class="card-header align-items-center d-flex">
+            <h4 class="card-title mb-0 flex-grow-1">ADD-COMPANY </h4>
+            <div class="flex-shrink-0">
+                <div class="form-check form-switch form-switch-right form-switch-md">
+                    <a href="@Url.Action("Index", "CompanyMaster")" class="btn btn-primary" style="float:right;" tabindex="12"><i class="fa fa-list" aria-hidden="true"></i> Back To Company List</a>
+                </div>
+            </div>
+        </div>*@
+
+
+
+
+            <!-- end card header -->
+            <div class="card-body">
+                <div class="live-preview">
+                    <div class="row gy-4">
+                        <div class="col-xxl-3 col-md-4">
+                            <div>
+                                <label for="basiInput" class="form-label">Code <code>*</code></label>
+                                @Html.HiddenFor(m => m.Id, new { @id = "HDFID" })
+                                @Html.HiddenFor(m => m.CurrentCount, new { @id = "HDFCurrentCount" })
+                                @Html.TextBoxFor(m => m.Code, new { @class = "form-control", @readonly = true, tabindex = 1 })
+                                @Html.ValidationMessageFor(m => m.Code, "", new { @class = "text-danger" })
+
+
+                            </div>
+                        </div>
+                        <!--end col-->
+                        <div class="col-xxl-3 col-md-4">
+                            <div>
+                                <label for="labelInput" class="form-label">Group Name <code>*</code></label>
+                                @Html.DropDownListFor(x => x.GroupID, new SelectList(ViewBag.Group, "Value", "Text"), "--Select Group--", new { @class = "js-example-basic-single", tabindex = 2 })
+                                @Html.ValidationMessageFor(m => m.GroupID, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <!--end col-->
+                        <div class="col-xxl-3 col-md-4">
+                            <div>
+                                <label for="placeholderInput" class="form-label">
+                                    Company Name <code>*</code>
+                                </label>
+                                @Html.TextBoxFor(m => m.CompanyName, new { @class = "form-control", tabindex = 3 })
+                                @Html.ValidationMessageFor(m => m.CompanyName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <!--end col-->
+                        <div class="col-xxl-3 col-md-4">
+                            <div>
+                                <label for="valueInput" class="form-label">TRN <code>*</code></label>
+                                @Html.TextBoxFor(m => m.TRN, new { @class = "form-control", tabindex = 4 })
+                                @Html.ValidationMessageFor(m => m.TRN, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+                        <!--end col-->
+                        <div class="col-xxl-3 col-md-4">
+                            <div>
+                                <label for="readonlyPlaintext" class="form-label">
+                                    Location Map Url
+                                </label>
+                                @Html.TextBoxFor(m => m.LocationMapUrl, new { @class = "form-control", tabindex = 5 })
+                                @Html.ValidationMessageFor(m => m.LocationMapUrl, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <!--end col-->
+                        <div class="col-xxl-3 col-md-4">
+                            <div>
+                                <label for="readonlyInput" class="form-label">Email <code>*</code></label>
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", tabindex = 6 })
+                                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-md-4">
+                            <div>
+                                <label for="labelInput" class="form-label">Status <code>*</code></label>
+                                @Html.DropDownListFor(x => x.IsActive, new List<SelectListItem>{
+                                 new SelectListItem { Text = "Active", Value = "1"},
+                                 new SelectListItem { Text = "InActive", Value = "0"},
+                                 }, new { @class = "form-select mb-3", tabindex = 7 })
+
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-md-4">
+                            <div>
+                                <label for="labelInput" class="form-label">Company Logo <code>*</code></label>
+                                @Html.TextBoxFor(x => x.CompanyLogo, new { @type = "file", @class = "form-control", tabindex = 8 })
+                            </div>
+                        </div>
+                        <!--end col-->
+                        <div class="col-xxl-12 col-md-12">
+                            <div>
+                                <label for="disabledInput" class="form-label">Address <code>*</code></label>
+                                @Html.TextAreaFor(m => m.Address, new { @class = "form-control", tabindex = 9 })
+                                @Html.ValidationMessageFor(m => m.Address, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-12 col-md-12">
+                            <div class="form-floating" style="float:right;">
+
+                                <a href="@Url.Action("Index", "CompanyMaster")" class="btn btn-danger" tabindex="10">Cancel</a>
+                                <input type="button" value="Save" id="btnSave" class="btn btn-primary" tabindex="11" />
+
+                            </div>
+                        </div>
+                        <!--end col-->
+                    </div>
+                    <!--end row-->
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--end col-->
+</div>
+
+
+@section scripts{
+    <!-- prismjs plugin -->
+    <script src="~/assets/libs/prismjs/prism.js"></script>
+    <script src="~/assets/js/pages/form-validation.init.js"></script>
+    <script src="~/assets/js/app.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script src="~/assets/js/pages/select2.init.js"></script>
+    <script src="~/assets/libs/prismjs/prism.js"></script>
+    <script src="~/assets/js/app.js"></script>
+
+}
+@*<script src="~/Scripts/jquery-3.4.1.min.js"></script>*@
+<script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
+
+
+@*<script src="~/Content/js/jquery.min.js"></script>*@
+
+<script>
+    $(document).ready(function () {
+
+
+
+    });
+
+
+
+
+
+     $('#TRN').keypress(function (e) {
+         debugger;
+         if (String.fromCharCode(e.keyCode).match(/[^0-9]/g)) return false;
+     });
+
+
+      var maxLength = 50;
+    $('#CompanyName').change(function () {
+        debugger;
+        var textlen = $(this).val().length;
+
+        if (textlen > maxLength) {
+
+            $('#CompanyName').val("");
+            swal("Warning", " Accept only 50 Character !", "warning");
+
+        } else {
+
+        }
+
+    });
+
+    var maxLength2 = 20;
+    $('#TRN').change(function () {
+        debugger;
+        var textlen = $(this).val().length;
+
+        if (textlen > maxLength2) {
+
+            $('#TRN').val("");
+            swal("Warning", " Accept only 20 Character !", "warning");
+
+        } else {
+
+        }
+
+    });
+
+    $('#CompanyName').keypress(function (e) {
+        debugger;
+        var regex = new RegExp("^[a-zA-Z ]+$");
+        var strigChar = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+        if (regex.test(strigChar)) {
+            return true;
+        }
+        return false
+    });
+
+
+
+    $("#btnSave").click(function (e) {
+        debugger;
+        e.preventDefault();
+
+        var _code = $("#Code").val();
+        var _GroupID = $("#GroupID option:selected").val();
+        var _CompanyName = $("#CompanyName").val();
+        var _TRN = $("#TRN").val();
+        var _LocationMapUrl = $("#LocationMapUrl").val();
+        var _Email = $("#Email").val();
+        var _Address = $("#Address").val();
+        var _companyId = $("#HDFID").val();
+        var _CurrentCount = $("#HDFCurrentCount").val();
+        var _IsActive = $("#IsActive option:selected").val();
+
+        if (_code != "" && _GroupID != "" && _CompanyName != "" && _TRN != "" && _Email != "" && _Address != "") {
+
+            var ProductListArr = [];
+            var ProductList = {
+                Id: _companyId,
+                CurrentCount: _CurrentCount,
+                Code: _code,
+                GroupID: _GroupID,
+                CompanyName: _CompanyName,
+                Address: _Address,
+                TRN: _TRN,
+                Email: _Email,
+                LocationMapUrl: _LocationMapUrl,
+                IsActive: _IsActive
+
+            };
+            //ProductListArr.push(ProductList);
+
+            if (confirm("Are you sure you want to continue ?")) {
+                $.ajax({
+                    type: 'POST',
+                    url: '/CompanyMaster/SaveCompanyMaster',
+                    data: JSON.stringify(ProductList),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: 'json',
+                    success: function (data) {
+                        debugger;
+                        if (data == "1") {
+                            debugger;
+                            swal({
+                                title: "Success",
+                                text: "Records Successfully Saved",
+                                type: "success",
+                            }).then(function (isConfirm) {
+                                if (isConfirm) {
+                                    var url = "/CompanyMaster/Index";
+                                    window.location.href = url;
+                                } else {
+
+                                }
+                            });
+
+                        }
+                        else if (data == "2") {
+
+                            swal({
+                                title: "Success",
+                                text: "Records Successfully Updated",
+                                type: "success",
+                            }).then(function (isConfirm) {
+                                if (isConfirm) {
+                                    var url = "/CompanyMaster/Index";
+                                    window.location.href = url;
+                                } else {
+
+                                }
+                            });
+                        }
+                        else if (data == "4") {
+                            swal("Warning", "This Code is Already Exist !", "warning");
+                        } else {
+
+                            swal("Warning", "Record not save!", "warning");
+                        }
+
+                    },
+                    error: function (httpResponse) {
+
+                        swal("Warning", "Something Went to Wrong!", "warning");
+
+                    }
+                })
+            }
+        }
+        else {
+
+            if (_code == "") {
+                swal("Warning", "Please Enter Code !", "warning");
+                return false;
+            }
+            if (_GroupID == "") {
+                swal("Warning", "Please Select Group Name!", "warning");
+                return false;
+            }
+            if (_CompanyName == "") {
+                swal("Warning", "Please Enter Company Name!", "warning");
+                return false;
+            }
+            if (_TRN == "") {
+                swal("Warning", "Please Enter TRN !", "warning");
+                return false;
+            }
+
+            if (_Email == "") {
+                swal("Warning", "Please Enter Email Address!", "warning");
+                $("#Email").val('');
+                return false;
+            }
+            if (_Address == "") {
+                swal("Warning", "Please Enter Address!", "warning");
+                return false;
+            }
+        }
+
+    })
+
+    $("#Email").change(function () {
+        debugger;
+        var inputvalues = $(this).val();
+        var regex = /^([a-zA-Z0-9_\.\-\+])+\@@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+        // const regex =/^([a-zA-Z0-9_\.\-\+])+\@@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+        if (!regex.test(inputvalues)) {
+            swal("Warning", "Invalid Email Please Enter Valid Email!", "warning");
+            $("#Email").val("");
+            return regex.test(inputvalues);
+        }
+    });
+
+    $('#CompanyLogo').change(function () {
+        debugger;
+        // Checking whether FormData is available in browser
+        if (window.FormData !== undefined) {
+
+            var fileUpload = $("#CompanyLogo").get(0);
+            var files = fileUpload.files;
+
+            // Create FormData object
+            var fileData = new FormData();
+
+            // Looping over all files and add it to FormData object
+            for (var i = 0; i < files.length; i++) {
+                fileData.append(files[i].name, files[i]);
+            }
+
+            // Adding one more key to FormData object
+            fileData.append('username', 'Manas');
+
+            $.ajax({
+                url: '/CompanyMaster/UploadLogo',
+                type: "POST",
+                contentType: false, // Not to set any content header
+                processData: false, // Not to process data
+                data: fileData,
+                success: function (result) {
+
+                    if (result == "File size Should Be UpTo 7 KB !") {
+
+                        $("#CompanyLogo").val("");
+                        swal("Warning", result, "warning")
+                    }
+                    else {
+
+
+                    }
+                },
+                error: function (err) {
+                    alert(err.statusText);
+                }
+            });
+        } else {
+            alert("FormData is not supported.");
+        }
+    });
+       
+</script>
+
+

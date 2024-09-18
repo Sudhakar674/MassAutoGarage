@@ -1,0 +1,683 @@
+﻿@model MassAutoGarage.Models.AddOnsMaster.AddOnsMasterModel
+@{
+    ViewBag.Title = "Delivery Note";
+    ViewBag.pTitle = "Delivery Note";
+    ViewBag.pageTitle = "Forms";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+
+    .main-table {
+        width: 100%;
+        /*  max-width: 980px;*/
+        /* change to suit*/
+        margin: auto;
+        border: 1px solid #4b38af;
+        border-collapse: collapse;
+    }
+
+        .main-table thead th {
+            background: #4b38af;
+            color: #fff;
+            color: #fff;
+            font-size: 0.8rem;
+            padding: 5px 9px 6px 9px;
+            line-height: 1;
+            border: 1px solid #626060;
+        }
+
+        .main-table th,
+        .main-table td {
+            vertical-align: top;
+            text-align: left;
+            border: 1px solid #626060;
+        }
+
+    td.numbers {
+        text-align: center;
+    }
+
+    .main-table td {
+        font-size: 13px; /* font-size: 0.7rem;*/
+        padding: 3px 9px;
+        border-bottom: 1px solid #999; /* dotted borders look bad on tables*/
+        line-height: 1.2;
+    }
+
+    .table-heading {
+        font-size: 0.7rem;
+        margin: 0 0 0.5em;
+    }
+
+    .item-options {
+        margin: 0 0 0.5rem;
+        overflow: hidden;
+        clear: both;
+    }
+
+        .item-options dt {
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .item-options dt,
+        .item-options dd {
+            display: inline-block;
+            margin: 0;
+            padding: 0 5px 0 0;
+            vertical-align: top;
+        }
+
+            .item-options dt:after {
+                content: ":";
+            }
+
+    .main-table tbody tr:nth-child(odd) td {
+        background: #f9f9f9;
+    }
+
+    @@media screen and (max-width: 540px) {
+        table.mobile-optimised {
+            word-wrap: break-word;
+            font-size: 1rem;
+            border: none;
+        }
+
+            table.mobile-optimised thead {
+                display: none;
+            }
+
+            table.mobile-optimised td {
+                display: block;
+                float: left; /* ie9 and under hack */
+                width: 100%;
+                clear: both;
+                background: #eee;
+                border: none;
+                padding: 10px 5px;
+                box-sizing: border-box;
+                font-size: 12px;
+            }
+
+            table.mobile-optimised tbody,
+            table.mobile-optimised tr {
+                display: block;
+            }
+
+        .mobile-optimised td:before {
+            content: attr(data-th);
+            display: block;
+            font-weight: bold;
+            margin: 0 0 2px;
+            background: #4b38af;
+            color: #fff;
+            padding: 5px;
+        }
+
+        .mobile-optimised tbody tr {
+            border-bottom: 1px solid #000;
+            overflow: hidden;
+        }
+
+        .item-options,
+        .table-heading {
+            font-size: 1rem;
+        }
+
+        .mobile-optimised .numbers {
+            text-align: left;
+        }
+
+        .main-table tbody tr:nth-child(odd) td {
+            background: #ccc;
+        }
+    }
+</style>
+
+<script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
+@section styles{
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+}
+
+
+@using (Html.BeginForm("AddRetailerEstimation", "RetailerEstimation", FormMethod.Post, new { enctype = "multipart/form-data", OnSubmit = "return ValidationForm()", @class = "form-validate", @id = "myformid" }))
+{
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+
+                <div class="card-header main-f">
+                    <div class="row">
+                        <div class="col-md-6 col-5"> <h5 class="card-title mb-0 gp-detail">CREATE DELIVERY NOTE</h5></div>
+                        <div class="col-md-6 col-7">
+                            <a href="@Url.Action("Index","RetailDeliveryNote")" class="btn btn-primary add-new" style="float:right;" tabindex="1"> <i class="fa fa-arrow-left align-middle me-1"></i> BACK TO DELIVERY NOTE LIST</a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                @*<div class="card-header align-items-center d-flex">
+            <h4 class="card-title mb-0 flex-grow-1">CREATE DELIVERY NOTE</h4>
+            <div class="flex-shrink-0">
+                <div class="form-check form-switch form-switch-right form-switch-md">
+                    <a href="@Url.Action("Index","RetailDeliveryNote")" class="btn btn-primary" style="float:right;" tabindex="7"><i class="fa fa-list" aria-hidden="true"></i> BACK TO DELIVERY NOTE LIST</a>
+                </div>
+            </div>
+        </div>*@
+                <!-- end card header -->
+                <div class="card-body">
+                    <div class="live-preview">
+                        <div class="row gy-4">
+                            <div class="col-xxl-3 col-md-3">
+                                <div>
+                                    <label for="labelInput" class="form-label"> Branch Name <code>*</code></label>
+                                    <select id="ddlBranch" class="js-example-basic-single">
+                                        <option value="0">Select Branch</option>
+                                        <option value="1">Branch Name-1</option>
+                                        <option value="2">Branch Name-2</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-md-3">
+                                <div>
+                                    <label for="labelInput" class="form-label">Retail Estimation Number <code>*</code></label>
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+
+                            <div class="col-xxl-3 col-md-3">
+                                <div>
+                                    <label for="labelInput" class="form-label">Delivery Note Number <code>*</code></label>
+                                    <input type="text" class="form-control" />
+
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-md-3">
+                                <div>
+                                    <label for="labelInput" class="form-label">Bill Date <code>*</code></label>
+                                    <input type="text" class="form-control" />
+
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-md-3">
+                                <div>
+                                    <label for="labelInput" class="form-label">Customer  <code>*</code></label>
+                                    <input type="text" class="form-control" />
+
+                                </div>
+                            </div>
+
+
+                            <div class="col-xxl-3 col-md-3">
+                                <div>
+                                    <label for="labelInput" class="form-label">Payment Type <code>*</code></label>
+                                    <select id="ddlPaymenttype" class="js-example-basic-single">
+                                        <option value="0">Select </option>
+                                        <option value="1">Credit</option>
+                                        <option value="2">Cash</option>
+                                        <option value="3">Cash/Credit</option>
+                                    </select>
+
+                                </div>
+                            </div>
+
+
+                            <div class="col-xxl-3 col-md-3">
+                                <div>
+                                    <label for="labelInput" class="form-label">Mobile No  <code>*</code></label>
+                                    <input type="text" class="form-control" />
+
+                                </div>
+                            </div>
+                            <div class="col-xxl-12 col-md-12">
+                                <div>
+                                    <label for="labelInput" class="form-label">Address <code>*</code></label>
+                                    <textarea class="form-control"></textarea>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-xxl-4 col-md-4">
+                                <div>
+                                    <label for="labelInput" class="form-label">TRN <code>*</code></label>
+                                    <input type="text" class="form-control" />
+
+                                </div>
+                            </div>
+
+                            <div class="col-xxl-4 col-md-4">
+                                <div>
+                                    <label for="labelInput" class="form-label">Credit Days <code>*</code></label>
+                                    <input type="text" class="form-control" />
+
+                                </div>
+                            </div>
+                            <div class="col-xxl-4 col-md-4">
+                                <div>
+                                    <label for="labelInput" class="form-label">Due Date <code>*</code></label>
+                                    <input type="text" class="form-control" />
+
+                                </div>
+                            </div>
+                            <div class="col-xxl-4 col-md-4">
+                                <div>
+                                    <label for="labelInput" class="form-label">Delivery Date <code>*</code></label>
+                                    <input type="text" class="form-control" />
+
+                                </div>
+                            </div>
+                            <div class="col-xxl-4 col-md-4">
+                                <div>
+                                    <label for="labelInput" class="form-label">Cost Center <code>*</code></label>
+                                    <select id="ddlCostCenter" class="js-example-basic-single">
+                                        <option value="0">Select </option>
+                                        <option value="1">Credit</option>
+                                        <option value="2">Cash</option>
+                                        <option value="3">Cash/Credit</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-xxl-12 col-md-12">
+                                <div>
+                                    <label for="labelInput" class="form-label">Billing Address <code>*</code></label>
+                                    <textarea class="form-control"></textarea>
+
+                                </div>
+                            </div>
+
+                            <div class="accordion" id="accordionPanelsStayOpenExample">
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree" tabindex="11">
+                                            <i class="ri-send-plane-2-fill"></i>  <h6 class="card-title mb-0 flex-grow-1" style=" font-size: 13px;">  SPARE LOCATION</h6>
+                                        </button>
+                                    </h2>
+                                    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                                        <div class="accordion-body">
+                                            <div class="row gy-4" style=" margin-top: 1%;">
+                                                <div class="col-xxl-3 col-md-4">
+                                                    <div>
+                                                        <label for="labelInput" class="form-label">Spare </label>
+                                                        <input type="text" class="form-control" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-xxl-3 col-md-4">
+                                                    <div>
+                                                        <label for="labelInput" class="form-label">Batch Number </label>
+                                                        <input type="text" class="form-control" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-xxl-3 col-md-4">
+                                                    <div>
+                                                        <label for="labelInput" class="form-label">Week Number </label>
+                                                        <input type="text" class="form-control" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-xxl-3 col-md-2">
+                                                    <div>
+                                                        <label for="labelInput" class="form-label">Year</label>
+                                                        <input type="text" class="form-control" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-xxl-3 col-md-2">
+                                                    <div>
+                                                        <label for="labelInput" class="form-label">Bin Number </label>
+                                                        <input type="text" class="form-control" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-xxl-3 col-md-4">
+                                                    <div>
+                                                        <label for="labelInput" class="form-label">Rack </label>
+                                                        <input type="text" class="form-control" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-xxl-3 col-md-4">
+                                                    <div>
+                                                        <label for="labelInput" class="form-label">Common Search </label>
+                                                        <input type="text" class="form-control" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-xxl-12 col-md-12">
+                                                    <div style=" float: right;">
+                                                        <input type="button" value="Add" id="btnAdd" class="btn btn-primary" /> <input type="button" value="Clear" id="btnClear" class="btn btn-danger" /> <input type="button" value="Add To Master" id="btnAddMaster" class="btn btn-primary" />
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <!--end col-->
+
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            <i class="ri-send-plane-2-fill"></i> <h6 class="card-title mb-0 flex-grow-1" style=" font-size: 13px;">PRODUCT DETAILS</h6>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <div class="row gy-4">
+                                                <div class="col-xxl-3 col-md-3">
+                                                    <div>
+                                                        <label for="labelInput" class="form-label">Part No <code>*</code></label>
+                                                        <input type="text" class="form-control" />
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-xxl-3 col-md-3">
+                                                    <div>
+                                                        <label for="labelInput" class="form-label">Spare Parts <code>*</code></label>
+                                                        <input type="text" class="form-control" />
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-xxl-2 col-md-2">
+                                                    <div>
+                                                        <label for="labelInput" class="form-label">Quantity <code>*</code></label>
+                                                        <input type="text" class="form-control" />
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-xxl-2 col-md-2">
+                                                    <div>
+                                                        <label for="labelInput" class="form-label">Selling Rate <code>*</code></label>
+                                                        <input type="text" class="form-control" />
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xxl-2 col-md-2">
+                                                    <div>
+                                                        <label for="labelInput" class="form-label">Amount <code>*</code></label>
+                                                        <input type="text" class="form-control" disabled />
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-xxl-12 col-md-12">
+                                                    <div>
+                                                        <input type="button" value="Add" id="btnAdd" class="btn btn-primary" tabindex="5" style=" float:right" />
+
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-xxl-12 col-md-12">
+
+
+                                                    <div class="table-responsive">
+
+                                                        <table id="tblProduct" class="display table table-bordered mobile-optimised">
+                                                            <thead>
+                                                                <tr style="background-color: #ecf9ff;">
+                                                                    <th>SL.</th>
+                                                                    <th style="white-space:nowrap">Part No</th>
+                                                                    <th style="white-space:nowrap">Spare Parts </th>
+                                                                    <th style="white-space:nowrap">Quantity</th>
+                                                                    <th style="white-space:nowrap">Selling Rate</th>
+                                                                    <th style="white-space:nowrap">Amount</th>
+                                                                    <th style="white-space: nowrap; width: 9%;">Action</th>
+
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody id="tBody">
+                                                                <tr>
+                                                                    <td data-th="SL.">1.</td>
+                                                                    <td data-th="Part No">009888</td>
+                                                                    <td data-th="Spare Parts">WASHING MACHINE</td>
+                                                                    <td data-th="Quantity">10</td>
+                                                                    <td data-th="Selling Rate">4000</td>
+                                                                    <td data-th="Amount">4500</td>
+                                                                    <td data-th="Action">
+                                                                        <a href="#" class="btn btn-sm btn-danger remove-item-btn" tabindex="6"> <i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
+                                                                    </td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <!--end col-->
+                                                </div>
+                                                <!--end col-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-xxl-12 col-md-12">
+                                <div>
+                                    <label for="labelInput" class="form-label">In Words <code>*</code></label>
+                                    <input type="text" class="form-control" disabled />
+
+                                </div>
+                            </div>
+
+                            <div class="col-xxl-6 col-md-6">
+                                <div>
+                                    <label for="labelInput" class="form-label">Gross Amt <code>*</code></label>
+                                    <input type="text" class="form-control" disabled />
+
+                                </div>
+                            </div>
+                            <div class="col-xxl-6 col-md-6">
+                                <div>
+                                    <label for="labelInput" class="form-label">Discount Amount <code>*</code></label>
+                                    <input type="text" class="form-control" disabled />
+
+                                </div>
+                            </div>
+                            <div class="col-xxl-6 col-md-6">
+                                <div>
+                                    <label for="labelInput" class="form-label">Vat Amt <code>*</code></label>
+                                    <input type="text" class="form-control" disabled />
+
+                                </div>
+                            </div>
+                            <div class="col-xxl-6 col-md-6">
+                                <div>
+                                    <label for="labelInput" class="form-label">Net Amt <code>*</code></label>
+                                    <input type="text" class="form-control" disabled />
+
+                                </div>
+                            </div>
+                        </div>
+                        <!--end row-->
+                    </div>
+
+                </div>
+                <br /><br />
+                <div class="col-xxl-12 col-md-12">
+                    <div class="form-floating" style="float: right; padding-right: 2%;">
+                        <input type="button" value="Save" id="btnSave" class="btn btn-primary" tabindex="6" />
+                        <a href="@Url.Action("Index","RetailerEstimation")" class="btn btn-danger" tabindex="5">Cancel</a>
+
+
+                    </div>
+                </div>
+                <br />
+            </div>
+
+
+        </div>
+
+        <!--end col-->
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="partialModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">SPARE LOCATION</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="row gy-4">
+                        <div class="col-xxl-3 col-md-4">
+
+                            <label for="labelInput" class="form-label">Branch <code>*</code></label>
+                            <select id="ddlbranch" class="js-example-basic-single">
+                                <option value="0">Select Branch</option>
+                                <option value="1">Branch-1</option>
+                                <option value="2">Branch-2</option>
+                                <option value="3">Branch-3</option>
+                            </select>
+                        </div>
+                        <div class="col-xxl-3 col-md-4">
+
+                            <label for="labelInput" class="form-label">Part Number <code>*</code></label>
+                            <input type="text" class="form-control" />
+                        </div>
+                        <div class="col-xxl-3 col-md-4">
+
+                            <label for="labelInput" class="form-label">Spare Description </label>
+                            <input type="text" class="form-control" />
+                        </div>
+                        <div class="col-xxl-3 col-md-4">
+                            <label for="labelInput" class="form-label">Batch Number</label>
+                            <input type="text" class="form-control" />
+                        </div>
+                        <div class="col-xxl-3 col-md-4">
+                            <label for="labelInput" class="form-label">Week Number</label>
+                            <input type="text" class="form-control" />
+                        </div>
+                        <div class="col-xxl-3 col-md-4">
+                            <label for="labelInput" class="form-label">Year</label>
+                            <input type="text" class="form-control" />
+                        </div>
+                        <div class="col-xxl-3 col-md-4">
+                            <label for="labelInput" class="form-label">Bin</label>
+                            <input type="text" class="form-control" />
+                        </div>
+                        <div class="col-xxl-3 col-md-4">
+                            <label for="labelInput" class="form-label">Rack</label>
+                            <input type="text" class="form-control" />
+                        </div>
+                        <div class="col-xxl-3 col-md-4">
+                            <label for="labelInput" class="form-label">Status</label>
+                            <select id="ddlstatus" class="js-example-basic-single">
+                                <option value="0">Select Status</option>
+                                <option value="1">Active</option>
+                                <option value="2">Inactive</option>
+
+                            </select>
+                        </div><br /><hr />
+                        <br /><br />
+                        <div class="col-xxl-3 col-md-3">
+
+                            <label for="labelInput" class="form-label">Spare Description</label>
+                            <input type="text" class="form-control" />
+                        </div>
+                        <div class="col-xxl-3 col-md-3">
+
+                            <label for="labelInput" class="form-label">Part No</label>
+                            <input type="text" class="form-control" />
+                        </div>
+                        <div class="col-xxl-3 col-md-3">
+
+                            <label for="labelInput" class="form-label">Bin</label>
+                            <input type="text" class="form-control" />
+                        </div>
+                        <div class="col-xxl-3 col-md-3">
+
+                            <label for="labelInput" class="form-label">Rack</label>
+                            <input type="text" class="form-control" />
+                        </div>
+                        <div class="col-xxl-13 col-md-12">
+                            <input type="button" value="Search" id="btnSave" class="btn btn-outline-primary" data-mdb-ripple-init style="float:right"/>
+
+                        </div>
+                        <div class="table-responsive">
+
+                            <table id="tblProduct" class="display table table-bordered mobile-optimised">
+                                <thead>
+                                    <tr style="background-color: #ecf9ff;">
+                                        <th>SL.</th>
+                                        <th style="white-space:nowrap">Spare</th>
+                                        <th style="white-space:nowrap">Description </th>
+                                        <th style="white-space:nowrap">Batch Number</th>
+                                        <th style="white-space:nowrap">Week</th>
+                                        <th style="white-space:nowrap">Year</th>
+                                        <th style="white-space:nowrap">Bin Number</th>
+                                        <th style="white-space:nowrap">Rack Number</th>
+                                        <th style="white-space:nowrap">Status</th>
+                                        <th style="white-space:nowrap">Branch Name</th>
+
+                                        <th style="white-space: nowrap; width: 9%;">Action</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody id="tBody">
+                                </tbody>
+                            </table>
+                        </div>
+                        <!--end col-->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" value="Save" id="btnAddspare" class="btn btn-primary" />
+                    <input type="button" value="Reset" id="btnReset" class="btn btn-danger" />
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    @*<button type="button" class="btn btn-primary">Understood</button>*@
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+@section scripts{
+
+
+    <!--select2 cdn-->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script src="~/assets/js/pages/select2.init.js"></script>
+    <script src="~/assets/libs/prismjs/prism.js"></script>
+    <script src="~/assets/js/app.js"></script>
+
+    <!-- prismjs plugin -->
+    <!-- App js -->
+
+
+}
+
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+@*<link rel="stylesheet" href="/resources/demos/style.css">*@
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="~/MyApp/AddONS.js"></script>
+
+
+
+<script>
+    $(document).ready(function () {
+
+    })
+
+    $("#btnAddMaster").click(function () {
+
+        $("#partialModal").modal("show");
+    })
+</script>
+

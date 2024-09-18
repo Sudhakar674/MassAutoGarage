@@ -1,0 +1,582 @@
+﻿@model MassAutoGarage.Models.SupplierMaster.SupplierMasterModel
+@{
+    ViewBag.Title = "Supplier";
+    ViewBag.pTitle = "Supplier Master";
+    ViewBag.pageTitle = "Forms";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int i = 1;
+}
+
+
+
+<script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
+@section styles{
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+}
+
+
+@using (Html.BeginForm("CreateSupplier", "SupplierMaster", FormMethod.Post, new { enctype = "multipart/form-data", OnSubmit = "return ValidationForm()", @class = "form-validate" }))
+{
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header align-items-center d-flex">
+                    <h4 class="card-title mb-0 flex-grow-1">ADD SUPPLIER</h4>
+                    <div class="flex-shrink-0">
+                        <div class="form-check form-switch form-switch-right form-switch-md">
+                            <a href="@Url.Action("SupplierDetails","SupplierMaster")" class="btn btn-primary" style="float:right;" tabindex="35"><i class="fa fa-list" aria-hidden="true"></i> BACK TO SUPPLIER LIST</a>
+                        </div>
+                    </div>
+                </div><!-- end card header -->
+                <div class="card-body">
+                    <div class="live-preview">
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        <i class="ri-send-plane-2-fill"></i> <h6 class="card-title mb-0 flex-grow-1" style=" font-size: 13px;">ADD SUPPLIER DETAILS</h6>
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <div class="row gy-4">
+                                            <div class="col-xxl-3 col-md-4">
+                                                <div>
+                                                    <label for="labelInput" class="form-label">Code <code>*</code></label>
+                                                    @Html.HiddenFor(m => m.ID, new { @class = "form-control", @id = "HDFID" })
+                                                    @Html.HiddenFor(m => m.CurrentCount, new { @class = "form-control", @id = "HDFCurrentCount" })
+                                                    @Html.TextBoxFor(m => m.Code, new { @class = "form-control", tabindex = 1, @readonly = true })
+                                                    @Html.ValidationMessageFor(m => m.Code, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                                </div>
+                                            </div>
+                                            <div class="col-xxl-3 col-md-4">
+                                                <div>
+                                                    <label for="labelInput" class="form-label">Company Name <code>*</code></label>
+                                                    @Html.DropDownListFor(x => x.CompanyID, new SelectList(ViewBag.Company, "Value", "Text"), "--Select Company Name--", new { @class = "js-example-basic-single", tabindex = 2 })
+                                                    @Html.HiddenFor(m => m.CompanyID, new { @class = "form-control", })
+                                                </div>
+                                            </div>
+                                            <div class="col-xxl-3 col-md-4">
+                                                <div>
+                                                    <label for="labelInput" class="form-label">Supplier Name <code>*</code></label>
+                                                    @Html.TextBoxFor(x => x.SupplierName, new { @class = "form-control", tabindex = 3 })
+                                                </div>
+                                            </div>
+                                            <div class="col-xxl-3 col-md-4">
+                                                <div>
+                                                    <label for="labelInput" class="form-label">Account Name <code>*</code></label>
+                                                    @Html.TextBoxFor(x => x.AccountName, new { @class = "form-control", tabindex = 4 })
+                                                </div>
+                                            </div>
+                                            <div class="col-xxl-3 col-md-4">
+                                                <div>
+                                                    <label for="labelInput" class="form-label">Landline Number <code>*</code></label>
+                                                    @Html.TextBoxFor(x => x.LandlineNumber, new { @class = "form-control", tabindex = 5 })
+
+                                                </div>
+                                            </div>
+                                            <div class="col-xxl-3 col-md-4">
+                                                <div>
+                                                    <label for="labelInput" class="form-label">Mobile <code>*</code></label>
+                                                    @Html.TextBoxFor(x => x.Mobile, new { @class = "form-control", tabindex = 6, @maxlength = "13" })
+
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xxl-3 col-md-4">
+                                                <div>
+                                                    <label for="labelInput" class="form-label">Email <code>*</code></label>
+                                                    @Html.TextBoxFor(x => x.Email, new { @class = "form-control form-control-icon", tabindex = 7 })
+
+                                                </div>
+                                            </div>
+                                            <div class="col-xxl-3 col-md-4">
+                                                <div>
+                                                    <label for="labelInput" class="form-label">TRN <code>*</code></label>
+                                                    @Html.TextBoxFor(x => x.TRN, new { @class = "form-control", tabindex = 8 })
+
+                                                </div>
+                                            </div>
+                                            <div class="col-xxl-3 col-md-4">
+                                                <div>
+                                                    <label for="labelInput" class="form-label">Status <code>*</code></label>
+                                                    @Html.DropDownListFor(x => x.IsActive, new List<SelectListItem>{
+                                                    new SelectListItem { Text = "---Select---", Value = "0", Selected=true},
+                                                    new SelectListItem { Text = "Active", Value = "1"},
+                                                    new SelectListItem { Text = "InActive", Value = "0"},
+                                                    }, new { @class = "form-select mb-3", tabindex = 9 })
+
+
+                                                </div>
+                                            </div>
+                                            <div class="col-xxl-12 col-md-12">
+                                                <div>
+                                                    <label for="labelInput" class="form-label">Address <code>*</code></label>
+                                                    @Html.TextAreaFor(x => x.Address, new { @class = "form-control", tabindex = 10 })
+
+                                                </div>
+
+                                            </div>
+
+
+
+
+                                            <!--end col-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <br />
+
+                        <div class="accordion" id="accordionPanelsStayOpenExample">
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree" tabindex="11">
+                                        <i class="ri-send-plane-2-fill"></i>  <h6 class="card-title mb-0 flex-grow-1" style=" font-size: 13px;">  ADDITIONAL INFORMATION</h6>
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                                    <div class="accordion-body">
+                                        <div class="row gy-4" style=" margin-top: 1%;">
+                                            <div class="col-xxl-3 col-md-4">
+                                                <div>
+                                                    <label for="labelInput" class="form-label">Creation Date <code>*</code></label>
+                                                    @Html.TextBoxFor(x => x.CreationDate, new { @class = "form-control", tabindex = 12, onchange = "isStartDate()" })
+
+                                                </div>
+                                            </div>
+                                            <div class="col-xxl-3 col-md-4">
+                                                <div>
+                                                    <label for="labelInput" class="form-label">Credit Days <code>*</code></label>
+                                                    @Html.TextBoxFor(x => x.CreditDays, new { @class = "form-control", tabindex = 13 })
+
+                                                </div>
+                                            </div>
+                                            <div class="col-xxl-3 col-md-4">
+                                                <div>
+                                                    <label for="labelInput" class="form-label">Credit Limit <code>*</code></label>
+                                                    @Html.TextBoxFor(x => x.CreditLimit, new { @class = "form-control", tabindex = 14 })
+
+                                                </div>
+                                            </div>
+                                            <div class="col-xxl-2 col-md-2">
+                                                <div>
+                                                    <label for="labelInput" class="form-label">Block <code>*</code></label>
+                                                    @*@Html.TextBoxFor(x => x.Block, new { @class = "form-control", tabindex = 15 })*@
+                                                    @Html.DropDownListFor(x => x.Block, new List<SelectListItem>{
+                                                    new SelectListItem { Text = "Select Block ", Value = "0", Selected=true},
+                                                    new SelectListItem { Text = "Block", Value = "1"},
+                                                    new SelectListItem { Text = "Unblock", Value = "2"},
+                                                    }, new { @class = "form-select mb-3", tabindex = 15 })
+                                                </div>
+                                            </div>
+                                            <div class="col-xxl-2 col-md-2">
+                                                <div>
+                                                    <label for="labelInput" class="form-label">Trade Licence Expiry <code>*</code></label>
+                                                    @Html.TextBoxFor(x => x.TradeLicenceExpiry, new { @class = "form-control", tabindex = 16, onchange = "TradlicenseDate()" })
+
+                                                </div>
+                                            </div>
+                                            <div class="col-xxl-3 col-md-4">
+                                                <div>
+                                                    <label for="labelInput" class="form-label">VAT Supplier <code>*</code></label>
+                                                    @Html.DropDownListFor(x => x.VATSupplierID, new List<SelectListItem>{
+                                                    new SelectListItem { Text = "---Select---", Value = "0", Selected=true},
+                                                    new SelectListItem { Text = "International", Value = "1"},
+                                                    new SelectListItem { Text = "UAE", Value = "2"},
+                                                     new SelectListItem { Text = "GCC", Value = "3"},
+                                                    }, new { @class = "form-select mb-3", tabindex = 17 })
+
+
+                                                </div>
+                                            </div>
+                                            <div class="col-xxl-3 col-md-4" id="divInternational">
+                                                <div>
+                                                    <label for="labelInput" class="form-label">International <code>*</code></label>
+                                                    @Html.DropDownListFor(x => x.InternationalID, new SelectList(ViewBag.International, "Value", "Text"), "-- Select International --", new { @class = "js-example-basic-single", tabindex = 18 })
+                                                    @Html.HiddenFor(m => m.InternationalID, new { @class = "form-control", })
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xxl-3 col-md-4" id="divUAE" style="display:none;">
+                                                <div>
+                                                    <label for="labelInput" class="form-label">UAE <code>*</code></label>
+
+                                                    @Html.DropDownListFor(x => x.UAEID, new SelectList(ViewBag.UAE, "Value", "Text"), "-- Select UAE --", new { @class = "js-example-basic-single", tabindex = 19 })
+                                                    @Html.HiddenFor(m => m.UAEID, new { @class = "form-control", })
+
+                                                </div>
+                                            </div>
+                                            <div class="col-xxl-3 col-md-4" id="divGCC" style="display:none;">
+                                                <div>
+                                                    <label for="labelInput" class="form-label">GCC <code>*</code></label>
+
+                                                    @Html.DropDownListFor(x => x.GCCID, new SelectList(ViewBag.GCC, "Value", "Text"), "-- Select GCC --", new { @class = "js-example-basic-single", tabindex = 20 })
+                                                    @Html.HiddenFor(m => m.UAEID, new { @class = "form-control", })
+
+                                                </div>
+                                            </div>
+                                            <div class="col-xxl-12 col-md-12">
+                                                <div>
+                                                    <label for="labelInput" class="form-label">Reason <code>*</code></label>
+                                                    @Html.TextAreaFor(x => x.Reason, new { @class = "form-control", tabindex = 21 })
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="accordion" id="accordionPanelsStayOpenExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo" tabindex="22">
+                                        <i class="ri-send-plane-2-fill"></i>  <h6 class="card-title mb-0 flex-grow-1" style="font-size: 13px;"> ADDITIONAL CONTACTS</h6>
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+
+
+                                    <div class="row gy-4" style=" margin: 1% 1% 3% 1%;">
+                                        <div class="col-xxl-3 col-md-3">
+                                            <div>
+                                                <label for="labelInput" class="form-label">Contact Person <code>*</code></label>
+                                                @Html.TextBoxFor(x => x.ContactPerson, new { @class = "form-control", tabindex = 23 })
+
+                                            </div>
+                                        </div>
+                                        <div class="col-xxl-3 col-md-3">
+                                            <div>
+                                                <label for="labelInput" class="form-label">Mobile Number<code>*</code></label>
+                                                @Html.TextBoxFor(x => x.ContactNumber, new { @class = "form-control", tabindex = 24, @maxlength = "13" })
+
+                                            </div>
+                                        </div>
+                                        <div class="col-xxl-3 col-md-3">
+                                            <div>
+                                                <label for="labelInput" class="form-label">Email<code>*</code></label>
+                                                @Html.TextBoxFor(x => x.ContactEmail, new { @class = "form-control", tabindex = 25 })
+
+                                            </div>
+                                        </div>
+                                        <div class="col-xxl-3 col-md-3">
+                                            <div>
+                                                <label for="labelInput" class="form-label">Desination<code>*</code></label>
+                                                @Html.TextBoxFor(x => x.Desination, new { @class = "form-control", tabindex = 26 })
+
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-xxl-12 col-md-12">
+                                            <div>
+                                                <button id="btnAddContact" type="button" class="btn btn-primary" tabindex="27" style=" float: right;"><i class="ri-add-circle-line align-middle me-1"></i> ADD</button>
+                                            </div>
+                                        </div>
+
+                                        <div class="table-responsive">
+
+                                            <table id="tblContact" class="display table table-bordered" style="width:100%">
+                                                <thead>
+                                                    <tr>
+                                                        <th style=" width: 3%;">SL.</th>
+                                                        <th>Person Name</th>
+                                                        <th>Mobile </th>
+                                                        <th>Email</th>
+                                                        <th>Designation</th>
+                                                        <th style=" width:12%">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="tBody3">
+                                                    @if (ViewBag.ContactDetails != null)
+                                                    {
+                                                        foreach (var item in ViewBag.ContactDetails)
+                                                        {
+                                                            <tr>
+                                                                <td>
+                                                                    @i
+                                                                </td>
+
+                                                                <td>
+                                                                    @item.ContactPerson
+                                                                </td>
+                                                                <td>
+                                                                    @item.ContactNumber
+                                                                </td>
+                                                                <td>
+                                                                    @item.ContactEmail
+                                                                </td>
+                                                                <td>
+                                                                    @item.Desination
+                                                                </td>
+                                                                <td style="text-align:right">
+
+                                                                    <div class="d-flex gap-2">
+                                                                        <div class="remove">
+                                                                            <a href="#" class="btn btn-sm btn-danger remove-item-btn DeleteContactTr" id="btnDelete"><i class="fa fa-trash" aria-hidden="true"></i> Delete </a>
+
+                                                                        </div>
+                                                                    </div>
+
+                                                                </td>
+                                                            </tr>
+                                                            i++;
+                                                        }
+                                                    }
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <br />
+                        <div class="accordion" id="accordionPanelsStayOpenExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseTFour" tabindex="28">
+                                        <i class="ri-send-plane-2-fill"></i>  <h6 class="card-title mb-0 flex-grow-1" style="font-size: 13px;"> ATTACHMENT DETAILS</h6>
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseTFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-collapseTFour">
+
+
+                                    <div class="row gy-4" style=" margin: 1% 1% 3% 1%;">
+
+                                        <div class="col-xxl-6 col-md-6">
+                                            <div>
+                                                <label for="labelInput" class="form-label">Expiry Date<code>*</code></label>
+                                                @Html.TextBoxFor(x => x.ExpiryDate, new { @class = "form-control", tabindex = 29, onchange ="isExpiryDate()" })
+
+                                            </div>
+                                        </div>
+                                        <div class="col-xxl-6 col-md-6">
+                                            <div>
+                                                <label for="labelInput" class="form-label">File Attachments<code>*</code></label>
+                                                @Html.TextBoxFor(x => x.AttachmentFile, new { @type = "file", @class = "form-control", tabindex = 30 })
+                                                <input type="hidden" id="hdfattchmentfile" />
+                                            </div>
+                                        </div>
+                                        <div class="col-xxl-12 col-md-12">
+                                            <div>
+                                                <label for="labelInput" class="form-label">Description <code>*</code></label>
+                                                @Html.TextAreaFor(x => x.Description, new { @class = "form-control", tabindex = 31 })
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xxl-12 col-md-12">
+                                            <div>
+                                                <button id="btnAdd" type="button" class="btn btn-primary" tabindex="32" style=" float: right;"><i class="ri-add-circle-line align-middle me-1"></i> ADD</button>
+                                            </div>
+                                        </div>
+                                        <div class="table-responsive">
+
+                                            <table id="example" class="display table table-bordered" style="width:100%">
+                                                <thead>
+                                                    <tr>
+                                                        <th style=" width: 3%;">SL.</th>
+                                                        <th>Description</th>
+                                                        <th>Expiry Date </th>
+                                                        <th>Attachment File</th>
+
+                                                        <th style=" width:12%">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="tBody2">
+                                                    @if (ViewBag.AttachmentList != null)
+                                                    {
+                                                        foreach (var item in ViewBag.AttachmentList)
+                                                        {
+                                                            <tr>
+                                                                <td>
+                                                                    @i
+                                                                </td>
+
+                                                                <td>
+                                                                    @item.Description
+                                                                </td>
+                                                                <td>
+                                                                    @item.ExpiryDate
+                                                                </td>
+                                                                <td>
+                                                                    @item.AttachmentFile
+                                                                </td>
+
+                                                                <td style="text-align:right">
+
+                                                                    <div class="d-flex gap-2">
+                                                                        <div class="remove">
+                                                                            <a href="#" class="btn btn-sm btn-danger remove-item-btn DeleteTr" id="btnDelete"><i class="fa fa-trash" aria-hidden="true"></i> Delete </a>
+
+                                                                        </div>
+                                                                    </div>
+
+                                                                </td>
+                                                            </tr>
+                                                            i++;
+                                                        }
+                                                    }
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-xxl-12 col-md-12">
+                    <div class="form-floating" style="float: right; padding-right: 2%;">
+                        <a href="@Url.Action("SupplierDetails","SupplierMaster")" class="btn btn-danger" tabindex="33">Cancel</a>
+                        <input type="button" value="Save" id="btnSave" class="btn btn-primary" tabindex="34" />
+
+                    </div>
+                </div>
+                <br />
+            </div>
+
+
+        </div>
+
+        <!--end col-->
+
+        <div id="divLoader" style="display: none; text-align: center; margin-top: -26%;">
+            <img src="~/assets/Loader/loading.gif" alt="Loader" style="width: 8%;" />
+
+            @*<div class="spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>*@
+        </div>
+
+    </div>
+
+
+}
+
+
+@section scripts{
+
+
+    <!--select2 cdn-->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script src="~/assets/js/pages/select2.init.js"></script>
+    <script src="~/assets/libs/prismjs/prism.js"></script>
+    <script src="~/assets/js/app.js"></script>
+
+    <!-- prismjs plugin -->
+    <!-- App js -->
+
+
+}
+
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+@*<link rel="stylesheet" href="/resources/demos/style.css">*@
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="~/MyApp/AddSupplier.js"></script>
+<script src="~/MyApp/SupplierValidation.js"></script>
+<script>
+
+
+    $(document).ready(function () {
+        debugger;
+        if ("@ViewBag.VATID" != "") {
+
+
+        var msession = "@ViewBag.VATID";
+        if (msession != "") {
+
+            if (msession == "1") {
+
+                $("#divInternational").css("display", "block");
+                $("#divUAE").css("display", "none");
+                $("#divGCC").css("display", "none");
+            } else if (msession == "2") {
+
+                $("#divInternational").css("display", "none");
+                $("#divUAE").css("display", "block");
+                $("#divGCC").css("display", "none");
+
+            } else if (msession == "3") {
+
+                $("#divInternational").css("display", "none");
+                $("#divUAE").css("display", "none");
+                $("#divGCC").css("display", "block");
+            }
+        }
+        else {
+
+        }
+    }
+        var options = $.extend({},
+            $.datepicker.regional["es"], {
+            dateFormat: "dd/mm/yy",
+            changeMonth: true,
+            changeYear: true,
+            /* yearRange: "-2:+0",*/
+            todayHighlight: true,
+            /*highlightWeek: true,*/
+            /*maxDate: 0*/
+        });
+        $("#CreationDate").datepicker(options);
+        var options = $.extend({},
+            $.datepicker.regional["es"], {
+            dateFormat: "dd/mm/yy",
+            changeMonth: true,
+            changeYear: true,
+            /* yearRange: "-2:+0",*/
+            todayHighlight: true,
+            /*highlightWeek: true,*/
+            /*maxDate: 0*/
+        });
+        $("#ExpiryDate").datepicker(options);
+
+       
+        var options = $.extend({},
+            $.datepicker.regional["es"], {
+            dateFormat: "dd/mm/yy",
+            changeMonth: true,
+            changeYear: true,
+            /* yearRange: "-2:+0",*/
+            todayHighlight: true,
+            /*highlightWeek: true,*/
+            /*maxDate: 0*/
+        });
+        $("#TradeLicenceExpiry").datepicker(options);
+
+
+    })
+
+   
+
+
+</script>
+
+

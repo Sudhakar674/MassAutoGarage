@@ -1,0 +1,280 @@
+﻿@model MassAutoGarage.Models.ColorMaster.ColorMasterModel
+@{
+    ViewBag.Title = "Group";
+    ViewBag.pTitle = "Group";
+    ViewBag.pageTitle = "Forms";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
+@section styles{
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+}
+
+
+@using (Html.BeginForm("AddReceiptVoucher", "ReceiptVoucher", FormMethod.Post, new { enctype = "multipart/form-data", OnSubmit = "return ValidationForm()", @class = "form-validate" }))
+{
+
+
+    <div class="row">
+        <div class="col-lg-12">
+
+
+            <div class="card">
+                <div class="card-header main-f">
+                    <div class="row">
+                        <div class="col-md-6 col-5"> <h5 class="card-title mb-0 gp-detail"> RECEIPT VOUCHER</h5></div>
+                        <div class="col-md-6 col-7">
+                            <a href="@Url.Action("Index","ReceiptVoucher")" class="btn btn-primary add-new" style="float:right;" tabindex="1"> <i class="ri-add-circle-line align-middle me-1"></i>BACK RECEIPT VOUCHER LIS</a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                @*<div class="card main-f p-2">
+                    <div class="row">
+                        <div class="col-md-6 col-5"> <h5 class="card-title mb-0 gp-detail">RECEIPT VOUCHER</h5></div>
+                        <div class="col-md-6 col-7">
+                            <a href="@Url.Action("Index","ReceiptVoucher")" class="btn btn-primary add-new" style="float:right;" tabindex="1"> <i class="fa fa-arrow-left  align-middle me-1"></i> BACK RECEIPT VOUCHER LIST </a>
+                        </div>
+                    </div>*@
+
+                    @*<div class="card">
+                <div class="card-header align-items-center d-flex">
+                    <h4 class="card-title mb-0 flex-grow-1">RECEIPT VOUCHER</h4>
+                    <div class="flex-shrink-0">
+                        <div class="form-check form-switch form-switch-right form-switch-md">
+                            <a href="@Url.Action("Index","ReceiptVoucher")" class="btn btn-primary" style="float:right;" tabindex="6"><i class="fa fa-list" aria-hidden="true"></i> BACK RECEIPT VOUCHER LIST</a>
+                        </div>
+                    </div>
+                </div>*@
+
+                    <!-- end card header -->
+                    <div class="card-body">
+                        <div class="live-preview">
+                            <div class="row gy-4">
+
+                                <div class="col-xxl-4 col-md-4">
+                                    <div>
+                                        <label for="labelInput" class="form-label">Voucher No <code>*</code></label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="col-xxl-4 col-md-4">
+                                    <div>
+                                        <label for="labelInput" class="form-label">Receipt Date <code>*</code></label>
+                                        <input type="text" class="form-control" id="txtDate" />
+                                    </div>
+                                </div>
+
+
+                                <div class="col-xxl-4 col-md-4">
+                                    <div>
+                                        <label for="labelInput" class="form-label">Receipt Type <code>*</code></label>
+                                        <select id="ddlReceiptType" class="js-example-basic-single">
+                                            <option value="0">Select</option>
+                                            <option value="1">Cash</option>
+                                            <option value="2">Bank</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-4 col-md-4">
+                                    <div>
+                                        <label for="labelInput" class="form-label">Account Name <code>*</code></label>
+                                        <select id="ddlAccountName" class="js-example-basic-single">
+                                            <option value="Select">Select</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-xxl-4 col-md-4">
+                                    <div>
+                                        <label for="labelInput" class="form-label">Cheque No <code>*</code></label>
+                                        <input type="text" class="form-control" disabled id="txtchkno" />
+
+                                    </div>
+                                </div>
+
+                                <div class="col-xxl-4 col-md-4">
+                                    <div>
+                                        <label for="labelInput" class="form-label">Cheque Date <code>*</code></label>
+                                        <input type="text" class="form-control" disabled id="txtcheckdate" />
+
+                                    </div>
+                                </div>
+
+
+                                <div class="col-xxl-4 col-md-4">
+                                    <div>
+                                        <label for="labelInput" class="form-label">Branch Name <code>*</code></label>
+                                        <select id="ddlBranchName" class="js-example-basic-single">
+                                            <option value="Select">Select</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-xxl-4 col-md-4">
+                                    <div>
+                                        <label for="labelInput" class="form-label">Voucher Type <code>*</code></label>
+                                        <select id="ddlVoucherType" class="js-example-basic-single">
+                                            <option value="Select">Select</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-4 col-md-4">
+                                    <div>
+                                        <label for="labelInput" class="form-label">Receipt To <code>*</code></label>
+                                        <select id="ddlReceiptTo" class="js-example-basic-single">
+                                            <option value="Select">Select</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-4 col-md-4">
+                                    <div>
+                                        <label for="labelInput" class="form-label">Customer Mobile <code>*</code></label>
+                                        <select id="ddlCustomerMobile" class="js-example-basic-single">
+                                            <option value="Select">Select</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-xxl-4 col-md-4">
+                                    <div>
+                                        <label for="labelInput" class="form-label">Total Amount <code>*</code></label>
+                                        <input type="text" class="form-control" />
+
+                                    </div>
+                                </div>
+                                <div class="col-xxl-4 col-md-4">
+                                    <div>
+                                        <label for="labelInput" class="form-label">Job Card No <code>*</code></label>
+                                        <input type="text" class="form-control" />
+
+                                    </div>
+                                </div>
+
+                                <div class="col-xxl-12 col-md-12">
+                                    <div>
+                                        <label for="labelInput" class="form-label">Remarks <code>*</code></label>
+                                        <textarea class="form-control"></textarea>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--end row-->
+                        </div>
+
+                    </div>
+
+                    <div class="col-xxl-12 col-md-12">
+                        <div class="form-floating" style="float: right; padding-right: 2%;">
+
+                            <input type="button" value="Save" id="btnSave" class="btn btn-primary" tabindex="5" />
+                            <a href="#" class="btn btn-danger" tabindex="4">Reset</a>
+
+                        </div>
+                    </div>
+                    <br />
+                </div>
+
+
+            </div>
+
+            <!--end col-->
+        </div>
+
+
+
+}
+
+
+@section scripts{
+
+
+    <!--select2 cdn-->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script src="~/assets/js/pages/select2.init.js"></script>
+    <script src="~/assets/libs/prismjs/prism.js"></script>
+    <script src="~/assets/js/app.js"></script>
+
+    <!-- prismjs plugin -->
+    <!-- App js -->
+
+
+}
+
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+@*<link rel="stylesheet" href="/resources/demos/style.css">*@
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+        var options = $.extend({},
+            $.datepicker.regional["es"], {
+            dateFormat: "dd/mm/yy",
+            changeMonth: true,
+            changeYear: true,
+            /* yearRange: "-2:+0",*/
+            todayHighlight: true,
+            /*highlightWeek: true,*/
+            /*maxDate: 0*/
+        });
+        $("#txtDate").datepicker(options);
+
+        var options = $.extend({},
+            $.datepicker.regional["es"], {
+            dateFormat: "dd/mm/yy",
+            changeMonth: true,
+            changeYear: true,
+            /* yearRange: "-2:+0",*/
+            todayHighlight: true,
+            /*highlightWeek: true,*/
+            /*maxDate: 0*/
+        });
+        $("#txtcheckdate").datepicker(options);
+
+    })
+    $("#ddlReceiptType").on("change", function () {
+        debugger;
+        var bankval = $("#ddlReceiptType").val();
+
+        if (bankval == "2") {
+
+            $("#txtcheckdate").prop("disabled", false);
+            $("#txtchkno").prop("disabled", false);
+        }
+        else {
+
+            $("#txtcheckdate").val("");
+            $("#txtchkno").val("");
+            $("#txtcheckdate").prop("disabled", true);
+            $("#txtchkno").prop("disabled", true);
+        }
+
+    })
+
+
+
+
+</script>
+

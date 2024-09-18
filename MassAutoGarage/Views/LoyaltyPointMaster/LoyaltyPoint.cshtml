@@ -1,0 +1,175 @@
+﻿@model MassAutoGarage.Models.LoyaltyPointMaster.LoyaltyPointMasterModel
+@{
+    ViewBag.Title = "Loyalty Point";
+    ViewBag.pTitle = "Loyalty Point Master";
+    ViewBag.pageTitle = "Forms";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
+@section styles{
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+}
+
+
+@using (Html.BeginForm("LoyaltyPoint", "LoyaltyPointMaster", FormMethod.Post, new { enctype = "multipart/form-data", OnSubmit = "return ValidationForm()", @class = "form-validate" }))
+{
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header main-f">
+                    <div class="row">
+                        <div class="col-md-6 col-5"> <h5 class="card-title mb-0 gp-detail">CREATE LOYALTY POINT</h5></div>
+                        <div class="col-md-6 col-7">
+                            <a href="@Url.Action("LoyaltyDetails","LoyaltyPointMaster")" class="btn btn-primary add-new" style="float:right;" tabindex="1"> <i class="fa fa-arrow-left align-middle me-1"></i> BACK TO LOYALTY POINT LIST </a>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                @*<div class="card-header align-items-center d-flex">
+            <h4 class="card-title mb-0 flex-grow-1">CREATE LOYALTY POINT</h4>
+            <div class="flex-shrink-0">
+                <div class="form-check form-switch form-switch-right form-switch-md">
+                    <a href="@Url.Action("LoyaltyDetails","LoyaltyPointMaster")" class="btn btn-primary" style="float:right;" tabindex="8"><i class="fa fa-list" aria-hidden="true"></i> BACK TO LOYALTY POINT LIST</a>
+                </div>
+            </div>
+        </div>*@
+
+                <!-- end card header -->
+                <div class="card-body">
+                    <div class="live-preview">
+                        <div class="row gy-4">
+                            <div class="col-xxl-3 col-md-4">
+                                <div>
+                                    <label for="labelInput" class="form-label">Code <code>*</code></label>
+                                    @Html.HiddenFor(m => m.ID, new { @class = "form-control", @id = "HDFID" })
+                                    @Html.HiddenFor(m => m.CurrentCount, new { @class = "form-control", @id = "HDFCurrentCount" })
+                                    @Html.TextBoxFor(m => m.Code, new { @class = "form-control", tabindex = 1, @readonly = true })
+                                    @Html.ValidationMessageFor(m => m.Code, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-md-4">
+                                <div>
+                                    <label for="labelInput" class="form-label">Sales Value<code>*</code></label>
+                                    @Html.TextBoxFor(m => m.SalesValue, new { @class = "form-control", tabindex = 2 })
+                                    @Html.ValidationMessageFor(m => m.SalesValue, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                </div>
+                            </div>
+
+                            <div class="col-xxl-3 col-md-4">
+                                <div>
+                                    <label for="labelInput" class="form-label">To Sales Value <code>*</code></label>
+                                    @Html.TextBoxFor(m => m.ToSalesValue, new { @class = "form-control", tabindex = 3 })
+                                    @Html.ValidationMessageFor(m => m.ToSalesValue, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-md-4">
+                                <div>
+                                    <label for="labelInput" class="form-label">Loyalty Points <code>*</code></label>
+                                    @Html.TextBoxFor(m => m.LoyaltyPoints, new { @class = "form-control", tabindex = 4 })
+                                    @Html.ValidationMessageFor(m => m.LoyaltyPoints, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+
+                                </div>
+                            </div>
+
+                            <div class="col-xxl-3 col-md-4">
+                                <div>
+                                    <label for="labelInput" class="form-label">Status <code>*</code></label>
+                                    @Html.DropDownListFor(x => x.IsActive, new List<SelectListItem>{
+                                       new SelectListItem { Text = "---Select---", Value = "0", Selected=true},
+                                       new SelectListItem { Text = "Active", Value = "1"},
+                                       new SelectListItem { Text = "Inactive", Value = "0"},
+                                       }, new { @class = "js-example-basic-single", tabindex = 5 })
+
+                                </div>
+                            </div>
+
+
+                            <!--end col-->
+                            <br /><hr />
+
+
+
+                        </div>
+                        <!--end row-->
+                    </div>
+
+                </div>
+
+                <div class="col-xxl-12 col-md-12">
+                    <div class="form-floating" style="float: right; padding-right: 2%;">
+                        <a href="@Url.Action("LoyaltyDetails","LoyaltyPointMaster")" class="btn btn-danger" tabindex="6">Cancel</a>
+                        <input type="button" value="Save" id="btnSave" class="btn btn-primary" tabindex="7" />
+
+                    </div>
+                </div>
+                <br />
+            </div>
+
+
+        </div>
+
+        <!--end col-->
+    </div>
+}
+
+
+@section scripts{
+
+
+    <!--select2 cdn-->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script src="~/assets/js/pages/select2.init.js"></script>
+    <script src="~/assets/libs/prismjs/prism.js"></script>
+    <script src="~/assets/js/app.js"></script>
+
+    <!-- prismjs plugin -->
+    <!-- App js -->
+
+
+}
+
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+@*<link rel="stylesheet" href="/resources/demos/style.css">*@
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="~/MyApp/LoyaltyPointsMaster.js"></script>
+<script>
+    $(document).ready(function () {
+
+        var options = $.extend({},
+            $.datepicker.regional["es"], {
+            dateFormat: "dd/mm/yy",
+            changeMonth: true,
+            changeYear: true,
+            /* yearRange: "-2:+0",*/
+            todayHighlight: true,
+            /*highlightWeek: true,*/
+            /*maxDate: 0*/
+        });
+        $("#InvoiceDate").datepicker(options);
+
+
+
+    })
+
+
+
+
+</script>
+

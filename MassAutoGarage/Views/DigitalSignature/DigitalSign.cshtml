@@ -1,0 +1,125 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DigitalSign</title>
+    <link href="~/assets/BootstrapDataTable/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/assets/BootstrapDataTable/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/js/signature_pad.min.js"></script>
+
+
+</head>
+<body>
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">CUSTOMER SIGNATURE</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="row gy-4">
+
+
+                        <div class="col-xxl-6 col-md-6">
+                            <div>
+                                <label for="labelInput" class="form-label">Upload Signature<code>*</code></label><br />
+
+                                <canvas width="400" height="400" id="signature" style="border: 1px solid black; background: rgb(212, 209, 209);"></canvas>
+
+                            </div>
+                        </div>
+                        <div class="col-xxl-6 col-md-6">
+                            <div>
+                                <br />
+                                <img id="applicantSign" name="applicantSign" class="rounded-circle header-profile-user" alt="" style="margin-top:0%; width: 400px; height: 400px; border-radius: 0% !important; border: solid; border-width: thin; " />
+                            </div>
+                        </div>
+                        <div class="col-xxl-12 col-md-12">
+                            <div style="text-align:center;">
+
+                                <button type="button" id="accept" class="btn btn-info">
+                                    ADD Signature
+                                </button>
+                                <button type="button" id="clear" class="btn btn-danger" onclick="clearSignaturePad();">
+                                    Reset
+                                </button>
+
+                            </div>
+                        </div>
+                        <hr />
+
+                        <div class="col-xxl-4 col-md-4">
+                            <div>
+                                <label for="labelInput" class="form-label">Number<code>*</code></label><br />
+                                <input type="text" class="form-control" readonly/>
+                            </div>
+                        </div>
+                        <div class="col-xxl-4 col-md-4">
+                            <div>
+                                <label for="labelInput" class="form-label">Customer Name<code>*</code></label><br />
+                                <input type="text" class="form-control" readonly/>
+                            </div>
+                        </div>
+                    
+                        <div class="col-xxl-4 col-md-4">
+                            <div>
+                                <label for="labelInput" class="form-label">Plate Number<code>*</code></label><br />
+                                <input type="text" class="form-control" readonly/>
+                            </div>
+                        </div>
+                        <!--end col-->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" id="btnSave" class="btn btn-primary" value="Save" />
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    @*<button type="button" class="btn btn-primary">Understood</button>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    $(document).ready(function () {
+
+        $("#staticBackdrop").modal('show');
+
+    })
+
+
+    var canvas = document.querySelector('#signature');
+    var pad = new SignaturePad(canvas);
+    $(function () {
+        $('#applicantSign').hide();
+        $('#accept').click(function () {
+            var data = pad.toDataURL();
+
+            $('#applicantSign').attr('src', data);
+            $('#applicantSign').show();
+            $('#applicantSignUrl').val(data);
+            document.getElementById("applicantSignUrl").value = data;
+            pad.off();
+            pad.clear();
+        });
+
+    });
+
+    function clearSignaturePad() {
+        $('#applicantSign').attr('src', "");
+        $('#applicantSign').hide();
+        pad.on();
+        pad.clear();
+
+    }
+</script>

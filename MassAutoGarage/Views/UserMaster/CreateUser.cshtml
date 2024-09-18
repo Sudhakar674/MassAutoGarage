@@ -1,0 +1,719 @@
+﻿@model MassAutoGarage.Models.UserMasterModel
+
+@{
+    ViewBag.Title = "User";
+    ViewBag.pTitle = "User Master";
+    ViewBag.pageTitle = "Forms";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
+@section styles{
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+}
+
+<style>
+    /* Style all input fields */
+    /* input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 6px;
+        margin-bottom: 16px;
+    }*/
+
+    /* Style the submit button */
+    input[type=submit] {
+        background-color: #04AA6D;
+        color: white;
+    }
+
+    /* Style the container for inputs */
+    .container {
+        background-color: #f1f1f1;
+        padding: 10px;
+    }
+
+    /* The message box is shown when the user clicks on the password field */
+    #message {
+        display: none;
+        background: #f1f1f1;
+        color: #000;
+        position: relative;
+        padding: 18px;
+        margin-top: 10px;
+    }
+
+        #message p {
+            padding: 1px 30px;
+            font-size: 12px;
+        }
+
+    /* Add a green text color and a checkmark when the requirements are right */
+    .valid {
+        color: green;
+    }
+
+        .valid:before {
+            position: relative;
+            left: -35px;
+            content: "✔";
+        }
+
+    /* Add a red text color and an "x" when the requirements are wrong */
+    .invalid {
+        color: red;
+    }
+
+        .invalid:before {
+            position: relative;
+            left: -35px;
+            content: "✖";
+        }
+</style>
+
+
+@using (Html.BeginForm("CreateUser", "UserMaster", FormMethod.Post, new { enctype = "multipart/form-data", OnSubmit = "return ValidationForm()", @class = "form-validate" }))
+{
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+
+                <div class="card-header main-f">
+                    <div class="row">
+                        <div class="col-md-6 col-5"> <h5 class="card-title mb-0 gp-detail">CREATE USER</h5></div>
+                        <div class="col-md-6 col-7">
+                            <a href="@Url.Action("UserDetails","UserMaster")" class="btn btn-primary add-new" style="float:right;" tabindex="1"> <i class="fa fa-arrow-left  align-middle me-1"></i> BACK TO USER LIST </a>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+
+                @*<div class="card-header align-items-center d-flex">
+            <h4 class="card-title mb-0 flex-grow-1">CREATE USER</h4>
+            <div class="flex-shrink-0">
+                <div class="form-check form-switch form-switch-right form-switch-md">
+                    <a href="@Url.Action("UserDetails","UserMaster")" tabindex="11" class="btn btn-primary" style="float:right;"><i class="fa fa-list" aria-hidden="true"></i> BACK TO USER LIST</a>
+                </div>
+            </div>
+        </div>*@
+
+
+
+                <!-- end card header -->
+                <div class="card-body">
+                    <div class="live-preview">
+                        <div class="row gy-4">
+                            <div class="col-xxl-4 col-md-4">
+                                <div>
+                                    <label for="labelInput" class="form-label">User Name <code>*</code></label>
+                                    @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", tabindex = 1 })
+                                </div>
+                            </div>
+                            <div class="col-xxl-2 col-md-4">
+                                <div>
+                                    <label for="basiInput" class="form-label">User Type <code>*</code></label>
+                                    @Html.HiddenFor(m => m.Id, new { @id = "HDFID" })
+                                    @Html.HiddenFor(m => m.CurrentCount, new { @id = "HDFCurrentCount" })
+                                    @Html.DropDownListFor(x => x.UserTypeId, new SelectList(ViewBag.UserType, "Value", "Text"), "--Select User Type--", new { @class = "js-example-basic-single", tabindex = 2 })
+
+                                </div>
+                            </div>
+
+                            <!--end col-->
+                            <div class="col-xxl-2 col-md-4">
+                                <div>
+                                    <label for="labelInput" class="form-label">Code</label>
+                                    @Html.TextBoxFor(m => m.Code, new { @class = "form-control", @readonly = true, tabindex = 3 })
+                                </div>
+                            </div>
+                            <div class="col-xxl-4 col-md-4">
+                                <div>
+                                    <label for="labelInput" class="form-label">Company Name <code>*</code></label>
+                                    @Html.DropDownListFor(x => x.CompanyId, new SelectList(ViewBag.Company, "Value", "Text"), "--Select Company--", new { @class = "js-example-basic-single", tabindex = 4 })
+
+                                </div>
+                            </div>
+                            <div class="col-xxl-4 col-md-4">
+                                <div>
+                                    <label for="labelInput" class="form-label">Login ID <code>*</code></label>
+                                    @Html.TextBoxFor(m => m.LoginId, new { @class = "form-control", tabindex = 5 })
+                                </div>
+                            </div>
+                            <div class="col-xxl-2 col-md-4">
+                                <div>
+                                    <label for="labelInput" class="form-label">Password <code>*</code></label>
+                                    @Html.TextBoxFor(m => m.Password, new { @class = "form-control", @type = "password", maxlength = "15", tabindex = 6 })
+                                    @Html.ValidationMessageFor(m => m.Password)
+                                    <input type="hidden" id="hdfcount" />
+                                </div>
+
+
+                            </div>
+
+                            <div class="col-xxl-2 col-md-4">
+                                <div>
+                                    <label for="labelInput" class="form-label">Start Date <code>*</code></label>
+                                    @Html.TextBoxFor(m => m.StartDate, new { @class = "form-control", onchange = "isStartDate()", tabindex = 7 })
+                                </div>
+                            </div>
+
+                            <div class="col-xxl-4 col-md-4">
+                                <div>
+                                    <label for="labelInput" class="form-label">Status <code>*</code></label>
+                                    @Html.DropDownListFor(x => x.IsActive, new List<SelectListItem>{
+                                     new SelectListItem { Text = "---Select---", Value = "0", Selected=true},
+                                     new SelectListItem { Text = "Active", Value = "1"},
+                                     new SelectListItem { Text = "InActive", Value = "0"},
+                                     }, new { @class = "js-example-basic-single", tabindex = 8 })
+
+                                </div>
+                            </div>
+
+                            <div id="message">
+                                <b>Password must contain the following:</b><br /><br />
+                                <div class="card-body">
+                                    <div class="live-preview">
+                                        <div class="row gy-4">
+
+                                            <div class="col-xxl-3 col-md-6">
+                                                <div>
+
+                                                    <p id="letter" class="invalid">A <b>Lowercase</b> Letter</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-xxl-3 col-md-6">
+                                                <div>
+
+                                                    <p id="capital" class="invalid">A <b>Capital (Uppercase)</b> letter</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-xxl-3 col-md-6">
+                                                <div>
+
+                                                    <p id="number" class="invalid">A <b>Number</b></p>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xxl-3 col-md-6">
+                                                <div>
+
+                                                    <p id="length" class="invalid">Minimum <b>8 Characters</b></p>
+                                                </div>
+                                            </div>
+                                            <div class="col-xxl-3 col-md-6">
+                                                <div>
+                                                    <p id="Specialchar" class="invalid">At least One <b>Special Characters</b></p>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end col-->
+
+
+                        </div>
+                        <!--end row-->
+                    </div>
+
+                </div>
+                <div class="col-xxl-12 col-md-12">
+                    <div class="form-floating" style="float: right; padding-right: 2%;">
+                        <a href="@Url.Action("UserDetails","UserMaster")" class="btn btn-danger" tabindex="9">Cancel</a>
+                        <input type="button" value="Save" id="btnSave" class="btn btn-primary" tabindex="10" />
+
+                    </div>
+                </div>
+
+                <br />
+            </div>
+
+
+        </div>
+
+        <!--end col-->
+    </div>
+}
+
+
+@section scripts{
+    <!-- prismjs plugin -->
+
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script src="~/assets/js/pages/select2.init.js"></script>
+    <script src="~/assets/libs/prismjs/prism.js"></script>
+    <script src="~/assets/js/app.js"></script>
+
+}
+
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+    $(document).ready(function () {
+        validate();
+        /* LoadUserType();*/
+
+        //$("#StartDate").datepicker({
+        //    format: 'dd/mm/yy',
+        //    changeMonth: true,
+        //    changeYear: true,
+        //    todayHighlight: true,
+
+        //});
+
+        var options = $.extend({},
+            $.datepicker.regional["es"], {
+            dateFormat: "dd/mm/yy",
+            changeMonth: true,
+            changeYear: true,
+            /* yearRange: "-2:+0",*/
+            todayHighlight: true,
+            /*highlightWeek: true,*/
+            /*maxDate: 0*/
+        });
+        $("#StartDate").datepicker(options);
+
+    })
+    function Validation() {
+        debugger;
+
+        var pwd = $("#Password").val();
+        if (pwd != "") {
+
+            var l = parseInt($("#hdfcount").val());
+            if (l == 5) {
+                return true;
+            } else {
+                validate();
+                document.getElementById("message").style.display = "block";
+                return false;
+            }
+
+        }
+        else {
+
+            return false;
+        }
+
+    }
+
+
+    var maxLength = 50;
+    $('#UserName').change(function () {
+        debugger;
+        var textlen = $(this).val().length;
+
+        if (textlen > maxLength) {
+
+            $('#UserName').val("");
+            swal("Warning", " Accept only 50 Character !", "warning");
+
+        } else {
+
+        }
+
+    });
+
+    var maxLength2 = 50;
+    $('#LoginId').change(function () {
+        debugger;
+        var textlen = $(this).val().length;
+
+        if (textlen > maxLength2) {
+
+            $('#LoginId').val("");
+            swal("Warning", " Accept only 50 Character !", "warning");
+
+        } else {
+
+        }
+
+    });
+
+    function isStartDate() {
+        debugger;
+        var txt = document.getElementById("StartDate").value;
+        var regEx = /^\d{2}\/\d{2}\/\d{4}$/;
+
+        if (!regEx.test(txt)) {
+
+            $("#StartDate").val("");
+            swal("Warning", "Please enter date format mm/dd/yyyy !", "warning");
+
+
+        } else {
+
+
+
+        }
+
+    }
+
+    //$(function () {
+    //    $('#CompanyName').keydown(function (e) {
+    //        if (e.shiftKey || e.ctrlKey || e.altKey) {
+    //            e.preventDefault();
+    //        } else {
+    //            var key = e.keyCode;
+    //            if (!((key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
+    //                e.preventDefault();
+    //            }
+    //        }
+    //    });
+    //});
+
+    $("#btnSave").click(function (e) {
+        debugger;
+        e.preventDefault();
+
+        var _UserName = $("#UserName").val();
+        var _code = $("#Code").val();
+        var _UserTypeId = $("#UserTypeId option:selected").val();
+        var _LoginId = $("#LoginId").val();
+        var _Password = $("#Password").val();
+        var _CompanyId = $("#CompanyId option:selected").val();
+        var _StartDate = $("#StartDate").val();
+        var _IsActive = $("#IsActive option:selected").val();
+        var _Id = $("#HDFID").val();
+        var _CurrentCount = $("#HDFCurrentCount").val();
+        
+        Validation();
+        var count = parseInt($("#hdfcount").val());
+
+        if (_UserName != "" && _code != "" && _UserTypeId != "" && _LoginId != "" && _Password != "" && _CompanyId != "" && _StartDate != "" && count == 5) {
+
+
+            var ProductListArr = [];
+            var ProductList = {
+                Id: _Id,
+                UserName: _UserName,
+                Code: _code,
+                UserTypeId: _UserTypeId,
+                LoginId: _LoginId,
+                Password: _Password,
+                CompanyId: _CompanyId,
+                StartDate: _StartDate,
+                IsActive: _IsActive,
+                CurrentCount: _CurrentCount
+            };
+            //ProductListArr.push(ProductList);
+            if (confirm("Are you sure you want to continue ?")) {
+                $.ajax({
+                    type: 'POST',
+                    url: '/UserMaster/SaveUserMaster',
+                    data: JSON.stringify(ProductList),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: 'json',
+                    success: function (data) {
+                        debugger;
+                        if (data == "1") {
+                            debugger;
+
+                            swal({
+                                title: "Success",
+                                text: "Records Successfully Saved",
+                                type: "success",
+                            }).then(function (isConfirm) {
+                                if (isConfirm) {
+                                    var url = "/UserMaster/UserDetails";
+                                    window.location.href = url;
+                                } else {
+
+                                }
+                            });
+
+                        }
+                        else if (data == "2") {
+
+                            swal({
+                                title: "Success",
+                                text: "Records Successfully Updated",
+                                type: "success",
+                            }).then(function (isConfirm) {
+                                if (isConfirm) {
+                                    var url = "/UserMaster/UserDetails";
+                                    window.location.href = url;
+                                } else {
+
+                                }
+                            });
+                        }
+                        else if (data == "4") {
+
+                            swal("Warning", "Login ID Already Exist!", "warning");
+                        } else {
+
+                            swal("Warning", "Record not save!", "warning");
+                        }
+
+                    },
+                    error: function (httpResponse) {
+                        swal("Warning", "Something Went to Wrong !", "warning");
+
+                    }
+                })
+            }
+        }
+        else {
+
+            if (_UserName == "") {
+
+                swal("Warning", "Please Enter User Name !", "warning");
+                return false;
+            }
+
+            if (_UserTypeId == "") {
+                swal("Warning", "Please Select User Type !", "warning");
+                return false;
+            }
+            if (_code == "") {
+                swal("Warning", " Please Enter Code !", "warning");
+                return false;
+            }
+
+            if (_LoginId == "") {
+                swal("Warning", "Please Enter Login ID !", "warning");
+                return false;
+            }
+            if (_Password == "") {
+                swal("Warning", "Please Enter Password !", "warning");
+                return false;
+            }
+            if (_CompanyId == "") {
+                swal("Warning", "Please Select Company Name !", "warning");
+                return false;
+            }
+
+            if (_StartDate == "") {
+                swal("Warning", "Please Enter Start Date !", "warning");
+                return false;
+            }
+
+            if (count != 5) {
+
+                validate();
+                return false;
+            }
+        }
+
+    })
+
+
+
+        //$("#UserTypeId").change(function () {
+    //    debugger;
+    //    var val = $('#UserTypeId option:selected').val();
+    //    if (val > 0) {
+
+    //        $.ajax({
+    //            url: '/UserMaster/LoadUserType',
+    //            type: "GET",
+    //            dataType: "json",
+    //            data: { userId: val },
+    //            success: function (result) {
+    //                $.each(result, function (i, usr) {
+
+    //                    $("#Code").val(usr.Code);
+    //                });
+    //            },
+    //            error: function (xhr, status) {
+    //                console.log(status);
+    //                console.log(xhr);
+    //            },
+    //            complete: function () {
+
+    //            }
+    //        });
+    //    }
+    //})
+
+
+</script>
+
+<script>
+
+    var count = null;
+    var myInput = document.getElementById("Password");
+    var letter = document.getElementById("letter");
+    var capital = document.getElementById("capital");
+    var number = document.getElementById("number");
+    var length = document.getElementById("length");
+    var SpecialCharecter = document.getElementById("Specialchar");
+    // When the user clicks on the password field, show the message box
+    myInput.onfocus = function () {
+        document.getElementById("message").style.display = "block";
+    }
+
+    // When the user clicks outside of the password field, hide the message box
+    myInput.onblur = function () {
+        document.getElementById("message").style.display = "none";
+    }
+
+    // When the user starts to type something inside the password field
+    myInput.onkeyup = function () {
+        // Validate lowercase letters
+        var lowerCaseLetters = /[a-z]/g;
+        if (myInput.value.match(lowerCaseLetters)) {
+            letter.classList.remove("invalid");
+            letter.classList.add("valid");
+            count = 1;
+            $("#hdfcount").val(count);
+        } else {
+            letter.classList.remove("valid");
+            letter.classList.add("invalid");
+            count = count - 1;
+            $("#hdfcount").val(count);
+        }
+
+        // Validate capital letters
+        var upperCaseLetters = /[A-Z]/g;
+        if (myInput.value.match(upperCaseLetters)) {
+            capital.classList.remove("invalid");
+            capital.classList.add("valid");
+
+            count = count + 1;
+            $("#hdfcount").val(count);
+        } else {
+            capital.classList.remove("valid");
+            capital.classList.add("invalid");
+            count = count - 1;
+            $("#hdfcount").val(count);
+        }
+
+        // Validate numbers
+        var numbers = /[0-9]/g;
+        if (myInput.value.match(numbers)) {
+            number.classList.remove("invalid");
+            number.classList.add("valid");
+            count = count + 1;
+            $("#hdfcount").val(count);
+        } else {
+            number.classList.remove("valid");
+            number.classList.add("invalid");
+            count = count - 1;
+            $("#hdfcount").val(count);
+        }
+
+        // Validate length
+        if (myInput.value.length >= 8) {
+            length.classList.remove("invalid");
+            length.classList.add("valid");
+            count = count + 1;
+            $("#hdfcount").val(count);
+        } else {
+            length.classList.remove("valid");
+            length.classList.add("invalid");
+            count = count - 1;
+            $("#hdfcount").val(count);
+        }
+        // Validate numbers
+        var Special_Char = /^(?=.*[@@#$%&])/g;
+        if (myInput.value.match(Special_Char)) {
+            SpecialCharecter.classList.remove("invalid");
+            SpecialCharecter.classList.add("valid");
+            count = count + 1;
+            $("#hdfcount").val(count);
+        } else {
+            SpecialCharecter.classList.remove("valid");
+            SpecialCharecter.classList.add("invalid");
+            count = count - 1;
+            $("#hdfcount").val(count);
+        }
+
+    }
+
+    function validate() {
+
+
+        // Validate lowercase letters
+        var lowerCaseLetters = /[a-z]/g;
+        if (myInput.value.match(lowerCaseLetters)) {
+            letter.classList.remove("invalid");
+            letter.classList.add("valid");
+            count = 1;
+            $("#hdfcount").val(count);
+        } else {
+            letter.classList.remove("valid");
+            letter.classList.add("invalid");
+            count = count - 1;
+            $("#hdfcount").val(count);
+        }
+
+        // Validate capital letters
+        var upperCaseLetters = /[A-Z]/g;
+        if (myInput.value.match(upperCaseLetters)) {
+            capital.classList.remove("invalid");
+            capital.classList.add("valid");
+
+            count = count + 1;
+            $("#hdfcount").val(count);
+        } else {
+            capital.classList.remove("valid");
+            capital.classList.add("invalid");
+            count = count - 1;
+            $("#hdfcount").val(count);
+        }
+
+        // Validate numbers
+        var numbers = /[0-9]/g;
+        if (myInput.value.match(numbers)) {
+            number.classList.remove("invalid");
+            number.classList.add("valid");
+            count = count + 1;
+            $("#hdfcount").val(count);
+        } else {
+            number.classList.remove("valid");
+            number.classList.add("invalid");
+            count = count - 1;
+            $("#hdfcount").val(count);
+        }
+
+        // Validate length
+        if (myInput.value.length >= 8) {
+            length.classList.remove("invalid");
+            length.classList.add("valid");
+            count = count + 1;
+            $("#hdfcount").val(count);
+        } else {
+            length.classList.remove("valid");
+            length.classList.add("invalid");
+            count = count - 1;
+            $("#hdfcount").val(count);
+        }
+        // Validate numbers
+        var Special_Char = /^(?=.*[@@#$%&])/g;
+        if (myInput.value.match(Special_Char)) {
+            SpecialCharecter.classList.remove("invalid");
+            SpecialCharecter.classList.add("valid");
+            count = count + 1;
+            $("#hdfcount").val(count);
+        } else {
+            SpecialCharecter.classList.remove("valid");
+            SpecialCharecter.classList.add("invalid");
+            count = count - 1;
+            $("#hdfcount").val(count);
+        }
+
+    }
+
+</script>

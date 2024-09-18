@@ -1,0 +1,95 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>OutlookMessage</title>
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    @*<link href="~/assets/css/bootstrap.min.css" rel="stylesheet" />*@
+
+</head>
+<body style="background-color: aliceblue;">
+
+    <div style="width:80%; margin-left:10%; margin-right:10%; background-color:white;">
+
+        <table style=" width: 90%; margin-left: 5%; margin-right: 5%; padding-top: 2%;">
+            <tr>
+                <td>
+                    To
+                </td>
+                <td>
+                    <input type="text" id="txtTo" class="form-control" value="abc.Info@gmail.com" disabled style="width: 100%; height: 30px;" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Cc
+                </td>
+                <td>
+                    <input type="text" id="txtcc" class="form-control" value="xyz.Info@gmail.com" disabled style="width: 100%; height: 30px;" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Subject
+                </td>
+                <td>
+                    <input type="text" id="txtSubject" class="form-control" style="width: 100%; height: 30px;" />
+                </td>
+            </tr>
+            <tr>
+
+                <td colspan="2">
+                    Body
+                    <textarea id="messageoutlook" class="form-control" style="width: 100%; height: 200px; "></textarea>
+                </td>
+            </tr>
+            <tr>
+
+                <td colspan="2" style="text-align:right">
+                    <button id="btnoutlook" class="btn btn-soft-primary btn-sm shadow-none" style="margin-top: 20px; width: 13%; height: 32px;" tabindex="3"><i class="fa fa-file-excel-o" aria-hidden="true"></i> SEND</button>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script>
+
+      
+
+        $("#btnoutlook").click(function () {
+
+            var message = $("#messageoutlook").val();
+
+            //var to = 'abc.Info@gmail.com';
+            //var cc = 'xyz.Info@gmail.com';
+            //var subject = 'Example Subject';
+
+
+            var to = $("#txtTo").val();
+            var cc = $("#txtcc").val();           
+            var subject = $("#txtSubject").val();
+
+            var body = message;
+
+            var mailtoLink = 'mailto:' + encodeURIComponent(to) +
+                '?subject=' + encodeURIComponent(subject) +
+                '&cc=' + encodeURIComponent(cc) + '&body=' + encodeURIComponent(body);
+
+            window.location.href = mailtoLink;
+
+
+        })
+    </script>
+</body>
+
+
+</html>

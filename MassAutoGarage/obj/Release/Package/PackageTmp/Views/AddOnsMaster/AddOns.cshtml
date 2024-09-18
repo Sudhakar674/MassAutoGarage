@@ -1,0 +1,361 @@
+﻿@model MassAutoGarage.Models.AddOnsMaster.AddOnsMasterModel
+@{
+    ViewBag.Title = "ADD ONS";
+    ViewBag.pTitle = "ADD ONS Master";
+    ViewBag.pageTitle = "Forms";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
+@section styles{
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+}
+
+
+@using (Html.BeginForm("AddOns", "AddOnsMaster", FormMethod.Post, new { enctype = "multipart/form-data", OnSubmit = "return ValidationForm()", @class = "form-validate", @id = "myformid" }))
+{
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header align-items-center d-flex">
+                    <h4 class="card-title mb-0 flex-grow-1">CREATE ADD ONS</h4>
+                    <div class="flex-shrink-0">
+                        <div class="form-check form-switch form-switch-right form-switch-md">
+                            <a href="@Url.Action("OnsDetails","PramotionMaster")" class="btn btn-primary" style="float:right;" tabindex="6"><i class="fa fa-list" aria-hidden="true"></i> BACK TO ADD ONS LIST</a>
+                        </div>
+                    </div>
+                </div><!-- end card header -->
+                <div class="card-body">
+                    <div class="live-preview">
+                        <div class="row gy-4">
+                            <div class="col-xxl-3 col-md-3">
+                                <div>
+                                    <label for="labelInput" class="form-label">Code <code>*</code></label>
+                                    @Html.HiddenFor(m => m.ID, new { @class = "form-control", @id = "HDFID" })
+                                    @Html.TextBoxFor(m => m.VoucherCode, new { @class = "form-control", tabindex = 1 })
+                                    @Html.ValidationMessageFor(m => m.VoucherCode, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-md-3">
+                                <div>
+                                    <label for="labelInput" class="form-label">Service Name <code>*</code></label>
+                                    @Html.DropDownListFor(x => x.ServiceName, new List<SelectListItem>{
+                                     new SelectListItem { Text = "---Select---", Value = "0", Selected=true},
+                                     new SelectListItem { Text = "Service Name - 1", Value = "1"},
+                                     new SelectListItem { Text = "Service Name - 2", Value = "2"},
+                                     new SelectListItem { Text = "Service Name - 3", Value = "3"},
+                                     }, new { @class = "js-example-basic-single", tabindex = 3 })
+
+
+                                </div>
+                            </div>
+
+                            <div class="col-xxl-3 col-md-3">
+                                <div>
+                                    <label for="labelInput" class="form-label">Comission<code>*</code></label>
+                                    @Html.TextBoxFor(m => m.Comission, new { @class = "form-control", tabindex = 1 })
+                                    @Html.ValidationMessageFor(m => m.Comission, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-md-3">
+                                <div>
+                                    <label for="labelInput" class="form-label">ComissionAmount<code>*</code></label>
+                                    @Html.TextBoxFor(m => m.ComissionAmount, new { @class = "form-control", tabindex = 1 })
+                                    @Html.ValidationMessageFor(m => m.ComissionAmount, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+
+                                </div>
+                            </div>
+
+
+
+                            <!--end col-->
+
+
+                        </div>
+                        <!--end row-->
+                    </div>
+
+                </div>
+                <br /><br />
+                <div class="col-xxl-12 col-md-12">
+                    <div class="form-floating" style="float: right; padding-right: 2%;">
+                        <a href="@Url.Action("PramotionDetails","PramotionMaster")" class="btn btn-danger" tabindex="4">Cancel</a>
+                        <input type="button" value="Save" id="btnSave" class="btn btn-primary" tabindex="5" />
+
+                    </div>
+                </div>
+                <br />
+            </div>
+
+
+        </div>
+
+        <!--end col-->
+    </div>
+}
+
+
+@section scripts{
+
+
+    <!--select2 cdn-->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script src="~/assets/js/pages/select2.init.js"></script>
+    <script src="~/assets/libs/prismjs/prism.js"></script>
+    <script src="~/assets/js/app.js"></script>
+
+    <!-- prismjs plugin -->
+    <!-- App js -->
+
+
+}
+
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+@*<link rel="stylesheet" href="/resources/demos/style.css">*@
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+    window.setInterval(function () {
+        debugger;
+        var dirtyElements = $('#myformid').find('[data-dirty=true]').add('[form=myformid][data-dirty=true]');
+        if (dirtyElements.length > 0) {
+            var data = dirtyElements.serialize();
+            $.post('saveurl', data, function () {
+                dirtyElements.attr('data-dirty', false);
+                alert('data saved successfully');
+            });
+        }
+    }, 30000);
+
+
+    $(document).ready(function () {
+
+
+
+
+        var options = $.extend({},
+            $.datepicker.regional["es"], {
+            dateFormat: "dd/mm/yy",
+            changeMonth: true,
+            changeYear: true,
+            /* yearRange: "-2:+0",*/
+            todayHighlight: true,
+            /*highlightWeek: true,*/
+            /*maxDate: 0*/
+        });
+        $("#InvoiceDate").datepicker(options);
+
+        /* LoadUserType();*/
+
+        //$("#StartDate").datepicker({
+        //    format: 'dd/mm/yy',
+        //    changeMonth: true,
+        //    changeYear: true,
+        //    todayHighlight: true,
+
+        //});
+
+        //var options = $.extend({},
+        //    $.datepicker.regional["es"], {
+        //    dateFormat: "dd/mm/yy",
+        //    changeMonth: true,
+        //    changeYear: true,
+        //    /* yearRange: "-2:+0",*/
+        //    todayHighlight: true,
+        //    /*highlightWeek: true,*/
+        //    /*maxDate: 0*/
+        //});
+        //$("#StartDate").datepicker(options);
+
+    })
+
+    $("#btnSave").click(function (e) {
+        debugger;
+        e.preventDefault();
+
+
+        var _code = $("#Code").val();
+        var _ColorId = $("#ColorId option:selected").val();
+        var _ColorCode = $("#ColorCode").val();
+        var _IsActive = $("#IsActive option:selected").val();
+        var _Id = $("#HDFID").val();
+
+
+        if (_code != "" && _ColorId != "") {
+            var ProductListArr = [];
+            var ProductList = {
+                ID: _Id,
+                Code: _code,
+                ColorId: _ColorId,
+                ColorCode: _ColorCode,
+                IsActive: _IsActive
+
+            };
+            //ProductListArr.push(ProductList);
+            if (confirm("Are you sure you want to continue ?")) {
+                $.ajax({
+                    type: 'POST',
+                    url: '/ColorMaster/SaveColorMaster',
+                    data: JSON.stringify(ProductList),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: 'json',
+                    success: function (data) {
+                        debugger;
+                        if (data == "1") {
+                            debugger;
+
+                            swal({
+                                title: "Success",
+                                text: "Records Successfully Saved",
+                                type: "success",
+                            }).then(function (isConfirm) {
+                                if (isConfirm) {
+                                    var url = "/ColorMaster/ColorDetails";
+                                    window.location.href = url;
+                                } else {
+
+                                }
+                            });
+
+                        }
+                        else if (data == "2") {
+
+                            swal({
+                                title: "Success",
+                                text: "Records Successfully Updated",
+                                type: "success",
+                            }).then(function (isConfirm) {
+                                if (isConfirm) {
+                                    var url = "/ColorMaster/ColorDetails";
+                                    window.location.href = url;
+                                } else {
+
+                                }
+                            });
+                        }
+                        else if (data == "4") {
+
+                            swal("Warning", "This Color is Already Exist!", "warning");
+                        } else {
+
+                            swal("Warning", "Record not save!", "warning");
+                        }
+
+                    },
+                    error: function (httpResponse) {
+                        swal("Warning", "Something Went to Wrong !", "warning");
+
+                    }
+                })
+            }
+        }
+        else {
+
+
+            if (_code == "") {
+                swal("Warning", " Please Enter Code !", "warning");
+                return false;
+            }
+
+            if (_ColorId == "") {
+                swal("Warning", "Please Select Color !", "warning");
+                return false;
+            }
+
+
+        }
+
+    })
+
+    $("#btnAdd").click(function (e) {
+        debugger;
+        e.preventDefault();
+        var _Code = $("#Code").val();
+        var _CompanyID = $("#CompanyID option:selected").val();
+        var _CompanyName = $("#CompanyID option:selected").text();
+
+        var _SupplierID = $("#SupplierID option:selected").val();
+        var _SupplierName = $("#SupplierID option:selected").text();
+
+        var _InvoiceDate = $("#InvoiceDate").val();
+        var _InvoiceNumber = $("#InvoiceNumber").val();
+        var _ToAccountID = $("#ToAccountID option:selected").val();
+        var _ToAccountName = $("#ToAccountID option:selected").text();
+
+
+        var _LPONO = $("#LPONO").val();
+        var _TotalAmount = $("#TotalAmount").val();
+        var _PaidAmount = $("#PaidAmount").val();
+        var _BalanceAmount = $("#BalanceAmount").val();
+
+
+        var tableLength = $("#example tr").length;
+        var tableLength = $("#tBody2 tr").length;
+
+        if (_Code != "" && _CompanyID != "" && _SupplierID != "" && _InvoiceDate != "" && _InvoiceNumber != "") {
+            $("#example").show();
+            var tr = "<tr>";
+            tr += "<td>" + (tableLength + 1) + "<input type='hidden' class='clsCompanyID' value=" + _CompanyID + " /><input type='hidden' class='clsSupplierID' value=" + _SupplierID + " /><input type='hidden' class='clsToAccountID' value=" + _ToAccountID + " /></td><td>" + _Code + "</td><td>" + _CompanyName + "</td><td>" + _SupplierName + "</td><td>" + _InvoiceDate + "</td><td>" + _InvoiceNumber + "</td><td>" + _ToAccountName + "</td><td>" + _LPONO + "</td><td>" + _TotalAmount + "</td><td>" + _PaidAmount + "</td><td>" + _BalanceAmount + "</td><td><a  class='btn btn-danger view-btn DeleteTr' ><i class='fa fa-trash' aria-hidden='true'></i></a></td>";
+            tr += "</tr>";
+            $("#tBody2").append(tr);
+
+
+
+        }
+        else {
+
+            swal({
+                title: "Warning",
+                text: "Rquired Quantity is not Greater Than Given Quantity. !",
+                type: "warning",
+            }).then(function (isConfirm) {
+                if (isConfirm) {
+                    $("#txtdamQty").val("");
+                } else {
+                    //if no clicked => do something else
+                }
+            });
+
+        }
+
+
+    });
+
+
+    $(document).on("click", ".DeleteTr", function () {
+
+        if (confirm("Are you sure you want to remove ?")) {
+
+            $(this).parents("tr").remove();
+            calculat();
+        }
+    })
+
+
+    $("#PaidAmount,#TotalAmount").change(function () {
+        debugger;
+        var TAmt = parseFloat($("#TotalAmount").val());
+        var pAmt = parseFloat($("#PaidAmount").val());
+        if (TAmt > 0 && pAmt > 0) {
+
+            var balAmt = (TAmt - pAmt);
+            $("#BalanceAmount").val(balAmt.toFixed(2));
+
+        }
+
+    });
+</script>
+

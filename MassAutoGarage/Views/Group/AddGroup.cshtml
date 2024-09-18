@@ -1,0 +1,231 @@
+﻿@model MassAutoGarage.Models.ColorMaster.ColorMasterModel
+@{
+    ViewBag.Title = "Group";
+    ViewBag.pTitle = "Group";
+    ViewBag.pageTitle = "Forms";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
+@section styles{
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+}
+
+
+@using (Html.BeginForm("AddGroup", "Group", FormMethod.Post, new { enctype = "multipart/form-data", OnSubmit = "return ValidationForm()", @class = "form-validate" }))
+{
+
+
+    <div class="row">
+        <div class="col-lg-12">
+
+
+
+            <div class="card">
+                <div class="card-header main-f">
+                    <div class="row">
+                        <div class="col-md-6 col-5"> <h5 class="card-title mb-0 gp-detail"> GROUP</h5></div>
+                        <div class="col-md-6 col-7">
+                            <a href="@Url.Action("Index","Group")" class="btn btn-primary add-new" style="float:right;" tabindex="1"> <i class="ri-add-circle-line align-middle me-1"></i>BACK GROUP LIST</a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                @*<div class="card main-f p-2">
+                    <div class="row">
+                        <div class="col-md-6 col-5"> <h5 class="card-title mb-0 gp-detail">GROUP</h5></div>
+                        <div class="col-md-6 col-7">
+                            <a href="@Url.Action("Index","Group")" class="btn btn-primary add-new" style="float:right;" tabindex="1"> <i class="fa fa-arrow-left  align-middle me-1"></i> BACK GROUP LIST </a>
+                        </div>
+                    </div>*@
+
+
+
+                    @*<div class="card">
+                <div class="card-header align-items-center d-flex">
+                    <h4 class="card-title mb-0 flex-grow-1">GROUP</h4>
+                    <div class="flex-shrink-0">
+                        <div class="form-check form-switch form-switch-right form-switch-md">
+                            <a href="@Url.Action("Index","Group")" class="btn btn-primary" style="float:right;" tabindex="6"><i class="fa fa-list" aria-hidden="true"></i> BACK GROUP LIST</a>
+                        </div>
+                    </div>
+                </div>*@
+
+
+
+
+
+                    <!-- end card header -->
+                    <div class="card-body">
+                        <div class="live-preview">
+                            <div class="row gy-4">
+
+                                <div class="col-xxl-4 col-md-4">
+                                    <div>
+                                        <label for="labelInput" class="form-label">Group Name <code>*</code></label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="col-xxl-4 col-md-4">
+                                    <div>
+                                        <label for="labelInput" class="form-label">Group Nature <code>*</code></label>
+                                        <select id="ddlGroupNature" class="js-example-basic-single">
+                                            <option value="Select">Select</option>
+                                            <option value="Assets">Assets</option>
+                                            <option value="Liabilities">Liabilities</option>
+                                            <option selected="selected" value="Equity">Equity</option>
+                                            <option value="Income">Income</option>
+                                            <option value="Expenses">Expenses</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-xxl-4 col-md-4">
+                                    <div>
+                                        <label for="labelInput" class="form-label">Code <code>*</code></label>
+                                        <input type="text" class="form-control" disabled />
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <!--end row-->
+                        </div>
+
+                    </div>
+
+                    <div class="col-xxl-12 col-md-12">
+                        <div class="form-floating" style="float: right; padding-right: 2%;">
+
+                            <input type="button" value="Save" id="btnSave" class="btn btn-primary" tabindex="5" />
+                            <a href="#" class="btn btn-danger" tabindex="4">Reset</a>
+
+                        </div>
+                    </div>
+                    <br />
+                </div>
+
+
+            </div>
+
+            <!--end col-->
+        </div>
+
+
+
+}
+
+
+@section scripts{
+
+
+    <!--select2 cdn-->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script src="~/assets/js/pages/select2.init.js"></script>
+    <script src="~/assets/libs/prismjs/prism.js"></script>
+    <script src="~/assets/js/app.js"></script>
+
+    <!-- prismjs plugin -->
+    <!-- App js -->
+
+
+}
+
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+@*<link rel="stylesheet" href="/resources/demos/style.css">*@
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+        var options = $.extend({},
+            $.datepicker.regional["es"], {
+            dateFormat: "dd/mm/yy",
+            changeMonth: true,
+            changeYear: true,
+            /* yearRange: "-2:+0",*/
+            todayHighlight: true,
+            /*highlightWeek: true,*/
+            /*maxDate: 0*/
+        });
+        $("#txttoDate").datepicker(options);
+
+        var options = $.extend({},
+            $.datepicker.regional["es"], {
+            dateFormat: "dd/mm/yy",
+            changeMonth: true,
+            changeYear: true,
+            /* yearRange: "-2:+0",*/
+            todayHighlight: true,
+            /*highlightWeek: true,*/
+            /*maxDate: 0*/
+        });
+        $("#txtfromDate").datepicker(options);
+
+    })
+    $("#btnAdd").click(function () {
+
+        $("#staticBackdrop").modal("show");
+
+    })
+
+
+
+
+</script>
+
+<script type="text/javascript">
+    //jQuery(function ($) {
+
+
+    //    debugger;
+    //    $("#colorPickerBasic").shieldColorPicker({
+
+    //        value: "#33CC00",
+    //        displayInline: true,
+    //        events: {
+    //            select: function (e) {
+
+
+    //                /*$("#image-container").css("background-color", e.target.value().css());    */
+    //                $("#HDFColorCode").val(e.target.value().css());
+    //                $("#image-container").val(e.target.value().css());
+    //            }
+    //        }
+    //    });
+
+    //    $("#colorPickerAdvanced").shieldColorPicker({
+
+    //        value: "#33CC00",
+    //        palette: "advanced",
+    //        advancedPalette: {
+    //            type: "hex",
+    //            buttons: true
+    //        },
+    //        events: {
+    //            change: function (e) {
+
+    //                /* $("#image-container").css("background-color", e.target.value().css());*/
+    //                $("#HDFColorCode").val(e.target.value().css());
+    //                $("#image-container").val(e.target.value().css());
+    //            }
+    //        }
+    //    });
+    //});
+</script>

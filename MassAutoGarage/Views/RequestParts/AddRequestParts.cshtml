@@ -1,0 +1,634 @@
+﻿@model MassAutoGarage.Models.ColorMaster.ColorMasterModel
+@{
+    ViewBag.Title = "Request Parts";
+    ViewBag.pTitle = "Request Parts";
+    ViewBag.pageTitle = "Forms";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<style>
+
+    .main-table {
+        width: 100%;
+        /*  max-width: 980px;*/
+        /* change to suit*/
+        margin: auto;
+        border: 1px solid #4b38af;
+        border-collapse: collapse;
+    }
+
+        .main-table thead th {
+            background: #4b38af;
+            color: #fff;
+            color: #fff;
+            font-size: 0.8rem;
+            padding: 5px 9px 6px 9px;
+            line-height: 1;
+            border: 1px solid #626060;
+        }
+
+        .main-table th,
+        .main-table td {
+            vertical-align: top;
+            text-align: left;
+            border: 1px solid #626060;
+        }
+
+    td.numbers {
+        text-align: center;
+    }
+
+    .main-table td {
+        font-size: 13px; /* font-size: 0.7rem;*/
+        padding: 3px 9px;
+        border-bottom: 1px solid #999; /* dotted borders look bad on tables*/
+        line-height: 1.2;
+    }
+
+    .table-heading {
+        font-size: 0.7rem;
+        margin: 0 0 0.5em;
+    }
+
+    .item-options {
+        margin: 0 0 0.5rem;
+        overflow: hidden;
+        clear: both;
+    }
+
+        .item-options dt {
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .item-options dt,
+        .item-options dd {
+            display: inline-block;
+            margin: 0;
+            padding: 0 5px 0 0;
+            vertical-align: top;
+        }
+
+            .item-options dt:after {
+                content: ":";
+            }
+
+    .main-table tbody tr:nth-child(odd) td {
+        background: #f9f9f9;
+    }
+
+    @@media screen and (max-width: 540px) {
+        table.mobile-optimised {
+            word-wrap: break-word;
+            font-size: 1rem;
+            border: none;
+        }
+
+            table.mobile-optimised thead {
+                display: none;
+            }
+
+            table.mobile-optimised td {
+                display: block;
+                float: left; /* ie9 and under hack */
+                width: 100%;
+                clear: both;
+                background: #eee;
+                border: none;
+                padding: 10px 5px;
+                box-sizing: border-box;
+                font-size: 12px;
+            }
+
+            table.mobile-optimised tbody,
+            table.mobile-optimised tr {
+                display: block;
+            }
+
+        .mobile-optimised td:before {
+            content: attr(data-th);
+            display: block;
+            font-weight: bold;
+            margin: 0 0 2px;
+            background: #4b38af;
+            color: #fff;
+            padding: 5px;
+        }
+
+        .mobile-optimised tbody tr {
+            border-bottom: 1px solid #000;
+            overflow: hidden;
+        }
+
+        .item-options,
+        .table-heading {
+            font-size: 1rem;
+        }
+
+        .mobile-optimised .numbers {
+            text-align: left;
+        }
+
+        .main-table tbody tr:nth-child(odd) td {
+            background: #ccc;
+        }
+    }
+</style>
+<script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
+@section styles{
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+}
+
+
+@using (Html.BeginForm("AddRequestParts", "RequestParts", FormMethod.Post, new { enctype = "multipart/form-data", OnSubmit = "return ValidationForm()", @class = "form-validate" }))
+{
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+
+                <div class="card-header main-f">
+                    <div class="row">
+                        <div class="col-md-6 col-5"> <h5 class="card-title mb-0 gp-detail">ADD REQUEST PARTS</h5></div>
+                        <div class="col-md-6 col-7">
+                            <a href="@Url.Action("Index","RequestParts")" class="btn btn-primary add-new" style="float:right;" tabindex="1"> <i class="fa fa-arrow-left align-middle me-1"></i> BACK REQUEST PARTS LIST </a>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                @*<div class="card-header align-items-center d-flex">
+            <h4 class="card-title mb-0 flex-grow-1">ADD REQUEST PARTS</h4>
+            <div class="flex-shrink-0">
+                <div class="form-check form-switch form-switch-right form-switch-md">
+                    <a href="@Url.Action("Index","RequestParts")" class="btn btn-primary" style="float:right;" tabindex="6"><i class="fa fa-list" aria-hidden="true"></i> BACK REQUEST PARTS LIST</a>
+                </div>
+            </div>
+        </div>*@
+
+                <!-- end card header -->
+                <div class="card-body">
+                    <div class="live-preview">
+                        <div class="row gy-4">
+                            <div class="col-xxl-4 col-md-4">
+                                <div>
+                                    <label for="labelInput" class="form-label">Company Name <code>*</code></label>
+                                    <select id="ddlCompany" class="js-example-basic-single">
+                                        <option value="0">Select</option>
+                                        <option value="1">Company Name-1</option>
+                                        <option value="2">Company Name-2</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-xxl-4 col-md-4">
+                                <div>
+                                    <label for="labelInput" class="form-label">Request Order No<code>*</code></label>
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+
+                            <div class="col-xxl-4 col-md-4">
+                                <div>
+                                    <label for="labelInput" class="form-label">Date<code>*</code></label>
+                                    <input type="text" class="form-control" />
+
+                                </div>
+                            </div>
+
+                            <div class="col-xxl-12 col-md-12">
+                                <div>
+                                    <label for="labelInput" class="form-label">Remakrs <code>*</code></label>
+                                    <textarea class="form-control"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-xxl-4 col-md-4">
+                                <div>
+                                    <input type="checkbox" class="form-check-input" value="" id="RequestPartsCheck" />  <label for="RequestPartsCheck" class="form-label">Request for Parts <code>*</code></label>
+                                    <select id="ddlRequestParts" class="js-example-basic-single">
+                                        <option value="0">Select</option>
+                                        <option value="1">Parts Name-1</option>
+                                        <option value="2">Parts Name-2</option>
+                                        <option value="2">Parts Name-3</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-xxl-4 col-md-4">
+                                <div>
+                                    <label for="labelInput" class="form-label">Job Card number <code>*</code></label>
+                                    <input type="text" class="form-control" />
+
+                                </div>
+                            </div>
+                            <div class="col-xxl-4 col-md-4">
+                                <div>
+                                    <label for="labelInput" class="form-label">Brand <code>*</code></label>
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-xxl-4 col-md-4">
+                                <div>
+                                    <label for="labelInput" class="form-label">Model <code>*</code></label>
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-xxl-4 col-md-4">
+                                <div>
+                                    <label for="labelInput" class="form-label">Estimation No <code>*</code></label>
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-xxl-4 col-md-4">
+                                <div>
+                                    <label for="labelInput" class="form-label">VIN Number <code>*</code></label>
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+
+                            <div class="col-xxl-12 col-md-12">
+                                <div>
+                                    <label for="labelInput" class="form-label">Remakrs <code>*</code></label>
+                                    <textarea class="form-control"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-xxl-6 col-md-6">
+                                <div>
+                                    <label for="labelInput" class="form-label">VAT % <code>*</code></label>
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+
+                            <div class="col-xxl-6 col-md-6">
+                                <div>
+                                    <label for="labelInput" class="form-label">VAT Applicable <code>*</code></label>
+                                    <select id="ddlvatApplicable" class="js-example-basic-single">
+                                        <option value="0">YES</option>
+                                        <option value="1">NO</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-xxl-12 col-md-12">
+                                <div>
+                                    <label for="labelInput" class="form-label">Terms & Conditions <code>*</code></label>
+                                    <textarea class="form-control"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="col-xxl-12 col-md-12">
+                                <div style="text-align:right;">
+                                    <input type="button" value="Add Product Part" id="btnAdd" class="btn btn-primary" tabindex="5" />
+                                </div>
+                                <br />
+
+
+
+                                <div class="table-responsive">
+
+                                    <table id="tblProduct" class="display table table-bordered mobile-optimised">
+                                        <thead>
+                                            <tr>
+                                                <th>SL.</th>
+                                                <th style="white-space:nowrap">Part Number</th>
+                                                <th style="white-space:nowrap">Description </th>
+                                                <th style="white-space:nowrap">Qty</th>
+                                                <th style="white-space:nowrap">Cost Price</th>
+                                                <th style="white-space:nowrap">Amount</th>
+                                                <th style="white-space:nowrap">Discount</th>
+                                                <th style="white-space:nowrap">Gross Amount</th>
+                                                <th style="white-space:nowrap">VAT</th>
+                                                <th style="white-space:nowrap">Total</th>
+                                                <th style="white-space:nowrap">Remakrs</th>
+                                                <th style="white-space: nowrap; width: 9%;">Action</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tBody">
+                                            <tr>
+                                                <td data-th="SL.">1.</td>
+                                                <td data-th="Part Number">009888</td>
+                                                <td data-th="Description">WASHING MACHINE</td>
+                                                <td data-th="Qty">10</td>
+                                                <td data-th="Cost Price">4000</td>
+                                                <td data-th="Amount">1090</td>
+                                                <td data-th="Discount">50%</td>
+                                                <td data-th="Gross Amount">4500</td>
+                                                <td data-th="VAT">18%</td>
+
+                                                <td data-th="Total">560000</td>
+                                                <td data-th="Remakrs">A washing machine is a machine that washes dirty clothes.</td>
+                                                <td data-th="Action">
+                                                    <a href="#" class="btn btn-sm btn-danger remove-item-btn" tabindex="6"> <i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td data-th="SL.">1.</td>
+                                                <td data-th="Part Number">009888</td>
+                                                <td data-th="Description">WASHING MACHINE</td>
+                                                <td data-th="Qty">10</td>
+                                                <td data-th="Cost Price">4000</td>
+                                                <td data-th="Amount">1090</td>
+                                                <td data-th="Discount">50%</td>
+                                                <td data-th="Gross Amount">4500</td>
+                                                <td data-th="VAT">18%</td>
+
+                                                <td data-th="Total">560000</td>
+                                                <td data-th="Remakrs">A washing machine is a machine that washes dirty clothes.</td>
+                                                <td data-th="Action">
+                                                    <a href="#" class="btn btn-sm btn-danger remove-item-btn" tabindex="6"> <i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!--end col-->
+                            </div>
+                        </div>
+                        <!--end row-->
+                    </div>
+
+                </div>
+
+                <div class="col-xxl-12 col-md-12">
+                    <div class="form-floating" style="float: right; padding-right: 2%;">
+
+                        <input type="button" value="Save" id="btnSave" class="btn btn-primary" tabindex="5" />
+                        <a href="@Url.Action("GoodsReceivedNoteDetails","GoodsReceivedNote")" class="btn btn-danger" tabindex="4">Cancel</a>
+
+                    </div>
+                </div>
+                <br />
+            </div>
+
+
+        </div>
+
+        <!--end col-->
+    </div>
+
+
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">PRODUCT PART</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="row gy-4">
+                        <div class="col-xxl-3 col-md-3">
+                            <div>
+                                <label for="labelInput" class="form-label">Part Number <code>*</code></label>
+                                <input type="text" id="txtCode" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-xxl-12 col-md-12">
+                            <div>
+                                <label for="labelInput" class="form-label">Descirption<code>*</code></label>
+                                <textarea id="txtDescirption" class="form-control"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-md-3">
+                            <div>
+                                <label for="labelInput" class="form-label">Qty <code>*</code></label>
+                                <input type="text" id="txtCode" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-md-3">
+                            <div>
+                                <label for="labelInput" class="form-label">Job Card No <code>*</code></label>
+                                <input type="text" id="txtCode" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-md-3">
+                            <div>
+                                <label for="labelInput" class="form-label">Current Qty <code>*</code></label>
+                                <input type="text" id="txtCode" class="form-control" />
+                            </div>
+                        </div>
+
+
+                        <div class="col-xxl-3 col-md-3">
+                            <div>
+                                <label for="labelInput" class="form-label">Cost Price  <code>*</code></label>
+                                <input type="text" id="txtCompany" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-md-3">
+                            <div>
+                                <label for="labelInput" class="form-label">Amount<code>*</code></label>
+                                <input type="text" id="txtAccName" class="form-control" />
+                            </div>
+                        </div>
+
+
+                        <div class="col-xxl-3 col-md-3">
+                            <div>
+                                <label for="labelInput" class="form-label">Discount <code>*</code></label>
+                                <input type="text" id="txtLandlineno" class="form-control" />
+
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-md-3">
+                            <div>
+                                <label for="labelInput" class="form-label">Gross Amount <code>*</code></label>
+                                <input type="text" id="txtMoble" class="form-control" />
+
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-1 col-md-1">
+                            <div>
+                                <label for="labelInput" class="form-label">VAT % <code>*</code></label>
+                                <input type="text" id="txtEmail" class="form-control" />
+
+                            </div>
+                        </div>
+                        <div class="col-xxl-1 col-md-2">
+                            <div>
+                                <label for="labelInput" class="form-label">Total Amount </label>
+                                <input type="text" id="txtTRN" class="form-control" />
+
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-12 col-md-12">
+                            <div>
+                                <label for="labelInput" class="form-label">Remarks<code>*</code></label>
+                                <textarea id="txtDescirption" class="form-control"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-xxl-12 col-md-12">
+                            <div style="text-align:right;">
+                                <input type="button" value="ADD Product" id="btnAddProduct" class="btn btn-primary" tabindex="5" />
+                            </div>
+                        </div>
+                        <hr />
+
+
+                        <div class="table-responsive">
+
+                            <table id="tblProduct" class="display table table-bordered mobile-optimised">
+                                <thead>
+                                    <tr>
+                                        <th>SL.</th>
+
+
+                                        <th style="white-space:nowrap">Part Number</th>
+                                        <th style="white-space:nowrap">Description</th>
+                                        <th style="white-space:nowrap">Qty </th>                                      
+                                        <th style="white-space:nowrap">Cost Price</th>
+                                        <th style="white-space:nowrap">Amount</th>
+                                        <th style="white-space:nowrap">Discount</th>
+                                        <th style="white-space:nowrap">Gross Amount</th>
+                                        <th style="white-space:nowrap">VAT</th>
+                                        <th style="white-space:nowrap">Total</th>
+                                        <th style="white-space:nowrap">Remakrs</th>
+                                        <th style="white-space: nowrap; width: 9%;">Action</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody id="tBody">
+                                    <tr>
+                                        <td data-th="SL.">1.</td>
+                                        <td data-th="Account Name">AC/009354</td>
+                                        <td data-th="Job Card Number">J-0089</td>
+                                        <td data-th="Part Number">009888</td>
+                                        <td data-th="Description">WASHING MACHINE</td>
+                                        <td data-th="Qty">10</td>
+                                        <td data-th="Cost Price">4000</td>
+                                        <td data-th="Amount">1090</td>
+                                        <td data-th="Discount">50%</td>
+                                        <td data-th="Gross Amount">4500</td>
+                                        <td data-th="VAT">18%</td>
+
+                                        <td data-th="Total">560000</td>
+                                        <td data-th="Remakrs">A washing machine is a machine that washes dirty clothes.</td>
+                                        <td data-th="Action">
+                                            <a href="#" class="btn btn-sm btn-danger remove-item-btn" tabindex="6"> <i class="fa fa-trash" aria-hidden="true"></i> Delete </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-th="SL.">1.</td>
+                                        <td data-th="Account Name">AC/009354</td>
+                                        <td data-th="Job Card Number">J-0089</td>
+                                        <td data-th="Part Number">009888</td>
+                                        <td data-th="Description">WASHING MACHINE</td>
+                                        <td data-th="Qty">10</td>
+                                        <td data-th="Cost Price">4000</td>
+                                        <td data-th="Amount">1090</td>
+                                        <td data-th="Discount">50%</td>
+                                        <td data-th="Gross Amount">4500</td>
+                                        <td data-th="VAT">18%</td>
+
+                                        <td data-th="Total">560000</td>
+                                        <td data-th="Remakrs">A washing machine is a machine that washes dirty clothes.</td>
+                                        <td data-th="Action">
+                                            <a href="#" class="btn btn-sm btn-danger remove-item-btn" tabindex="6"> <i class="fa fa-trash" aria-hidden="true"></i> Delete </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!--end col-->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" value="ADD" id="btnAdd" class="btn btn-primary" tabindex="5" />
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    @*<button type="button" class="btn btn-primary">Understood</button>*@
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+@section scripts{
+
+
+    <!--select2 cdn-->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script src="~/assets/js/pages/select2.init.js"></script>
+    <script src="~/assets/libs/prismjs/prism.js"></script>
+    <script src="~/assets/js/app.js"></script>
+
+    <!-- prismjs plugin -->
+    <!-- App js -->
+
+
+}
+
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+@*<link rel="stylesheet" href="/resources/demos/style.css">*@
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+
+
+    })
+    $("#btnAdd").click(function () {
+
+        $("#staticBackdrop").modal("show");
+
+    })
+
+
+
+
+</script>
+
+<script type="text/javascript">
+    //jQuery(function ($) {
+
+
+    //    debugger;
+    //    $("#colorPickerBasic").shieldColorPicker({
+
+    //        value: "#33CC00",
+    //        displayInline: true,
+    //        events: {
+    //            select: function (e) {
+
+
+    //                /*$("#image-container").css("background-color", e.target.value().css());    */
+    //                $("#HDFColorCode").val(e.target.value().css());
+    //                $("#image-container").val(e.target.value().css());
+    //            }
+    //        }
+    //    });
+
+    //    $("#colorPickerAdvanced").shieldColorPicker({
+
+    //        value: "#33CC00",
+    //        palette: "advanced",
+    //        advancedPalette: {
+    //            type: "hex",
+    //            buttons: true
+    //        },
+    //        events: {
+    //            change: function (e) {
+
+    //                /* $("#image-container").css("background-color", e.target.value().css());*/
+    //                $("#HDFColorCode").val(e.target.value().css());
+    //                $("#image-container").val(e.target.value().css());
+    //            }
+    //        }
+    //    });
+    //});
+</script>

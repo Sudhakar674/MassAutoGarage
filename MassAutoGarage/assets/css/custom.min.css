@@ -1,0 +1,85 @@
+
+@media screen and (max-width: 767px) {
+    .mng-soft, .mng-soft2 {
+        font-size: 35px !important;
+        line-height: 42px !important;
+    }
+    .logo-l {
+        height: 59px;
+    }
+    .border-nm {
+        border: 1px solid #fff;
+        width: 100%;
+    }
+}
+
+
+
+
+.text-link {
+    color: #fff;
+    vertical-align: text-top;
+    font-style: italic;
+    font-size: 18px;
+}
+.s-p-1 {
+    font-size: 24px;
+    color: #ffff;
+    line-height: 23px;
+    padding-top: 1px;
+}
+
+.auth-one-bg .bg-overlay {
+    background: -webkit-gradient(linear,left top,right top,from(#41319c),to(#4b38b3));
+    background: linear-gradient(to right,#02000b,#200f7e) !important;
+    opacity: .9;
+}
+.mass-btn {
+    background: #1B2855;
+    border: #1B2855;
+}
+
+
+/*new css*/
+
+.right-text{
+    text-align:right;
+}
+
+@media only screen and (max-width: 650px) {
+    .gp-detail {
+        font-size: 13px !important;
+        margin: 13px 0 7px 0;
+    }
+    .add-new {
+        font-size: 10px;
+    }
+    .right-text {
+        text-align: left;
+        padding: 0px;
+    }
+    .btn-soft-primary {
+        height: 38px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    div#example_filter {
+        display: none;
+    }
+    #page-topbar {
+       
+        background-color: #e8f6fb;
+    }
+
+    div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+        justify-content: center !important;
+        padding-bottom: 23px;
+    }
+    legend {
+        width: 100% !important;
+    }
+}
+
+
+/*ned new css*/

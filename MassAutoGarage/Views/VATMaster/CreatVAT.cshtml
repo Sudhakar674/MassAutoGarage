@@ -1,0 +1,421 @@
+﻿@model MassAutoGarage.Models.VATMasterModel
+
+@{
+    ViewBag.Title = "VAT";
+    ViewBag.pTitle = "VAT MASTER";
+    ViewBag.pageTitle = "Forms";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
+
+@section styles{
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+}
+@using (Html.BeginForm("CreatVAT", "VATMaster", FormMethod.Post, new { enctype = "multipart/form-data", OnSubmit = "return ValidationForm()", @class = "form-validate" }))
+{
+
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header main-f">
+                    <div class="row">
+                        <div class="col-md-6 col-5"> <h5 class="card-title mb-0 gp-detail">VAT-MASTER</h5></div>
+                        <div class="col-md-6 col-7">
+                            <a href="@Url.Action("VATDetails","VATMaster")" class="btn btn-primary add-new" style="float:right;" tabindex="1"> <i class="fa fa-arrow-left align-middle me-1"></i> Back To VAT List</a>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                @*<div class="card-header align-items-center d-flex">
+            <h4 class="card-title mb-0 flex-grow-1">VAT-MASTER</h4>
+            <div class="flex-shrink-0">
+                <div class="form-check form-switch form-switch-right form-switch-md">
+                    <a href="@Url.Action("VATDetails","VATMaster")" class="btn btn-primary" tabindex="8" style="float:right;"><i class="fa fa-list" aria-hidden="true"></i> Back To VAT List</a>
+                </div>
+            </div>
+        </div>*@
+
+
+                <!-- end card header -->
+                <div class="card-body">
+                    <div class="live-preview">
+                        <div class="row gy-4">
+
+                            <div class="col-xxl-6 col-md-6" style="display:none">
+                                <div>
+                                    <label for="basiInput" class="form-label">Code <code>*</code></label>
+                                    @Html.TextBoxFor(m => m.Code, new { @class = "form-control", @readonly = true })
+                                </div>
+                            </div>
+
+                            <div class="col-xxl-6 col-md-6">
+                                <div>
+                                    <label for="basiInput" class="form-label">Company Name <code>*</code></label>
+                                    @Html.HiddenFor(m => m.Id, new { @id = "HDFID" })
+                                    @Html.HiddenFor(m => m.CurrentCount, new { @id = "HDFCurrentCount" })
+
+                                    @Html.DropDownListFor(x => x.CompanyId, new SelectList(ViewBag.Company, "Value", "Text"), "--Select Company--", new { @class = "js-example-basic-single", tabindex = 1 })
+
+                                </div>
+                            </div>
+
+                            <div class="col-xxl-6 col-md-6">
+                                <div>
+                                    <label for="labelInput" class="form-label">Printing <code>*</code></label>
+                                    @Html.DropDownListFor(x => x.Printing, new List<SelectListItem>{
+                                     new SelectListItem { Text = "Invoice", Value = "1"},
+                                     new SelectListItem { Text = "Tax Invoice", Value = "2"},
+                                     new SelectListItem { Text = "Select Printing", Value = "0", Selected=true}
+                                     }, new { @class = "js-example-basic-single", tabindex = 2 })
+                                    @Html.ValidationMessageFor(m => m.Printing, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <!--end col-->
+                            <div class="col-xxl-6 col-md-6">
+                                <div>
+                                    <label for="labelInput" class="form-label">VAT <code>*</code></label>
+                                    @Html.TextBoxFor(m => m.VAT, new { @class = "form-control", tabindex = 3 })
+                                    @Html.ValidationMessageFor(m => m.VAT, "", new { @class = "text-danger", })
+                                </div>
+                            </div>
+
+
+                            <div class="col-xxl-3 col-md-3">
+                                <div>
+                                    <label for="labelInput" class="form-label">Start Date <code>*</code></label>
+                                    @Html.TextBoxFor(m => m.StartDate, new { @class = "form-control", onchange = "isDate()", tabindex = 4 })
+                                    @Html.ValidationMessageFor(m => m.StartDate, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-md-3">
+                                <div>
+                                    <label for="labelInput" class="form-label">End Date <code>*</code></label>
+                                    @Html.TextBoxFor(m => m.EndDate, new { @class = "form-control", onchange = "isEndDate()", tabindex = 5 })
+                                    @Html.ValidationMessageFor(m => m.EndDate, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+
+                            <!--end col-->
+                        </div>
+                        <!--end row-->
+                    </div>
+
+                </div>
+
+                <div class="col-xxl-12 col-md-12">
+                    <div class="form-floating" style="float: right; padding-right: 2%;">
+                        <a href="@Url.Action("VATDetails","VATMaster")" class="btn btn-danger" tabindex="6">Cancel</a>
+                        <input type="button" value="Save" id="btnSave" class="btn btn-primary" tabindex="7" />
+
+                    </div>
+                </div>
+                <br />
+            </div>
+
+
+        </div>
+
+        <!--end col-->
+    </div>
+}
+
+
+@section scripts{
+    <!-- prismjs plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script src="~/assets/js/pages/select2.init.js"></script>
+    <script src="~/assets/libs/prismjs/prism.js"></script>
+    <script src="~/assets/js/app.js"></script>
+
+}
+
+
+
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+        /* LoadUserType();*/
+
+        var options = $.extend({},
+            $.datepicker.regional["es"], {
+            dateFormat: "dd/mm/yy",
+            changeMonth: true,
+            changeYear: true,
+            todayHighlight: true,
+            //yearRange: "-2:+0",
+            //highlightWeek: true,
+            //maxDate: 0
+        });
+        $("#StartDate").datepicker(options);
+
+
+        var options = $.extend({},
+            $.datepicker.regional["es"], {
+            dateFormat: "dd/mm/yy",
+            changeMonth: true,
+            changeYear: true,
+            todayHighlight: true,
+            //yearRange: "-2:+0",
+            //highlightWeek: true,
+            //maxDate: 0
+        });
+        $("#EndDate").datepicker(options);
+
+    })
+
+    var maxLength = 3;
+    $('#VAT').change(function () {
+        debugger;
+        var textlen = $(this).val().length;
+
+        if (textlen > maxLength) {
+
+            $('#VAT').val("");
+            swal("Warning", " Accept only 3 Character !", "warning");
+
+        } else {
+
+        }
+
+    });
+    function isEndDate() {
+        debugger;
+        var txt = document.getElementById("EndDate").value;
+        var regEx = /^\d{2}\/\d{2}\/\d{4}$/;
+
+        if (!regEx.test(txt)) {
+
+            $("#EndDate").val("");
+            swal("Warning", "Please enter date format mm/dd/yyyy !", "warning");
+
+
+        } else {
+
+
+
+        }
+
+    }
+    function isDate() {
+        debugger;
+        var txt = document.getElementById("StartDate").value;
+        var regEx = /^\d{2}\/\d{2}\/\d{4}$/;
+
+        if (!regEx.test(txt)) {
+
+            $("#StartDate").val("");
+            swal("Warning", "Please enter date format mm/dd/yyyy !", "warning");
+
+
+        } else {
+
+
+
+        }
+
+    }
+
+    $("#btnSave").click(function (e) {
+        debugger;
+        e.preventDefault();
+
+        var _code = $("#Code").val();
+        var _CompanyId = $("#CompanyId option:selected").val();
+        var _VAT = $("#VAT").val();
+        var _StartDate = $("#StartDate").val();
+        var _EndDate = $("#EndDate").val();
+        var _Printing = $("#Printing option:selected").val();
+        var _Id = $("#HDFID").val();
+        var _CurrentCount = $("#HDFCurrentCount").val();
+
+        if (_code != "" && _CompanyId != "" && _VAT != "" && _StartDate != "" && _EndDate != "" && _Printing != "") {
+            var ProductListArr = [];
+            var ProductList = {
+                Id: _Id,
+                CurrentCount: _CurrentCount,
+                Code: _code,
+                CompanyId: _CompanyId,
+                VAT: _VAT,
+                StartDate: _StartDate,
+                EndDate: _EndDate,
+                Printing: _Printing,
+
+            };
+            //ProductListArr.push(ProductList);
+            if (confirm("Are you sure you want to continue ?")) {
+                $.ajax({
+                    type: 'POST',
+                    url: '/VATMaster/SaveVATMaster',
+                    data: JSON.stringify(ProductList),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: 'json',
+                    success: function (data) {
+                        debugger;
+                        if (data == "1") {
+                            debugger;
+
+                            swal({
+                                title: "Success",
+                                text: "Records Successfully Saved",
+                                type: "success",
+                            }).then(function (isConfirm) {
+                                if (isConfirm) {
+                                    var url = "/VATMaster/VATDetails";
+                                    window.location.href = url;
+                                } else {
+
+                                }
+                            });
+
+                        }
+                        else if (data == "2") {
+
+                            swal({
+                                title: "Success",
+                                text: "Records Successfully Updated",
+                                type: "success",
+                            }).then(function (isConfirm) {
+                                if (isConfirm) {
+                                    var url = "/VATMaster/VATDetails";
+                                    window.location.href = url;
+                                } else {
+
+                                }
+                            });
+                        }
+                        else if (data == "4") {
+
+                            swal("Warning", "Login ID Already Exist!", "warning");
+                        } else {
+
+                            swal("Warning", "Record not save!", "warning");
+                        }
+
+                    },
+                    error: function (httpResponse) {
+                        swal("Warning", "Something Went to Wrong !", "warning");
+
+                    }
+                })
+            }
+        }
+        else {
+
+
+            if (_CompanyId == "") {
+                swal("Warning", "Please Select Company !", "warning");
+                return false;
+            }
+            if (_code == "") {
+                swal("Warning", " Please Enter Code !", "warning");
+                return false;
+            }
+
+            if (_VAT == "") {
+                swal("Warning", "Please Enter VAT !", "warning");
+                return false;
+            }
+
+            if (_StartDate == "") {
+                swal("Warning", "Please Enter Start Date !", "warning");
+                return false;
+            }
+            if (_EndDate == "") {
+                swal("Warning", "Please Enter End Date !", "warning");
+                return false;
+            }
+            if (_Printing == "") {
+                swal("Warning", "Please Select Printing !", "warning");
+                return false;
+            }
+
+        }
+
+    })
+
+    $("#VAT").keyup(function () {
+        var $this = $(this);
+        $this.val($this.val().replace(/[^\d.]/g, ''));
+    });
+
+    //function LoadUserType() {
+
+    //    $.ajax({
+    //        url: '/UserMaster/LoadUserType',
+    //        type: "GET",
+    //        dataType: "json",
+    //        data: { },
+    //        success: function (result) {
+    //            debugger;
+    //            $('#UserTypeId').html(''); // clear before appending new list
+    //            $('#UserTypeId').empty().append('<option value="">--Select--</option>');
+    //            $.each(result, function (i, ksk) {
+    //                $("#UserTypeId").append(
+    //                    $('<option></option>').val(ksk.Value).html(ksk.Text).attr({ "Code": ksk.Code }));
+
+    //            });
+    //        },
+    //        error: function (xhr, status) {
+    //            console.log(status);
+    //            console.log(xhr);
+    //        },
+    //        complete: function () {
+
+    //        }
+    //    });
+    //}
+
+    //$("#UserTypeId").change(function () {
+    //    debugger;
+    //    var val = $("#UserTypeId").val();
+
+    //})
+
+    //$("#CompanyId").change(function () {
+    //    debugger;
+    //    var val = $('#CompanyId option:selected').val();
+    //    if (val > 0) {
+
+    //        $.ajax({
+    //            url: '/VATMaster/LoadCode',
+    //            type: "GET",
+    //            dataType: "json",
+    //            data: { userId: val },
+    //            success: function (result) {
+    //                $.each(result, function (i, usr) {
+
+    //                    $("#Code").val(usr.Code);
+    //                });
+    //            },
+    //            error: function (xhr, status) {
+    //                console.log(status);
+    //                console.log(xhr);
+    //            },
+    //            complete: function () {
+
+    //            }
+    //        });
+    //    }
+    //})
+
+
+</script>

@@ -1,0 +1,297 @@
+﻿@model MassAutoGarage.Models.StatusMaster.StatusMasterModel
+@{
+    ViewBag.Title = "Status";
+    ViewBag.pTitle = "Status Master";
+    ViewBag.pageTitle = "Forms";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
+@section styles{
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+}
+
+@using (Html.BeginForm("CreateStatus", "Status", FormMethod.Post, new { enctype = "multipart/form-data", OnSubmit = "return ValidationForm()", @class = "form-validate" }))
+{
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+
+                <div class="card-header main-f">
+                    <div class="row">
+                        <div class="col-md-6 col-5"> <h5 class="card-title mb-0 gp-detail">CREATE STATUS</h5></div>
+                        <div class="col-md-6 col-7">
+                            <a href="@Url.Action("StatusDetails","Status")" class="btn btn-primary add-new" style="float:right;" tabindex="1"> <i class="fa fa-arrow-left align-middle me-1"></i> BACK TO STATUS LIST</a>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                @*<div class="card-header align-items-center d-flex">
+            <h4 class="card-title mb-0 flex-grow-1">CREATE STATUS</h4>
+            <div class="flex-shrink-0">
+                <div class="form-check form-switch form-switch-right form-switch-md">
+                    <a href="@Url.Action("StatusDetails","Status")" class="btn btn-primary" style="float:right;" tabindex="6"><i class="fa fa-list" aria-hidden="true"></i> BACK TO STATUS LIST</a>
+                </div>
+            </div>
+        </div>*@
+
+                <!-- end card header -->
+                <div class="card-body">
+                    <div class="live-preview">
+                        <div class="row gy-4">
+                            <div class="col-xxl-4 col-md-4">
+                                <div>
+                                    @Html.HiddenFor(m => m.ID, new { @class = "form-control", @id = "HDFID" })
+                                    @Html.HiddenFor(m => m.CurrentCount, new { @class = "form-control", @id = "HDFCurrentCount" })
+                                    <label for="labelInput" class="form-label">Code <code>*</code></label>
+                                    @Html.TextBoxFor(m => m.Code, new { @class = "form-control", tabindex = 1, @readonly = true })
+                                    @Html.ValidationMessageFor(m => m.Code, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                </div>
+                            </div>
+                            <div class="col-xxl-4 col-md-4">
+                                <div>
+                                    <label for="labelInput" class="form-label">Status <code>*</code></label>
+                                    @Html.TextBoxFor(m => m.Status, new { @class = "form-control", tabindex = 2 })
+                                    @Html.ValidationMessageFor(m => m.Status, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                </div>
+                            </div>
+
+                            <div class="col-xxl-4 col-md-4">
+                                <div>
+                                    <label for="labelInput" class="form-label">Status <code>*</code></label>
+                                    @Html.DropDownListFor(x => x.IsActive, new List<SelectListItem>{
+                                    new SelectListItem { Text = "--Select--", Value = "0", Selected=true},
+                                    new SelectListItem { Text = "Active", Value = "1"},
+                                    new SelectListItem { Text = "InActive", Value = "0"},
+                                    }, new { @class = "js-example-basic-single", tabindex = 3 })
+
+
+                                </div>
+                            </div>
+                            <!--end col-->
+                        </div>
+                        <!--end row-->
+                    </div>
+
+                </div>
+
+                <div class="col-xxl-12 col-md-12">
+                    <div class="form-floating" style="float: right; padding-right: 2%;">
+                        <a href="@Url.Action("StatusDetails","Status")" class="btn btn-danger" tabindex="4">Cancel</a>
+                        <input type="button" value="Save" id="btnSave" class="btn btn-primary" tabindex="5" />
+
+                    </div>
+                </div>
+                <br />
+            </div>
+
+
+        </div>
+
+        <!--end col-->
+    </div>
+}
+
+
+@section scripts{
+    <!-- prismjs plugin -->
+    <!--select2 cdn-->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script src="~/assets/js/pages/select2.init.js"></script>
+    <script src="~/assets/libs/prismjs/prism.js"></script>
+    <script src="~/assets/js/app.js"></script>
+}
+
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+    $(document).ready(function () {
+
+        var options = $.extend({},
+            $.datepicker.regional["es"], {
+            dateFormat: "dd/mm/yy",
+            changeMonth: true,
+            changeYear: true,
+            /* yearRange: "-2:+0",*/
+            todayHighlight: true,
+            /*highlightWeek: true,*/
+            /*maxDate: 0*/
+        });
+        $("#StartDate").datepicker(options);
+
+    })
+
+    var maxLength = 50;
+    $('#Status').change(function () {
+        debugger;
+        var textlen = $(this).val().length;
+
+        if (textlen > maxLength) {
+
+            $('#Status').val("");
+            swal("Warning", " Accept only 50 Character !", "warning");
+
+        } else {
+
+        }
+
+    });
+    $('#Status').keypress(function (e) {
+        debugger;
+        var regex = new RegExp("^[a-zA-Z ]+$");
+        var strigChar = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+        if (regex.test(strigChar)) {
+            return true;
+        }
+        return false
+    });
+    $("#btnSave").click(function (e) {
+        debugger;
+        e.preventDefault();
+
+
+        var _code = $("#Code").val();
+        var _Status = $("#Status").val();
+        var _IsActive = $("#IsActive option:selected").val();
+        var _Id = $("#HDFID").val();
+        var _CurrentCount = $("#HDFCurrentCount").val();
+
+        if (_code != "" && _Status != "") {
+
+            var ProductListArr = [];
+            var ProductList = {
+                ID: _Id,
+                CurrentCount: _CurrentCount,
+                Code: _code,
+                Status: _Status,
+                IsActive: _IsActive
+
+            };
+            //ProductListArr.push(ProductList);
+            if (confirm("Are you sure you want to continue ?")) {
+                $.ajax({
+                    type: 'POST',
+                    url: '/Status/SaveStatusMaster',
+                    data: JSON.stringify(ProductList),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: 'json',
+                    success: function (data) {
+                        debugger;
+                        if (data == "1") {
+                            debugger;
+
+                            swal({
+                                title: "Success",
+                                text: "Records Successfully Saved",
+                                type: "success",
+                            }).then(function (isConfirm) {
+                                if (isConfirm) {
+                                    var url = "/Status/StatusDetails";
+                                    window.location.href = url;
+                                } else {
+
+                                }
+                            });
+
+                        }
+                        else if (data == "2") {
+
+                            swal({
+                                title: "Success",
+                                text: "Records Successfully Updated",
+                                type: "success",
+                            }).then(function (isConfirm) {
+                                if (isConfirm) {
+                                    var url = "/Status/StatusDetails";
+                                    window.location.href = url;
+                                } else {
+
+                                }
+                            });
+                        }
+                        else if (data == "4") {
+
+                            swal("Warning", "Status Already Exist!", "warning");
+                        } else {
+
+                            swal("Warning", "Record not save!", "warning");
+                        }
+
+                    },
+                    error: function (httpResponse) {
+                        swal("Warning", "Something Went to Wrong !", "warning");
+
+                    }
+                })
+            }
+        }
+        else {
+
+            if (_code == "") {
+                swal("Warning", " Please Enter Code !", "warning");
+                return false;
+            }
+            if (_Status == "") {
+
+                swal("Warning", "Please Enter Status Name !", "warning");
+                return false;
+            }
+
+
+        }
+
+    })
+
+
+
+    //function LoadUserType() {
+
+    //    $.ajax({
+    //        url: '/UserMaster/LoadUserType',
+    //        type: "GET",
+    //        dataType: "json",
+    //        data: { },
+    //        success: function (result) {
+    //            debugger;
+    //            $('#UserTypeId').html(''); // clear before appending new list
+    //            $('#UserTypeId').empty().append('<option value="">--Select--</option>');
+    //            $.each(result, function (i, ksk) {
+    //                $("#UserTypeId").append(
+    //                    $('<option></option>').val(ksk.Value).html(ksk.Text).attr({ "Code": ksk.Code }));
+
+    //            });
+    //        },
+    //        error: function (xhr, status) {
+    //            console.log(status);
+    //            console.log(xhr);
+    //        },
+    //        complete: function () {
+
+    //        }
+    //    });
+    //}
+
+    //$("#UserTypeId").change(function () {
+    //    debugger;
+    //    var val = $("#UserTypeId").val();
+
+    //})
+
+
+
+</script>
+

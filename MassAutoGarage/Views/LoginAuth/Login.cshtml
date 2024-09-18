@@ -1,0 +1,523 @@
+﻿@model MassAutoGarage.Models.UserMasterModel
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable">
+<head>
+    @Html.Partial("~/Views/Shared/_title_meta.cshtml")
+    @Html.Partial("~/Views/Shared/_head_css.cshtml")
+    <script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
+    <style>
+        .form-check label {
+            cursor: pointer;
+            margin: 4px 0px 0px 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- auth-page wrapper -->
+    <div class="auth-page-wrapper auth-bg-cover py-5 d-flex justify-content-center align-items-center min-vh-100">
+        <div class="bg-overlay"></div>
+        <!-- auth-page content -->
+        <div class="auth-page-content overflow-hidden pt-lg-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card overflow-hidden">
+                            <div class="row g-0">
+                                <div class="col-lg-8">
+                                    <div class="p-lg-5 p-4 auth-one-bg h-100">
+                                        <div class="bg-overlay"></div>
+                                        <div class="position-relative h-100 d-flex flex-column">
+
+
+                                            <div class="m1-2">
+                                                <div class="mb-4">
+                                                    <a href="#" class="d-block">
+                                                        <img class="logo-l" src="~/assets/images/Logo/logo-w.png" alt="">
+                                                    </a>
+                                                </div>
+                                                <h1 class="mng-soft2">
+                                                    AUTO GARAGE
+                                                </h1>
+                                                <h1 class="mng-soft">
+                                                    SOFTWARE
+
+                                                </h1>
+                                            </div>
+
+                                            <div class="border-nm"></div>
+
+                                            <div class="mt-5">
+                                                <p class="s-p-1">
+                                                    <i class=" bx bx-support"></i>
+                                                    <a class="text-link" href="mailto:support@masstechme.com"> support@masstechme.com </a>
+                                                </p>
+                                                <p class="s-p-1">
+                                                    <i class="bx bxl-whatsapp"></i>
+                                                    <a class="text-link" href="tel:+971 56 954 3544"> +971 56 954 3544 </a>
+                                                </p>
+                                                <p class="s-p-1">
+                                                    <i class="bx bx-globe "></i>
+                                                    <a class="text-link" href=""> www.masstechme.com </a>
+                                                </p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end col -->
+
+                                <div class="col-lg-4">
+                                    <div class="p-lg-5 p-4">
+                                        <div>
+                                            <h5 class="text-primary">Welcome </h5>
+                                            <p class="text-muted">
+                                                Sign in to continue Auto Garage Software.
+                                            </p>
+                                        </div>
+
+                                        <div class="mt-4">
+                                            @*<form action="@Url.Action("Index", "Dashboard")">*@
+
+                                            @using (Html.BeginForm("Login", "LoginAuth", FormMethod.Post, new { enctype = "multipart/form-data", OnSubmit = "return ValidationForm()", @class = "form-validate" }))
+                                            {
+
+                                                <div class="mb-3">
+                                                    <label for="username" class="form-label">Username <code>*</code></label>
+                                                    @*<input type="text" class="form-control" id="username" placeholder="Enter username">*@
+                                                    @Html.TextBoxFor(m => m.LoginId, new { @class = "form-control", placeholder = "Enter username" })
+                                                    @Html.ValidationMessageFor(m => m.LoginId, "", new { @class = "danger" })
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <div class="float-end">
+                                                        <a href="#" class="text-muted">Forgot password?</a>
+                                                    </div>
+                                                    <label class="form-label" for="password-input">Password <code>*</code></label>
+                                                    <div class="position-relative auth-pass-inputgroup mb-3">
+                                                        <input type="hidden" id="hdfcount" />
+
+                                                        @Html.TextBoxFor(m => m.Password, new { @class = "form-control pe-5 password-input", placeholder = "Enter password", @id = "password-input", @type = "password" })
+                                                        <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none shadow-none text-muted password-addon" type="button" id="password-addon"><i class="ri-eye-fill align-middle"></i></button>
+
+                                                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "danger" })
+                                                        <div id="message">
+                                                            <b>Password must contain the following:</b><br /><br />
+                                                            <p id="letter" class="invalid">A <b>Lowercase</b> Letter</p>
+                                                            <p id="capital" class="invalid">A <b>Capital (Uppercase)</b> letter</p>
+                                                            <p id="number" class="invalid">A <b>Number</b></p>
+                                                            <p id="length" class="invalid">Minimum <b>8 Characters</b></p>
+                                                            <p id="Specialchar" class="invalid">At least One <b>Special Characters</b></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" id="auth-remember-check">
+                                                    <label class="form-check-label" for="auth-remember-check">Remember me</label>
+                                                </div>
+
+                                                <div class="mt-4">
+                                                    <button class="btn btn-success w-100 mass-btn" type="submit" id="btnsign">Sign In</button>
+                                                </div>
+
+                                                @*<div class="mt-4 text-center">
+                                                        <div class="signin-other-title">
+                                                            <h5 class="fs-14 mb-4 title">Sign In with</h5>
+                                                        </div>
+
+                                                        <div>
+                                                            <button type="button" class="btn btn-primary btn-icon waves-effect waves-light"><i class="ri-facebook-fill fs-16"></i></button>
+                                                            <button type="button" class="btn btn-danger btn-icon waves-effect waves-light"><i class="ri-google-fill fs-16"></i></button>
+                                                            <button type="button" class="btn btn-dark btn-icon waves-effect waves-light"><i class="ri-github-fill fs-16"></i></button>
+                                                            <button type="button" class="btn btn-info btn-icon waves-effect waves-light"><i class="ri-twitter-fill fs-16"></i></button>
+                                                        </div>
+                                                    </div>*@
+
+                                            }
+                                        </div>
+
+                                        <div class="mt-5 text-center">
+                                            <p class="mb-0">Don't have an account ? <a href="#" class="fw-bold text-primary text-decoration-underline"> Signup</a> </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end col -->
+                            </div>
+                            <!-- end row -->
+                        </div>
+                        <!-- end card -->
+                    </div>
+                    <!-- end col -->
+
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end auth page content -->
+        <!-- footer -->
+        @*<footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="text-center">
+                            <p class="mb-0">
+                                &copy;
+                                <script>document.write(new Date().getFullYear())</script>Mass Technologies LLC
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>*@
+        <!-- end Footer -->
+    </div>
+    <!-- end auth-page-wrapper -->
+
+    @Html.Partial("~/Views/Shared/_vendor_scripts.cshtml")
+
+    <!-- password-addon init -->
+    <script src="~/assets/js/pages/password-addon.init.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+
+    <style>
+        .auth-bg-cover {
+            background: linear-gradient(-45deg,#fff 50%,#fff) !important;
+        }
+
+        .mng-soft1 {
+            font-size: 108px;
+            font-weight: bold;
+            color: transparent;
+            -webkit-text-stroke-width: 3px;
+            -webkit-text-stroke-color: white;
+        }
+
+        .mng-soft2 {
+            font-size: 86px;
+            font-weight: bold;
+            color: transparent;
+            -webkit-text-stroke-width: 3px;
+            -webkit-text-stroke-color: white;
+            margin: 0px !important;
+            padding: 0px !important;
+            line-height: 61px;
+        }
+
+        .mng-soft {
+            font-size: 81px;
+            font-weight: bold;
+            color: transparent;
+            -webkit-text-stroke-width: 3px;
+            -webkit-text-stroke-color: white;
+            margin: 0px !important;
+            padding: 0px !important;
+            line-height: 116px;
+        }
+
+        .logo-l {
+            height: 91px;
+        }
+
+        .border-nm {
+            border: 1px solid #fff;
+            width: 70%;
+        }
+    </style>
+
+
+    <style>
+        /* Style all input fields */
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+        }
+
+            /* Style the submit button */
+            input[type=submit] {
+                background-color: #04AA6D;
+                color: white;
+            }
+
+        /* Style the container for inputs */
+        .container {
+            background-color: #f1f1f1;
+            padding: 10px;
+        }
+
+        /* The message box is shown when the user clicks on the password field */
+        #message {
+            display: none;
+            background: #f1f1f1;
+            color: #000;
+            position: relative;
+            padding: 18px;
+            margin-top: 10px;
+        }
+
+            #message p {
+                padding: 1px 30px;
+                font-size: 11px;
+            }
+
+        /* Add a green text color and a checkmark when the requirements are right */
+        .valid {
+            color: green;
+        }
+
+            .valid:before {
+                position: relative;
+                left: -35px;
+                content: "✔";
+            }
+
+        /* Add a red text color and an "x" when the requirements are wrong */
+        .invalid {
+            color: red;
+        }
+
+            .invalid:before {
+                position: relative;
+                left: -35px;
+                content: "✖";
+            }
+    </style>
+    <script>
+
+
+        window.onload = function () {
+
+            if ("@ViewBag.message" != "") {
+
+                  swal("Warning", "@ViewBag.message", "warning");
+
+             } else {
+
+            }
+        };
+        $(document).ready(function () {
+
+            validate();
+        })
+
+        $("#btnsign").click(function () {
+            debugger;
+            var lgId = $("#LoginId").val();
+            var pwd = $("#password-input").val();
+            if (lgId != "" && pwd != "") {
+
+                var l = parseInt($("#hdfcount").val());
+                if (l == 5) {
+
+                    var myInput = document.getElementById("password-input");
+                    if (myInput.value.length >= 8) {
+
+                        return true;
+                    }
+                    else {
+                        return false;
+                    }
+                } else {
+                    validate();
+                    document.getElementById("message").style.display = "block";
+                    return false;
+                }
+
+            }
+            else {
+
+                if (lgId == "" || pwd == "") {
+
+                    swal("Warning", "Please Enter Login ID OR Password !", "warning");
+                    document.getElementById("message").style.display = "block";
+                }
+
+                return false;
+            }
+
+        })
+
+
+    </script>
+
+
+    <script>
+
+        var count = null;
+        var myInput = document.getElementById("password-input");
+        var letter = document.getElementById("letter");
+        var capital = document.getElementById("capital");
+        var number = document.getElementById("number");
+        var length = document.getElementById("length");
+        var SpecialCharecter = document.getElementById("Specialchar");
+        // When the user clicks on the password field, show the message box
+        myInput.onfocus = function () {
+            document.getElementById("message").style.display = "block";
+        }
+
+        // When the user clicks outside of the password field, hide the message box
+        myInput.onblur = function () {
+            document.getElementById("message").style.display = "none";
+        }
+
+        // When the user starts to type something inside the password field
+        myInput.onkeyup = function () {
+            // Validate lowercase letters
+            var lowerCaseLetters = /[a-z]/g;
+            if (myInput.value.match(lowerCaseLetters)) {
+                letter.classList.remove("invalid");
+                letter.classList.add("valid");
+                count = 1;
+                $("#hdfcount").val(count);
+            } else {
+                letter.classList.remove("valid");
+                letter.classList.add("invalid");
+                count = count - 1;
+                $("#hdfcount").val(count);
+            }
+
+            // Validate capital letters
+            var upperCaseLetters = /[A-Z]/g;
+            if (myInput.value.match(upperCaseLetters)) {
+                capital.classList.remove("invalid");
+                capital.classList.add("valid");
+
+                count = count + 1;
+                $("#hdfcount").val(count);
+            } else {
+                capital.classList.remove("valid");
+                capital.classList.add("invalid");
+                count = count - 1;
+                $("#hdfcount").val(count);
+            }
+
+            // Validate numbers
+            var numbers = /[0-9]/g;
+            if (myInput.value.match(numbers)) {
+                number.classList.remove("invalid");
+                number.classList.add("valid");
+                count = count + 1;
+                $("#hdfcount").val(count);
+            } else {
+                number.classList.remove("valid");
+                number.classList.add("invalid");
+                count = count - 1;
+                $("#hdfcount").val(count);
+            }
+
+            // Validate length
+            if (myInput.value.length >= 8) {
+                length.classList.remove("invalid");
+                length.classList.add("valid");
+                count = count + 1;
+                $("#hdfcount").val(count);
+            } else {
+                length.classList.remove("valid");
+                length.classList.add("invalid");
+                count = count - 1;
+                $("#hdfcount").val(count);
+            }
+            // Validate numbers
+            var Special_Char = /^(?=.*[@@#$%&])/g;
+            if (myInput.value.match(Special_Char)) {
+                SpecialCharecter.classList.remove("invalid");
+                SpecialCharecter.classList.add("valid");
+                count = count + 1;
+                $("#hdfcount").val(count);
+            } else {
+                SpecialCharecter.classList.remove("valid");
+                SpecialCharecter.classList.add("invalid");
+                count = count - 1;
+                $("#hdfcount").val(count);
+            }
+
+        }
+
+        function validate() {
+
+            
+            // Validate lowercase letters
+            var lowerCaseLetters = /[a-z]/g;
+            if (myInput.value.match(lowerCaseLetters)) {
+                letter.classList.remove("invalid");
+                letter.classList.add("valid");
+                count = 1;
+                $("#hdfcount").val(count);
+            } else {
+                letter.classList.remove("valid");
+                letter.classList.add("invalid");
+                count = count - 1;
+                $("#hdfcount").val(count);
+            }
+
+            // Validate capital letters
+            var upperCaseLetters = /[A-Z]/g;
+            if (myInput.value.match(upperCaseLetters)) {
+                capital.classList.remove("invalid");
+                capital.classList.add("valid");
+
+                count = count + 1;
+                $("#hdfcount").val(count);
+            } else {
+                capital.classList.remove("valid");
+                capital.classList.add("invalid");
+                count = count - 1;
+                $("#hdfcount").val(count);
+            }
+
+            // Validate numbers
+            var numbers = /[0-9]/g;
+            if (myInput.value.match(numbers)) {
+                number.classList.remove("invalid");
+                number.classList.add("valid");
+                count = count + 1;
+                $("#hdfcount").val(count);
+            } else {
+                number.classList.remove("valid");
+                number.classList.add("invalid");
+                count = count - 1;
+                $("#hdfcount").val(count);
+            }
+
+            // Validate length
+            if (myInput.value.length >= 8) {
+                length.classList.remove("invalid");
+                length.classList.add("valid");
+                count = count + 1;
+                $("#hdfcount").val(count);
+            } else {
+                length.classList.remove("valid");
+                length.classList.add("invalid");
+                count = count - 1;
+                $("#hdfcount").val(count);
+            }
+            // Validate numbers
+            var Special_Char = /^(?=.*[@@#$%&])/g;
+            if (myInput.value.match(Special_Char)) {
+                SpecialCharecter.classList.remove("invalid");
+                SpecialCharecter.classList.add("valid");
+                count = count + 1;
+                $("#hdfcount").val(count);
+            } else {
+                SpecialCharecter.classList.remove("valid");
+                SpecialCharecter.classList.add("invalid");
+                count = count - 1;
+                $("#hdfcount").val(count);
+            }
+
+        }
+
+    </script>
+</body>
+</html>

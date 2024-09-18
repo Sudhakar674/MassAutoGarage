@@ -1,0 +1,504 @@
+﻿@model MassAutoGarage.Models.CompanyMasterModel
+@{
+    ViewBag.Title = "Marital Status";
+    ViewBag.pTitle = "Marital Status Master";
+    ViewBag.pageTitle = "Forms";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section styles{
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+}
+
+<style type="text/css">
+    body {
+        font-family: Arial;
+        font-size: 10pt;
+    }
+
+    table {
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+    }
+
+        table th {
+            background-color: #F7F7F7;
+            color: #333;
+            font-weight: bold;
+        }
+
+        table th, table td {
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+</style>
+
+<style>
+
+    .main-table {
+        width: 100%;
+        /*  max-width: 980px;*/
+        /* change to suit*/
+        margin: auto;
+        border: 1px solid #4b38af;
+        border-collapse: collapse;
+    }
+
+        .main-table thead th {
+            background: #4b38af;
+            color: #fff;
+            color: #fff;
+            font-size: 0.8rem;
+            padding: 5px 9px 6px 9px;
+            line-height: 1;
+            border: 1px solid #626060;
+        }
+
+        .main-table th,
+        .main-table td {
+            vertical-align: top;
+            text-align: left;
+            border: 1px solid #626060;
+        }
+
+    td.numbers {
+        text-align: center;
+    }
+
+    .main-table td {
+        font-size: 13px; /* font-size: 0.7rem;*/
+        padding: 3px 9px;
+        border-bottom: 1px solid #999; /* dotted borders look bad on tables*/
+        line-height: 1.2;
+    }
+
+    .table-heading {
+        font-size: 0.7rem;
+        margin: 0 0 0.5em;
+    }
+
+    .item-options {
+        margin: 0 0 0.5rem;
+        overflow: hidden;
+        clear: both;
+    }
+
+        .item-options dt {
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .item-options dt,
+        .item-options dd {
+            display: inline-block;
+            margin: 0;
+            padding: 0 5px 0 0;
+            vertical-align: top;
+        }
+
+            .item-options dt:after {
+                content: ":";
+            }
+
+    .main-table tbody tr:nth-child(odd) td {
+        background: #f9f9f9;
+    }
+
+    @@media screen and (max-width: 540px) {
+        table.mobile-optimised {
+            word-wrap: break-word;
+            font-size: 1rem;
+            border: none;
+        }
+
+            table.mobile-optimised thead {
+                display: none;
+            }
+
+            table.mobile-optimised td {
+                display: block;
+                float: left; /* ie9 and under hack */
+                width: 100%;
+                clear: both;
+                background: #eee;
+                border: none;
+                padding: 10px 5px;
+                box-sizing: border-box;
+                font-size: 12px;
+            }
+
+            table.mobile-optimised tbody,
+            table.mobile-optimised tr {
+                display: block;
+            }
+
+        .mobile-optimised td:before {
+            content: attr(data-th);
+            display: block;
+            font-weight: bold;
+            margin: 0 0 2px;
+            background: #19937b;
+            color: #fff;
+            padding: 5px;
+        }
+
+        .mobile-optimised tbody tr {
+            border-bottom: 1px solid #000;
+            overflow: hidden;
+        }
+
+        .item-options,
+        .table-heading {
+            font-size: 1rem;
+        }
+
+        .mobile-optimised .numbers {
+            text-align: left;
+        }
+
+        .main-table tbody tr:nth-child(odd) td {
+            background: #ccc;
+        }
+    }
+</style>
+<!-- New Dive-->
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+
+
+            <div class="card-header main-f">
+                <div class="row">
+                    <div class="col-md-12 col-12"> <h5 class="card-title mb-0 gp-detail">HRMS-MARITAL STATUS</h5></div>
+                    @*<div class="col-md-6 col-7">
+                        <a href="@Url.Action("Index","RetailDeliveryNote")" class="btn btn-primary add-new" style="float:right;" tabindex="1"> <i class="fa fa-arrow-left align-middle me-1"></i> BACK TO DELIVERY NOTE LIST</a>
+                    </div>*@
+                </div>
+            </div>
+
+            <!--<div class="card-header align-items-center d-flex">
+        <h4 class="card-title mb-0 flex-grow-1">HRMS-MARITAL STATUS </h4>
+        <div class="flex-shrink-0">-->
+            @*<div class="form-check form-switch form-switch-right form-switch-md">
+            <a href="@Url.Action("Index", "CompanyMaster")" class="btn btn-primary" style="float:right;" tabindex="12"><i class="fa fa-list" aria-hidden="true"></i> Back To Company List</a>
+        </div>*@
+            <!--</div>
+    </div>-->
+            <!-- end card header -->
+            <div class="card-body">
+                <div class="live-preview">
+                    <div class="row gy-4">
+                        <div class="col-xxl-3 col-md-4">
+                            <div>
+                                <label for="basiInput" class="form-label">Marital Status Name <code>*</code></label>
+                                <input type="text" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-md-4">
+                            <div>
+                                <input type="button" id="btnsave" value="Save" class="btn btn-success" style=" margin-top: 8%;" />
+                                <input type="button" id="btnReset" value="Reset" class="btn btn-danger" style=" margin-top: 8%;" />
+
+                            </div>
+                        </div>
+                        <!--end col-->
+                        <div class="col-xxl-12 col-md-12">
+                            <div class="table-responsive">
+
+                                <table border="1" id="example" class="display table table-bordered mobile-optimised" style="width:100%;">
+                                    <thead>
+                                        <tr>
+                                            <th style=" width: 5%;">S.N.</th>
+                                            <th>Marital Status </th>
+                                            <th style="width:15%">Action</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <tr>
+                                            <td data-th="S.N.">
+                                                1
+                                            </td>
+                                            <td data-th="Department Name">
+                                                SINGLE
+                                            </td>
+
+                                            <td data-th="Active">
+
+                                                <div class="d-flex gap-2">
+                                                    <div class="edit">
+                                                        <a href="/CompanyMaster/Company?Id" class="btn btn-sm btn-success edit-item-btn" tabindex="6">Edit <i class="fa fa-edit"></i></a>
+
+                                                    </div>
+                                                    <div class="remove">
+                                                        <a href="#" class="btn btn-sm btn-danger remove-item-btn" id="btnDelete" tabindex="7">Delete <i class="fa fa-trash" aria-hidden="true"></i></a>
+
+
+                                                    </div>
+                                                </div>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td data-th="S.N.">
+                                                2
+                                            </td>
+                                            <td data-th="Department Name">
+                                                MARRIED
+                                            </td>
+
+                                            <td data-th="Active">
+
+                                                <div class="d-flex gap-2">
+                                                    <div class="edit">
+                                                        <a href="/CompanyMaster/Company?Id" class="btn btn-sm btn-success edit-item-btn" tabindex="6">Edit <i class="fa fa-edit"></i></a>
+
+                                                    </div>
+                                                    <div class="remove">
+                                                        <a href="#" class="btn btn-sm btn-danger remove-item-btn" id="btnDelete" tabindex="7">Delete <i class="fa fa-trash" aria-hidden="true"></i></a>
+
+
+                                                    </div>
+                                                </div>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+
+
+
+
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-12 col-md-12">
+                            <div class="form-floating" style="float:right;">
+
+
+
+                            </div>
+                        </div>
+                        <!--end col-->
+                    </div>
+                    <!--end row-->
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--end col-->
+</div>
+
+
+@section scripts{
+    <!-- prismjs plugin -->
+    <script src="~/assets/libs/prismjs/prism.js"></script>
+    <script src="~/assets/js/pages/form-validation.init.js"></script>
+    <script src="~/assets/js/app.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script src="~/assets/js/pages/select2.init.js"></script>
+    <script src="~/assets/libs/prismjs/prism.js"></script>
+    <script src="~/assets/js/app.js"></script>
+
+}
+@*<script src="~/Scripts/jquery-3.4.1.min.js"></script>*@
+<script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
+
+
+@*<script src="~/Content/js/jquery.min.js"></script>*@
+
+<script>
+    $(document).ready(function () {
+
+
+
+    });
+
+
+
+
+
+    $('#TRN').keypress(function (e) {
+        debugger;
+        if (String.fromCharCode(e.keyCode).match(/[^0-9]/g)) return false;
+    });
+
+
+    var maxLength = 50;
+    $('#CompanyName').change(function () {
+        debugger;
+        var textlen = $(this).val().length;
+
+        if (textlen > maxLength) {
+
+            $('#CompanyName').val("");
+            swal("Warning", " Accept only 50 Character !", "warning");
+
+        } else {
+
+        }
+
+    });
+
+    var maxLength2 = 20;
+    $('#TRN').change(function () {
+        debugger;
+        var textlen = $(this).val().length;
+
+        if (textlen > maxLength2) {
+
+            $('#TRN').val("");
+            swal("Warning", " Accept only 20 Character !", "warning");
+
+        } else {
+
+        }
+
+    });
+
+    $('#CompanyName').keypress(function (e) {
+        debugger;
+        var regex = new RegExp("^[a-zA-Z ]+$");
+        var strigChar = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+        if (regex.test(strigChar)) {
+            return true;
+        }
+        return false
+    });
+
+
+
+    $("#btnSave").click(function (e) {
+        debugger;
+        e.preventDefault();
+
+        var _code = $("#Code").val();
+        var _GroupID = $("#GroupID option:selected").val();
+        var _CompanyName = $("#CompanyName").val();
+        var _TRN = $("#TRN").val();
+        var _LocationMapUrl = $("#LocationMapUrl").val();
+        var _Email = $("#Email").val();
+        var _Address = $("#Address").val();
+        var _companyId = $("#HDFID").val();
+        var _CurrentCount = $("#HDFCurrentCount").val();
+        var _IsActive = $("#IsActive option:selected").val();
+
+        if (_code != "" && _GroupID != "" && _CompanyName != "" && _TRN != "" && _Email != "" && _Address != "") {
+
+            var ProductListArr = [];
+            var ProductList = {
+                Id: _companyId,
+                CurrentCount: _CurrentCount,
+                Code: _code,
+                GroupID: _GroupID,
+                CompanyName: _CompanyName,
+                Address: _Address,
+                TRN: _TRN,
+                Email: _Email,
+                LocationMapUrl: _LocationMapUrl,
+                IsActive: _IsActive
+
+            };
+            //ProductListArr.push(ProductList);
+
+            if (confirm("Are you sure you want to continue ?")) {
+                $.ajax({
+                    type: 'POST',
+                    url: '/CompanyMaster/SaveCompanyMaster',
+                    data: JSON.stringify(ProductList),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: 'json',
+                    success: function (data) {
+                        debugger;
+                        if (data == "1") {
+                            debugger;
+                            swal({
+                                title: "Success",
+                                text: "Records Successfully Saved",
+                                type: "success",
+                            }).then(function (isConfirm) {
+                                if (isConfirm) {
+                                    var url = "/CompanyMaster/Index";
+                                    window.location.href = url;
+                                } else {
+
+                                }
+                            });
+
+                        }
+                        else if (data == "2") {
+
+                            swal({
+                                title: "Success",
+                                text: "Records Successfully Updated",
+                                type: "success",
+                            }).then(function (isConfirm) {
+                                if (isConfirm) {
+                                    var url = "/CompanyMaster/Index";
+                                    window.location.href = url;
+                                } else {
+
+                                }
+                            });
+                        }
+                        else if (data == "4") {
+                            swal("Warning", "This Code is Already Exist !", "warning");
+                        } else {
+
+                            swal("Warning", "Record not save!", "warning");
+                        }
+
+                    },
+                    error: function (httpResponse) {
+
+                        swal("Warning", "Something Went to Wrong!", "warning");
+
+                    }
+                })
+            }
+        }
+        else {
+
+            if (_code == "") {
+                swal("Warning", "Please Enter Code !", "warning");
+                return false;
+            }
+            if (_GroupID == "") {
+                swal("Warning", "Please Select Group Name!", "warning");
+                return false;
+            }
+            if (_CompanyName == "") {
+                swal("Warning", "Please Enter Company Name!", "warning");
+                return false;
+            }
+            if (_TRN == "") {
+                swal("Warning", "Please Enter TRN !", "warning");
+                return false;
+            }
+
+            if (_Email == "") {
+                swal("Warning", "Please Enter Email Address!", "warning");
+                $("#Email").val('');
+                return false;
+            }
+            if (_Address == "") {
+                swal("Warning", "Please Enter Address!", "warning");
+                return false;
+            }
+        }
+
+    })
+
+
+
+</script>
+
+

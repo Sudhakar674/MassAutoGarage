@@ -1,0 +1,459 @@
+﻿@model List<MassAutoGarage.Models.CustomerMaster.CustomerOpeningBalance_AuditModel>
+
+@{
+    ViewBag.Title = "Customer Opening Balance Audit";
+    ViewBag.pTitle = "Customer Opening Balance Audit";
+    ViewBag.pageTitle = "Forms";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int i = 1;
+}
+<style type="text/css">
+    body {
+        font-family: Arial;
+        font-size: 10pt;
+    }
+
+    table {
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+        border-width: thin;
+    }
+
+        table th {
+            background-color: #F7F7F7;
+            color: #333;
+            font-weight: bold;
+        }
+
+        table th, table td {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-width: thin;
+        }
+</style>
+
+<script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
+@section styles{
+    <!--datatable css-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" />
+    <!--datatable responsive css-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap.min.css" />
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css">
+}
+
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title mb-0">CUSTOMER OPENING BALANCE AUDIT DETAILS</h5>
+                @*<a href="@Url.Action("CreateSupplier","SupplierMaster")" class="btn btn-primary" style="float:right;" tabindex="1"><i class="ri-add-circle-line align-middle me-1"></i> ADD NEW SUPPLIER</a>*@
+
+            </div>
+            <div class="card-body">
+                <div class="col-lg-12">
+                    <div class="live-preview">
+                        <div class="row gy-4">
+                            <div class="col-xxl-4 col-md-6" style=" margin-bottom: 1%;">
+
+
+                            </div>
+                            <div class="col-xxl-8 col-md-6" style="text-align:right;">
+
+                                @*<button id="btnExport" class="btn btn-soft-primary btn-sm shadow-none" tabindex="3"><i class="fa fa-file-excel-o" aria-hidden="true"></i> Excel</button>
+                                    <button id="btnPdf" class="btn btn-soft-primary btn-sm shadow-none" tabindex="4"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> PDF</button>
+                                    <button id="btnprint" class="btn btn-soft-primary btn-sm shadow-none" onclick="Print()" tabindex="5"><i class="fa fa-print" aria-hidden="true"></i> Print</button>
+                                    <a href="@Url.Action("OpeningBalanceDetails","SupplierMaster")" class="btn btn-sm btn-success"><i class="ri-add-line align-middle me-1"></i>Opening Balance</a>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+
+                    <table border="1" id="example" class="display table table-bordered" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th style=" width: 1%;">Srl.No.</th>
+                                <th>Code</th>
+                                <th>Company</th>
+                                <th>Supplier</th>
+                                <th style=" width: 8%;">Action</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @i
+                                    </td>
+
+                                    <td>
+                                        @item.CompanyName
+                                    </td>
+                                    <td>
+                                        @item.JobCardDate
+                                    </td>
+                                    <td>
+                                        @item.JobCardNumber
+                                    </td>
+
+                                    <td style="text-align:right">
+
+                                        <div class="d-flex gap-2">
+                                            <div class="edit">
+                                                <a href="#" class="btn btn-sm btn-primary edit-item-btn" tabindex="5" onclick=" return ViewDetails(@item.ID)">View <i class="fa fa-eye" aria-hidden="true"></i></a>
+                                            </div>
+
+                                        </div>
+
+                                    </td>
+                                </tr>
+                                i++;
+                            }
+                        </tbody>
+                    </table>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="divLoader" style="display: none; text-align: center; margin-top: -26%;">
+        <img src="~/assets/Loader/loading.gif" alt="Loader" style="width: 8%;" />
+
+        @*<div class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>*@
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">SUPPLIER OPENING BALANCE AUDIT REPORT</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <div class="row gy-4">
+
+                    <div class="table-responsive" style="overflow: scroll; height: 500px;">
+
+                        <table id="tblContact" class="display table table-bordered" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th style=" width: 3%;">SL.</th>
+                                    <th>Company </th>
+                                    <th>JobCard Date</th>
+                                    <th>JobCard No.</th>
+                                    <th>CreatedBy</th>
+                                    <th>Created Date</th>
+                                    <th>UpdatedBy</th>
+                                    <th>Updated Date</th>
+                                    <th>Action</th>
+                                    <th>Action Date</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tBody3">
+                            </tbody>
+                        </table>
+
+
+                        <div class="col-xxl-12 col-md-12">
+                            <div>
+                                <h6 class="card-title mb-0 flex-grow-1" style=" font-size: 13px;"><i class="ri-send-plane-2-fill"></i> OPENING BALANCE DETAILS</h6>
+
+                            </div>
+
+                        </div>
+                        <table id="tblSupplierDetails" class="display table table-bordered" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th style=" width: 3%;">SL.</th>
+                                    <th>ToAccount Name</th>
+                                    <th>Invoice Date</th>
+                                    <th>Invoice Number </th>
+                                    <th>LPONO</th>
+                                    <th>EST No.</th>
+                                    <th>Total Amount</th>
+                                    <th>Paid Amount</th>
+                                    <th>Balance Amount</th>
+                                    <th>Action</th>
+                                    <th>ActionDate</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tBody3">
+                            </tbody>
+                        </table>
+                    </div>
+
+
+
+                 
+
+                  
+
+                    <!--end col-->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section scripts{
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    datatable js
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+
+    <script src="~/assets/js/pages/datatables.init.js"></script>
+
+    App js
+    <script src="~/assets/js/app.js"></script>
+}
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+        var queryString = new Array();
+        if (queryString.length == 0) {
+            if (window.location.search.split('?').length > 1) {
+                var params = window.location.search.split('?')[1].split('&');
+                for (var i = 0; i < params.length; i++) {
+                    var key = params[i].split('=')[0];
+                    var value = decodeURIComponent(params[i].split('=')[1]);
+                    queryString[key] = value;
+                }
+            }
+
+            $('#txtsearch').val(queryString[key]);
+        }
+
+
+    });
+
+    function ConfirmDelete(GrdId) {
+        debugger;
+        var x = confirm("Are you sure you want to delete?");
+        if (x)
+
+            if (GrdId > 0) {
+                $.ajax({
+                    url: '/SupplierMaster/Delete',
+                    type: "GET",
+                    dataType: "json",
+                    data: { SupplID: GrdId },
+                    success: function (result) {
+                        if (result == "3") {
+
+                            swal({
+                                title: "Success",
+                                text: "Records Successfully Deleted",
+                                type: "success",
+                            }).then(function (isConfirm) {
+                                if (isConfirm) {
+
+                                    window.location.reload();
+                                } else {
+
+                                }
+                            });
+
+                        } else {
+
+                            swal("Warning", "Records not Deleted", "warning");
+                        }
+
+                    },
+                    error: function (xhr, status) {
+                        console.log(status);
+                        console.log(xhr);
+                    },
+                    complete: function () {
+
+                    }
+                });
+            }
+            else
+                return false;
+    }
+
+    $('#txtsearch').change(function () {
+
+        searchfromDB();
+    });
+
+    function searchfromDB() {
+        debugger;
+
+        var SearchKey = $('#txtsearch').val();
+        var url = "/SupplierMaster/SupplierDetails?Key=" + SearchKey;
+        window.location.href = url;
+    }
+
+
+    function ViewDetails(id) {
+
+        $("#divLoader").show();
+        LoadContact(id);
+        LoadDetails(id);
+
+    }
+
+    function LoadContact(suppId) {
+
+        $.ajax({
+            url: '/AuditMaster/GetOpeningBalanceMasterList',
+            type: "GET",
+            dataType: "json",
+            data: { SupplierID: suppId },
+            success: function (result) {
+
+                $('#tblContact tbody').empty()
+                $.each(result, function (i, val) {
+                    var row = "<tr>";
+                    row += "<td class='text-center'>" + (i + 1) + ".</td>"
+
+                    row += "<td>" + val.CompanyName + "</td>"
+                    row += "<td>" + val.JobCardDate + "</td>"
+                    row += "<td>" + val.JobCardNumber + "</td>"
+                    if (val.CreatedBy == null) {
+
+                        row += "<td></td>"
+                    }
+                    else {
+                        row += "<td>" + val.CreatedBy + "</td>"
+                    }
+                    if (val.CreatedDate == null) {
+
+                        row += "<td></td>"
+                    }
+                    else {
+                        row += "<td>" + val.CreatedDate + "</td>"
+                    }
+                    if (val.UpdatedBy == null) {
+
+                        row += "<td></td>"
+                    }
+                    else {
+                        row += "<td>" + val.UpdatedBy + "</td>"
+                    }
+                    if (val.UpdatedDate == null) {
+
+                        row += "<td></td>"
+                    }
+                    else {
+                        row += "<td>" + val.UpdatedDate + "</td>"
+                    }
+
+                    row += "<td>" + val.Action + "</td>"
+                    row += "<td>" + val.ActionDate + "</td>"
+
+                    row += "</tr>"
+                    $('#tblContact tbody').append(row);
+
+                });
+
+
+
+            },
+            error: function (xhr, status) {
+                console.log(status);
+                console.log(xhr);
+            },
+            complete: function () {
+
+            }
+        });
+    }
+
+
+    function LoadDetails(suppId) {
+        $.ajax({
+            url: '/AuditMaster/GetOpeningBalanceDetailsList',
+            type: "GET",
+            dataType: "json",
+            data: { SupplierID: suppId },
+            success: function (result) {
+
+                $('#tblSupplierDetails tbody').empty()
+                $.each(result, function (i, val) {
+                    var row = "<tr>";
+                    row += "<td class='text-center'>" + (i + 1) + ".</td>"
+
+                    row += "<td>" + val.ToAccountName + "</td>"
+                    row += "<td>" + val.InvoiceDate + "</td>"
+                    row += "<td>" + val.InvoiceNumber + "</td>"
+                    row += "<td>" + val.LPONO + "</td>"
+                    row += "<td>" + val.EstNo + "</td>"
+
+                    row += "<td>" + val.TotalAmount + "</td>"
+                    row += "<td>" + val.PaidAmount + "</td>"
+                    row += "<td>" + val.BalanceAmount + "</td>"
+                    row += "<td>" + val.Action + "</td>"
+                    row += "<td>" + val.ActionDate + "</td>"
+
+                    row += "</tr>"
+                    $('#tblSupplierDetails tbody').append(row);
+
+                });
+                $("#divLoader").hide();
+                $("#staticBackdrop").modal('show');
+            },
+            error: function (xhr, status) {
+                console.log(status);
+                console.log(xhr);
+            },
+            complete: function () {
+
+            }
+        });
+
+    }
+
+</script>
+<script type="text/javascript">
+    $("body").on("click", "#btnPdf", function () {
+        debugger;
+
+        $('#CompanyGroup').css("display", "inline-table");
+
+        html2canvas($('#CompanyGroup')[0], {
+            onrendered: function (canvas) {
+                var data = canvas.toDataURL();
+                var docDefinition = {
+                    content: [{
+                        image: data,
+                        width: 500
+                    }]
+                };
+                pdfMake.createPdf(docDefinition).download("ColorDetails.pdf");
+                $('#CompanyGroup').css("display", "none");
+            }
+        });
+    });
+
+</script>

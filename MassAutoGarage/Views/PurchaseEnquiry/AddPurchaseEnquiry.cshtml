@@ -1,0 +1,515 @@
+﻿@model MassAutoGarage.Models.ColorMaster.ColorMasterModel
+@{
+    ViewBag.Title = "Purchase Enquiry";
+    ViewBag.pTitle = "Purchase Enquiry Master";
+    ViewBag.pageTitle = "Forms";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
+@section styles{
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+}
+
+
+@using (Html.BeginForm("CreateColor", "ColorMaster", FormMethod.Post, new { enctype = "multipart/form-data", OnSubmit = "return ValidationForm()", @class = "form-validate" }))
+{
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header main-f">
+                    <div class="row">
+                        <div class="col-md-6 col-5"> <h5 class="card-title mb-0 gp-detail">ADD PURCHASE ENQUIRY</h5></div>
+                        <div class="col-md-6 col-7">
+                            <a href="@Url.Action("PurchaseEnquiryDetails","PurchaseEnquiry")" class="btn btn-primary add-new" style="float:right;" tabindex="1"> <i class="fa fa-arrow-left align-middle me-1"></i> BACK PURCHASE ENQUIRY LIST</a>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                @*<div class="card-header align-items-center d-flex">
+            <h4 class="card-title mb-0 flex-grow-1">ADD PURCHASE ENQUIRY</h4>
+            <div class="flex-shrink-0">
+                <div class="form-check form-switch form-switch-right form-switch-md">
+                    <a href="@Url.Action("PurchaseEnquiryDetails","PurchaseEnquiry")" class="btn btn-primary" style="float:right;" tabindex="6"><i class="fa fa-list" aria-hidden="true"></i> BACK PURCHASE ENQUIRY LIST</a>
+                </div>
+            </div>
+        </div>*@
+
+                <!-- end card header -->
+                <div class="card-body">
+                    <div class="live-preview">
+                        <div class="row gy-4">
+                            <div class="col-xxl-3 col-md-3">
+                                <div>
+                                    <label for="labelInput" class="form-label">Purchase Enquiry No <code>*</code></label>
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-md-3">
+                                <div>
+                                    <label for="labelInput" class="form-label">Branch<code>*</code></label>
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+
+                            <div class="col-xxl-3 col-md-3">
+                                <div>
+                                    <label for="labelInput" class="form-label">Date <code>*</code></label>
+                                    <input type="text" class="form-control" />
+
+                                </div>
+                            </div>
+
+                            <div class="col-xxl-3 col-md-3">
+                                <div>
+                                    <label for="labelInput" class="form-label">Supplier <code>*</code></label>
+                                    <select id="ddlSupplier" class="js-example-basic-single">
+                                        <option value="0">Select</option>
+                                        <option value="1">Supplier-1</option>
+                                        <option value="2">Supplier-2</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-xxl-12 col-md-12">
+                                <div>
+                                    <label for="labelInput" class="form-label">Remarks <code>*</code></label>
+                                    <textarea id="txtRemarks" class="form-control"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-md-3">
+                                <div>
+                                    <label for="labelInput" class="form-label">VIN Number <code>*</code></label>
+                                    <input type="text" class="form-control" />
+
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-md-3">
+                                <div>
+                                    <label for="labelInput" class="form-label">Job Card No<code>*</code></label>
+                                    <input type="text" class="form-control" />
+
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-md-3">
+                                <div>
+                                    <label for="labelInput" class="form-label">Brand <code>*</code></label>
+                                    <input type="text" class="form-control" />
+
+                                </div>
+                            </div>
+
+                            <div class="col-xxl-3 col-md-3">
+                                <div>
+                                    <label for="labelInput" class="form-label">Job Card Date<code>*</code></label>
+                                    <input type="text" class="form-control" />
+
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-md-3">
+                                <div>
+                                    <label for="labelInput" class="form-label">Model <code>*</code></label>
+                                    <input type="text" class="form-control" />
+
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-md-3">
+                                <div>
+                                    <label for="labelInput" class="form-label">Plate No <code>*</code></label>
+                                    <input type="text" class="form-control" />
+
+                                </div>
+                            </div>
+
+                            <div class="col-xxl-12 col-md-12">
+                                <div>
+                                    <hr />
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-md-3">
+                                <div>
+                                    <label for="labelInput" class="form-label">Part Number<code>*</code></label>
+                                    <input type="text" class="form-control" />
+
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-md-3">
+                                <div>
+                                    <label for="labelInput" class="form-label">Descripition<code>*</code></label>
+                                    <input type="text" class="form-control" />
+
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-md-3">
+                                <div>
+                                    <label for="labelInput" class="form-label">Qty<code>*</code></label>
+                                    <input type="text" class="form-control" />
+
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-md-3">
+                                <div>
+                                    <label for="labelInput" class="form-label">Type<code>*</code></label>
+                                    <select id="ddltype" class="js-example-basic-single">
+                                        <option value="0">Select Type</option>
+                                        <option value="1">Standard Parts</option>
+                                        <option value="2">Genuine Parts</option>
+                                        <option value="3">OEM Parts</option>
+                                        <option value="4">Others Parts</option>
+                                        <option value="5">Genuine Parts,</option>
+                                    </select>
+
+                                </div>
+                            </div>
+                            <div class="col-xxl-12 col-md-12">
+                                <div>
+                                    <label for="labelInput" class="form-label">Remarks <code>*</code></label>
+                                    <textarea id="txtRemarks" class="form-control"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-md-3">
+                                <div>
+                                    <label for="labelInput" class="form-label">Unit Cost Price<code>*</code></label>
+                                    <input type="text" class="form-control" />
+
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-md-3">
+                                <div>
+                                    <label for="labelInput" class="form-label">Gross Amount<code>*</code></label>
+                                    <input type="text" class="form-control" />
+
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-md-3">
+                                <div>
+                                    <label for="labelInput" class="form-label">VAT %<code>*</code></label>
+                                    <input type="text" class="form-control" />
+
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-md-3">
+                                <div>
+                                    <label for="labelInput" class="form-label">Total Amount<code>*</code></label>
+                                    <input type="text" class="form-control" />
+
+                                </div>
+                            </div>
+
+
+                            <div class="col-xxl-12 col-md-12">
+                                <div style="text-align:right;">
+                                    <input type="button" value="ADD" id="btnAdd" class="btn btn-primary" tabindex="5" />
+                                </div>
+                                <br />
+
+
+
+                                <div class="table-responsive">
+
+                                    <table id="tblContact" class="display table table-bordered" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th style=" width: 3%;">SL.</th>
+                                                <th style="white-space:nowrap">Part Number</th>
+                                                <th>Descripition </th>
+                                                <th>Qty</th>
+                                                <th>Type</th>
+                                                <th style="white-space:nowrap">Unit Cost Price</th>
+                                                <th style="white-space:nowrap">Gross Amt.</th>
+                                                <th>VAT</th>
+                                                <th style="white-space:nowrap">Total Amt.</th>
+                                                <th>Remark</th>
+                                                <th style=" width:12%">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tBody3">
+                                            <tr>
+                                                <td>1.</td>
+                                                <td>009888</td>
+                                                <td>WASHING MACHINE</td>
+                                                <td>10</td>
+                                                <td>Standard Parts</td>
+                                                <td>1090</td>
+                                                <td>50000</td>
+                                                <td>18%</td>
+                                                <td>560000</td>
+                                                <td>A washing machine is a machine that washes dirty clothes.</td>
+                                                <td>
+                                                    <span style="color:blue">Edit</span>  |  <span style="color:red">Delete</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2.</td>
+                                                <td>009888</td>
+                                                <td>WASHING MACHINE</td>
+                                                <td>10</td>
+                                                <td>Standard Parts</td>
+                                                <td>1090</td>
+                                                <td>50000</td>
+                                                <td>18%</td>
+                                                <td>560000</td>
+                                                <td>A washing machine is a machine that washes dirty clothes.</td>
+                                                <td>
+                                                    <span style="color:blue">Edit</span>  |  <span style="color:red">Delete</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!--end col-->
+                            </div>
+                        </div>
+                        <!--end row-->
+                    </div>
+
+                </div>
+
+                <div class="col-xxl-12 col-md-12">
+                    <div class="form-floating" style="float: right; padding-right: 2%;">
+
+                        <input type="button" value="Save" id="btnSave" class="btn btn-primary" tabindex="5" />
+                        <a href="@Url.Action("PurchaseEnquiryDetails","PurchaseEnquiry")" class="btn btn-danger" tabindex="4">Cancel</a>
+
+                    </div>
+                </div>
+                <br />
+            </div>
+
+
+        </div>
+
+        <!--end col-->
+    </div>
+}
+
+
+@section scripts{
+
+
+    <!--select2 cdn-->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script src="~/assets/js/pages/select2.init.js"></script>
+    <script src="~/assets/libs/prismjs/prism.js"></script>
+    <script src="~/assets/js/app.js"></script>
+
+    <!-- prismjs plugin -->
+    <!-- App js -->
+
+
+}
+
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+@*<link rel="stylesheet" href="/resources/demos/style.css">*@
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+
+        /* LoadUserType();*/
+
+        //$("#StartDate").datepicker({
+        //    format: 'dd/mm/yy',
+        //    changeMonth: true,
+        //    changeYear: true,
+        //    todayHighlight: true,
+
+        //});
+
+        //var options = $.extend({},
+        //    $.datepicker.regional["es"], {
+        //    dateFormat: "dd/mm/yy",
+        //    changeMonth: true,
+        //    changeYear: true,
+        //    /* yearRange: "-2:+0",*/
+        //    todayHighlight: true,
+        //    /*highlightWeek: true,*/
+        //    /*maxDate: 0*/
+        //});
+        //$("#StartDate").datepicker(options);
+
+    })
+
+    $("#btnSave").click(function (e) {
+        debugger;
+        e.preventDefault();
+
+
+        var _code = $("#Code").val();
+        var _ColorId = $("#ColorId option:selected").val();
+        var _ColorCode = $("#ColorCode").val();
+        var _IsActive = $("#IsActive option:selected").val();
+        var _Id = $("#HDFID").val();
+        var _CurrentCount = $("#HDFCurrentCount").val();
+
+
+        if (_code != "" && _ColorId != "") {
+            var ProductListArr = [];
+            var ProductList = {
+                ID: _Id,
+                CurrentCount: _CurrentCount,
+                Code: _code,
+                ColorId: _ColorId,
+                ColorCode: _ColorCode,
+                IsActive: _IsActive
+
+            };
+            //ProductListArr.push(ProductList);
+            if (confirm("Are you sure you want to continue ?")) {
+                $.ajax({
+                    type: 'POST',
+                    url: '/ColorMaster/SaveColorMaster',
+                    data: JSON.stringify(ProductList),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: 'json',
+                    success: function (data) {
+                        debugger;
+                        if (data == "1") {
+                            debugger;
+
+                            swal({
+                                title: "Success",
+                                text: "Records Successfully Saved",
+                                type: "success",
+                            }).then(function (isConfirm) {
+                                if (isConfirm) {
+                                    var url = "/ColorMaster/ColorDetails";
+                                    window.location.href = url;
+                                } else {
+
+                                }
+                            });
+
+                        }
+                        else if (data == "2") {
+
+                            swal({
+                                title: "Success",
+                                text: "Records Successfully Updated",
+                                type: "success",
+                            }).then(function (isConfirm) {
+                                if (isConfirm) {
+                                    var url = "/ColorMaster/ColorDetails";
+                                    window.location.href = url;
+                                } else {
+
+                                }
+                            });
+                        }
+                        else if (data == "4") {
+
+                            swal("Warning", "This Color is Already Exist!", "warning");
+                        } else {
+
+                            swal("Warning", "Record not save!", "warning");
+                        }
+
+                    },
+                    error: function (httpResponse) {
+                        swal("Warning", "Something Went to Wrong !", "warning");
+
+                    }
+                })
+            }
+        }
+        else {
+
+
+            if (_code == "") {
+                swal("Warning", " Please Enter Code !", "warning");
+                return false;
+            }
+
+            if (_ColorId == "") {
+                swal("Warning", "Please Select Color !", "warning");
+                return false;
+            }
+
+
+        }
+
+    })
+
+
+    $("#ColorId").change(function () {
+        debugger;
+        var val = $('#ColorId option:selected').val();
+        if (val > 0) {
+
+            $.ajax({
+                url: '/ColorMaster/LoadColorCode',
+                type: "GET",
+                dataType: "json",
+                data: { colorId: val },
+                success: function (result) {
+                    $.each(result, function (i, usr) {
+                        debugger;
+                        $("#ColorCode").val(usr.ColorCode);
+                        $("#image-container").css("background-color", usr.ColorCode);
+                    });
+                },
+                error: function (xhr, status) {
+                    console.log(status);
+                    console.log(xhr);
+                },
+                complete: function () {
+
+                }
+            });
+        }
+    })
+
+</script>
+
+<script type="text/javascript">
+    //jQuery(function ($) {
+
+
+    //    debugger;
+    //    $("#colorPickerBasic").shieldColorPicker({
+
+    //        value: "#33CC00",
+    //        displayInline: true,
+    //        events: {
+    //            select: function (e) {
+
+
+    //                /*$("#image-container").css("background-color", e.target.value().css());    */
+    //                $("#HDFColorCode").val(e.target.value().css());
+    //                $("#image-container").val(e.target.value().css());
+    //            }
+    //        }
+    //    });
+
+    //    $("#colorPickerAdvanced").shieldColorPicker({
+
+    //        value: "#33CC00",
+    //        palette: "advanced",
+    //        advancedPalette: {
+    //            type: "hex",
+    //            buttons: true
+    //        },
+    //        events: {
+    //            change: function (e) {
+
+    //                /* $("#image-container").css("background-color", e.target.value().css());*/
+    //                $("#HDFColorCode").val(e.target.value().css());
+    //                $("#image-container").val(e.target.value().css());
+    //            }
+    //        }
+    //    });
+    //});
+</script>

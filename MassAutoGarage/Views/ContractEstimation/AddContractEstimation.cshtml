@@ -1,0 +1,494 @@
+﻿@model MassAutoGarage.Models.AddOnsMaster.AddOnsMasterModel
+@{
+    ViewBag.Title = "Contract Estimation";
+    ViewBag.pTitle = "Contract Estimation";
+    ViewBag.pageTitle = "Forms";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+
+    .main-table {
+        width: 100%;
+        /*  max-width: 980px;*/
+        /* change to suit*/
+        margin: auto;
+        border: 1px solid #4b38af;
+        border-collapse: collapse;
+    }
+
+        .main-table thead th {
+            background: #4b38af;
+            color: #fff;
+            color: #fff;
+            font-size: 0.8rem;
+            padding: 5px 9px 6px 9px;
+            line-height: 1;
+            border: 1px solid #626060;
+        }
+
+        .main-table th,
+        .main-table td {
+            vertical-align: top;
+            text-align: left;
+            border: 1px solid #626060;
+        }
+
+    td.numbers {
+        text-align: center;
+    }
+
+    .main-table td {
+        font-size: 13px; /* font-size: 0.7rem;*/
+        padding: 3px 9px;
+        border-bottom: 1px solid #999; /* dotted borders look bad on tables*/
+        line-height: 1.2;
+    }
+
+    .table-heading {
+        font-size: 0.7rem;
+        margin: 0 0 0.5em;
+    }
+
+    .item-options {
+        margin: 0 0 0.5rem;
+        overflow: hidden;
+        clear: both;
+    }
+
+        .item-options dt {
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .item-options dt,
+        .item-options dd {
+            display: inline-block;
+            margin: 0;
+            padding: 0 5px 0 0;
+            vertical-align: top;
+        }
+
+            .item-options dt:after {
+                content: ":";
+            }
+
+    .main-table tbody tr:nth-child(odd) td {
+        background: #f9f9f9;
+    }
+
+    @@media screen and (max-width: 540px) {
+        table.mobile-optimised {
+            word-wrap: break-word;
+            font-size: 1rem;
+            border: none;
+        }
+
+            table.mobile-optimised thead {
+                display: none;
+            }
+
+            table.mobile-optimised td {
+                display: block;
+                float: left; /* ie9 and under hack */
+                width: 100%;
+                clear: both;
+                background: #eee;
+                border: none;
+                padding: 10px 5px;
+                box-sizing: border-box;
+                font-size: 12px;
+            }
+
+            table.mobile-optimised tbody,
+            table.mobile-optimised tr {
+                display: block;
+            }
+
+        .mobile-optimised td:before {
+            content: attr(data-th);
+            display: block;
+            font-weight: bold;
+            margin: 0 0 2px;
+            background: #4b38af;
+            color: #fff;
+            padding: 5px;
+        }
+
+        .mobile-optimised tbody tr {
+            border-bottom: 1px solid #000;
+            overflow: hidden;
+        }
+
+        .item-options,
+        .table-heading {
+            font-size: 1rem;
+        }
+
+        .mobile-optimised .numbers {
+            text-align: left;
+        }
+
+        .main-table tbody tr:nth-child(odd) td {
+            background: #ccc;
+        }
+    }
+
+
+    fieldset {
+        border: solid;
+        border-color: #bbb1b1;
+        border-width: thin;
+    }
+
+    legend {
+        float: none;
+        width: 25%;
+        background-color: #bbb1b1;
+        color: white;
+        padding: 5px 10px;
+        font-size: small;
+    }
+
+    input {
+        margin: 5px;
+    }
+</style>
+
+<script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
+@section styles{
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+}
+
+
+@using (Html.BeginForm("AddContractEstimation", "ContractEstimation", FormMethod.Post, new { enctype = "multipart/form-data", OnSubmit = "return ValidationForm()", @class = "form-validate", @id = "myformid" }))
+{
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+
+                <div class="card-header main-f">
+                    <div class="row">
+                        <div class="col-md-6 col-5"> <h5 class="card-title mb-0 gp-detail">CONTRACT ESTIMATION</h5></div>
+                        <div class="col-md-6 col-7">
+                            <a href="@Url.Action("Index","ContractEstimation")" class="btn btn-primary add-new" style="float:right;" tabindex="1"> <i class="fa fa-arrow-left align-middle me-1"></i> BACK CONTRACT ESTIMATION LIST </a>
+                        </div>
+                    </div>
+                  
+
+                </div>
+
+
+                @*<div class="card-header align-items-center d-flex">
+            <h4 class="card-title mb-0 flex-grow-1">CONTRACT ESTIMATION</h4>
+            <div class="flex-shrink-0">
+                <div class="form-check form-switch form-switch-right form-switch-md">
+                    <a href="@Url.Action("Index","ContractEstimation")" class="btn btn-primary" style="float:right;" tabindex="7"><i class="fa fa-list" aria-hidden="true"></i> BACK CONTRACT ESTIMATION LIST</a>
+                </div>
+            </div>
+        </div>*@
+
+
+                <!-- end card header -->
+                <div class="card-body">
+                    <div class="live-preview">
+                        <div class="row gy-4">
+
+                            <fieldset>
+                                <legend>CONTRACT ESTIMATION DETAILS</legend>
+                                <div class="row gy-4">
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label"> Branch Name <code>*</code></label>
+                                            <select id="ddlBranch" class="js-example-basic-single">
+                                                <option value="0">Select Branch</option>
+                                                <option value="1">Branch Name-1</option>
+                                                <option value="2">Branch Name-2</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Contract Estimate  <code>*</code></label>
+                                            <input type="text" class="form-control" />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Bill Date <code>*</code></label>
+                                            <input type="text" class="form-control" />
+
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Cust. Contact No<code>*</code></label>
+                                            <input type="text" class="form-control" />
+
+                                        </div>
+                                    </div>
+
+
+
+
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Contract Name <code>*</code></label>
+                                            <select id="ddlContractName" class="js-example-basic-single">
+                                                <option value="0">Select </option>
+                                            </select>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Cust. Name  <code>*</code></label>
+                                            <input type="text" class="form-control" />
+
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Plate No <code>*</code></label>
+                                            <input type="text" class="form-control" />
+
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Vin No <code>*</code></label>
+                                            <input type="text" class="form-control" />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Vehicle Brand <code>*</code></label>
+                                            <select id="ddlVehicleBrand" class="js-example-basic-single">
+                                                <option value="0">Select </option>
+
+                                            </select>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Vehicle Model <code>*</code></label>
+                                            <select id="ddlVehicleModel" class="js-example-basic-single">
+                                                <option value="0">Select </option>
+
+                                            </select>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Total No of Visit<code>*</code></label>
+                                            <input type="text" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">From Date<code>*</code></label>
+                                            <input type="text" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Till Date<code>*</code></label>
+                                            <input type="text" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Total Price<code>*</code></label>
+                                            <input type="text" class="form-control" />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label"> Payment Type <code>*</code></label>
+                                            <select id="ddlPaymentType" class="js-example-basic-single">
+                                                <option value="0">Select </option>
+
+                                            </select>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label"> Cash Account<code>*</code></label>
+                                            <select id="ddlCashAccount" class="js-example-basic-single">
+                                                <option value="0">Select </option>
+
+                                            </select>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label"> Card Account<code>*</code></label>
+                                            <select id="ddlCardAccount" class="js-example-basic-single">
+                                                <option value="0">Select </option>
+
+                                            </select>
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <br /><br />
+                            </fieldset>
+                            <fieldset>
+                                <legend>DISCOUNT</legend>
+                                <div class="row gy-4">
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Gross Amt<code>*</code></label>
+                                            <input type="text" class="form-control" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Discount Amount<code>*</code></label>
+                                            <input type="text" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Vat Amt<code>*</code></label>
+                                            <input type="text" class="form-control" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Net Amt<code>*</code></label>
+                                            <input type="text" class="form-control" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Bal Amt<code>*</code></label>
+                                            <input type="text" class="form-control" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Advisor Name<code>*</code></label>
+                                            <input type="text" class="form-control" disabled />
+                                        </div>
+                                    </div>
+                                </div>
+                                <br /><br />
+                            </fieldset>
+
+
+
+
+                            <div class="col-xxl-6 col-md-6">
+                                <div>
+                                    <label for="labelInput" class="form-label">Print Type<code>*</code></label>
+                                    <select id="ddlPrintType" class="js-example-basic-single">
+                                        <option value="0">Select </option>
+
+                                    </select>
+
+                                </div>
+                            </div>
+                            <div class="col-xxl-6 col-md-6">
+                                <div>
+                                    <label for="labelInput" class="form-label">Status<code>*</code></label>
+                                    <select id="ddlStatus" class="js-example-basic-single">
+                                        <option value="0">Select </option>
+
+                                    </select>
+
+                                </div>
+                            </div>
+                            <div class="col-xxl-12 col-md-12">
+                                <div>
+                                    <label for="labelInput" class="form-label">Description<code>*</code></label>
+                                    <textarea id="txtdescription" class="form-control"></textarea>
+
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                        <!--end row-->
+                    </div>
+
+                </div>
+                <br /><br />
+                <div class="col-xxl-12 col-md-12">
+                    <div class="form-floating" style="float: right; padding-right: 2%;">
+                        <input type="button" value="Save" id="btnSave" class="btn btn-primary" />
+                        <input type="button" value="Print" id="btnSave" class="btn btn-info" />
+                        <a href="@Url.Action("Index","JobCardSalesReturn")" class="btn btn-danger">Cancel</a>
+
+
+                    </div>
+                </div>
+                <br />
+            </div>
+
+
+        </div>
+
+        <!--end col-->
+    </div>
+
+    <!-- Modal -->
+
+}
+
+
+@section scripts{
+
+
+    <!--select2 cdn-->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script src="~/assets/js/pages/select2.init.js"></script>
+    <script src="~/assets/libs/prismjs/prism.js"></script>
+    <script src="~/assets/js/app.js"></script>
+
+    <!-- prismjs plugin -->
+    <!-- App js -->
+
+
+}
+
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+@*<link rel="stylesheet" href="/resources/demos/style.css">*@
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="~/MyApp/AddONS.js"></script>
+
+
+
+<script>
+    $(document).ready(function () {
+
+    })
+
+    $("#btnAddMaster").click(function () {
+
+        $("#partialModal").modal("show");
+    })
+</script>
+
