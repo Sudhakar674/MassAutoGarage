@@ -4524,6 +4524,7 @@
     <Content Include="Views\HRMS_SalesTarget\SalesTarget.cshtml" />
     <Content Include="Views\JournalVouchers\AddJournalVouchers.cshtml" />
     <Content Include="Views\JournalVouchers\Index.cshtml" />
+    <Content Include="Views\Home\ForTesting.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
