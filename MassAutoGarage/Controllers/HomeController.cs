@@ -14,9 +14,5 @@ namespace MassAutoGarage.Controllers
             return View();
         }
 
-        public ActionResult ForTesting()
-        {
-            return View();
-        }
     }
 }
