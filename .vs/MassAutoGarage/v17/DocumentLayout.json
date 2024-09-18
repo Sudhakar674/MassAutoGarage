@@ -7,11 +7,11 @@
       "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|q:\\repository\\massautogarage\\massautogarage\\massautogarage\\views\\home\\fortesting.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\home\\fortesting.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\home\\fortesting.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|q:\\repository\\massautogarage\\massautogarage\\massautogarage\\views\\accountgroup\\addaccountgroup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\accountgroup\\addaccountgroup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\accountgroup\\addaccountgroup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
@@ -326,8 +326,7 @@
               "ViewState": "AgIAABkAAAAAJBTUlC0hwBgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-09-17T11:31:43.948Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -365,8 +364,7 @@
               "RelativeToolTip": "MassAutoGarage\\Views\\Home\\ForTesting.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-18T13:07:12.741Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-18T13:07:12.741Z"
             },
             {
               "$type": "Document",
@@ -376,7 +374,7 @@
               "RelativeDocumentMoniker": "MassAutoGarage\\Controllers\\HomeController.cs",
               "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Controllers\\HomeController.cs",
               "RelativeToolTip": "MassAutoGarage\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAsAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-18T13:06:21.489Z",
               "EditorCaption": ""
