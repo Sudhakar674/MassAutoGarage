@@ -3514,6 +3514,7 @@
     <Content Include="MyApp\Customer_Master.js" />
     <Content Include="MyApp\GroupMaster.js" />
     <Content Include="MyApp\HRMS_AddDepartment.js" />
+    <Content Include="MyApp\HRMS_MaritalStatus.js" />
     <Content Include="MyApp\LoyaltyPointsMaster.js" />
     <Content Include="MyApp\PromotionMaster.js" />
     <Content Include="MyApp\SupplierOpeningBalance.js" />
@@ -3741,6 +3742,7 @@
     <Compile Include="Data\GenderMaster\GenderMaster_DL.cs" />
     <Compile Include="Data\GroupMaster.cs" />
     <Compile Include="Data\HRMS_Department\HRMSDepartment_DL.cs" />
+    <Compile Include="Data\HRMS_MaritalStatus\HRMSMaritalStatus_DL.cs" />
     <Compile Include="Data\JobCategoryMaster\JobCategoryMaster_DL.cs" />
     <Compile Include="Data\LeadSourceMaster\LeadSourceMaster_DL.cs" />
     <Compile Include="Data\LoginAuth\AccountMasterService.cs" />
@@ -3789,6 +3791,7 @@
     <Compile Include="Models\GenderMaster\GenderMasterModel.cs" />
     <Compile Include="Models\GroupMasterModel.cs" />
     <Compile Include="Models\HRMS_Department\HRMSDepartmentModel.cs" />
+    <Compile Include="Models\HRMS_MaritalStatus\HRMSMaritalStatusModel.cs" />
     <Compile Include="Models\JobCategoryMaster\JobCategoryMasterModel.cs" />
     <Compile Include="Models\LeadSourceMaster\LeadSourceMasterModel.cs" />
     <Compile Include="Models\LinkingAccount\LinkingAccountModel.cs" />
