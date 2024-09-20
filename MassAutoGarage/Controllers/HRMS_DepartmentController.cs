@@ -25,26 +25,40 @@ namespace MassAutoGarage.Controllers
         }
 
         [HttpPost]
-        public JsonResult SaveDepartment(HRMSDepartmentModel model)
+        public JsonResult SaveDepartment(HRMSDepartmentModel model, string DeptId)
         {
             string result = string.Empty;
             try
             {
-                model.QueryType = "1";
-                if (Session["userId"] != null)
+                model.DepartmentId = DeptId;
+                if(model.DepartmentId == null || model.DepartmentId == "")
                 {
                     model.CreatedBy = Convert.ToInt64(Session["userId"]);
-                }
-
-                model = DL.AddUpdate(model);
-                if (model.Flag == 1)
-                {
-                    result = "1";
+                    model.QueryType = "1";
+                    model = DL.AddUpdate(model);
+                    if (model.Flag == 1)
+                    {
+                        result = "1";
+                    }
+                    else
+                    {
+                        result = "";
+                    }
                 }
                 else
                 {
-                    result = "";
-                }
+                    model.CreatedBy = Convert.ToInt64(Session["userId"]);
+                    model.QueryType = "2";
+                    model = DL.AddUpdate(model);
+                    if (model.Flag == 1)
+                    {
+                        result = "2";
+                    }
+                    else
+                    {
+                        result = "";
+                    }
+                }          
             }
             catch (Exception)
             {
@@ -73,82 +87,31 @@ namespace MassAutoGarage.Controllers
         }
 
 
-        public JsonResult Delete(Int64 DeptId)
+        public JsonResult Delete(HRMSDepartmentModel model,string DeptId)
         {
-            
-            var lst = DL.Delete(DeptId);
-            return Json(lst.Flag, JsonRequestBehavior.AllowGet);
+            string result = string.Empty;
+            try
+            {
+                model.DepartmentId = DeptId;
+                model.QueryType = "4";
+                model = DL.Delete(model);
+                if (model.Flag == 1)
+                {
+                    result = "1";
+                }
+                else
+                {
+                    result = "";
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return Json(result, JsonRequestBehavior.AllowGet);
+            //var lst = DL.Delete(DeptId);
+            //return Json(lst.Flag, JsonRequestBehavior.AllowGet);
         }
-
-
-
-
-
-
-
-        //public JsonResult SaveAddONSMaster(AddOnsMasterModel model)
-        //{
-        //    string result = string.Empty;
-        //    try
-        //    {
-
-        //        if (model.ID != "" && model.ID != null)
-        //        {
-
-
-        //            model.QueryType = "21";
-        //            if (Session["userId"] != null)
-        //            {
-        //                model.CreatedBy = Convert.ToInt64(Session["userId"]);
-        //            }
-        //            model.ID = objcls.Decrypt(model.ID);
-        //            model = objDL.AddUpdate(model);
-        //            if (model.Flag == 2)
-        //            {
-        //                result = "2";
-        //            }
-        //            else
-        //            {
-        //                result = "";
-        //            }
-        //        }
-        //        else
-        //        {
-
-        //            model.QueryType = "11";
-        //            if (Session["userId"] != null)
-        //            {
-        //                model.CreatedBy = Convert.ToInt64(Session["userId"]);
-        //            }
-
-        //            model = objDL.AddUpdate(model);
-        //            if (model.Flag == 1)
-        //            {
-        //                result = "1";
-        //            }
-        //            else if (model.Flag == 4)
-        //            {
-        //                result = "4";
-        //            }
-        //            else
-        //            {
-        //                result = "";
-        //            }
-        //        }
-        //    }
-        //    catch (Exception)
-        //    {
-
-        //        throw;
-        //    }
-        //    return Json(result, JsonRequestBehavior.AllowGet);
-        //}
-
-
-
-
-
-
 
 
 

@@ -17,6 +17,9 @@ namespace MassAutoGarage.Models.HRMS_Department
         public int IsActive { get; set; }
         public string QueryType { get; set; }
         public int Flag { get; set; }
+        public string DepartmentId { get; set; }
+
+        public string result { get; set; }
         public List<HRMSDepartmentModel> HRMSDepartmentModelList { get; set; }
     }
 }

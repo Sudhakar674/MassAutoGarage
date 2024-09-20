@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using DocumentFormat.OpenXml.Bibliography;
 using MassAutoGarage.DBContext;
 using MassAutoGarage.Models.AddOnsMaster;
 using MassAutoGarage.Models.ColorMaster;
@@ -21,7 +22,7 @@ namespace MassAutoGarage.Data
                 queryParameters.Add("@QueryType", obj.QueryType);
                 queryParameters.Add("@DepartmentName", obj.DepartmentName);
                 queryParameters.Add("@CreatedBy", obj.CreatedBy);
-                queryParameters.Add("@DeptId", obj.DeptID);
+                queryParameters.Add("@DeptId", obj.DepartmentId);
 
                 var _iresult = DBHelperDapper.DAAddAndReturnModel<HRMSDepartmentModel>("USP_HRMS_Department", queryParameters);
                 return _iresult;
@@ -39,7 +40,7 @@ namespace MassAutoGarage.Data
             try
             {
                 var perm = new DynamicParameters();
-                perm.Add("@QueryType", "2");
+                perm.Add("@QueryType", "3");
                 obj = DBHelperDapper.DAAddAndReturnModelList<HRMSDepartmentModel>("USP_HRMS_Department", perm);
                 return obj;
             }
@@ -49,14 +50,13 @@ namespace MassAutoGarage.Data
             }
         }
 
-        public HRMSDepartmentModel Delete(Int64 DeptId)
+        public HRMSDepartmentModel Delete(HRMSDepartmentModel obj)
         {
-            HRMSDepartmentModel obj = new HRMSDepartmentModel();
             try
             {
                 var perm = new DynamicParameters();
-                perm.Add("@QueryType", "3");
-                perm.Add("@DeptId", DeptId);
+                perm.Add("@QueryType", obj.QueryType);
+                perm.Add("@DeptId", obj.DepartmentId);
                 obj = DBHelperDapper.DAAddAndReturnModel<HRMSDepartmentModel>("USP_HRMS_Department", perm);
                 return obj;
             }
