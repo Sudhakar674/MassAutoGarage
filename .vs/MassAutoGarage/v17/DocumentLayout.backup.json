@@ -3,268 +3,52 @@
   "WorkspaceRootPath": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|q:\\repository\\massautogarage\\massautogarage\\massautogarage\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|q:\\repository\\massautogarage\\massautogarage\\massautogarage\\myapp\\hrms_adddepartment.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\myapp\\hrms_adddepartment.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\home\\fortesting.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\home\\fortesting.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\accountgroup\\addaccountgroup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\accountgroup\\addaccountgroup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\group\\addgroup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\group\\addgroup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\retaildeliverynote\\addretaildeliverynote.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\retaildeliverynote\\addretaildeliverynote.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\receiptvoucher\\addreceiptvoucher.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\receiptvoucher\\addreceiptvoucher.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\depreciationassets\\adddepreciationassets.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\depreciationassets\\adddepreciationassets.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\fixedexpensesyearly\\addfixedexpensesyearly.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\fixedexpensesyearly\\addfixedexpensesyearly.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\journalvouchers\\addjournalvouchers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\journalvouchers\\addjournalvouchers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\paymentvoucher\\addpaymentvoucher.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\paymentvoucher\\addpaymentvoucher.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\pettycashpayment\\addpettycashpayment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\pettycashpayment\\addpettycashpayment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\linkingaccount\\addlinkingaccount.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\linkingaccount\\addlinkingaccount.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\accountledger\\addaccountledger.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\accountledger\\addaccountledger.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\accountgroup\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\accountgroup\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\master\\groupmaster.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\master\\groupmaster.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\hrms_expiryreport\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\hrms_expiryreport\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\hrms_leavereport\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\hrms_leavereport\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\hrms_payslip\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\hrms_payslip\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\hrms_salarystatement\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\hrms_salarystatement\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\hrms_attendancereport\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\hrms_attendancereport\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\hrms_internalrequest\\internalrequest.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\hrms_internalrequest\\internalrequest.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\hrms_internalrequest\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\hrms_internalrequest\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\hrms_gratuity\\gratuity.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\hrms_gratuity\\gratuity.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\hrms_gratuity\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\hrms_gratuity\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\hrms_airticketissue\\airticketissue.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\hrms_airticketissue\\airticketissue.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\hrms_airticketissue\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\hrms_airticketissue\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\hrms_leave\\leave.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\hrms_leave\\leave.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\hrms_leave\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\hrms_leave\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\hrms_loan\\loan.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\hrms_loan\\loan.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\hrms_loan\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\hrms_loan\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\hrms_bonus\\bonus.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\hrms_bonus\\bonus.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\hrms_bonus\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\hrms_bonus\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\controllers\\hrms_employeedeductioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\controllers\\hrms_employeedeductioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\hrms_employeededuction\\employeededuction.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\hrms_employeededuction\\employeededuction.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\hrms_overtime\\overtime.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\hrms_overtime\\overtime.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\hrms_overtime\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\hrms_overtime\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\hrms_attendance\\attendance.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\hrms_attendance\\attendance.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\hrms_employeefamilydetails\\employeefamilydetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\hrms_employeefamilydetails\\employeefamilydetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\hrms_employeefamilydetails\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\hrms_employeefamilydetails\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\hrms_employeebankdetails\\employeebankdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\hrms_employeebankdetails\\employeebankdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\hrms_employeebankdetails\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\hrms_employeebankdetails\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\hrms_holiday\\holiday.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\hrms_holiday\\holiday.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\hrms_employeedocuments\\employeedocuments.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\hrms_employeedocuments\\employeedocuments.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\hrms_employeedocuments\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\hrms_employeedocuments\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\hrms_salestarget\\salestarget.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\hrms_salestarget\\salestarget.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\hrms_salestarget\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\hrms_salestarget\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\hrms_employee\\employee.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\hrms_employee\\employee.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\controllers\\hrms_employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\controllers\\hrms_employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\hrms_employee\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\hrms_employee\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\hrms_leavetype\\leavetype.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\hrms_leavetype\\leavetype.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\hrms_deductiontype\\deductiontype.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\hrms_deductiontype\\deductiontype.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\hrms_maritalstatus\\maritalstatus.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\hrms_maritalstatus\\maritalstatus.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\hrms_department\\department.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|q:\\repository\\massautogarage\\massautogarage\\massautogarage\\views\\hrms_department\\department.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\hrms_department\\department.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\master\\groupmasterindex.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\master\\groupmasterindex.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|q:\\repository\\massautogarage\\massautogarage\\massautogarage\\views\\addonsmaster\\onsdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\addonsmaster\\onsdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\group\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\group\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|q:\\repository\\massautogarage\\massautogarage\\massautogarage\\controllers\\hrms_departmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\controllers\\hrms_departmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\controllers\\groupcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\controllers\\groupcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|q:\\repository\\massautogarage\\massautogarage\\massautogarage\\data\\hrms_department\\hrmsdepartment_dl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\data\\hrms_department\\hrmsdepartment_dl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\depreciationassets\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\depreciationassets\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|q:\\repository\\massautogarage\\massautogarage\\massautogarage\\models\\hrms_department\\hrmsdepartmentmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\models\\hrms_department\\hrmsdepartmentmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\fixedexpensesyearly\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\fixedexpensesyearly\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|q:\\repository\\massautogarage\\massautogarage\\massautogarage\\controllers\\addonsmastercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\controllers\\addonsmastercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\journalvouchers\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\journalvouchers\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|q:\\repository\\massautogarage\\massautogarage\\massautogarage\\views\\addonsmaster\\addons.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\addonsmaster\\addons.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\bankreconciliationreminderreceipt\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\bankreconciliationreminderreceipt\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|q:\\repository\\massautogarage\\massautogarage\\massautogarage\\myapp\\addons.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\myapp\\addons.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\paymentvoucher\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\paymentvoucher\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|q:\\repository\\massautogarage\\massautogarage\\massautogarage\\data\\addonsmaster\\addonsmaster_dl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\data\\addonsmaster\\addonsmaster_dl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\pettycashpayment\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\pettycashpayment\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|q:\\repository\\massautogarage\\massautogarage\\massautogarage\\models\\colormaster\\colormastermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\models\\colormaster\\colormastermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\accountledger\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\accountledger\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\bankreconlitionremiderpay\\bankreconlitionremiderpayment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\bankreconlitionremiderpay\\bankreconlitionremiderpayment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\receiptvoucher\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\receiptvoucher\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|Q:\\repository\\MassAutoGarage\\MassAutoGarage\\massautogarage\\views\\approvalpettycashpayment\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\approvalpettycashpayment\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|q:\\repository\\massautogarage\\massautogarage\\massautogarage\\views\\cylindermaster\\createcylinder.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\cylindermaster\\createcylinder.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -274,806 +58,171 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 53,
-              "Title": "GroupMasterIndex.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\Master\\GroupMasterIndex.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\Master\\GroupMasterIndex.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\Master\\GroupMasterIndex.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\Master\\GroupMasterIndex.cshtml",
-              "ViewState": "AgIAAL4AAAAAAAAAAAAAANEAAAAnAAAAAAAAAA==",
+              "DocumentIndex": 11,
+              "Title": "CreateCylinder.cshtml",
+              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\CylinderMaster\\CreateCylinder.cshtml",
+              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\CylinderMaster\\CreateCylinder.cshtml",
+              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\CylinderMaster\\CreateCylinder.cshtml",
+              "RelativeToolTip": "MassAutoGarage\\Views\\CylinderMaster\\CreateCylinder.cshtml",
+              "ViewState": "AgIAACoAAAAAAAAAAAAEwLoAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-17T10:50:05.546Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "GroupMaster.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\Master\\GroupMaster.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\Master\\GroupMaster.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\Master\\GroupMaster.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\Master\\GroupMaster.cshtml",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAC8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-17T11:11:59.669Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\AccountGroup\\Index.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\AccountGroup\\Index.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\AccountGroup\\Index.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\AccountGroup\\Index.cshtml",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAAAFQAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-17T11:27:32.319Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AddAccountGroup.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\AccountGroup\\AddAccountGroup.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\AccountGroup\\AddAccountGroup.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\AccountGroup\\AddAccountGroup.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\AccountGroup\\AddAccountGroup.cshtml",
-              "ViewState": "AgIAABkAAAAAJBTUlC0hwBgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-17T11:31:43.948Z",
-              "IsPinned": true
+              "WhenOpened": "2024-09-19T06:03:19.137Z",
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "AddRetailDeliveryNote.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\RetailDeliveryNote\\AddRetailDeliveryNote.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\RetailDeliveryNote\\AddRetailDeliveryNote.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\RetailDeliveryNote\\AddRetailDeliveryNote.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\RetailDeliveryNote\\AddRetailDeliveryNote.cshtml",
-              "ViewState": "AgIAAI0AAAAAAAAAAAAAAJcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-17T14:03:29.765Z",
-              "IsPinned": true
+              "Title": "HRMSDepartment_DL.cs",
+              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Data\\HRMS_Department\\HRMSDepartment_DL.cs",
+              "RelativeDocumentMoniker": "MassAutoGarage\\Data\\HRMS_Department\\HRMSDepartment_DL.cs",
+              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Data\\HRMS_Department\\HRMSDepartment_DL.cs",
+              "RelativeToolTip": "MassAutoGarage\\Data\\HRMS_Department\\HRMSDepartment_DL.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAD4v0IAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-19T06:10:12.312Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "HRMSDepartmentModel.cs",
+              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Models\\HRMS_Department\\HRMSDepartmentModel.cs",
+              "RelativeDocumentMoniker": "MassAutoGarage\\Models\\HRMS_Department\\HRMSDepartmentModel.cs",
+              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Models\\HRMS_Department\\HRMSDepartmentModel.cs",
+              "RelativeToolTip": "MassAutoGarage\\Models\\HRMS_Department\\HRMSDepartmentModel.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAswA4AAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-19T06:09:10.226Z",
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "AddGroup.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\Group\\AddGroup.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\Group\\AddGroup.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\Group\\AddGroup.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\Group\\AddGroup.cshtml",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABoAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-17T11:18:33.534Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ForTesting.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\Home\\ForTesting.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\Home\\ForTesting.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\Home\\ForTesting.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\Home\\ForTesting.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-18T13:07:12.741Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Controllers\\HomeController.cs",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "MassAutoGarage\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
+              "Title": "HRMS_DepartmentController.cs",
+              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Controllers\\HRMS_DepartmentController.cs",
+              "RelativeDocumentMoniker": "MassAutoGarage\\Controllers\\HRMS_DepartmentController.cs",
+              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Controllers\\HRMS_DepartmentController.cs",
+              "RelativeToolTip": "MassAutoGarage\\Controllers\\HRMS_DepartmentController.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAMwFQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-18T13:06:21.489Z",
+              "WhenOpened": "2024-09-19T06:02:27.422Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ColorMasterModel.cs",
+              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Models\\ColorMaster\\ColorMasterModel.cs",
+              "RelativeDocumentMoniker": "MassAutoGarage\\Models\\ColorMaster\\ColorMasterModel.cs",
+              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Models\\ColorMaster\\ColorMasterModel.cs",
+              "RelativeToolTip": "MassAutoGarage\\Models\\ColorMaster\\ColorMasterModel.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA5wA8AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-19T06:17:19.833Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AddOnsMaster_DL.cs",
+              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Data\\AddOnsMaster\\AddOnsMaster_DL.cs",
+              "RelativeDocumentMoniker": "MassAutoGarage\\Data\\AddOnsMaster\\AddOnsMaster_DL.cs",
+              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Data\\AddOnsMaster\\AddOnsMaster_DL.cs",
+              "RelativeToolTip": "MassAutoGarage\\Data\\AddOnsMaster\\AddOnsMaster_DL.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAjwFsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-19T06:34:48.714Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "AddDepreciationAssets.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\DepreciationAssets\\AddDepreciationAssets.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\DepreciationAssets\\AddDepreciationAssets.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\DepreciationAssets\\AddDepreciationAssets.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\DepreciationAssets\\AddDepreciationAssets.cshtml",
-              "ViewState": "AgIAAHsAAAAAAAAAAAAAwJ0AAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-17T13:45:28.111Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AddReceiptVoucher.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\ReceiptVoucher\\AddReceiptVoucher.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\ReceiptVoucher\\AddReceiptVoucher.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\ReceiptVoucher\\AddReceiptVoucher.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\ReceiptVoucher\\AddReceiptVoucher.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAA5AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-17T12:29:15.473Z"
+              "Title": "AddOnsMasterController.cs",
+              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Controllers\\AddOnsMasterController.cs",
+              "RelativeDocumentMoniker": "MassAutoGarage\\Controllers\\AddOnsMasterController.cs",
+              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Controllers\\AddOnsMasterController.cs",
+              "RelativeToolTip": "MassAutoGarage\\Controllers\\AddOnsMasterController.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABQAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-19T06:38:51.384Z",
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "AddFixedExpensesYearly.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\FixedExpensesYearly\\AddFixedExpensesYearly.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\FixedExpensesYearly\\AddFixedExpensesYearly.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\FixedExpensesYearly\\AddFixedExpensesYearly.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\FixedExpensesYearly\\AddFixedExpensesYearly.cshtml",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAAAFQAAAAeAAAAAAAAAA==",
+              "Title": "AddOns.cshtml",
+              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\AddOnsMaster\\AddOns.cshtml",
+              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\AddOnsMaster\\AddOns.cshtml",
+              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\AddOnsMaster\\AddOns.cshtml",
+              "RelativeToolTip": "MassAutoGarage\\Views\\AddOnsMaster\\AddOns.cshtml",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAAAIwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-17T13:39:10.251Z"
+              "WhenOpened": "2024-09-19T06:41:22.067Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HRMS_AddDepartment.js",
+              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\MyApp\\HRMS_AddDepartment.js",
+              "RelativeDocumentMoniker": "MassAutoGarage\\MyApp\\HRMS_AddDepartment.js",
+              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\MyApp\\HRMS_AddDepartment.js",
+              "RelativeToolTip": "MassAutoGarage\\MyApp\\HRMS_AddDepartment.js",
+              "ViewState": "AgIAABAAAAAAAAAAAAAAwBEAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-09-19T09:39:37.833Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "AddJournalVouchers.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\JournalVouchers\\AddJournalVouchers.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\JournalVouchers\\AddJournalVouchers.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\JournalVouchers\\AddJournalVouchers.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\JournalVouchers\\AddJournalVouchers.cshtml",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAAAFQAAAAwAAAAAAAAAA==",
+              "Title": "AddONS.js",
+              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\MyApp\\AddONS.js",
+              "RelativeDocumentMoniker": "MassAutoGarage\\MyApp\\AddONS.js",
+              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\MyApp\\AddONS.js",
+              "RelativeToolTip": "MassAutoGarage\\MyApp\\AddONS.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-09-19T13:02:28.303Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OnsDetails.cshtml",
+              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\AddOnsMaster\\OnsDetails.cshtml",
+              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\AddOnsMaster\\OnsDetails.cshtml",
+              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\AddOnsMaster\\OnsDetails.cshtml",
+              "RelativeToolTip": "MassAutoGarage\\Views\\AddOnsMaster\\OnsDetails.cshtml",
+              "ViewState": "AgIAAMwAAAAAAAAAAAAAABMBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-17T13:34:11.508Z"
+              "WhenOpened": "2024-09-19T13:03:11.682Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "AddPaymentVoucher.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\PaymentVoucher\\AddPaymentVoucher.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\PaymentVoucher\\AddPaymentVoucher.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\PaymentVoucher\\AddPaymentVoucher.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\PaymentVoucher\\AddPaymentVoucher.cshtml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAACAAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-17T12:14:49.429Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "AddPettyCashPayment.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\PettyCashPayment\\AddPettyCashPayment.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\PettyCashPayment\\AddPettyCashPayment.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\PettyCashPayment\\AddPettyCashPayment.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\PettyCashPayment\\AddPettyCashPayment.cshtml",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAAAFAAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-17T12:00:45.229Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "AddLinkingAccount.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\LinkingAccount\\AddLinkingAccount.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\LinkingAccount\\AddLinkingAccount.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\LinkingAccount\\AddLinkingAccount.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\LinkingAccount\\AddLinkingAccount.cshtml",
-              "ViewState": "AgIAAFEAAAAAAAAAAAAAAF0AAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-17T11:45:23.678Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "AddAccountLedger.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\AccountLedger\\AddAccountLedger.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\AccountLedger\\AddAccountLedger.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\AccountLedger\\AddAccountLedger.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\AccountLedger\\AddAccountLedger.cshtml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAACEAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-17T11:41:42.284Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_ExpiryReport\\Index.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\HRMS_ExpiryReport\\Index.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_ExpiryReport\\Index.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\HRMS_ExpiryReport\\Index.cshtml",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAACAAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-18T08:17:27.568Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_LeaveReport\\Index.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\HRMS_LeaveReport\\Index.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_LeaveReport\\Index.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\HRMS_LeaveReport\\Index.cshtml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAACMAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-18T08:15:45.752Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_PaySlip\\Index.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\HRMS_PaySlip\\Index.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_PaySlip\\Index.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\HRMS_PaySlip\\Index.cshtml",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAACQAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-18T08:12:43.362Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_SalaryStatement\\Index.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\HRMS_SalaryStatement\\Index.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_SalaryStatement\\Index.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\HRMS_SalaryStatement\\Index.cshtml",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAAB4AAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-18T08:10:39.784Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_AttendanceReport\\Index.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\HRMS_AttendanceReport\\Index.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_AttendanceReport\\Index.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\HRMS_AttendanceReport\\Index.cshtml",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAACMAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-18T08:08:24.887Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "InternalRequest.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_InternalRequest\\InternalRequest.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\HRMS_InternalRequest\\InternalRequest.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_InternalRequest\\InternalRequest.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\HRMS_InternalRequest\\InternalRequest.cshtml",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAACQAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-18T08:05:07.719Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_InternalRequest\\Index.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\HRMS_InternalRequest\\Index.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_InternalRequest\\Index.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\HRMS_InternalRequest\\Index.cshtml",
-              "ViewState": "AgIAALQAAAAAAAAAAAAAAMcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-18T08:02:48.994Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "Gratuity.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_Gratuity\\Gratuity.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\HRMS_Gratuity\\Gratuity.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_Gratuity\\Gratuity.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\HRMS_Gratuity\\Gratuity.cshtml",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAACQAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-18T08:00:49.689Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_Gratuity\\Index.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\HRMS_Gratuity\\Index.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_Gratuity\\Index.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\HRMS_Gratuity\\Index.cshtml",
-              "ViewState": "AgIAAMYAAAAAAAAAAAAAAM0AAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-18T07:59:09.224Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "AirTicketIssue.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_AirTicketIssue\\AirTicketIssue.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\HRMS_AirTicketIssue\\AirTicketIssue.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_AirTicketIssue\\AirTicketIssue.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\HRMS_AirTicketIssue\\AirTicketIssue.cshtml",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAAC8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-18T07:55:48.621Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_AirTicketIssue\\Index.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\HRMS_AirTicketIssue\\Index.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_AirTicketIssue\\Index.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\HRMS_AirTicketIssue\\Index.cshtml",
-              "ViewState": "AgIAAL0AAAAAAAAAAAAAAMgAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-18T07:53:25.744Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "Leave.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_Leave\\Leave.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\HRMS_Leave\\Leave.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_Leave\\Leave.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\HRMS_Leave\\Leave.cshtml",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAACQAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-18T07:51:01.376Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_Leave\\Index.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\HRMS_Leave\\Index.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_Leave\\Index.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\HRMS_Leave\\Index.cshtml",
-              "ViewState": "AgIAAK4AAAAAAAAAAAAAAMgAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-18T07:48:27.056Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "Loan.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_Loan\\Loan.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\HRMS_Loan\\Loan.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_Loan\\Loan.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\HRMS_Loan\\Loan.cshtml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAACQAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-18T07:41:30.392Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_Loan\\Index.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\HRMS_Loan\\Index.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_Loan\\Index.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\HRMS_Loan\\Index.cshtml",
-              "ViewState": "AgIAALcAAAAAAAAAAAAAAMEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-18T07:38:35.129Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "Bonus.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_Bonus\\Bonus.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\HRMS_Bonus\\Bonus.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_Bonus\\Bonus.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\HRMS_Bonus\\Bonus.cshtml",
-              "ViewState": "AgIAAJMAAAAAAAAAAAAAAJ8AAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-18T07:32:09.156Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_Bonus\\Index.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\HRMS_Bonus\\Index.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_Bonus\\Index.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\HRMS_Bonus\\Index.cshtml",
-              "ViewState": "AgIAALoAAAAAAAAAAAAAAMoAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-18T07:29:15.191Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "HRMS_EmployeeDeductionController.cs",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Controllers\\HRMS_EmployeeDeductionController.cs",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Controllers\\HRMS_EmployeeDeductionController.cs",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Controllers\\HRMS_EmployeeDeductionController.cs",
-              "RelativeToolTip": "MassAutoGarage\\Controllers\\HRMS_EmployeeDeductionController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-18T07:22:42.367Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "EmployeeDeduction.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_EmployeeDeduction\\EmployeeDeduction.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\HRMS_EmployeeDeduction\\EmployeeDeduction.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_EmployeeDeduction\\EmployeeDeduction.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\HRMS_EmployeeDeduction\\EmployeeDeduction.cshtml",
-              "ViewState": "AgIAAJYAAAAAAAAAAAAAAJwAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-18T07:20:51.377Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "OverTime.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_OverTime\\OverTime.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\HRMS_OverTime\\OverTime.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_OverTime\\OverTime.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\HRMS_OverTime\\OverTime.cshtml",
-              "ViewState": "AgIAAKIAAAAAAAAAAAAAAKEAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-18T07:18:45.073Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_OverTime\\Index.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\HRMS_OverTime\\Index.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_OverTime\\Index.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\HRMS_OverTime\\Index.cshtml",
-              "ViewState": "AgIAAMAAAAAAAAAAAAAAAMkAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-18T07:15:28.975Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "Attendance.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_Attendance\\Attendance.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\HRMS_Attendance\\Attendance.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_Attendance\\Attendance.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\HRMS_Attendance\\Attendance.cshtml",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-18T07:07:42.799Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "EmployeeFamilyDetails.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_EmployeeFamilyDetails\\EmployeeFamilyDetails.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\HRMS_EmployeeFamilyDetails\\EmployeeFamilyDetails.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_EmployeeFamilyDetails\\EmployeeFamilyDetails.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\HRMS_EmployeeFamilyDetails\\EmployeeFamilyDetails.cshtml",
-              "ViewState": "AgIAAJkAAAAAAAAAAAAAAKMAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-18T07:03:55.137Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_EmployeeFamilyDetails\\Index.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\HRMS_EmployeeFamilyDetails\\Index.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_EmployeeFamilyDetails\\Index.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\HRMS_EmployeeFamilyDetails\\Index.cshtml",
-              "ViewState": "AgIAALoAAAAAAAAAAAAAAMkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-18T07:01:04.258Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "EmployeeBankDetails.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_EmployeeBankDetails\\EmployeeBankDetails.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\HRMS_EmployeeBankDetails\\EmployeeBankDetails.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_EmployeeBankDetails\\EmployeeBankDetails.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\HRMS_EmployeeBankDetails\\EmployeeBankDetails.cshtml",
-              "ViewState": "AgIAAJkAAAAAAAAAAAAAAKYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-18T06:57:41.967Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_EmployeeBankDetails\\Index.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\HRMS_EmployeeBankDetails\\Index.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_EmployeeBankDetails\\Index.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\HRMS_EmployeeBankDetails\\Index.cshtml",
-              "ViewState": "AgIAAMAAAAAAAAAAAAAAAMoAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-18T06:54:34.862Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 41,
-              "Title": "Holiday.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_Holiday\\Holiday.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\HRMS_Holiday\\Holiday.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_Holiday\\Holiday.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\HRMS_Holiday\\Holiday.cshtml",
-              "ViewState": "AgIAAJ8AAAAAAAAAAAAAAKEAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-18T06:52:05.006Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 42,
-              "Title": "EmployeeDocuments.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_EmployeeDocuments\\EmployeeDocuments.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\HRMS_EmployeeDocuments\\EmployeeDocuments.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_EmployeeDocuments\\EmployeeDocuments.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\HRMS_EmployeeDocuments\\EmployeeDocuments.cshtml",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB4AAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-18T06:50:22.096Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 43,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_EmployeeDocuments\\Index.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\HRMS_EmployeeDocuments\\Index.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_EmployeeDocuments\\Index.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\HRMS_EmployeeDocuments\\Index.cshtml",
-              "ViewState": "AgIAAMMAAAAARhdDL+wQwNAAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-18T06:45:13.938Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 44,
-              "Title": "SalesTarget.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_SalesTarget\\SalesTarget.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\HRMS_SalesTarget\\SalesTarget.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_SalesTarget\\SalesTarget.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\HRMS_SalesTarget\\SalesTarget.cshtml",
-              "ViewState": "AgIAAKUAAAAAAAAAAAAAALEAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-18T06:42:32.81Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 45,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_SalesTarget\\Index.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\HRMS_SalesTarget\\Index.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_SalesTarget\\Index.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\HRMS_SalesTarget\\Index.cshtml",
-              "ViewState": "AgIAAL0AAAAAAAAAAAAAAMoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-18T06:40:11.136Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 46,
-              "Title": "Employee.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_Employee\\Employee.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\HRMS_Employee\\Employee.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_Employee\\Employee.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\HRMS_Employee\\Employee.cshtml",
-              "ViewState": "AgIAAKIAAAAAAAAAAAAAALIAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-18T06:35:31.787Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 48,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_Employee\\Index.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\HRMS_Employee\\Index.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_Employee\\Index.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\HRMS_Employee\\Index.cshtml",
-              "ViewState": "AgIAADwAAAAAAAAAAAAAwEUAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-18T06:31:44.615Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 47,
-              "Title": "HRMS_EmployeeController.cs",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Controllers\\HRMS_EmployeeController.cs",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Controllers\\HRMS_EmployeeController.cs",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Controllers\\HRMS_EmployeeController.cs",
-              "RelativeToolTip": "MassAutoGarage\\Controllers\\HRMS_EmployeeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-18T06:31:37.257Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 49,
-              "Title": "LeaveType.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_LeaveType\\LeaveType.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\HRMS_LeaveType\\LeaveType.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_LeaveType\\LeaveType.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\HRMS_LeaveType\\LeaveType.cshtml",
-              "ViewState": "AgIAAKgAAAAAAAAAAAAAALUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-18T06:23:04.079Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 50,
-              "Title": "DeductionType.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_DeductionType\\DeductionType.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\HRMS_DeductionType\\DeductionType.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_DeductionType\\DeductionType.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\HRMS_DeductionType\\DeductionType.cshtml",
-              "ViewState": "AgIAAKIAAAAAAAAAAAAAALoAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-18T06:20:45.897Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 51,
-              "Title": "MaritalStatus.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_MaritalStatus\\MaritalStatus.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\HRMS_MaritalStatus\\MaritalStatus.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_MaritalStatus\\MaritalStatus.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\HRMS_MaritalStatus\\MaritalStatus.cshtml",
-              "ViewState": "AgIAAKIAAAAAAAAAAAAAAKwAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-18T06:13:14.12Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 1,
               "Title": "Department.cshtml",
               "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_Department\\Department.cshtml",
               "RelativeDocumentMoniker": "MassAutoGarage\\Views\\HRMS_Department\\Department.cshtml",
               "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_Department\\Department.cshtml",
               "RelativeToolTip": "MassAutoGarage\\Views\\HRMS_Department\\Department.cshtml",
-              "ViewState": "AgIAAMkAAAAAAAAAAAAAAKsAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAOEAAAAAAAAAAAAAAPIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-18T06:09:12.44Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 55,
-              "Title": "GroupController.cs",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Controllers\\GroupController.cs",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Controllers\\GroupController.cs",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Controllers\\GroupController.cs",
-              "RelativeToolTip": "MassAutoGarage\\Controllers\\GroupController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAwAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-17T14:12:48.614Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 54,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\Group\\Index.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\Group\\Index.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\Group\\Index.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\Group\\Index.cshtml",
-              "ViewState": "AgIAALoAAAAAAAAAAAAAAGcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-17T10:59:45.373Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 56,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\DepreciationAssets\\Index.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\DepreciationAssets\\Index.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\DepreciationAssets\\Index.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\DepreciationAssets\\Index.cshtml",
-              "ViewState": "AgIAAFoAAAAAAAAAAAAAAGcAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-17T13:43:11.817Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 57,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\FixedExpensesYearly\\Index.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\FixedExpensesYearly\\Index.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\FixedExpensesYearly\\Index.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\FixedExpensesYearly\\Index.cshtml",
-              "ViewState": "AgIAAGMAAAAAAAAAAAAAAHAAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-17T13:36:31.18Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 58,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\JournalVouchers\\Index.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\JournalVouchers\\Index.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\JournalVouchers\\Index.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\JournalVouchers\\Index.cshtml",
-              "ViewState": "AgIAAFcAAAAAAAAAAAAAAG0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-17T13:30:51.699Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 62,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\AccountLedger\\Index.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\AccountLedger\\Index.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\AccountLedger\\Index.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\AccountLedger\\Index.cshtml",
-              "ViewState": "AgIAAF0AAAAAAAAAAAAAAGoAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-17T11:38:21.079Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 61,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\PettyCashPayment\\Index.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\PettyCashPayment\\Index.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\PettyCashPayment\\Index.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\PettyCashPayment\\Index.cshtml",
-              "ViewState": "AgIAAFoAAAAAAAAAAAAAAHAAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-17T11:56:53.898Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 60,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\PaymentVoucher\\Index.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\PaymentVoucher\\Index.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\PaymentVoucher\\Index.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\PaymentVoucher\\Index.cshtml",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAAD4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-17T12:11:21.396Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 59,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\BankReconciliationReminderReceipt\\Index.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\BankReconciliationReminderReceipt\\Index.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\BankReconciliationReminderReceipt\\Index.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\BankReconciliationReminderReceipt\\Index.cshtml",
-              "ViewState": "AgIAAFQAAAAAAAAAAAAAAGsAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-17T12:31:43.015Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 63,
-              "Title": "BankReconlitionRemiderPayment.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\BankReconlitionRemiderPay\\BankReconlitionRemiderPayment.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\BankReconlitionRemiderPay\\BankReconlitionRemiderPayment.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\BankReconlitionRemiderPay\\BankReconlitionRemiderPayment.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\BankReconlitionRemiderPay\\BankReconlitionRemiderPayment.cshtml",
-              "ViewState": "AgIAAF0AAAAAAAAAAAAAAGcAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-17T12:17:16.167Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 64,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\ReceiptVoucher\\Index.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\ReceiptVoucher\\Index.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\ReceiptVoucher\\Index.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\ReceiptVoucher\\Index.cshtml",
-              "ViewState": "AgIAAFcAAAAAAAAAAAAAAGgAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-17T12:26:06.932Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 65,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\ApprovalPettyCashPayment\\Index.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\ApprovalPettyCashPayment\\Index.cshtml",
-              "ToolTip": "Q:\\repository\\MassAutoGarage\\MassAutoGarage\\MassAutoGarage\\Views\\ApprovalPettyCashPayment\\Index.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\ApprovalPettyCashPayment\\Index.cshtml",
-              "ViewState": "AgIAABQAAAAAAAAAAAAAACEAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-17T12:04:29.788Z"
+              "WhenOpened": "2024-09-19T06:49:33.697Z",
+              "EditorCaption": ""
             }
           ]
         }
