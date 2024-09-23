@@ -3514,6 +3514,9 @@
     <Content Include="MyApp\Customer_Master.js" />
     <Content Include="MyApp\GroupMaster.js" />
     <Content Include="MyApp\HRMS_AddDepartment.js" />
+    <Content Include="MyApp\HRMS_DeductionType.js" />
+    <Content Include="MyApp\HRMS_Holiday.js" />
+    <Content Include="MyApp\HRMS_LeaveType.js" />
     <Content Include="MyApp\HRMS_MaritalStatus.js" />
     <Content Include="MyApp\LoyaltyPointsMaster.js" />
     <Content Include="MyApp\PromotionMaster.js" />
@@ -3741,7 +3744,10 @@
     <Compile Include="Data\Facebook\LeadGenerate_DL.cs" />
     <Compile Include="Data\GenderMaster\GenderMaster_DL.cs" />
     <Compile Include="Data\GroupMaster.cs" />
+    <Compile Include="Data\HRMS_DeductionType\HRMSDeductionTypeDL.cs" />
     <Compile Include="Data\HRMS_Department\HRMSDepartment_DL.cs" />
+    <Compile Include="Data\HRMS_Holiday\HRMSHolidayDL.cs" />
+    <Compile Include="Data\HRMS_LeaveType\HRMSLeaveTypeDL.cs" />
     <Compile Include="Data\HRMS_MaritalStatus\HRMSMaritalStatus_DL.cs" />
     <Compile Include="Data\JobCategoryMaster\JobCategoryMaster_DL.cs" />
     <Compile Include="Data\LeadSourceMaster\LeadSourceMaster_DL.cs" />
@@ -3790,7 +3796,10 @@
     <Compile Include="Models\Facebook\LeadsGenerateModel.cs" />
     <Compile Include="Models\GenderMaster\GenderMasterModel.cs" />
     <Compile Include="Models\GroupMasterModel.cs" />
+    <Compile Include="Models\HRMS_DeductionType\HRMS_DeductionTypeModel.cs" />
     <Compile Include="Models\HRMS_Department\HRMSDepartmentModel.cs" />
+    <Compile Include="Models\HRMS_Holiday\HRMSHolidayModel.cs" />
+    <Compile Include="Models\HRMS_LeaveType\HRMSLeaveTypeModel.cs" />
     <Compile Include="Models\HRMS_MaritalStatus\HRMSMaritalStatusModel.cs" />
     <Compile Include="Models\JobCategoryMaster\JobCategoryMasterModel.cs" />
     <Compile Include="Models\LeadSourceMaster\LeadSourceMasterModel.cs" />
