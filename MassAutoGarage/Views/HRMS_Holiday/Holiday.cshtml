@@ -1,4 +1,5 @@
-﻿@model MassAutoGarage.Models.CompanyMasterModel
+﻿@model MassAutoGarage.Models.HRMS_Holiday.HRMSHolidayModel
+
 @{
     ViewBag.Title = "Holiday";
     ViewBag.pTitle = "Holiday";
@@ -152,25 +153,14 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
-
-
                 <div class="card-header main-f">
                     <div class="row">
                         <div class="col-md-12 col-12"> <h5 class="card-title mb-0 gp-detail">HRMS-HOLIDAY</h5></div>
                         @*<div class="col-md-6 col-7">
-                            <a href="@Url.Action("Holiday", "HRMS_Holiday")" class="btn btn-primary add-new" style="float:right;" tabindex="1"> <i class="fa fa-arrow-left align-middle me-1"></i> BACK TO DELIVERY NOTE LIST</a>
-                        </div>*@
+                                <a href="@Url.Action("Holiday", "HRMS_Holiday")" class="btn btn-primary add-new" style="float:right;" tabindex="1"> <i class="fa fa-arrow-left align-middle me-1"></i> BACK TO DELIVERY NOTE LIST</a>
+                            </div>*@
                     </div>
                 </div>
-
-                <!--<div class="card-header align-items-center d-flex">
-        <h4 class="card-title mb-0 flex-grow-1">HRMS-HOLIDAY </h4>
-        <div class="flex-shrink-0">
-            <div class="form-check form-switch form-switch-right form-switch-md">-->
-                @*<a href="@Url.Action("Holiday", "HRMS_Holiday")" class="btn btn-primary" style="float:right;" tabindex="12"><i class="fa fa-list" aria-hidden="true"></i> BACK TO SALES TARGET LIST</a>*@
-                <!--</div>
-        </div>
-    </div>-->
                 <!-- end card header -->
                 <div class="card-body">
                     <div class="live-preview">
@@ -178,29 +168,33 @@
                             <div class="col-xxl-4 col-md-4">
                                 <div>
                                     <label for="basiInput" class="form-label">Department <code>*</code></label>
-                                    <select id="ddlDepartment" class="form-control">
-                                        <option value="0">Select </option>
-                                    </select>
+                                    @Html.HiddenFor(m => m.HolidayId, new { @class = "form-control" })
+
+                                    @Html.DropDownListFor(x => x.FK_DepartmentId, new SelectList(ViewBag.DepartmentList, "DeptID", "DepartmentName"), "- Select Department -", new { @class = "form-control", tabindex = 1 })
+                                    @Html.ValidationMessageFor(m => m.FK_DepartmentId, "", new { @class = "text-danger" })
+
                                 </div>
                             </div>
                             <div class="col-xxl-4 col-md-4">
                                 <div>
                                     <label for="basiInput" class="form-label">Holiday Date <code>*</code></label>
-                                    <input type="text" class="form-control" />
+                                    @Html.TextBoxFor(m => m.HolidayDate, new { @class = "form-control", tabindex = 2,@readonly=true })
+                                    @Html.ValidationMessageFor(m => m.HolidayDate, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
                                 </div>
                             </div>
                             <div class="col-xxl-4 col-md-4">
                                 <div>
                                     <label for="basiInput" class="form-label">Holiday Name <code>*</code></label>
-                                    <input type="text" class="form-control" />
+                                    @Html.TextBoxFor(m => m.HolidayName, new { @class = "form-control", tabindex = 3 })
+                                    @Html.ValidationMessageFor(m => m.HolidayName, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
                                 </div>
                             </div>
 
                             <div class="col-xxl-12 col-md-12">
                                 <div class="form-floating" style="float:right;">
 
-                                    <input type="button" id="btnsave" value="Save" class="btn btn-success" style=" margin-top: 8%;" />
-                                    <input type="button" id="btnReset" value="Reset" class="btn btn-danger" style=" margin-top: 8%;" />
+                                    <input type="button" id="btnsave" value="Save" class="btn btn-success" style=" margin-top: 10%;" />
+                                    <input type="button" id="btnReset" value="Reset" class="btn btn-danger" style=" margin-top: 10%;"   onclick="return Reset();"/>
 
                                 </div>
 
@@ -219,17 +213,8 @@
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>
-                                                </td>
-                                                <td>
-                                                    <a href="#" class="btn btn-success btn-sm">Edit</a>
-                                                </td>
-                                            </tr>
+                                        <tbody id="tBodyId">
+
                                         </tbody>
 
                                     </table>
@@ -258,7 +243,6 @@
 <!--end col-->
 
 
-
 @section scripts{
     <!-- prismjs plugin -->
     <script src="~/assets/libs/prismjs/prism.js"></script>
@@ -267,145 +251,44 @@
 
 }
 
-@*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>*@
 
-@*<script src="~/Content/js/jquery.min.js"></script>*@
 <script src="~/Scripts/jquery-3.4.1.min.js"></script>
 <script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
 
-@*<script src="~/Content/js/jquery.min.js"></script>*@
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script src="~/MyApp/HRMS_Holiday.js"></script>
 
 <script>
     $(document).ready(function () {
 
+        var options = $.extend({},
+            $.datepicker.regional["es"], {
+            dateFormat: "dd/mm/yy",
+            changeMonth: true,
+            changeYear: true,
+            /* yearRange: "-2:+0",*/
+            todayHighlight: true,
+            /*highlightWeek: true,*/
+            /*maxDate: 0*/
+        });
+        $("#HolidayDate").datepicker(options);
 
-
-    });
-
-
-    $("#btnSave").click(function (e) {
-        debugger;
-        e.preventDefault();
-
-        var _code = $("#Code").val();
-        var _GroupID = $("#GroupID option:selected").val();
-        var _CompanyName = $("#CompanyName").val();
-        var _TRN = $("#TRN").val();
-        var _LocationMapUrl = $("#LocationMapUrl").val();
-        var _Email = $("#Email").val();
-        var _Address = $("#Address").val();
-        var _companyId = $("#HDFID").val();
-        var _CurrentCount = $("#HDFCurrentCount").val();
-        var _IsActive = $("#IsActive option:selected").val();
-
-        if (_code != "" && _GroupID != "" && _CompanyName != "" && _TRN != "" && _Email != "" && _Address != "") {
-
-            var ProductListArr = [];
-            var ProductList = {
-                Id: _companyId,
-                CurrentCount: _CurrentCount,
-                Code: _code,
-                GroupID: _GroupID,
-                CompanyName: _CompanyName,
-                Address: _Address,
-                TRN: _TRN,
-                Email: _Email,
-                LocationMapUrl: _LocationMapUrl,
-                IsActive: _IsActive
-
-            };
-            //ProductListArr.push(ProductList);
-
-            if (confirm("Are you sure you want to continue ?")) {
-                $.ajax({
-                    type: 'POST',
-                    url: '/CompanyMaster/SaveCompanyMaster',
-                    data: JSON.stringify(ProductList),
-                    contentType: "application/json; charset=utf-8",
-                    dataType: 'json',
-                    success: function (data) {
-                        debugger;
-                        if (data == "1") {
-                            debugger;
-                            swal({
-                                title: "Success",
-                                text: "Records Successfully Saved",
-                                type: "success",
-                            }).then(function (isConfirm) {
-                                if (isConfirm) {
-                                    var url = "/CompanyMaster/Index";
-                                    window.location.href = url;
-                                } else {
-
-                                }
-                            });
-
-                        }
-                        else if (data == "2") {
-
-                            swal({
-                                title: "Success",
-                                text: "Records Successfully Updated",
-                                type: "success",
-                            }).then(function (isConfirm) {
-                                if (isConfirm) {
-                                    var url = "/CompanyMaster/Index";
-                                    window.location.href = url;
-                                } else {
-
-                                }
-                            });
-                        }
-                        else if (data == "4") {
-                            swal("Warning", "This Code is Already Exist !", "warning");
-                        } else {
-
-                            swal("Warning", "Record not save!", "warning");
-                        }
-
-                    },
-                    error: function (httpResponse) {
-
-                        swal("Warning", "Something Went to Wrong!", "warning");
-
-                    }
-                })
-            }
-        }
-        else {
-
-            if (_code == "") {
-                swal("Warning", "Please Enter Code !", "warning");
-                return false;
-            }
-            if (_GroupID == "") {
-                swal("Warning", "Please Select Group Name!", "warning");
-                return false;
-            }
-            if (_CompanyName == "") {
-                swal("Warning", "Please Enter Company Name!", "warning");
-                return false;
-            }
-            if (_TRN == "") {
-                swal("Warning", "Please Enter TRN !", "warning");
-                return false;
-            }
-
-            if (_Email == "") {
-                swal("Warning", "Please Enter Email Address!", "warning");
-                $("#Email").val('');
-                return false;
-            }
-            if (_Address == "") {
-                swal("Warning", "Please Enter Address!", "warning");
-                return false;
-            }
-        }
-
+        HolidayList();
     })
 
 
+
+
+
+
+   
+
 </script>
+
 
 
