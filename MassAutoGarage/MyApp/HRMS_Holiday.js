@@ -107,16 +107,11 @@ function HolidayList() {
                 var tr = "<tr>";
                 tr += "<td>" + SerialNo + "</td>";
                 tr += "<td style='Display:none' class='HolidayId_" + v.HolidayId + "'>" + v.HolidayId + "</td>";
-               /* tr += "<td style='Display:none' class='FK_DepartmentId_" + v.HolidayId + "'>" + v.FK_DepartmentId + "</td>";*/
+                tr += "<td style='Display:none' class='FK_DepartmentId_" + v.HolidayId + "'>" + v.FK_DepartmentId + "</td>";
                 tr += "<td class='DepartmentName_" + v.HolidayId + "'>" + v.DepartmentName + "</td>";
                 tr += "<td class='HolidayDate_" + v.HolidayId + "'>" + v.HolidayDate + "</td>";
                 tr += "<td class='HolidayName_" + v.HolidayId + "'>" + v.HolidayName + "</td>";
                 tr += "<td><a onclick='return EditHoliday(" + v.HolidayId + ")' class='btn btn-sm btn-success edit-item-btn'>Edit<i class='fa fa-edit'></i></a> <a onclick='return DeleteHoliday(" + v.HolidayId + ")' class='btn btn-sm btn-danger remove-item-btn DeleteContactTr'><i class='fa fa-trash' aria-hidden='true'></i>Delete</a></td>";
-
-
-                //tr += "<td class='FK_DepartmentId_" + v.HolidayId + "'>" + Option(v.DepartmentName, v.FK_DepartmentId) + "</td>";
-               
-
                 tr += "</tr>";
                 $("#tBodyId").append(tr);
             });
@@ -124,31 +119,9 @@ function HolidayList() {
     });
 }
 
-
-
-
-
-//success: function (data) {
-
-//    for (var i = 0; i < data.length; i++) {
-//        var opt = new Option(data[i].stu_name, data[i].stu_id);
-//        $('#op1').append(opt);
-
-//    }
-
-//}
-
-
-
-
-
-
-
-
-
 function EditHoliday(Id) {
     debugger;
-    var HolidayId_ = $(".HolidayId_" + Id).text();
+    var HolidayId_ = $(".HolidayId_" + Id).text(); 
     var FK_DepartmentId_ = $(".FK_DepartmentId_" + Id).text();
     var DepartmentName_ = $(".DepartmentName_" + Id).text();
     var HolidayDate_ = $(".HolidayDate_" + Id).text();
@@ -156,7 +129,6 @@ function EditHoliday(Id) {
 
     $("#HolidayId").val(HolidayId_);
     $("#FK_DepartmentId").val(FK_DepartmentId_);
-    $("#FK_DepartmentId").val(DepartmentName_);
     $("#HolidayDate").val(HolidayDate_);
     $("#HolidayName").val(HolidayName_);
     $("#btnsave").val('Update');
