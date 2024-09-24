@@ -3515,6 +3515,7 @@
     <Content Include="MyApp\GroupMaster.js" />
     <Content Include="MyApp\HRMS_AddDepartment.js" />
     <Content Include="MyApp\HRMS_DeductionType.js" />
+    <Content Include="MyApp\HRMS_EmployeeDocuments.js" />
     <Content Include="MyApp\HRMS_Holiday.js" />
     <Content Include="MyApp\HRMS_LeaveType.js" />
     <Content Include="MyApp\HRMS_MaritalStatus.js" />
@@ -3746,6 +3747,7 @@
     <Compile Include="Data\GroupMaster.cs" />
     <Compile Include="Data\HRMS_DeductionType\HRMSDeductionTypeDL.cs" />
     <Compile Include="Data\HRMS_Department\HRMSDepartment_DL.cs" />
+    <Compile Include="Data\HRMS_EmployeeDocuments\HRMSEmployeeDocumentsDL.cs" />
     <Compile Include="Data\HRMS_Holiday\HRMSHolidayDL.cs" />
     <Compile Include="Data\HRMS_LeaveType\HRMSLeaveTypeDL.cs" />
     <Compile Include="Data\HRMS_MaritalStatus\HRMSMaritalStatus_DL.cs" />
@@ -3798,6 +3800,7 @@
     <Compile Include="Models\GroupMasterModel.cs" />
     <Compile Include="Models\HRMS_DeductionType\HRMS_DeductionTypeModel.cs" />
     <Compile Include="Models\HRMS_Department\HRMSDepartmentModel.cs" />
+    <Compile Include="Models\HRMS_EmployeeDocuments\HRMSEmployeeDocumentsModel.cs" />
     <Compile Include="Models\HRMS_Holiday\HRMSHolidayModel.cs" />
     <Compile Include="Models\HRMS_LeaveType\HRMSLeaveTypeModel.cs" />
     <Compile Include="Models\HRMS_MaritalStatus\HRMSMaritalStatusModel.cs" />
@@ -4552,6 +4555,12 @@
     <Folder Include="AttachmentFile\" />
     <Folder Include="CompanyLogo\" />
     <Folder Include="CustomerAttachment\" />
+    <Folder Include="Images\EmirateFile\" />
+    <Folder Include="Images\EmployeeContactCardFile\" />
+    <Folder Include="Images\InsuranceFile\" />
+    <Folder Include="Images\PassportFile\" />
+    <Folder Include="Images\PhotoFile\" />
+    <Folder Include="Images\VisaFile\" />
     <Folder Include="PhotoSign\" />
     <Folder Include="Views\Login\" />
     <Folder Include="Views\Webhooks\" />
