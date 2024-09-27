@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using MassAutoGarage.DBContext;
+using MassAutoGarage.Models.ColorMaster;
 using MassAutoGarage.Models.HRMS_EmployeeDocuments;
 using MassAutoGarage.Models.HRMS_Holiday;
 using NPOI.SS.Formula.Functions;
@@ -70,6 +71,64 @@ namespace MassAutoGarage.Data.HRMS_EmployeeDocuments
                 throw ex;
             }
         }
+
+        public List<HRMSEmployeeDocumentsModel> SearchByKey(string Querytype, string SearchKey)
+        {
+            List<HRMSEmployeeDocumentsModel> obj = new List<HRMSEmployeeDocumentsModel>();
+            try
+            {
+                var perm = new DynamicParameters();
+                perm.Add("@QueryType", Querytype);
+                perm.Add("@SearchKey", SearchKey);
+
+                obj = DBHelperDapper.DAAddAndReturnModelList<HRMSEmployeeDocumentsModel>("USP_HRMS_EmployeeDocuments", perm);
+                return obj;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+
+        public List<HRMSEmployeeDocumentsModel> GetEmployeeDocumentsDetaildById(HRMSEmployeeDocumentsModel objmodel)
+        {
+            List<HRMSEmployeeDocumentsModel> obj = new List<HRMSEmployeeDocumentsModel>();
+            try
+            {
+                var Parameters = new DynamicParameters();
+                Parameters.Add("@QueryType", objmodel.QueryType);
+                Parameters.Add("@EmpDocId", objmodel.EmpDocId);
+                obj = DBHelperDapper.DAAddAndReturnModelList<HRMSEmployeeDocumentsModel>("USP_HRMS_EmployeeDocuments", Parameters);
+                return obj;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+        public List<HRMSEmployeeDocumentsModel> GetlstIdWise(string Querytype, Int64 UserId)
+        {
+            List<HRMSEmployeeDocumentsModel> obj = new List<HRMSEmployeeDocumentsModel>();
+            try
+            {
+                var perm = new DynamicParameters();
+                perm.Add("@QueryType", Querytype);
+                perm.Add("@ID", UserId);
+
+                obj = DBHelperDapper.DAAddAndReturnModelList<HRMSEmployeeDocumentsModel>("USP_HRMS_EmployeeDocuments", perm);
+                return obj;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
 
         public HRMSEmployeeDocumentsModel DeleteEmployeeDocuments(HRMSEmployeeDocumentsModel obj)
         {
