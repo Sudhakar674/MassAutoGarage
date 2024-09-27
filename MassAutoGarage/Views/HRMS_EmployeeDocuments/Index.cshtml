@@ -213,7 +213,7 @@
                     <div class="live-preview">
                         <div class="row gy-4 mb-3">
                             <div class="col-xxl-4 col-md-6 col-5">
-                                Advance Filter <input type="text" id="txtsearch" class="form-control" tabindex="2" />
+                                Advance Filter <input type="text" id="txtsearch" class="form-control" tabindex="1" />
 
                             </div>
                             <div class="col-xxl-8 col-md-6 col-7 right-text">
@@ -239,12 +239,13 @@
                                 <th style="white-space: nowrap">Passport Download</th>
                                 <th style="white-space: nowrap">Visa Download</th>
                                 <th style="white-space: nowrap">Insurance Download	</th>
-                                <th style="white-space: nowrap">Employee Contract Card Download</th>
-                                @*<th style=" width: 15%;">Action</th>*@
+                                <th style="white-space: nowrap">Emp Contract Card Download</th>
+                                <th style=" width: 15%;">Action</th>
 
                             </tr>
                         </thead>
                         <tbody id="tBodyId">
+
                             @foreach (var item in Model)
                             {
                                 <tr>
@@ -270,54 +271,25 @@
                                         <a href="@item.EmpCardFile" class="btn btn-sm btn-success edit-item-btn" tabindex="6">Download <i class="fa fa-edit"></i></a>
                                     </td>
 
+                                    <td data-th="Action">
 
+                                        <div class="d-flex gap-2">
+                                            <div class="edit">
 
+                                                <a href="/HRMS_EmployeeDocuments/EmployeeDocuments?Id=@item.EmpDocId" class="btn btn-sm btn-success edit-item-btn" tabindex="6">Edit <i class="fa fa-edit"></i></a>
+                                            </div>
+                                            <div class="remove">
+                                                <a href="javascript:void(0)" onclick="return DeleteEmployeeDocuments('@item.EmpDocId')" class="btn btn-sm btn-danger remove-item-btn">Delete <i class="fa fa-trash" aria-hidden="true"></i></a>
 
-
-
-
-                                    @*<td data-th="Action">
-
-            <div class="d-flex gap-2">
-                <div class="edit">
-
-                    <a href="/ColorMaster/CreateColor?ID=@item.ID" class="btn btn-sm btn-success edit-item-btn" tabindex="6">Edit <i class="fa fa-edit"></i></a>
-                </div>
-                <div class="remove">
-                    <a href="#" class="btn btn-sm btn-danger remove-item-btn" id="btnDelete" onclick=" return ConfirmDelete(@item.ColorMasterID)" tabindex="7">Delete <i class="fa fa-trash" aria-hidden="true"></i></a>
-
-                </div>
-            </div>
-
-        </td>*@
-
-
-
-
-
+                                            </div>
+                                        </div>
+                                    </td>
                                 </tr>
                                 i++;
                             }
 
                         </tbody>
                     </table>
-
-                    @*<table id="CompanyGroup" class="table pure-table" style="width: 100%; display: none;" cellspacing="0" cellpadding="0">
-                            <thead>
-                                <tr>
-                                    <th colspan="5">
-                                        <img src="@ViewBag.compnylgo" alt="" style="width: 213px; border-radius: 7px;">
-                                        <span style=" float: right;"> <b>Address  :-</b> @ViewBag.compnyAddress</span>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th style=" width: 1%;">Srl.No</th>
-                                    <th style="white-space: nowrap">Sales Name</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>*@
                 </div>
             </div>
         </div>
@@ -334,21 +306,46 @@
 
 }
 
-
 <script src="~/Scripts/jquery-3.4.1.min.js"></script>
 <script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
-
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="/resources/demos/style.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-
 <script src="~/MyApp/HRMS_EmployeeDocuments.js"></script>
 
 <script>
     $(document).ready(function () {
-  /*      EmployeeDocumentsList();*/
-    })
+        /*      EmployeeDocumentsList();*/
+       
+        var queryString = new Array();
+        if (queryString.length == 0) {
+            if (window.location.search.split('?').length > 1) {
+                var params = window.location.search.split('?')[1].split('&');
+                for (var i = 0; i < params.length; i++) {
+                    var key = params[i].split('=')[0];
+                    var value = decodeURIComponent(params[i].split('=')[1]);
+                    queryString[key] = value;
+                }
+            }
+
+            $('#txtsearch').val(queryString[key]);
+        }
+    });
+
+    $('#txtsearch').change(function () {
+
+        searchfromDB();
+    });
+
+    function searchfromDB() {
+        debugger;
+
+        var SearchKey = $('#txtsearch').val();
+        var url = "/HRMS_EmployeeDocuments/Index?Key=" + SearchKey;
+        window.location.href = url;
+    }
 </script>
+

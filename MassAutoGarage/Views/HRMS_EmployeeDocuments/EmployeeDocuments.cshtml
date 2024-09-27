@@ -26,7 +26,7 @@
                 <div class="card-header main-f">
                     <div class="row">
                         <div class="col-md-6 col-5"> <h5 class="card-title mb-0 gp-detail">HRMS-Employee Documents</h5></div>
-                        <div class="col-md-6 col-7">
+                        <div class="col-md-6 col-7" id="hdfbacktolist">
                             <a href="@Url.Action("Index", "HRMS_EmployeeDocuments")" class="btn btn-primary add-new" style="float:right;" tabindex="1"> <i class="fa fa-arrow-left align-middle me-1"></i>BACK TO EMPLOYEE DOCUMENTS LIST</a>
                         </div>
                     </div>
@@ -40,7 +40,7 @@
                                 <div>
                                     <label for="basiInput" class="form-label">Branch <code>*</code></label>
 
-                                    @*@Html.HiddenFor(m => m.HolidayId, new { @class = "form-control" })*@
+                                    @Html.HiddenFor(m => m.EmpDocId, new { @class = "form-control" })
 
                                     @Html.DropDownListFor(x => x.FK_BranchId, new SelectList(ViewBag.BranchList, "ID", "BranchName"), "- Select Branch -", new { @class = "form-control", tabindex = 1 })
                                     @Html.ValidationMessageFor(m => m.FK_BranchId, "", new { @class = "text-danger" })
@@ -58,37 +58,37 @@
                             <div class="col-xxl-4 col-md-4">
                                 <div>
                                     <label for="basiInput" class="form-label">Photo Upload <code>*</code></label>
-                                    <input type="file" id="files" name="files" class="form-control tabindex = 3" />
+                                    <input type="file"  value="@Model.files" id="files" name="files" class="form-control tabindex = 3"/>
                                 </div>
                             </div>
                             <div class="col-xxl-4 col-md-4">
                                 <div>
                                     <label for="basiInput" class="form-label">EmiratesID Upload <code>*</code></label>
-                                    <input type="file" id="EmirateFile" class="form-control tabindex = 4" />
+                                    <input type="file" id="EmirateFile" name="EmirateFile" class="form-control tabindex = 4" value="@Model.EmirateFile"/>
                                 </div>
                             </div>
                             <div class="col-xxl-4 col-md-4">
                                 <div>
                                     <label for="basiInput" class="form-label">Passport Upload <code>*</code></label>
-                                    <input type="file" id="PassportFile" class="form-control tabindex = 5" />
+                                    <input type="file" id="PassportFile" name="PassportFile" class="form-control tabindex = 5"  value="@Model.PassportFile" />
                                 </div>
                             </div>
                             <div class="col-xxl-4 col-md-4">
                                 <div>
                                     <label for="basiInput" class="form-label">Visa Upload<code>*</code></label>
-                                    <input type="file" id="VisaFile" class="form-control tabindex = 6" />
+                                    <input type="file" id="VisaFile" name="VisaFile" class="form-control tabindex = 6" value="@Model.VisaFile" />
                                 </div>
                             </div>
                             <div class="col-xxl-4 col-md-4">
                                 <div>
                                     <label for="basiInput" class="form-label">Insurance Card Upload <code>*</code></label>
-                                    <input type="file" id="InsuranceFile" class="form-control tabindex = 7" />
+                                    <input type="file" id="InsuranceFile"name="InsuranceFile" class="form-control tabindex = 7" value="@Model.InsuranceFile"/>
                                 </div>
                             </div>
                             <div class="col-xxl-4 col-md-4">
                                 <div>
                                     <label for="basiInput" class="form-label">Employee Contract Card Upload<code>*</code></label>
-                                    <input type="file" id="EmpCardFile" class="form-control tabindex = 8" />
+                                    <input type="file" id="EmpCardFile" name="EmpCardFile" class="form-control tabindex = 8" value="@Model.EmpCardFile"/>
                                 </div>
                             </div>
                             <div class="col-xxl-4 col-md-4">
@@ -145,7 +145,13 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-
-
 <script src="~/MyApp/HRMS_EmployeeDocuments.js"></script>
 
+
+<script>
+    if ($("#EmpDocId").val()!=0)
+    {
+        $("#hdfbacktolist").hide();
+        $("#btnsave").val('Update');
+    }
+</script>

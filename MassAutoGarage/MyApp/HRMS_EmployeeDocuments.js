@@ -15,128 +15,244 @@ $("#btnsave").click(function (e) {
     var InsuranceFile_ = $("#InsuranceFile").val();
     var EmpCardFile_ = $("#EmpCardFile").val();
 
-    if (FK_BranchId_ != "" && EmployeeName_ != "" && Files_ != "" && EmirateFile_ != "" && PassportFile_ != "" && VisaFile_ != "" && InsuranceFile_ != "" && EmpCardFile_ != "") {
+    var EmpDocId_ = $("#EmpDocId").val();
 
-        var EmployeeDocumentsDetails = {
-            FK_BranchId: FK_BranchId_,
-            EmployeeName: EmployeeName_,
-            files: files,
-            EmirateFile: EmirateFile_,
-            PassportFile: PassportFile_,
-            VisaFile: VisaFile_,
-            InsuranceFile: InsuranceFile_,
-            EmpCardFile: EmpCardFile_
-        };
+    //////////////////////////////////////////////////////////////////////////
+    if ($("#EmpDocId").val() != 0) {
 
-        if (confirm("Are you sure you want to continue ?")) {
+        if (FK_BranchId_ != "" && EmployeeName_ != "") {
 
-            var fileUpload = $("#files").get(0);
-            var files = fileUpload.files;
+            var EmployeeDocumentsDetails = {
+                FK_BranchId: FK_BranchId_,
+                EmployeeName: EmployeeName_,
+                files: files,
+                EmirateFile: EmirateFile_,
+                PassportFile: PassportFile_,
+                VisaFile: VisaFile_,
+                InsuranceFile: InsuranceFile_,
+                EmpCardFile: EmpCardFile_
+            };
 
-            var UploadEmirateFile = $("#EmirateFile").get(0);
-            var EmirateFile = UploadEmirateFile.files;
+            if (confirm("Are you sure you want to continue ?")) {
 
-            var UploadPassportFile = $("#PassportFile").get(0);
-            var PassportFile = UploadPassportFile.files;
+                var fileUpload = $("#files").get(0);
+                var files = fileUpload.files;
 
-            var UploadVisaFile = $("#VisaFile").get(0);
-            var VisaFile = UploadVisaFile.files;
+                var UploadEmirateFile = $("#EmirateFile").get(0);
+                var EmirateFile = UploadEmirateFile.files;
 
-            var UploadInsuranceFile = $("#InsuranceFile").get(0);
-            var InsuranceFile = UploadInsuranceFile.files;
+                var UploadPassportFile = $("#PassportFile").get(0);
+                var PassportFile = UploadPassportFile.files;
 
-            var UploadEmpCardFile = $("#EmpCardFile").get(0);
-            var EmpCardFile = UploadEmpCardFile.files;
+                var UploadVisaFile = $("#VisaFile").get(0);
+                var VisaFile = UploadVisaFile.files;
 
-            var formData = new FormData();
-            formData.append('FK_BranchId', $("#FK_BranchId").val());
-            formData.append('EmployeeName', $("#EmployeeName").val());
-            formData.append('files', files[0]);
-            formData.append('EmirateFile', EmirateFile[0]);
-            formData.append('PassportFile', PassportFile[0]);
-            formData.append('VisaFile', VisaFile[0]);
-            formData.append('InsuranceFile', InsuranceFile[0]);
-            formData.append('EmpCardFile', EmpCardFile[0]);
+                var UploadInsuranceFile = $("#InsuranceFile").get(0);
+                var InsuranceFile = UploadInsuranceFile.files;
 
-              $.ajax({
-                    url:'/HRMS_EmployeeDocuments/SaveEmployeeDocuments',
-                    type:'POST',
+                var UploadEmpCardFile = $("#EmpCardFile").get(0);
+                var EmpCardFile = UploadEmpCardFile.files;
+
+                var formData = new FormData();
+                formData.append('EmpDocId', $("#EmpDocId").val());
+                formData.append('FK_BranchId', $("#FK_BranchId").val());
+                formData.append('EmployeeName', $("#EmployeeName").val());
+                formData.append('files', files[0]);
+                formData.append('EmirateFile', EmirateFile[0]);
+                formData.append('PassportFile', PassportFile[0]);
+                formData.append('VisaFile', VisaFile[0]);
+                formData.append('InsuranceFile', InsuranceFile[0]);
+                formData.append('EmpCardFile', EmpCardFile[0]);
+
+                $.ajax({
+                    url: '/HRMS_EmployeeDocuments/SaveEmployeeDocuments',
+                    type: 'POST',
                     contentType: false, // Not to set any content header
                     processData: false, // Not to process data
                     data: formData,
                     success: function (data) {
-                    debugger;
-                    if (data.Result == "yes") {
-                        swal({
-                            title: "Success",
-                            text: "Records Successfully Saved",
-                            type: "success",
-                        }).then(function (isConfirm) {
-                            if (isConfirm) {
-                                window.location.reload();
-                            }
-                            else {
-                            }
-                        });
+                        debugger;
+                        if (data.Result == "yes") {
+                            swal({
+                                title: "Success",
+                                text: "Records Successfully Saved",
+                                type: "success",
+                            }).then(function (isConfirm) {
+                                if (isConfirm) {
+                                      window.location.reload();
+                                    /*window.location.href='/HRMS_EmployeeDocuments/Index';*/
+                                }
+                                else {
+                                }
+                            });
+                        }
+                        else if (data.Result == "yes1") {
+                            swal({
+                                title: "Success",
+                                text: "Records Successfully Updated",
+                                type: "success",
+                            }).then(function (isConfirm) {
+                                if (isConfirm) {
+                                    /*  window.location.reload();*/
+                                    window.location.href='/HRMS_EmployeeDocuments/Index';
+                                }
+                                else {
+                                }
+                            });
+                        }
+                        else {
+                            swal("Warning", "Record not save!", "warning");
+                        }
+                    },
+                    error: function (httpResponse) {
+                        swal("Warning", "Something Went to Wrong!", "warning");
                     }
-                    else if (data.Result == "yes1") {
-                        swal({
-                            title: "Success",
-                            text: "Records Successfully Updated",
-                            type: "success",
-                        }).then(function (isConfirm) {
-                            if (isConfirm) {
-                                window.location.reload();
-                            }
-                            else {
-                            }
-                        });
-                    }
-                    else {
-                        swal("Warning", "Record not save!", "warning");
-                    }
-                },
-                error: function (httpResponse) {
-                    swal("Warning", "Something Went to Wrong!", "warning");
-                }
-            })
+                })
+            }
+        }
+        else {
+
+            if (FK_BranchId_ == "") {
+                swal("Warning", "Please Enter Branch !", "warning");
+                return false;
+            }
+            if (EmployeeName_ == "") {
+                swal("Warning", "Please Enter Employee !", "warning");
+                return false;
+            }
         }
     }
     else {
 
-        if (FK_BranchId_ == "") {
-            swal("Warning", "Please Enter Branch !", "warning");
-            return false;
+        if (FK_BranchId_ != "" && EmployeeName_ != "" && Files_ != "" && EmirateFile_ != "" && PassportFile_ != "" && VisaFile_ != "" && InsuranceFile_ != "" && EmpCardFile_ != "") {
+
+            var EmployeeDocumentsDetails = {
+                FK_BranchId: FK_BranchId_,
+                EmployeeName: EmployeeName_,
+                files: files,
+                EmirateFile: EmirateFile_,
+                PassportFile: PassportFile_,
+                VisaFile: VisaFile_,
+                InsuranceFile: InsuranceFile_,
+                EmpCardFile: EmpCardFile_
+            };
+
+            if (confirm("Are you sure you want to continue ?")) {
+
+                var fileUpload = $("#files").get(0);
+                var files = fileUpload.files;
+
+                var UploadEmirateFile = $("#EmirateFile").get(0);
+                var EmirateFile = UploadEmirateFile.files;
+
+                var UploadPassportFile = $("#PassportFile").get(0);
+                var PassportFile = UploadPassportFile.files;
+
+                var UploadVisaFile = $("#VisaFile").get(0);
+                var VisaFile = UploadVisaFile.files;
+
+                var UploadInsuranceFile = $("#InsuranceFile").get(0);
+                var InsuranceFile = UploadInsuranceFile.files;
+
+                var UploadEmpCardFile = $("#EmpCardFile").get(0);
+                var EmpCardFile = UploadEmpCardFile.files;
+
+                var formData = new FormData();
+                formData.append('EmpDocId', $("#EmpDocId").val());
+                formData.append('FK_BranchId', $("#FK_BranchId").val());
+                formData.append('EmployeeName', $("#EmployeeName").val());
+                formData.append('files', files[0]);
+                formData.append('EmirateFile', EmirateFile[0]);
+                formData.append('PassportFile', PassportFile[0]);
+                formData.append('VisaFile', VisaFile[0]);
+                formData.append('InsuranceFile', InsuranceFile[0]);
+                formData.append('EmpCardFile', EmpCardFile[0]);
+
+                $.ajax({
+                    url: '/HRMS_EmployeeDocuments/SaveEmployeeDocuments',
+                    type: 'POST',
+                    contentType: false, // Not to set any content header
+                    processData: false, // Not to process data
+                    data: formData,
+                    success: function (data) {
+                        debugger;
+                        if (data.Result == "yes") {
+                            swal({
+                                title: "Success",
+                                text: "Records Successfully Saved",
+                                type: "success",
+                            }).then(function (isConfirm) {
+                                if (isConfirm) {
+                                       window.location.reload();
+                             /*       window.location.href = '/HRMS_EmployeeDocuments/Index';*/
+                                   
+                                }
+                                else {
+                                }
+                            });
+                        }
+                        else if (data.Result == "yes1") {
+                            swal({
+                                title: "Success",
+                                text: "Records Successfully Updated",
+                                type: "success",
+                            }).then(function (isConfirm) {
+                                if (isConfirm) {
+                                    /* window.location.reload();*/
+                                    window.location.href='/HRMS_EmployeeDocuments/Index';
+                                }
+                                else {
+                                }
+                            });
+                        }
+                        else {
+                            swal("Warning", "Record not save!", "warning");
+                        }
+                    },
+                    error: function (httpResponse) {
+                        swal("Warning", "Something Went to Wrong!", "warning");
+                    }
+                })
+            }
         }
-        if (EmployeeName_ == "") {
-            swal("Warning", "Please Enter Employee !", "warning");
-            return false;
-        }
-        if (Files_ == "") {
-            swal("Warning", "Please Photo Upload !", "warning");
-            return false;
-        }
-        if (EmirateFile_ == "") {
-            swal("Warning", "Please EmiratesID Upload  !", "warning");
-            return false;
-        }
-        if (PassportFile_ == "") {
-            swal("Warning", "Please Passport Upload  !", "warning");
-            return false;
-        }
-        if (VisaFile_ == "") {
-            swal("Warning", "Please Visa  Upload  !", "warning");
-            return false;
-        }
-        if (InsuranceFile_ == "") {
-            swal("Warning", "Please Insurance Card Upload  !", "warning");
-            return false;
-        }
-        if (EmployeeContactCardFile_ == "") {
-            swal("Warning", "Please Employee Contract Card  Upload  !", "warning");
-            return false;
+        else {
+
+            if (FK_BranchId_ == "") {
+                swal("Warning", "Please Enter Branch !", "warning");
+                return false;
+            }
+            if (EmployeeName_ == "") {
+                swal("Warning", "Please Enter Employee !", "warning");
+                return false;
+            }
+            if (Files_ == "") {
+                swal("Warning", "Please Photo Upload !", "warning");
+                return false;
+            }
+            if (EmirateFile_ == "") {
+                swal("Warning", "Please EmiratesID Upload  !", "warning");
+                return false;
+            }
+            if (PassportFile_ == "") {
+                swal("Warning", "Please Passport Upload  !", "warning");
+                return false;
+            }
+            if (VisaFile_ == "") {
+                swal("Warning", "Please Visa  Upload  !", "warning");
+                return false;
+            }
+            if (InsuranceFile_ == "") {
+                swal("Warning", "Please Insurance Card Upload  !", "warning");
+                return false;
+            }
+            if (EmpCardFile_ == "") {
+                swal("Warning", "Please Employee Contract Card  Upload  !", "warning");
+                return false;
+            }
         }
     }
+
+
 });
 
 function EmployeeDocumentsList() {
@@ -160,7 +276,6 @@ function EmployeeDocumentsList() {
                 tr += "<td class='EmployeeName_" + v.EmpDocId + "'>" + v.EmployeeName + "</td>";
                 tr += "<td>" + v.files +"</td>";
 
-
               /*  tr += "<td>" + <img src='/Images/PhotoFile/v.files'></img>+"</td>";*/
                 tr += "<td class='EmirateFile_" + v.EmpDocId + "'>" + v.EmirateFile + "</td>";
                 tr += "<td class='PassportFile_" + v.EmpDocId + "'>" + v.PassportFile + "</td>";
@@ -179,6 +294,7 @@ function EmployeeDocumentsList() {
 
 
 function DeleteEmployeeDocuments(Id) {
+    /*alert(Id);*/
     debugger;
     var x = confirm("Are you sure you want to delete?");
     if (x == true) {
@@ -217,6 +333,7 @@ function DeleteEmployeeDocuments(Id) {
     }
 
 }
+
 
 
 $('#EmployeeName').keypress(function (e) {

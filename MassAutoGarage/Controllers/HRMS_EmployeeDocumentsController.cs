@@ -1,7 +1,10 @@
-﻿using MassAutoGarage.Data.HRMS_EmployeeDocuments;
+﻿using MassAutoGarage.Data;
+using MassAutoGarage.Data.HRMS_EmployeeDocuments;
 using MassAutoGarage.Data.HRMS_Holiday;
+using MassAutoGarage.Models.ColorMaster;
 using MassAutoGarage.Models.HRMS_EmployeeDocuments;
 using MassAutoGarage.Models.HRMS_Holiday;
+using Org.BouncyCastle.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -14,35 +17,85 @@ namespace MassAutoGarage.Controllers
     public class HRMS_EmployeeDocumentsController : Controller
     {
         // GET: HRMS_EmployeeDocuments
+        HRMSEmployeeDocumentsModel model=new HRMSEmployeeDocumentsModel();
         HRMSEmployeeDocumentsDL DL = new HRMSEmployeeDocumentsDL();
-        public ActionResult Index()
+        ClsGeneral objcls = new ClsGeneral();
+        public ActionResult Index(string Key)
         {
-            List<HRMSEmployeeDocumentsModel> EmployeeDocumentsList = new List<HRMSEmployeeDocumentsModel>();
+              List<HRMSEmployeeDocumentsModel> EmployeeDocumentsList = new List<HRMSEmployeeDocumentsModel>();
 
-            var GroupList = DL.GetEmployeeDocumentsList();
-            foreach (var i in GroupList)
+            if (Key != "" && Key != null)
             {
-                EmployeeDocumentsList.Add(new HRMSEmployeeDocumentsModel
-                {
-                    EmpDocId = i.EmpDocId,
-                    FK_BranchId = i.FK_BranchId,
-                    BranchName = i.BranchName,
-                    EmployeeName = i.EmployeeName,
-                    files = i.files,
-                    EmirateFile = i.EmirateFile,
-                    PassportFile = i.PassportFile,
-                    VisaFile = i.VisaFile,
-                    InsuranceFile = i.InsuranceFile,
-                    EmpCardFile = i.EmpCardFile
+                
 
-                });
+                var GroupList = DL.SearchByKey("33",Key);
+                foreach (var i in GroupList)
+                {
+                    EmployeeDocumentsList.Add(new HRMSEmployeeDocumentsModel
+                    {
+                        EmpDocId = objcls.Encrypt(i.EmpDocId),
+                        FK_BranchId = i.FK_BranchId,
+                        BranchName = i.BranchName,
+                        EmployeeName = i.EmployeeName,
+                        files = i.files,
+                        EmirateFile = i.EmirateFile,
+                        PassportFile = i.PassportFile,
+                        VisaFile = i.VisaFile,
+                        InsuranceFile = i.InsuranceFile,
+                        EmpCardFile = i.EmpCardFile
+                    });
+                }
+
+            }
+            else
+            {
+
+                var GroupList = DL.GetEmployeeDocumentsList();
+                foreach (var i in GroupList)
+                {
+                    EmployeeDocumentsList.Add(new HRMSEmployeeDocumentsModel
+                    {
+                        EmpDocId = objcls.Encrypt(i.EmpDocId),
+                        FK_BranchId = i.FK_BranchId,
+                        BranchName = i.BranchName,
+                        EmployeeName = i.EmployeeName,
+                        files = i.files,
+                        EmirateFile = i.EmirateFile,
+                        PassportFile = i.PassportFile,
+                        VisaFile = i.VisaFile,
+                        InsuranceFile = i.InsuranceFile,
+                        EmpCardFile = i.EmpCardFile
+                    });
+                }
             }
             return View(EmployeeDocumentsList);
         }
-        public ActionResult EmployeeDocuments()
+
+        
+        public ActionResult EmployeeDocuments(HRMSEmployeeDocumentsModel model , string Id)
         {
             ViewBag.BranchList = DL.DropdownList();
-            return View();
+
+            if (Id != null)
+            {
+                model.EmpDocId = objcls.Decrypt(Id);
+                model.QueryType = "42";
+                var lst = DL.GetEmployeeDocumentsDetaildById(model).FirstOrDefault();
+
+                if (lst != null)
+                {
+                    model.EmpDocId = lst.EmpDocId;
+                    model.FK_BranchId = lst.FK_BranchId;
+                    model.EmployeeName = lst.EmployeeName;
+                    model.files = lst.files;
+                    model.EmirateFile = lst.EmirateFile;
+                    model.PassportFile = lst.PassportFile;
+                    model.VisaFile = lst.VisaFile;
+                    model.InsuranceFile = lst.InsuranceFile;
+                    model.EmpCardFile = lst.EmpCardFile;
+                }
+            }
+            return View(model);
         }
 
         [HttpPost]
@@ -99,6 +152,14 @@ namespace MassAutoGarage.Controllers
                 }
                 else
                 {
+                   
+                    model.files = model.files == "undefined" ? null : model.files;
+                    model.EmirateFile = model.EmirateFile == "undefined" ? null : model.EmirateFile;
+                    model.PassportFile = model.PassportFile == "undefined" ? null : model.PassportFile;
+                    model.VisaFile = model.VisaFile == "undefined" ? null : model.VisaFile; 
+                    model.InsuranceFile = model.InsuranceFile == "undefined" ? null : model.InsuranceFile;
+                    model.EmpCardFile = model.EmpCardFile == "undefined" ? null : model.EmpCardFile;
+            
                     model.CreatedBy = Session["userId"].ToString();
                     model.QueryType = "21";
                     model = DL.AddUpdate(model);
@@ -146,15 +207,13 @@ namespace MassAutoGarage.Controllers
             return Json(EmployeeDocumentsList, JsonRequestBehavior.AllowGet);
         }
 
-
-
-
         [HttpPost]
         public ActionResult DeleteEmployeeDocuments(HRMSEmployeeDocumentsModel model, string EmpDocId)
         {
             try
             {
-                model.EmpDocId = EmpDocId;
+
+                model.EmpDocId = objcls.Decrypt(EmpDocId);
                 model.QueryType = "41";
                 model = DL.DeleteEmployeeDocuments(model);
                 if (model.Message == "1")
@@ -171,8 +230,8 @@ namespace MassAutoGarage.Controllers
                 throw;
             }
             return Json(model, JsonRequestBehavior.AllowGet);
+          
         }
-
 
 
 

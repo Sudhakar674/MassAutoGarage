@@ -23,7 +23,12 @@ namespace MassAutoGarage.Models.HRMS_EmployeeDocuments
         public string Result { get; set; }
         public string ID { get; set; }
         public string BranchName { get; set; }
-        
+
+        public List<HRMSEmployeeDocumentsModel> EmployeeDocumentsList {  get; set; }
+
+
+
+
 
     }
 }
