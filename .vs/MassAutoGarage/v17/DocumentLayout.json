@@ -3,64 +3,40 @@
   "WorkspaceRootPath": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\massautogarage\\views\\hrms_salestarget\\salestarget.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\hrms_salestarget\\salestarget.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|d:\\sudhakar sharma\\repository\\massautogarage\\massautogarage\\controllers\\hrms_salestargetcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\controllers\\hrms_salestargetcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|d:\\sudhakar sharma\\repository\\massautogarage\\massautogarage\\views\\hrms_salestarget\\salestarget.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\hrms_salestarget\\salestarget.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|d:\\sudhakar sharma\\repository\\massautogarage\\massautogarage\\controllers\\hrms_employeedocumentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\controllers\\hrms_employeedocumentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|d:\\sudhakar sharma\\repository\\massautogarage\\massautogarage\\data\\hrms_salestarget\\hrmssalestargetdl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\data\\hrms_salestarget\\hrmssalestargetdl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\massautogarage\\controllers\\hrms_holidaycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\controllers\\hrms_holidaycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|d:\\sudhakar sharma\\repository\\massautogarage\\massautogarage\\controllers\\suppliermastercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\controllers\\suppliermastercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|d:\\sudhakar sharma\\repository\\massautogarage\\massautogarage\\models\\hrms_salestarget\\hrmssalestargetmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\models\\hrms_salestarget\\hrmssalestargetmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|d:\\sudhakar sharma\\repository\\massautogarage\\massautogarage\\views\\suppliermaster\\createsupplier.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\suppliermaster\\createsupplier.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|d:\\sudhakar sharma\\repository\\massautogarage\\massautogarage\\myapp\\addsupplier.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\massautogarage\\myapp\\addsupplier.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\myapp\\addsupplier.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|d:\\sudhakar sharma\\repository\\massautogarage\\massautogarage\\myapp\\hrms_adddepartment.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\massautogarage\\data\\hrms_salestarget\\hrmssalestargetdl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\data\\hrms_salestarget\\hrmssalestargetdl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\massautogarage\\views\\suppliermaster\\createsupplier.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\suppliermaster\\createsupplier.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\massautogarage\\controllers\\suppliermastercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\controllers\\suppliermastercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\massautogarage\\models\\hrms_salestarget\\hrmssalestargetmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\models\\hrms_salestarget\\hrmssalestargetmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\massautogarage\\myapp\\hrms_adddepartment.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\myapp\\hrms_adddepartment.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\massautogarage\\myapp\\hrms_holiday.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\myapp\\hrms_holiday.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\massautogarage\\views\\hrms_holiday\\holiday.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\hrms_holiday\\holiday.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|d:\\sudhakar sharma\\repository\\massautogarage\\massautogarage\\myapp\\hrms_salestarget.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\myapp\\hrms_salestarget.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\massautogarage\\models\\hrms_holiday\\hrmsholidaymodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\models\\hrms_holiday\\hrmsholidaymodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\massautogarage\\data\\hrms_holiday\\hrmsholidaydl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\data\\hrms_holiday\\hrmsholidaydl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\massautogarage\\controllers\\hrms_employeedocumentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\controllers\\hrms_employeedocumentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -70,92 +46,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 3,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "HRMS_Holiday.js",
-              "DocumentMoniker": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\MyApp\\HRMS_Holiday.js",
-              "RelativeDocumentMoniker": "MassAutoGarage\\MyApp\\HRMS_Holiday.js",
-              "ToolTip": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\MyApp\\HRMS_Holiday.js",
-              "RelativeToolTip": "MassAutoGarage\\MyApp\\HRMS_Holiday.js",
-              "ViewState": "AQIAAJIAAAAAAAAAAAA7wA4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-09-23T10:40:10.275Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "HRMSHolidayModel.cs",
-              "DocumentMoniker": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Models\\HRMS_Holiday\\HRMSHolidayModel.cs",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Models\\HRMS_Holiday\\HRMSHolidayModel.cs",
-              "ToolTip": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Models\\HRMS_Holiday\\HRMSHolidayModel.cs",
-              "RelativeToolTip": "MassAutoGarage\\Models\\HRMS_Holiday\\HRMSHolidayModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-23T10:39:40.756Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "HRMSHolidayDL.cs",
-              "DocumentMoniker": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Data\\HRMS_Holiday\\HRMSHolidayDL.cs",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Data\\HRMS_Holiday\\HRMSHolidayDL.cs",
-              "ToolTip": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Data\\HRMS_Holiday\\HRMSHolidayDL.cs",
-              "RelativeToolTip": "MassAutoGarage\\Data\\HRMS_Holiday\\HRMSHolidayDL.cs",
-              "ViewState": "AQIAACAAAAAAAAAAAAASwCUAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-23T10:39:10.432Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "HRMS_HolidayController.cs",
-              "DocumentMoniker": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Controllers\\HRMS_HolidayController.cs",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Controllers\\HRMS_HolidayController.cs",
-              "ToolTip": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Controllers\\HRMS_HolidayController.cs",
-              "RelativeToolTip": "MassAutoGarage\\Controllers\\HRMS_HolidayController.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAAAowCYAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-23T10:38:14.799Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Holiday.cshtml",
-              "DocumentMoniker": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_Holiday\\Holiday.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\HRMS_Holiday\\Holiday.cshtml",
-              "ToolTip": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_Holiday\\Holiday.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\HRMS_Holiday\\Holiday.cshtml",
-              "ViewState": "AQIAAKMAAAAAAAAAAAAAAKwAAAB6AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-23T10:40:55.286Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "HRMS_SalesTarget.js",
-              "DocumentMoniker": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\MyApp\\HRMS_SalesTarget.js",
-              "RelativeDocumentMoniker": "MassAutoGarage\\MyApp\\HRMS_SalesTarget.js",
-              "ToolTip": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\MyApp\\HRMS_SalesTarget.js",
-              "RelativeToolTip": "MassAutoGarage\\MyApp\\HRMS_SalesTarget.js",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAADAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-09-26T11:58:36.728Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 6,
@@ -164,7 +56,7 @@
               "RelativeDocumentMoniker": "MassAutoGarage\\Models\\HRMS_SalesTarget\\HRMSSalesTargetModel.cs",
               "ToolTip": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Models\\HRMS_SalesTarget\\HRMSSalesTargetModel.cs",
               "RelativeToolTip": "MassAutoGarage\\Models\\HRMS_SalesTarget\\HRMSSalesTargetModel.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAcwBcAAAAAAAAA",
+              "ViewState": "AQIAAAwAAAAAAAAAAAA5wBUAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-26T11:57:56.768Z",
               "IsPinned": true,
@@ -178,7 +70,7 @@
               "RelativeDocumentMoniker": "MassAutoGarage\\Data\\HRMS_SalesTarget\\HRMSSalesTargetDL.cs",
               "ToolTip": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Data\\HRMS_SalesTarget\\HRMSSalesTargetDL.cs",
               "RelativeToolTip": "MassAutoGarage\\Data\\HRMS_SalesTarget\\HRMSSalesTargetDL.cs",
-              "ViewState": "AQIAACsAAAAAAAAAAAAEwDoAAAAxAAAA",
+              "ViewState": "AQIAADIAAAAAAAAAAAAnwGcAAAA2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-26T11:57:24.663Z",
               "IsPinned": true,
@@ -186,13 +78,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "HRMS_SalesTargetController.cs",
               "DocumentMoniker": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Controllers\\HRMS_SalesTargetController.cs",
               "RelativeDocumentMoniker": "MassAutoGarage\\Controllers\\HRMS_SalesTargetController.cs",
               "ToolTip": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Controllers\\HRMS_SalesTargetController.cs",
               "RelativeToolTip": "MassAutoGarage\\Controllers\\HRMS_SalesTargetController.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAA3wBkAAAAyAAAA",
+              "ViewState": "AQIAAFoAAAAAAAAAAAASwHEAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-26T11:45:43.648Z",
               "IsPinned": true,
@@ -200,13 +92,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "SalesTarget.cshtml",
               "DocumentMoniker": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_SalesTarget\\SalesTarget.cshtml",
               "RelativeDocumentMoniker": "MassAutoGarage\\Views\\HRMS_SalesTarget\\SalesTarget.cshtml",
               "ToolTip": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_SalesTarget\\SalesTarget.cshtml",
               "RelativeToolTip": "MassAutoGarage\\Views\\HRMS_SalesTarget\\SalesTarget.cshtml",
-              "ViewState": "AQIAABMBAAAAAAAAAAAAAGQBAAAqAAAA",
+              "ViewState": "AQIAAMABAAAAAAAAAAAAAEgBAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-09-26T11:59:04.497Z",
               "IsPinned": true,
@@ -214,13 +106,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 2,
               "Title": "AddSupplier.js",
               "DocumentMoniker": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\MyApp\\AddSupplier.js",
               "RelativeDocumentMoniker": "MassAutoGarage\\MyApp\\AddSupplier.js",
               "ToolTip": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\MyApp\\AddSupplier.js",
               "RelativeToolTip": "MassAutoGarage\\MyApp\\AddSupplier.js",
-              "ViewState": "AQIAAAoBAAAAAAAAAAAQwEYBAAA0AAAA",
+              "ViewState": "AQIAAEYBAAAAAAAAAAAQwCgBAAAHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2024-09-27T11:07:03.265Z",
               "IsPinned": true,
@@ -228,7 +120,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "HRMS_EmployeeDocumentsController.cs",
               "DocumentMoniker": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Controllers\\HRMS_EmployeeDocumentsController.cs",
               "RelativeDocumentMoniker": "MassAutoGarage\\Controllers\\HRMS_EmployeeDocumentsController.cs",
@@ -236,31 +128,30 @@
               "RelativeToolTip": "MassAutoGarage\\Controllers\\HRMS_EmployeeDocumentsController.cs",
               "ViewState": "AQIAABkAAAAAAAAAAAAgwB4AAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-27T13:20:16.828Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-27T13:20:16.828Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
               "Title": "CreateSupplier.cshtml",
               "DocumentMoniker": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Views\\SupplierMaster\\CreateSupplier.cshtml",
               "RelativeDocumentMoniker": "MassAutoGarage\\Views\\SupplierMaster\\CreateSupplier.cshtml",
               "ToolTip": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Views\\SupplierMaster\\CreateSupplier.cshtml",
               "RelativeToolTip": "MassAutoGarage\\Views\\SupplierMaster\\CreateSupplier.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "ViewState": "AQIAAEACAAAAAAAAAAAAAF8BAABAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-09-27T12:35:48.769Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 7,
               "Title": "HRMS_AddDepartment.js",
               "DocumentMoniker": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\MyApp\\HRMS_AddDepartment.js",
               "RelativeDocumentMoniker": "MassAutoGarage\\MyApp\\HRMS_AddDepartment.js",
               "ToolTip": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\MyApp\\HRMS_AddDepartment.js",
               "RelativeToolTip": "MassAutoGarage\\MyApp\\HRMS_AddDepartment.js",
-              "ViewState": "AQIAAIkAAAAAAAAAAAA7wJYAAABXAAAA",
+              "ViewState": "AQIAAIAAAAAAAAAAAAAswJYAAABXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2024-09-27T12:17:09.169Z",
               "EditorCaption": ""
@@ -273,7 +164,7 @@
               "RelativeDocumentMoniker": "MassAutoGarage\\Controllers\\SupplierMasterController.cs",
               "ToolTip": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Controllers\\SupplierMasterController.cs",
               "RelativeToolTip": "MassAutoGarage\\Controllers\\SupplierMasterController.cs",
-              "ViewState": "AQIAAC0BAAAAAAAAAAAcwDkBAAA7AAAA",
+              "ViewState": "AQIAAOAAAAAAAAAAAAAEwLgAAABHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-27T11:47:35.204Z",
               "EditorCaption": ""
