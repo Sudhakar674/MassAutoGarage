@@ -22,8 +22,10 @@ namespace MassAutoGarage.Models.HRMS_SalesTarget
         public string Target { get; set; }
         public string FK_SalesTargetId { get; set; }
 
+        public List<HRMSSalesTargetModel> HRMSSalesTargetModelList { get; set; }
 
-        
+
+
 
 
 
