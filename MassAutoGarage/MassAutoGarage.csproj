@@ -3515,6 +3515,7 @@
     <Content Include="MyApp\GroupMaster.js" />
     <Content Include="MyApp\HRMS_AddDepartment.js" />
     <Content Include="MyApp\HRMS_DeductionType.js" />
+    <Content Include="MyApp\HRMS_Employee.js" />
     <Content Include="MyApp\HRMS_EmployeeDocuments.js" />
     <Content Include="MyApp\HRMS_Holiday.js" />
     <Content Include="MyApp\HRMS_LeaveType.js" />
@@ -3749,6 +3750,7 @@
     <Compile Include="Data\HRMS_DeductionType\HRMSDeductionTypeDL.cs" />
     <Compile Include="Data\HRMS_Department\HRMSDepartment_DL.cs" />
     <Compile Include="Data\HRMS_EmployeeDocuments\HRMSEmployeeDocumentsDL.cs" />
+    <Compile Include="Data\HRMS_Employee\HRMSEmployeeDL.cs" />
     <Compile Include="Data\HRMS_Holiday\HRMSHolidayDL.cs" />
     <Compile Include="Data\HRMS_LeaveType\HRMSLeaveTypeDL.cs" />
     <Compile Include="Data\HRMS_MaritalStatus\HRMSMaritalStatus_DL.cs" />
@@ -3803,6 +3805,7 @@
     <Compile Include="Models\HRMS_DeductionType\HRMS_DeductionTypeModel.cs" />
     <Compile Include="Models\HRMS_Department\HRMSDepartmentModel.cs" />
     <Compile Include="Models\HRMS_EmployeeDocuments\HRMSEmployeeDocumentsModel.cs" />
+    <Compile Include="Models\HRMS_Employee\HRMSEmployeeModel.cs" />
     <Compile Include="Models\HRMS_Holiday\HRMSHolidayModel.cs" />
     <Compile Include="Models\HRMS_LeaveType\HRMSLeaveTypeModel.cs" />
     <Compile Include="Models\HRMS_MaritalStatus\HRMSMaritalStatusModel.cs" />
