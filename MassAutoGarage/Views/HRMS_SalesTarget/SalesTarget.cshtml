@@ -213,36 +213,36 @@
                                         </tbody>
                                         <tfoot>
                                             @*<tr>
-                                                <td>
-                                                    <input type="text" name="fromdate" class="form-control txtFromDate" id="txtFromDate" />
-                                                </td>
-                                                <td>
-                                                    <input type="text" name="todate" class="form-control txtToDate" id="txtToDate" />
-                                                </td>
-                                                <td>
-                                                    <input type="text" name="target" class="form-control txttarget" id="txttarget" />
-                                                </td>
-                                                <td>
-                                                    <button type="button" id="btnAdd" class="btn btn-xs btn-primary classAdd" onclick="Add()">Add More</button>
-                                                </td>
-                                            </tr>*@
-
-
-
-                                            <tr>
                                                     <td>
-                                                        <input type="text" name="FromDate" class="form-control txtFromDate" id="FromDate" />
+                                                        <input type="text" name="fromdate" class="form-control txtFromDate" id="txtFromDate" />
                                                     </td>
                                                     <td>
-                                                        <input type="text" name="ToDate" class="form-control txtToDate" id="ToDate" />
+                                                        <input type="text" name="todate" class="form-control txtToDate" id="txtToDate" />
                                                     </td>
                                                     <td>
-                                                        <input type="text" name="Target" class="form-control txttarget" id="Target" />
+                                                        <input type="text" name="target" class="form-control txttarget" id="txttarget" />
                                                     </td>
                                                     <td>
                                                         <button type="button" id="btnAdd" class="btn btn-xs btn-primary classAdd" onclick="Add()">Add More</button>
                                                     </td>
-                                                </tr>
+                                                </tr>*@
+
+
+
+                                            <tr>
+                                                <td>
+                                                    <input type="text" name="FromDate" class="form-control txtFromDate" id="FromDate" />
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="ToDate" class="form-control txtToDate" id="ToDate" />
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="Target" class="form-control txttarget" id="Target" />
+                                                </td>
+                                                <td>
+                                                    <button type="button" id="btnAdd" class="btn btn-xs btn-primary classAdd" onclick="Add()">Add More</button>
+                                                </td>
+                                            </tr>
 
                                         </tfoot>
                                     </table>
@@ -278,7 +278,7 @@
     <script src="~/assets/js/pages/form-validation.init.js"></script>
     <script src="~/assets/js/app.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> 
 
     <script src="~/assets/js/pages/select2.init.js"></script>
     <script src="~/assets/libs/prismjs/prism.js"></script>
@@ -297,7 +297,7 @@
 
 
 
-    @*<script type="text/javascript">
+@*<script type="text/javascript">
 
 
         function Add() {
@@ -524,20 +524,25 @@
 
         var ProductListArr = [];
 
-        if (SalesId_ != "" && tableLength > 0) {
+        if (SalesId_ != "" && tableLength > 1) {
 
-            if (tableLength > 0) {
+            if (tableLength > 1) {
 
-                for (var i = 0; i < tableLength; i++) {
+                for (var i = 0; i < tableLength-2; i++) {
 
                     var ProductList = {
 
+                        SalesId:SalesId_,
 
-                       
-                      FromDate: $("#example tBody tr:eq(" + i + ")").find('td:eq(0)').html(),
+                        FromDate: $("#example tBody tr:eq(" + i + ")").find('td:eq(0)').html(),
                         ToDate: $("#example tBody tr:eq(" + i + ")").find('td:eq(1)').html(),
-                          Target: $("#example tBody tr:eq(" + i + ")").find('td:eq(2)').html(),
+                        Target: $("#example tBody tr:eq(" + i + ")").find('td:eq(2)').html(),
 
+
+                        //SalesId: SalesId_,
+                        //FromDate: $("#example tBody tr:eq(" + i + ")").find('td:eq(1)').html(),
+                        //ToDate: $("#example tBody tr:eq(" + i + ")").find('td:eq(2)').html(),
+                        //Target: $("#example tBody tr:eq(" + i + ")").find('td:eq(3)').html(),
 
                     };
                     ProductListArr.push(ProductList);

@@ -1,4 +1,4 @@
-﻿@model MassAutoGarage.Models.AddOnsMaster.AddOnsMasterModel
+﻿@model MassAutoGarage.Models.HRMS_Employee.HRMSEmployeeModel
 @{
     ViewBag.Title = "Employee";
     ViewBag.pTitle = "Employee";
@@ -170,476 +170,530 @@
         <div class="col-lg-12">
             <div class="card">
 
-               
-                    <div class="card-header main-f">
-                        <div class="row">
-                            <div class="col-md-6 col-5"> <h5 class="card-title mb-0 gp-detail">EMPLOYEE</h5></div>
-                            <div class="col-md-6 col-7">
-                                <a href="@Url.Action("Index","HRMS_Employee")" class="btn btn-primary add-new" style="float:right;" tabindex="1"> <i class="fa fa-arrow-left align-middle me-1"></i> BACK TO EMPLOYEE LIST</a>
-                            </div>
+
+                <div class="card-header main-f">
+                    <div class="row">
+                        <div class="col-md-6 col-5"> <h5 class="card-title mb-0 gp-detail">EMPLOYEE</h5></div>
+                        <div class="col-md-6 col-7">
+                            <a href="@Url.Action("Index","HRMS_Employee")" class="btn btn-primary add-new" style="float:right;" tabindex="1"> <i class="fa fa-arrow-left align-middle me-1"></i> BACK TO EMPLOYEE LIST</a>
                         </div>
-                    </div>
-
-
-
-                    @*<div class="card-header align-items-center d-flex">
-                <h4 class="card-title mb-0 flex-grow-1">EMPLOYEE </h4>
-                <div class="flex-shrink-0">
-                    <div class="form-check form-switch form-switch-right form-switch-md">
-                        <a href="@Url.Action("Index","HRMS_Employee")" class="btn btn-primary" style="float:right;" tabindex="7"><i class="fa fa-list" aria-hidden="true"></i> BACK TO EMPLOYEE LIST</a>
                     </div>
                 </div>
-            </div>*@
 
+                <!-- end card header -->
+                <div class="card-body">
+                    <div class="live-preview">
+                        <div class="row gy-4">
 
+                            <fieldset>
+                                <legend style="background-color:#151529">Employee Details</legend>
 
-                    <!-- end card header -->
-                    <div class="card-body">
-                        <div class="live-preview">
-                            <div class="row gy-4">
+                                <div class="row gy-4">
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label"> Employee Code  <code>*</code></label>
+                                            @Html.TextBoxFor(m => m.EmployeeCode, new { @class = "form-control", tabindex = 1 })
+                                            @Html.ValidationMessageFor(m => m.EmployeeCode, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Employee Name<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.EmployeeName, new { @class = "form-control", tabindex = 2 })
+                                            @Html.ValidationMessageFor(m => m.EmployeeName, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Designation<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.Designation, new { @class = "form-control", tabindex = 3 })
+                                            @Html.ValidationMessageFor(m => m.Designation, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Reporting Manager<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.ReportingManager, new { @class = "form-control", tabindex = 4 })
+                                            @Html.ValidationMessageFor(m => m.ReportingManager, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Department<code>*</code></label>
+                                            @Html.DropDownListFor(x => x.DeptID, new SelectList(ViewBag.DepartmentDropdownList, "DeptID", "DepartmentName"), "- Select Department -", new { @class = "form-control", tabindex = 5 })
+                                            @Html.ValidationMessageFor(m => m.DeptID, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Joining Date<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.JoiningDate, new { @class = "form-control", tabindex = 6, @readonly = true })
+                                            @Html.ValidationMessageFor(m => m.JoiningDate, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Branch / Location<code>*</code></label>
+                                            @Html.DropDownListFor(x => x.BranchId, new SelectList(ViewBag.BranchLocationDropdownList, "BranchId", "BranchName"), "- Select Branch / Location -", new { @class = "form-control", tabindex = 7 })
+                                            @Html.ValidationMessageFor(m => m.BranchId, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Nationality<code>*</code></label>
+                                            @Html.DropDownListFor(x => x.NationalityId, new SelectList(ViewBag.NationalityDropdownList, "NationalityId", "Nationality"), "- Select Nationality -", new { @class = "form-control", tabindex = 8 })
+                                            @Html.ValidationMessageFor(m => m.NationalityId, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label"> Date of Birth<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.DateOfBirth, new { @class = "form-control", tabindex = 9, @readonly = true })
+                                            @Html.ValidationMessageFor(m => m.DateOfBirth, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label"> Marital Status<code>*</code></label>
+                                            @Html.DropDownListFor(x => x.MaritalStatusId, new SelectList(ViewBag.MaritalStatusDropdownList, "MaritalStatusId", "MaritalStatus"), "- Select Marital Status -", new { @class = "form-control", tabindex = 10 })
+                                            @Html.ValidationMessageFor(m => m.MaritalStatusId, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label"> Type<code>*</code></label>
+                                            <select id="ddlType" class="js-example-basic-single">
+                                                <option value="0">Select </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label"> Gender / Blood Group<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.GenderBloodGroup, new { @class = "form-control", tabindex = 12 })
+                                            @Html.ValidationMessageFor(m => m.GenderBloodGroup, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
 
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label"> Employee Code  <code>*</code></label>
-                                        <input type="text" class="form-control" />
+                            <fieldset>
+                                <legend style="background-color:#151529">Passport Details</legend>
+                                <div class="row gy-4">
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label"> Passport No<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.PassportNo, new { @class = "form-control", tabindex = 13 })
+                                            @Html.ValidationMessageFor(m => m.PassportNo, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label"> Passport Issue Date<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.PassportIssueDate, new { @class = "form-control", tabindex = 14 })
+                                            @Html.ValidationMessageFor(m => m.PassportIssueDate, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label"> Passport Expiry Date <code>*</code></label>
+                                            @Html.TextBoxFor(m => m.PassportExpiryDate, new { @class = "form-control", tabindex = 15 , @readonly = true })
+                                            @Html.ValidationMessageFor(m => m.PassportExpiryDate, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-12 col-md-12">
+                                        <div>
+                                            <label for="labelInput" class="form-label"> Home Country Airport <code>*</code></label>
+                                            @Html.TextBoxFor(m => m.HomeCountryAirport, new { @class = "form-control", tabindex = 16 })
+                                            @Html.ValidationMessageFor(m => m.HomeCountryAirport, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label">Basic Salary  <code>*</code></label>
-                                        <input type="text" class="form-control" />
-                                    </div>
-                                </div>
+                            </fieldset>
 
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label">Employee Name<code>*</code></label>
-                                        <input type="text" class="form-control" />
+                            <fieldset>
+                                <legend style="background-color:#151529">Contact Details</legend>
+                                <div class="row gy-4">
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Home Country Contact Number.(1)<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.HomeCountryContactNumber1, new { @class = "form-control", tabindex = 17 })
+                                            @Html.ValidationMessageFor(m => m.HomeCountryContactNumber1, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Home Country Contact Number.(2)<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.HomeCountryContactNumber2, new { @class = "form-control", tabindex = 18 })
+                                            @Html.ValidationMessageFor(m => m.HomeCountryContactNumber2, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Emergency Contact No<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.EmergencyContactNo, new { @class = "form-control", tabindex = 19 })
+                                            @Html.ValidationMessageFor(m => m.EmergencyContactNo, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-12 col-md-12">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Email<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", tabindex = 20 })
+                                            @Html.ValidationMessageFor(m => m.Email, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
 
-                                    </div>
-                                </div>
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label">Transportation<code>*</code></label>
-                                        <input type="text" class="form-control" />
+                            <fieldset>
+                                <legend style="background-color:#151529">Account Details</legend>
+                                <div class="row gy-4">
 
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Account No.(IBAN)<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.AccountNo, new { @class = "form-control", tabindex = 21 })
+                                            @Html.ValidationMessageFor(m => m.AccountNo, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">WPS Debit Card Number<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.WPSDebitCardNumber, new { @class = "form-control", tabindex = 22 })
+                                            @Html.ValidationMessageFor(m => m.WPSDebitCardNumber, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">WPS Expiry<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.WPSExpiry, new { @class = "form-control", tabindex = 23 })
+                                            @Html.ValidationMessageFor(m => m.WPSExpiry, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
                                     </div>
                                 </div>
+                            </fieldset>
 
+                            <fieldset>
+                                <legend style="background-color:#151529">Leave Details</legend>
+                                <div class="row gy-4">
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Total Leave per Year(days)<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.TotalLeavePerYear, new { @class = "form-control", tabindex = 24 })
+                                            @Html.ValidationMessageFor(m => m.TotalLeavePerYear, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">No.of Working Hours<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.NoOfWorkingHours, new { @class = "form-control", tabindex = 25 })
+                                            @Html.ValidationMessageFor(m => m.NoOfWorkingHours, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
+                                    </div>
 
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">No of Days<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.NoOfDays, new { @class = "form-control", tabindex = 26 })
+                                            @Html.ValidationMessageFor(m => m.NoOfDays, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
+                                    </div>
 
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Labour Card No<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.LabourCardNo, new { @class = "form-control", tabindex = 27 })
+                                            @Html.ValidationMessageFor(m => m.LabourCardNo, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Labour Card Expiry<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.LabourCardExpiry, new { @class = "form-control", tabindex = 28 })
+                                            @Html.ValidationMessageFor(m => m.LabourCardExpiry, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Person Code<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.PersonCode, new { @class = "form-control", tabindex = 29 })
+                                            @Html.ValidationMessageFor(m => m.PersonCode, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">UAE Contact No.(1)<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.UAEContactNo1, new { @class = "form-control", tabindex = 30 })
+                                            @Html.ValidationMessageFor(m => m.UAEContactNo1, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">UAE Contact No.(2)<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.UAEContactNo2, new { @class = "form-control", tabindex = 31 })
+                                            @Html.ValidationMessageFor(m => m.UAEContactNo2, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">UAE Address<code>*</code></label>
+                                            @Html.TextAreaFor(m => m.UAEAddress, new { @class = "form-control", tabindex = 32 })
+                                            @Html.ValidationMessageFor(m => m.UAEAddress, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
 
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label">Designation<code>*</code></label>
-                                        <input type="text" class="form-control" />
+                            <fieldset>
+                                <legend style="background-color:#151529">Salary Details</legend>
+                                <div class="row gy-4">
 
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Basic Salary  <code>*</code></label>
+                                            @Html.TextBoxFor(m => m.BasicSalary, new { @class = "form-control", tabindex = 33 })
+                                            @Html.ValidationMessageFor(m => m.BasicSalary, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label">Accommodation<code>*</code></label>
-                                        <input type="text" class="form-control" />
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Transportation<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.Transportation, new { @class = "form-control", tabindex = 34 })
+                                            @Html.ValidationMessageFor(m => m.Transportation, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
 
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label">Reporting Manager<code>*</code></label>
-                                        <input type="text" class="form-control" />
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Accommodation<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.Accommodation, new { @class = "form-control", tabindex = 35 })
+                                            @Html.ValidationMessageFor(m => m.Accommodation, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
 
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label">Additional Allowance <code>*</code></label>
-                                        <input type="text" class="form-control" />
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Additional Allowance <code>*</code></label>
+                                            @Html.TextBoxFor(m => m.AdditionalAllowance, new { @class = "form-control", tabindex = 36 })
+                                            @Html.ValidationMessageFor(m => m.AdditionalAllowance, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
                                     </div>
-                                </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">  Standard<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.Standard, new { @class = "form-control", tabindex = 37 })
+                                            @Html.ValidationMessageFor(m => m.Standard, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
 
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label">Department<code>*</code></label>
-                                        <select id="ddlDepartment" class="js-example-basic-single">
-                                            <option value="0">Select </option>
-                                        </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Skill<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.Skill, new { @class = "form-control", tabindex = 38 })
+                                            @Html.ValidationMessageFor(m => m.Skill, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Accommodation Allowance<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.AccommodationAllowance, new { @class = "form-control", tabindex = 39 })
+                                            @Html.ValidationMessageFor(m => m.AccommodationAllowance, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label"> Cola <code>*</code></label>
+                                            @Html.TextBoxFor(m => m.Cola, new { @class = "form-control", tabindex = 40 })
+                                            @Html.ValidationMessageFor(m => m.Cola, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
 
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label">  Standard<code>*</code></label>
-                                        <input type="text" class="form-control" />
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label"> Education<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.Education, new { @class = "form-control", tabindex = 41 })
+                                            @Html.ValidationMessageFor(m => m.Education, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
 
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label"> Car Allowance<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.CarAllowance, new { @class = "form-control", tabindex = 42 })
+                                            @Html.ValidationMessageFor(m => m.CarAllowance, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label"> Telephone<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.Telephone, new { @class = "form-control", tabindex = 43 })
+                                            @Html.ValidationMessageFor(m => m.Telephone, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label"> Others<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.Others, new { @class = "form-control", tabindex = 44 })
+                                            @Html.ValidationMessageFor(m => m.Others, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-12 col-md-12">
+                                        <div>
+                                            <label for="labelInput" class="form-label"> Total Salary<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.TotalSalary, new { @class = "form-control", tabindex = 45 })
+                                            @Html.ValidationMessageFor(m => m.TotalSalary, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
                                     </div>
                                 </div>
+                            </fieldset>
 
+                            <fieldset>
+                                <legend style="background-color:#151529">Visa Details</legend>
+                                <div class="row gy-4">
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label"> Emirates ID <code>*</code></label>
+                                            @Html.TextBoxFor(m => m.EmiratesID, new { @class = "form-control", tabindex = 46 })
+                                            @Html.ValidationMessageFor(m => m.EmiratesID, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Emirates ID Expiry <code>*</code></label>
+                                            @Html.TextBoxFor(m => m.EmiratesIDExpiry, new { @class = "form-control", tabindex = 47 })
+                                            @Html.ValidationMessageFor(m => m.EmiratesIDExpiry, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Visa UID No<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.VisaUIDNo, new { @class = "form-control", tabindex = 48 })
+                                            @Html.ValidationMessageFor(m => m.VisaUIDNo, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Visa File No<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.VisaFileNo, new { @class = "form-control", tabindex = 49 })
+                                            @Html.ValidationMessageFor(m => m.VisaFileNo, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Visa Place of Issue<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.VisaPlaceOfIssue, new { @class = "form-control", tabindex = 50 })
+                                            @Html.ValidationMessageFor(m => m.VisaPlaceOfIssue, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Visa Issue Date<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.VisaIssueDate, new { @class = "form-control", tabindex = 51 })
+                                            @Html.ValidationMessageFor(m => m.VisaIssueDate, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-12 col-md-12">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Visa Expiry<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.VisaExpiry, new { @class = "form-control", tabindex = 52 })
+                                            @Html.ValidationMessageFor(m => m.VisaExpiry, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
 
+                            <fieldset>
+                                <legend style="background-color:#151529">Insurance Details</legend>
+                                <div class="row gy-4">
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Insurance Provider<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.InsuranceProvider, new { @class = "form-control", tabindex = 53 })
+                                            @Html.ValidationMessageFor(m => m.InsuranceProvider, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Insurance Number<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.InsuranceNumber, new { @class = "form-control", tabindex = 54 })
+                                            @Html.ValidationMessageFor(m => m.InsuranceNumber, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Insurance Expiry<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.InsuranceExpiry, new { @class = "form-control", tabindex = 55 })
+                                            @Html.ValidationMessageFor(m => m.InsuranceExpiry, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Status<code>*</code></label>
+                                            @Html.DropDownListFor(x => x.StatusId, new SelectList(ViewBag.StatusDropdownList, "StatusId", "Status"), "- Select Status -", new { @class = "form-control", tabindex = 56 })
+                                            @Html.ValidationMessageFor(m => m.StatusId, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Resignation / Termination Date<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.ResignationTerminationDate, new { @class = "form-control", tabindex = 57 })
+                                            @Html.ValidationMessageFor(m => m.ResignationTerminationDate, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Remarks<code>*</code></label>
+                                            @Html.TextAreaFor(m => m.Remarks, new { @class = "form-control", tabindex = 58 })
+                                            @Html.ValidationMessageFor(m => m.Remarks, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Organization<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.Organization, new { @class = "form-control", tabindex = 59 })
+                                            @Html.ValidationMessageFor(m => m.Organization, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Ticket Issued Per Year<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.TicketIssuedPerYear, new { @class = "form-control", tabindex = 60 })
+                                            @Html.ValidationMessageFor(m => m.TicketIssuedPerYear, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Photo<code>*</code></label>
+                                            <input type="file" id="Photo" name="Photo" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
 
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label">Joining Date<code>*</code></label>
-                                        <input type="text" class="form-control" />
-
-                                    </div>
+                            @*<div class="col-xxl-3 col-md-4">
+                                <div>
+                                    <label for="labelInput" class="form-label">Gratuity<code>*</code></label>
+                                    <select id="ddlGratuity" class="js-example-basic-single">
+                                        <option value="0">Select </option>
+                                    </select>
                                 </div>
-
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label">Skill<code>*</code></label>
-                                        <input type="text" class="form-control" />
-                                    </div>
-                                </div>
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label">Branch / Location<code>*</code></label>
-                                        <select id="ddlBranch" class="js-example-basic-single">
-                                            <option value="0">Select </option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label">Accommodation Allowance<code>*</code></label>
-                                        <input type="text" class="form-control" />
-                                    </div>
-                                </div>
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label">Nationality<code>*</code></label>
-                                        <select id="ddlNationality" class="js-example-basic-single">
-                                            <option value="0">Select </option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label"> Cola <code>*</code></label>
-                                        <input type="text" class="form-control" />
-
-                                    </div>
-                                </div>
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label"> Date of Birth<code>*</code></label>
-                                        <input type="text" class="form-control" />
-
-                                    </div>
-                                </div>
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label"> Education<code>*</code></label>
-                                        <input type="text" class="form-control" />
-
-                                    </div>
-                                </div>
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label"> Marital Status<code>*</code></label>
-                                        <select id="ddlMaritalStatus" class="js-example-basic-single">
-                                            <option value="0">Select </option>
-                                        </select>
-
-                                    </div>
-                                </div>
-
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label"> Car Allowance<code>*</code></label>
-                                        <input type="text" class="form-control" />
-                                    </div>
-                                </div>
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label"> Type<code>*</code></label>
-                                        <select id="ddlType" class="js-example-basic-single">
-                                            <option value="0">Select </option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label"> Telephone<code>*</code></label>
-                                        <input type="text" class="form-control" />
-                                    </div>
-                                </div>
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label"> Gender / Blood Group<code>*</code></label>
-                                        <input type="text" class="form-control" />
-                                    </div>
-                                </div>
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label"> Others<code>*</code></label>
-                                        <input type="text" class="form-control" />
-                                    </div>
-                                </div>
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label"> Passport No<code>*</code></label>
-                                        <input type="text" class="form-control" />
-                                    </div>
-                                </div>
-
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label"> Total Salary<code>*</code></label>
-                                        <input type="text" class="form-control" />
-                                    </div>
-                                </div>
-
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label"> Passport Issue Date<code>*</code></label>
-                                        <input type="text" class="form-control" />
-                                    </div>
-                                </div>
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label"> Passport Expiry Date <code>*</code></label>
-                                        <input type="text" class="form-control" />
-                                    </div>
-                                </div>
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label"> Emirates ID <code>*</code></label>
-                                        <input type="text" class="form-control" />
-                                    </div>
-                                </div>
-
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label"> Home Country Airport <code>*</code></label>
-                                        <input type="text" class="form-control" />
-                                    </div>
-                                </div>
-
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label">Emirates ID Expiry <code>*</code></label>
-                                        <input type="text" class="form-control" />
-                                    </div>
-                                </div>
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label">Home Country Contact Number.(1)<code>*</code></label>
-                                        <input type="text" class="form-control" />
-                                    </div>
-                                </div>
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label">Visa UID No<code>*</code></label>
-                                        <input type="text" class="form-control" />
-                                    </div>
-                                </div>
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label">Home Country Contact Number.(2)<code>*</code></label>
-                                        <input type="text" class="form-control" />
-                                    </div>
-                                </div>
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label">Visa File No<code>*</code></label>
-                                        <input type="text" class="form-control" />
-                                    </div>
-                                </div>
-
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label">Emergency Contact No<code>*</code></label>
-                                        <input type="text" class="form-control" />
-                                    </div>
-                                </div>
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label">Visa Place of Issue<code>*</code></label>
-                                        <input type="text" class="form-control" />
-                                    </div>
-                                </div>
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label">Email<code>*</code></label>
-                                        <input type="text" class="form-control" />
-                                    </div>
-                                </div>
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label">Visa Issue Date<code>*</code></label>
-                                        <input type="text" class="form-control" />
-                                    </div>
-                                </div>
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label">Visa Expiry<code>*</code></label>
-                                        <input type="text" class="form-control" />
-                                    </div>
-                                </div>
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label">Account No.(IBAN)<code>*</code></label>
-                                        <input type="text" class="form-control" />
-                                    </div>
-                                </div>
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label">WPS Debit Card Number<code>*</code></label>
-                                        <input type="text" class="form-control" />
-                                    </div>
-                                </div>
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label">WPS Expiry<code>*</code></label>
-                                        <input type="text" class="form-control" />
-                                    </div>
-                                </div>
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label">Insurance Provider<code>*</code></label>
-                                        <input type="text" class="form-control" />
-                                    </div>
-                                </div>
-
-
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label">Insurance Number<code>*</code></label>
-                                        <input type="text" class="form-control" />
-                                    </div>
-                                </div>
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label">Insurance Expiry<code>*</code></label>
-                                        <input type="text" class="form-control" />
-                                    </div>
-                                </div>
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label">Total Leave per Year(days)<code>*</code></label>
-                                        <input type="text" class="form-control" />
-                                    </div>
-                                </div>
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label">No.of Working Hours<code>*</code></label>
-                                        <input type="text" class="form-control" />
-                                    </div>
-                                </div>
-
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label">No of Days<code>*</code></label>
-                                        <input type="text" class="form-control" />
-                                    </div>
-                                </div>
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label">Status<code>*</code></label>
-                                        <select id="ddlStatus" class="js-example-basic-single">
-                                            <option value="0">Select </option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label">Resignation / Termination Date<code>*</code></label>
-                                        <input type="text" class="form-control" />
-                                    </div>
-                                </div>
-
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label">Labour Card No<code>*</code></label>
-                                        <input type="text" class="form-control" />
-                                    </div>
-                                </div>
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label">Labour Card Expiry<code>*</code></label>
-                                        <input type="text" class="form-control" />
-                                    </div>
-                                </div>
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label">Organization<code>*</code></label>
-                                        <input type="text" class="form-control" />
-                                    </div>
-                                </div>
-
-                                <div class="col-xxl-12 col-md-12">
-                                    <div>
-                                        <label for="labelInput" class="form-label">Remarks<code>*</code></label>
-                                        <textarea type="text" class="form-control"></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label">Person Code<code>*</code></label>
-                                        <input type="text" class="form-control" />
-                                    </div>
-                                </div>
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label">Gratuity<code>*</code></label>
-                                        <select id="ddlGratuity" class="js-example-basic-single">
-                                            <option value="0">Select </option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label">UAE Contact No.(1)<code>*</code></label>
-                                        <input type="text" class="form-control" />
-                                    </div>
-                                </div>
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label">UAE Contact No.(2)<code>*</code></label>
-                                        <input type="text" class="form-control" />
-                                    </div>
-                                </div>
-
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label">Ticket Issued Per Year<code>*</code></label>
-                                        <input type="text" class="form-control" />
-                                    </div>
-                                </div>
-                                <div class="col-xxl-3 col-md-4">
-                                    <div>
-                                        <label for="labelInput" class="form-label">Photo<code>*</code></label>
-                                        <input type="file" class="form-control" />
-                                    </div>
-                                </div>
-                                <div class="col-xxl-12 col-md-12">
-                                    <div>
-                                        <label for="labelInput" class="form-label">UAE Address<code>*</code></label>
-                                        <textarea type="text" class="form-control"></textarea>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <!--end row-->
+                            </div>*@
                         </div>
-
+                        <!--end row-->
                     </div>
-                    <br /><br />
-                    <div class="col-xxl-12 col-md-12">
-                        <div class="form-floating" style="float: right; padding-right: 2%;">
-                            <input type="button" value="Save" id="btnSave" class="btn btn-primary" />
-
-                            <a href="#" class="btn btn-danger">Reset</a>
-
-
-                        </div>
-                    </div>
-                    <br />
                 </div>
-
-
+                <br /><br />
+                <div class="col-xxl-12 col-md-12">
+                    <div class="form-floating" style="float: right; padding-right: 2%;">
+                        <input type="button" value="Save" id="btnsave" class="btn btn-primary" />
+                        <a href="/HRMS_Employee/Employee" class="btn btn-danger">Reset</a>
+                    </div>
+                </div>
+                <br />
             </div>
+
+
+        </div>
 
         <!--end col-->
     </div>
@@ -677,15 +731,11 @@
 <script src="~/MyApp/AddONS.js"></script>
 
 
+<script src="~/MyApp/HRMS_Employee.js"></script>
 
 <script>
     $(document).ready(function () {
-
-    })
-
-    $("#btnAddMaster").click(function () {
-
-        $("#partialModal").modal("show");
+     
     })
 </script>
 
