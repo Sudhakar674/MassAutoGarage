@@ -199,7 +199,7 @@
                                     <div class="col-xxl-3 col-md-4">
                                         <div>
                                             <label for="labelInput" class="form-label">Employee Name<code>*</code></label>
-                                            @Html.TextBoxFor(m => m.EmployeeName, new { @class = "form-control", tabindex = 2 })
+                                            @Html.TextBoxFor(m => m.EmployeeName, new { @class = "form-control", tabindex = 2, @onkeypress = "return onlyAlphabets();" })
                                             @Html.ValidationMessageFor(m => m.EmployeeName, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
                                         </div>
                                     </div>
@@ -259,15 +259,15 @@
                                             @Html.ValidationMessageFor(m => m.MaritalStatusId, "", new { @class = "text-danger" })
                                         </div>
                                     </div>
-                                    <div class="col-xxl-3 col-md-4">
-                                        <div>
-                                            <label for="labelInput" class="form-label"> Type<code>*</code></label>
-                                            <select id="ddlType" class="js-example-basic-single">
-                                                <option value="0">Select </option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-xxl-3 col-md-4">
+                                    @*<div class="col-xxl-3 col-md-4">
+                                            <div>
+                                                <label for="labelInput" class="form-label"> Type<code>*</code></label>
+                                                <select id="ddlType" class="js-example-basic-single">
+                                                        <option value="0">Select </option>
+                                                    </select>
+                                            </div>
+                                        </div>*@
+                                    <div class="col-xxl-8 col-md-8">
                                         <div>
                                             <label for="labelInput" class="form-label"> Gender / Blood Group<code>*</code></label>
                                             @Html.TextBoxFor(m => m.GenderBloodGroup, new { @class = "form-control", tabindex = 12 })
@@ -297,7 +297,7 @@
                                     <div class="col-xxl-3 col-md-4">
                                         <div>
                                             <label for="labelInput" class="form-label"> Passport Expiry Date <code>*</code></label>
-                                            @Html.TextBoxFor(m => m.PassportExpiryDate, new { @class = "form-control", tabindex = 15 , @readonly = true })
+                                            @Html.TextBoxFor(m => m.PassportExpiryDate, new { @class = "form-control", tabindex = 15, @readonly = true })
                                             @Html.ValidationMessageFor(m => m.PassportExpiryDate, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
                                         </div>
                                     </div>
@@ -331,7 +331,7 @@
                                     <div class="col-xxl-3 col-md-4">
                                         <div>
                                             <label for="labelInput" class="form-label">Emergency Contact No<code>*</code></label>
-                                            @Html.TextBoxFor(m => m.EmergencyContactNo, new { @class = "form-control", tabindex = 19 })
+                                            @Html.TextBoxFor(m => m.EmergencyContactNo, new { @class = "form-control", tabindex = 19, @onkeypress = "return isNumberKey(event)", @MaxLength = "15" })
                                             @Html.ValidationMessageFor(m => m.EmergencyContactNo, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
                                         </div>
                                     </div>
@@ -352,7 +352,7 @@
                                     <div class="col-xxl-3 col-md-4">
                                         <div>
                                             <label for="labelInput" class="form-label">Account No.(IBAN)<code>*</code></label>
-                                            @Html.TextBoxFor(m => m.AccountNo, new { @class = "form-control", tabindex = 21 })
+                                            @Html.TextBoxFor(m => m.AccountNo, new { @class = "form-control", tabindex = 21, @onkeypress = "return isNumberKey(event);" })
                                             @Html.ValidationMessageFor(m => m.AccountNo, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
                                         </div>
                                     </div>
@@ -471,6 +471,9 @@
 
                                         </div>
                                     </div>
+
+                                    @*////////////////////////////////////////////////////////////////////////////////////////////*@
+
                                     <div class="col-xxl-3 col-md-4">
                                         <div>
                                             <label for="labelInput" class="form-label">Additional Allowance <code>*</code></label>
@@ -500,6 +503,8 @@
                                             @Html.ValidationMessageFor(m => m.AccommodationAllowance, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
                                         </div>
                                     </div>
+
+                                    @*////////////////////////////////////////////////////////////////////////////////////////////*@
                                     <div class="col-xxl-3 col-md-4">
                                         <div>
                                             <label for="labelInput" class="form-label"> Cola <code>*</code></label>
@@ -526,7 +531,7 @@
                                     <div class="col-xxl-3 col-md-4">
                                         <div>
                                             <label for="labelInput" class="form-label"> Telephone<code>*</code></label>
-                                            @Html.TextBoxFor(m => m.Telephone, new { @class = "form-control", tabindex = 43 })
+                                            @Html.TextBoxFor(m => m.Telephone, new { @class = "form-control", tabindex = 43, @onkeypress = "return isNumberKey(event);" })
                                             @Html.ValidationMessageFor(m => m.Telephone, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
                                         </div>
                                     </div>
@@ -671,13 +676,13 @@
                             </fieldset>
 
                             @*<div class="col-xxl-3 col-md-4">
-                                <div>
-                                    <label for="labelInput" class="form-label">Gratuity<code>*</code></label>
-                                    <select id="ddlGratuity" class="js-example-basic-single">
-                                        <option value="0">Select </option>
-                                    </select>
-                                </div>
-                            </div>*@
+                                    <div>
+                                        <label for="labelInput" class="form-label">Gratuity<code>*</code></label>
+                                        <select id="ddlGratuity" class="js-example-basic-single">
+                                            <option value="0">Select </option>
+                                        </select>
+                                    </div>
+                                </div>*@
                         </div>
                         <!--end row-->
                     </div>
@@ -704,38 +709,34 @@
 
 
 @section scripts{
-
-
     <!--select2 cdn-->
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-
     <script src="~/assets/js/pages/select2.init.js"></script>
     <script src="~/assets/libs/prismjs/prism.js"></script>
     <script src="~/assets/js/app.js"></script>
-
     <!-- prismjs plugin -->
     <!-- App js -->
-
-
 }
-
-
 <script src="~/Scripts/jquery-3.4.1.min.js"></script>
 <script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
-
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 @*<link rel="stylesheet" href="/resources/demos/style.css">*@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="~/MyApp/AddONS.js"></script>
 
-
 <script src="~/MyApp/HRMS_Employee.js"></script>
 
 <script>
     $(document).ready(function () {
-     
     })
 </script>
+
+@*@MaxLength="15"*@
+
+
+
+
+
 

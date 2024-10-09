@@ -2,6 +2,7 @@
 using DocumentFormat.OpenXml.Bibliography;
 using MassAutoGarage.DBContext;
 using MassAutoGarage.Models.HRMS_Employee;
+using MassAutoGarage.Models.HRMS_EmployeeDocuments;
 using MassAutoGarage.Models.HRMS_Holiday;
 using System;
 using System.Collections.Generic;
@@ -110,7 +111,7 @@ namespace MassAutoGarage.Data.HRMS_Employee
                 Parameters.Add("@NationalityId", obj.NationalityId);
                 Parameters.Add("@DateOfBirth", obj.DateOfBirth);
                 Parameters.Add("@MaritalStatusId", obj.MaritalStatusId);
-                Parameters.Add("@TypeId", obj.TypeId);
+                //Parameters.Add("@TypeId", obj.TypeId);
                 Parameters.Add("@GenderBloodGroup", obj.GenderBloodGroup);
                 Parameters.Add("@PassportNo", obj.PassportNo); 
                 Parameters.Add("@PassportIssueDate", obj.PassportIssueDate);
@@ -135,10 +136,12 @@ namespace MassAutoGarage.Data.HRMS_Employee
                 Parameters.Add("@BasicSalary", obj.BasicSalary);
                 Parameters.Add("@Transportation", obj.Transportation);
                 Parameters.Add("@Accommodation", obj.Accommodation);
+
                 Parameters.Add("@AdditionalAllowance", obj.AdditionalAllowance);
                 Parameters.Add("@Standard", obj.Standard);
                 Parameters.Add("@Skill", obj.Skill);
                 Parameters.Add("@AccommodationAllowance", obj.AccommodationAllowance);
+
                 Parameters.Add("@Cola", obj.Cola);
                 Parameters.Add("@Education", obj.Education);
                 Parameters.Add("@CarAllowance", obj.CarAllowance);
@@ -170,6 +173,45 @@ namespace MassAutoGarage.Data.HRMS_Employee
                 throw;
             }
         }
+
+
+
+        public List<HRMSEmployeeModel> EmployeeList()
+        {
+            List<HRMSEmployeeModel> obj = new List<HRMSEmployeeModel>();
+            try
+            {
+                var Parameters = new DynamicParameters();
+                Parameters.Add("@QueryType", "31");
+                obj = DBHelperDapper.DAAddAndReturnModelList<HRMSEmployeeModel>("USP_HRMS_Employee", Parameters);
+                return obj;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     }
 }
