@@ -82,6 +82,11 @@ namespace MassAutoGarage.Models.HRMS_Employee
         public string TicketIssuedPerYear { get; set; }
         public string Photo { get; set; }
 
+        public string EmployeeId { get; set; }
+
+        public List<HRMSEmployeeModel> EmployeeList { get; set; }
+
+
 
     }
 }

@@ -1,4 +1,4 @@
-﻿@model List<MassAutoGarage.Models.AddOnsMaster.AddOnsMasterModel>
+﻿@model List<MassAutoGarage.Models.HRMS_Employee.HRMSEmployeeModel>
 
 @{
     ViewBag.Title = "Employee";
@@ -32,6 +32,7 @@
         }
 </style>
 
+
 <script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
 @section styles{
@@ -57,14 +58,6 @@
                     </div>
                 </div>
             </div>
-
-            @*<div class="card-header">
-            <h5 class="card-title mb-0">EMPLOYEE</h5>
-            <a href="@Url.Action("Employee","HRMS_Employee")" class="btn btn-primary" style="float:right;" tabindex="1"><i class="ri-add-circle-line align-middle me-1"></i>ADD EMPLOYEE</a>
-        </div>*@
-
-
-
             <div class="card-body">
                 <div class="col-lg-12">
                     <div class="live-preview">
@@ -89,40 +82,15 @@
                         <thead>
                             <tr>
                                 <th style=" width: 1%;">S.N.</th>
-                                <th style="white-space: nowrap">Employee Name</th>
-                                <th style="white-space: nowrap">Number of working Hours </th>
-                                <th style="white-space: nowrap">Standard Total Time work</th>
-                                <th style="white-space: nowrap">Over Time (Minutes)</th>
-                                <th style="white-space: nowrap">Over Time Rate</th>
-                                <th style="white-space: nowrap">Basic Salary</th>
-                                <th style="white-space: nowrap">Salary</th>
-                                <th style="white-space: nowrap">Over Time Salary</th>
-                                <th style="white-space: nowrap">Total Salary</th>
-                                <th style=" width: 15%;">Action</th>
-
+                                <th>Employee Code</th>
+                                <th>Employee Name</th>
+                                <th>Designation</th>
+                                <th>Reporting Manager</th>
+                                @*<th>Photo</th>*@
+                                <th>Action</th>
                             </tr>
                         </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
-
-                    <table id="CompanyGroup" class="table pure-table" style="width: 100%; display: none;" cellspacing="0" cellpadding="0">
-                        <thead>
-                            <tr>
-                                <th colspan="5">
-                                    <img src="@ViewBag.compnylgo" alt="" style="width: 213px; border-radius: 7px;">
-                                    <span style=" float: right;"> <b>Address  :-</b> @ViewBag.compnyAddress</span>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th style=" width: 1%;">Srl.No</th>
-                                <th>Voucher Code</th>
-                                <th>Service Name </th>
-                                <th>Comission</th>
-                                <th>Comission Amt.</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+                        <tbody id="tBodyId">
                         </tbody>
                     </table>
                 </div>
@@ -132,173 +100,139 @@
 
 </div>
 
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Employee</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <fieldset>
+                    <legend style="background-color:#c3c3d9;">Employee Details</legend>
+                    <div class="row gy-4">
+                        <div class="col-xxl-3 col-md-3">
+                            <div>
+                                <label for="labelInput" class="form-label">Employee Code</label>
+                                <p id="EmployeeCode"></p>
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-md-3">
+                            <div>
+                                <label for="labelInput" class="form-label">Employee Name</label>
+                                <p id="EmployeeName"></p>
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-md-3">
+                            <div>
+                                <label for="labelInput" class="form-label">Designation</label>
+                                <p id="Designation"></p>
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-md-3">
+                            <div>
+                                <label for="labelInput" class="form-label">Reporting Manager</label>
+                                <p id="ReportingManager"></p>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend style="background-color:#c3c3d9;">Passport Details</legend>
+                    <div class="row gy-4">
+                        <div class="col-xxl-3 col-md-4">
+                            <div>
+                                <label for="labelInput" class="form-label">Employee Code</label>
+                                <p id="EmployeeCode"></p>
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-md-4">
+                            <div>
+                                <label for="labelInput" class="form-label">Employee Name</label>
+                                <p id="EmployeeName"></p>
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-md-4">
+                            <div>
+                                <label for="labelInput" class="form-label">Designation</label>
+                                <p id="Designation"></p>
+                            </div>
+                        </div>
+                     
+
+
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend style="background-color:#c3c3d9;">Contact  Details</legend>
+                    <div class="row gy-4">
+                        <div class="col-xxl-3 col-md-4">
+                            <div>
+                                <label for="labelInput" class="form-label">Employee Code</label>
+                                <p id="EmployeeCode"></p>
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-md-4">
+                            <div>
+                                <label for="labelInput" class="form-label">Employee Name</label>
+                                <p id="EmployeeName"></p>
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-md-4">
+                            <div>
+                                <label for="labelInput" class="form-label">Designation</label>
+                                <p id="Designation"></p>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+
+
+            </div>
+
+            <div class="modal-footer">
+                @*<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>*@
+            </div>
+        </div>
+    </div>
+</div>
+
+
 @section scripts{
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
-    <!--datatable js-->
-    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-
-    <script src="~/assets/js/pages/datatables.init.js"></script>
-
+    <!-- prismjs plugin -->
+    <script src="~/assets/libs/prismjs/prism.js"></script>
     <!-- App js -->
     <script src="~/assets/js/app.js"></script>
 }
 <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script src="~/MyApp/HRMS_Employee.js"></script>
 
 <script>
     $(document).ready(function () {
+        EmployeeList();
+    })
 
-        var queryString = new Array();
-        if (queryString.length == 0) {
-            if (window.location.search.split('?').length > 1) {
-                var params = window.location.search.split('?')[1].split('&');
-                for (var i = 0; i < params.length; i++) {
-                    var key = params[i].split('=')[0];
-                    var value = decodeURIComponent(params[i].split('=')[1]);
-                    queryString[key] = value;
-                }
-            }
-
-            $('#txtsearch').val(queryString[key]);
-        }
-
-
-
-    });
-
-    function ConfirmDelete(GrdId) {
-        debugger;
-        var x = confirm("Are you sure you want to delete?");
-        if (x)
-
-            if (GrdId > 0) {
-                $.ajax({
-                    url: '/AddOnsMaster/DeleteAddONS',
-                    type: "GET",
-                    dataType: "json",
-                    data: { AddONSID: GrdId },
-                    success: function (result) {
-                        if (result == "3") {
-
-                            swal({
-                                title: "Success",
-                                text: "Records Successfully Deleted",
-                                type: "success",
-                            }).then(function (isConfirm) {
-                                if (isConfirm) {
-
-                                    window.location.reload();
-                                } else {
-
-                                }
-                            });
-
-                        } else {
-
-                            swal("Warning", "Records not Deleted", "warning");
-                        }
-
-                    },
-                    error: function (xhr, status) {
-                        console.log(status);
-                        console.log(xhr);
-                    },
-                    complete: function () {
-
-                    }
-                });
-            }
-            else
-                return false;
-    }
-
-    $('#txtsearch').change(function () {
-
-        searchfromDB();
-    });
-
-    function searchfromDB() {
-        debugger;
-
-        var SearchKey = $('#txtsearch').val();
-        var url = "/AddOnsMaster/OnsDetails?Key=" + SearchKey;
-        window.location.href = url;
-    }
-    function generate() {
-        var doc = new jspdf.jsPDF()
-
-        // Simple data example
-        //var head = [['ID', 'Country', 'Rank', 'Capital']]
-        //var body = [
-        //    [1, 'Denmark', 7.526, 'Copenhagen'],
-        //    [2, 'Switzerland', 7.509, 'Bern'],
-        //    [3, 'Iceland', 7.501, 'Reykjavík'],
-        //]
-        //doc.autoTable({ head: head, body: body })
-
-        // Simple html example
-        doc.autoTable({ html: '#CompanyGroup' })
-
-        doc.save('Nationality.pdf')
-    }
-
-    $(function () {
-
-        //var tble = document.getElementById('CompanyGroup');
-        //var row = tble.rows;
-        //var i = 6;
-        //for (var j = 0; j < row.length; j++) {
-
-
-        //    row[j].deleteCell(i);
-        //}
-
-
-
-        var table = $('#example').DataTable();
-        $("#btnExport").click(function (e) {
-            debugger;
-
-            // Getting the table
-
-
-            table.page.len(-1).draw();
-            window.open('data:application/vnd.ms-excel,' +
-                encodeURIComponent($('#example').parent().html()));
-            setTimeout(function () {
-                table.page.len(10).draw();
-            }, 1000)
-
-        });
-    });
+    //function ViewEmployeeDetails() {
+    //    debugger;
+    //    $("#staticBackdrop").modal('show');
+    //}
 </script>
-<script type="text/javascript">
-    $("body").on("click", "#btnPdf", function () {
-        debugger;
 
-        $('#CompanyGroup').css("display", "inline-table");
 
-        html2canvas($('#CompanyGroup')[0], {
-            onrendered: function (canvas) {
-                var data = canvas.toDataURL();
-                var docDefinition = {
-                    content: [{
-                        image: data,
-                        width: 500
-                    }]
-                };
-                pdfMake.createPdf(docDefinition).download("AddONSDetails.pdf");
-                $('#CompanyGroup').css("display", "none");
-            }
-        });
-    });
 
-</script>
+
+
+
