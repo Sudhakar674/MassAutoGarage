@@ -367,9 +367,7 @@ function EmployeeList() {
                 tr += "<td style='Display:none' class='Remarks_" + v.EmployeeId + "'>" + v.Remarks + "</td>";
                 tr += "<td style='Display:none' class='Organization_" + v.EmployeeId + "'>" + v.Organization + "</td>";
                 tr += "<td style='Display:none' class='TicketIssuedPerYear_" + v.EmployeeId + "'>" + v.TicketIssuedPerYear + "</td>";
-                tr += "<td style='Display:none' class='Photo_" + v.EmployeeId + "'>" + "<img src='" + v.Photo + "'/>" + "</td>";
-                /*---------------------------------------------End----------------------------------------------------*/
-                /*  tr += "<td>" + "<img src='" + v.Photo + "' style='height:90px;width:90px;'/>" + "</td>";*/
+                tr += "<td style='Display:none'>" + "<img src='" + v.Photo + "' style='height:90px;width:90px;' class='Photo_" + v.EmployeeId + "'/>" + "</td>";
                 tr += "<td><a onclick='return ViewEmployeeDetails(" + v.EmployeeId + ")' class='btn btn-sm btn-primary edit-item-btn'>View<i class='fa fa-eye'></i></a> <a onclick='return EditEmployee(" + v.EmployeeId + ")' class='btn btn-sm btn-success edit-item-btn'>Edit<i class='fa fa-edit'></i></a> <a onclick='return DeleteEmployee(" + v.EmployeeId + ")' class='btn btn-sm btn-danger remove-item-btn DeleteContactTr'><i class='fa fa-trash' aria-hidden='true'></i>Delete</a></td>";
                 tr += "</tr>";
                 $("#tBodyId").append(tr);
@@ -378,24 +376,300 @@ function EmployeeList() {
     });
 }
 
-
-
 function ViewEmployeeDetails(Id) {
     debugger;
-
     var EmployeeId_ = $(".EmployeeId_" + Id).text();
     var EmployeeCode_ = $(".EmployeeCode_" + Id).text();
     var EmployeeName_ = $(".EmployeeName_" + Id).text();
     var Designation_ = $(".Designation_" + Id).text();
     var ReportingManager_ = $(".ReportingManager_" + Id).text();
-
-
-
+    var DepartmentName_ = $(".DepartmentName_" + Id).text();
+    var JoiningDate_ = $(".JoiningDate_" + Id).text();
+    var BranchName_ = $(".BranchName_" + Id).text();
+    var Nationality_ = $(".Nationality_" + Id).text();
+    var DateOfBirth_ = $(".DateOfBirth_" + Id).text();
+    var MaritalStatus_ = $(".MaritalStatus_" + Id).text();
+    var GenderBloodGroup_ = $(".GenderBloodGroup_" + Id).text();
+    var PassportNo_ = $(".PassportNo_" + Id).text();
+    var PassportIssueDate_ = $(".PassportIssueDate_" + Id).text();
+    var PassportExpiryDate_ = $(".PassportExpiryDate_" + Id).text();
+    var HomeCountryAirport_ = $(".HomeCountryAirport_" + Id).text();
+    var HomeCountryContactNumber1_ = $(".HomeCountryContactNumber1_" + Id).text();
+    var HomeCountryContactNumber2_ = $(".HomeCountryContactNumber2_" + Id).text();
+    var EmergencyContactNo_ = $(".EmergencyContactNo_" + Id).text();
+    var Email_ = $(".Email_" + Id).text();
+    var AccountNo_ = $(".AccountNo_" + Id).text();
+    var WPSDebitCardNumber_ = $(".WPSDebitCardNumber_" + Id).text();
+    var WPSExpiry_ = $(".WPSExpiry_" + Id).text();
+    var TotalLeavePerYear_ = $(".TotalLeavePerYear_" + Id).text();
+    var NoOfWorkingHours_ = $(".NoOfWorkingHours_" + Id).text();
+    var NoOfDays_ = $(".NoOfDays_" + Id).text();
+    var LabourCardNo_ = $(".LabourCardNo_" + Id).text();
+    var LabourCardExpiry_ = $(".LabourCardExpiry_" + Id).text();
+    var PersonCode_ = $(".PersonCode_" + Id).text();
+    var UAEContactNo1_ = $(".UAEContactNo1_" + Id).text();
+    var UAEContactNo2_ = $(".UAEContactNo2_" + Id).text();
+    var UAEAddress_ = $(".UAEAddress_" + Id).text();
+    var BasicSalary_ = $(".BasicSalary_" + Id).text();
+    var Transportation_ = $(".Transportation_" + Id).text();
+    var Accommodation_ = $(".Accommodation_" + Id).text();
+    var AdditionalAllowance_ = $(".AdditionalAllowance_" + Id).text();
+    var Standard_ = $(".Standard_" + Id).text();
+    var Skill_ = $(".Skill_" + Id).text();
+    var AccommodationAllowance_ = $(".AccommodationAllowance_" + Id).text();
+    var Cola_ = $(".Cola_" + Id).text();
+    var Education_ = $(".Education_" + Id).text();
+    var CarAllowance_ = $(".CarAllowance_" + Id).text();
+    var Telephone_ = $(".Telephone_" + Id).text();
+    var Others_ = $(".Others_" + Id).text();
+    var TotalSalary_ = $(".TotalSalary_" + Id).text();
+    var EmiratesID_ = $(".EmiratesID_" + Id).text();
+    var EmiratesIDExpiry_ = $(".EmiratesIDExpiry_" + Id).text();
+    var VisaUIDNo_ = $(".VisaUIDNo_" + Id).text();
+    var VisaFileNo_ = $(".VisaFileNo_" + Id).text();
+    var VisaPlaceOfIssue_ = $(".VisaPlaceOfIssue_" + Id).text();
+    var VisaIssueDate_ = $(".VisaIssueDate_" + Id).text();
+    var VisaExpiry_ = $(".VisaExpiry_" + Id).text();
+    var InsuranceProvider_ = $(".InsuranceProvider_" + Id).text();
+    var InsuranceNumber_ = $(".InsuranceNumber_" + Id).text();
+    var InsuranceExpiry_ = $(".InsuranceExpiry_" + Id).text();
+    var Status_ = $(".Status_" + Id).text();
+    var ResignationTerminationDate_ = $(".ResignationTerminationDate_" + Id).text();
+    var Remarks_ = $(".Remarks_" + Id).text();
+    var Organization_ = $(".Organization_" + Id).text();
+    var TicketIssuedPerYear_ = $(".TicketIssuedPerYear_" + Id).text();
+    var Photo_ = $(".Photo_" + Id).attr('src');
+    /*---------------------------------------------------------------------------------------------------------------------------*/
     $("#EmployeeCode").text(EmployeeCode_);
     $("#EmployeeName").text(EmployeeName_);
     $("#Designation").text(Designation_);
     $("#ReportingManager").text(ReportingManager_);
+    $("#DepartmentName").text(DepartmentName_);
+    $("#JoiningDate").text(JoiningDate_);
+    $("#BranchName").text(BranchName_);
+    $("#Nationality").text(Nationality_);
+    $("#DateOfBirth").text(DateOfBirth_);
+    $("#MaritalStatus").text(MaritalStatus_);
+    $("#GenderBloodGroup").text(GenderBloodGroup_);
+    $("#PassportNo").text(PassportNo_);
+    $("#PassportIssueDate").text(PassportIssueDate_);
+    $("#PassportExpiryDate").text(PassportExpiryDate_);
+    $("#HomeCountryAirport").text(HomeCountryAirport_);
+    $("#HomeCountryContactNumber1").text(HomeCountryContactNumber1_);
+    $("#HomeCountryContactNumber2").text(HomeCountryContactNumber2_);
+    $("#EmergencyContactNo").text(EmergencyContactNo_);
+    $("#Email").text(Email_);
+    $("#AccountNo").text(AccountNo_);
+    $("#WPSDebitCardNumber").text(WPSDebitCardNumber_);
+    $("#WPSExpiry").text(WPSExpiry_);
+    $("#TotalLeavePerYear").text(TotalLeavePerYear_);
+    $("#NoOfWorkingHours").text(NoOfWorkingHours_);
+    $("#NoOfDays").text(NoOfDays_);
+    $("#LabourCardNo").text(LabourCardNo_);
+    $("#LabourCardExpiry").text(LabourCardExpiry_);
+    $("#PersonCode").text(PersonCode_);
+    $("#UAEContactNo1").text(UAEContactNo1_);
+    $("#UAEContactNo2").text(UAEContactNo2_);
+    $("#UAEAddress").text(UAEAddress_);
+    $("#BasicSalary").text(BasicSalary_);
+    $("#Transportation").text(Transportation_);
+    $("#Accommodation").text(Accommodation_);
+    $("#AdditionalAllowance").text(AdditionalAllowance_);
+    $("#Standard").text(Standard_);
+    $("#Skill").text(Skill_);
+    $("#AccommodationAllowance").text(AccommodationAllowance_);
+    $("#Cola").text(Cola_);
+    $("#Education").text(Education_);
+    $("#CarAllowance").text(CarAllowance_);
+    $("#Telephone").text(Telephone_);
+    $("#Others").text(Others_);
+    $("#TotalSalary").text(TotalSalary_);
+    $("#EmiratesID").text(EmiratesID_);
+    $("#EmiratesIDExpiry").text(EmiratesIDExpiry_);
+    $("#VisaUIDNo").text(VisaUIDNo_);
+    $("#VisaFileNo").text(VisaFileNo_);
+    $("#VisaPlaceOfIssue").text(VisaPlaceOfIssue_);
+    $("#VisaIssueDate").text(VisaIssueDate_);
+    $("#VisaExpiry").text(VisaExpiry_);
+    $("#InsuranceProvider").text(InsuranceProvider_);
+    $("#InsuranceNumber").text(InsuranceNumber_);
+    $("#InsuranceExpiry_").text(InsuranceExpiry_);
+    $("#Status").text(Status_);
+    $("#ResignationTerminationDate").text(ResignationTerminationDate_);
+    $("#Remarks").text(Remarks_);
+    $("#Organization").text(Organization_);
+    $("#TicketIssuedPerYear").text(TicketIssuedPerYear_);
+    $('#Photo').attr('src', Photo_);
 
-    $("#staticBackdrop").modal('show');
+    $("#EmployeeModal").modal('show');
+}
 
+function DeleteEmployee(Id) {
+    debugger;
+    var x = confirm("Are you sure you want to delete?");
+    if (x == true) {
+        $.ajax({
+            type: 'POST',
+            url: '/HRMS_Employee/DeleteEmployee',
+            data: { EmployeeId: Id },
+            dataType: 'json',
+            success: function (data) {
+                if (data.Result == "yes") {
+                    swal({
+                        title: "Success",
+                        text: "Records Successfully Deleted",
+                        type: "success",
+                    }).then(function (isConfirm) {
+                        if (isConfirm) {
+                            window.location.reload();
+                        } else {
+                        }
+                    });
+                }
+                else {
+                    swal("Warning", "Records not Deleted", "warning");
+                }
+            },
+            error: function (xhr, status) {
+                console.log(status);
+                console.log(xhr);
+            },
+            complete: function () {
+            }
+        });
+    }
+    else {
+        return false;
+    }
+
+}
+
+
+function EditEmployee(Id) {
+    debugger;
+    var EmployeeId_ = $(".EmployeeId_" + Id).text();
+    var EmployeeCode_ = $(".EmployeeCode_" + Id).text();
+    var EmployeeName_ = $(".EmployeeName_" + Id).text();
+    var Designation_ = $(".Designation_" + Id).text();
+    var ReportingManager_ = $(".ReportingManager_" + Id).text();
+    var DeptID_ = $(".DeptID_" + Id).text();
+    var JoiningDate_ = $(".JoiningDate_" + Id).text();
+    var BranchId_ = $(".BranchId_" + Id).text();
+    var NationalityId_ = $(".NationalityId_" + Id).text();
+    var DateOfBirth_ = $(".DateOfBirth_" + Id).text();
+    var MaritalStatusId_ = $(".MaritalStatusId_" + Id).text();
+    var GenderBloodGroup_ = $(".GenderBloodGroup_" + Id).text();
+    var PassportNo_ = $(".PassportNo_" + Id).text();
+    var PassportIssueDate_ = $(".PassportIssueDate_" + Id).text();
+    var PassportExpiryDate_ = $(".PassportExpiryDate_" + Id).text();
+    var HomeCountryAirport_ = $(".HomeCountryAirport_" + Id).text();
+    var HomeCountryContactNumber1_ = $(".HomeCountryContactNumber1_" + Id).text();
+    var HomeCountryContactNumber2_ = $(".HomeCountryContactNumber2_" + Id).text();
+    var EmergencyContactNo_ = $(".EmergencyContactNo_" + Id).text();
+    var Email_ = $(".Email_" + Id).text();
+    var AccountNo_ = $(".AccountNo_" + Id).text();
+    var WPSDebitCardNumber_ = $(".WPSDebitCardNumber_" + Id).text();
+    var WPSExpiry_ = $(".WPSExpiry_" + Id).text();
+    var TotalLeavePerYear_ = $(".TotalLeavePerYear_" + Id).text();
+    var NoOfWorkingHours_ = $(".NoOfWorkingHours_" + Id).text();
+    var NoOfDays_ = $(".NoOfDays_" + Id).text();
+    var LabourCardNo_ = $(".LabourCardNo_" + Id).text();
+    var LabourCardExpiry_ = $(".LabourCardExpiry_" + Id).text();
+    var PersonCode_ = $(".PersonCode_" + Id).text();
+    var UAEContactNo1_ = $(".UAEContactNo1_" + Id).text();
+    var UAEContactNo2_ = $(".UAEContactNo2_" + Id).text();
+    var UAEAddress_ = $(".UAEAddress_" + Id).text();
+    var BasicSalary_ = $(".BasicSalary_" + Id).text();
+    var Transportation_ = $(".Transportation_" + Id).text();
+    var Accommodation_ = $(".Accommodation_" + Id).text();
+    var AdditionalAllowance_ = $(".AdditionalAllowance_" + Id).text();
+    var Standard_ = $(".Standard_" + Id).text();
+    var Skill_ = $(".Skill_" + Id).text();
+    var AccommodationAllowance_ = $(".AccommodationAllowance_" + Id).text();
+    var Cola_ = $(".Cola_" + Id).text();
+    var Education_ = $(".Education_" + Id).text();
+    var CarAllowance_ = $(".CarAllowance_" + Id).text();
+    var Telephone_ = $(".Telephone_" + Id).text();
+    var Others_ = $(".Others_" + Id).text();
+    var TotalSalary_ = $(".TotalSalary_" + Id).text();
+    var EmiratesID_ = $(".EmiratesID_" + Id).text();
+    var EmiratesIDExpiry_ = $(".EmiratesIDExpiry_" + Id).text();
+    var VisaUIDNo_ = $(".VisaUIDNo_" + Id).text();
+    var VisaFileNo_ = $(".VisaFileNo_" + Id).text();
+    var VisaPlaceOfIssue_ = $(".VisaPlaceOfIssue_" + Id).text();
+    var VisaIssueDate_ = $(".VisaIssueDate_" + Id).text();
+    var VisaExpiry_ = $(".VisaExpiry_" + Id).text();
+    var InsuranceProvider_ = $(".InsuranceProvider_" + Id).text();
+    var InsuranceNumber_ = $(".InsuranceNumber_" + Id).text();
+    var InsuranceExpiry_ = $(".InsuranceExpiry_" + Id).text();
+    var StatusId_ = $(".StatusId_" + Id).text();
+    var ResignationTerminationDate_ = $(".ResignationTerminationDate_" + Id).text();
+    var Remarks_ = $(".Remarks_" + Id).text();
+    var Organization_ = $(".Organization_" + Id).text();
+    var TicketIssuedPerYear_ = $(".TicketIssuedPerYear_" + Id).text();
+    var Photo_ = $(".Photo_" + Id).attr('src');
+
+    $("#EmployeeId").text(EmployeeId_);
+    $("#EmployeeCode").text(EmployeeCode_);
+    $("#EmployeeName").text(EmployeeName_);
+    $("#Designation").text(Designation_);
+    $("#ReportingManager").text(ReportingManager_);
+    $("#DeptID").text(DeptID_);
+    $("#JoiningDate").text(JoiningDate_);
+    $("#BranchId").text(BranchId_);
+    $("#NationalityId").text(NationalityId_);
+    $("#DateOfBirth").text(DateOfBirth_);
+    $("#MaritalStatusId").text(MaritalStatusId_);
+    $("#GenderBloodGroup").text(GenderBloodGroup_);
+    $("#PassportNo").text(PassportNo_);
+    $("#PassportIssueDate").text(PassportIssueDate_);
+    $("#PassportExpiryDate").text(PassportExpiryDate_);
+    $("#HomeCountryAirport").text(HomeCountryAirport_);
+    $("#HomeCountryContactNumber1").text(HomeCountryContactNumber1_);
+    $("#HomeCountryContactNumber2").text(HomeCountryContactNumber2_);
+    $("#EmergencyContactNo").text(EmergencyContactNo_);
+    $("#Email").text(Email_);
+    $("#AccountNo").text(AccountNo_);
+    $("#WPSDebitCardNumber").text(WPSDebitCardNumber_);
+    $("#WPSExpiry").text(WPSExpiry_);
+    $("#TotalLeavePerYear").text(TotalLeavePerYear_);
+    $("#NoOfWorkingHours").text(NoOfWorkingHours_);
+    $("#NoOfDays").text(NoOfDays_);
+    $("#LabourCardNo").text(LabourCardNo_);
+    $("#LabourCardExpiry").text(LabourCardExpiry_);
+    $("#PersonCode").text(PersonCode_);
+    $("#UAEContactNo1").text(UAEContactNo1_);
+    $("#UAEContactNo2").text(UAEContactNo2_);
+    $("#UAEAddress").text(UAEAddress_);
+    $("#BasicSalary").text(BasicSalary_);
+    $("#Transportation").text(Transportation_);
+    $("#Accommodation").text(Accommodation_);
+    $("#AdditionalAllowance").text(AdditionalAllowance_);
+    $("#Standard").text(Standard_);
+    $("#Skill").text(Skill_);
+    $("#AccommodationAllowance").text(AccommodationAllowance_);
+    $("#Cola").text(Cola_);
+    $("#Education").text(Education_);
+    $("#CarAllowance").text(CarAllowance_);
+    $("#Telephone").text(Telephone_);
+    $("#Others").text(Others_);
+    $("#TotalSalary").text(TotalSalary_);
+    $("#EmiratesID").text(EmiratesID_);
+    $("#EmiratesIDExpiry").text(EmiratesIDExpiry_);
+    $("#VisaUIDNo").text(VisaUIDNo_);
+    $("#VisaFileNo").text(VisaFileNo_);
+    $("#VisaPlaceOfIssue").text(VisaPlaceOfIssue_);
+    $("#VisaIssueDate").text(VisaIssueDate_);
+    $("#VisaExpiry").text(VisaExpiry_);
+    $("#InsuranceProvider").text(InsuranceProvider_);
+    $("#InsuranceNumber").text(InsuranceNumber_);
+    $("#InsuranceExpiry_").text(InsuranceExpiry_);
+    $("#StatusId").text(StatusId_);
+    $("#ResignationTerminationDate").text(ResignationTerminationDate_);
+    $("#Remarks").text(Remarks_);
+    $("#Organization").text(Organization_);
+    $("#TicketIssuedPerYear").text(TicketIssuedPerYear_);
+    $('#Photo').attr('src', Photo_);
+
+    $("#btnsave").val('Update');
 }

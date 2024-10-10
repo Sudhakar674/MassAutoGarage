@@ -30,6 +30,21 @@
             border: 1px solid #ccc;
             border-width: thin;
         }
+    fieldset {
+        border: solid;
+        border-color: #181616;
+        border-width: thin;
+    }
+
+    legend {
+        float: none;
+        width: 29%;
+        background-color: #bbb1b1;
+        color: white;
+        padding: 5px 10px;
+        font-size: small;
+        margin-bottom:20px;
+    }
 </style>
 
 
@@ -61,6 +76,7 @@
             <div class="card-body">
                 <div class="col-lg-12">
                     <div class="live-preview">
+
                         <div class="row gy-4 mb-3">
                             <div class="col-xxl-4 col-md-6 col-5">
                                 Advance Filter <input type="text" id="txtsearch" class="form-control" tabindex="2" />
@@ -102,97 +118,259 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="EmployeeModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="EmployeeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Employee</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h5 class="modal-title" id="EmployeeModalLabel"><strong>Employee</strong></h5>
+                <button type="button" class="btn-close btn btn-danger" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-
-                <fieldset>
-                    <legend style="background-color:#c3c3d9;">Employee Details</legend>
-                    <div class="row gy-4">
-                        <div class="col-xxl-3 col-md-3">
-                            <div>
-                                <label for="labelInput" class="form-label">Employee Code</label>
-                                <p id="EmployeeCode"></p>
-                            </div>
-                        </div>
-                        <div class="col-xxl-3 col-md-3">
-                            <div>
-                                <label for="labelInput" class="form-label">Employee Name</label>
-                                <p id="EmployeeName"></p>
-                            </div>
-                        </div>
-                        <div class="col-xxl-3 col-md-3">
-                            <div>
-                                <label for="labelInput" class="form-label">Designation</label>
-                                <p id="Designation"></p>
-                            </div>
-                        </div>
-                        <div class="col-xxl-3 col-md-3">
-                            <div>
-                                <label for="labelInput" class="form-label">Reporting Manager</label>
-                                <p id="ReportingManager"></p>
-                            </div>
-                        </div>
+                <fieldset class="mb-4">
+                    <legend style="background-color:#0a0a0a;">Employee Details</legend>
+                    <div class="table-responsive">
+                        <table border="1" id="example" class="display table table-bordered" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>Employee Code</th>
+                                    <th>Employee Name</th>
+                                    <th>Designation</th>
+                                    <th>Reporting Manager</th>
+                                    <th>Department</th>
+                                    <th>Joining Date</th>
+                                    <th>Branch Name</th>
+                                    <th>Nationality</th>
+                                    <th>Date Of Birth</th>
+                                    <th>Marital Status</th>
+                                    <th>Gender / Blood Group</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td id="EmployeeCode"></td>
+                                    <td id="EmployeeName"></td>
+                                    <td id="Designation"></td>
+                                    <td id="ReportingManager"></td>
+                                    <td id="DepartmentName"></td>
+                                    <td id="JoiningDate"></td>
+                                    <td id="BranchName"></td>
+                                    <td id="Nationality"></td>
+                                    <td id="DateOfBirth"></td>
+                                    <td id="MaritalStatus"></td>
+                                    <td id="GenderBloodGroup"></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </fieldset>
 
-                <fieldset>
-                    <legend style="background-color:#c3c3d9;">Passport Details</legend>
-                    <div class="row gy-4">
-                        <div class="col-xxl-3 col-md-4">
-                            <div>
-                                <label for="labelInput" class="form-label">Employee Code</label>
-                                <p id="EmployeeCode"></p>
-                            </div>
-                        </div>
-                        <div class="col-xxl-3 col-md-4">
-                            <div>
-                                <label for="labelInput" class="form-label">Employee Name</label>
-                                <p id="EmployeeName"></p>
-                            </div>
-                        </div>
-                        <div class="col-xxl-3 col-md-4">
-                            <div>
-                                <label for="labelInput" class="form-label">Designation</label>
-                                <p id="Designation"></p>
-                            </div>
-                        </div>
-                     
-
-
+                <fieldset class="mb-4">
+                    <legend style="background-color: #0a0a0a;">Passport Details</legend>
+                    <div class="table-responsive">
+                        <table border="1" id="example" class="display table table-bordered" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>Passport No</th>
+                                    <th>Passport Issue Date</th>
+                                    <th>Passport Expiry Date</th>
+                                    <th>Home Country Airport</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td id="PassportNo"></td>
+                                    <td id="PassportIssueDate"></td>
+                                    <td id="PassportExpiryDate"></td>
+                                    <td id="HomeCountryAirport"></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </fieldset>
 
-                <fieldset>
-                    <legend style="background-color:#c3c3d9;">Contact  Details</legend>
-                    <div class="row gy-4">
-                        <div class="col-xxl-3 col-md-4">
-                            <div>
-                                <label for="labelInput" class="form-label">Employee Code</label>
-                                <p id="EmployeeCode"></p>
-                            </div>
-                        </div>
-                        <div class="col-xxl-3 col-md-4">
-                            <div>
-                                <label for="labelInput" class="form-label">Employee Name</label>
-                                <p id="EmployeeName"></p>
-                            </div>
-                        </div>
-                        <div class="col-xxl-3 col-md-4">
-                            <div>
-                                <label for="labelInput" class="form-label">Designation</label>
-                                <p id="Designation"></p>
-                            </div>
-                        </div>
+                <fieldset class="mb-4">
+                    <legend style="background-color: #0a0a0a;">Contact  Details</legend>
+                    <div class="table-responsive">
+                        <table border="1" id="example" class="display table table-bordered" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>Home Country Contact Number1</th>
+                                    <th>Home Country Contact Number2</th>
+                                    <th>Emergency Contact No</th>
+                                    <th>Email</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td id="HomeCountryContactNumber1"></td>
+                                    <td id="HomeCountryContactNumber2"></td>
+                                    <td id="EmergencyContactNo"></td>
+                                    <td id="Email"></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </fieldset>
 
+                <fieldset class="mb-4">
+                    <legend style="background-color: #0a0a0a;">Account Details</legend>
+                    <div class="table-responsive">
+                        <table border="1" id="example" class="display table table-bordered" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>Account No</th>
+                                    <th>WPS Debit Card Number</th>
+                                    <th>WPS Expiry</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td id="AccountNo"></td>
+                                    <td id="WPSDebitCardNumber"></td>
+                                    <td id="WPSExpiry"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </fieldset>
 
+                <fieldset class="mb-4">
+                    <legend style="background-color: #0a0a0a;">Leave Details</legend>
+                    <div class="table-responsive">
+                        <table border="1" id="example" class="display table table-bordered" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>Total Leave Per Year</th>
+                                    <th>No Of Working Hours</th>
+                                    <th>No Of Days</th>
+                                    <th>Labour Card No</th>
+                                    <th>Labour Card Expiry</th>
+                                    <th>Person Code</th>
+                                    <th>UAE Contact No1</th>
+                                    <th>UAE Contact No2</th>
+                                    <th>UAE Address</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td id="TotalLeavePerYear"></td>
+                                    <td id="NoOfWorkingHours"></td>
+                                    <td id="NoOfDays"></td>
+                                    <td id="LabourCardNo"></td>
+                                    <td id="LabourCardExpiry"></td>
+                                    <td id="PersonCode"></td>
+                                    <td id="UAEContactNo1"></td>
+                                    <td id="UAEContactNo2"></td>
+                                    <td id="UAEAddress"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </fieldset>
+
+                <fieldset class="mb-4">
+                    <legend style="background-color: #0a0a0a;">Salary Details</legend>
+                    <div class="table-responsive">
+                        <table border="1" id="example" class="display table table-bordered" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>Basic Salary</th>
+                                    <th>Transportation</th>
+                                    <th>Accommodation</th>
+                                    <th>Additional Allowance</th>
+                                    <th>Standard</th>
+                                    <th>Skill</th>
+                                    <th>Accommodation Allowance</th>
+                                    <th>Cola</th>
+                                    <th>Education</th>
+                                    <th>Car Allowance</th>
+                                    <th>Telephone</th>
+                                    <th>Others</th>
+                                    <th>Total Salary</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td id="BasicSalary"></td>
+                                    <td id="Transportation"></td>
+                                    <td id="Accommodation"></td>
+                                    <td id="AdditionalAllowance"></td>
+                                    <td id="Standard"></td>
+                                    <td id="Skill"></td>
+                                    <td id="AccommodationAllowance"></td>
+                                    <td id="Cola"></td>
+                                    <td id="Education"></td>
+                                    <td id="CarAllowance"></td>
+                                    <td id="Telephone"></td>
+                                    <td id="Others"></td>
+                                    <td id="TotalSalary"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </fieldset>
+
+                <fieldset class="mb-4">
+                    <legend style="background-color: #0a0a0a;">Visa Details</legend>
+                    <div class="table-responsive">
+                        <table border="1" id="example" class="display table table-bordered" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>EmiratesID</th>
+                                    <th>EmiratesID Expiry</th>
+                                    <th>Visa UID No</th>
+                                    <th>Visa File No</th>
+                                    <th>Visa Place Of Issue</th>
+                                    <th>Visa Issue Date</th>
+                                    <th>Visa Expiry</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td id="EmiratesID"></td>
+                                    <td id="EmiratesIDExpiry"></td>
+                                    <td id="VisaUIDNo"></td>
+                                    <td id="VisaFileNo"></td>
+                                    <td id="VisaPlaceOfIssue"></td>
+                                    <td id="VisaIssueDate"></td>
+                                    <td id="VisaExpiry"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </fieldset>
+
+                <fieldset class="mb-4">
+                    <legend style="background-color: #0a0a0a;">Insurance Details</legend>
+                    <div class="table-responsive">
+                        <table border="1" id="example" class="display table table-bordered" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>Insurance Provider</th>
+                                    <th>Insurance Number</th>
+                                    <th>Status</th>
+                                    <th>Resignation / Termination Date</th>
+                                    <th>Remarks</th>
+                                    <th>Organization</th>
+                                    <th>Ticket Issued Per Year</th>
+                                    <th>Photo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td id="InsuranceProvider"></td>
+                                    <td id="InsuranceNumber"></td>
+                                    <td id="Status"></td>
+                                    <td id="ResignationTerminationDate"></td>
+                                    <td id="Remarks"></td>
+                                    <td id="Organization"></td>
+                                    <td id="TicketIssuedPerYear"></td>
+                                    <td><img src="" id="Photo" style='height:90px;width:90px;'></img></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </fieldset>
 
             </div>
 
@@ -224,11 +402,6 @@
     $(document).ready(function () {
         EmployeeList();
     })
-
-    //function ViewEmployeeDetails() {
-    //    debugger;
-    //    $("#staticBackdrop").modal('show');
-    //}
 </script>
 
 
