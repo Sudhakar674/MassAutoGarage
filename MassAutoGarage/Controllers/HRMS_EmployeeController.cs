@@ -1,7 +1,9 @@
-﻿using MassAutoGarage.Data.HRMS_Employee;
+﻿using MassAutoGarage.Data;
+using MassAutoGarage.Data.HRMS_Employee;
 using MassAutoGarage.Models.HRMS_Employee;
 using MassAutoGarage.Models.HRMS_EmployeeDocuments;
 using MassAutoGarage.Models.HRMS_Holiday;
+using Org.BouncyCastle.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -19,24 +21,10 @@ namespace MassAutoGarage.Controllers
         HRMSEmployeeModel model = new HRMSEmployeeModel();
         public ActionResult Index()
         {
-            //List<HRMSEmployeeModel> EmployeeList = new List<HRMSEmployeeModel>();
-
-            //var GroupList = DL.EmployeeList();
-            //foreach (var i in GroupList)
-            //{
-            //    EmployeeList.Add(new HRMSEmployeeModel
-            //    {
-            //        EmployeeId = i.EmployeeId,
-            //        EmployeeCode = i.EmployeeCode,
-            //        EmployeeName = i.EmployeeName,
-            //        Photo = i.Photo
-            //    });
-            //}
-            //return Json(EmployeeList, JsonRequestBehavior.AllowGet);
             return View();
         }
 
-        public ActionResult Employee()
+        public ActionResult Employee(HRMSEmployeeModel model, string Id)
         {
             ViewBag.DepartmentDropdownList = DL.DepartmentDropdownList();
             ViewBag.BranchLocationDropdownList = DL.BranchLocationDropdownList();
@@ -44,7 +32,21 @@ namespace MassAutoGarage.Controllers
             ViewBag.MaritalStatusDropdownList = DL.MaritalStatusDropdownList();
             ViewBag.StatusDropdownList = DL.StatusDropdownList();
 
-            return View();
+            if (Id != null)
+            {
+                model.EmployeeId = Id;
+                model.QueryType = "42";
+                var lst = DL.GetEmployeeDetaildById(model).FirstOrDefault();
+
+                if (lst != null)
+                {
+                    model.EmployeeId = lst.EmployeeId;
+                    model.EmployeeCode = lst.EmployeeCode;
+                    model.EmployeeName = lst.EmployeeName;         
+                }
+            }
+
+            return View(model);      
         }
 
         [HttpPost]
@@ -86,57 +88,100 @@ namespace MassAutoGarage.Controllers
                 EmployeeList.Add(new HRMSEmployeeModel
                 {
                     EmployeeId = i.EmployeeId,
-                    DepartmentId=i.DepartmentId,
-                    DepartmentName=i.DepartmentName,
+                    DepartmentId = i.DepartmentId,
+                    DepartmentName = i.DepartmentName,
                     BranchLocationId = i.BranchLocationId,
-                    BranchName =i.BranchName,
-                    NationalityId=i.NationalityId,
-                    Nationality=i.Nationality,
-                    MaritalStatusId=i.MaritalStatusId,
-                    MaritalStatus=i.MaritalStatus,
-                    StatusId=i.StatusId,
-                    Status=i.Status,
+                    BranchName = i.BranchName,
+                    NationalityId = i.NationalityId,
+                    Nationality = i.Nationality,
+                    MaritalStatusId = i.MaritalStatusId,
+                    MaritalStatus = i.MaritalStatus,
+                    StatusId = i.StatusId,
+                    Status = i.Status,
                     EmployeeCode = i.EmployeeCode,
                     EmployeeName = i.EmployeeName,
                     Designation = i.Designation,
                     ReportingManager = i.ReportingManager,
-                    JoiningDate= i.JoiningDate,
-                    DateOfBirth= i.DateOfBirth,
-                    GenderBloodGroup= i.GenderBloodGroup,
-                    PassportNo= i.PassportNo,
-                    PassportIssueDate= i.PassportIssueDate,
-                    PassportExpiryDate= i.PassportExpiryDate,
-                    HomeCountryAirport= i.HomeCountryAirport,
-                    HomeCountryContactNumber1= i.HomeCountryContactNumber1,
+                    JoiningDate = i.JoiningDate,
+                    DateOfBirth = i.DateOfBirth,
+                    GenderBloodGroup = i.GenderBloodGroup,
+                    PassportNo = i.PassportNo,
+                    PassportIssueDate = i.PassportIssueDate,
+                    PassportExpiryDate = i.PassportExpiryDate,
+                    HomeCountryAirport = i.HomeCountryAirport,
+                    HomeCountryContactNumber1 = i.HomeCountryContactNumber1,
                     HomeCountryContactNumber2 = i.HomeCountryContactNumber2,
-                    EmergencyContactNo= i.EmergencyContactNo,
-                    Email=i.Email,
-                    AccountNo= i.AccountNo,
-                    WPSDebitCardNumber=i.WPSDebitCardNumber,
-                    WPSExpiry=i.WPSExpiry,
-                    TotalLeavePerYear= i.TotalLeavePerYear,
-                    NoOfWorkingHours= i.NoOfWorkingHours,
-                    NoOfDays= i.NoOfDays,
-                    LabourCardNo= i.LabourCardNo,
-                    LabourCardExpiry= i.LabourCardExpiry,
-                    PersonCode= i.PersonCode,
-
-
+                    EmergencyContactNo = i.EmergencyContactNo,
+                    Email = i.Email,
+                    AccountNo = i.AccountNo,
+                    WPSDebitCardNumber = i.WPSDebitCardNumber,
+                    WPSExpiry = i.WPSExpiry,
+                    TotalLeavePerYear = i.TotalLeavePerYear,
+                    NoOfWorkingHours = i.NoOfWorkingHours,
+                    NoOfDays = i.NoOfDays,
+                    LabourCardNo = i.LabourCardNo,
+                    LabourCardExpiry = i.LabourCardExpiry,
+                    PersonCode = i.PersonCode,
+                    UAEContactNo1 = i.UAEContactNo1,
+                    UAEContactNo2 = i.UAEContactNo2,
+                    UAEAddress = i.UAEAddress,
+                    BasicSalary = i.BasicSalary,
+                    Transportation = i.Transportation,
+                    Accommodation = i.Accommodation,
+                    AdditionalAllowance = i.AdditionalAllowance,
+                    Standard = i.Standard,
+                    Skill = i.Skill,
+                    AccommodationAllowance = i.AccommodationAllowance,
+                    Cola = i.Cola,
+                    Education = i.Education,
+                    CarAllowance = i.CarAllowance,
+                    Telephone = i.Telephone,
+                    Others = i.Others,
+                    TotalSalary = i.TotalSalary,
+                    EmiratesID = i.EmiratesID,
+                    EmiratesIDExpiry = i.EmiratesIDExpiry,
+                    VisaUIDNo = i.VisaUIDNo,
+                    VisaFileNo = i.VisaFileNo,
+                    VisaPlaceOfIssue = i.VisaPlaceOfIssue,
+                    VisaIssueDate = i.VisaIssueDate,
+                    VisaExpiry = i.VisaExpiry,
+                    InsuranceProvider = i.InsuranceProvider,
+                    InsuranceNumber = i.InsuranceNumber,
+                    InsuranceExpiry = i.InsuranceExpiry,
+                    ResignationTerminationDate = i.ResignationTerminationDate,
+                    Remarks = i.Remarks,
+                    Organization = i.Organization,
+                    TicketIssuedPerYear = i.TicketIssuedPerYear,
                     Photo = i.Photo
                 });
             }
             return Json(EmployeeList, JsonRequestBehavior.AllowGet);
         }
 
-  //   HE.Id as EmployeeId, DeptID,DepartmentName,BM.ID as BranchId,BranchName,NM.ID as NationalityId,Nationality,
-  //   HMS.ID as MaritalStatusId,MaritalStatus,SM.ID as StatusId,Status ,EmployeeCode,EmployeeName,Designation,ReportingManager,
-  //   JoiningDate,BranchLocationId,NationalityId,DateOfBirth,MaritalStatusId,GenderBloodGroup,PassportNo,PassportIssueDate,
-  //   PassportExpiryDate,HomeCountryAirport,HomeCountryContactNumber1,HomeCountryContactNumber2,EmergencyContactNo,Email,AccountNo,
-  //   WPSDebitCardNumber,WPSExpiry,TotalLeavePerYear,NoOfWorkingHours,NoOfDays,LabourCardNo,LabourCardExpiry,PersonCode,UAEContactNo1,
-  //   UAEContactNo2,
-	 //UAEAddress,BasicSalary,Transportation,Accommodation,AdditionalAllowance,Standard,Skill,AccommodationAllowance,Cola,Education,CarAllowance,
-  //   Telephone,Others,TotalSalary,EmiratesID,EmiratesIDExpiry,VisaUIDNo,VisaFileNo,VisaPlaceOfIssue,VisaIssueDate,VisaExpiry,InsuranceProvider,
-  //   InsuranceNumber,InsuranceExpiry,StatusId,ResignationTerminationDate,Remarks,Organization,TicketIssuedPerYear,Photo
+        [HttpPost]
+        public ActionResult DeleteEmployee(HRMSEmployeeModel model, string EmployeeId)
+        {
+            try
+            {
+                model.EmployeeId = (EmployeeId);
+                model.QueryType = "41";
+                model = DL.DeleteEmployee(model);
+                if (model.Message == "1")
+                {
+                    model.Result = "yes";
+                }
+                else
+                {
+                    model.Result = "";
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return Json(model, JsonRequestBehavior.AllowGet);
+        }
+
 
 
     }

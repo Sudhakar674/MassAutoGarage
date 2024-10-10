@@ -291,8 +291,6 @@ function EmployeeDocumentsList() {
     });
 }
 
-
-
 function DeleteEmployeeDocuments(Id) {
     /*alert(Id);*/
     debugger;
@@ -333,8 +331,6 @@ function DeleteEmployeeDocuments(Id) {
     }
 
 }
-
-
 
 $('#EmployeeName').keypress(function (e) {
     debugger;

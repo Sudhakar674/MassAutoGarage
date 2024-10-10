@@ -192,7 +192,40 @@ namespace MassAutoGarage.Data.HRMS_Employee
             }
         }
 
+        public HRMSEmployeeModel DeleteEmployee(HRMSEmployeeModel obj)
+        {
+            try
+            {
+                var Parameters = new DynamicParameters();
 
+                Parameters.Add("@QueryType", obj.QueryType);
+                Parameters.Add("@EmployeeId", obj.EmployeeId);
+                var _iresult = DBHelperDapper.DAAddAndReturnModel<HRMSEmployeeModel>("USP_HRMS_Employee", Parameters);
+                return _iresult;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+
+        public List<HRMSEmployeeModel> GetEmployeeDetaildById(HRMSEmployeeModel objmodel)
+        {
+            List<HRMSEmployeeModel> obj = new List<HRMSEmployeeModel>();
+            try
+            {
+                var Parameters = new DynamicParameters();
+                Parameters.Add("@QueryType", objmodel.QueryType);
+                Parameters.Add("@EmployeeId", objmodel.EmployeeId);
+                obj = DBHelperDapper.DAAddAndReturnModelList<HRMSEmployeeModel>("USP_HRMS_Employee", Parameters);
+                return obj;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
 
 
