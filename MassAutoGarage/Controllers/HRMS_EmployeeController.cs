@@ -24,7 +24,7 @@ namespace MassAutoGarage.Controllers
             return View();
         }
 
-        public ActionResult Employee(HRMSEmployeeModel model, string Id)
+        public ActionResult Employee(HRMSEmployeeModel model, string EmployeeId)
         {
             ViewBag.DepartmentDropdownList = DL.DepartmentDropdownList();
             ViewBag.BranchLocationDropdownList = DL.BranchLocationDropdownList();
@@ -32,22 +32,202 @@ namespace MassAutoGarage.Controllers
             ViewBag.MaritalStatusDropdownList = DL.MaritalStatusDropdownList();
             ViewBag.StatusDropdownList = DL.StatusDropdownList();
 
-            if (Id != null)
-            {
-                model.EmployeeId = Id;
-                model.QueryType = "42";
-                var lst = DL.GetEmployeeDetaildById(model).FirstOrDefault();
 
-                if (lst != null)
+            try
+            {
+                if (EmployeeId != null)
                 {
-                    model.EmployeeId = lst.EmployeeId;
-                    model.EmployeeCode = lst.EmployeeCode;
-                    model.EmployeeName = lst.EmployeeName;         
+                    model.EmployeeId = EmployeeId;
+                    model.QueryType = "42";
+                    var lst = DL.GetEmployeeDetaildById(model).FirstOrDefault();
+
+                    //if (model.Message == "1")
+                    //{
+                    model.Result = "yes";
+
+                    if (lst != null)
+                    {
+                        model.EmployeeId = lst.EmployeeId;
+                        model.EmployeeCode = lst.EmployeeCode;
+                        model.EmployeeName = lst.EmployeeName;
+                        model.Designation = lst.Designation;
+                        model.ReportingManager = lst.ReportingManager;
+                        model.DeptID = model.DeptID;
+                        model.JoiningDate = lst.JoiningDate;
+                        model.BranchId = lst.BranchId;
+                        model.NationalityId = lst.NationalityId;
+                        model.DateOfBirth = lst.DateOfBirth;
+                        model.MaritalStatusId = lst.MaritalStatusId;
+                        model.GenderBloodGroup = lst.GenderBloodGroup;
+                        model.PassportNo = lst.PassportNo;
+                        model.PassportIssueDate = lst.PassportIssueDate;
+                        model.PassportExpiryDate = lst.PassportExpiryDate;
+                        model.HomeCountryAirport = lst.HomeCountryAirport;
+                        model.HomeCountryContactNumber1 = lst.HomeCountryContactNumber1;
+                        model.HomeCountryContactNumber2 = lst.HomeCountryContactNumber2;
+                        model.EmergencyContactNo = lst.EmergencyContactNo;
+                        model.Email = lst.Email;
+                        model.AccountNo = lst.AccountNo;
+                        model.WPSDebitCardNumber = lst.WPSDebitCardNumber;
+                        model.WPSExpiry = lst.WPSExpiry;
+                        model.TotalLeavePerYear = lst.TotalLeavePerYear;
+                        model.NoOfWorkingHours = lst.NoOfWorkingHours;
+                        model.NoOfDays = lst.NoOfDays;
+                        model.LabourCardNo = lst.LabourCardNo;
+                        model.LabourCardExpiry = lst.LabourCardExpiry;
+                        model.PersonCode = lst.PersonCode;
+                        model.UAEContactNo1 = lst.UAEContactNo1;
+                        model.UAEContactNo2 = lst.UAEContactNo2;
+                        model.UAEAddress = lst.UAEAddress;
+                        model.Transportation = lst.Transportation;
+                        model.Accommodation = lst.Accommodation;
+                        model.AdditionalAllowance = lst.AdditionalAllowance;
+                        model.Standard = lst.Standard;
+                        model.Skill = lst.Skill;
+                        model.AccommodationAllowance = lst.AccommodationAllowance;
+                        model.Cola = lst.Cola;
+                        model.Education = lst.Education;
+                        model.CarAllowance = lst.CarAllowance;
+                        model.Telephone = lst.Telephone;
+                        model.Others = lst.Others;
+                        model.TotalSalary = lst.TotalSalary;
+                        model.EmiratesID = lst.EmiratesID;
+                        model.EmiratesIDExpiry = lst.EmiratesIDExpiry;
+                        model.VisaUIDNo = lst.VisaUIDNo;
+                        model.VisaFileNo = lst.VisaFileNo;
+                        model.VisaPlaceOfIssue = lst.VisaPlaceOfIssue;
+                        model.VisaPlaceOfIssue = lst.VisaPlaceOfIssue;
+                        model.InsuranceProvider = lst.InsuranceProvider;
+                        model.InsuranceNumber = lst.InsuranceNumber;
+                        model.InsuranceExpiry = lst.InsuranceExpiry;
+                        model.StatusId = lst.StatusId;
+                        model.ResignationTerminationDate = lst.ResignationTerminationDate;
+                        model.Remarks = lst.Remarks;
+                        model.Organization = lst.Organization;
+                        model.TicketIssuedPerYear = lst.TicketIssuedPerYear;
+                        model.Photo = lst.Photo;
+                    }
+                    //}
+                    //else
+                    //{
+                    //    model.Result = "";
+                    //}
                 }
             }
+            catch (Exception)
+            {
+                throw;
+            }
+            return Json(model, JsonRequestBehavior.AllowGet);
 
-            return View(model);      
+
+
+
+
+
+            //return View();
         }
+
+        [HttpPost]
+        public ActionResult EditEmployee(HRMSEmployeeModel model, string EmployeeId)
+        {
+
+            try
+            {
+                if (EmployeeId != null)
+                {
+                    model.EmployeeId = EmployeeId;
+                    model.QueryType = "42";
+                    var lst = DL.GetEmployeeDetaildById(model).FirstOrDefault();
+
+                    //if (model.Message == "1")
+                    //{
+                    model.Result = "yes";
+
+                    if (lst != null)
+                    {
+                        model.EmployeeId = lst.EmployeeId;
+                        model.EmployeeCode = lst.EmployeeCode;
+                        model.EmployeeName = lst.EmployeeName;
+                        model.Designation = lst.Designation;
+                        model.ReportingManager = lst.ReportingManager;
+                        model.DeptID = model.DeptID;
+                        model.JoiningDate = lst.JoiningDate;
+                        model.BranchId = lst.BranchId;
+                        model.NationalityId = lst.NationalityId;
+                        model.DateOfBirth = lst.DateOfBirth;
+                        model.MaritalStatusId = lst.MaritalStatusId;
+                        model.GenderBloodGroup = lst.GenderBloodGroup;
+                        model.PassportNo = lst.PassportNo;
+                        model.PassportIssueDate = lst.PassportIssueDate;
+                        model.PassportExpiryDate = lst.PassportExpiryDate;
+                        model.HomeCountryAirport = lst.HomeCountryAirport;
+                        model.HomeCountryContactNumber1 = lst.HomeCountryContactNumber1;
+                        model.HomeCountryContactNumber2 = lst.HomeCountryContactNumber2;
+                        model.EmergencyContactNo = lst.EmergencyContactNo;
+                        model.Email = lst.Email;
+                        model.AccountNo = lst.AccountNo;
+                        model.WPSDebitCardNumber = lst.WPSDebitCardNumber;
+                        model.WPSExpiry = lst.WPSExpiry;
+                        model.TotalLeavePerYear = lst.TotalLeavePerYear;
+                        model.NoOfWorkingHours = lst.NoOfWorkingHours;
+                        model.NoOfDays = lst.NoOfDays;
+                        model.LabourCardNo = lst.LabourCardNo;
+                        model.LabourCardExpiry = lst.LabourCardExpiry;
+                        model.PersonCode = lst.PersonCode;
+                        model.UAEContactNo1 = lst.UAEContactNo1;
+                        model.UAEContactNo2 = lst.UAEContactNo2;
+                        model.UAEAddress = lst.UAEAddress;
+                        model.Transportation = lst.Transportation;
+                        model.Accommodation = lst.Accommodation;
+                        model.AdditionalAllowance = lst.AdditionalAllowance;
+                        model.Standard = lst.Standard;
+                        model.Skill = lst.Skill;
+                        model.AccommodationAllowance = lst.AccommodationAllowance;
+                        model.Cola = lst.Cola;
+                        model.Education = lst.Education;
+                        model.CarAllowance = lst.CarAllowance;
+                        model.Telephone = lst.Telephone;
+                        model.Others = lst.Others;
+                        model.TotalSalary = lst.TotalSalary;
+                        model.EmiratesID = lst.EmiratesID;
+                        model.EmiratesIDExpiry = lst.EmiratesIDExpiry;
+                        model.VisaUIDNo = lst.VisaUIDNo;
+                        model.VisaFileNo = lst.VisaFileNo;
+                        model.VisaPlaceOfIssue = lst.VisaPlaceOfIssue;
+                        model.VisaPlaceOfIssue = lst.VisaPlaceOfIssue;
+                        model.InsuranceProvider = lst.InsuranceProvider;
+                        model.InsuranceNumber = lst.InsuranceNumber;
+                        model.InsuranceExpiry = lst.InsuranceExpiry;
+                        model.StatusId = lst.StatusId;
+                        model.ResignationTerminationDate = lst.ResignationTerminationDate;
+                        model.Remarks = lst.Remarks;
+                        model.Organization = lst.Organization;
+                        model.TicketIssuedPerYear = lst.TicketIssuedPerYear;
+                        model.Photo = lst.Photo;
+                    }
+                    //}
+                    //else
+                    //{
+                    //    model.Result = "";
+                    //}
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return Json(model, JsonRequestBehavior.AllowGet);
+        }
+
+
+
+
+
+
+
+
+
 
         [HttpPost]
         public ActionResult SaveEmployee(HRMSEmployeeModel model, HttpPostedFileBase Photo)

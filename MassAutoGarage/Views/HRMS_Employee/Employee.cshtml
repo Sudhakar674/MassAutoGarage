@@ -192,7 +192,10 @@
                                     <div class="col-xxl-3 col-md-4">
                                         <div>
                                             <label for="labelInput" class="form-label"> Employee Code  <code>*</code></label>
-                                            @Html.HiddenFor(m=>m.EmployeeId)
+                                            @*@Html.HiddenFor(m=>m.EmployeeId)*@
+
+                                            <input type="text" id="EmployeeId" />
+
                                             @Html.TextBoxFor(m => m.EmployeeCode, new { @class = "form-control", tabindex = 1 })
                                             @Html.ValidationMessageFor(m => m.EmployeeCode, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
                                         </div>
