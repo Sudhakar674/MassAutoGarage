@@ -84,6 +84,8 @@ namespace MassAutoGarage.Models.HRMS_Employee
 
         public string EmployeeId { get; set; }
 
+        public string EmployeeIdKey { get; set; }
+
         public List<HRMSEmployeeModel> EmployeeList { get; set; }
 
 

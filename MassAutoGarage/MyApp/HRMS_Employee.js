@@ -157,6 +157,11 @@ $("#btnsave").click(function (e) {
     var Remarks_ = $("#Remarks").val();
     var Organization_ = $("#Organization").val();
     var TicketIssuedPerYear_ = $("#TicketIssuedPerYear").val();
+    var EmployeeId_ = $("#EmployeeId").val();
+
+    
+
+
 
     //////////////////////////////////////////////////////////////////////////
 
@@ -168,6 +173,7 @@ $("#btnsave").click(function (e) {
             var files = fileUpload.files;
 
             var formData = new FormData();
+            formData.append('EmployeeId', $("#EmployeeId").val());
             formData.append('EmployeeCode', $("#EmployeeCode").val());
             formData.append('EmployeeName', $("#EmployeeName").val());
             formData.append('Designation', $("#Designation").val());
@@ -251,20 +257,20 @@ $("#btnsave").click(function (e) {
                             }
                         });
                     }
-                    //else if (data.Result == "yes1") {
-                    //    swal({
-                    //        title: "Success",
-                    //        text: "Records Successfully Updated",
-                    //        type: "success",
-                    //    }).then(function (isConfirm) {
-                    //        if (isConfirm) {
-                    //            /* window.location.reload();*/
-                    //            window.location.href = '/HRMS_EmployeeDocuments/Index';
-                    //        }
-                    //        else {
-                    //        }
-                    //    });
-                    //}
+                    else if (data.Result == "yes1") {
+                        swal({
+                            title: "Success",
+                            text: "Records Successfully Updated",
+                            type: "success",
+                        }).then(function (isConfirm) {
+                            if (isConfirm) {
+                                /* window.location.reload();*/
+                                window.location.href = '/HRMS_Employee/Index';
+                            }
+                            else {
+                            }
+                        });
+                    }
                     else {
                         swal("Warning", "Record not save!", "warning");
                     }
@@ -302,6 +308,7 @@ function EmployeeList() {
                 var SerialNo = tableLength + 1;
                 var tr = "<tr>";
                 tr += "<td>" + SerialNo + "</td>";
+             /*   tr += "<td style='Display:none'>" + v.EmployeeIdKey + "</td>";*/
                 tr += "<td style='Display:none'  class='EmployeeId_" + v.EmployeeId + "'>" + v.EmployeeId + "</td>";
                 tr += "<td class='EmployeeCode_" + v.EmployeeId + "'>" + v.EmployeeCode + "</td>";
                 tr += "<td class='EmployeeName_" + v.EmployeeId + "'>" + v.EmployeeName + "</td>";
@@ -367,14 +374,15 @@ function EmployeeList() {
                 tr += "<td style='Display:none' class='Remarks_" + v.EmployeeId + "'>" + v.Remarks + "</td>";
                 tr += "<td style='Display:none' class='Organization_" + v.EmployeeId + "'>" + v.Organization + "</td>";
                 tr += "<td style='Display:none' class='TicketIssuedPerYear_" + v.EmployeeId + "'>" + v.TicketIssuedPerYear + "</td>";
-                tr += "<td style='Display:none'>" + "<img src='" + v.Photo + "' style='height:90px;width:90px;' class='Photo_" + v.EmployeeId + "'/>" + "</td>";
-                tr += "<td><a onclick='return ViewEmployeeDetails(" + v.EmployeeId + ")' class='btn btn-sm btn-primary edit-item-btn'>View<i class='fa fa-eye'></i></a> <a onclick='return EditEmployee(" + v.EmployeeId + ")' class='btn btn-sm btn-success edit-item-btn'>Edit<i class='fa fa-edit'></i></a> <a onclick='return DeleteEmployee(" + v.EmployeeId + ")' class='btn btn-sm btn-danger remove-item-btn DeleteContactTr'><i class='fa fa-trash' aria-hidden='true'></i>Delete</a></td>";
+                tr += "<td style='Display:none'>" + "<img src='" + v.Photo + "' style='height:90px;width:90px;' class='Photo_" + v.EmployeeId + "'/>" + "</td>";     
+                tr += "<td><a onclick='return ViewEmployeeDetails(" + v.EmployeeId + ")' class='btn btn-sm btn-primary edit-item-btn'>View<i class='fa fa-eye'></i></a>  <a onclick='return EditEmployee(" + v.EmployeeId + ")' class='btn btn-sm btn-success edit-item-btn'>Edit<i class='fa fa-edit'></i></a> <a onclick='return DeleteEmployee(" + v.EmployeeId + ")' class='btn btn-sm btn-danger remove-item-btn DeleteContactTr'><i class='fa fa-trash' aria-hidden='true'></i>Delete</a></td>";
                 tr += "</tr>";
                 $("#tBodyId").append(tr);
             });
         }
     });
 }
+
 
 function ViewEmployeeDetails(Id) {
     debugger;
@@ -544,223 +552,104 @@ function DeleteEmployee(Id) {
 
 }
 
+
 function EditEmployee(Id) {
     debugger;
-        $.ajax({
-            type: 'Get',
-            url: '/HRMS_Employee/Employee',
-            data: { EmployeeId: Id },
-            dataType: 'json',
-            success: function (data) {
-                if (data.Result == "yes") {
-                    $("#EmployeeId").val(EmployeeId);
-                    $("#EmployeeCode").val(EmployeeCode);
-                    $("#EmployeeName").val(EmployeeName);
-                    $("#Designation").val(Designation);
-                    $("#ReportingManager").val(ReportingManager_);
-                    $("#DeptID").val(DeptID);
-                    $("#JoiningDate").val(JoiningDate);
-                    $("#BranchId").val(BranchId);
-                    $("#NationalityId").val(NationalityId);
-                    $("#DateOfBirth").val(DateOfBirth);
-                    $("#MaritalStatusId").val(MaritalStatusId);
-                    $("#GenderBloodGroup").val(GenderBloodGroup);
-                    $("#PassportNo").val(PassportNo);
-                    $("#PassportIssueDate").val(PassportIssueDate);
-                    $("#PassportExpiryDate").val(PassportExpiryDate);
-                    $("#HomeCountryAirport").val(HomeCountryAirport);
-                    $("#HomeCountryContactNumber1").val(HomeCountryContactNumber1);
-                    $("#HomeCountryContactNumber2").val(HomeCountryContactNumber2);
-                    $("#EmergencyContactNo").val(EmergencyContactNo);
-                    $("#Email").val(Email);
-                    $("#AccountNo").val(AccountNo_);
-                    $("#WPSDebitCardNumber").val(WPSDebitCardNumber_);
-                    $("#WPSExpiry").val(WPSExpiry_);
-                    $("#TotalLeavePerYear").val(TotalLeavePerYear_);
-                    $("#NoOfWorkingHours").val(NoOfWorkingHours_);
-                    $("#NoOfDays").val(NoOfDays_);
-                    $("#LabourCardNo").val(LabourCardNo_);
-                    $("#LabourCardExpiry").val(LabourCardExpiry_);
-                    $("#PersonCode").val(PersonCode_);
-                    $("#UAEContactNo1").val(UAEContactNo1_);
-                    $("#UAEContactNo2").val(UAEContactNo2_);
-                    $("#UAEAddress").val(UAEAddress_);
-                    $("#BasicSalary").val(BasicSalary_);
-                    $("#Transportation").val(Transportation_);
-                    $("#Accommodation").val(Accommodation_);
-                    $("#AdditionalAllowance").val(AdditionalAllowance_);
-                    $("#Standard").val(Standard_);
-                    $("#Skill").val(Skill_);
-                    $("#AccommodationAllowance").val(AccommodationAllowance_);
-                    $("#Cola").val(Cola_);
-                    $("#Education").val(Education_);
-                    $("#CarAllowance").val(CarAllowance_);
-                    $("#Telephone").val(Telephone_);
-                    $("#Others").val(Others_);
-                    $("#TotalSalary").val(TotalSalary_);
-                    $("#EmiratesID").val(EmiratesID_);
-                    $("#EmiratesIDExpiry").val(EmiratesIDExpiry_);
-                    $("#VisaUIDNo").val(VisaUIDNo_);
-                    $("#VisaFileNo").val(VisaFileNo_);
-                    $("#VisaPlaceOfIssue").val(VisaPlaceOfIssue_);
-                    $("#VisaIssueDate").val(VisaIssueDate_);
-                    $("#VisaExpiry").val(VisaExpiry_);
-                    $("#InsuranceProvider").val(InsuranceProvider_);
-                    $("#InsuranceNumber").val(InsuranceNumber_);
-                    $("#InsuranceExpiry_").val(InsuranceExpiry_);
-                    $("#StatusId").val(StatusId_);
-                    $("#ResignationTerminationDate").val(ResignationTerminationDate_);
-                    $("#Remarks").val(Remarks_);
-                    $("#Organization").val(Organization_);
-                    $("#TicketIssuedPerYear").val(TicketIssuedPerYear_);
-                    $('#Photo').attr('src', Photo_);
-
-                    $("#btnsave").val('Update');
-                  /*  window.location.href = '/HRMS_Employee/Employee';*/
-                }
-                else {
-                    swal("Warning", "Something went wrong", "warning");
-                }
-            },
-            error: function (xhr, status) {
-                console.log(status);
-                console.log(xhr);
-            },
-            complete: function () {
-            }
-        });
+    window.location.href = '/HRMS_Employee/Employee?key=' + Id;
 }
 
 
 
-
-
-
-//function EditEmployeeKumar(Id) {
+//function EditEmployee(Id) {
 //    debugger;
-//    var EmployeeId_ = $(".EmployeeId_" + Id).text();
-//    var EmployeeCode_ = $(".EmployeeCode_" + Id).text();
-//    var EmployeeName_ = $(".EmployeeName_" + Id).text();
-//    var Designation_ = $(".Designation_" + Id).text();
-//    var ReportingManager_ = $(".ReportingManager_" + Id).text();
-//    var DeptID_ = $(".DeptID_" + Id).text();
-//    var JoiningDate_ = $(".JoiningDate_" + Id).text();
-//    var BranchId_ = $(".BranchId_" + Id).text();
-//    var NationalityId_ = $(".NationalityId_" + Id).text();
-//    var DateOfBirth_ = $(".DateOfBirth_" + Id).text();
-//    var MaritalStatusId_ = $(".MaritalStatusId_" + Id).text();
-//    var GenderBloodGroup_ = $(".GenderBloodGroup_" + Id).text();
-//    var PassportNo_ = $(".PassportNo_" + Id).text();
-//    var PassportIssueDate_ = $(".PassportIssueDate_" + Id).text();
-//    var PassportExpiryDate_ = $(".PassportExpiryDate_" + Id).text();
-//    var HomeCountryAirport_ = $(".HomeCountryAirport_" + Id).text();
-//    var HomeCountryContactNumber1_ = $(".HomeCountryContactNumber1_" + Id).text();
-//    var HomeCountryContactNumber2_ = $(".HomeCountryContactNumber2_" + Id).text();
-//    var EmergencyContactNo_ = $(".EmergencyContactNo_" + Id).text();
-//    var Email_ = $(".Email_" + Id).text();
-//    var AccountNo_ = $(".AccountNo_" + Id).text();
-//    var WPSDebitCardNumber_ = $(".WPSDebitCardNumber_" + Id).text();
-//    var WPSExpiry_ = $(".WPSExpiry_" + Id).text();
-//    var TotalLeavePerYear_ = $(".TotalLeavePerYear_" + Id).text();
-//    var NoOfWorkingHours_ = $(".NoOfWorkingHours_" + Id).text();
-//    var NoOfDays_ = $(".NoOfDays_" + Id).text();
-//    var LabourCardNo_ = $(".LabourCardNo_" + Id).text();
-//    var LabourCardExpiry_ = $(".LabourCardExpiry_" + Id).text();
-//    var PersonCode_ = $(".PersonCode_" + Id).text();
-//    var UAEContactNo1_ = $(".UAEContactNo1_" + Id).text();
-//    var UAEContactNo2_ = $(".UAEContactNo2_" + Id).text();
-//    var UAEAddress_ = $(".UAEAddress_" + Id).text();
-//    var BasicSalary_ = $(".BasicSalary_" + Id).text();
-//    var Transportation_ = $(".Transportation_" + Id).text();
-//    var Accommodation_ = $(".Accommodation_" + Id).text();
-//    var AdditionalAllowance_ = $(".AdditionalAllowance_" + Id).text();
-//    var Standard_ = $(".Standard_" + Id).text();
-//    var Skill_ = $(".Skill_" + Id).text();
-//    var AccommodationAllowance_ = $(".AccommodationAllowance_" + Id).text();
-//    var Cola_ = $(".Cola_" + Id).text();
-//    var Education_ = $(".Education_" + Id).text();
-//    var CarAllowance_ = $(".CarAllowance_" + Id).text();
-//    var Telephone_ = $(".Telephone_" + Id).text();
-//    var Others_ = $(".Others_" + Id).text();
-//    var TotalSalary_ = $(".TotalSalary_" + Id).text();
-//    var EmiratesID_ = $(".EmiratesID_" + Id).text();
-//    var EmiratesIDExpiry_ = $(".EmiratesIDExpiry_" + Id).text();
-//    var VisaUIDNo_ = $(".VisaUIDNo_" + Id).text();
-//    var VisaFileNo_ = $(".VisaFileNo_" + Id).text();
-//    var VisaPlaceOfIssue_ = $(".VisaPlaceOfIssue_" + Id).text();
-//    var VisaIssueDate_ = $(".VisaIssueDate_" + Id).text();
-//    var VisaExpiry_ = $(".VisaExpiry_" + Id).text();
-//    var InsuranceProvider_ = $(".InsuranceProvider_" + Id).text();
-//    var InsuranceNumber_ = $(".InsuranceNumber_" + Id).text();
-//    var InsuranceExpiry_ = $(".InsuranceExpiry_" + Id).text();
-//    var StatusId_ = $(".StatusId_" + Id).text();
-//    var ResignationTerminationDate_ = $(".ResignationTerminationDate_" + Id).text();
-//    var Remarks_ = $(".Remarks_" + Id).text();
-//    var Organization_ = $(".Organization_" + Id).text();
-//    var TicketIssuedPerYear_ = $(".TicketIssuedPerYear_" + Id).text();
-//    var Photo_ = $(".Photo_" + Id).attr('src');
+//    $.ajax({
+//        type: 'Get',
+//        url: '/HRMS_Employee/Employee',
+//        data: { Id: Id },
+//        dataType: 'json',
+//        success: function (data) {
+//            if (data.Result == "yes") {
+//                $("#EmployeeId").val(EmployeeId);
+//                $("#EmployeeCode").val(EmployeeCode);
+//                $("#EmployeeName").val(EmployeeName);
+//                $("#Designation").val(Designation);
+//                $("#ReportingManager").val(ReportingManager_);
+//                $("#DeptID").val(DeptID);
+//                $("#JoiningDate").val(JoiningDate);
+//                $("#BranchId").val(BranchId);
+//                $("#NationalityId").val(NationalityId);
+//                $("#DateOfBirth").val(DateOfBirth);
+//                $("#MaritalStatusId").val(MaritalStatusId);
+//                $("#GenderBloodGroup").val(GenderBloodGroup);
+//                $("#PassportNo").val(PassportNo);
+//                $("#PassportIssueDate").val(PassportIssueDate);
+//                $("#PassportExpiryDate").val(PassportExpiryDate);
+//                $("#HomeCountryAirport").val(HomeCountryAirport);
+//                $("#HomeCountryContactNumber1").val(HomeCountryContactNumber1);
+//                $("#HomeCountryContactNumber2").val(HomeCountryContactNumber2);
+//                $("#EmergencyContactNo").val(EmergencyContactNo);
+//                $("#Email").val(Email);
+//                $("#AccountNo").val(AccountNo_);
+//                $("#WPSDebitCardNumber").val(WPSDebitCardNumber_);
+//                $("#WPSExpiry").val(WPSExpiry_);
+//                $("#TotalLeavePerYear").val(TotalLeavePerYear_);
+//                $("#NoOfWorkingHours").val(NoOfWorkingHours_);
+//                $("#NoOfDays").val(NoOfDays_);
+//                $("#LabourCardNo").val(LabourCardNo_);
+//                $("#LabourCardExpiry").val(LabourCardExpiry_);
+//                $("#PersonCode").val(PersonCode_);
+//                $("#UAEContactNo1").val(UAEContactNo1_);
+//                $("#UAEContactNo2").val(UAEContactNo2_);
+//                $("#UAEAddress").val(UAEAddress_);
+//                $("#BasicSalary").val(BasicSalary_);
+//                $("#Transportation").val(Transportation_);
+//                $("#Accommodation").val(Accommodation_);
+//                $("#AdditionalAllowance").val(AdditionalAllowance_);
+//                $("#Standard").val(Standard_);
+//                $("#Skill").val(Skill_);
+//                $("#AccommodationAllowance").val(AccommodationAllowance_);
+//                $("#Cola").val(Cola_);
+//                $("#Education").val(Education_);
+//                $("#CarAllowance").val(CarAllowance_);
+//                $("#Telephone").val(Telephone_);
+//                $("#Others").val(Others_);
+//                $("#TotalSalary").val(TotalSalary_);
+//                $("#EmiratesID").val(EmiratesID_);
+//                $("#EmiratesIDExpiry").val(EmiratesIDExpiry_);
+//                $("#VisaUIDNo").val(VisaUIDNo_);
+//                $("#VisaFileNo").val(VisaFileNo_);
+//                $("#VisaPlaceOfIssue").val(VisaPlaceOfIssue_);
+//                $("#VisaIssueDate").val(VisaIssueDate_);
+//                $("#VisaExpiry").val(VisaExpiry_);
+//                $("#InsuranceProvider").val(InsuranceProvider_);
+//                $("#InsuranceNumber").val(InsuranceNumber_);
+//                $("#InsuranceExpiry_").val(InsuranceExpiry_);
+//                $("#StatusId").val(StatusId_);
+//                $("#ResignationTerminationDate").val(ResignationTerminationDate_);
+//                $("#Remarks").val(Remarks_);
+//                $("#Organization").val(Organization_);
+//                $("#TicketIssuedPerYear").val(TicketIssuedPerYear_);
+//                $('#Photo').attr('src', Photo_);
 
-//    $("#EmployeeId").text(EmployeeId_);
-//    $("#EmployeeCode").text(EmployeeCode_);
-//    $("#EmployeeName").text(EmployeeName_);
-//    $("#Designation").text(Designation_);
-//    $("#ReportingManager").text(ReportingManager_);
-//    $("#DeptID").text(DeptID_);
-//    $("#JoiningDate").text(JoiningDate_);
-//    $("#BranchId").text(BranchId_);
-//    $("#NationalityId").text(NationalityId_);
-//    $("#DateOfBirth").text(DateOfBirth_);
-//    $("#MaritalStatusId").text(MaritalStatusId_);
-//    $("#GenderBloodGroup").text(GenderBloodGroup_);
-//    $("#PassportNo").text(PassportNo_);
-//    $("#PassportIssueDate").text(PassportIssueDate_);
-//    $("#PassportExpiryDate").text(PassportExpiryDate_);
-//    $("#HomeCountryAirport").text(HomeCountryAirport_);
-//    $("#HomeCountryContactNumber1").text(HomeCountryContactNumber1_);
-//    $("#HomeCountryContactNumber2").text(HomeCountryContactNumber2_);
-//    $("#EmergencyContactNo").text(EmergencyContactNo_);
-//    $("#Email").text(Email_);
-//    $("#AccountNo").text(AccountNo_);
-//    $("#WPSDebitCardNumber").text(WPSDebitCardNumber_);
-//    $("#WPSExpiry").text(WPSExpiry_);
-//    $("#TotalLeavePerYear").text(TotalLeavePerYear_);
-//    $("#NoOfWorkingHours").text(NoOfWorkingHours_);
-//    $("#NoOfDays").text(NoOfDays_);
-//    $("#LabourCardNo").text(LabourCardNo_);
-//    $("#LabourCardExpiry").text(LabourCardExpiry_);
-//    $("#PersonCode").text(PersonCode_);
-//    $("#UAEContactNo1").text(UAEContactNo1_);
-//    $("#UAEContactNo2").text(UAEContactNo2_);
-//    $("#UAEAddress").text(UAEAddress_);
-//    $("#BasicSalary").text(BasicSalary_);
-//    $("#Transportation").text(Transportation_);
-//    $("#Accommodation").text(Accommodation_);
-//    $("#AdditionalAllowance").text(AdditionalAllowance_);
-//    $("#Standard").text(Standard_);
-//    $("#Skill").text(Skill_);
-//    $("#AccommodationAllowance").text(AccommodationAllowance_);
-//    $("#Cola").text(Cola_);
-//    $("#Education").text(Education_);
-//    $("#CarAllowance").text(CarAllowance_);
-//    $("#Telephone").text(Telephone_);
-//    $("#Others").text(Others_);
-//    $("#TotalSalary").text(TotalSalary_);
-//    $("#EmiratesID").text(EmiratesID_);
-//    $("#EmiratesIDExpiry").text(EmiratesIDExpiry_);
-//    $("#VisaUIDNo").text(VisaUIDNo_);
-//    $("#VisaFileNo").text(VisaFileNo_);
-//    $("#VisaPlaceOfIssue").text(VisaPlaceOfIssue_);
-//    $("#VisaIssueDate").text(VisaIssueDate_);
-//    $("#VisaExpiry").text(VisaExpiry_);
-//    $("#InsuranceProvider").text(InsuranceProvider_);
-//    $("#InsuranceNumber").text(InsuranceNumber_);
-//    $("#InsuranceExpiry_").text(InsuranceExpiry_);
-//    $("#StatusId").text(StatusId_);
-//    $("#ResignationTerminationDate").text(ResignationTerminationDate_);
-//    $("#Remarks").text(Remarks_);
-//    $("#Organization").text(Organization_);
-//    $("#TicketIssuedPerYear").text(TicketIssuedPerYear_);
-//    $('#Photo').attr('src', Photo_);
-
-//    $("#btnsave").val('Update');
+//                $("#btnsave").val('Update');
+//                //window.location.href = '/HRMS_Employee/Employee';
+//            }
+//            else {
+//                swal("Warning", "Something went wrong", "warning");
+//            }
+//        },
+//        error: function (xhr, status) {
+//            console.log(status);
+//            console.log(xhr);
+//        },
+//        complete: function () {
+//        }
+//    });
 //}
+
+
+
+
+
+
+
