@@ -4563,8 +4563,8 @@
     <Folder Include="CustomerAttachment\" />
     <Folder Include="Images\EmirateFile\" />
     <Folder Include="Images\EmployeeContactCardFile\" />
-    <Folder Include="Images\EmployeePhoto\" />
     <Folder Include="Images\InsuranceFile\" />
+    <Folder Include="Images\InsurancePhoto\" />
     <Folder Include="Images\PassportFile\" />
     <Folder Include="Images\PhotoFile\" />
     <Folder Include="Images\VisaFile\" />

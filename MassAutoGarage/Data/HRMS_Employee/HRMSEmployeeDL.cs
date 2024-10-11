@@ -111,7 +111,6 @@ namespace MassAutoGarage.Data.HRMS_Employee
                 Parameters.Add("@NationalityId", obj.NationalityId);
                 Parameters.Add("@DateOfBirth", obj.DateOfBirth);
                 Parameters.Add("@MaritalStatusId", obj.MaritalStatusId);
-                //Parameters.Add("@TypeId", obj.TypeId);
                 Parameters.Add("@GenderBloodGroup", obj.GenderBloodGroup);
                 Parameters.Add("@PassportNo", obj.PassportNo); 
                 Parameters.Add("@PassportIssueDate", obj.PassportIssueDate);
@@ -136,12 +135,10 @@ namespace MassAutoGarage.Data.HRMS_Employee
                 Parameters.Add("@BasicSalary", obj.BasicSalary);
                 Parameters.Add("@Transportation", obj.Transportation);
                 Parameters.Add("@Accommodation", obj.Accommodation);
-
                 Parameters.Add("@AdditionalAllowance", obj.AdditionalAllowance);
                 Parameters.Add("@Standard", obj.Standard);
                 Parameters.Add("@Skill", obj.Skill);
                 Parameters.Add("@AccommodationAllowance", obj.AccommodationAllowance);
-
                 Parameters.Add("@Cola", obj.Cola);
                 Parameters.Add("@Education", obj.Education);
                 Parameters.Add("@CarAllowance", obj.CarAllowance);
@@ -165,6 +162,7 @@ namespace MassAutoGarage.Data.HRMS_Employee
                 Parameters.Add("@TicketIssuedPerYear", obj.TicketIssuedPerYear);
                 Parameters.Add("@Photo", obj.Photo);
                 Parameters.Add("@CreatedBy", obj.CreatedBy);
+                Parameters.Add("@EmployeeId", obj.EmployeeId);
                 var _iresult = DBHelperDapper.DAAddAndReturnModel<HRMSEmployeeModel>("USP_HRMS_Employee", Parameters);
                 return _iresult;
             }

@@ -17,6 +17,7 @@ namespace MassAutoGarage.Controllers
     public class HRMS_EmployeeController : Controller
     {
         // GET: HRMS_Employee
+        ClsGeneral objcls = new ClsGeneral();
         HRMSEmployeeDL DL = new HRMSEmployeeDL();
         HRMSEmployeeModel model = new HRMSEmployeeModel();
         public ActionResult Index()
@@ -24,210 +25,90 @@ namespace MassAutoGarage.Controllers
             return View();
         }
 
-        public ActionResult Employee(HRMSEmployeeModel model, string EmployeeId)
+        public ActionResult Employee(string key)
         {
+
             ViewBag.DepartmentDropdownList = DL.DepartmentDropdownList();
             ViewBag.BranchLocationDropdownList = DL.BranchLocationDropdownList();
             ViewBag.NationalityDropdownList = DL.NationalityDropdownList();
             ViewBag.MaritalStatusDropdownList = DL.MaritalStatusDropdownList();
             ViewBag.StatusDropdownList = DL.StatusDropdownList();
 
-
-            try
+            if (key != null)
             {
-                if (EmployeeId != null)
+
+
+                //model.EmployeeIdKey = objcls.Decrypt(Id);
+
+                model.EmployeeId = key;
+                model.QueryType = "42";
+                var lst = DL.GetEmployeeDetaildById(model).FirstOrDefault();
+                model.Result = "yes";
+                if (lst != null)
                 {
-                    model.EmployeeId = EmployeeId;
-                    model.QueryType = "42";
-                    var lst = DL.GetEmployeeDetaildById(model).FirstOrDefault();
-
-                    //if (model.Message == "1")
-                    //{
-                    model.Result = "yes";
-
-                    if (lst != null)
-                    {
-                        model.EmployeeId = lst.EmployeeId;
-                        model.EmployeeCode = lst.EmployeeCode;
-                        model.EmployeeName = lst.EmployeeName;
-                        model.Designation = lst.Designation;
-                        model.ReportingManager = lst.ReportingManager;
-                        model.DeptID = model.DeptID;
-                        model.JoiningDate = lst.JoiningDate;
-                        model.BranchId = lst.BranchId;
-                        model.NationalityId = lst.NationalityId;
-                        model.DateOfBirth = lst.DateOfBirth;
-                        model.MaritalStatusId = lst.MaritalStatusId;
-                        model.GenderBloodGroup = lst.GenderBloodGroup;
-                        model.PassportNo = lst.PassportNo;
-                        model.PassportIssueDate = lst.PassportIssueDate;
-                        model.PassportExpiryDate = lst.PassportExpiryDate;
-                        model.HomeCountryAirport = lst.HomeCountryAirport;
-                        model.HomeCountryContactNumber1 = lst.HomeCountryContactNumber1;
-                        model.HomeCountryContactNumber2 = lst.HomeCountryContactNumber2;
-                        model.EmergencyContactNo = lst.EmergencyContactNo;
-                        model.Email = lst.Email;
-                        model.AccountNo = lst.AccountNo;
-                        model.WPSDebitCardNumber = lst.WPSDebitCardNumber;
-                        model.WPSExpiry = lst.WPSExpiry;
-                        model.TotalLeavePerYear = lst.TotalLeavePerYear;
-                        model.NoOfWorkingHours = lst.NoOfWorkingHours;
-                        model.NoOfDays = lst.NoOfDays;
-                        model.LabourCardNo = lst.LabourCardNo;
-                        model.LabourCardExpiry = lst.LabourCardExpiry;
-                        model.PersonCode = lst.PersonCode;
-                        model.UAEContactNo1 = lst.UAEContactNo1;
-                        model.UAEContactNo2 = lst.UAEContactNo2;
-                        model.UAEAddress = lst.UAEAddress;
-                        model.Transportation = lst.Transportation;
-                        model.Accommodation = lst.Accommodation;
-                        model.AdditionalAllowance = lst.AdditionalAllowance;
-                        model.Standard = lst.Standard;
-                        model.Skill = lst.Skill;
-                        model.AccommodationAllowance = lst.AccommodationAllowance;
-                        model.Cola = lst.Cola;
-                        model.Education = lst.Education;
-                        model.CarAllowance = lst.CarAllowance;
-                        model.Telephone = lst.Telephone;
-                        model.Others = lst.Others;
-                        model.TotalSalary = lst.TotalSalary;
-                        model.EmiratesID = lst.EmiratesID;
-                        model.EmiratesIDExpiry = lst.EmiratesIDExpiry;
-                        model.VisaUIDNo = lst.VisaUIDNo;
-                        model.VisaFileNo = lst.VisaFileNo;
-                        model.VisaPlaceOfIssue = lst.VisaPlaceOfIssue;
-                        model.VisaPlaceOfIssue = lst.VisaPlaceOfIssue;
-                        model.InsuranceProvider = lst.InsuranceProvider;
-                        model.InsuranceNumber = lst.InsuranceNumber;
-                        model.InsuranceExpiry = lst.InsuranceExpiry;
-                        model.StatusId = lst.StatusId;
-                        model.ResignationTerminationDate = lst.ResignationTerminationDate;
-                        model.Remarks = lst.Remarks;
-                        model.Organization = lst.Organization;
-                        model.TicketIssuedPerYear = lst.TicketIssuedPerYear;
-                        model.Photo = lst.Photo;
-                    }
-                    //}
-                    //else
-                    //{
-                    //    model.Result = "";
-                    //}
-                }
+                    model.EmployeeId = lst.EmployeeId;
+                    model.EmployeeCode = lst.EmployeeCode;
+                    model.EmployeeName = lst.EmployeeName;
+                    model.Designation = lst.Designation;
+                    model.ReportingManager = lst.ReportingManager;
+                    model.DeptID = lst.DepartmentId;
+                    model.JoiningDate = lst.JoiningDate;
+                    model.BranchId = lst.BranchLocationId;
+                    model.NationalityId = lst.NationalityId;
+                    model.DateOfBirth = lst.DateOfBirth;
+                    model.MaritalStatusId = lst.MaritalStatusId;
+                    model.GenderBloodGroup = lst.GenderBloodGroup;
+                    model.PassportNo = lst.PassportNo;
+                    model.PassportIssueDate = lst.PassportIssueDate;
+                    model.PassportExpiryDate = lst.PassportExpiryDate;
+                    model.HomeCountryAirport = lst.HomeCountryAirport;
+                    model.HomeCountryContactNumber1 = lst.HomeCountryContactNumber1;
+                    model.HomeCountryContactNumber2 = lst.HomeCountryContactNumber2;
+                    model.EmergencyContactNo = lst.EmergencyContactNo;
+                    model.Email = lst.Email;
+                    model.AccountNo = lst.AccountNo;
+                    model.WPSDebitCardNumber = lst.WPSDebitCardNumber;
+                    model.WPSExpiry = lst.WPSExpiry;
+                    model.TotalLeavePerYear = lst.TotalLeavePerYear;
+                    model.NoOfWorkingHours = lst.NoOfWorkingHours;
+                    model.NoOfDays = lst.NoOfDays;
+                    model.LabourCardNo = lst.LabourCardNo;
+                    model.LabourCardExpiry = lst.LabourCardExpiry;
+                    model.PersonCode = lst.PersonCode;
+                    model.UAEContactNo1 = lst.UAEContactNo1;
+                    model.UAEContactNo2 = lst.UAEContactNo2;
+                    model.UAEAddress = lst.UAEAddress;
+                    model.Transportation = lst.Transportation;
+                    model.Accommodation = lst.Accommodation;
+                    model.AdditionalAllowance = lst.AdditionalAllowance;
+                    model.Standard = lst.Standard;
+                    model.Skill = lst.Skill;
+                    model.AccommodationAllowance = lst.AccommodationAllowance;
+                    model.Cola = lst.Cola;
+                    model.Education = lst.Education;
+                    model.CarAllowance = lst.CarAllowance;
+                    model.Telephone = lst.Telephone;
+                    model.Others = lst.Others;
+                    model.TotalSalary = lst.TotalSalary;
+                    model.EmiratesID = lst.EmiratesID;
+                    model.EmiratesIDExpiry = lst.EmiratesIDExpiry;
+                    model.VisaUIDNo = lst.VisaUIDNo;
+                    model.VisaFileNo = lst.VisaFileNo;
+                    model.VisaPlaceOfIssue = lst.VisaPlaceOfIssue;
+                    model.VisaPlaceOfIssue = lst.VisaPlaceOfIssue;
+                    model.InsuranceProvider = lst.InsuranceProvider;
+                    model.InsuranceNumber = lst.InsuranceNumber;
+                    model.InsuranceExpiry = lst.InsuranceExpiry;
+                    model.StatusId = lst.StatusId;
+                    model.ResignationTerminationDate = lst.ResignationTerminationDate;
+                    model.Remarks = lst.Remarks;
+                    model.Organization = lst.Organization;
+                    model.TicketIssuedPerYear = lst.TicketIssuedPerYear;
+                    model.Photo = lst.Photo;
+                }            
             }
-            catch (Exception)
-            {
-                throw;
-            }
-            return Json(model, JsonRequestBehavior.AllowGet);
-
-
-
-
-
-
-            //return View();
+            return View(model);
         }
-
-        [HttpPost]
-        public ActionResult EditEmployee(HRMSEmployeeModel model, string EmployeeId)
-        {
-
-            try
-            {
-                if (EmployeeId != null)
-                {
-                    model.EmployeeId = EmployeeId;
-                    model.QueryType = "42";
-                    var lst = DL.GetEmployeeDetaildById(model).FirstOrDefault();
-
-                    //if (model.Message == "1")
-                    //{
-                    model.Result = "yes";
-
-                    if (lst != null)
-                    {
-                        model.EmployeeId = lst.EmployeeId;
-                        model.EmployeeCode = lst.EmployeeCode;
-                        model.EmployeeName = lst.EmployeeName;
-                        model.Designation = lst.Designation;
-                        model.ReportingManager = lst.ReportingManager;
-                        model.DeptID = model.DeptID;
-                        model.JoiningDate = lst.JoiningDate;
-                        model.BranchId = lst.BranchId;
-                        model.NationalityId = lst.NationalityId;
-                        model.DateOfBirth = lst.DateOfBirth;
-                        model.MaritalStatusId = lst.MaritalStatusId;
-                        model.GenderBloodGroup = lst.GenderBloodGroup;
-                        model.PassportNo = lst.PassportNo;
-                        model.PassportIssueDate = lst.PassportIssueDate;
-                        model.PassportExpiryDate = lst.PassportExpiryDate;
-                        model.HomeCountryAirport = lst.HomeCountryAirport;
-                        model.HomeCountryContactNumber1 = lst.HomeCountryContactNumber1;
-                        model.HomeCountryContactNumber2 = lst.HomeCountryContactNumber2;
-                        model.EmergencyContactNo = lst.EmergencyContactNo;
-                        model.Email = lst.Email;
-                        model.AccountNo = lst.AccountNo;
-                        model.WPSDebitCardNumber = lst.WPSDebitCardNumber;
-                        model.WPSExpiry = lst.WPSExpiry;
-                        model.TotalLeavePerYear = lst.TotalLeavePerYear;
-                        model.NoOfWorkingHours = lst.NoOfWorkingHours;
-                        model.NoOfDays = lst.NoOfDays;
-                        model.LabourCardNo = lst.LabourCardNo;
-                        model.LabourCardExpiry = lst.LabourCardExpiry;
-                        model.PersonCode = lst.PersonCode;
-                        model.UAEContactNo1 = lst.UAEContactNo1;
-                        model.UAEContactNo2 = lst.UAEContactNo2;
-                        model.UAEAddress = lst.UAEAddress;
-                        model.Transportation = lst.Transportation;
-                        model.Accommodation = lst.Accommodation;
-                        model.AdditionalAllowance = lst.AdditionalAllowance;
-                        model.Standard = lst.Standard;
-                        model.Skill = lst.Skill;
-                        model.AccommodationAllowance = lst.AccommodationAllowance;
-                        model.Cola = lst.Cola;
-                        model.Education = lst.Education;
-                        model.CarAllowance = lst.CarAllowance;
-                        model.Telephone = lst.Telephone;
-                        model.Others = lst.Others;
-                        model.TotalSalary = lst.TotalSalary;
-                        model.EmiratesID = lst.EmiratesID;
-                        model.EmiratesIDExpiry = lst.EmiratesIDExpiry;
-                        model.VisaUIDNo = lst.VisaUIDNo;
-                        model.VisaFileNo = lst.VisaFileNo;
-                        model.VisaPlaceOfIssue = lst.VisaPlaceOfIssue;
-                        model.VisaPlaceOfIssue = lst.VisaPlaceOfIssue;
-                        model.InsuranceProvider = lst.InsuranceProvider;
-                        model.InsuranceNumber = lst.InsuranceNumber;
-                        model.InsuranceExpiry = lst.InsuranceExpiry;
-                        model.StatusId = lst.StatusId;
-                        model.ResignationTerminationDate = lst.ResignationTerminationDate;
-                        model.Remarks = lst.Remarks;
-                        model.Organization = lst.Organization;
-                        model.TicketIssuedPerYear = lst.TicketIssuedPerYear;
-                        model.Photo = lst.Photo;
-                    }
-                    //}
-                    //else
-                    //{
-                    //    model.Result = "";
-                    //}
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            return Json(model, JsonRequestBehavior.AllowGet);
-        }
-
-
-
-
-
-
-
-
-
 
         [HttpPost]
         public ActionResult SaveEmployee(HRMSEmployeeModel model, HttpPostedFileBase Photo)
@@ -236,19 +117,37 @@ namespace MassAutoGarage.Controllers
             {
                 if (Photo != null)
                 {
-                    model.Photo = "/Images/EmployeePhoto/" + Guid.NewGuid() + Path.GetExtension(Photo.FileName);
+                    model.Photo = "/Images/InsurancePhoto/" + Guid.NewGuid() + Path.GetExtension(Photo.FileName);
                     Photo.SaveAs(Path.Combine(Server.MapPath(model.Photo)));
                 }
-                model.CreatedBy = Session["userId"].ToString();
-                model.QueryType = "11";
-                model = DL.AddUpdate(model);
-                if (model.Message == "1")
+                if (model.EmployeeId == null || model.EmployeeId == "")
                 {
-                    model.Result = "yes";
+                    model.CreatedBy = Session["userId"].ToString();
+                    model.QueryType = "11";
+                    model = DL.AddUpdate(model);
+                    if (model.Message == "1")
+                    {
+                        model.Result = "yes";
+                    }
+                    else
+                    {
+                        model.Result = "";
+                    }
                 }
                 else
                 {
-                    model.Result = "";
+                    model.Photo = model.Photo == "undefined" ? null : model.Photo;
+                    model.CreatedBy = Session["userId"].ToString();
+                    model.QueryType = "21";
+                    model = DL.AddUpdate(model);
+                    if (model.Message == "1")
+                    {
+                        model.Result = "yes1";
+                    }
+                    else
+                    {
+                        model.Result = "";
+                    }
                 }
             }
             catch (Exception)
@@ -267,6 +166,9 @@ namespace MassAutoGarage.Controllers
             {
                 EmployeeList.Add(new HRMSEmployeeModel
                 {
+
+                  
+                    EmployeeIdKey = objcls.Encrypt(i.EmployeeId),
                     EmployeeId = i.EmployeeId,
                     DepartmentId = i.DepartmentId,
                     DepartmentName = i.DepartmentName,
