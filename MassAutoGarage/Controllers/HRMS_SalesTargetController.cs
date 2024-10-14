@@ -21,9 +21,46 @@ namespace MassAutoGarage.Controllers
         // GET: HRMS_SalesTarget
         HRMSSalesTargetModel model = new HRMSSalesTargetModel();
         HRMSSalesTargetDL DL = new HRMSSalesTargetDL();
-        public ActionResult Index()
+        ClsGeneral objcls = new ClsGeneral();
+        public ActionResult Index(string Key)
         {
-            return View();
+            List<HRMSSalesTargetModel> SalesTargetList = new List<HRMSSalesTargetModel>();
+
+            if (Key != "" && Key != null)
+            {
+                var GroupList = DL.SearchByKey("33", Key);
+                foreach (var i in GroupList)
+                {
+                    SalesTargetList.Add(new HRMSSalesTargetModel
+                    {
+                        Id = objcls.Encrypt(i.Id),
+                        SalesId = i.SalesId,
+                        SalesTargetId = i.SalesTargetId,
+                        SalesMan = i.SalesMan,
+                        FromDate = i.FromDate,
+                        ToDate = i.ToDate,
+                        Target = i.Target,
+                    });
+                }
+            }
+            else
+            {
+                var GroupList = DL.GetSalesTargetList();
+                foreach (var i in GroupList)
+                {
+                    SalesTargetList.Add(new HRMSSalesTargetModel
+                    {
+                        Id = objcls.Encrypt(i.Id),
+                        SalesId = i.SalesId,
+                        SalesTargetId = i.SalesTargetId,
+                        SalesMan = i.SalesMan,
+                        FromDate = i.FromDate,
+                        ToDate = i.ToDate,
+                        Target = i.Target,
+                    });
+                }
+            }
+            return View(SalesTargetList);   
         }
         public ActionResult SalesTarget()
         {
@@ -31,51 +68,9 @@ namespace MassAutoGarage.Controllers
             return View();
         }
 
-        //[HttpPost]
 
-
-        //public JsonResult InsertUpdateSupplier(List<SupplierMasterModel> PatientArr)
-
-        //public JsonResult SaveSalesTarget(List<HRMSSalesTargetModel> ProductListArrSddsfsdg)
-        //{
-        //    //HRMSSalesTargetModel model = new HRMSSalesTargetModel();
-        //    try
-        //    {
-        //        model.CreatedBy = Session["userId"].ToString();
-        //        model.QueryType = "11";
-        //        model = DL.AddUpdate(model);
-        //        var selsid  = model.FK_SalesTargetId;
-
-        //        //foreach (var Attch in PatientArr)
-        //        //{
-        //        //    model.CreatedBy = Session["userId"].ToString();
-        //        //    model.QueryType = "12";
-        //        //    model.FK_SalesTargetId = selsid;
-        //        //    model.FromDate = Attch.FromDate;
-        //        //    model.ToDate = Attch.ToDate;
-        //        //    model.Target = Attch.Target;
-        //        //    model = DL.AddUpdateBulk(model);
-        //        //}
-        //        if (model.Message == "1")
-        //            {
-        //                model.Result = "yes";
-        //            }
-        //            else
-        //            {
-        //                model.Result = "";
-        //            }                           
-        //    }
-        //    catch (Exception)
-        //    {
-        //        throw;
-        //    }
-        //    return Json(model, JsonRequestBehavior.AllowGet);
-        //}
-
-
-
-        //public ActionResult SaveSalesTarget(List<HRMSSalesTargetModel> ProductListArr, HRMSSalesTargetModel model)
-        public JsonResult SaveSalesTarget(List<HRMSSalesTargetModel> ProductListArr)
+   
+        public JsonResult SaveSalesTarget(List<HRMSSalesTargetModel> PatientArr)
         {
             HRMSSalesTargetModel model = new HRMSSalesTargetModel();
 
@@ -83,19 +78,18 @@ namespace MassAutoGarage.Controllers
             {
                 model.CreatedBy = Session["userId"].ToString();
                 model.QueryType = "11";
-                model.SalesId = ProductListArr[0].SalesId;
+                model.SalesId = PatientArr[0].SalesId;
                 model = DL.AddUpdate(model);
 
                 var SalesTargetId = model.SalesTargetId;
 
-
-                foreach (var Attch in ProductListArr)
+                foreach (var Attch in PatientArr)
                 {
                     model.CreatedBy = Session["userId"].ToString();
                     model.QueryType = "12";
-                    model.SalesTargetId = Attch.SalesTargetId;
-                    model.FromDate = Attch.FromDate;
-                    model.ToDate = Attch.ToDate;
+                    model.SalesTargetId = SalesTargetId;
+                    model.FromDate =Convert.ToDateTime( Attch.FromDate);
+                    model.ToDate = Convert.ToDateTime(Attch.ToDate);
                     model.Target = Attch.Target;
                     model = DL.AddUpdateBulk(model);
                 }
@@ -107,7 +101,6 @@ namespace MassAutoGarage.Controllers
                 {
                     model.Result = "";
                 }
-                
             }
             catch (Exception)
             {
@@ -116,6 +109,31 @@ namespace MassAutoGarage.Controllers
             return Json(model, JsonRequestBehavior.AllowGet);
         }
 
+
+        [HttpPost]
+        public ActionResult DeleteSalesTarget(HRMSSalesTargetModel model, string Id)
+        {
+            try
+            {
+                model.Id = objcls.Decrypt(Id);
+                model.QueryType = "41";
+                model = DL.DeleteSalesTarget(model);
+                if (model.Message == "1")
+                {
+                    model.Result = "yes";
+                }
+                else
+                {
+                    model.Result = "";
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return Json(model, JsonRequestBehavior.AllowGet);
+
+        }
 
 
 
