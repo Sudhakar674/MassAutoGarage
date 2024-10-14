@@ -159,13 +159,13 @@ $("#btnsave").click(function (e) {
     var TicketIssuedPerYear_ = $("#TicketIssuedPerYear").val();
     var EmployeeId_ = $("#EmployeeId").val();
 
-    
+
 
 
 
     //////////////////////////////////////////////////////////////////////////
 
-    if (EmployeeCode_ != "" && EmployeeName_ != "") {
+    if (EmployeeCode_ != "" && EmployeeName_ != "" && Designation_ != "") {
 
         if (confirm("Are you sure you want to continue ?")) {
 
@@ -290,6 +290,11 @@ $("#btnsave").click(function (e) {
             swal("Warning", "Please Enter Employee Name !", "warning");
             return false;
         }
+        if (Designation_ == "") {
+            swal("Warning", "Please Enter Designation !", "warning");
+            return false;
+        }
+
     }
 });
 
@@ -308,7 +313,7 @@ function EmployeeList() {
                 var SerialNo = tableLength + 1;
                 var tr = "<tr>";
                 tr += "<td>" + SerialNo + "</td>";
-             /*   tr += "<td style='Display:none'>" + v.EmployeeIdKey + "</td>";*/
+                /*   tr += "<td style='Display:none'>" + v.EmployeeIdKey + "</td>";*/
                 tr += "<td style='Display:none'  class='EmployeeId_" + v.EmployeeId + "'>" + v.EmployeeId + "</td>";
                 tr += "<td class='EmployeeCode_" + v.EmployeeId + "'>" + v.EmployeeCode + "</td>";
                 tr += "<td class='EmployeeName_" + v.EmployeeId + "'>" + v.EmployeeName + "</td>";
@@ -374,7 +379,7 @@ function EmployeeList() {
                 tr += "<td style='Display:none' class='Remarks_" + v.EmployeeId + "'>" + v.Remarks + "</td>";
                 tr += "<td style='Display:none' class='Organization_" + v.EmployeeId + "'>" + v.Organization + "</td>";
                 tr += "<td style='Display:none' class='TicketIssuedPerYear_" + v.EmployeeId + "'>" + v.TicketIssuedPerYear + "</td>";
-                tr += "<td style='Display:none'>" + "<img src='" + v.Photo + "' style='height:90px;width:90px;' class='Photo_" + v.EmployeeId + "'/>" + "</td>";     
+                tr += "<td style='Display:none'>" + "<img src='" + v.Photo + "' style='height:90px;width:90px;' class='Photo_" + v.EmployeeId + "'/>" + "</td>";
                 tr += "<td><a onclick='return ViewEmployeeDetails(" + v.EmployeeId + ")' class='btn btn-sm btn-primary edit-item-btn'>View<i class='fa fa-eye'></i></a>  <a onclick='return EditEmployee(" + v.EmployeeId + ")' class='btn btn-sm btn-success edit-item-btn'>Edit<i class='fa fa-edit'></i></a> <a onclick='return DeleteEmployee(" + v.EmployeeId + ")' class='btn btn-sm btn-danger remove-item-btn DeleteContactTr'><i class='fa fa-trash' aria-hidden='true'></i>Delete</a></td>";
                 tr += "</tr>";
                 $("#tBodyId").append(tr);

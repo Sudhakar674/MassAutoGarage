@@ -228,8 +228,23 @@ namespace MassAutoGarage.Data.HRMS_Employee
 
 
 
+        public List<HRMSEmployeeModel> SearchByKey(string Querytype, string SearchKey)
+        {
+            List<HRMSEmployeeModel> obj = new List<HRMSEmployeeModel>();
+            try
+            {
+                var perm = new DynamicParameters();
+                perm.Add("@QueryType", Querytype);
+                perm.Add("@SearchKey", SearchKey);
 
-
+                obj = DBHelperDapper.DAAddAndReturnModelList<HRMSEmployeeModel>("USP_HRMS_Employee", perm);
+                return obj;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
 
 

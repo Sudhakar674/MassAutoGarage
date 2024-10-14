@@ -20,9 +20,80 @@ namespace MassAutoGarage.Controllers
         ClsGeneral objcls = new ClsGeneral();
         HRMSEmployeeDL DL = new HRMSEmployeeDL();
         HRMSEmployeeModel model = new HRMSEmployeeModel();
-        public ActionResult Index()
+        public ActionResult Index(string Key)
         {
-            return View();
+
+            List<HRMSEmployeeModel> EmployeeList = new List<HRMSEmployeeModel>();
+
+            if (Key != "" && Key != null)
+            {
+                var GroupList = DL.SearchByKey("38", Key);
+                foreach (var i in GroupList)
+                {
+                    EmployeeList.Add(new HRMSEmployeeModel
+                    {
+                        EmployeeId = i.EmployeeId,
+                        EmployeeCode = i.EmployeeCode,
+                        EmployeeName = i.EmployeeName,
+                        Designation=i.Designation,
+                        ReportingManager = i.ReportingManager,
+                        DeptID = i.DeptID,
+                        JoiningDate = i.JoiningDate,
+                        BranchId = i.BranchId,
+                        NationalityId = i.NationalityId,
+                        DateOfBirth = i.DateOfBirth,
+                        MaritalStatusId = i.MaritalStatusId,
+                        GenderBloodGroup = i.GenderBloodGroup,
+                        PassportNo = i.PassportNo,
+                        PassportIssueDate = i.PassportIssueDate,
+                        PassportExpiryDate = i.PassportExpiryDate,
+                        HomeCountryAirport = i.HomeCountryAirport,
+                        HomeCountryContactNumber1 = i.HomeCountryContactNumber1,
+                        HomeCountryContactNumber2 = i.HomeCountryContactNumber2,
+                        EmergencyContactNo = i.EmergencyContactNo,
+                        Email=i.Email,
+                        AccountNo = i.AccountNo,
+                        WPSDebitCardNumber = i.WPSDebitCardNumber,
+                        WPSExpiry=i.WPSExpiry,
+                        TotalLeavePerYear = i.TotalLeavePerYear,
+                        NoOfWorkingHours = i.NoOfWorkingHours,
+                        NoOfDays = i.NoOfDays,
+                        LabourCardNo = i.LabourCardNo,
+                        LabourCardExpiry = i.LabourCardExpiry,
+                        PersonCode = i.PersonCode,
+                        UAEContactNo1 = i.UAEContactNo1,
+                        UAEContactNo2 = i.UAEContactNo2,
+                        UAEAddress = i.UAEAddress,
+                        Transportation=i.Transportation,
+                        Accommodation=i.Accommodation,
+                        AdditionalAllowance=i.AdditionalAllowance,
+                        Standard=i.Standard,
+                        Skill=i.Skill,
+                        AccommodationAllowance=i.AccommodationAllowance,
+                        Cola=i.Cola,
+                        Education=i.Education,
+                        CarAllowance=i.CarAllowance,
+                        Telephone=i.Telephone,
+                        Others=i.Others,
+                        TotalSalary=i.TotalSalary,
+                        EmiratesID=i.EmiratesID,
+                        EmiratesIDExpiry=i.EmiratesIDExpiry,
+                        VisaUIDNo=i.VisaUIDNo,
+                        VisaFileNo=i.VisaFileNo,
+                        VisaPlaceOfIssue=i.VisaPlaceOfIssue,
+                        InsuranceProvider=i.InsuranceProvider,
+                        InsuranceNumber=i.InsuranceNumber,
+                        InsuranceExpiry=i.InsuranceExpiry,
+                        StatusId=i.StatusId,
+                        ResignationTerminationDate=i.ResignationTerminationDate,
+                        Remarks=i.Remarks,
+                        Organization=i.Organization,
+                        TicketIssuedPerYear=i.TicketIssuedPerYear,
+                        Photo=i.Photo,
+                    });
+                }
+            }
+            return View(EmployeeList);
         }
 
         public ActionResult Employee(string key)
@@ -265,6 +336,81 @@ namespace MassAutoGarage.Controllers
         }
 
 
+        public JsonResult GetListByid(string Key)
+        {
 
+            List<HRMSEmployeeModel> EmployeeList = new List<HRMSEmployeeModel>();
+
+            if (Key != "" && Key != null)
+            {
+                var GroupList = DL.SearchByKey("38", Key);
+                foreach (var i in GroupList)
+                {
+                    EmployeeList.Add(new HRMSEmployeeModel
+                    {
+                        EmployeeId = i.EmployeeId,
+                        EmployeeCode = i.EmployeeCode,
+                        EmployeeName = i.EmployeeName,
+                        Designation = i.Designation,
+                        ReportingManager = i.ReportingManager,
+                        DeptID = i.DeptID,
+                        JoiningDate = i.JoiningDate,
+                        BranchId = i.BranchId,
+                        NationalityId = i.NationalityId,
+                        DateOfBirth = i.DateOfBirth,
+                        MaritalStatusId = i.MaritalStatusId,
+                        GenderBloodGroup = i.GenderBloodGroup,
+                        PassportNo = i.PassportNo,
+                        PassportIssueDate = i.PassportIssueDate,
+                        PassportExpiryDate = i.PassportExpiryDate,
+                        HomeCountryAirport = i.HomeCountryAirport,
+                        HomeCountryContactNumber1 = i.HomeCountryContactNumber1,
+                        HomeCountryContactNumber2 = i.HomeCountryContactNumber2,
+                        EmergencyContactNo = i.EmergencyContactNo,
+                        Email = i.Email,
+                        AccountNo = i.AccountNo,
+                        WPSDebitCardNumber = i.WPSDebitCardNumber,
+                        WPSExpiry = i.WPSExpiry,
+                        TotalLeavePerYear = i.TotalLeavePerYear,
+                        NoOfWorkingHours = i.NoOfWorkingHours,
+                        NoOfDays = i.NoOfDays,
+                        LabourCardNo = i.LabourCardNo,
+                        LabourCardExpiry = i.LabourCardExpiry,
+                        PersonCode = i.PersonCode,
+                        UAEContactNo1 = i.UAEContactNo1,
+                        UAEContactNo2 = i.UAEContactNo2,
+                        UAEAddress = i.UAEAddress,
+                        Transportation = i.Transportation,
+                        Accommodation = i.Accommodation,
+                        AdditionalAllowance = i.AdditionalAllowance,
+                        Standard = i.Standard,
+                        Skill = i.Skill,
+                        AccommodationAllowance = i.AccommodationAllowance,
+                        Cola = i.Cola,
+                        Education = i.Education,
+                        CarAllowance = i.CarAllowance,
+                        Telephone = i.Telephone,
+                        Others = i.Others,
+                        TotalSalary = i.TotalSalary,
+                        EmiratesID = i.EmiratesID,
+                        EmiratesIDExpiry = i.EmiratesIDExpiry,
+                        VisaUIDNo = i.VisaUIDNo,
+                        VisaFileNo = i.VisaFileNo,
+                        VisaPlaceOfIssue = i.VisaPlaceOfIssue,
+                        InsuranceProvider = i.InsuranceProvider,
+                        InsuranceNumber = i.InsuranceNumber,
+                        InsuranceExpiry = i.InsuranceExpiry,
+                        StatusId = i.StatusId,
+                        ResignationTerminationDate = i.ResignationTerminationDate,
+                        Remarks = i.Remarks,
+                        Organization = i.Organization,
+                        TicketIssuedPerYear = i.TicketIssuedPerYear,
+                        Photo = i.Photo,
+                    });
+                }
+            }
+        
+            return Json(EmployeeList,JsonRequestBehavior.AllowGet);
+        }
     }
 }

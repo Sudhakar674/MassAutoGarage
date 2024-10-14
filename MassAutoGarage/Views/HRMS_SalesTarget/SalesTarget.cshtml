@@ -231,13 +231,13 @@
 
                                             <tr>
                                                 <td>
-                                                    <input type="text" name="FromDate" class="form-control txtFromDate" id="FromDate" />
+                                                    <input type="text" name="FromDate" class="txtFromDate form-control" id="FromDate" />
                                                 </td>
                                                 <td>
-                                                    <input type="text" name="ToDate" class="form-control txtToDate" id="ToDate" />
+                                                    <input type="text" name="ToDate" class="txtToDate form-control" id="ToDate" />
                                                 </td>
                                                 <td>
-                                                    <input type="text" name="Target" class="form-control txttarget" id="Target" />
+                                                    <input type="text" name="Target" class="txttarget form-control" id="Target" />
                                                 </td>
                                                 <td>
                                                     <button type="button" id="btnAdd" class="btn btn-xs btn-primary classAdd" onclick="Add()">Add More</button>
@@ -254,7 +254,7 @@
                                 <div class="form-floating" style="float:right;">
 
                                     <input type="button" id="btnsave" value="Save" class="btn btn-success" style=" margin-top: 8%;" />
-                                    <input type="button" id="btnReset" value="Reset" class="btn btn-danger" style=" margin-top: 8%;" />
+                                    <input type="button" id="btnReset" value="Reset" class="btn btn-danger" style=" margin-top: 8%;" onclick="return Reset();" />
 
                                 </div>
 
@@ -271,309 +271,25 @@
     <!--end col-->
 }
 
-
 @section scripts{
     <!-- prismjs plugin -->
     <script src="~/assets/libs/prismjs/prism.js"></script>
-    <script src="~/assets/js/pages/form-validation.init.js"></script>
-    <script src="~/assets/js/app.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> 
-
-    <script src="~/assets/js/pages/select2.init.js"></script>
-    <script src="~/assets/libs/prismjs/prism.js"></script>
+    <!-- App js -->
     <script src="~/assets/js/app.js"></script>
 
 }
-@*<script src="~/Scripts/jquery-3.4.1.min.js"></script>*@
-<script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
 
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
 
-
-@*<script src="~/Content/js/jquery.min.js"></script>*@
-
-<script src="~/MyApp/HRMS_SalesTarget.js"></script>
-
-
-
-@*<script type="text/javascript">
-
-
-        function Add() {
-            debugger;
-            AddRow($("#txtFromDate").val(), $("#txtToDate").val(), $("#txttarget").val());
-            $("#txtFromDate").val("");
-            $("#txtToDate").val("");
-            $("#txttarget").val("");
-
-        };
-
-        function AddRow(FromDate, ToDate, Target) {
-            debugger;
-            //Get the reference of the Table's TBODY element.
-            var tBody = $("#example > TBODY")[0];
-
-            //Add Row.
-            row = tBody.insertRow(-1);
-
-            //Add Name cell.
-            var cell = $(row.insertCell(-1));
-            cell.html(FromDate);
-            //Add Name cell.
-            var cell = $(row.insertCell(-1));
-            cell.html(ToDate);
-            //Add Country cell.
-            cell = $(row.insertCell(-1));
-            cell.html(Target);
-
-            //Add Button cell.
-            cell = $(row.insertCell(-1));
-            var btnRemove = $("<input />");
-            btnRemove.attr("type", "button");
-            btnRemove.attr("onclick", "Remove(this);");
-            btnRemove.val("Remove");
-            cell.append(btnRemove);
-        };
-
-        function Remove(button) {
-            debugger;
-            //Determine the reference of the Row using the Button.
-            var row = $(button).closest("TR");
-            var name = $("TD", row).eq(0).html();
-            if (confirm("Do you want to delete: " + name)) {
-
-                //Get the reference of the Table.
-                var table = $("#example")[0];
-
-                //Delete the Table row using it's Index.
-                table.deleteRow(row[0].rowIndex);
-            }
-        };
-    </script>*@
-
-
-@*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////*@
-
-
-@*<script>
-        $("#btnsave").click(function () {
-            debugger;
-            var SalesId_ = $("#SalesId").val();
-
-            var tableLength = $("#example tr").length;
-
-            var ProductListArr = [];
-
-            if (SalesId_ != "" && tableLength > 0) {
-
-                if (tableLength > 0) {
-
-                    for (var i = 0; i < tableLength; i++) {
-
-                        var ProductList = {
-                            SalesId: SalesId_,
-
-                            FromDate: $("#example tBody tr:eq(" + i + ")").find('td:eq(0)').html(),
-                            ToDate: $("#example tBody tr:eq(" + i + ")").find('td:eq(1)').html(),
-                            Target: $("#example tBody tr:eq(" + i + ")").find('td:eq(2)').html(),
-                        };
-                        ProductListArr.push(ProductList);
-                    }
-                    $.ajax({
-                        type:'POST',
-                        url:'/HRMS_SalesTarget/SaveSalesTarget',
-                        data: JSON.stringify(ProductListArr),
-                        contentType: "application/json; charset=utf-8",
-                        dataType: 'json',
-                        success: function (data) {
-
-                            if (data.Result == "yes") {
-                                swal({
-                                    title: "Success",
-                                    text: "Records Successfully Saved",
-                                    type: "success",
-                                }).then(function (isConfirm) {
-                                    if (isConfirm) {
-                                        /* window.location.reload();*/
-                                        var url = "/HRMS_SalesTarget/SalesTarget";
-                                        window.location.href = url;
-                                    } else {
-                                    }
-                                });
-                            }
-                        },
-                    })
-                }
-            }
-        })
-    </script>*@
-
-
-@*<script>
-        $("#btnsave").click(function () {
-            debugger;
-            var SalesId_ = $("#SalesId").val();
-
-            var tableLength = $("#example tr").length;
-
-            var ProductListArr = [];
-
-            if (SalesId_ != "" && tableLength > 0) {
-
-
-                $.ajax({
-                    type: 'POST',
-                    url: '/HRMS_SalesTarget/SaveSalesTarget',
-                    data: JSON.stringify(ProductListArr),
-                    contentType: "application/json; charset=utf-8",
-                    dataType: 'json',
-                    success: function (data) {
-
-                        if (data.Result == "yes") {
-                            swal({
-                                title: "Success",
-                                text: "Records Successfully Saved",
-                                type: "success",
-                            }).then(function (isConfirm) {
-                                if (isConfirm) {
-                                    /* window.location.reload();*/
-                                    var url = "/HRMS_SalesTarget/SalesTarget";
-                                    window.location.href = url;
-                                } else {
-                                }
-                            });
-                        }
-                    },
-                })
-
-            }
-        })
-
-    </script>*@
-
-
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 <script src="~/MyApp/HRMS_SalesTarget.js"></script>
 
 
 
-<script type="text/javascript">
-
-
-    function Add() {
-        debugger;
-        AddRow($("#FromDate").val(), $("#ToDate").val(), $("#Target").val());
-        $("#FromDate").val("");
-        $("#ToDate").val("");
-        $("#Target").val("");
-
-    };
-
-    function AddRow(FromDate, ToDate, Target) {
-        debugger;
-        //Get the reference of the Table's TBODY element.
-        var tBody = $("#example > TBODY")[0];
-
-        //Add Row.
-        row = tBody.insertRow(-1);
-
-        //Add Name cell.
-        var cell = $(row.insertCell(-1));
-        cell.html(FromDate);
-        //Add Name cell.
-        var cell = $(row.insertCell(-1));
-        cell.html(ToDate);
-        //Add Country cell.
-        cell = $(row.insertCell(-1));
-        cell.html(Target);
-
-        //Add Button cell.
-        cell = $(row.insertCell(-1));
-        var btnRemove = $("<input />");
-        btnRemove.attr("type", "button");
-        btnRemove.attr("onclick", "Remove(this);");
-        btnRemove.val("Remove");
-        cell.append(btnRemove);
-    };
-
-    function Remove(button) {
-        debugger;
-        //Determine the reference of the Row using the Button.
-        var row = $(button).closest("TR");
-        var name = $("TD", row).eq(0).html();
-        if (confirm("Do you want to delete: " + name)) {
-
-            //Get the reference of the Table.
-            var table = $("#example")[0];
-
-            //Delete the Table row using it's Index.
-            table.deleteRow(row[0].rowIndex);
-        }
-    };
-</script>
-
-
-
-<script>
-    $("#btnsave").click(function () {
-        debugger;
-        var SalesId_ = $("#SalesId").val();
-
-        var tableLength = $("#example tr").length;
-
-        var ProductListArr = [];
-
-        if (SalesId_ != "" && tableLength > 1) {
-
-            if (tableLength > 1) {
-
-                for (var i = 0; i < tableLength-2; i++) {
-
-                    var ProductList = {
-
-                        SalesId:SalesId_,
-
-                        FromDate: $("#example tBody tr:eq(" + i + ")").find('td:eq(0)').html(),
-                        ToDate: $("#example tBody tr:eq(" + i + ")").find('td:eq(1)').html(),
-                        Target: $("#example tBody tr:eq(" + i + ")").find('td:eq(2)').html(),
-
-
-                        //SalesId: SalesId_,
-                        //FromDate: $("#example tBody tr:eq(" + i + ")").find('td:eq(1)').html(),
-                        //ToDate: $("#example tBody tr:eq(" + i + ")").find('td:eq(2)').html(),
-                        //Target: $("#example tBody tr:eq(" + i + ")").find('td:eq(3)').html(),
-
-                    };
-                    ProductListArr.push(ProductList);
-                }
-
-                $.ajax({
-                    type: 'POST',
-                    url: '/HRMS_SalesTarget/SaveSalesTarget',
-                    data: JSON.stringify(ProductListArr),
-                    contentType: "application/json; charset=utf-8",
-                    dataType: 'json',
-                    success: function (data) {
-
-                        if (data.Result == "yes") {
-                            swal({
-                                title: "Success",
-                                text: "Records Successfully Saved",
-                                type: "success",
-                            }).then(function (isConfirm) {
-                                if (isConfirm) {
-                                    /* window.location.reload();*/
-                                    var url = "/HRMS_SalesTarget/SalesTarget";
-                                    window.location.href = url;
-                                } else {
-                                }
-                            });
-                        }
-                    },
-                })
-            }
-        }
-    })
-
-</script>
