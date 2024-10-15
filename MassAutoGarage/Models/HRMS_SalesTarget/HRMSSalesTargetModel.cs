@@ -9,6 +9,7 @@ namespace MassAutoGarage.Models.HRMS_SalesTarget
     public class HRMSSalesTargetModel
     {
         public string Id { get; set; }
+        public string PK_Id { get; set; }
         public string SalesId { get; set; }
         public string SalesTargetId { get; set; }
         public string CreatedBy { get; set; }

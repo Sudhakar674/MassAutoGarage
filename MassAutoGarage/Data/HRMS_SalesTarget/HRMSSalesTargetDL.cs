@@ -14,7 +14,6 @@ namespace MassAutoGarage.Data.HRMS_SalesTarget
 {
     public class HRMSSalesTargetDL
     {
-
         public List<HRMSSalesTargetModel> DropdownList()
         {
             List<HRMSSalesTargetModel> obj = new List<HRMSSalesTargetModel>();
@@ -40,6 +39,7 @@ namespace MassAutoGarage.Data.HRMS_SalesTarget
                 Parameters.Add("@QueryType", obj.QueryType);
                 Parameters.Add("@SalesId", obj.SalesId);
                 Parameters.Add("@CreatedBy", obj.CreatedBy);
+                Parameters.Add("@Id", obj.PK_Id);
                 var _iresult = DBHelperDapper.DAAddAndReturnModel<HRMSSalesTargetModel>("USP_HRMS_SalesTarget", Parameters);
                 return _iresult;
             }
@@ -48,7 +48,6 @@ namespace MassAutoGarage.Data.HRMS_SalesTarget
                 throw;
             }
         }
-
 
         public HRMSSalesTargetModel AddUpdateBulk(HRMSSalesTargetModel obj)
         {
@@ -62,6 +61,7 @@ namespace MassAutoGarage.Data.HRMS_SalesTarget
                 Parameters.Add("@ToDate", obj.ToDate);
                 Parameters.Add("@Target", obj.Target);
                 Parameters.Add("@CreatedBy", obj.CreatedBy);
+                Parameters.Add("@Id", obj.PK_Id);
                 var _iresult = DBHelperDapper.DAAddAndReturnModel<HRMSSalesTargetModel>("USP_HRMS_SalesTarget", Parameters);
                 return _iresult;
             }
@@ -70,7 +70,6 @@ namespace MassAutoGarage.Data.HRMS_SalesTarget
                 throw;
             }
         }
-
 
         public List<HRMSSalesTargetModel> GetSalesTargetList()
         {
@@ -87,8 +86,6 @@ namespace MassAutoGarage.Data.HRMS_SalesTarget
                 throw ex;
             }
         }
-
-
 
         public List<HRMSSalesTargetModel> SearchByKey(string Querytype, string SearchKey)
         {
@@ -108,7 +105,6 @@ namespace MassAutoGarage.Data.HRMS_SalesTarget
             }
         }
 
-
         public HRMSSalesTargetModel DeleteSalesTarget(HRMSSalesTargetModel obj)
         {
             try
@@ -125,6 +121,26 @@ namespace MassAutoGarage.Data.HRMS_SalesTarget
                 throw;
             }
         }
+
+
+        public List<HRMSSalesTargetModel> GetSalesTargetDetaildById(HRMSSalesTargetModel objmodel)
+        {
+            List<HRMSSalesTargetModel> obj = new List<HRMSSalesTargetModel>();
+            try
+            {
+                var Parameters = new DynamicParameters();
+                Parameters.Add("@QueryType", objmodel.QueryType);
+                Parameters.Add("@Id", objmodel.Id);
+                obj = DBHelperDapper.DAAddAndReturnModelList<HRMSSalesTargetModel>("USP_HRMS_SalesTarget", Parameters);
+                return obj;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
 
 
 
