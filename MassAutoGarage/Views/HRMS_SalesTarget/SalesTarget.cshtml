@@ -179,7 +179,7 @@
                     <div class="row">
                         <div class="col-md-6 col-5"> <h5 class="card-title mb-0 gp-detail">HRMS-SALES TARGET</h5></div>
                         <div class="col-md-6 col-7">
-                            <a href="@Url.Action("Index", "HRMS_SalesTarget")" class="btn btn-primary add-new" style="float:right;" tabindex="1"> <i class="fa fa-arrow-left align-middle me-1"></i>BACK TO SALES TARGET LIST</a>
+                            @*<a href="@Url.Action("Index", "HRMS_SalesTarget")" class="btn btn-primary add-new" style="float:right;" tabindex="1"> <i class="fa fa-arrow-left align-middle me-1"></i>BACK TO SALES TARGET LIST</a>*@
                         </div>
                     </div>
                 </div>
@@ -191,6 +191,9 @@
                             <div class="col-xxl-6 col-md-6">
                                 <div>
                                     <label for="basiInput" class="form-label">Sales Name <code>*</code></label>
+
+                                    @Html.HiddenFor(m => m.PK_Id, new { @class = "form-control" })
+
                                     @Html.DropDownListFor(x => x.SalesId, new SelectList(ViewBag.SalesList, "SalesId", "SalesMan"), "- Select Sales Name -", new { @class = "form-control", tabindex = 1 })
                                     @Html.ValidationMessageFor(m => m.SalesId, "", new { @class = "text-danger" })
                                 </div>
@@ -203,9 +206,9 @@
                                     <table border="1" id="example" class="display table table-bordered mobile-optimised" style="width:100%;">
                                         <thead>
                                             <tr>
-                                                <th>From Date</th>
-                                                <th>To Date</th>
-                                                <th>Target</th>
+                                                <th>From Date <code>*</code></th>
+                                                <th>To Date <code>*</code></th>
+                                                <th>Target <code>*</code></th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -227,23 +230,40 @@
                                                     </td>
                                                 </tr>*@
 
-
-
-                                            <tr>
-                                                <td>
-                                                    <input type="text" name="FromDate" class="txtFromDate form-control" id="FromDate" />
-                                                </td>
-                                                <td>
-                                                    <input type="text" name="ToDate" class="txtToDate form-control" id="ToDate" />
-                                                </td>
-                                                <td>
-                                                    <input type="text" name="Target" class="txttarget form-control" id="Target" />
-                                                </td>
-                                                <td>
-                                                    <button type="button" id="btnAdd" class="btn btn-xs btn-primary classAdd" onclick="Add()">Add More</button>
-                                                </td>
-                                            </tr>
-
+                                            @if (Model.PK_Id != "" && Model.PK_Id != null)
+                                            {
+                                                <tr>
+                                                    <td>
+                                                        <input type="text" name="FromDate" class="txtFromDate form-control" id="FromDate" value="@Model.FromDate" />
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" name="ToDate" class="txtToDate form-control" id="ToDate" value="@Model.ToDate" />
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" name="Target" class="txttarget form-control" id="Target" value="@Model.Target" />
+                                                    </td>
+                                                    <td>
+                                                        <button type="button" id="btnAdd" class="btn btn-xs btn-primary classAdd" onclick="Add()">Add More</button>
+                                                    </td>
+                                                </tr>
+                                            }
+                                            else
+                                            {
+                                                <tr>
+                                                    <td>
+                                                        <input type="text" name="FromDate" class="txtFromDate form-control" id="FromDate" />
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" name="ToDate" class="txtToDate form-control" id="ToDate" />
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" name="Target" class="txttarget form-control" id="Target" onkeypress="return isNumberOrDecimal(event);" />
+                                                    </td>
+                                                    <td>
+                                                        <button type="button" id="btnAdd" class="btn btn-xs btn-primary classAdd" onclick="Add()">Add More</button>
+                                                    </td>
+                                                </tr>
+                                            }
                                         </tfoot>
                                     </table>
 
@@ -291,5 +311,16 @@
 
 <script src="~/MyApp/HRMS_SalesTarget.js"></script>
 
+<script>
+    var Id = $("#PK_Id").val();
+    if (Id != 0) {
+        $("#btnsave").val('Update');
+    }
+</script>
 
-
+<style>
+    .errortext {
+        border: 1px solid red !important;
+        background-color: #fff0f0 !important;
+    }
+</style>

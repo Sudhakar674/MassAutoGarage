@@ -25,9 +25,7 @@ namespace MassAutoGarage.Controllers
               List<HRMSEmployeeDocumentsModel> EmployeeDocumentsList = new List<HRMSEmployeeDocumentsModel>();
 
             if (Key != "" && Key != null)
-            {
-                
-
+            {            
                 var GroupList = DL.SearchByKey("33",Key);
                 foreach (var i in GroupList)
                 {
@@ -45,11 +43,9 @@ namespace MassAutoGarage.Controllers
                         EmpCardFile = i.EmpCardFile
                     });
                 }
-
             }
             else
             {
-
                 var GroupList = DL.GetEmployeeDocumentsList();
                 foreach (var i in GroupList)
                 {
@@ -70,7 +66,6 @@ namespace MassAutoGarage.Controllers
             }
             return View(EmployeeDocumentsList);
         }
-
         
         public ActionResult EmployeeDocuments(HRMSEmployeeDocumentsModel model , string Id)
         {

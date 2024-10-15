@@ -34,6 +34,7 @@ namespace MassAutoGarage.Controllers
                     SalesTargetList.Add(new HRMSSalesTargetModel
                     {
                         Id = objcls.Encrypt(i.Id),
+                        PK_Id = i.PK_Id,
                         SalesId = i.SalesId,
                         SalesTargetId = i.SalesTargetId,
                         SalesMan = i.SalesMan,
@@ -51,6 +52,7 @@ namespace MassAutoGarage.Controllers
                     SalesTargetList.Add(new HRMSSalesTargetModel
                     {
                         Id = objcls.Encrypt(i.Id),
+                        PK_Id = i.PK_Id,
                         SalesId = i.SalesId,
                         SalesTargetId = i.SalesTargetId,
                         SalesMan = i.SalesMan,
@@ -60,16 +62,32 @@ namespace MassAutoGarage.Controllers
                     });
                 }
             }
-            return View(SalesTargetList);   
+            return View(SalesTargetList);
         }
-        public ActionResult SalesTarget()
+        public ActionResult SalesTarget(HRMSSalesTargetModel model, string Id)
         {
             ViewBag.SalesList = DL.DropdownList();
-            return View();
+
+
+            if (Id != null)
+            {
+                model.Id = objcls.Decrypt(Id);
+                model.QueryType = "42";
+                var lst = DL.GetSalesTargetDetaildById(model).FirstOrDefault();
+
+                if (lst != null)
+                {
+                    model.PK_Id = lst.PK_Id;
+                    model.SalesId = lst.SalesId;
+                    model.FromDate = lst.FromDate;
+                    model.ToDate = lst.ToDate;
+                    model.Target = lst.Target;
+                }
+            }
+            return View(model);
+
         }
 
-
-   
         public JsonResult SaveSalesTarget(List<HRMSSalesTargetModel> PatientArr)
         {
             HRMSSalesTargetModel model = new HRMSSalesTargetModel();
@@ -79,6 +97,7 @@ namespace MassAutoGarage.Controllers
                 model.CreatedBy = Session["userId"].ToString();
                 model.QueryType = "11";
                 model.SalesId = PatientArr[0].SalesId;
+                model.PK_Id = PatientArr[0].PK_Id;
                 model = DL.AddUpdate(model);
 
                 var SalesTargetId = model.SalesTargetId;
@@ -88,18 +107,33 @@ namespace MassAutoGarage.Controllers
                     model.CreatedBy = Session["userId"].ToString();
                     model.QueryType = "12";
                     model.SalesTargetId = SalesTargetId;
-                    model.FromDate =Convert.ToDateTime( Attch.FromDate);
+                    model.FromDate = Convert.ToDateTime(Attch.FromDate);
                     model.ToDate = Convert.ToDateTime(Attch.ToDate);
                     model.Target = Attch.Target;
+                    model.PK_Id = Attch.PK_Id;
                     model = DL.AddUpdateBulk(model);
                 }
-                if (model.Message == "1")
+                if (model.PK_Id == null || model.PK_Id == "")
                 {
-                    model.Result = "yes";
+                    if (model.Message == "1")
+                    {
+                        model.Result = "yes";
+                    }
+                    else
+                    {
+                        model.Result = "";
+                    }
                 }
                 else
                 {
-                    model.Result = "";
+                    if (model.Message == "1")
+                    {
+                        model.Result = "yes1";
+                    }
+                    else
+                    {
+                        model.Result = "";
+                    }
                 }
             }
             catch (Exception)

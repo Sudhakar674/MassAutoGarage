@@ -23,12 +23,51 @@ $("#ToDate").datepicker(options);
 
 
 
+function isNumberOrDecimal(evt) {
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode != 46 && charCode > 31
+        && (charCode < 48 || charCode > 57))
+        return false;
+
+    return true;
+}
+
+
+
+
+
 function Add() {
     debugger;
-    AddRow($("#FromDate").val(), $("#ToDate").val(), $("#Target").val());
-    $("#FromDate").val("");
-    $("#ToDate").val("");
-    $("#Target").val("");
+    if ($("#FromDate").val() == "") {
+        $("#FromDate").addClass('errortext');
+        $("#FromDate").focus();
+        return false;
+    }
+    else if ($("#ToDate").val() == "") {
+        $("#ToDate").addClass('errortext');
+        $("#ToDate").focus();
+        return false;
+    }
+    else if ($("#Target").val() == "") {
+        $("#Target").addClass('errortext');
+        $("#Target").focus();
+        return false;
+    }
+    else {
+        AddRow($("#FromDate").val(), $("#ToDate").val(), $("#Target").val());
+        $("#FromDate").val("");
+        $("#ToDate").val("");
+        $("#Target").val("");
+       
+    }
+    return true;
+
+
+    //AddRow($("#FromDate").val(), $("#ToDate").val(), $("#Target").val());
+    //$("#FromDate").val("");
+    //$("#ToDate").val("");
+    //$("#Target").val("");
+  
 };
 
 function AddRow(FromDate, ToDate, Target) {
@@ -77,18 +116,23 @@ function Remove(button) {
 $("#btnsave").click(function () {
     debugger;
     var SalesId_ = $("#SalesId").val();
+    var Id_ = $("#PK_Id").val();
 
     var tableLength = $("#example tr").length;
     var ProductListArr = [];
 
-    if (SalesId_ != "" &&  tableLength > 1) {
+    //if (SalesId_ != "" &&  tableLength > 1) {
+    //    if (tableLength > 1) {
 
-        if (tableLength > 1) {
+    if (SalesId_ != "" && tableLength > 2) {
+
+        if (tableLength > 2) {
 
             for (var i = 0; i < tableLength - 2; i++) {
 
                 var ProductList = {
                     SalesId: SalesId_,
+                    PK_Id: Id_,
 
                     FromDate: $("#example tBody tr:eq(" + i + ")").find('td:eq(0)').html(),
                     ToDate: $("#example tBody tr:eq(" + i + ")").find('td:eq(1)').html(),
@@ -116,20 +160,19 @@ $("#btnsave").click(function () {
                             }
                         });
                     }
-                    //else if (data == "Yes1") {
-                    //    swal({
-                    //        title: "success",
-                    //        text: "Record Successfully Updated.",
-                    //        type: "success",
-                    //    }).then(function (isConfirm) {
-                    //        if (isConfirm) {
-                    //            var url = "/SupplierMaster/SupplierDetails";
-                    //            window.location.href = url;
-                    //        } else {
+                    else if (data == "yes1") {
+                        swal({
+                            title: "success",
+                            text: "Record Successfully Updated.",
+                            type: "success",
+                        }).then(function (isConfirm) {
+                            if (isConfirm) {
+                                window.location.reload();
+                            } else {
 
-                    //        }
-                    //    });
-                    //}
+                            }
+                        });
+                    }
                     else {
                         swal("Warning", "Record not save!", "warning");
                     }
@@ -146,10 +189,8 @@ $("#btnsave").click(function () {
             swal("Warning", "Please Enter Sales Name !", "warning")
             return false;
         }
-        if (tableLength == 1) {
-            swal("Warning", "Please Upload Attachment File !", "warning");
-
-            $("#panelsStayOpen-collapseTFour").css("display", "inline");
+        if (tableLength == 2) {
+            swal("Warning", "Please At least 1 row data required.", "warning");
             return false;
         }
     }
