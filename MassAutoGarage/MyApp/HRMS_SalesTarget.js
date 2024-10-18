@@ -121,9 +121,6 @@ $("#btnsave").click(function () {
     var tableLength = $("#example tr").length;
     var ProductListArr = [];
 
-    //if (SalesId_ != "" &&  tableLength > 1) {
-    //    if (tableLength > 1) {
-
     if (SalesId_ != "" && tableLength > 2) {
 
         if (tableLength > 2) {
