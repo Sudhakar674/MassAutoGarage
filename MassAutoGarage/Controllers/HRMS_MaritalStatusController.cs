@@ -14,7 +14,7 @@ namespace MassAutoGarage.Controllers
     public class HRMS_MaritalStatusController : Controller
     {
         // GET: HRMS_MaritalStatus
-        HRMSMaritalStatusModel model=new HRMSMaritalStatusModel();
+        //HRMSMaritalStatusModel model=new HRMSMaritalStatusModel();
         HRMSMaritalStatus_DL DL = new HRMSMaritalStatus_DL();
         public ActionResult MaritalStatus()
         {

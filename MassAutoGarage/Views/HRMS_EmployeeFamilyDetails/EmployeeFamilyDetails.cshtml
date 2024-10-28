@@ -1,4 +1,5 @@
-﻿@model MassAutoGarage.Models.CompanyMasterModel
+﻿@model MassAutoGarage.Models.HRMS_EmployeeFamilyDetails.HRMSEmployeeFamilyDetailsModel
+
 @{
     ViewBag.Title = "Employee Family Details";
     ViewBag.pTitle = "Employee Family Details";
@@ -141,10 +142,6 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
 @section styles{
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-
-
-
-
 }
 
 @using (Html.BeginForm("EmployeeFamilyDetails", "HRMS_EmployeeFamilyDetails", FormMethod.Post, new { enctype = "multipart/form-data", OnSubmit = "return ValidationForm()", @class = "form-validate" }))
@@ -157,22 +154,11 @@
                 <div class="card-header main-f">
                     <div class="row">
                         <div class="col-md-6 col-5"> <h5 class="card-title mb-0 gp-detail">HRMS - EMPLOYEE FAMILY DETAILS</h5></div>
-                        <div class="col-md-6 col-7">
+                        <div class="col-md-6 col-7"  id="hdfbacktolist">
                             <a href="@Url.Action("Index", "HRMS_EmployeeFamilyDetails")" class="btn btn-primary add-new" style="float:right;" tabindex="1"> <i class="fa fa-arrow-left align-middle me-1"></i> BACK TO EMPLOYEE FAMILY DETAILS LIST</a>
                         </div>
                     </div>
                 </div>
-
-
-                @*<div class="card-header align-items-center d-flex">
-                    <h4 class="card-title mb-0 flex-grow-1">HRMS - EMPLOYEE FAMILY DETAILS </h4>
-                    <div class="flex-shrink-0">
-                        <div class="form-check form-switch form-switch-right form-switch-md">
-                            <a href="@Url.Action("Index", "HRMS_EmployeeFamilyDetails")" class="btn btn-primary" style="float:right;" tabindex="12"><i class="fa fa-list" aria-hidden="true"></i> BACK TO EMPLOYEE FAMILY DETAILS LIST</a>
-                        </div>
-                    </div>
-                </div>*@
-
 
 
                 <!-- end card header -->
@@ -182,48 +168,50 @@
                             <div class="col-xxl-4 col-md-4">
                                 <div>
                                     <label for="basiInput" class="form-label">Employee Branch <code>*</code></label>
-                                    <select id="ddlDepartment" class="form-select" aria-label="Default select example">
-                                        <option value="0">Select </option>
-                                    </select>
+                                    @Html.HiddenFor(m => m.ID, new { @class = "form-control" })
+                                    @Html.DropDownListFor(x => x.BranchId, new SelectList(ViewBag.BranchList, "ID", "BranchName"), "- Select Branch -", new { @class = "form-control", tabindex = 1 })
+                                    @Html.ValidationMessageFor(m => m.BranchId, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                             <div class="col-xxl-4 col-md-4">
                                 <div>
                                     <label for="basiInput" class="form-label">Mother Name<code>*</code></label>
-                                    <input type="text" class="form-control" />
+                                    @Html.TextBoxFor(m => m.MotherName, new { @class = "form-control", tabindex = 2 })
+                                    @Html.ValidationMessageFor(m => m.MotherName, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
                                 </div>
                             </div>
                             <div class="col-xxl-4 col-md-4">
                                 <div>
                                     <label for="basiInput" class="form-label">Employee Name<code>*</code></label>
-                                    <input type="text" class="form-control" />
+                                    @Html.TextBoxFor(m => m.EmployeeName, new { @class = "form-control", tabindex = 2 })
+                                    @Html.ValidationMessageFor(m => m.EmployeeName, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
                                 </div>
                             </div>
                             <div class="col-xxl-4 col-md-4">
                                 <div>
                                     <label for="basiInput" class="form-label">Marital Status<code>*</code></label>
-                                    <select id="ddlMaritalStatus" class="form-select" aria-label="Default select example">
-                                        <option value="0">Select </option>
-                                    </select>
+                                    @Html.DropDownListFor(x => x.MaritalStatusId, new SelectList(ViewBag.MaritalList, "ID", "MaritalStatus"), "- Select Marital Status -", new { @class = "form-control", tabindex = 1 })
+                                    @Html.ValidationMessageFor(m => m.MaritalStatusId, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                             <div class="col-xxl-4 col-md-4">
                                 <div>
                                     <label for="basiInput" class="form-label">Father Name<code>*</code></label>
-                                    <input type="text" class="form-control" />
+                                    @Html.TextBoxFor(m => m.FatherName, new { @class = "form-control", tabindex = 2 })
+                                    @Html.ValidationMessageFor(m => m.FatherName, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
                                 </div>
                             </div>
                             <div class="col-xxl-4 col-md-4">
                                 <div>
                                     <label for="basiInput" class="form-label">Photo<code>*</code></label>
-                                    <input type="file" class="form-control" />
+                                    <input type="file" name="Photo" id="Photo" class="form-control" />
                                 </div>
                             </div>
 
                             <div class="col-xxl-12 col-md-12">
                                 <div style="text-align:right;">
                                     <input type="button" id="btnsave" value="Save" class="btn btn-success" style=" margin-top: 8%;" />
-                                    <input type="button" id="btnReset" value="Reset" class="btn btn-danger" style=" margin-top: 8%;" />
+                                    <input type="button" id="btnReset" value="Reset" class="btn btn-danger" style=" margin-top: 8%;" onclick="return Reset();" />
                                 </div>
                             </div>
                             <div class="col-xxl-12 col-md-12">
@@ -269,148 +257,30 @@
     <script src="~/assets/libs/prismjs/prism.js"></script>
     <!-- App js -->
     <script src="~/assets/js/app.js"></script>
-
 }
 
-@*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>*@
-
-@*<script src="~/Content/js/jquery.min.js"></script>*@
 <script src="~/Scripts/jquery-3.4.1.min.js"></script>
 <script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
 
-@*<script src="~/Content/js/jquery.min.js"></script>*@
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script src="~/MyApp/HRMS_EmployeeFamilyDetails.js"></script>
 
 <script>
     $(document).ready(function () {
 
-
-
     });
+</script>
 
 
-    $("#btnSave").click(function (e) {
-        debugger;
-        e.preventDefault();
-
-        var _code = $("#Code").val();
-        var _GroupID = $("#GroupID option:selected").val();
-        var _CompanyName = $("#CompanyName").val();
-        var _TRN = $("#TRN").val();
-        var _LocationMapUrl = $("#LocationMapUrl").val();
-        var _Email = $("#Email").val();
-        var _Address = $("#Address").val();
-        var _companyId = $("#HDFID").val();
-        var _CurrentCount = $("#HDFCurrentCount").val();
-        var _IsActive = $("#IsActive option:selected").val();
-
-        if (_code != "" && _GroupID != "" && _CompanyName != "" && _TRN != "" && _Email != "" && _Address != "") {
-
-            var ProductListArr = [];
-            var ProductList = {
-                Id: _companyId,
-                CurrentCount: _CurrentCount,
-                Code: _code,
-                GroupID: _GroupID,
-                CompanyName: _CompanyName,
-                Address: _Address,
-                TRN: _TRN,
-                Email: _Email,
-                LocationMapUrl: _LocationMapUrl,
-                IsActive: _IsActive
-
-            };
-            //ProductListArr.push(ProductList);
-
-            if (confirm("Are you sure you want to continue ?")) {
-                $.ajax({
-                    type: 'POST',
-                    url: '/CompanyMaster/SaveCompanyMaster',
-                    data: JSON.stringify(ProductList),
-                    contentType: "application/json; charset=utf-8",
-                    dataType: 'json',
-                    success: function (data) {
-                        debugger;
-                        if (data == "1") {
-                            debugger;
-                            swal({
-                                title: "Success",
-                                text: "Records Successfully Saved",
-                                type: "success",
-                            }).then(function (isConfirm) {
-                                if (isConfirm) {
-                                    var url = "/CompanyMaster/Index";
-                                    window.location.href = url;
-                                } else {
-
-                                }
-                            });
-
-                        }
-                        else if (data == "2") {
-
-                            swal({
-                                title: "Success",
-                                text: "Records Successfully Updated",
-                                type: "success",
-                            }).then(function (isConfirm) {
-                                if (isConfirm) {
-                                    var url = "/CompanyMaster/Index";
-                                    window.location.href = url;
-                                } else {
-
-                                }
-                            });
-                        }
-                        else if (data == "4") {
-                            swal("Warning", "This Code is Already Exist !", "warning");
-                        } else {
-
-                            swal("Warning", "Record not save!", "warning");
-                        }
-
-                    },
-                    error: function (httpResponse) {
-
-                        swal("Warning", "Something Went to Wrong!", "warning");
-
-                    }
-                })
-            }
-        }
-        else {
-
-            if (_code == "") {
-                swal("Warning", "Please Enter Code !", "warning");
-                return false;
-            }
-            if (_GroupID == "") {
-                swal("Warning", "Please Select Group Name!", "warning");
-                return false;
-            }
-            if (_CompanyName == "") {
-                swal("Warning", "Please Enter Company Name!", "warning");
-                return false;
-            }
-            if (_TRN == "") {
-                swal("Warning", "Please Enter TRN !", "warning");
-                return false;
-            }
-
-            if (_Email == "") {
-                swal("Warning", "Please Enter Email Address!", "warning");
-                $("#Email").val('');
-                return false;
-            }
-            if (_Address == "") {
-                swal("Warning", "Please Enter Address!", "warning");
-                return false;
-            }
-        }
-
-    })
-
-
+<script>
+    if ($("#ID").val() != 0) {
+        $("#btnsave").val('Update');
+    }
 </script>
 
 
