@@ -2210,6 +2210,9 @@ Q:\repository\MassAutoGarage\MassAutoGarage\MassAutoGarage\obj\Debug\MassAutoGar
 Q:\repository\MassAutoGarage\MassAutoGarage\MassAutoGarage\obj\Debug\MassAuto.FBF93F1D.Up2Date
 Q:\repository\MassAutoGarage\MassAutoGarage\MassAutoGarage\obj\Debug\MassAutoGarage.dll
 Q:\repository\MassAutoGarage\MassAutoGarage\MassAutoGarage\obj\Debug\MassAutoGarage.pdb
+D:\Sudhakar Sharma\repository\MassAutoGarage\MassAutoGarage\bin\NPOI.Core.xml
+D:\Sudhakar Sharma\repository\MassAutoGarage\MassAutoGarage\bin\de\Microsoft.TeamFoundation.Dashboards.WebApi.resources.dll
+D:\Sudhakar Sharma\repository\MassAutoGarage\MassAutoGarage\bin\pt-BR\Microsoft.VisualStudio.Services.Common.resources.dll
 D:\Sudhakar Sharma\repository\MassAutoGarage\MassAutoGarage\bin\MassAutoGarage.dll.config
 D:\Sudhakar Sharma\repository\MassAutoGarage\MassAutoGarage\bin\MassAutoGarage.dll
 D:\Sudhakar Sharma\repository\MassAutoGarage\MassAutoGarage\bin\MassAutoGarage.pdb
@@ -2437,7 +2440,6 @@ D:\Sudhakar Sharma\repository\MassAutoGarage\MassAutoGarage\bin\Microsoft.Visual
 D:\Sudhakar Sharma\repository\MassAutoGarage\MassAutoGarage\bin\Microsoft.VisualStudio.Services.WebApi.xml
 D:\Sudhakar Sharma\repository\MassAutoGarage\MassAutoGarage\bin\Newtonsoft.Json.xml
 D:\Sudhakar Sharma\repository\MassAutoGarage\MassAutoGarage\bin\NPOI.Core.pdb
-D:\Sudhakar Sharma\repository\MassAutoGarage\MassAutoGarage\bin\NPOI.Core.xml
 D:\Sudhakar Sharma\repository\MassAutoGarage\MassAutoGarage\bin\NPOI.OOXML.pdb
 D:\Sudhakar Sharma\repository\MassAutoGarage\MassAutoGarage\bin\NPOI.OOXML.xml
 D:\Sudhakar Sharma\repository\MassAutoGarage\MassAutoGarage\bin\NPOI.OpenXml4Net.pdb
@@ -2540,7 +2542,6 @@ D:\Sudhakar Sharma\repository\MassAutoGarage\MassAutoGarage\bin\ru\Microsoft.Tea
 D:\Sudhakar Sharma\repository\MassAutoGarage\MassAutoGarage\bin\tr\Microsoft.TeamFoundation.Core.WebApi.resources.dll
 D:\Sudhakar Sharma\repository\MassAutoGarage\MassAutoGarage\bin\zh-Hans\Microsoft.TeamFoundation.Core.WebApi.resources.dll
 D:\Sudhakar Sharma\repository\MassAutoGarage\MassAutoGarage\bin\zh-Hant\Microsoft.TeamFoundation.Core.WebApi.resources.dll
-D:\Sudhakar Sharma\repository\MassAutoGarage\MassAutoGarage\bin\de\Microsoft.TeamFoundation.Dashboards.WebApi.resources.dll
 D:\Sudhakar Sharma\repository\MassAutoGarage\MassAutoGarage\bin\es\Microsoft.TeamFoundation.Dashboards.WebApi.resources.dll
 D:\Sudhakar Sharma\repository\MassAutoGarage\MassAutoGarage\bin\fr\Microsoft.TeamFoundation.Dashboards.WebApi.resources.dll
 D:\Sudhakar Sharma\repository\MassAutoGarage\MassAutoGarage\bin\it\Microsoft.TeamFoundation.Dashboards.WebApi.resources.dll
@@ -2701,7 +2702,6 @@ D:\Sudhakar Sharma\repository\MassAutoGarage\MassAutoGarage\bin\it\Microsoft.Vis
 D:\Sudhakar Sharma\repository\MassAutoGarage\MassAutoGarage\bin\ja\Microsoft.VisualStudio.Services.Common.resources.dll
 D:\Sudhakar Sharma\repository\MassAutoGarage\MassAutoGarage\bin\ko\Microsoft.VisualStudio.Services.Common.resources.dll
 D:\Sudhakar Sharma\repository\MassAutoGarage\MassAutoGarage\bin\pl\Microsoft.VisualStudio.Services.Common.resources.dll
-D:\Sudhakar Sharma\repository\MassAutoGarage\MassAutoGarage\bin\pt-BR\Microsoft.VisualStudio.Services.Common.resources.dll
 D:\Sudhakar Sharma\repository\MassAutoGarage\MassAutoGarage\bin\ru\Microsoft.VisualStudio.Services.Common.resources.dll
 D:\Sudhakar Sharma\repository\MassAutoGarage\MassAutoGarage\bin\tr\Microsoft.VisualStudio.Services.Common.resources.dll
 D:\Sudhakar Sharma\repository\MassAutoGarage\MassAutoGarage\bin\zh-Hans\Microsoft.VisualStudio.Services.Common.resources.dll
