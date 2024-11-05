@@ -1,4 +1,4 @@
-﻿@model List<MassAutoGarage.Models.AddOnsMaster.AddOnsMasterModel>
+﻿@model List<MassAutoGarage.Models.HRMS_Loan.HRMSLoanModel>
 
 @{
     ViewBag.Title = "Loan";
@@ -171,7 +171,6 @@
 }
 
 
-
 <div class="row">
     <div class="col-lg-12">
         <div class="card">
@@ -184,13 +183,6 @@
                     </div>
                 </div>
             </div>
-
-
-            @*<div class="card-header">
-                <h5 class="card-title mb-0">HRMS - LOAN</h5>
-                <a href="@Url.Action("Loan","HRMS_Loan")" class="btn btn-primary" style="float:right;" tabindex="1"><i class="ri-add-circle-line align-middle me-1"></i>ADD LOAN</a>
-            </div>*@
-
 
             <div class="card-body">
                 <div class="col-lg-12">
@@ -216,31 +208,50 @@
                         <thead>
                             <tr>
                                 <th style=" width: 1%;">S.N.</th>
-                                <th style="white-space: nowrap">Branch</th>
+                                <th style="white-space: nowrap">Branch Name</th>
                                 <th style="white-space: nowrap">Employee Name</th>
                                 <th style="white-space: nowrap">Loan Date</th>
-                                <th style=" width: 15%;">Action</th>
-
+                                <th style="white-space: nowrap">Loan Amount</th>
+                                <th style="white-space: nowrap">From Date</th>
+                                <th style="white-space: nowrap">To Date</th>
+                                <th style="white-space: nowrap">Deduction Per Month</th>
+                                <th style="white-space: nowrap">Total Amount</th>
+                                <th style="white-space: nowrap">Remarks</th>
+                                <th style=" width: 20%;">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                        </tbody>
-                    </table>
 
-                    <table id="CompanyGroup" class="table pure-table" style="width: 100%; display: none;" cellspacing="0" cellpadding="0">
-                        <thead>
-                            <tr>
-                                <th colspan="5">
-                                    <img src="@ViewBag.compnylgo" alt="" style="width: 213px; border-radius: 7px;">
-                                    <span style=" float: right;"> <b>Address  :-</b> @ViewBag.compnyAddress</span>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th style=" width: 1%;">Srl.No</th>
-                                <th style="white-space: nowrap">Sales Name</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td data-th="Srl.No.">@i</td>
+                                    <td data-th="Srl.No.">@item.BranchName</td>
+                                    <td data-th="Code">@item.EmployeeName</td>
+                                    <td data-th="Srl.No.">@item.LoanDate</td>
+                                    <td data-th="Code">@item.LoanAmount</td>
+                                    <td data-th="Srl.No.">@item.FromDate</td>
+                                    <td data-th="Code">@item.ToDate</td>
+                                    <td data-th="Srl.No.">@item.DeductionPerMonth</td>
+                                    <td data-th="Code">@item.TotalAmount</td>
+                                    <td data-th="Srl.No.">@item.Remarks</td>
+
+                                    <td data-th="Action">
+                                        <div class="d-flex gap-2">
+                                            <div class="edit">
+
+                                                <a href="/HRMS_Loan/Loan?Id=@item.Idencrept" class="btn btn-sm btn-success edit-item-btn" tabindex="6">Edit <i class="fa fa-edit"></i></a>
+                                            </div>
+                                            <div class="remove">
+                                                <a href="javascript:void(0)" onclick="return DeleteLoan('@item.Idencrept')" class="btn btn-sm btn-danger remove-item-btn">Delete <i class="fa fa-trash" aria-hidden="true"></i></a>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                i++;
+                            }
+
                         </tbody>
                     </table>
                 </div>
@@ -254,6 +265,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <!--datatable js-->
+
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
@@ -269,7 +281,8 @@
     <!-- App js -->
     <script src="~/assets/js/app.js"></script>
 }
-<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+
+<script src="~/MyApp/HRMS_Loan.js"></script>
 
 <script>
     $(document).ready(function () {
@@ -292,52 +305,6 @@
 
     });
 
-    function ConfirmDelete(GrdId) {
-        debugger;
-        var x = confirm("Are you sure you want to delete?");
-        if (x)
-
-            if (GrdId > 0) {
-                $.ajax({
-                    url: '/AddOnsMaster/DeleteAddONS',
-                    type: "GET",
-                    dataType: "json",
-                    data: { AddONSID: GrdId },
-                    success: function (result) {
-                        if (result == "3") {
-
-                            swal({
-                                title: "Success",
-                                text: "Records Successfully Deleted",
-                                type: "success",
-                            }).then(function (isConfirm) {
-                                if (isConfirm) {
-
-                                    window.location.reload();
-                                } else {
-
-                                }
-                            });
-
-                        } else {
-
-                            swal("Warning", "Records not Deleted", "warning");
-                        }
-
-                    },
-                    error: function (xhr, status) {
-                        console.log(status);
-                        console.log(xhr);
-                    },
-                    complete: function () {
-
-                    }
-                });
-            }
-            else
-                return false;
-    }
-
     $('#txtsearch').change(function () {
 
         searchfromDB();
@@ -347,76 +314,8 @@
         debugger;
 
         var SearchKey = $('#txtsearch').val();
-        var url = "/AddOnsMaster/OnsDetails?Key=" + SearchKey;
+        var url = "/HRMS_Loan/Index?Key=" + SearchKey;
         window.location.href = url;
     }
-    function generate() {
-        var doc = new jspdf.jsPDF()
 
-        // Simple data example
-        //var head = [['ID', 'Country', 'Rank', 'Capital']]
-        //var body = [
-        //    [1, 'Denmark', 7.526, 'Copenhagen'],
-        //    [2, 'Switzerland', 7.509, 'Bern'],
-        //    [3, 'Iceland', 7.501, 'Reykjavík'],
-        //]
-        //doc.autoTable({ head: head, body: body })
-
-        // Simple html example
-        doc.autoTable({ html: '#CompanyGroup' })
-
-        doc.save('Nationality.pdf')
-    }
-
-    $(function () {
-
-        //var tble = document.getElementById('CompanyGroup');
-        //var row = tble.rows;
-        //var i = 6;
-        //for (var j = 0; j < row.length; j++) {
-
-
-        //    row[j].deleteCell(i);
-        //}
-
-
-
-        var table = $('#example').DataTable();
-        $("#btnExport").click(function (e) {
-            debugger;
-
-            // Getting the table
-
-
-            table.page.len(-1).draw();
-            window.open('data:application/vnd.ms-excel,' +
-                encodeURIComponent($('#example').parent().html()));
-            setTimeout(function () {
-                table.page.len(10).draw();
-            }, 1000)
-
-        });
-    });
-</script>
-<script type="text/javascript">
-    $("body").on("click", "#btnPdf", function () {
-        debugger;
-
-        $('#CompanyGroup').css("display", "inline-table");
-
-        html2canvas($('#CompanyGroup')[0], {
-            onrendered: function (canvas) {
-                var data = canvas.toDataURL();
-                var docDefinition = {
-                    content: [{
-                        image: data,
-                        width: 500
-                    }]
-                };
-                pdfMake.createPdf(docDefinition).download("AddONSDetails.pdf");
-                $('#CompanyGroup').css("display", "none");
-            }
-        });
-    });
-
-</script>
+    </script>

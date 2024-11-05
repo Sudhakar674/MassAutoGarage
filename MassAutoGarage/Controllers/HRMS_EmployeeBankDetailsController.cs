@@ -17,7 +17,7 @@ namespace MassAutoGarage.Controllers
         // GET: HRMS_EmployeeBankDetails
         //HRMSEmployeeBankDetailsModel model = new HRMSEmployeeBankDetailsModel();
         HRMSEmployeeBankDetailsDL DL = new HRMSEmployeeBankDetailsDL();
-        //ClsGeneral objcls = new ClsGeneral();
+        ClsGeneral objcls = new ClsGeneral();
         public ActionResult Index()
         {
             return View();
@@ -29,11 +29,17 @@ namespace MassAutoGarage.Controllers
             return View();
         }
 
-        [HttpPost]
-        public ActionResult SaveEmployeeBankDetails(HRMSEmployeeBankDetailsModel model)
+        [HttpGet]
+        public ActionResult SaveBankDetails(HRMSEmployeeBankDetailsModel model,string BranchId,string AccountNumber,string EmployeeName)
         {
             try
             {
+
+                model.BranchId = BranchId;
+                model.AccountNumber = AccountNumber;
+                model.EmployeeName = EmployeeName;
+
+
                 model.CreatedBy = Session["userId"].ToString();
                 model.QueryType = "11";
                 model = DL.AddUpdate(model);

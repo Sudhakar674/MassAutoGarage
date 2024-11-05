@@ -217,7 +217,7 @@
                             </div>
                             <div class="col-xxl-4 col-md-4">
                                 <div>
-                                    <input type="button" id="save420" name="save" value="Save" class="btn btn-success" style=" margin-top: 8%;" />
+                                    <input type="button" id="btnsave" name="save" value="Save" class="btn btn-success" style=" margin-top: 8%;" />
                                     <a href="/HRMS_EmployeeBankDetails/EmployeeBankDetails" class="btn btn-danger" style=" margin-top: 8%;">Reset</a>
                                 </div>
                             </div>
@@ -240,9 +240,11 @@
     <!-- App js -->
     <script src="~/assets/js/app.js"></script>
 }
+
 <script src="~/Scripts/jquery-3.4.1.min.js"></script>
 <script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
+
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="/resources/demos/style.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -256,29 +258,26 @@
     });
 
 
-    $("#save420").click(function (e) {
+
+
+
+
+
+    $("#btnsave").click(function (e) {
         debugger;
         e.preventDefault();
-        var BranchId_ = $("#BranchId").val();
-        var AccountNumber_ = $("#AccountNumber").val();
-        var EmployeeName_ = $("#EmployeeName").val();
-        var IBANCODE_ = $("#IBANCODE").val();
-        var BankName_ = $("#BankName").val();
-        var BankBranch_ = $("#BankBranch").val();
-        var StatusId_ = $("#StatusId").val();
-        if (BranchId_ != "") {
+        //var LeaveType_ = $("#LeaveType").val();
+        //var LeaveID_ = $("#LeaveID").val();
 
-            var MaritalSDetails = {
-                BranchId: BranchId_
-            };
+
+       
 
             if (confirm("Are you sure you want to continue ?")) {
 
                 $.ajax({
                     type: 'POST',
-                    url: '/HRMS_EmployeeBankDetails/SaveEmployeeBankDetails',
-                    data: JSON.stringify(MaritalSDetails),
-                    contentType: "application/json; charset=utf-8",
+                    url: '/HRMS_EmployeeBankDetails/SaveBankDetails',
+                    data: { BranchId: $("#BranchId").val(), AccountNumber: $("#AccountNumber").val(), EmployeeName: $("#EmployeeName").val() },
                     dataType: 'json',
                     success: function (data) {
                         debugger;
@@ -320,19 +319,17 @@
                     }
                 })
             }
-        }
-        else {
-
-            if (BranchId_ == "") {
-                swal("Warning", "Please Enter BranchId ", "warning");
-                return false;
-            }
-        }
+     
     });
 
 
 
-    //$("#save4205555555555").click(function (e) {
+
+
+
+
+
+    //$("#btnsave").click(function (e) {
     //    debugger;
     //    e.preventDefault();
     //    var BranchId_ = $("#BranchId").val();
@@ -343,23 +340,112 @@
     //    var BankBranch_ = $("#BankBranch").val();
     //    var StatusId_ = $("#StatusId").val();
 
-    //    if (BranchId_ != "" && AccountNumber_ != "" && EmployeeName_ != "" && IBANCODE_ != "" && BankName_ != "" && BankBranch_ != "" && StatusId_ != "") {
 
-    //        var BankDetails = {
-    //            BranchId: BranchId_,
-    //            AccountNumber: AccountNumber_,
-    //            EmployeeName: EmployeeName_,
-    //            IBANCODE: IBANCODE_,
-    //            BankName: BankName_,
-    //            BankBranch: BankBranch_,
-    //            StatusId: StatusId_
+    //    //////////////////////////////////////////////////////////////////////////
+
+    //    if (BranchId_ != "") {
+
+    //        if (confirm("Are you sure you want to continue ?")) {
+
+    //            var formData = new FormData();
+    //            formData.append('BranchId', $("#BranchId").val());
+    //            formData.append('AccountNumber', AccountNumber_);
+    //            formData.append('EmployeeName', $("#EmployeeName").val());
+    //            formData.append('IBANCODE', $("#IBANCODE").val());
+    //            formData.append('BankName', $("#BankName").val());
+    //            formData.append('BankBranch', $("#BankBranch").val());
+    //            formData.append('StatusId', $("#StatusId").val());
+
+    //            $.ajax({
+    //                url: '/HRMS_EmployeeBankDetails/SaveBankDetails',
+    //                type: 'Post',
+    //                contentType: false, // Not to set any content header
+    //                processData: false, // Not to process data
+    //                data: formData,
+    //                success: function (data) {
+    //                    debugger;
+    //                    if (data.Result == "yes") {
+    //                        swal({
+    //                            title: "Success",
+    //                            text: "Records Successfully Saved",
+    //                            type: "success",
+    //                        }).then(function (isConfirm) {
+    //                            if (isConfirm) {
+    //                                window.location.reload();
+    //                            }
+    //                            else {
+    //                            }
+    //                        });
+    //                    }
+    //                    else if (data.Result == "yes1") {
+    //                        swal({
+    //                            title: "Success",
+    //                            text: "Records Successfully Updated",
+    //                            type: "success",
+    //                        }).then(function (isConfirm) {
+    //                            if (isConfirm) {
+    //                                /* window.location.reload();*/
+    //                                window.location.href = '/HRMS_Bonus/Bonus';
+    //                            }
+    //                            else {
+    //                            }
+    //                        });
+    //                    }
+    //                    else {
+    //                        swal("Warning", "Record not save!", "warning");
+    //                    }
+    //                },
+    //                error: function (httpResponse) {
+    //                    swal("Warning", "Something Went to Wrong!", "warningttttttttt");
+    //                }
+    //            })
+    //        }
+    //    }
+    //    else {
+    //        if (BranchId_ == "") {
+    //            swal("Warning", "Please Enter Branch Name !", "warning");
+    //            return false;
+    //        }
+    //    }
+    //});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //$("#save420").click(function (e) {
+    //    debugger;
+    //    e.preventDefault();
+    //    var BranchId_ = $("#BranchId").val();
+    //    var AccountNumber_ = $("#AccountNumber").val();
+    //    var EmployeeName_ = $("#EmployeeName").val();
+    //    var IBANCODE_ = $("#IBANCODE").val();
+    //    var BankName_ = $("#BankName").val();
+    //    var BankBranch_ = $("#BankBranch").val();
+    //    var StatusId_ = $("#StatusId").val();
+    //    if (BranchId_ != "") {
+
+    //        var MaritalSDetails = {
+    //            BranchId: BranchId_
     //        };
 
     //        if (confirm("Are you sure you want to continue ?")) {
+
     //            $.ajax({
     //                type: 'POST',
     //                url: '/HRMS_EmployeeBankDetails/SaveEmployeeBankDetails',
-    //                data: JSON.stringify(BankDetails),
+    //                data: JSON.stringify(MaritalSDetails),
     //                contentType: "application/json; charset=utf-8",
     //                dataType: 'json',
     //                success: function (data) {
@@ -378,20 +464,20 @@
     //                            }
     //                        });
     //                    }
-    //                    //else if (data.Result == "yes1") {
-    //                    //    swal({
-    //                    //        title: "Success",
-    //                    //        text: "Records Successfully Updated",
-    //                    //        type: "success",
-    //                    //    }).then(function (isConfirm) {
-    //                    //        if (isConfirm) {
-    //                    //            window.location.reload();
-    //                    //        }
-    //                    //        else {
+    //                    else if (data.Result == "yes1") {
+    //                        swal({
+    //                            title: "Success",
+    //                            text: "Records Successfully Updated",
+    //                            type: "success",
+    //                        }).then(function (isConfirm) {
+    //                            if (isConfirm) {
+    //                                window.location.reload();
+    //                            }
+    //                            else {
 
-    //                    //        }
-    //                    //    });
-    //                    //}
+    //                            }
+    //                        });
+    //                    }
 
     //                    else {
     //                        swal("Warning", "Record not save!", "warning");
@@ -406,35 +492,15 @@
     //    else {
 
     //        if (BranchId_ == "") {
-    //            swal("Warning", "Please Enter Employee Branch !", "warning");
-    //            return false;
-    //        }
-    //        if (AccountNumber_ == "") {
-    //            swal("Warning", "Please Enter Account Number !", "warning");
-    //            return false;
-    //        }
-    //        if (EmployeeName_ == "") {
-    //            swal("Warning", "Please Enter Employee Name !", "warning");
-    //            return false;
-    //        }
-    //        if (IBANCODE_ == "") {
-    //            swal("Warning", "Please Enter IBAN CODE !", "warning");
-    //            return false;
-    //        }
-    //        if (BankName_ == "") {
-    //            swal("Warning", "Please Enter Bank Name !", "warning");
-    //            return false;
-    //        }
-    //        if (BankBranch_ == "") {
-    //            swal("Warning", "Please Enter Bank Branch !", "warning");
-    //            return false;
-    //        }
-    //        if (StatusId_ == "") {
-    //            swal("Warning", "Please Enter Status !", "warning");
+    //            swal("Warning", "Please Enter BranchId ", "warning");
     //            return false;
     //        }
     //    }
     //});
+
+
+
+
 
 
 </script>
