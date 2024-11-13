@@ -8,7 +8,6 @@ namespace MassAutoGarage.Models.HRMS_EmployeeBankDetails
 {
     public class HRMSEmployeeBankDetailsModel
     {
-        public string Id { get; set; }
         public string IdEncrypte { get; set; }
         public string BranchId { get; set; }
         public string AccountNumber { get; set; }

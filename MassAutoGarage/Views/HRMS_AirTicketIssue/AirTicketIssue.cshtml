@@ -1,4 +1,5 @@
-﻿@model MassAutoGarage.Models.CompanyMasterModel
+﻿@model MassAutoGarage.Models.HRMS_AirTicketIssue.HRMSAirTicketIssueModel
+
 @{
     ViewBag.Title = "Air Ticket Issue";
     ViewBag.pTitle = "Air Ticket Issue";
@@ -7,17 +8,11 @@
 }
 
 
-
-
 <!-- New Dive-->
 <script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
 @section styles{
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-
-
-
-
 }
 
 @using (Html.BeginForm("AirTicketIssue", "HRMS_AirTicketIssue", FormMethod.Post, new { enctype = "multipart/form-data", OnSubmit = "return ValidationForm()", @class = "form-validate" }))
@@ -25,8 +20,6 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
-
-
                 <div class="card-header main-f">
                     <div class="row">
                         <div class="col-md-6 col-5"> <h5 class="card-title mb-0 gp-detail">HRMS - AIR TICKET ISSUE</h5></div>
@@ -36,17 +29,6 @@
                     </div>
                 </div>
 
-
-                @*<div class="card-header align-items-center d-flex">
-                    <h4 class="card-title mb-0 flex-grow-1">HRMS - AIR TICKET ISSUE </h4>
-                    <div class="flex-shrink-0">
-                        <div class="form-check form-switch form-switch-right form-switch-md">
-                            <a href="@Url.Action("Index", "HRMS_AirTicketIssue")" class="btn btn-primary" style="float:right;" tabindex="12"><i class="fa fa-list" aria-hidden="true"></i> BACK TO AIR TICKET ISSUE LIST</a>
-                        </div>
-                    </div>
-                </div>*@
-
-
                 <!-- end card header -->
                 <div class="card-body">
                     <div class="live-preview">
@@ -55,41 +37,44 @@
                             <div class="col-xxl-4 col-md-4">
                                 <div>
                                     <label for="basiInput" class="form-label">Branch Name<code>*</code></label>
-                                    <select id="ddlDepartment" class="form-select" aria-label="Default select example">
-                                        <option value="0">Select </option>
-                                    </select>
+                                    @Html.HiddenFor(m => m.ID, new { @class = "form-control" })
+                                    @Html.DropDownListFor(x => x.BranchId, new SelectList(ViewBag.BranchList, "ID", "BranchName"), "- Select Branch -", new { @class = "form-control", tabindex = 1 })
+                                    @*@Html.ValidationMessageFor(m => m.BranchId, "", new { @class = "text-danger" })*@
                                 </div>
                             </div>
                             <div class="col-xxl-4 col-md-4">
                                 <div>
                                     <label for="basiInput" class="form-label">Voucher No<code>*</code></label>
-                                    <input type="text" class="form-control" />
+                                    @Html.TextBoxFor(m => m.VoucherNo, new { @class = "form-control", tabindex = 2,@readonly= "@readonly" })
+                                    @*@Html.ValidationMessageFor(m => m.VoucherNo, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })*@
                                 </div>
                             </div>
                             <div class="col-xxl-4 col-md-4">
                                 <div>
                                     <label for="basiInput" class="form-label">Date<code>*</code></label>
-                                    <input type="text" class="form-control" />
+                                    @Html.TextBoxFor(m => m.Date, new { @class = "form-control", tabindex = 3 })
+                                    @*@Html.ValidationMessageFor(m => m.Date, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })*@
                                 </div>
                             </div>
                             <div class="col-xxl-4 col-md-4">
                                 <div>
                                     <label for="basiInput" class="form-label">Employee Name<code>*</code></label>
-                                    <select id="ddlEmpName" class="form-select" aria-label="Default select example">
-                                        <option value="0">Select </option>
-                                    </select>
+                                    @Html.DropDownListFor(x => x.EmployeeId, new SelectList(ViewBag.EmployeeList, "Id", "EmployeeName"), "- Select Employee Name -", new { @class = "form-control", tabindex = 4 })
+                                    @*@Html.ValidationMessageFor(m => m.EmployeeId, "", new { @class = "text-danger" })*@
                                 </div>
                             </div>
                             <div class="col-xxl-4 col-md-4">
                                 <div>
                                     <label for="basiInput" class="form-label">Ticket Count<code>*</code></label>
-                                    <input type="text" class="form-control" />
+                                    @Html.TextBoxFor(m => m.TicketCount, new { @class = "form-control", tabindex = 5 })
+                                    @*@Html.ValidationMessageFor(m => m.TicketCount, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })*@
                                 </div>
                             </div>
                             <div class="col-xxl-4 col-md-4">
                                 <div>
                                     <label for="basiInput" class="form-label">Ticket From<code>*</code></label>
-                                    <input type="text" class="form-control" />
+                                    @Html.TextBoxFor(m => m.TicketFrom, new { @class = "form-control", tabindex = 6 })
+                                    @*@Html.ValidationMessageFor(m => m.TicketFrom, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })*@
                                 </div>
                             </div>
                             <div class="col-xxl-4 col-md-4">
@@ -97,7 +82,8 @@
                                     <label for="basiInput" class="form-label">
                                         Ticket To<code>*</code>
                                     </label>
-                                    <input type="text" class="form-control" />
+                                    @Html.TextBoxFor(m => m.TicketTo, new { @class = "form-control", tabindex = 7 })
+                                    @*@Html.ValidationMessageFor(m => m.TicketTo, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })*@
                                 </div>
                             </div>
 
@@ -105,52 +91,59 @@
                             <div class="col-xxl-2 col-md-2">
                                 <div>
                                     <label for="basiInput" class="form-label">Arrival Date <code>*</code></label>
-                                    <input type="text" class="form-control" />
+                                    @Html.TextBoxFor(m => m.ArrivalDate, new { @class = "form-control", tabindex = 8 })
+                                    @*@Html.ValidationMessageFor(m => m.ArrivalDate, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })*@
                                 </div>
                             </div>
                             <div class="col-xxl-2 col-md-2">
                                 <div>
                                     <label for="basiInput" class="form-label">Departure Date <code>*</code></label>
-                                    <input type="text" class="form-control" />
+                                    @Html.TextBoxFor(m => m.DepartureDate, new { @class = "form-control", tabindex = 9 })
+                                    @*@Html.ValidationMessageFor(m => m.DepartureDate, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })*@
                                 </div>
                             </div>
                             <div class="col-xxl-4 col-md-4">
                                 <div>
                                     <label for="basiInput" class="form-label">Airline Name <code>*</code></label>
-                                    <input type="text" class="form-control" />
+                                    @Html.TextBoxFor(m => m.AirlineName, new { @class = "form-control", tabindex = 10 })
+                                    @*@Html.ValidationMessageFor(m => m.AirlineName, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })*@
                                 </div>
                             </div>
                             <div class="col-xxl-4 col-md-4">
                                 <div>
                                     <label for="basiInput" class="form-label">PNR Number <code>*</code></label>
-                                    <input type="text" class="form-control" />
+                                    @Html.TextBoxFor(m => m.PNRNumber, new { @class = "form-control", tabindex = 11 })
+                                    @*@Html.ValidationMessageFor(m => m.PNRNumber, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })*@
                                 </div>
                             </div>
                             <div class="col-xxl-4 col-md-4">
                                 <div>
                                     <label for="basiInput" class="form-label">Arrival Airport <code>*</code></label>
-                                    <input type="text" class="form-control" />
+                                    @Html.TextBoxFor(m => m.ArrivalAirport, new { @class = "form-control", tabindex = 12 })
+                                    @*@Html.ValidationMessageFor(m => m.ArrivalAirport, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })*@
                                 </div>
                             </div>
                             <div class="col-xxl-4 col-md-4">
                                 <div>
                                     <label for="basiInput" class="form-label">Departure Airport<code>*</code></label>
-                                    <input type="text" class="form-control" />
-                                </div>
-                            </div>
-
-                            <!--end col-->
-                            <div class="col-xxl-12 col-md-12">
-                                <div class="table-responsive">
-
+                                    @Html.TextBoxFor(m => m.DepartureAirport, new { @class = "form-control", tabindex = 13 })
+                                    @*@Html.ValidationMessageFor(m => m.DepartureAirport, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })*@
                                 </div>
                             </div>
 
                             <div class="col-xxl-12 col-md-12">
                                 <div class="form-floating" style="float:right;">
-                                    <input type="button" id="btnsave" value="Save" class="btn btn-success" style=" margin-top: 8%;" />
-                                    <input type="button" id="btnReset" value="Reset" class="btn btn-danger" style=" margin-top: 8%;" />
 
+                                    @if (Model.ID == null || Model.ID == "")
+                                    {
+                                        <input type="button" id="btnsave" value="Save" class="btn btn-success" style=" margin-top: 8%;" />
+                                        <input type="button" id="btnReset" value="Reset" class="btn btn-danger" style=" margin-top: 8%;" onclick="return Reset();" />
+                                    }
+                                    else
+                                    {
+                                        <input type="button" id="btnsave" value="Update" class="btn btn-success" style=" margin-top: 8%;" />
+                                        <input type="button" id="btnReset" value="Reset" class="btn btn-danger" style=" margin-top: 8%;" onclick="return Reset();" />
+                                    }
 
                                 </div>
 
@@ -167,156 +160,47 @@
 
 }
 <!--end col-->
-
-
-
 @section scripts{
     <!-- prismjs plugin -->
     <script src="~/assets/libs/prismjs/prism.js"></script>
     <!-- App js -->
     <script src="~/assets/js/app.js"></script>
-
 }
 
-@*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>*@
-
-@*<script src="~/Content/js/jquery.min.js"></script>*@
 <script src="~/Scripts/jquery-3.4.1.min.js"></script>
 <script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
 
-@*<script src="~/Content/js/jquery.min.js"></script>*@
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script src="~/MyApp/HRMS_AirTicketIssue.js"></script>
 
 <script>
+  
     $(document).ready(function () {
-
-
-
+        vouchernew();
     });
 
-
-    $("#btnSave").click(function (e) {
+    function vouchernew() {
         debugger;
-        e.preventDefault();
-
-        var _code = $("#Code").val();
-        var _GroupID = $("#GroupID option:selected").val();
-        var _CompanyName = $("#CompanyName").val();
-        var _TRN = $("#TRN").val();
-        var _LocationMapUrl = $("#LocationMapUrl").val();
-        var _Email = $("#Email").val();
-        var _Address = $("#Address").val();
-        var _companyId = $("#HDFID").val();
-        var _CurrentCount = $("#HDFCurrentCount").val();
-        var _IsActive = $("#IsActive option:selected").val();
-
-        if (_code != "" && _GroupID != "" && _CompanyName != "" && _TRN != "" && _Email != "" && _Address != "") {
-
-            var ProductListArr = [];
-            var ProductList = {
-                Id: _companyId,
-                CurrentCount: _CurrentCount,
-                Code: _code,
-                GroupID: _GroupID,
-                CompanyName: _CompanyName,
-                Address: _Address,
-                TRN: _TRN,
-                Email: _Email,
-                LocationMapUrl: _LocationMapUrl,
-                IsActive: _IsActive
-
-            };
-            //ProductListArr.push(ProductList);
-
-            if (confirm("Are you sure you want to continue ?")) {
-                $.ajax({
-                    type: 'POST',
-                    url: '/CompanyMaster/SaveCompanyMaster',
-                    data: JSON.stringify(ProductList),
-                    contentType: "application/json; charset=utf-8",
-                    dataType: 'json',
-                    success: function (data) {
-                        debugger;
-                        if (data == "1") {
-                            debugger;
-                            swal({
-                                title: "Success",
-                                text: "Records Successfully Saved",
-                                type: "success",
-                            }).then(function (isConfirm) {
-                                if (isConfirm) {
-                                    var url = "/CompanyMaster/Index";
-                                    window.location.href = url;
-                                } else {
-
-                                }
-                            });
-
-                        }
-                        else if (data == "2") {
-
-                            swal({
-                                title: "Success",
-                                text: "Records Successfully Updated",
-                                type: "success",
-                            }).then(function (isConfirm) {
-                                if (isConfirm) {
-                                    var url = "/CompanyMaster/Index";
-                                    window.location.href = url;
-                                } else {
-
-                                }
-                            });
-                        }
-                        else if (data == "4") {
-                            swal("Warning", "This Code is Already Exist !", "warning");
-                        } else {
-
-                            swal("Warning", "Record not save!", "warning");
-                        }
-
-                    },
-                    error: function (httpResponse) {
-
-                        swal("Warning", "Something Went to Wrong!", "warning");
-
-                    }
+        $.ajax({
+            type: 'POST',
+            url: '/HRMS_AirTicketIssue/GetMaxVoucher',
+            data: "{}",
+            dataType: "json",
+            success: function (result) {
+                $.each(result, function (i, v) {
+                    var i = 'ATIV-' + v.MaxID;
+                    $("#VoucherNo").val(i);
                 })
             }
-        }
-        else {
-
-            if (_code == "") {
-                swal("Warning", "Please Enter Code !", "warning");
-                return false;
-            }
-            if (_GroupID == "") {
-                swal("Warning", "Please Select Group Name!", "warning");
-                return false;
-            }
-            if (_CompanyName == "") {
-                swal("Warning", "Please Enter Company Name!", "warning");
-                return false;
-            }
-            if (_TRN == "") {
-                swal("Warning", "Please Enter TRN !", "warning");
-                return false;
-            }
-
-            if (_Email == "") {
-                swal("Warning", "Please Enter Email Address!", "warning");
-                $("#Email").val('');
-                return false;
-            }
-            if (_Address == "") {
-                swal("Warning", "Please Enter Address!", "warning");
-                return false;
-            }
-        }
-
-    })
-
-
+        })
+    }
 </script>
+
+
 
 

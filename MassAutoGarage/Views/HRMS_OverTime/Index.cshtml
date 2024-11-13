@@ -1,4 +1,4 @@
-﻿@model List<MassAutoGarage.Models.AddOnsMaster.AddOnsMasterModel>
+﻿@model List<MassAutoGarage.Models.HRMS_OverTime.HRMSOverTimeModel>
 
 @{
     ViewBag.Title = "Over Time";
@@ -185,13 +185,6 @@
                 </div>
             </div>
 
-            @*<div class="card-header">
-                <h5 class="card-title mb-0">HRMS - OVER TIME</h5>
-                <a href="@Url.Action("OverTime","HRMS_OverTime")" class="btn btn-primary" style="float:right;" tabindex="1"><i class="ri-add-circle-line align-middle me-1"></i>ADD OVER TIME</a>
-            </div>*@
-
-
-
             <div class="card-body">
                 <div class="col-lg-12">
                     <div class="live-preview">
@@ -211,7 +204,6 @@
                 </div>
 
                 <div class="table-responsive">
-
                     <table border="1" id="example" class="display table table-bordered" style="width:100%">
                         <thead>
                             <tr>
@@ -220,23 +212,6 @@
                                 <th style="white-space: nowrap">Voucher Date</th>
                                 <th style=" width: 15%;">Action</th>
 
-                            </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
-
-                    <table id="CompanyGroup" class="table pure-table" style="width: 100%; display: none;" cellspacing="0" cellpadding="0">
-                        <thead>
-                            <tr>
-                                <th colspan="5">
-                                    <img src="@ViewBag.compnylgo" alt="" style="width: 213px; border-radius: 7px;">
-                                    <span style=" float: right;"> <b>Address  :-</b> @ViewBag.compnyAddress</span>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th style=" width: 1%;">Srl.No</th>
-                                <th style="white-space: nowrap">Sales Name</th>
                             </tr>
                         </thead>
                         <tbody>

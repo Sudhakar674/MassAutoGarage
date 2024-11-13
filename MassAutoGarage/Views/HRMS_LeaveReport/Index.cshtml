@@ -1,4 +1,5 @@
-﻿@model MassAutoGarage.Models.CompanyMasterModel
+﻿@model MassAutoGarage.Models.HRMS_LeaveReport.HRMSLeaveReportModel
+
 @{
     ViewBag.Title = "Leave Report";
     ViewBag.pTitle = "Leave Report";
@@ -8,16 +9,11 @@
 
 
 
-
 <!-- New Dive-->
 <script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
 @section styles{
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-
-
-
-
 }
 
 @using (Html.BeginForm("Index", "HRMS_LeaveReport", FormMethod.Post, new { enctype = "multipart/form-data", OnSubmit = "return ValidationForm()", @class = "form-validate" }))
@@ -35,16 +31,6 @@
                         </div>*@
                     </div>
                 </div>
-
-                <!--<div class="card-header align-items-center d-flex">
-                    <h4 class="card-title mb-0 flex-grow-1">HRMS - LEAVE REPORT </h4>
-                    <div class="flex-shrink-0">-->
-                        @*<div class="form-check form-switch form-switch-right form-switch-md">
-                    <a href="@Url.Action("Index", "HRMS_Leave")" class="btn btn-primary" style="float:right;" tabindex="12"><i class="fa fa-list" aria-hidden="true"></i> BACK TO LEAVE LIST</a>
-                </div>*@
-                    <!--</div>
-                </div>-->
-
 
                 <!-- end card header -->
                 <div class="card-body">

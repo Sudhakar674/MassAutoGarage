@@ -12,7 +12,7 @@
 <script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
 @section styles{
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 }
 
 @using (Html.BeginForm("Loan", "HRMS_Loan", FormMethod.Post, new { enctype = "multipart/form-data", OnSubmit = "return ValidationForm()", @class = "form-validate" }))
@@ -59,21 +59,21 @@
                             <div class="col-xxl-3 col-md-3">
                                 <div>
                                     <label for="basiInput" class="form-label">From Date<code>*</code></label>
-                                    @Html.TextBoxFor(m => m.FromDate, new { @class = "form-control", tabindex = 4, @readonly = "readonly" })
+                                    @Html.TextBoxFor(m => m.FromDate, new { @class = "form-control", tabindex = 4, @readonly = "readonly" , @onchange = "return TotalLeaveCount()" })
                                     @Html.ValidationMessageFor(m => m.FromDate, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
                                 </div>
                             </div>
                             <div class="col-xxl-3 col-md-3">
                                 <div>
                                     <label for="basiInput" class="form-label">To Date<code>*</code></label>
-                                    @Html.TextBoxFor(m => m.ToDate, new { @class = "form-control", tabindex = 5, @readonly = "readonly" })
+                                    @Html.TextBoxFor(m => m.ToDate, new { @class = "form-control", tabindex = 5, @readonly = "readonly", @onchange = "return TotalLeaveCount()" })
                                     @Html.ValidationMessageFor(m => m.ToDate, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
                                 </div>
                             </div>
                             <div class="col-xxl-6 col-md-6">
                                 <div>
                                     <label for="basiInput" class="form-label">Leave Count<code>*</code></label>
-                                    @Html.TextBoxFor(m => m.LeaveCount, new { @class = "form-control", tabindex = 6 }) @*, @readonly = "readonly"*@
+                                    @Html.TextBoxFor(m => m.LeaveCount, new { @class = "form-control", tabindex = 6, @readonly = "readonly" })
                                     @Html.ValidationMessageFor(m => m.LeaveCount, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
                                 </div>
                             </div>
@@ -82,7 +82,7 @@
                                     <label for="basiInput" class="form-label">
                                         Balance Leave<code>*</code>
                                     </label>
-                                    @Html.TextBoxFor(m => m.BalanceLeave, new { @class = "form-control", tabindex = 7})
+                                    @Html.TextBoxFor(m => m.BalanceLeave, new { @class = "form-control", tabindex = 7 })
                                     @Html.ValidationMessageFor(m => m.BalanceLeave, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
                                 </div>
                             </div>
@@ -90,7 +90,7 @@
 
                             <div class="col-xxl-12 col-md-12">
                                 <div>
-                                    <label for="basiInput" class="form-label">Description<code>*</code></label>
+                                    <label for="basiInput" class="form-label">Description<code></code></label>
                                     @Html.TextAreaFor(m => m.Description, new { @class = "form-control", tabindex = 8 })
                                     @Html.ValidationMessageFor(m => m.Description, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
                                 </div>
@@ -155,6 +155,6 @@
 <script>
     $(document).ready(function () {
     });
-</script>
 
+</script>
 
