@@ -4,6 +4,7 @@ using MassAutoGarage.DBContext;
 using MassAutoGarage.Models.HRMS_Attendance;
 using MassAutoGarage.Models.HRMS_EmployeeDocuments;
 using MassAutoGarage.Models.HRMS_SalesTarget;
+using MassAutoGarage.Models.SupplierMaster;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -96,6 +97,26 @@ namespace MassAutoGarage.Data.HRMS_Attendance
             }
         }
 
+
+
+
+        public List<HRMSAttendanceModel> GetlstIdWise(string Querytype, Int64 GroupID)
+        {
+            List<HRMSAttendanceModel> obj = new List<HRMSAttendanceModel>();
+            try
+            {
+                var perm = new DynamicParameters();
+                perm.Add("@QueryType", Querytype);
+                perm.Add("@ID", GroupID);
+
+                obj = DBHelperDapper.DAAddAndReturnModelList<HRMSAttendanceModel>("USP_HRMS_Attendance", perm);
+                return obj;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
 
     }

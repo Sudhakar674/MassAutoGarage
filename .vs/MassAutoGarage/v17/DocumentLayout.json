@@ -3,60 +3,20 @@
   "WorkspaceRootPath": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|d:\\sudhakar sharma\\repository\\massautogarage\\massautogarage\\controllers\\hrms_leavecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\controllers\\hrms_leavecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\massautogarage\\models\\hrms_leavereport\\hrmsleavereportmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\models\\hrms_leavereport\\hrmsleavereportmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|d:\\sudhakar sharma\\repository\\massautogarage\\massautogarage\\controllers\\hrms_loancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\controllers\\hrms_loancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\massautogarage\\data\\hrms_leavereport\\hrmsleavereportdl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\data\\hrms_leavereport\\hrmsleavereportdl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|d:\\sudhakar sharma\\repository\\massautogarage\\massautogarage\\controllers\\hrms_bonuscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\controllers\\hrms_bonuscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|d:\\sudhakar sharma\\repository\\massautogarage\\massautogarage\\controllers\\hrms_leavereportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\controllers\\hrms_leavereportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|d:\\sudhakar sharma\\repository\\massautogarage\\massautogarage\\models\\hrms_bonus\\hrmsbonusmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\models\\hrms_bonus\\hrmsbonusmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|d:\\sudhakar sharma\\repository\\massautogarage\\massautogarage\\data\\hrms_loan\\hrmsloandl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\data\\hrms_loan\\hrmsloandl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|d:\\sudhakar sharma\\repository\\massautogarage\\massautogarage\\models\\hrms_loan\\hrmsloanmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\models\\hrms_loan\\hrmsloanmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|d:\\sudhakar sharma\\repository\\massautogarage\\massautogarage\\models\\hrms_leave\\hrmsleavemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\models\\hrms_leave\\hrmsleavemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|d:\\sudhakar sharma\\repository\\massautogarage\\massautogarage\\data\\hrms_leave\\hrmsleavedl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\data\\hrms_leave\\hrmsleavedl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|d:\\sudhakar sharma\\repository\\massautogarage\\massautogarage\\myapp\\hrms_leave.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\myapp\\hrms_leave.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|d:\\sudhakar sharma\\repository\\massautogarage\\massautogarage\\views\\hrms_leave\\leave.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\hrms_leave\\leave.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|d:\\sudhakar sharma\\repository\\massautogarage\\massautogarage\\views\\hrms_leave\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\hrms_leave\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|d:\\sudhakar sharma\\repository\\massautogarage\\massautogarage\\views\\hrms_loan\\loan.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\hrms_loan\\loan.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|d:\\sudhakar sharma\\repository\\massautogarage\\massautogarage\\views\\hrms_loan\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\hrms_loan\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|d:\\sudhakar sharma\\repository\\massautogarage\\massautogarage\\myapp\\hrms_loan.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\myapp\\hrms_loan.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\massautogarage\\views\\hrms_leavereport\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B7AE297B-57E5-41E8-A945-99946621EFAE}|MassAutoGarage\\MassAutoGarage.csproj|solutionrelative:massautogarage\\views\\hrms_leavereport\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -66,200 +26,57 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "HRMSLoanDL.cs",
-              "DocumentMoniker": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Data\\HRMS_Loan\\HRMSLoanDL.cs",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Data\\HRMS_Loan\\HRMSLoanDL.cs",
-              "ToolTip": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Data\\HRMS_Loan\\HRMSLoanDL.cs",
-              "RelativeToolTip": "MassAutoGarage\\Data\\HRMS_Loan\\HRMSLoanDL.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAASwD0AAAA2AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T05:12:32.001Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_LeaveReport\\Index.cshtml",
+              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\HRMS_LeaveReport\\Index.cshtml",
+              "ToolTip": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_LeaveReport\\Index.cshtml",
+              "RelativeToolTip": "MassAutoGarage\\Views\\HRMS_LeaveReport\\Index.cshtml",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAACEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-13T12:44:10.588Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "HRMS_Loan.js",
-              "DocumentMoniker": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\MyApp\\HRMS_Loan.js",
-              "RelativeDocumentMoniker": "MassAutoGarage\\MyApp\\HRMS_Loan.js",
-              "ToolTip": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\MyApp\\HRMS_Loan.js",
-              "RelativeToolTip": "MassAutoGarage\\MyApp\\HRMS_Loan.js",
-              "ViewState": "AQIAAAQAAAAAAAAAAAAQwJ0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-11-05T05:13:33.658Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "HRMSLoanModel.cs",
-              "DocumentMoniker": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Models\\HRMS_Loan\\HRMSLoanModel.cs",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Models\\HRMS_Loan\\HRMSLoanModel.cs",
-              "ToolTip": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Models\\HRMS_Loan\\HRMSLoanModel.cs",
-              "RelativeToolTip": "MassAutoGarage\\Models\\HRMS_Loan\\HRMSLoanModel.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAuwBcAAAAeAAAA",
+              "DocumentIndex": 0,
+              "Title": "HRMSLeaveReportModel.cs",
+              "DocumentMoniker": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Models\\HRMS_LeaveReport\\HRMSLeaveReportModel.cs",
+              "RelativeDocumentMoniker": "MassAutoGarage\\Models\\HRMS_LeaveReport\\HRMSLeaveReportModel.cs",
+              "ToolTip": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Models\\HRMS_LeaveReport\\HRMSLeaveReportModel.cs",
+              "RelativeToolTip": "MassAutoGarage\\Models\\HRMS_LeaveReport\\HRMSLeaveReportModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T05:13:09.597Z",
-              "IsPinned": true,
+              "WhenOpened": "2024-11-13T12:39:10.794Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "HRMS_LoanController.cs",
-              "DocumentMoniker": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Controllers\\HRMS_LoanController.cs",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Controllers\\HRMS_LoanController.cs",
-              "ToolTip": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Controllers\\HRMS_LoanController.cs",
-              "RelativeToolTip": "MassAutoGarage\\Controllers\\HRMS_LoanController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAZAAAA",
+              "Title": "HRMSLeaveReportDL.cs",
+              "DocumentMoniker": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Data\\HRMS_LeaveReport\\HRMSLeaveReportDL.cs",
+              "RelativeDocumentMoniker": "MassAutoGarage\\Data\\HRMS_LeaveReport\\HRMSLeaveReportDL.cs",
+              "ToolTip": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Data\\HRMS_LeaveReport\\HRMSLeaveReportDL.cs",
+              "RelativeToolTip": "MassAutoGarage\\Data\\HRMS_LeaveReport\\HRMSLeaveReportDL.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T05:11:42.439Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Loan.cshtml",
-              "DocumentMoniker": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_Loan\\Loan.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\HRMS_Loan\\Loan.cshtml",
-              "ToolTip": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_Loan\\Loan.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\HRMS_Loan\\Loan.cshtml",
-              "ViewState": "AQIAAGMAAAAAAAAAAAAAAGcAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-05T05:13:57.264Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_Loan\\Index.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\HRMS_Loan\\Index.cshtml",
-              "ToolTip": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_Loan\\Index.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\HRMS_Loan\\Index.cshtml",
-              "ViewState": "AQIAAO0AAAAAAAAAAAAAAPwAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-05T08:25:47.543Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "HRMS_LeaveController.cs",
-              "DocumentMoniker": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Controllers\\HRMS_LeaveController.cs",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Controllers\\HRMS_LeaveController.cs",
-              "ToolTip": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Controllers\\HRMS_LeaveController.cs",
-              "RelativeToolTip": "MassAutoGarage\\Controllers\\HRMS_LeaveController.cs",
-              "ViewState": "AQIAABkAAAAAAAAAAAAgwCMAAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T10:15:31.218Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "HRMS_Leave.js",
-              "DocumentMoniker": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\MyApp\\HRMS_Leave.js",
-              "RelativeDocumentMoniker": "MassAutoGarage\\MyApp\\HRMS_Leave.js",
-              "ToolTip": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\MyApp\\HRMS_Leave.js",
-              "RelativeToolTip": "MassAutoGarage\\MyApp\\HRMS_Leave.js",
-              "ViewState": "AQIAAHMAAAAAAAAAAAAcwIIAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-11-05T10:17:24.557Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "HRMSLeaveModel.cs",
-              "DocumentMoniker": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Models\\HRMS_Leave\\HRMSLeaveModel.cs",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Models\\HRMS_Leave\\HRMSLeaveModel.cs",
-              "ToolTip": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Models\\HRMS_Leave\\HRMSLeaveModel.cs",
-              "RelativeToolTip": "MassAutoGarage\\Models\\HRMS_Leave\\HRMSLeaveModel.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAD4vxoAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T10:17:08.685Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "HRMSLeaveDL.cs",
-              "DocumentMoniker": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Data\\HRMS_Leave\\HRMSLeaveDL.cs",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Data\\HRMS_Leave\\HRMSLeaveDL.cs",
-              "ToolTip": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Data\\HRMS_Leave\\HRMSLeaveDL.cs",
-              "RelativeToolTip": "MassAutoGarage\\Data\\HRMS_Leave\\HRMSLeaveDL.cs",
-              "ViewState": "AQIAAD4AAAAAAAAAAAAqwEoAAAA4AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T10:16:36.166Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Leave.cshtml",
-              "DocumentMoniker": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_Leave\\Leave.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\HRMS_Leave\\Leave.cshtml",
-              "ToolTip": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_Leave\\Leave.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\HRMS_Leave\\Leave.cshtml",
-              "ViewState": "AQIAAFQAAAAAAAAAAAAAAFkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-05T10:17:44.858Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_Leave\\Index.cshtml",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Views\\HRMS_Leave\\Index.cshtml",
-              "ToolTip": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Views\\HRMS_Leave\\Index.cshtml",
-              "RelativeToolTip": "MassAutoGarage\\Views\\HRMS_Leave\\Index.cshtml",
-              "ViewState": "AQIAAOIAAAAAAAAAAAAAAPEAAABoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-05T11:57:42.005Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "HRMSBonusModel.cs",
-              "DocumentMoniker": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Models\\HRMS_Bonus\\HRMSBonusModel.cs",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Models\\HRMS_Bonus\\HRMSBonusModel.cs",
-              "ToolTip": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Models\\HRMS_Bonus\\HRMSBonusModel.cs",
-              "RelativeToolTip": "MassAutoGarage\\Models\\HRMS_Bonus\\HRMSBonusModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T13:25:03.197Z",
+              "WhenOpened": "2024-11-13T12:38:36.875Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "HRMS_BonusController.cs",
-              "DocumentMoniker": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Controllers\\HRMS_BonusController.cs",
-              "RelativeDocumentMoniker": "MassAutoGarage\\Controllers\\HRMS_BonusController.cs",
-              "ToolTip": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Controllers\\HRMS_BonusController.cs",
-              "RelativeToolTip": "MassAutoGarage\\Controllers\\HRMS_BonusController.cs",
-              "ViewState": "AQIAAF4AAAAAAAAAAAAwwG4AAAAoAAAA",
+              "Title": "HRMS_LeaveReportController.cs",
+              "DocumentMoniker": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Controllers\\HRMS_LeaveReportController.cs",
+              "RelativeDocumentMoniker": "MassAutoGarage\\Controllers\\HRMS_LeaveReportController.cs",
+              "ToolTip": "D:\\Sudhakar Sharma\\repository\\MassAutoGarage\\MassAutoGarage\\Controllers\\HRMS_LeaveReportController.cs",
+              "RelativeToolTip": "MassAutoGarage\\Controllers\\HRMS_LeaveReportController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T13:24:01.604Z",
+              "WhenOpened": "2024-11-13T12:37:07.5Z",
               "EditorCaption": ""
             }
           ]

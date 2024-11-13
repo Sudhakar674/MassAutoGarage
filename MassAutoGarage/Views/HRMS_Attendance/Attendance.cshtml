@@ -7,12 +7,29 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
+<style>
+    fieldset {
+        border: solid;
+        border-color: #bbb1b1;
+        border-width: thin;
+    }
+
+    legend {
+        float: none;
+        width: 29%;
+        background-color: #bbb1b1;
+        color: white;
+        padding: 5px 10px;
+        font-size: small;
+    }
+</style>
+
 <!-- New Dive-->
 <script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
 @section styles{
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-
 }
 
 @using (Html.BeginForm("Attendance", "HRMS_Attendance", FormMethod.Post, new { enctype = "multipart/form-data", OnSubmit = "return ValidationForm()", @class = "form-validate" }))
@@ -20,7 +37,6 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
-
 
                 <div class="card-header main-f">
                     <div class="row">
@@ -35,104 +51,114 @@
                 <div class="card-body">
                     <div class="live-preview">
                         <div class="row gy-4">
-                            <div class="col-xxl-6 col-md-6">
-                                <div>
-                                    <label for="basiInput" class="form-label">Date <code>*</code></label>
-                                    <input type="text" id="AttendanceDate" name="AttendanceDate" class="form-control" />
-                                </div>
-                            </div>
-                            <div class="col-xxl-12 col-md-12">
-                                <div class="table-responsive">
-
-                                    <table border="1" id="example" class="display table table-bordered mobile-optimised" style="width:100%;">
-                                        <thead>
-                                            <tr style="background-color: aliceblue;">
-                                                <th style=" white-space: nowrap">Voucher Number</th>
-                                                <th style=" white-space: nowrap">Employee Name</th>
-                                                <th style=" white-space: nowrap">Number of Working Hours</th>
-                                                <th style=" white-space: nowrap">Start Time</th>
-                                                <th style=" white-space: nowrap">End Time</th>
-                                                <th style=" white-space: nowrap">Break Time Start</th>
-                                                <th style=" white-space: nowrap">Break Time End</th>
-                                                <th style=" white-space: nowrap">Start Time</th>
-                                                <th style=" white-space: nowrap">End Time</th>
-                                                <th style=" white-space: nowrap">Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                        </tbody>
-                                        <tfoot>
-                                            <tr>
-                                                <td>
-                                                    <input type="text" name="VoucherNumber" class="form-control txttarget" id="txtVoucherNumber" />
-                                                </td>
-
-                                                <td>
-                                                    @Html.DropDownListFor(x => x.txtEmpName, new SelectList(ViewBag.EmployeeList, "Id", "EmployeeName"), "- Select Employee Name -", new { @class = "form-control", tabindex = 1 })
-                                                    @Html.ValidationMessageFor(m => m.txtEmpName, "", new { @class = "text-danger" })
-                                                </td>
-                                                <td>
-                                                    <input type="text" name="target" class="form-control txttarget" id="txtNumbOfWorkingHrs" value="8" />
-                                                </td>
-                                                <td>
-                                                    <input type="text" name="target" class="form-control txttarget" id="txtStartTime1" style="width:150px" value="7:00:00 AM" />
-                                                </td>
-                                                <td>
-                                                    <input type="text" name="target" class="form-control txttarget" id="txtEndTime1" style="width:150px" value="12:00:00 PM" />
-                                                </td>
-                                                <td>
-                                                    <input type="text" name="target" class="form-control txttarget" id="txtBreakTimeStart" style="width:150px" value="12:00:00 PM" />
-                                                </td>
-                                                <td>
-                                                    <input type="text" name="target" class="form-control txttarget" id="txtBreakTimeEnd" style="width:150px" value="1:00:00 PM" />
-                                                </td>
-                                                <td>
-                                                    <input type="text" name="target" class="form-control txttarget" id="txtStartTime2" style="width:150px" value="1:00:00 PM" />
-                                                </td>
-                                                <td>
-                                                    <input type="text" name="target" class="form-control txttarget" id="txtEndTime2" style="width:150px" value="6:00:00 PM" />
-                                                </td>
-                                                <td>
-                                                    <button type="button" id="btnAdd" class="btn btn-xs btn-primary classAdd" onclick="Add()">+</button>
-                                                </td>
-                                            </tr>
-                                        </tfoot>
-                                    </table>
-
-                                </div>
-                            </div>
-
-
-
                             <div class="col-xxl-4 col-md-4">
                                 <div>
-                                    <input type="button" id="btnsave" value="Save" class="btn btn-success" style=" margin-top: 8%;" />
-                                    <input type="button" id="btnReset" value="Reset" class="btn btn-danger" style=" margin-top: 8%;" onclick="return Reset();"/>
-                                </div>
-                            </div>
-                            <div class="col-xxl-12 col-md-12">
-                                <div class="form-floating" style="float:left;">
-
-
-                                </div>
-
-                            </div>
-                            <!--end col-->
-                            <div class="col-xxl-12 col-md-12">
-                                <div class="table-responsive">
-
-
-
+                                    <input type="hidden" id="HDF_Voucherno" />
+                                    <label for="basiInput" class="form-label">Date <code>*</code></label>
+                                    @*<input type="text" id="AttendanceDate" name="AttendanceDate" class="form-control" tabindex=1 />*@
+                                    @Html.TextBoxFor(m => m.AttendanceDate, new { @class = "form-control", tabindex = 1 })
                                 </div>
                             </div>
 
-                            <div class="col-xxl-12 col-md-12">
-                                <div class="form-floating" style="float:right;">
+                            <fieldset style="margin-bottom:40px;padding-bottom:30px;">
+                                <legend style="background-color:#151529">Employee Attendance</legend>
+                                <div class="row gy-4">
 
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label"> Voucher Number  <code>*</code></label>
+                                            @Html.TextBoxFor(m => m.VoucherNumber, new { @class = "form-control", tabindex = 2, @readonly = "@readonly" })
 
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Employee Name<code>*</code></label>
+                                            @Html.DropDownListFor(x => x.EmployeeId, new SelectList(ViewBag.EmployeeList, "Id", "EmployeeName"), "- Select Employee Name -", new { @class = "form-control", tabindex = 3 })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Number Of Working Hours<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.NumberOfWorkingHours, new { @class = "form-control", tabindex = 4, Value = "8" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Start Time<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.StartTime, new { @class = "form-control", tabindex = 5, Value = "7:00:00 AM" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">End Time<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.EndTime, new { @class = "form-control", tabindex = 6, Value = "12:00:00 PM" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Break Time Start<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.BreakTimeStart, new { @class = "form-control", tabindex = 7, Value = "12:00:00 PM" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Break Time End<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.BreakTimeEnd, new { @class = "form-control", tabindex = 8, Value = "1:00:00 PM" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">Start Time<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.StartTime1, new { @class = "form-control", tabindex = 9, Value = "1:00:00 PM" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <label for="labelInput" class="form-label">End Time<code>*</code></label>
+                                            @Html.TextBoxFor(m => m.EndTime1, new { @class = "form-control", tabindex = 10, Value = "6:00:00 PM" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row gy-4">
+                                    <div class="col-xxl-3 col-md-4">
+                                        <div>
+                                            <input type="button" id="btnAdd" value="Add New" class="btn btn-success" style=" margin-top: 8%;" />
+                                        </div>
+                                    </div>
                                 </div>
 
-                            </div>
+                                <div class="table-responsive" style="margin-top:40px">
+                                    <table id="example" class="display table table-bordered" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th style=" width: 3%;">SL.</th>
+                                                <th style="white-space:nowrap">Voucher Number</th>
+                                                <th style="white-space:nowrap">Employee Name </th>
+                                                <th style="white-space:nowrap">N.O.W. Hours</th>
+                                                <th style="white-space:nowrap">Start Time</th>
+                                                <th style="white-space:nowrap">End Time</th>
+                                                <th style="white-space:nowrap">Break Time Start</th>
+                                                <th style="white-space:nowrap">Break Time End</th>
+                                                <th style="white-space:nowrap">Start Time</th>
+                                                <th style="white-space:nowrap">End Time</th>
+                                                <th style=" width:40%">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tBody2">
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="col-xxl-12 col-md-12">
+                                    <div class="form-floating" style="float: right; padding-right: 2%;">
+                                        <input type="button" value="Save" id="btnsave" class="btn btn-primary" style=" margin-top: 8%;" />
+                                        <input type="button" id="btnReset" value="Reset" class="btn btn-danger" style=" margin-top: 8%;" onclick="return Reset();" />
+                                    </div>
+                                </div>
+                            </fieldset>
+
+
                         </div>
                         <!--end col-->
                     </div>
@@ -186,101 +212,10 @@
 </script>
 
 
-
-@*<script>
-    function Add() {
-        debugger;
-        if ($("#txtVoucherNumber").val() == "") {
-            $("#txtVoucherNumber").addClass('errortext');
-            $("#txtVoucherNumber").focus();
-            return false;
-        }
-        else if ($("#txtEmpName").val() == "0") {
-            $("#txtEmpName").addClass('errortext');
-            $("#txtEmpName").focus();
-            return false;
-        }
-    
-        return true;
-
-    };
-</script>*@
-
-
-
 <script type="text/javascript">
 
-    function Add() {
-        AddRow($("#txtVoucherNumber").val(), $("#txtEmpName").val(), $("#txtNumbOfWorkingHrs").val(), $("#txtStartTime1").val(), $("#txtEndTime1").val(), $("#txtBreakTimeStart").val(), $("#txtBreakTimeEnd").val(), $("#txtStartTime2").val(), $("#txtEndTime2").val(),);
-        /*$("#txtVoucherNumber").val()*/
-        /* $("#txtEmpName").val("");*/
-        //$("#ddlProjectName").val(0);
-        //$("#ddlClientName").val(0);
-        /* $("#txtNumbOfWorkingHrs").val(""); $("#txtStartTime1").val(""); $("#txtEndTime1").val(""); $("#txtBreakTimeStart").val(""); $("#txtBreakTimeEnd").val(""); $("#txtStartTime2").val(""); $("#txtEndTime2").val("");*/
-    };
-
-    function AddRow(VoucherNumber, EmpName, NoOfWorking, StartTime1, EndTime1, BreakTimeStart, BreakTimeEnd, StartTime2, EndTime2) {
-        //Get the reference of the Table's TBODY element.
-        var tBody = $("#example > TBODY")[0];
-
-        row = tBody.insertRow(-1);
-
-        //Add  cell.
-        var cell = $(row.insertCell(-1));
-        cell.html(VoucherNumber);
-        //Add  cell.
-        cell = $(row.insertCell(-1));
-        cell.html(EmpName);
-        //Add  cell.
-        cell = $(row.insertCell(-1));
-        cell.html(NoOfWorking);
-        //Add  cell.
-        cell = $(row.insertCell(-1));
-        cell.html(StartTime1);
-        //Add  cell.
-        cell = $(row.insertCell(-1));
-        cell.html(EndTime1);
-        //Add  cell.
-        cell = $(row.insertCell(-1));
-        cell.html(BreakTimeStart);
-        //Add  cell.
-        cell = $(row.insertCell(-1));
-        cell.html(BreakTimeEnd);
-        //Add  cell.
-        cell = $(row.insertCell(-1));
-        cell.html(StartTime2);
-        //Add  cell.
-        cell = $(row.insertCell(-1));
-        cell.html(EndTime2);
-
-        //Add Button cell.
-        cell = $(row.insertCell(-1));
-        var btnRemove = $("<input />");
-        btnRemove.attr("type", "button");
-        btnRemove.attr("onclick", "Remove(this);");
-        btnRemove.val("-");
-        cell.append(btnRemove);
-        calculatemaxid();
-    };
-
-    function Remove(button) {
-        //Determine the reference of the Row using the Button.
-        var row = $(button).closest("TR");
-        var name = $("TD", row).eq(0).html();
-        if (confirm("Do you want to delete: " + name)) {
-
-            //Get the reference of the Table.
-            var table = $("#example")[0];
-
-            //Delete the Table row using it's Index.
-            table.deleteRow(row[0].rowIndex);
-        }
-    };
-
-
-
     function vouchernew() {
-
+        debugger;
         $.ajax({
             type: 'POST',
             url: '/HRMS_Attendance/GetMaxVoucher',
@@ -288,57 +223,155 @@
             dataType: "json",
             success: function (result) {
                 $.each(result, function (i, v) {
-                    var i = v.MaxID;
-                    $("#txtVoucherNumber").val(i);
+                    var i = 'ADV-' + v.MaxID;
+
+                    $("#HDF_Voucherno").val(v.MaxID);
+                    $("#VoucherNumber").val(i);
+
                 })
             }
         })
     }
 
+    $("#btnAdd").click(function (e) {
+        debugger;
+        e.preventDefault();
 
-    function calculatemaxid() {
+        if ($("#VoucherNumber").val() == "") {
+            $("#VoucherNumber").addClass('errortext');
+            $("#VoucherNumber").focus();
+            return false;
+        }
+        if ($("#EmployeeId").val() == "") {
+            $("#EmployeeId").addClass('errortext');
+            $("#EmployeeId").focus();
+            return false;
+        }
+        if ($("#NumberOfWorkingHours").val() == "") {
+            $("#NumberOfWorkingHours").addClass('errortext');
+            $("#NumberOfWorkingHours").focus();
+            return false;
+        }
+        if ($("#StartTime").val() == "") {
+            $("#StartTime").addClass('errortext');
+            $("#StartTime").focus();
+            return false;
+        }
+        if ($("#EndTime").val() == "") {
+            $("#EndTime").addClass('errortext');
+            $("#EndTime").focus();
+            return false;
+        }
+        if ($("#BreakTimeStart").val() == "") {
+            $("#BreakTimeStart").addClass('errortext');
+            $("#BreakTimeStart").focus();
+            return false;
+        }
+        if ($("#BreakTimeEnd").val() == "") {
+            $("#BreakTimeEnd").addClass('errortext');
+            $("#BreakTimeEnd").focus();
+            return false;
+        }
+        if ($("#StartTime1").val() == "") {
+            $("#StartTime1").addClass('errortext');
+            $("#StartTime1").focus();
+            return false;
+        }
+        if ($("#EndTime1").val() == "") {
+            $("#EndTime1").addClass('errortext');
+            $("#EndTime1").focus();
+            return false;
+        }
 
-        var i = parseInt(1);
-        var vocherno = parseInt($("#txtVoucherNumber").val());
 
-        var newvoucher = vocherno + i;
-        $("#txtVoucherNumber").val(newvoucher);
+        var VoucherNumber_ = $("#VoucherNumber").val();
+        var EmployeeId_ = $("#EmployeeId").val();
+        var EmployeeName = $("#EmployeeId option:selected").text();
+        var NumberOfWorkingHours_ = $("#NumberOfWorkingHours").val();
+        var StartTime_ = $("#StartTime").val();
+        var EndTime_ = $("#EndTime").val();
+        var BreakTimeStart_ = $("#BreakTimeStart").val();
+        var BreakTimeEnd_ = $("#BreakTimeEnd").val();
+        var StartTime1_ = $("#StartTime1").val();
+        var EndTime1_ = $("#EndTime1").val();
+
+        var tableLength = $("#example tr").length;
+        var tableLength = $("#tBody2 tr").length;
+
+        if (VoucherNumber_ != "") {
+            $("#example").show();
+            var tr = "<tr>";
+            tr += "<td>" + (tableLength + 1) + "<input type='hidden' class='clsEmpidID' value=" + EmployeeId_ + " /></td><td>" + VoucherNumber_ + "</td><td>" + EmployeeName + "</td><td>" + NumberOfWorkingHours_ + "</td><td>" + StartTime_ + "</td><td>" + EndTime_ + "</td><td>" + BreakTimeStart_ + "</td><td>" + BreakTimeEnd_ + "</td><td>" + StartTime1_ + "</td><td>" + EndTime1_ + "</td><td><a  class='btn btn-sm btn-danger remove-item-btn DeleteTr' ><i class='fa fa-trash' aria-hidden='true'></i> </a></td>";
+            tr += "</tr>";
+            $("#tBody2").append(tr);
+            Calcument();
+        }
+        else {
+            swal({
+                title: "Warning",
+                text: "Rquired Quantity is not Greater Than Given Quantity. !",
+                type: "warning",
+            }).then(function (isConfirm) {
+                if (isConfirm) {
+                    $("#txtdamQty").val("");
+                } else {
+                    //if no clicked => do something else
+                }
+            });
+        }
+    });
+
+    function Calcument() {
+        var j = parseInt(1);
+        var i = parseInt($("#HDF_Voucherno").val());
+        var ad = (i + j);
+        $("#HDF_Voucherno").val(ad);
+        var vchr = 'ADV-' + ad;
+        $("#VoucherNumber").val(vchr);
     }
-</script>
 
-<script>
+    $(document).on("click", ".DeleteTr", function () {
+        if (confirm("Are you sure you want to remove ?")) {
+            $(this).parents("tr").remove();
+            calculat();
+        }
+    })
+
+
+
     $("#btnsave").click(function () {
         debugger;
         var AttendanceDate_ = $("#AttendanceDate").val();
-      
+
         var tableLength = $("#example tr").length;
-        var AttendanceListArr = [];
+        var ProductListArr = [];
 
-        if (AttendanceDate_ != "" && tableLength > 2) {
+        if (AttendanceDate_ != "" && tableLength > 1) {
 
-            if (tableLength > 2) {
+            if (tableLength > 1) {
 
-                for (var i = 0; i < tableLength - 2; i++) {
+                for (var i = 0; i < tableLength - 1; i++) {
 
-                    var AttendanceList = {
+                    var ProductList = {
                         AttendanceDate: AttendanceDate_,
-                      
-                        VoucherNumber: $("#example tBody tr:eq(" + i + ")").find('td:eq(0)').html(),
-                        EmployeeId: $("#example tBody tr:eq(" + i + ")").find('td:eq(1)').html(),
-                        NumberOfWorkingHours: $("#example tBody tr:eq(" + i + ")").find('td:eq(2)').html(),
-                        StartTime: $("#example tBody tr:eq(" + i + ")").find('td:eq(3)').html(),
-                        EndTime: $("#example tBody tr:eq(" + i + ")").find('td:eq(4)').html(),
-                        BreakTimeStart: $("#example tBody tr:eq(" + i + ")").find('td:eq(5)').html(),
-                        BreakTimeEnd: $("#example tBody tr:eq(" + i + ")").find('td:eq(6)').html(),
-                        StartTime1: $("#example tBody tr:eq(" + i + ")").find('td:eq(7)').html(),
-                        EndTime1: $("#example tBody tr:eq(" + i + ")").find('td:eq(8)').html(),
+
+                        EmployeeId: $("#example tBody tr:eq(" + i + ")").find(".clsEmpidID").val(),
+                        VoucherNumber: $("#example tBody tr:eq(" + i + ")").find('td:eq(1)').html(),
+                        NumberOfWorkingHours: $("#example tBody tr:eq(" + i + ")").find('td:eq(3)').html(),
+                        StartTime: $("#example tBody tr:eq(" + i + ")").find('td:eq(4)').html(),
+                        EndTime: $("#example tBody tr:eq(" + i + ")").find('td:eq(5)').html(),
+                        BreakTimeStart: $("#example tBody tr:eq(" + i + ")").find('td:eq(6)').html(),
+                        BreakTimeEnd: $("#example tBody tr:eq(" + i + ")").find('td:eq(7)').html(),
+                        StartTime1: $("#example tBody tr:eq(" + i + ")").find('td:eq(8)').html(),
+                        EndTime1: $("#example tBody tr:eq(" + i + ")").find('td:eq(9)').html(),
+
                     };
-                    AttendanceListArr.push(AttendanceList);
+                    ProductListArr.push(ProductList);
                 }
                 $.ajax({
                     type: 'POST',
                     url: '/HRMS_Attendance/SaveAttendance',
-                    data: JSON.stringify(AttendanceListArr),
+                    data: JSON.stringify(ProductListArr),
                     contentType: "application/json; charset=utf-8",
                     dataType: 'json',
                     success: function (data) {
@@ -384,14 +417,14 @@
                 swal("Warning", "Please Enter Date !", "warning")
                 return false;
             }
-            if (tableLength == 2) {
-                swal("Warning", "Please At least 1 row data required.", "warning");
+            if (tableLength == 1) {
+                swal("Warning", "Please At least 1 row data required in employee attendance.", "warning");
                 return false;
             }
         }
     })
-</script>
 
+</script>
 
 <style>
     .errortext {

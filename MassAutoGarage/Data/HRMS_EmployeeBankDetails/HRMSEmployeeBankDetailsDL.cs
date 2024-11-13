@@ -63,7 +63,7 @@ namespace MassAutoGarage.Data.HRMS_EmployeeBankDetails
                 Parameters.Add("@BankBranch", obj.BankBranch);
                 Parameters.Add("@StatusId", obj.StatusId);
                 Parameters.Add("@CreatedBy", obj.CreatedBy);
-                Parameters.Add("@Id", obj.Id);
+                Parameters.Add("@Id", obj.IdEncrypte);
                 var _iresult = DBHelperDapper.DAAddAndReturnModel<HRMSEmployeeBankDetailsModel>("USP_HRMS_EmployeeBankDetails", Parameters);
                 return _iresult;
             }
@@ -72,6 +72,79 @@ namespace MassAutoGarage.Data.HRMS_EmployeeBankDetails
                 throw;
             }
         }
+
+
+        public List<HRMSEmployeeBankDetailsModel> GetEmployeeBankDetailsList()
+        {
+            List<HRMSEmployeeBankDetailsModel> obj = new List<HRMSEmployeeBankDetailsModel>();
+            try
+            {
+                var Parameters = new DynamicParameters();
+                Parameters.Add("@QueryType", "31");
+                obj = DBHelperDapper.DAAddAndReturnModelList<HRMSEmployeeBankDetailsModel>("USP_HRMS_EmployeeBankDetails", Parameters);
+                return obj;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+        public List<HRMSEmployeeBankDetailsModel> SearchByKey(string Querytype, string SearchKey)
+        {
+            List<HRMSEmployeeBankDetailsModel> obj = new List<HRMSEmployeeBankDetailsModel>();
+            try
+            {
+                var perm = new DynamicParameters();
+                perm.Add("@QueryType", Querytype);
+                perm.Add("@SearchKey", SearchKey);
+
+                obj = DBHelperDapper.DAAddAndReturnModelList<HRMSEmployeeBankDetailsModel>("USP_HRMS_EmployeeBankDetails", perm);
+                return obj;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+        public List<HRMSEmployeeBankDetailsModel> GetEmployeeBankDetailById(HRMSEmployeeBankDetailsModel objmodel)
+        {
+            List<HRMSEmployeeBankDetailsModel> obj = new List<HRMSEmployeeBankDetailsModel>();
+            try
+            {
+                var Parameters = new DynamicParameters();
+                Parameters.Add("@QueryType", objmodel.QueryType);
+                Parameters.Add("@Id", objmodel.IdEncrypte);
+                obj = DBHelperDapper.DAAddAndReturnModelList<HRMSEmployeeBankDetailsModel>("USP_HRMS_EmployeeBankDetails", Parameters);
+                return obj;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+        public HRMSEmployeeBankDetailsModel DeleteEmployeeBankDetails(HRMSEmployeeBankDetailsModel obj)
+        {
+            try
+            {
+                var Parameters = new DynamicParameters();
+
+                Parameters.Add("@QueryType", obj.QueryType);
+                Parameters.Add("@Id", obj.IdEncrypte);
+                var _iresult = DBHelperDapper.DAAddAndReturnModel<HRMSEmployeeBankDetailsModel>("USP_HRMS_EmployeeBankDetails", Parameters);
+                return _iresult;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
 
 
 

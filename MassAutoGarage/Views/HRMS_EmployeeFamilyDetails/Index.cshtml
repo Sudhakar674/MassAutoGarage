@@ -229,8 +229,16 @@
                                     <td data-th="Code">@item.MaritalStatus</td>
                                     <td data-th="Code">@item.FatherName</td>
 
-                                    <td data-th="Color Code">
-                                        <a href="@item.Photo" class="btn btn-sm btn-success edit-item-btn" tabindex="6">Download <i class="fa fa-edit"></i></a>
+                                    @*<td data-th="Color Code">
+                                            <a href="@item.Photo" class="btn btn-sm btn-success edit-item-btn" tabindex="6">Download <i class="fa fa-edit"></i></a>
+                                        </td>*@
+
+                                    <td>
+                                        <a href="@item.Photo" download>
+                                            <i class="fa fa-file-pdf-o" style="font-size:25px;color:red">
+                                                <i class="mdi mdi-download" style="font-size:25px;color:red"></i>
+                                            </i>
+                                        </a>
                                     </td>
 
                                     <td data-th="Action">
@@ -282,6 +290,8 @@
 }
 
 <script src="~/MyApp/HRMS_EmployeeFamilyDetails.js"></script>
+
+@*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">*@
 
 
 <script>

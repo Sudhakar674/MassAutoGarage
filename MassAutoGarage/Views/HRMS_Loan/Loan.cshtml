@@ -7,11 +7,154 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<style>
+    .main-table {
+        width: 100%;
+        /*  max-width: 980px;*/
+        /* change to suit*/
+        margin: auto;
+        border: 1px solid #4b38af;
+        border-collapse: collapse;
+    }
+
+        .main-table thead th {
+            background: #4b38af;
+            color: #fff;
+            color: #fff;
+            font-size: 0.8rem;
+            padding: 5px 9px 6px 9px;
+            line-height: 1;
+            border: 1px solid #626060;
+        }
+
+        .main-table th,
+        .main-table td {
+            vertical-align: top;
+            text-align: left;
+            border: 1px solid #626060;
+        }
+
+    td.numbers {
+        text-align: center;
+    }
+
+    .main-table td {
+        font-size: 13px; /* font-size: 0.7rem;*/
+        padding: 3px 9px;
+        border-bottom: 1px solid #999; /* dotted borders look bad on tables*/
+        line-height: 1.2;
+    }
+
+    .table-heading {
+        font-size: 0.7rem;
+        margin: 0 0 0.5em;
+    }
+
+    .item-options {
+        margin: 0 0 0.5rem;
+        overflow: hidden;
+        clear: both;
+    }
+
+        .item-options dt {
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .item-options dt,
+        .item-options dd {
+            display: inline-block;
+            margin: 0;
+            padding: 0 5px 0 0;
+            vertical-align: top;
+        }
+
+            .item-options dt:after {
+                content: ":";
+            }
+
+    .main-table tbody tr:nth-child(odd) td {
+        background: #f9f9f9;
+    }
+
+    @@media screen and (max-width: 540px) {
+        table.mobile-optimised {
+            word-wrap: break-word;
+            font-size: 1rem;
+            border: none;
+        }
+
+            table.mobile-optimised thead {
+                display: none;
+            }
+
+            table.mobile-optimised td {
+                display: block;
+                float: left; /* ie9 and under hack */
+                width: 100%;
+                clear: both;
+                background: #eee;
+                border: none;
+                padding: 10px 5px;
+                box-sizing: border-box;
+                font-size: 12px;
+            }
+
+            table.mobile-optimised tbody,
+            table.mobile-optimised tr {
+                display: block;
+            }
+
+        .mobile-optimised td:before {
+            content: attr(data-th);
+            display: block;
+            font-weight: bold;
+            margin: 0 0 2px;
+            background: #19937b;
+            color: #fff;
+            padding: 5px;
+        }
+
+        .mobile-optimised tbody tr {
+            border-bottom: 1px solid #000;
+            overflow: hidden;
+        }
+
+        .item-options,
+        .table-heading {
+            font-size: 1rem;
+        }
+
+        .mobile-optimised .numbers {
+            text-align: left;
+        }
+
+        .main-table tbody tr:nth-child(odd) td {
+            background: #ccc;
+        }
+    }
+
+    fieldset {
+        border: solid;
+        border-color: #bbb1b1;
+        border-width: thin;
+    }
+
+    legend {
+        float: none;
+        width: 29%;
+        background-color: #bbb1b1;
+        color: white;
+        padding: 5px 10px;
+        font-size: small;
+    }
+</style>
 <!-- New Dive-->
 <script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
 @section styles{
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
 }
 
 @using (Html.BeginForm("Loan", "HRMS_Loan", FormMethod.Post, new { enctype = "multipart/form-data", OnSubmit = "return ValidationForm()", @class = "form-validate" }))
@@ -19,6 +162,8 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
+
+
                 <div class="card-header main-f">
                     <div class="row">
                         <div class="col-md-6 col-5"> <h5 class="card-title mb-0 gp-detail">HRMS - LOAN</h5></div>
@@ -33,87 +178,64 @@
                     <div class="live-preview">
                         <div class="row gy-4">
 
-                            <div class="col-xxl-6 col-md-6">
-                                <div>
-                                    <label for="basiInput" class="form-label">Branch <code>*</code></label>
-                                    @Html.HiddenFor(m => m.ID, new { @class = "form-control" })
-                                    @Html.DropDownListFor(x => x.BranchId, new SelectList(ViewBag.BranchList, "ID", "BranchName"), "- Select Branch -", new { @class = "form-control", tabindex = 1 })
-                                    @Html.ValidationMessageFor(m => m.BranchId, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                            <div class="col-xxl-6 col-md-6">
-                                <div>
-                                    <label for="basiInput" class="form-label">Employee Name<code>*</code></label>
-                                    @Html.DropDownListFor(x => x.EmployeeId, new SelectList(ViewBag.EmployeeList, "Id", "EmployeeName"), "- Select Employee Name -", new { @class = "form-control", tabindex = 2 })
-                                    @Html.ValidationMessageFor(m => m.EmployeeId, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                            <div class="col-xxl-6 col-md-6">
-                                <div>
-                                    <label for="basiInput" class="form-label">Loan Date<code>*</code></label>
-                                    @Html.TextBoxFor(m => m.LoanDate, new { @class = "form-control", tabindex = 3, @readonly = "readonly" })
-                                    @Html.ValidationMessageFor(m => m.LoanDate, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
-                                </div>
-                            </div>
-                            <div class="col-xxl-6 col-md-6">
-                                <div>
-                                    <label for="basiInput" class="form-label">Loan Amount<code>*</code></label>
-                                    @Html.TextBoxFor(m => m.LoanAmount, new { @class = "form-control", tabindex = 4 , @onkeypress = "return isNumberOrDecimal(event);" })
-                                    @Html.ValidationMessageFor(m => m.LoanAmount, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
-                                </div>
-                            </div>
-                            <div class="col-xxl-6 col-md-6">
-                                <div>
-                                    <label for="basiInput" class="form-label">From Date<code>*</code></label>
-                                    @Html.TextBoxFor(m => m.FromDate, new { @class = "form-control", tabindex = 5, @readonly = "readonly" })
-                                    @Html.ValidationMessageFor(m => m.FromDate, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
-                                </div>
-                            </div>
-                            <div class="col-xxl-6 col-md-6">
-                                <div>
-                                    <label for="basiInput" class="form-label">To Date<code>*</code></label>
-                                    @Html.TextBoxFor(m => m.ToDate, new { @class = "form-control", tabindex = 6, @readonly = "readonly" })
-                                    @Html.ValidationMessageFor(m => m.ToDate, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
-                                </div>
-                            </div>
-                            <div class="col-xxl-6 col-md-6">
-                                <div>
-                                    <label for="basiInput" class="form-label">Deduction Per Month<code>*</code></label>
-                                    @Html.TextBoxFor(m => m.DeductionPerMonth, new { @class = "form-control", tabindex = 7 })
-                                    @Html.ValidationMessageFor(m => m.DeductionPerMonth, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
-                                </div>
-                            </div>
+                            <fieldset>
+                                <legend style="background-color:#151529">Loan</legend>
+                                <div class="row gy-4">
 
-                            <div class="col-xxl-6 col-md-6">
-                                <div>
-                                    <label for="basiInput" class="form-label">Total Amount<code>*</code></label>
-                                    @Html.TextBoxFor(m => m.TotalAmount, new { @class = "form-control", tabindex = 8 , @onkeypress = "return isNumberOrDecimal(event);" })
-                                    @Html.ValidationMessageFor(m => m.TotalAmount, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
-                                </div>
-                            </div>
-                            <div class="col-xxl-12 col-md-12">
-                                <div>
-                                    <label for="basiInput" class="form-label">Remarks<code></code></label>
-                                    @Html.TextAreaFor(m => m.Remarks, new { @class = "form-control", tabindex = 9 })
-                                    @Html.ValidationMessageFor(m => m.Remarks, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
-                                </div>
-                            </div>
+                                    <div class="col-xxl-4 col-md-4">
+                                        <div>
+                                            <label for="basiInput" class="form-label">Branch <code>*</code></label>
+                                            @*@Html.HiddenFor(m => m.ID, new { @class = "form-control" })*@
+                                            @Html.DropDownListFor(x => x.BranchId, new SelectList(ViewBag.BranchList, "ID", "BranchName"), "- Select Branch -", new { @class = "form-control", tabindex = 1 })
+                                            @Html.ValidationMessageFor(m => m.BranchId, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-4 col-md-4">
+                                        <div>
+                                            <label for="basiInput" class="form-label">Employee <code>*</code></label>
+                                            @Html.DropDownListFor(x => x.EmployeeId, new SelectList(ViewBag.EmployeeList, "Id", "EmployeeName"), "- Select Employee Name -", new { @class = "form-control", tabindex = 2 })
+                                            @Html.ValidationMessageFor(m => m.EmployeeId, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-4 col-md-4">
+                                        <div>
+                                            <label for="basiInput" class="form-label">Amount<code>*</code></label>
+                                            @*<input type="text" class="form-control" id="Amount" />*@
 
-                            <div class="col-xxl-12 col-md-12">
-                                <div class="form-floating" style="float:right;">
+                                            @Html.TextBoxFor(m => m.Amount, new { @class = "form-control", tabindex = 3, @onkeypress = "return isNumberOrDecimal(event);" })
+                                            @Html.ValidationMessageFor(m => m.Amount, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
 
-                                    @if (Model.ID == null || Model.ID == "")
-                                    {
-                                        <input type="button" id="btnsave" value="Save" class="btn btn-success" style=" margin-top: 8%;" />
-                                        <input type="button" id="btnReset" value="Reset" class="btn btn-danger" style=" margin-top: 8%;" onclick="return Reset();" />
-                                    }
-                                    else
-                                    {
-                                        <input type="button" id="btnsave" value="Update" class="btn btn-success" style=" margin-top: 8%;" />
-                                        <input type="button" id="btnReset" value="Reset" class="btn btn-danger" style=" margin-top: 8%;" onclick="return Reset();" />
-                                    }
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-4 col-md-4">
+                                        <div>
+                                            <label for="basiInput" class="form-label">From Date<code>*</code></label>
+                                            @*<input type="text" class="form-control" id="FromDate" />*@
+
+                                            @Html.TextBoxFor(m => m.FromDate, new { @class = "form-control", tabindex = 4, @onchange = "return cal()" })
+                                            @Html.ValidationMessageFor(m => m.FromDate, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-4 col-md-4">
+                                        <div>
+                                            <label for="basiInput" class="form-label">To Date<code>*</code></label>
+                                            @*<input type="text" id="ToDate" class="form-control" onchange="return cal()" />*@
+
+
+                                            @Html.TextBoxFor(m => m.ToDate, new { @class = "form-control", tabindex = 5, @onchange = "return cal()" })
+                                            @Html.ValidationMessageFor(m => m.ToDate, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xxl-12 col-md-12">
+                                        <div>
+                                            @*<hr />*@
+                                        </div>
+                                    </div>
+
+                                    <!--end col-->
                                 </div>
-                            </div>
+                            </fieldset>
                         </div>
                         <!--end col-->
                     </div>
@@ -123,18 +245,105 @@
             </div>
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+
+                <div class="card-body">
+                    <div class="live-preview">
+                        <div class="row gy-4">
+
+
+                            <fieldset style="padding-bottom:20px;">
+                                <legend style="background-color:#151529;">Loan Type</legend>
+                                <div class="row gy-4">
+
+                                    <div class="col-xxl-12 col-md-12">
+                                        <div>
+                                            <label for="basiInput" class="form-label">Deduction Type<code>*</code></label>
+                                            @Html.DropDownListFor(x => x.DeductionTypeId, new SelectList(ViewBag.DeductionTypeList, "Id", "DeductionType"), "- Deduction Type -", new { @class = "form-control", tabindex = 6 })
+                                            @Html.ValidationMessageFor(m => m.DeductionTypeId, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-12 col-md-12">
+                                        <div>
+                                            <label for="basiInput" class="form-label">Remarks<code>*</code></label>
+                                            @Html.TextAreaFor(m => m.Remarks, new { @class = "form-control", tabindex = 6 })
+                                            @Html.ValidationMessageFor(m => m.Remarks, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-12 col-md-12">
+                                        <div class="form-floating" style="text-align:right">
+                                            <input type="button" id="btnsave1111" value="Calculate" class="btn btn-success" />
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </fieldset>
+
+                            <fieldset style="padding-bottom:20px;">
+                                <legend style="background-color:#151529">Loan List</legend>
+                                <div class="row gy-4">
+                                    <div class="table-responsive" style="margin-top:40px">
+                                        <table id="example" class="display table table-bordered" style="width:100%">
+                                            <thead>
+                                                <tr>
+                                                    <th style="white-space:nowrap;">Month / Year</th>
+                                                    <th style="white-space: nowrap;">Amount </th>
+                                                    <th style="width:5%">Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="tBodyId">
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div class="col-xxl-6 col-md-6">
+                                        <div>
+                                            <label for="basiInput" class="form-label">Total Amount<code>*</code></label>
+                                            @*<input type="text" class="form-control" disabled id="TotalAmount" value="0" />*@
+
+                                            @Html.TextBoxFor(m => m.TotalAmount, new { @class = "form-control", tabindex = 8, Value = "0", @readonly = "readonly" })
+                                            @Html.ValidationMessageFor(m => m.TotalAmount, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <div class="col-xxl-12 col-md-12">
+                                <div>
+                                    @*<hr />*@
+                                </div>
+                            </div>
+                            <!--end col-->
+
+                            <div class="col-xxl-12 col-md-12">
+                                <div class="form-floating" style="float:right;">
+                                    <input type="button" id="btnsave" value="Save" class="btn btn-success" style=" margin-top: 8%;" />
+                                    <a href="/HRMS_Loan/Loan" id="btnReset" class="btn btn-danger" style=" margin-top: 8%;">Reset</a>
+                                    @*<input type="button" id="btnReset" value="Cancel" class="btn btn-danger" style=" margin-top: 8%;" />*@
+                                </div>
+                            </div>
+                        </div>
+                        <!--end col-->
+                    </div>
+                    <!--end row-->
+                </div>
+            </div>
+        </div>
+    </div>
 }
 <!--end col-->
 
 
 
 @section scripts{
-    <!-- prismjs plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="~/assets/js/pages/select2.init.js"></script>
     <script src="~/assets/libs/prismjs/prism.js"></script>
-    <!-- App js -->
     <script src="~/assets/js/app.js"></script>
 }
-
 <script src="~/Scripts/jquery-3.4.1.min.js"></script>
 <script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
@@ -144,13 +353,209 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-<script src="~/MyApp/HRMS_Loan.js"></script>
-
-
 <script>
     $(document).ready(function () {
     });
+
+
+    function isNumberOrDecimal(evt) {
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        if (charCode != 46 && charCode > 31
+            && (charCode < 48 || charCode > 57))
+            return false;
+
+        return true;
+    }
+
+    var options = $.extend({},
+        $.datepicker.regional["es"], {
+        dateFormat: "dd/mm/yy",
+        /*dateFormat: "yy/mm/dd",*/
+        changeMonth: true,
+        changeYear: true,
+        todayHighlight: true,
+    });
+    $("#FromDate").datepicker(options);
+
+    var options = $.extend({},
+        $.datepicker.regional["es"], {
+        dateFormat: "dd/mm/yy",
+        /*dateFormat: "yy/mm/dd",*/
+        changeMonth: true,
+        changeYear: true,
+        todayHighlight: true,
+    });
+    $("#ToDate").datepicker(options);
+
+
+    function cal() {
+        debugger;
+
+        var StartDate = $("#FromDate").val();
+        var EndDate = $("#ToDate").val();
+        var _Amount = $("#Amount").val();
+        var TAmount = parseFloat(0);
+        if (StartDate != "" && EndDate != "" && _Amount != "") {
+
+            $.ajax({
+                type: "Get",
+                url: "/HRMS_Loan/GetLoanList",
+                data: { StDate: StartDate, EdDate: EndDate, Amount: _Amount }
+                ,
+                dataType: "json",
+                success: function (result) {
+                    $.each(result, function (i, v) {
+                        var tableLength = $("#tBodyId tr").length;
+                        debugger;
+                        TAmount = parseFloat($("#TotalAmount").val());
+                        var getAmt = parseFloat(v.Amount);
+                        TAmount = parseFloat(TAmount + getAmt);
+                        $("#TotalAmount").val(TAmount);
+                        var tr = "<tr>";
+                        tr += "<td>" + "<input type='text' class='clsCalculatedDate form-control' value=" + v.CalculatedDate + " Format='MMMM,yyyy' /><td><input type='text' class='clsAmount form-control' value=" + v.Amount + " /> </td><td><a class='btn btn-sm btn-danger remove-item-btn DeleteTr'>Remove</a></td>";
+                        tr += "</tr>";
+                        $("#tBodyId").append(tr);
+                    });
+                }
+            });
+
+        }
+
+    };
+
+
+    $(document).on("click", ".DeleteTr", function () {
+        if (confirm("Are you sure you want to remove ?")) {
+            $(this).parents("tr").remove();
+            calculat();
+        }
+    })
+
+    $("#btnsave").click(function () {
+        debugger;
+        var _BranchId = $("#BranchId").val();
+        var _EmployeeId = $("#EmployeeId").val();
+        var _Amount = $("#Amount").val();
+        var _FromDate = $("#FromDate").val();
+        var _ToDate = $("#ToDate").val();
+        var _DeductionTypeId = $("#DeductionTypeId").val();
+        var _Remarks = $("#Remarks").val();
+        var _TotalAmount = $("#TotalAmount").val();
+
+        var tableLength = $("#example tr").length;
+        var ProductListArr = [];
+
+        if (_BranchId != "" && _EmployeeId != "" && _Amount != "" && _FromDate != "" && _ToDate != "" && _DeductionTypeId != "" && _Remarks != "" && _TotalAmount != "" && tableLength > 1) {
+
+            if (tableLength > 1) {
+
+                for (var i = 0; i < tableLength - 1; i++) {
+
+                    var ProductList = {
+                        BranchId: _BranchId,
+                        EmployeeId: _EmployeeId,
+                        Amount: _Amount,
+                        FromDate: _FromDate,
+                        ToDate: _ToDate,
+                        DeductionTypeId: _DeductionTypeId,
+                        Remarks: _Remarks,
+                        TotalAmount: _TotalAmount,
+
+                        MonthYear: $("#example tBody tr:eq(" + i + ")").find(".clsCalculatedDate").val(),
+                        Amount1: $("#example tBody tr:eq(" + i + ")").find(".clsAmount").val(),
+
+                    };
+                    ProductListArr.push(ProductList);
+                }
+                $.ajax({
+                    type: 'POST',
+                    url: '/HRMS_Loan/SaveLoan',
+                    data: JSON.stringify(ProductListArr),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: 'json',
+                    success: function (data) {
+                        if (data.Result == "yes") {
+                            swal({
+                                title: "success",
+                                text: "Record Successfully Saved.",
+                                type: "success",
+                            }).then(function (isConfirm) {
+                                if (isConfirm) {
+                                    window.location.reload();
+                                } else {
+
+                                }
+                            });
+                        }
+                        else if (data == "yes1") {
+                            swal({
+                                title: "success",
+                                text: "Record Successfully Updated.",
+                                type: "success",
+                            }).then(function (isConfirm) {
+                                if (isConfirm) {
+                                    window.location.reload();
+                                } else {
+
+                                }
+                            });
+                        }
+                        else {
+                            swal("Warning", "Record not save!", "warning");
+                        }
+                    },
+                    error: function (httpResponse) {
+                        swal("Warning", "Something Went to Wrong!", "warning");
+                    }
+                })
+            }
+        }
+        else {
+
+            if (_BranchId == "") {
+                swal("Warning", "Please Enter Branch !", "warning")
+                return false;
+            }
+            if (_EmployeeId == "") {
+                swal("Warning", "Please Enter Employee Name !", "warning")
+                return false;
+            }
+            if (_Amount == "") {
+                swal("Warning", "Please Enter Amount !", "warning")
+                return false;
+            }
+            if (_FromDate == "") {
+                swal("Warning", "Please Enter From Date !", "warning")
+                return false;
+            }
+            if (_ToDate == "") {
+                swal("Warning", "Please Enter To Date !", "warning")
+                return false;
+            }
+            if (_DeductionTypeId == "") {
+                swal("Warning", "Please Enter Deduction Type !", "warning")
+                return false;
+            }
+            if (_Remarks == "") {
+                swal("Warning", "Please Enter Remarks !", "warning")
+                return false;
+            }
+
+            //if (tableLength == 1) {
+            //    swal("Warning", "Please At least 1 row data required in employee attendance.", "warning");
+            //    return false;
+            //}
+        }
+    })
+
+
 </script>
+
+
+
+
+
+
 
 
 

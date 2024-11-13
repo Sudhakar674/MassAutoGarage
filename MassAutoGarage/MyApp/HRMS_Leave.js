@@ -5,7 +5,8 @@ function Reset() {
 
 var options = $.extend({},
     $.datepicker.regional["es"], {
-    dateFormat: "dd/mm/yy",
+    /* dateFormat: "dd/mm/yy",*/
+    dateFormat: "yy/mm/dd",
     changeMonth: true,
     changeYear: true,
     todayHighlight: true,
@@ -14,13 +15,37 @@ $("#FromDate").datepicker(options);
 
 var options = $.extend({},
     $.datepicker.regional["es"], {
-    dateFormat: "dd/mm/yy",
+    /* dateFormat: "dd/mm/yy",*/
+    dateFormat: "yy/mm/dd",
     changeMonth: true,
     changeYear: true,
     todayHighlight: true,
 });
 $("#ToDate").datepicker(options);
 
+
+/* Start Leave Count days*/
+
+function TotalLeaveCount() {
+    debugger;
+
+    var date1 = new Date(document.getElementById("FromDate").value);
+    var date2 = new Date(document.getElementById("ToDate").value);
+
+    if (isNaN(date1.getTime()) || isNaN(date2.getTime())) {
+        document.getElementById("result").textContent = "Please select both dates.";
+        return;
+    }
+
+    var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+    var daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+    var TotalNoOfLeavedays = daysDiff + 1;
+
+    $("#LeaveCount").val(TotalNoOfLeavedays);
+}
+
+/* End Leave Count days*/
 
 $("#btnsave").click(function (e) {
     debugger;
@@ -47,7 +72,7 @@ $("#btnsave").click(function (e) {
             LeaveCount: LeaveCount_,
             BalanceLeave: BalanceLeave_,
             Description: Description_,
-            ID:ID_
+            ID: ID_
         };
 
         if (confirm("Are you sure you want to continue ?")) {
@@ -125,9 +150,6 @@ $("#btnsave").click(function (e) {
             swal("Warning", "Please Enter Balance Leave !", "warning");
             return false;
         }
-
-
-
     }
 });
 

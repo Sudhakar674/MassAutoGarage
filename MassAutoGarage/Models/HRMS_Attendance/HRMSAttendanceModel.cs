@@ -9,7 +9,8 @@ namespace MassAutoGarage.Models.HRMS_Attendance
     public class HRMSAttendanceModel
     {
         public string Id { get; set; }
-        public DateTime AttendanceDate { get; set; }
+        public string AttendanceDate { get; set; }
+        public string AttendanceDateConverted { get; set; }
         public string AttendanceId { get; set; }
         public string VoucherNumber { get; set; }
         public string EmployeeName { get; set; }

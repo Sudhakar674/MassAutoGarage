@@ -1,4 +1,5 @@
-﻿using MassAutoGarage.Models.HRMS_EmployeeFamilyDetails;
+﻿using MassAutoGarage.Models.HRMS_EmployeeDeduction;
+using MassAutoGarage.Models.HRMS_EmployeeFamilyDetails;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,19 +9,30 @@ namespace MassAutoGarage.Models.HRMS_Bonus
 {
     public class HRMSBonusModel
     {
-        public string Idencrept { get; set; }
-        public string BranchId { get; set; } 
-        public string EmployeeId { get; set; }      
-        public string BonusAmount { get; set; }
-        public string BonusDate { get; set; }
-        public string Remarks { get; set; }        
+        public string Id { get; set; }
+        public string FromDate { get; set; }
+        public string CalculatedDate { get; set; }
+        public string ToDate { get; set; }
+        public double Amount { get; set; }
+        public double TotalAmount { get; set; }
+        public string BranchId { get; set; }
+        public string EmployeeName { get; set; }
+        public string EmployeeId { get; set; }
+        public string BranchName { get; set; }
+        public string DeductionTypeId { get; set; }
+        public string BonusId { get; set; }
+        public string Remarks { get; set; }
+        public string DeductionType { get; set; }
+
+        public string MonthYear { get; set; }
+        public string Amount1 { get; set; }
+
         public string CreatedBy { get; set; }
         public string QueryType { get; set; }
         public string Message { get; set; }
         public string Result { get; set; }
-        public string ID { get; set; }
-        public string BranchName { get; set; }
-        public string EmployeeName { get; set; }
+
+
         public List<HRMSBonusModel> HRMSBonusModelList { get; set; }
     }
 }

@@ -10,6 +10,7 @@ using MassAutoGarage.Models.HRMS_Attendance;
 using MassAutoGarage.Data.HRMS_Attendance;
 using DocumentFormat.OpenXml.Drawing;
 using MassAutoGarage.Models.HRMS_EmployeeDocuments;
+using MassAutoGarage.Models;
 
 namespace MassAutoGarage.Controllers
 {
@@ -26,6 +27,7 @@ namespace MassAutoGarage.Controllers
         public ActionResult Attendance()
         {
             ViewBag.EmployeeList = DL.DropdownList();
+
             return View();
         }
 
@@ -36,21 +38,15 @@ namespace MassAutoGarage.Controllers
             HRMSAttendanceModel model = new HRMSAttendanceModel();
 
             try
-            {
-                //model.CreatedBy = Session["userId"].ToString();
-                //model.QueryType = "11";
-                //model.AttendanceDate = Convert.ToDateTime(PatientArr[0].AttendanceDate);
+            {            
+                model.AttendanceDate = PatientArr[0].AttendanceDate;
 
-                var AttendanceDate = Convert.ToDateTime(PatientArr[0].AttendanceDate);
-                //model = DL.AddUpdate(model);
-
-                //var AttendanceId = model.AttendanceId; //(Return AttendanceId from procedure)
-
+                model.AttendanceDate = string.IsNullOrEmpty(model.AttendanceDate) ? null : Common.ConvertToSystemDate(model.AttendanceDate, "dd/MM/yyyy");          
                 foreach (var Attch in PatientArr)
                 {
                     model.CreatedBy = Session["userId"].ToString();
                     model.QueryType = "11";
-                    model.AttendanceDate = Attch.AttendanceDate;
+                    model.AttendanceDate = model.AttendanceDate;
                     model.VoucherNumber = Attch.VoucherNumber;
                     model.EmployeeId = Attch.EmployeeId;
                     model.NumberOfWorkingHours = Attch.NumberOfWorkingHours;
@@ -86,7 +82,7 @@ namespace MassAutoGarage.Controllers
             foreach (var i in GroupList)
             {
                 GetMaxVoucher.Add(new HRMSAttendanceModel
-                {                 
+                {
                     MaxID = i.MaxID
                 });
             }

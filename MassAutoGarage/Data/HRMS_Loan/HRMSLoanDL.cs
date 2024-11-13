@@ -15,7 +15,7 @@ namespace MassAutoGarage.Data.HRMS_Loan
 {
     public class HRMSLoanDL
     {
-        public List<HRMSLoanModel> DropdownList()
+        public List<HRMSLoanModel> DropdownBranchList()
         {
             List<HRMSLoanModel> obj = new List<HRMSLoanModel>();
             try
@@ -47,60 +47,13 @@ namespace MassAutoGarage.Data.HRMS_Loan
             }
         }
 
-        public HRMSLoanModel AddUpdate(HRMSLoanModel obj)
-        {
-            try
-            {
-                var Parameters = new DynamicParameters();
-
-                Parameters.Add("@QueryType", obj.QueryType);
-                Parameters.Add("@BranchId", obj.BranchId);
-                Parameters.Add("@EmployeeId", obj.EmployeeId);
-                Parameters.Add("@LoanDate", obj.LoanDate);
-                Parameters.Add("@LoanAmount", obj.LoanAmount);
-                Parameters.Add("@FromDate", obj.FromDate);
-                Parameters.Add("@ToDate", obj.ToDate);
-                Parameters.Add("@DeductionPerMonth", obj.DeductionPerMonth);
-                Parameters.Add("@TotalAmount", obj.TotalAmount);
-                Parameters.Add("@Remarks", obj.Remarks);
-                Parameters.Add("@CreatedBy", obj.CreatedBy);
-                Parameters.Add("@Id", obj.Idencrept);
-                var _iresult = DBHelperDapper.DAAddAndReturnModel<HRMSLoanModel>("USP_HRMS_Loan", Parameters);
-                return _iresult;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-
-
-
-        public List<HRMSLoanModel> GetLoanList()
-        {
-            List<HRMSLoanModel> obj = new List<HRMSLoanModel>();
-            try
-            {
-                var Parameters = new DynamicParameters();
-                Parameters.Add("@QueryType", "31");
-                obj = DBHelperDapper.DAAddAndReturnModelList<HRMSLoanModel>("USP_HRMS_Loan", Parameters);
-                return obj;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-        public List<HRMSLoanModel> SearchByKey(string Querytype, string SearchKey)
+        public List<HRMSLoanModel> DropDeductionTypeTypeList()
         {
             List<HRMSLoanModel> obj = new List<HRMSLoanModel>();
             try
             {
                 var perm = new DynamicParameters();
-                perm.Add("@QueryType", Querytype);
-                perm.Add("@SearchKey", SearchKey);
-
+                perm.Add("@QueryType", "34");
                 obj = DBHelperDapper.DAAddAndReturnModelList<HRMSLoanModel>("USP_HRMS_Loan", perm);
                 return obj;
             }
@@ -110,33 +63,44 @@ namespace MassAutoGarage.Data.HRMS_Loan
             }
         }
 
-
-        public List<HRMSLoanModel> GetLoanDetailsById(HRMSLoanModel objmodel)
-        {
-            List<HRMSLoanModel> obj = new List<HRMSLoanModel>();
-            try
-            {
-                var Parameters = new DynamicParameters();
-                Parameters.Add("@QueryType", objmodel.QueryType);
-                Parameters.Add("@Id", objmodel.Idencrept);
-                obj = DBHelperDapper.DAAddAndReturnModelList<HRMSLoanModel>("USP_HRMS_Loan", Parameters);
-                return obj;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-
-        public HRMSLoanModel DeleteLoanDetails(HRMSLoanModel obj)
+        public HRMSLoanModel AddUpdate(HRMSLoanModel obj)
         {
             try
             {
                 var Parameters = new DynamicParameters();
 
                 Parameters.Add("@QueryType", obj.QueryType);
-                Parameters.Add("@Id", obj.Idencrept);
+                Parameters.Add("@BranchId", obj.BranchId);
+                Parameters.Add("@EmployeeId", obj.EmployeeId);
+                Parameters.Add("@Amount", obj.Amount);
+                Parameters.Add("@FromDate", obj.FromDate);
+                Parameters.Add("@ToDate", obj.ToDate);
+                Parameters.Add("@DeductionTypeId", obj.DeductionTypeId);
+                Parameters.Add("@Remarks", obj.Remarks);
+                Parameters.Add("@TotalAmount", obj.TotalAmount);
+                Parameters.Add("@CreatedBy", obj.CreatedBy);
+                Parameters.Add("@Id", obj.Id);
+                var _iresult = DBHelperDapper.DAAddAndReturnModel<HRMSLoanModel>("USP_HRMS_Loan", Parameters);
+                return _iresult;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public HRMSLoanModel AddUpdateBulk(HRMSLoanModel obj)
+        {
+            try
+            {
+                var Parameters = new DynamicParameters();
+
+                Parameters.Add("@QueryType", obj.QueryType);
+                Parameters.Add("@LoanId1", obj.LoanId);
+                Parameters.Add("@MonthYear", obj.MonthYear);
+                Parameters.Add("@Amount1", obj.Amount1);
+                Parameters.Add("@CreatedBy", obj.CreatedBy);
+                Parameters.Add("@Id", obj.Id);
                 var _iresult = DBHelperDapper.DAAddAndReturnModel<HRMSLoanModel>("USP_HRMS_Loan", Parameters);
                 return _iresult;
             }

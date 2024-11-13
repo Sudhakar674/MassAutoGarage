@@ -142,21 +142,18 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
 @section styles{
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-
-
-
-
 }
 
-@using (Html.BeginForm("EmployeeBankDetails", "HRMS_EmployeeBankDetails", FormMethod.Post, new { enctype = "multipart/form-data", OnSubmit = "return ValidationForm()", @class = "form-validate" }))
+@using (Html.BeginForm("SaveEmployeeBankDetails", "HRMS_EmployeeBankDetails", FormMethod.Post, new { enctype = "multipart/form-data", OnSubmit = "return ValidationForm()", @class = "form-validate" }))
 {
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header main-f">
                     <div class="row">
-                        <div class="col-md-6 col-5"> <h5 class="card-title mb-0 gp-detail">HRMS-Employee Bank Details</h5></div>
-                        <div class="col-md-6 col-7">
+                        <div class="col-md-4 col-4"> <h5 class="card-title mb-0 gp-detail">HRMS-Employee Bank Details</h5></div>
+                        <div class="col-md-4 col-4"><span style="color:#e51515"><b>@TempData["msg"]</b></span></div>
+                        <div class="col-md-4 col-4">
                             <a href="@Url.Action("Index", "HRMS_EmployeeBankDetails")" class="btn btn-primary add-new" style="float:right;" tabindex="1"> <i class="fa fa-arrow-left align-middle me-1"></i>BACK TO EMPLOYEE BANK DETAILS LIST</a>
                         </div>
                     </div>
@@ -168,22 +165,23 @@
                             <div class="col-xxl-4 col-md-4">
                                 <div>
                                     <label for="basiInput" class="form-label">Employee Branch <code>*</code></label>
-                                    @*@Html.HiddenFor(m => m.Id, new { @class = "form-control" })*@
-                                    @Html.DropDownListFor(x => x.BranchId, new SelectList(ViewBag.BranchList, "BranchId", "BranchName"), "- Select Branch -", new { @class = "form-control", tabindex = 1 })
+                                    @Html.HiddenFor(m => m.IdEncrypte, new { @class = "form-control" })
+                                    <input type="hidden" id="hdfBranchId" value="@Model.BranchId" />
+                                    @Html.DropDownListFor(x => x.BranchId, new SelectList(ViewBag.BranchList, "BranchId", "BranchName"), "- Select Branch -", new { @class = "js-example-basic-single", tabindex = 1 })
                                     @Html.ValidationMessageFor(m => m.BranchId, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                             <div class="col-xxl-4 col-md-4">
                                 <div>
                                     <label for="basiInput" class="form-label">Account Number<code>*</code></label>
-                                    @Html.TextBoxFor(m => m.AccountNumber, new { @class = "form-control", tabindex = 2 })
+                                    @Html.TextBoxFor(m => m.AccountNumber, new { @class = "form-control", tabindex = 2, @onkeypress = "return isNumberKey(event);", maxlength = 15 })
                                     @Html.ValidationMessageFor(m => m.AccountNumber, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
                                 </div>
                             </div>
                             <div class="col-xxl-4 col-md-4">
                                 <div>
                                     <label for="basiInput" class="form-label">Employee Name<code>*</code></label>
-                                    @Html.TextBoxFor(m => m.EmployeeName, new { @class = "form-control", tabindex = 3 })
+                                    @Html.TextBoxFor(m => m.EmployeeName, new { @class = "form-control", tabindex = 3, @onkeypress = "return onlyAlphabets();" })
                                     @Html.ValidationMessageFor(m => m.EmployeeName, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
                                 </div>
                             </div>
@@ -197,28 +195,37 @@
                             <div class="col-xxl-4 col-md-4">
                                 <div>
                                     <label for="basiInput" class="form-label">Bank Name<code>*</code></label>
-                                    @Html.TextBoxFor(m => m.BankName, new { @class = "form-control", tabindex = 5 })
+                                    @Html.TextBoxFor(m => m.BankName, new { @class = "form-control", tabindex = 5, @onkeypress = "return onlyAlphabets();" })
                                     @Html.ValidationMessageFor(m => m.BankName, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
                                 </div>
                             </div>
                             <div class="col-xxl-4 col-md-4">
                                 <div>
                                     <label for="basiInput" class="form-label">Bank Branch<code>*</code></label>
-                                    @Html.TextBoxFor(m => m.BankBranch, new { @class = "form-control", tabindex = 6 })
+                                    @Html.TextBoxFor(m => m.BankBranch, new { @class = "form-control", tabindex = 6, @onkeypress = "return onlyAlphabets();" })
                                     @Html.ValidationMessageFor(m => m.BankBranch, null, new { @class = "field-validation-error", data_valmsg_for = "ShortName" })
                                 </div>
                             </div>
                             <div class="col-xxl-4 col-md-4">
                                 <div>
                                     <label for="basiInput" class="form-label">Status<code>*</code></label>
-                                    @Html.DropDownListFor(x => x.StatusId, new SelectList(ViewBag.StatusDropdownList, "StatusId", "Status"), "- Select Status -", new { @class = "form-control", tabindex = 7 })
+                                    <input type="hidden" id="hdfStatusId" value="@Model.StatusId" />
+                                    @Html.DropDownListFor(x => x.StatusId, new SelectList(ViewBag.StatusDropdownList, "StatusId", "Status"), "- Select Status -", new { @class = "js-example-basic-single", tabindex = 7 })
                                     @Html.ValidationMessageFor(m => m.StatusId, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                             <div class="col-xxl-4 col-md-4">
                                 <div>
-                                    <input type="button" id="btnsave" name="save" value="Save" class="btn btn-success" style=" margin-top: 8%;" />
-                                    <a href="/HRMS_EmployeeBankDetails/EmployeeBankDetails" class="btn btn-danger" style=" margin-top: 8%;">Reset</a>
+                                    @if (Model.IdEncrypte == null || Model.IdEncrypte == "")
+                                    {
+                                        <button id="btnsubmit" type="submit" class="btn btn-success" style=" margin-top: 8%;">Save</button>
+                                        <a href="/HRMS_EmployeeBankDetails/EmployeeBankDetails" class="btn btn-danger" style=" margin-top: 8%;">Reset</a>
+                                    }
+                                    else
+                                    {
+                                        <button id="btnsubmit" type="submit" class="btn btn-success" style=" margin-top: 8%;">Update</button>
+                                        <a href="/HRMS_EmployeeBankDetails/EmployeeBankDetails" class="btn btn-danger" style=" margin-top: 8%;">Reset</a>
+                                    }
                                 </div>
                             </div>
                             <!--end col-->
@@ -235,10 +242,14 @@
 
 
 @section scripts{
-    <!-- prismjs plugin -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script src="~/assets/js/pages/select2.init.js"></script>
     <script src="~/assets/libs/prismjs/prism.js"></script>
-    <!-- App js -->
     <script src="~/assets/js/app.js"></script>
+
 }
 
 <script src="~/Scripts/jquery-3.4.1.min.js"></script>
@@ -247,262 +258,145 @@
 
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="/resources/demos/style.css">
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+@*<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>*@
 
-<script src="~/MyApp/HRMS_EmployeeBankDetails.js"></script>
+@*<script src="~/MyApp/HRMS_EmployeeBankDetails.js"></script>*@
 
 <script>
+
+
+    //if ($("#hdfBranchId").val() != "") {
+    //    $("#BranchId").val($("#hdfBranchId").val());
+    //}
+
+    //if ($("#hdfStatusId").val() !=0) {
+    //    $("#StatusId").val($("#hdfStatusId").val());
+    //}
+
+
+
+
     $(document).ready(function () {
 
     });
 
-
-
-
-
-
-
-    $("#btnsave").click(function (e) {
-        debugger;
-        e.preventDefault();
-        //var LeaveType_ = $("#LeaveType").val();
-        //var LeaveID_ = $("#LeaveID").val();
-
-
-       
-
-            if (confirm("Are you sure you want to continue ?")) {
-
-                $.ajax({
-                    type: 'POST',
-                    url: '/HRMS_EmployeeBankDetails/SaveBankDetails',
-                    data: { BranchId: $("#BranchId").val(), AccountNumber: $("#AccountNumber").val(), EmployeeName: $("#EmployeeName").val() },
-                    dataType: 'json',
-                    success: function (data) {
-                        debugger;
-                        if (data.Result == "yes") {
-                            swal({
-                                title: "Success",
-                                text: "Records Successfully Saved",
-                                type: "success",
-                            }).then(function (isConfirm) {
-                                if (isConfirm) {
-                                    window.location.reload();
-                                }
-                                else {
-
-                                }
-                            });
-                        }
-                        else if (data.Result == "yes1") {
-                            swal({
-                                title: "Success",
-                                text: "Records Successfully Updated",
-                                type: "success",
-                            }).then(function (isConfirm) {
-                                if (isConfirm) {
-                                    window.location.reload();
-                                }
-                                else {
-
-                                }
-                            });
-                        }
-
-                        else {
-                            swal("Warning", "Record not save!", "warning");
-                        }
-                    },
-                    error: function (httpResponse) {
-                        swal("Warning", "Something Went to Wrong!", "warning");
-                    }
-                })
+    function onlyAlphabets(e, t) {
+        try {
+            if (window.event) {
+                var charCode = window.event.keyCode;
             }
-     
-    });
+            else if (e) {
+                var charCode = e.which;
+            }
+            else { return true; }
+            if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123) || (charCode == 32))
+                return true;
+            else
+                return false;
+        }
+        catch (err) {
+            alert(err.Description);
+        }
+    }
 
+    function isNumberKey(evt) {
 
+        var charCode = (evt.which) ? evt.which : event.keyCode;
+        if (charCode != 46 && charCode > 31
+            && (charCode < 48 || charCode > 57))
+            return false;
 
-
-
-
-
-
-    //$("#btnsave").click(function (e) {
-    //    debugger;
-    //    e.preventDefault();
-    //    var BranchId_ = $("#BranchId").val();
-    //    var AccountNumber_ = $("#AccountNumber").val();
-    //    var EmployeeName_ = $("#EmployeeName").val();
-    //    var IBANCODE_ = $("#IBANCODE").val();
-    //    var BankName_ = $("#BankName").val();
-    //    var BankBranch_ = $("#BankBranch").val();
-    //    var StatusId_ = $("#StatusId").val();
-
-
-    //    //////////////////////////////////////////////////////////////////////////
-
-    //    if (BranchId_ != "") {
-
-    //        if (confirm("Are you sure you want to continue ?")) {
-
-    //            var formData = new FormData();
-    //            formData.append('BranchId', $("#BranchId").val());
-    //            formData.append('AccountNumber', AccountNumber_);
-    //            formData.append('EmployeeName', $("#EmployeeName").val());
-    //            formData.append('IBANCODE', $("#IBANCODE").val());
-    //            formData.append('BankName', $("#BankName").val());
-    //            formData.append('BankBranch', $("#BankBranch").val());
-    //            formData.append('StatusId', $("#StatusId").val());
-
-    //            $.ajax({
-    //                url: '/HRMS_EmployeeBankDetails/SaveBankDetails',
-    //                type: 'Post',
-    //                contentType: false, // Not to set any content header
-    //                processData: false, // Not to process data
-    //                data: formData,
-    //                success: function (data) {
-    //                    debugger;
-    //                    if (data.Result == "yes") {
-    //                        swal({
-    //                            title: "Success",
-    //                            text: "Records Successfully Saved",
-    //                            type: "success",
-    //                        }).then(function (isConfirm) {
-    //                            if (isConfirm) {
-    //                                window.location.reload();
-    //                            }
-    //                            else {
-    //                            }
-    //                        });
-    //                    }
-    //                    else if (data.Result == "yes1") {
-    //                        swal({
-    //                            title: "Success",
-    //                            text: "Records Successfully Updated",
-    //                            type: "success",
-    //                        }).then(function (isConfirm) {
-    //                            if (isConfirm) {
-    //                                /* window.location.reload();*/
-    //                                window.location.href = '/HRMS_Bonus/Bonus';
-    //                            }
-    //                            else {
-    //                            }
-    //                        });
-    //                    }
-    //                    else {
-    //                        swal("Warning", "Record not save!", "warning");
-    //                    }
-    //                },
-    //                error: function (httpResponse) {
-    //                    swal("Warning", "Something Went to Wrong!", "warningttttttttt");
-    //                }
-    //            })
-    //        }
-    //    }
-    //    else {
-    //        if (BranchId_ == "") {
-    //            swal("Warning", "Please Enter Branch Name !", "warning");
-    //            return false;
-    //        }
-    //    }
-    //});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //$("#save420").click(function (e) {
-    //    debugger;
-    //    e.preventDefault();
-    //    var BranchId_ = $("#BranchId").val();
-    //    var AccountNumber_ = $("#AccountNumber").val();
-    //    var EmployeeName_ = $("#EmployeeName").val();
-    //    var IBANCODE_ = $("#IBANCODE").val();
-    //    var BankName_ = $("#BankName").val();
-    //    var BankBranch_ = $("#BankBranch").val();
-    //    var StatusId_ = $("#StatusId").val();
-    //    if (BranchId_ != "") {
-
-    //        var MaritalSDetails = {
-    //            BranchId: BranchId_
-    //        };
-
-    //        if (confirm("Are you sure you want to continue ?")) {
-
-    //            $.ajax({
-    //                type: 'POST',
-    //                url: '/HRMS_EmployeeBankDetails/SaveEmployeeBankDetails',
-    //                data: JSON.stringify(MaritalSDetails),
-    //                contentType: "application/json; charset=utf-8",
-    //                dataType: 'json',
-    //                success: function (data) {
-    //                    debugger;
-    //                    if (data.Result == "yes") {
-    //                        swal({
-    //                            title: "Success",
-    //                            text: "Records Successfully Saved",
-    //                            type: "success",
-    //                        }).then(function (isConfirm) {
-    //                            if (isConfirm) {
-    //                                window.location.reload();
-    //                            }
-    //                            else {
-
-    //                            }
-    //                        });
-    //                    }
-    //                    else if (data.Result == "yes1") {
-    //                        swal({
-    //                            title: "Success",
-    //                            text: "Records Successfully Updated",
-    //                            type: "success",
-    //                        }).then(function (isConfirm) {
-    //                            if (isConfirm) {
-    //                                window.location.reload();
-    //                            }
-    //                            else {
-
-    //                            }
-    //                        });
-    //                    }
-
-    //                    else {
-    //                        swal("Warning", "Record not save!", "warning");
-    //                    }
-    //                },
-    //                error: function (httpResponse) {
-    //                    swal("Warning", "Something Went to Wrong!", "warning");
-    //                }
-    //            })
-    //        }
-    //    }
-    //    else {
-
-    //        if (BranchId_ == "") {
-    //            swal("Warning", "Please Enter BranchId ", "warning");
-    //            return false;
-    //        }
-    //    }
-    //});
-
-
-
-
+        return true;
+    }
 
 
 </script>
 
+<script>
+
+
+    //$("#btnsave").click(function () {
+
+    //    debugger;
+    //    var _BranchId = $("#BranchId").val();
+    //    var _AccountNumber = $("#AccountNumber").val();
+    //    var _EmployeeName = $("#EmployeeName").val();
+    //    var _IBANCODE = $("#IBANCODE").val();
+    //    var _BankName = $("#BankName").val();
+    //    var _BankBranch = $("#BankBranch").val();
+    //    var _StatusId = $("#StatusId").val();
+
+
+    //    var ProductListArr = [];
+
+    //    if (_BranchId != "") {
+
+
+    //        var ProductList = {
+
+    //            BranchId: _BranchId,
+    //            AccountNumber: _AccountNumber,
+    //            EmployeeName: _EmployeeName,
+    //            IBANCODE: _IBANCODE,
+    //            BankName: _BankName,
+    //            BankBranch: _BankBranch,
+    //            StatusId: _StatusId
+
+    //        };
+    //        ProductListArr.push(ProductList);
+
+    //        $.ajax({
+    //            type: 'POST',
+    //            url: '/HRMS_EmployeeBankDetails/InsertBank',
+    //            data: JSON.stringify(ProductListArr),
+    //            contentType: "application/json; charset=utf-8",
+    //            dataType: 'json',
+
+    //            success: function (data) {
+    //                if (data.Result == "yes") {
+    //                    swal({
+    //                        title: "success",
+    //                        text: "Record Successfully Saved.",
+    //                        type: "success",
+    //                    }).then(function (isConfirm) {
+    //                        if (isConfirm) {
+    //                            window.location.reload();
+    //                        } else {
+
+    //                        }
+    //                    });
+    //                }
+    //                else if (data == "yes1") {
+    //                    swal({
+    //                        title: "success",
+    //                        text: "Record Successfully Updated.",
+    //                        type: "success",
+    //                    }).then(function (isConfirm) {
+    //                        if (isConfirm) {
+    //                            window.location.reload();
+    //                        } else {
+
+    //                        }
+    //                    });
+    //                }
+    //                else {
+    //                    swal("Warning", "Record not save!", "warning");
+    //                }
+    //            },
+
+    //            error: function (httpResponse) {
+    //                swal("Warning", "Something Went to Wrong!", "warning");
+    //            }
+    //        })
+
+    //    }
+    //    else {
+
+
+
+    //    }
+    //})
+
+</script>
 

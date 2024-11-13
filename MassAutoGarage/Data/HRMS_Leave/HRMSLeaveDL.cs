@@ -88,8 +88,6 @@ namespace MassAutoGarage.Data.HRMS_Leave
             }
         }
 
-
-
         public List<HRMSLeaveModel> GetLeaveList()
         {
             List<HRMSLeaveModel> obj = new List<HRMSLeaveModel>();
@@ -124,7 +122,6 @@ namespace MassAutoGarage.Data.HRMS_Leave
             }
         }
 
-
         public List<HRMSLeaveModel> GetLeaveDetailsById(HRMSLeaveModel objmodel)
         {
             List<HRMSLeaveModel> obj = new List<HRMSLeaveModel>();
@@ -141,7 +138,6 @@ namespace MassAutoGarage.Data.HRMS_Leave
                 throw ex;
             }
         }
-
 
         public HRMSLeaveModel DeleteLeaveDetails(HRMSLeaveModel obj)
         {
