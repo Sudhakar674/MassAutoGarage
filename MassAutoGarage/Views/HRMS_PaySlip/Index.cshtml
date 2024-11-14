@@ -1,4 +1,6 @@
-﻿@model MassAutoGarage.Models.CompanyMasterModel
+﻿@model MassAutoGarage.Models.HRMS_PaySlip.HRMSPaySlipModel
+
+
 @{
     ViewBag.Title = "Attendance Report";
     ViewBag.pTitle = "Attendance Report";
@@ -7,47 +9,31 @@
 }
 
 
-
-
 <!-- New Dive-->
 <script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
 @section styles{
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-
-
-
-
 }
+
+<!-- for pdf generate link start Include the html2pdf.js library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+<!-- for pdf generate link end Include the html2pdf.js library -->
+
 
 @using (Html.BeginForm("Index", "HRMS_PaySlip", FormMethod.Post, new { enctype = "multipart/form-data", OnSubmit = "return ValidationForm()", @class = "form-validate" }))
 {
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
-
-
                 <div class="card-header main-f">
                     <div class="row">
                         <div class="col-md-12 col-12"> <h5 class="card-title mb-0 gp-detail">HRMS - PAY SLIP</h5></div>
                         @*<div class="col-md-6 col-7">
-                            <a href="@Url.Action("Index","RetailDeliveryNote")" class="btn btn-primary add-new" style="float:right;" tabindex="1"> <i class="fa fa-arrow-left align-middle me-1"></i> BACK TO DELIVERY NOTE LIST</a>
-                        </div>*@
+                                <a href="@Url.Action("Index","RetailDeliveryNote")" class="btn btn-primary add-new" style="float:right;" tabindex="1"> <i class="fa fa-arrow-left align-middle me-1"></i> BACK TO DELIVERY NOTE LIST</a>
+                            </div>*@
                     </div>
                 </div>
-
-
-                <!--<div class="card-header align-items-center d-flex">
-                    <h4 class="card-title mb-0 flex-grow-1">HRMS - PAY SLIP </h4>
-                    <div class="flex-shrink-0">-->
-                        @*<div class="form-check form-switch form-switch-right form-switch-md">
-                    <a href="@Url.Action("Index", "HRMS_Leave")" class="btn btn-primary" style="float:right;" tabindex="12"><i class="fa fa-list" aria-hidden="true"></i> BACK TO LEAVE LIST</a>
-                </div>*@
-                    <!--</div>
-                </div>-->
-
-
-
                 <!-- end card header -->
                 <div class="card-body">
                     <div class="live-preview">
@@ -61,7 +47,7 @@
                             </div>
                             <div class="col-xxl-6 col-md-6">
                                 <div>
-                                    <input type="button" value="Search" class="btn btn-success" style=" margin-top: 5%;" />
+                                    <input type="button" value="Search" id="generatePDF" class="btn btn-success" style=" margin-top: 5%;" />
                                 </div>
                             </div>
 
@@ -73,63 +59,96 @@
                                             <a href="javascript:void(0)" onclick="PrintFunction('#printdiv')" class="btn btn-primary">Print</a>
                                         </div>
                                     </div><br />
-                                    <div id="printdiv">
+
+                                    <div id="content" @*id="printdiv"*@>
+
                                         <table border="1" id="example" class="display table table-bordered" style="width: 100%; font-family: Verdana; border-width: thin; border-collapse: collapse; " cellpadding="4" cellspacing="1">
                                             <thead>
+                                                @*<tr>
+                                                        <th scope="col" style="font-size: 13px; white-space: nowrap">
+                                                            Employee Name
+                                                        </th>
+                                                        <th scope="col" style="font-size: 13px; white-space: nowrap">Number of working Hours</th>
+                                                        <th scope="col" style="font-size: 13px; white-space: nowrap">Standard Total Time work </th>
+                                                        <th scope="col" style="font-size: 13px; white-space: nowrap">Over Time (Minutes)</th>
+                                                        <th scope="col" style="font-size: 13px; white-space: nowrap">Over Time Rate</th>
+                                                        <th scope="col" style="font-size: 13px; white-space: nowrap">Basic Salary</th>
+                                                        <th scope="col" style="font-size: 13px; white-space: nowrap">Salary</th>
+                                                        <th scope="col" style="font-size: 13px; white-space: nowrap">Over Time Salary</th>
+                                                        <th scope="col" style="font-size: 13px; white-space: nowrap">Total Salary </th>
+
+                                                    </tr>*@
                                                 <tr>
-                                                    <th scope="col" style="font-size: 13px; width: 5%;">S.N.</th>
-                                                    <th scope="col" style="font-size: 13px; white-space: nowrap">
-                                                        Employee Name
-                                                    </th>
+                                                    <th scope="col" style="font-size: 13px; white-space: nowrap">Employee Name</th>
                                                     <th scope="col" style="font-size: 13px; white-space: nowrap">Number of working Hours</th>
+                                                </tr>
+                                                <tr>
                                                     <th scope="col" style="font-size: 13px; white-space: nowrap">Standard Total Time work </th>
                                                     <th scope="col" style="font-size: 13px; white-space: nowrap">Over Time (Minutes)</th>
+                                                </tr>
+                                                <tr>
                                                     <th scope="col" style="font-size: 13px; white-space: nowrap">Over Time Rate</th>
                                                     <th scope="col" style="font-size: 13px; white-space: nowrap">Basic Salary</th>
+                                                </tr>
+                                                <tr>
                                                     <th scope="col" style="font-size: 13px; white-space: nowrap">Salary</th>
                                                     <th scope="col" style="font-size: 13px; white-space: nowrap">Over Time Salary</th>
-                                                    <th scope="col" style="font-size: 13px; white-space: nowrap">Total Salary </th>
-
+                                                </tr>
+                                                <tr>
+                                                    <th scope="col" style="font-size: 13px; white-space: nowrap">Employee Name</th>
+                                                    <th scope="col" style="font-size: 13px; white-space: nowrap">Number of working Hours</th>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="col" style="font-size: 13px; white-space: nowrap">Standard Total Time work </th>
+                                                    <th scope="col" style="font-size: 13px; white-space: nowrap">Over Time (Minutes)</th>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="col" style="font-size: 13px; white-space: nowrap">Over Time Rate</th>
+                                                    <th scope="col" style="font-size: 13px; white-space: nowrap">Basic Salary</th>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="col" style="font-size: 13px; white-space: nowrap">Salary</th>
+                                                    <th scope="col" style="font-size: 13px; white-space: nowrap">Over Time Salary</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <th scope="row">1</th>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">2</th>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">3</th>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                </tr>
-                                            </tbody>
+                                            @*<tbody>
+                                                    <tr>
+                                                        <th scope="row">1</th>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">2</th>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">3</th>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>*@
                                         </table>
                                     </div>
                                 </div>
@@ -172,29 +191,43 @@
 
 <script>
     $(document).ready(function () {
-        $('#printdiv').attr('style', 'display:block');
+        /*   $('#printdiv').attr('style', 'display:block');*/
     });
 
-    function PrintFunction(div) {
-        $(div).attr('style', 'display:block');
-        Popup($(div).html());
-    }
+    //function PrintFunction(div) {
+    //    $(div).attr('style', 'display:block');
+    //    Popup($(div).html());
+    //}
 
-    function Popup(data) {
-        var printwindow = window.open('', 'printdiv');
-        printwindow.document.write('<html><head><title></title>');
-        printwindow.document.write('</head><body>');
-        printwindow.document.write(data);
-        printwindow.document.write('</body><html>');
-        printwindow.document.close();
-        printwindow.focus();
-        printwindow.print();
-        printwindow.close();
-        $('#printdiv').attr('style', 'display:block');
-    }
-
-   
-
+    //function Popup(data) {
+    //    var printwindow = window.open('', 'printdiv');
+    //    printwindow.document.write('<html><head><title></title>');
+    //    printwindow.document.write('</head><body>');
+    //    printwindow.document.write(data);
+    //    printwindow.document.write('</body><html>');
+    //    printwindow.document.close();
+    //    printwindow.focus();
+    //    printwindow.print();
+    //    printwindow.close();
+    //    $('#printdiv').attr('style', 'display:block');
+    //}
 </script>
 
+<script>
+    document.getElementById("generatePDF").addEventListener("click", () => {
+        // Select the element to be converted
+        const element = document.getElementById("content");
 
+        // Set PDF options
+        const options = {
+            margin: 1,
+            filename: 'PaySlip.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+        };
+
+        // Generate the PDF
+        html2pdf().set(options).from(element).save();
+    });
+</script>

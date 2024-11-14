@@ -3530,6 +3530,7 @@
     <Content Include="MyApp\HRMS_Loan.js" />
     <Content Include="MyApp\HRMS_MaritalStatus.js" />
     <Content Include="MyApp\HRMS_OverTime.js" />
+    <Content Include="MyApp\HRMS_PaySlip.js" />
     <Content Include="MyApp\HRMS_SalesTarget.js" />
     <Content Include="MyApp\LoyaltyPointsMaster.js" />
     <Content Include="MyApp\PromotionMaster.js" />
@@ -3775,6 +3776,7 @@
     <Compile Include="Data\HRMS_Loan\HRMSLoanDL.cs" />
     <Compile Include="Data\HRMS_MaritalStatus\HRMSMaritalStatus_DL.cs" />
     <Compile Include="Data\HRMS_OverTime\HRMSOverTimeDL.cs" />
+    <Compile Include="Data\HRMS_PaySlip\HRMSPaySlipDL.cs" />
     <Compile Include="Data\HRMS_SalesTarget\HRMSSalesTargetDL.cs" />
     <Compile Include="Data\JobCategoryMaster\JobCategoryMaster_DL.cs" />
     <Compile Include="Data\LeadSourceMaster\LeadSourceMaster_DL.cs" />
@@ -3842,6 +3844,7 @@
     <Compile Include="Models\HRMS_Loan\HRMSLoanModel.cs" />
     <Compile Include="Models\HRMS_MaritalStatus\HRMSMaritalStatusModel.cs" />
     <Compile Include="Models\HRMS_OverTime\HRMSOverTimeModel.cs" />
+    <Compile Include="Models\HRMS_PaySlip\HRMSPaySlipModel.cs" />
     <Compile Include="Models\HRMS_SalesTarget\HRMSSalesTargetModel.cs" />
     <Compile Include="Models\JobCategoryMaster\JobCategoryMasterModel.cs" />
     <Compile Include="Models\LeadSourceMaster\LeadSourceMasterModel.cs" />
@@ -4582,6 +4585,7 @@
     <Content Include="Views\JournalVouchers\AddJournalVouchers.cshtml" />
     <Content Include="Views\JournalVouchers\Index.cshtml" />
     <Content Include="Views\Home\ForTesting.cshtml" />
+    <Content Include="Views\HRMS_LeaveReport\Testing.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
