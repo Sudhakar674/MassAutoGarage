@@ -3696,6 +3696,7 @@
     <Compile Include="Controllers\HRMS_PaySlipController.cs" />
     <Compile Include="Controllers\HRMS_SalaryStatementController.cs" />
     <Compile Include="Controllers\HRMS_SalesTargetController.cs" />
+    <Compile Include="Controllers\HR_GeneralRequestController.cs" />
     <Compile Include="Controllers\JobCardSalesReturnController.cs" />
     <Compile Include="Controllers\JobCategoryController.cs" />
     <Compile Include="Controllers\JournalVouchersController.cs" />
@@ -4586,6 +4587,8 @@
     <Content Include="Views\JournalVouchers\Index.cshtml" />
     <Content Include="Views\Home\ForTesting.cshtml" />
     <Content Include="Views\HRMS_LeaveReport\Testing.cshtml" />
+    <Content Include="Views\HR_GeneralRequest\GeneralRequest.cshtml" />
+    <Content Include="Views\HR_GeneralRequest\GeneralRequestList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
