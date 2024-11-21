@@ -3532,6 +3532,7 @@
     <Content Include="MyApp\HRMS_OverTime.js" />
     <Content Include="MyApp\HRMS_PaySlip.js" />
     <Content Include="MyApp\HRMS_SalesTarget.js" />
+    <Content Include="MyApp\HR_GeneralRequest.js" />
     <Content Include="MyApp\LoyaltyPointsMaster.js" />
     <Content Include="MyApp\PromotionMaster.js" />
     <Content Include="MyApp\SupplierOpeningBalance.js" />
@@ -3792,6 +3793,7 @@
     <Compile Include="Data\HRMS_OverTime\HRMSOverTimeDL.cs" />
     <Compile Include="Data\HRMS_PaySlip\HRMSPaySlipDL.cs" />
     <Compile Include="Data\HRMS_SalesTarget\HRMSSalesTargetDL.cs" />
+    <Compile Include="Data\HR_GeneralRequest\HR_GeneralRequestDL.cs" />
     <Compile Include="Data\JobCategoryMaster\JobCategoryMaster_DL.cs" />
     <Compile Include="Data\LeadSourceMaster\LeadSourceMaster_DL.cs" />
     <Compile Include="Data\LoginAuth\AccountMasterService.cs" />
@@ -3860,6 +3862,7 @@
     <Compile Include="Models\HRMS_OverTime\HRMSOverTimeModel.cs" />
     <Compile Include="Models\HRMS_PaySlip\HRMSPaySlipModel.cs" />
     <Compile Include="Models\HRMS_SalesTarget\HRMSSalesTargetModel.cs" />
+    <Compile Include="Models\HR_GeneralRequest\HR_GeneralRequestModel.cs" />
     <Compile Include="Models\JobCategoryMaster\JobCategoryMasterModel.cs" />
     <Compile Include="Models\LeadSourceMaster\LeadSourceMasterModel.cs" />
     <Compile Include="Models\LinkingAccount\LinkingAccountModel.cs" />
