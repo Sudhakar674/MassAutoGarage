@@ -243,7 +243,7 @@
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 }
 
-@using (Html.BeginForm("GeneralRequest", "HR_GeneralRequest", FormMethod.Post, new { enctype = "multipart/form-data", OnSubmit = "return ValidationForm()", @class = "form-validate", @id = "myformid" }))
+@using (Html.BeginForm("GeneralRequest", "HR_GeneralRequest", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     <div class="row">
         <div class="col-lg-12">
@@ -266,7 +266,8 @@
                                 <div class="row gy-4" style="margin-bottom:15px;">
                                     <div class="col-xxl-3 col-md-3">
                                         <label for="labelInput" class="form-label"> Voucher Number <code>*</code></label>
-                                        @Html.TextBoxFor(m => m.VoucherNumber, new { @class = "form-control", tabindex = 1 })
+                                        @Html.HiddenFor(m => m.Idincrept, new { @class = "form-control" })
+                                        @Html.TextBoxFor(m => m.VoucherNumber, new { @class = "form-control", @readonly = "readonly", tabindex = 1 })
                                     </div>
                                 </div>
                                 <hr />
@@ -276,12 +277,10 @@
                                         @*@Html.DropDownListFor(x => x.EmployeeId, new SelectList(ViewBag.ddlEmployee, "Id", "EmployeeName"), "- Select Employee -", new { @class = "js-example-basic-single", tabindex = 2 })*@
 
                                         @Html.DropDownListFor(x => x.EmployeeId, new SelectList(ViewBag.ddlEmployee, "Id", "EmployeeName"), "- Select Employee -", new { @class = "form-control", tabindex = 2 })
-
-
                                     </div>
                                     <div class="col-xxl-3 col-md-4">
                                         <label for="labelInput" class="form-label">Date<code>*</code></label>
-                                        @Html.TextBoxFor(m => m.Date, new { @class = "form-control", tabindex = 3 })
+                                        @Html.TextBoxFor(m => m.Date, new { @class = "form-control", @readonly = "readonly", tabindex = 3 })
                                     </div>
                                     <div class="col-xxl-3 col-md-4">
                                         <label for="labelInput" class="form-label">Designation<code>*</code></label>
@@ -297,7 +296,7 @@
                                     </div>
                                     <div class="col-xxl-3 col-md-4">
                                         <label for="labelInput" class="form-label">EmpId<code>*</code></label>
-                                        @Html.TextBoxFor(m => m.EmpId, new { @class = "form-control", @readonly = "readonly", tabindex = 7 })
+                                        @Html.TextBoxFor(m => m.EmpId, new { @class = "form-control", tabindex = 7 })
                                     </div>
                                 </div>
                             </fieldset>
@@ -313,58 +312,56 @@
                                     <div class="row gy-4" style="margin-bottom: 15px; padding-left: 10px; padding-right: 10px;">
 
                                         @*@foreach (var item in Model.lst)
-                                        {
-                                            <div class="col-xxl-3 col-md-3" id="examplediv">
-                                                <label class="form-control"><input type="checkbox" id="Certificate" value="@item.Certificate" />@item.Certificate</label>
-                                                <span id="hdfId" value="@item.Id">@item.Id</span>
-                                            </div>
-                                            i++;
-                                        }*@
+                                            {
+                                                <div class="col-xxl-3 col-md-3" id="examplediv">
+                                                    <label class="form-control"><input type="checkbox" id="Certificate" value="@item.Certificate" />@item.Certificate</label>
+                                                    <span id="hdfId" value="@item.Id">@item.Id</span>
+                                                </div>
+                                                i++;
+                                            }*@
 
                                         <div class="col-xxl-3 col-md-3">
-                                                <label class="form-control"><input type="checkbox" name="SalaryCertificate" />Salary Certificate</label>
-                                            </div>
-                                            <div class="col-xxl-3 col-md-3">
-                                                <label class="form-control"><input type="checkbox" />Salary Transfer Letter</label>
-                                            </div>
-                                            <div class="col-xxl-3 col-md-3">
-                                                <label class="form-control"><input type="checkbox" />NOC</label>
-                                            </div>
-                                            <div class="col-xxl-3 col-md-3">
-                                                <label class="form-control"><input type="checkbox" />Experience Certificate</label>
-                                            </div>
+                                         <label class="form-control"><input type="checkbox" name="SalaryCertificate" tabindex=8 value="@Model.SalaryCertificate"/>Salary Certificate</label>
 
-
-
+                                        </div>
+                                        <div class="col-xxl-3 col-md-3">
+                                            <label class="form-control"><input type="checkbox" name="SalaryTransferLetter" tabindex=9 />Salary Transfer Letter</label>
+                                        </div>
+                                        <div class="col-xxl-3 col-md-3">
+                                            <label class="form-control"><input type="checkbox" name="NOC" tabindex=10 />NOC</label>
+                                        </div>
+                                        <div class="col-xxl-3 col-md-3">
+                                            <label class="form-control"><input type="checkbox" name="ExperienceCertificate" tabindex=11 />Experience Certificate</label>
+                                        </div>
 
                                         <div class="col-xxl-6 col-md-6" style="margin-top: 3px; padding-left:6px; padding-right: 16px;">
                                             <label for="labelInput" class="form-label">Bank/Establishment<code>*</code></label>
-                                            <input type="text" class="form-control" id="EmployeeId" />
+                                            @Html.TextBoxFor(m => m.BankEstablishment, new { @class = "form-control", tabindex = 12 })
                                         </div>
                                         <div class="col-xxl-6 col-md-6" style="margin-top: 3px; padding-left: 8px; padding-right:16px;">
                                             <label for="labelInput" class="form-label">Acct No/IBAN No<code>*</code></label>
-                                            <input type="text" class="form-control" id="EmployeeId" />
+                                            @Html.TextBoxFor(m => m.AcctNoIBANNo, new { @class = "form-control", tabindex = 13 })
                                         </div>
                                         <div class="col-xxl-3 col-md-3">
-                                            <label class="form-control"><input type="checkbox" />Opne New Bank Acct</label>
+                                            <label class="form-control"><input type="checkbox" name="OpneNewBankAcct" tabindex=14 />Opne New Bank Acct</label>
                                         </div>
                                         <div class="col-xxl-3 col-md-3">
-                                            <label class="form-control"><input type="checkbox" />Transfer Loan To Other Bank</label>
+                                            <label class="form-control"><input type="checkbox" name="TransferLoanToOtherBank" tabindex=15 />Transfer Loan To Other Bank</label>
                                         </div>
                                         <div class="col-xxl-3 col-md-3">
-                                            <label class="form-control"><input type="checkbox" />Personal Loan</label>
+                                            <label class="form-control"><input type="checkbox" name="PersonalLoan" tabindex=16 />Personal Loan</label>
                                         </div>
                                         <div class="col-xxl-3 col-md-3">
-                                            <label class="form-control"><input type="checkbox" />NOC To Embassy</label>
+                                            <label class="form-control"><input type="checkbox" name="NOCToEmbassy" tabindex=17 />NOC To Embassy</label>
                                         </div>
                                         <div class="col-xxl-3 col-md-3">
-                                            <label class="form-control"><input type="checkbox" />Confirmation Letter To Bank</label>
+                                            <label class="form-control"><input type="checkbox" name="ConfirmationLettrToBank" tabindex=18 />Confirmation Letter To Bank</label>
                                         </div>
                                         <div class="col-xxl-3 col-md-3">
-                                            <label class="form-control"><input type="checkbox" />Loan Top Up</label>
+                                            <label class="form-control"><input type="checkbox" name="LoanTopUp" tabindex=19 />Loan Top Up</label>
                                         </div>
                                         <div class="col-xxl-6 col-md-6">
-                                            <label class="form-control"><input type="checkbox" />Others</label>
+                                            <label class="form-control"><input type="checkbox" name="Others" tabindex=20 />Others</label>
                                         </div>
                                     </div>
                                 </fieldset>
@@ -374,27 +371,26 @@
                                     <div class="row gy-4" style="margin-bottom: 15px; padding-left: 10px; padding-right: 10px;">
                                         <div class="col-xxl-3 col-md-3">
                                             <label for="labelInput" class="form-label">Cash Advance<code>*</code></label>
-                                            <input type="text" class="form-control" id="EmployeeId" />
-                                        </div>
-
-                                        <div class="col-xxl-3 col-md-3" style="margin-top:55px;">
-                                            <label class="form-control"><input type="checkbox" />Initial - New Employee</label>
+                                            @Html.TextBoxFor(m => m.CashAdvance, new { @class = "form-control", tabindex = 21 })
                                         </div>
                                         <div class="col-xxl-3 col-md-3" style="margin-top:55px;">
-                                            <label class="form-control"><input type="checkbox" id="toggleButton" />Against</label>
+                                            <label class="form-control"><input type="checkbox" name="InitialNewEmp" tabindex=22 />Initial - New Employee</label>
+                                        </div>
+                                        <div class="col-xxl-3 col-md-3" style="margin-top:55px;">
+                                            <label class="form-control"><input type="checkbox" id="toggleButton" name="Against" tabindex=23 />Against</label>
                                         </div>
                                         <div class="col-xxl-3 col-md-3" style="margin-top:30px;display:none;" id="myDiv">
                                             <label for="labelInput" class="form-label"><code></code></label>
-                                            <input type="text" class="form-control" id="EmployeeId" />
+                                            @Html.TextBoxFor(m => m.BehalfAgainst, new { @class = "form-control", tabindex = 24 })
                                         </div>
 
                                         <div class="col-xxl-6 col-md-6" style="margin-top:3px;">
                                             <label for="labelInput" class="form-label">Reason<code>*</code></label>
-                                            <textarea class="form-control" id="EmployeeId"></textarea>
+                                            @Html.TextAreaFor(m => m.Reason, new { @class = "form-control", tabindex = 25 })
                                         </div>
                                         <div class="col-xxl-6 col-md-6" style="margin-top:3px;">
                                             <label for="labelInput" class="form-label">Monthly Deduction<code>*</code></label>
-                                            <input type="text" class="form-control" id="EmployeeId" />
+                                            @Html.TextBoxFor(m => m.MonthlyDeduction, new { @class = "form-control", tabindex = 26 })
                                         </div>
                                     </div>
                                 </fieldset>
@@ -403,10 +399,10 @@
                                     <legend style="background-color:#151529;" id="legendSalarySlips">3) Salary Slips</legend>
                                     <div class="row gy-4" style="margin-bottom:15px;padding-left:10px;padding-right:10px;">
                                         <div class="col-xxl-6 col-md-6">
-                                            <label class="form-control"><input type="checkbox" />3 Months</label>
+                                            <label class="form-control"><input type="checkbox" name="SalarySlips3Months" tabindex=27 />3 Months</label>
                                         </div>
                                         <div class="col-xxl-6 col-md-6">
-                                            <label class="form-control"><input type="checkbox" />6 Months</label>
+                                            <label class="form-control"><input type="checkbox" name="SalarySlips6Months" tabindex=28 />6 Months</label>
                                         </div>
                                     </div>
                                 </fieldset>
@@ -416,23 +412,23 @@
                                     <div class="row gy-4" style="margin-bottom: 15px; padding-left: 10px; padding-right: 10px;">
                                         <div class="col-xxl-6 col-md-6">
                                             <label for="labelInput" class="form-label">Traffic Fine Deduction-Amount<code>*</code></label>
-                                            <input type="text" class="form-control" id="EmployeeId" />
+                                            @Html.TextBoxFor(m => m.TrafficFineDeductionAmt, new { @class = "form-control", tabindex = 29, @onkeypress = "return isNumberOrDecimal(event);" })
                                         </div>
                                         <div class="col-xxl-6 col-md-6" style="padding-top:10px;">
                                             <label for="labelInput" class="form-label"></label>
-                                            <label class="form-control"><input type="checkbox" />Salary Card</label>
+                                            <label class="form-control"><input type="checkbox" name="SalaryCard" tabindex=30 />Salary Card</label>
                                         </div>
                                     </div>
                                 </fieldset>
 
                                 <div class="row gy-4" style="margin-bottom: 15px; padding-left: 10px; padding-right: 10px;">
-                                    <div class="col-xxl-6 col-md-6" style="padding-left: 10px; padding-right: 10px;">
-                                        <label for="labelInput" class="form-label">Employee Signature <code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" />
-                                    </div>
+                                    @*<div class="col-xxl-6 col-md-6" style="padding-left: 10px; padding-right: 10px;">
+                                            <label for="labelInput" class="form-label">Employee Signature <code>*</code></label>
+                                            <input type="file" class="form-control" name="EmpSignature" id="EmpSignature"  tabindex = 31 />
+                                        </div>*@
                                     <div class="col-xxl-6 col-md-6" style="padding-left: 10px; padding-right:15px;">
                                         <label for="labelInput" class="form-label">Mobile Number<code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" />
+                                        @Html.TextBoxFor(m => m.MobileNumber, new { @class = "form-control", tabindex = 32, @maxlength = "15", @onkeypress = "return isNumberKey(event);" })
                                     </div>
                                 </div>
                             </fieldset>
@@ -441,11 +437,18 @@
                 </div>
                 <br />
                 <div class="col-xxl-12 col-md-12">
-                    <div class="form-floating" style="float: right; padding-right: 2%;">
-                        @*<input type="button" value="Save" id="btnsavess" class="btn btn-primary" />*@
-                        <button id="btnsave" class="btn btn-primary">Save</button>
-                        <a href="/HR_GeneralRequest/GeneralRequest" class="btn btn-danger">Reset</a>
 
+                    <div class="form-floating" style="float: right; padding-right: 2%;">
+                        @if (Model.Idincrept == null || Model.Idincrept == "")
+                        {
+                            <button id="btnsave" class="btn btn-primary">Save</button>
+                            <a href="/HR_GeneralRequest/GeneralRequest" class="btn btn-danger">Reset</a>
+                        }
+                        else
+                        {
+                            <button id="btnsave" class="btn btn-primary">Update</button>
+                            <a href="/HR_GeneralRequest/GeneralRequest" class="btn btn-danger">Reset</a>
+                        }
                     </div>
                 </div>
                 <br />
@@ -457,25 +460,25 @@
 }
 
 @*@section scripts{
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    <script src="~/assets/js/pages/select2.init.js"></script>
-    <script src="~/assets/libs/prismjs/prism.js"></script>
-    <script src="~/assets/js/app.js"></script>
-}
-<script src="~/Scripts/jquery-3.4.1.min.js"></script>
-<script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<link rel="stylesheet" href="/resources/demos/style.css">*@
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+        <script src="~/assets/js/pages/select2.init.js"></script>
+        <script src="~/assets/libs/prismjs/prism.js"></script>
+        <script src="~/assets/js/app.js"></script>
+    }
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">*@
 
 
 
 
 @section scripts{
- prismjs plugin 
-<script src="~/assets/libs/prismjs/prism.js"></script>
- App js 
-<script src="~/assets/js/app.js"></script>
+    prismjs plugin
+    <script src="~/assets/libs/prismjs/prism.js"></script>
+    App js
+    <script src="~/assets/js/app.js"></script>
 }
 
 <script src="~/Scripts/jquery-3.4.1.min.js"></script>
@@ -486,19 +489,33 @@
 <link rel="stylesheet" href="/resources/demos/style.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
-
 <script src="~/MyApp/HR_GeneralRequest.js"></script>
 
 <script>
     $(document).ready(function () {
-
-    })
+        vouchernew();
+    });
+    function vouchernew() {
+        debugger;
+        $.ajax({
+            type: 'POST',
+            url: '/HR_GeneralRequest/GetMaxVoucher',
+            data: "{}",
+            dataType: "json",
+            success: function (result) {
+                $.each(result, function (i, v) {
+                    var i = 'GRV-' + v.MaxID;
+                    $("#VoucherNumber").val(i);
+                })
+            }
+        })
+    }
 </script>
+
+
 
 <script>
     $(document).ready(function () {
-        /*   alert('hiiiiiiii');*/
         // Toggle visibility on button click
         $("#toggleButton").click(function () {
             $("#myDiv").toggle(); // Toggle visibility
@@ -512,96 +529,3 @@
     });
 </script>
 
-<script>
-    var options = $.extend({},
-        $.datepicker.regional["es"], {
-        dateFormat: "dd/mm/yy",
-        changeMonth: true,
-        changeYear: true,
-        todayHighlight: true,
-    });
-    $("#Date").datepicker(options);
-
-
-
-    $("#btnsave").click(function () {
-        debugger;
-
-        var _EmployeeId = $("#EmployeeId").val();
-        var _Certificate = $("#Certificate").val();
-
-        var divLength = $("#examplediv checkbox").length;
-        var ProductListArr = [];
-
-        if (_EmployeeId != "" && divLength > 2) {
-
-            if (tableLength > 2) {
-
-                for (var i = 0; i < divLength; i++) {
-
-                    var ProductList = {
-                        EmployeeId: _EmployeeId,
-                        _Certificate: _Certificate,
-
-                        Certificate: $("#examplediv checkbox tr:eq(" + i + ")").find('#Certificate').html(),
-                        //ToDate: $("#example tBody tr:eq(" + i + ")").find('td:eq(1)').html(),
-                        //Target: $("#example tBody tr:eq(" + i + ")").find('td:eq(2)').html(),
-                    };
-                    ProductListArr.push(ProductList);
-                }
-                $.ajax({
-                    type: 'POST',
-                    url: '/HR_GeneralRequest/SaveGeneralRequest',
-                    data: JSON.stringify(ProductListArr),
-                    contentType: "application/json; charset=utf-8",
-                    dataType: 'json',
-                    success: function (data) {
-                        if (data.Result == "yes") {
-                            swal({
-                                title: "success",
-                                text: "Record Successfully Saved.",
-                                type: "success",
-                            }).then(function (isConfirm) {
-                                if (isConfirm) {
-                                    window.location.reload();
-                                } else {
-
-                                }
-                            });
-                        }
-                        else if (data == "yes1") {
-                            swal({
-                                title: "success",
-                                text: "Record Successfully Updated.",
-                                type: "success",
-                            }).then(function (isConfirm) {
-                                if (isConfirm) {
-                                    window.location.reload();
-                                } else {
-
-                                }
-                            });
-                        }
-                        else {
-                            swal("Warning", "Record not save!", "warning");
-                        }
-                    },
-                    error: function (httpResponse) {
-                        swal("Warning", "Something Went to Wrong!", "warning");
-                    }
-                })
-            }
-        }
-        else {
-
-            if (_EmployeeId == "") {
-                swal("Warning", "Please Enter Employee Name !", "warning")
-                return false;
-            }
-            //if (tableLength == 2) {
-            //    swal("Warning", "Please At least 1 row data required.", "warning");
-            //    return false;
-            //}
-        }
-    })
-</script>

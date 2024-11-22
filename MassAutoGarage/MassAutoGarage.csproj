@@ -4646,6 +4646,7 @@
     <Folder Include="Images\EmirateFile\" />
     <Folder Include="Images\EmployeeContactCardFile\" />
     <Folder Include="Images\EmployeeFamilyPhoto\" />
+    <Folder Include="Images\EmployeeSignature\" />
     <Folder Include="Images\InsuranceFile\" />
     <Folder Include="Images\InsurancePhoto\" />
     <Folder Include="Images\PassportFile\" />

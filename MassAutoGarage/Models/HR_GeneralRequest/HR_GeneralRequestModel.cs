@@ -53,10 +53,7 @@ namespace MassAutoGarage.Models.HR_GeneralRequest
         public string QueryType { get; set; }
         public string Message { get; set; }
         public string Result { get; set; }
-        public string Certificate { get; set; }
-        public string GeneralRequestId { get; set; }
-        public string CertificateDetails { get; set; }
-        public List<HR_GeneralRequestModel> HR_GeneralRequestModelList { get; set; }
+        public string MaxID { get; set; }
         public List<HR_GeneralRequestModel> lst { get; set; }
 
 
