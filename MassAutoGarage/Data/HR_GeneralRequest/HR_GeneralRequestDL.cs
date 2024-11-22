@@ -4,6 +4,7 @@ using MassAutoGarage.DBContext;
 using MassAutoGarage.Models.HR_GeneralRequest;
 using MassAutoGarage.Models.HRMS_EmployeeDocuments;
 using MassAutoGarage.Models.HRMS_Loan;
+using MassAutoGarage.Models.HRMS_OverTime;
 using NPOI.SS.Formula.Functions;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,6 @@ namespace MassAutoGarage.Data.HR_GeneralRequest
 {
     public class HR_GeneralRequestDL
     {
-
         public List<HR_GeneralRequestModel> ddlEmployee()
         {
             List<HR_GeneralRequestModel> obj = new List<HR_GeneralRequestModel>();
@@ -31,7 +31,6 @@ namespace MassAutoGarage.Data.HR_GeneralRequest
                 throw ex;
             }
         }
-
         public List<HR_GeneralRequestModel> ddlDesignation()
         {
             List<HR_GeneralRequestModel> obj = new List<HR_GeneralRequestModel>();
@@ -47,7 +46,6 @@ namespace MassAutoGarage.Data.HR_GeneralRequest
                 throw ex;
             }
         }
-
         public List<HR_GeneralRequestModel> ddlBranch()
         {
             List<HR_GeneralRequestModel> obj = new List<HR_GeneralRequestModel>();
@@ -80,14 +78,14 @@ namespace MassAutoGarage.Data.HR_GeneralRequest
             }
         }
 
-        public List<HR_GeneralRequestModel> SalaryCertificatelst()
+        public List<HR_GeneralRequestModel> GetMaxVoucher()
         {
             List<HR_GeneralRequestModel> obj = new List<HR_GeneralRequestModel>();
             try
             {
-                var perm = new DynamicParameters();
-                perm.Add("@QueryType", "36");
-                obj = DBHelperDapper.DAAddAndReturnModelList<HR_GeneralRequestModel>("USP_HR_GeneralRequest", perm);
+                var Parameters = new DynamicParameters();
+                Parameters.Add("@QueryType", "36");
+                obj = DBHelperDapper.DAAddAndReturnModelList<HR_GeneralRequestModel>("USP_HR_GeneralRequest", Parameters);
                 return obj;
             }
             catch (Exception ex)
@@ -95,26 +93,6 @@ namespace MassAutoGarage.Data.HR_GeneralRequest
                 throw ex;
             }
         }
-
-
-
-        public List<HR_GeneralRequestModel> Certificatelst()
-        {
-            List<HR_GeneralRequestModel> obj = new List<HR_GeneralRequestModel>();
-            try
-            {
-                var perm = new DynamicParameters();
-                perm.Add("@QueryType", "420");
-                obj = DBHelperDapper.DAAddAndReturnModelList<HR_GeneralRequestModel>("USP_HR_GeneralRequest", perm);
-                return obj;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-
 
         public HR_GeneralRequestModel AddUpdate(HR_GeneralRequestModel obj)
         {
@@ -153,7 +131,7 @@ namespace MassAutoGarage.Data.HR_GeneralRequest
                 Parameters.Add("@SalarySlips6Months", obj.SalarySlips6Months);
                 Parameters.Add("@TrafficFineDeductionAmt", obj.TrafficFineDeductionAmt);
                 Parameters.Add("@SalaryCard", obj.SalaryCard);
-                Parameters.Add("@EmpSignature", obj.EmpSignature);
+                //Parameters.Add("@EmpSignature", obj.EmpSignature);
                 Parameters.Add("@MobileNumber", obj.MobileNumber);
                 Parameters.Add("@CreatedBy", obj.CreatedBy);
                 Parameters.Add("@Id", obj.Idincrept);
@@ -166,37 +144,7 @@ namespace MassAutoGarage.Data.HR_GeneralRequest
             }
         }
 
-
-        public HR_GeneralRequestModel AddUpdateBulk(HR_GeneralRequestModel obj)
-        {
-            try
-            {
-                var Parameters = new DynamicParameters();
-
-                Parameters.Add("@QueryType", obj.QueryType);
-                Parameters.Add("@BranchId", obj.GeneralRequestId);
-                Parameters.Add("@EmployeeId", obj.CertificateDetails);
-                Parameters.Add("@CreatedBy", obj.CreatedBy);
-                var _iresult = DBHelperDapper.DAAddAndReturnModel<HR_GeneralRequestModel>("USP_HR_GeneralRequest", Parameters);
-                return _iresult;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-
-
-
-        
-
-
-
-
-
-
-
-        public List<HR_GeneralRequestModel> GetEmployeeDocumentsList()
+        public List<HR_GeneralRequestModel> GetGeneralRequestList()
         {
             List<HR_GeneralRequestModel> obj = new List<HR_GeneralRequestModel>();
             try
@@ -230,16 +178,14 @@ namespace MassAutoGarage.Data.HR_GeneralRequest
             }
         }
 
-
-
-        public List<HR_GeneralRequestModel> GetEmployeeDocumentsDetaildById(HR_GeneralRequestModel objmodel)
+        public List<HR_GeneralRequestModel> GetGeneralRequestDetaildById(HR_GeneralRequestModel objmodel)
         {
             List<HR_GeneralRequestModel> obj = new List<HR_GeneralRequestModel>();
             try
             {
                 var Parameters = new DynamicParameters();
                 Parameters.Add("@QueryType", objmodel.QueryType);
-                Parameters.Add("@EmpDocId", objmodel.EmpId);
+                Parameters.Add("@Id", objmodel.Idincrept);
                 obj = DBHelperDapper.DAAddAndReturnModelList<HR_GeneralRequestModel>("USP_HR_GeneralRequest", Parameters);
                 return obj;
             }
@@ -249,14 +195,14 @@ namespace MassAutoGarage.Data.HR_GeneralRequest
             }
         }
 
-        public HR_GeneralRequestModel DeleteEmployeeDocuments(HR_GeneralRequestModel obj)
+        public HR_GeneralRequestModel DeleteGeneralRequest(HR_GeneralRequestModel obj)
         {
             try
             {
                 var Parameters = new DynamicParameters();
 
                 Parameters.Add("@QueryType", obj.QueryType);
-                Parameters.Add("@EmpDocId", obj.EmpId);
+                Parameters.Add("@Id", obj.Idincrept);
                 var _iresult = DBHelperDapper.DAAddAndReturnModel<HR_GeneralRequestModel>("USP_HR_GeneralRequest", Parameters);
                 return _iresult;
             }
