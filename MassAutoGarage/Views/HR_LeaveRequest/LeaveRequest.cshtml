@@ -1,4 +1,4 @@
-﻿@model MassAutoGarage.Models.HRMS_EmployeeDocuments.HRMSEmployeeDocumentsModel
+﻿@model MassAutoGarage.Models.HR_LeaveRequest.HR_LeaveRequestModel
 
 @{
     ViewBag.Title = "Leave Request";
@@ -223,7 +223,7 @@
         padding: 4px 9px;
         font-size: small;
     }
-    
+
 
     #legendApplyForSickLeave {
         float: none;
@@ -234,9 +234,9 @@
         font-size: small;
     }
 
-    
 
-  
+
+
 
     /*    fieldset end   */
 </style>
@@ -271,7 +271,11 @@
 
                                     <div class="col-xxl-3 col-md-3">
                                         <label for="labelInput" class="form-label"> Voucher Number <code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" readonly />
+                                        @Html.HiddenFor(m => m.HDF_MedicalCertificateFile, new { @class = "form-control",@id= "HDF_MedicalCertificateFile" })
+                                        @Html.HiddenFor(m => m.Idincrept, new { @class = "form-control" })
+                                        @Html.HiddenFor(m => m.hdfVoucherNo, new { @class = "form-control" })
+
+                                        @Html.TextBoxFor(m => m.VoucherNo, new { @class = "form-control", @readonly = "readonly", tabindex = 1 })
                                     </div>
 
                                 </div>
@@ -279,56 +283,36 @@
                                 <div class="row gy-4" style="margin-bottom:15px;">
                                     <div class="col-xxl-3 col-md-4">
                                         <label for="labelInput" class="form-label">Employee Name <code>*</code></label>
-                                        <select class="form-control">
-                                            <option>--Select Employee--</option>
-                                            <option>Sudhakar Sharma</option>
-                                            <option>Jitu Kumar</option>
-                                        </select>
+                                        @Html.DropDownListFor(x => x.EmployeeId, new SelectList(ViewBag.ddlEmployee, "Id", "EmployeeName"), "- Select Employee -", new { @class = "form-control", tabindex = 2 })
                                     </div>
                                     <div class="col-xxl-3 col-md-4">
                                         <label for="labelInput" class="form-label">Date<code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" />
+                                        @Html.TextBoxFor(m => m.Date, new { @class = "form-control", @readonly = "readonly", tabindex = 3 })
                                     </div>
                                     <div class="col-xxl-3 col-md-4">
                                         <label for="labelInput" class="form-label">Designation<code>*</code></label>
-                                        <select class="form-control">
-                                            <option>--Select Designation--</option>
-                                            <option>Software Engineer</option>
-                                            <option>Singer</option>
-                                        </select>
+                                        @Html.DropDownListFor(x => x.DesignationId, new SelectList(ViewBag.ddlDesignation, "Id", "Designation"), "- Select Designation -", new { @class = "form-control", tabindex = 4 })
                                     </div>
                                     <div class="col-xxl-3 col-md-4">
                                         <label for="labelInput" class="form-label">Emp No<code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" readonly />
+                                        @Html.TextBoxFor(m => m.EmpNo, new { @class = "form-control", tabindex = 5 })
                                     </div>
                                     <div class="col-xxl-3 col-md-4">
                                         <label for="labelInput" class="form-label">Company<code>*</code></label>
-                                        <select class="form-control">
-                                            <option>--Select Company--</option>
-                                            <option>Mass Nex Zen</option>
-                                            <option>Ezip Info Tech</option>
-                                        </select>
+                                        @Html.DropDownListFor(x => x.CompanyID, new SelectList(ViewBag.ddlCompany, "Id", "CompanyName"), "- Select Company Name -", new { @class = "form-control", tabindex = 6 })
                                     </div>
                                     <div class="col-xxl-3 col-md-4">
                                         <label for="labelInput" class="form-label">Department<code>*</code></label>
-                                        <select class="form-control">
-                                            <option>--Select Department--</option>
-                                            <option>Software</option>
-                                            <option>Civil</option>
-                                        </select>
+                                        @Html.DropDownListFor(x => x.DepartmentId, new SelectList(ViewBag.ddlDepartment, "Id", "DepartmentName"), "- Select Department Name -", new { @class = "form-control", tabindex = 7 })
                                     </div>
 
                                     <div class="col-xxl-6 col-md-6" style="padding-right:20px;">
                                         <label for="labelInput" class="form-label">Branch<code>*</code></label>
-                                        <select class="form-control">
-                                            <option>--Select Branch--</option>
-                                            <option>Tamkuhi Raj</option>
-                                            <option>Kushinahar</option>
-                                        </select>
+                                        @Html.DropDownListFor(x => x.BranchId, new SelectList(ViewBag.ddlBranch, "Id", "BranchName"), "- Select Branch Name -", new { @class = "form-control", tabindex = 8 })
                                     </div>
                                     <div class="col-xxl-6 col-md-6" style="padding-right:20px;">
                                         <label for="labelInput" class="form-label">Date Of Joining<code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" />
+                                        @Html.TextBoxFor(m => m.DateOfJoining, new { @class = "form-control", @readonly = "readonly", tabindex = 9 })
                                     </div>
 
 
@@ -342,31 +326,47 @@
 
                                 <div class="row gy-4" style="margin-bottom: 15px; padding-left: 10px; padding-right: 10px;">
                                     <div class="col-xxl-4 col-md-4">
-                                        <label class="form-control"><input type="checkbox" />Marriage Leave (Uae Nationals)</label>
+                                        <label class="form-control">
+                                            @Html.CheckBoxFor(m => m.MarriageLeave, new { tabindex = 10 }) Marriage Leave (Uae Nationals)
+                                        </label>
                                     </div>
                                     <div class="col-xxl-4 col-md-4">
-                                        <label class="form-control"><input type="checkbox" />Annual Leave</label>
+                                        <label class="form-control">
+                                            @Html.CheckBoxFor(m => m.AnnualLeave, new { tabindex = 11 }) Annual Leave
+                                        </label>
                                     </div>
                                     <div class="col-xxl-4 col-md-4">
-                                        <label class="form-control"><input type="checkbox" />Authorized UnPaid Leave</label>
+                                        <label class="form-control">
+                                            @Html.CheckBoxFor(m => m.AuthorizedUnpaidLeave, new { tabindex = 12 }) Authorized UnPaid Leave
+                                        </label>
                                     </div>
                                     <div class="col-xxl-4 col-md-4">
-                                        <label class="form-control"><input type="checkbox" />Emergency Leave</label>
+                                        <label class="form-control">
+                                            @Html.CheckBoxFor(m => m.EmergencyLeave, new { tabindex = 13 }) Emergency Leave
+                                        </label>
                                     </div>
                                     <div class="col-xxl-4 col-md-4">
-                                        <label class="form-control"><input type="checkbox" />Sick Leave</label>
+                                        <label class="form-control">
+                                            @Html.CheckBoxFor(m => m.SickLeave, new { tabindex = 14 }) Sick Leave
+                                        </label>
                                     </div>
                                     <div class="col-xxl-4 col-md-4">
-                                        <label class="form-control"><input type="checkbox" />Maternity/Paternity Leave</label>
+                                        <label class="form-control">
+                                            @Html.CheckBoxFor(m => m.MaternityLeave, new { tabindex = 15 }) Maternity/Paternity Leave
+                                        </label>
                                     </div>
                                     <div class="col-xxl-4 col-md-4">
-                                        <label class="form-control"><input type="checkbox" />Others</label>
+                                        <label class="form-control">
+                                            @Html.CheckBoxFor(m => m.Others, new { tabindex = 16 }) Others
+                                        </label>
                                     </div>
                                     <div class="col-xxl-4 col-md-4">
-                                        <input type="text" class="form-control" id="EmployeeId" placeholder="Please Specify" />
+                                        @Html.TextBoxFor(m => m.PleaseSpecifyOtherLeave, new { @class = "form-control", @placeholder = "Please Specify Other Leave", tabindex = 17, @onkeypress = "return onlyAlphabets();" })
                                     </div>
                                     <div class="col-xxl-4 col-md-4">
-                                        <label class="form-control"><input type="checkbox" />Local Leave</label>
+                                        <label class="form-control">
+                                            @Html.CheckBoxFor(m => m.LocalLeave, new { tabindex = 18 }) Local Leave
+                                        </label>
                                     </div>
                                 </div>
                             </fieldset>
@@ -380,11 +380,11 @@
                                 <div class="row gy-4" style="margin-bottom: 15px; padding-left: 10px; padding-right: 10px;">
                                     <div class="col-xxl-6 col-md-6">
                                         <label for="labelInput" class="form-label">From Date<code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" />
+                                        @Html.TextBoxFor(m => m.LeaveFromDate, new { @class = "form-control", @readonly = "readonly", tabindex = 19 })
                                     </div>
                                     <div class="col-xxl-6 col-md-6">
                                         <label for="labelInput" class="form-label">To Date<code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" />
+                                        @Html.TextBoxFor(m => m.LeaveToDate, new { @class = "form-control", @readonly = "readonly", tabindex = 20 })
                                     </div>
                                 </div>
                             </fieldset>
@@ -397,63 +397,71 @@
                                 <div class="row gy-4" style="margin-bottom: 15px; padding-left: 10px; padding-right: 10px;">
                                     <div class="col-xxl-4 col-md-4">
                                         <label for="labelInput" class="form-label">AirPort Name<code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" />
+                                        @Html.TextBoxFor(m => m.AirportName, new { @class = "form-control", tabindex = 21, @onkeypress = "return onlyAlphabets();" })
                                     </div>
                                     <div class="col-xxl-4 col-md-4">
                                         <label for="labelInput" class="form-label">AirPort From Name<code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" />
+                                        @Html.TextBoxFor(m => m.FromAirportName, new { @class = "form-control", tabindex = 22, @onkeypress = "return onlyAlphabets();" })
                                     </div>
                                     <div class="col-xxl-4 col-md-4">
                                         <label for="labelInput" class="form-label">AirPort To Name<code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" />
+                                        @Html.TextBoxFor(m => m.ToAirportName, new { @class = "form-control", tabindex = 23, @onkeypress = "return onlyAlphabets();" })
                                     </div>
                                 </div>
                             </fieldset>
                         </div>
-
 
                         <div class="row gy-4">
                             <fieldset style="margin-top:50px;" id="fieldsetCashAdvance">
                                 <legend style="background-color:#151529;" id="legendApplyForSickLeave">Please Fill In The Information Below To Apply For Sick Leave</legend>
 
-                                <div class="row gy-4" style="margin-bottom: 15px; padding-left: 10px; padding-right: 10px;">
+                                <div class="row gy-4" style="margin-bottom:15px; padding-left: 10px; padding-right: 10px;">
                                     <div class="col-xxl-12 col-md-12">
                                         <label for="labelInput" class="form-label">Reason For Sick Leave<code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" />
+                                        @Html.TextBoxFor(m => m.ReasonforSickLeave, new { @class = "form-control", tabindex = 24, @onkeypress = "return onlyAlphabets();" })
                                     </div>
                                     <div class="col-xxl-4 col-md-4">
-                                        <label class="form-control" style="text-align:end">Medical Certificate : </label>
+                                        <label class="form-control" style="text-align:end;font-size:12px;"><b>Medical Certificate : </b></label>
                                     </div>
                                     <div class="col-xxl-4 col-md-4">
-                                        <label class="form-control"><input type="checkbox" />No </label>
+                                        @Html.DropDownListFor(m => m.MedicalCertificate, new List<SelectListItem>{
+                                         new SelectListItem { Text = "No", Value = "0"},
+                                         new SelectListItem { Text = "Yes (Kindly Attack It With Your Request)", Value = "1"},
+                                         }, new { @class = "form-select mb-3", onclick = "return getvalues()" })
                                     </div>
-                                    <div class="col-xxl-4 col-md-4">
-                                        <label class="form-control"><input type="checkbox" />Yes (Kindly Attack It With Your Request)</label>
+                                    <div class="col-xxl-4 col-md-4" style="display:none" id="divhdfuploadfile">
+                                        <label class="form-control">
+                                            <input type="file" id="MedicalCertificateFile" />
+                                        </label>
                                     </div>
                                 </div>
                             </fieldset>
                         </div>
-
                         <div class="row gy-4" style="margin-top:10px; padding-left: 10px; padding-right: 10px;">
                             <div class="col-xxl-6 col-md-6" style="padding-left: 10px; padding-right: 10px;">
                                 <label for="labelInput" class="form-label">Email Id <code>*</code></label>
-                                <input type="text" class="form-control" id="EmployeeId" />
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", tabindex = 27 })
                             </div>
                             <div class="col-xxl-6 col-md-6" style="padding-left: 10px; padding-right:15px;">
                                 <label for="labelInput" class="form-label">Mobile Number<code>*</code></label>
-                                <input type="text" class="form-control" id="EmployeeId" />
+                                @Html.TextBoxFor(m => m.MobileNo, new { @class = "form-control", tabindex = 28, @maxlength = "15", @onkeypress = "return isNumberKey(event);" })
                             </div>
                         </div>
-
-
-
                     </div>
                 </div>
                 <br />
                 <div class="col-xxl-12 col-md-12">
                     <div class="form-floating" style="float: right; padding-right: 2%;">
-                        <input type="button" value="Save" id="btnsave" class="btn btn-primary" />
-                        <a href="/HRMS_Employee/Employee" class="btn btn-danger">Reset</a>
+                        @if (Model.Idincrept == null || Model.Idincrept == "")
+                        {
+                            <button id="btnsave" class="btn btn-primary">Save</button>
+                            <a href="/HR_LeaveRequest/LeaveRequest" class="btn btn-danger">Reset</a>
+                        }
+                        else
+                        {
+                            <button id="btnsave" class="btn btn-primary">Update</button>
+                            <a href="/HR_LeaveRequest/LeaveRequest" class="btn btn-danger">Reset</a>
+                        }
                     </div>
                 </div>
                 <br />
@@ -482,8 +490,52 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="~/MyApp/AddONS.js"></script>
 
-<script>
-    $(document).ready(function () {
+<script src="~/MyApp/HR_LeaveRequest.js"></script>
 
-    })
+<script>
+
+    function getvalues() {
+        debugger;
+        var _MedicalCertificate = $("#MedicalCertificate").val();
+        if (_MedicalCertificate == "1") {
+            $("#divhdfuploadfile").show()
+        }
+        else if (_MedicalCertificate == "0") {
+            $("#divhdfuploadfile").hide()
+        }
+    }
+
+    $(document).ready(function () {
+        var _Idincrept = $("#Idincrept").val();
+        if (_Idincrept != 0) {
+            debugger;
+            getvalues();
+        }
+
+        vouchernew();
+    });
+    function vouchernew() {
+        debugger;
+        $.ajax({
+            type: 'POST',
+            url: '/HR_LeaveRequest/GetMaxVoucher',
+            data: "{}",
+            dataType: "json",
+            success: function (result) {
+                $.each(result, function (i, v) {
+
+                    if ($("#Idincrept").val() != 0) {
+                        $("#VoucherNo").val($("#hdfVoucherNo").val());
+                    }
+                    else {
+                        var i = 'LRV-' + v.MaxID;
+                        $("#VoucherNo").val(i);
+                    }
+
+                    //var i = 'LRV-' + v.MaxID;
+                    //$("#VoucherNo").val(i);
+                })
+            }
+        })
+    }
 </script>

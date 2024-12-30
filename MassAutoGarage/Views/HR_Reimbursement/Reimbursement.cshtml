@@ -1,4 +1,4 @@
-﻿@model MassAutoGarage.Models.HRMS_EmployeeDocuments.HRMSEmployeeDocumentsModel
+﻿@model MassAutoGarage.Models.HR_Reimbursement.HR_ReimbursementModel
 
 @{
     ViewBag.Title = "Reimbursement";
@@ -289,7 +289,11 @@
                                 <div class="row gy-4" style="margin-bottom:15px;">
                                     <div class="col-xxl-3 col-md-3">
                                         <label for="labelInput" class="form-label"> Voucher Number <code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" readonly />
+                                        @Html.HiddenFor(m => m.Idencrept, new { @class = "form-control" })
+
+                                        @Html.HiddenFor(m => m.hdfVoucherNo, new { @class = "form-control" })
+
+                                        @Html.TextBoxFor(m => m.VoucherNo, new { @class = "form-control", @readonly = "readonly", tabindex = 1 })
                                     </div>
 
                                 </div>
@@ -297,23 +301,23 @@
                                 <div class="row gy-4" style="margin-bottom:15px;">
                                     <div class="col-xxl-6 col-md-6">
                                         <label for="labelInput" class="form-label">Name(s) <code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" />
+                                        @Html.TextBoxFor(m => m.Name, new { @class = "form-control", tabindex = 2, @onkeypress = "return onlyAlphabets();" })
+
                                     </div>
                                     <div class="col-xxl-3 col-md-3">
                                         <label for="labelInput" class="form-label">From<code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" />
+                                        @Html.TextBoxFor(m => m.FromDate, new { @class = "form-control", @readonly = "readonly", tabindex = 3 })
+
                                     </div>
                                     <div class="col-xxl-3 col-md-3">
                                         <label for="labelInput" class="form-label">To<code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" />
+                                        @Html.TextBoxFor(m => m.ToDate, new { @class = "form-control", @readonly = "readonly", tabindex = 4 })
+
                                     </div>
                                     <div class="col-xxl-12 col-md-12">
                                         <label for="labelInput" class="form-label">Branch<code>*</code></label>
-                                        <select class="form-control">
-                                            <option>--Select Branch--</option>
-                                            <option>Tamkuhi Raj</option>
-                                            <option>Kushinahar</option>
-                                        </select>
+                                        @Html.DropDownListFor(x => x.BranchId, new SelectList(ViewBag.ddlBranch, "Id", "BranchName"), "- Select Branch -", new { @class = "form-control", tabindex = 5 })
+
                                     </div>
                                 </div>
                             </fieldset>
@@ -335,26 +339,32 @@
                                                         <th style="width:3%;">Action</th>
                                                     </tr>
                                                 </thead>
-                                                <tbody id="tBodyId">
+                                                <tbody>
+                                                    @if (ViewBag.ReibDetails != null)
+                                                    {
+                                                        foreach (var item in ViewBag.ReibDetails)
+                                                        {
+                                                            <tr>
+                                                                <td>@item.DateOfBill</td>
+                                                                <td>@item.Description</td>
+                                                                <td>@item.Amount</td>
+                                                                <td><input type="button" onclick=" return Remove(this);" value="Remove"></td>
+                                                            </tr>
+                                                        }
+                                                    }
+                                                </tbody>
+                                                <tfoot>
                                                     <tr>
-                                                        <td> <input type="text" name="Task" class="Task form-control" id="Task" /> </td>
+                                                        <td> <input type="text" name="DateOfBill" class="txtDateOfBill form-control" id="DateOfBill" value="@Model.DateOfBill" /> </td>
                                                         <td>
-                                                            <input type="text" name="Task" class="Task form-control" id="Task" />
+                                                            <input type="text" name="Description" class="txtDescription form-control" id="Description" value="@Model.Description" />
                                                         </td>
                                                         <td>
-                                                            <input type="text" name="Status" class="Status form-control" id="Status" />
+                                                            <input type="text" name="Amount" class="txtAmount form-control" id="Amount" value="@Model.Amount" onkeypress="return isNumberOrDecimal(event);" />
                                                         </td>
                                                         <td>
                                                             <button type="button" id="btnAdd" class="btn btn-xs btn-primary classAdd" onclick="Add()">Add New Row</button>
                                                         </td>
-                                                    </tr>
-                                                </tbody>
-                                                <tfoot>
-                                                    <tr>
-                                                        <th style=" width: 4%;"></th>
-                                                        <th style="width:16%;text-align:end"><b>Total Amount : </b></th>
-                                                        <th style="width:5%;"></th>
-                                                        <th style="width:3%;"></th>
                                                     </tr>
                                                 </tfoot>
                                             </table>
@@ -368,8 +378,8 @@
                 <br />
                 <div class="col-xxl-12 col-md-12">
                     <div class="form-floating" style="float: right; padding-right: 2%;">
-                        <input type="button" value="Save" id="btnsave" class="btn btn-primary" />
-                        <a href="/HRMS_Employee/Employee" class="btn btn-danger">Reset</a>
+                        <input type="button" value="@ViewBag.ButtonText " id="btnsave" class="btn btn-primary" />
+                        <a href="/HR_Reimbursement/Reimbursement" class="btn btn-danger">Reset</a>
                     </div>
                 </div>
                 <br />
@@ -398,11 +408,51 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="~/MyApp/AddONS.js"></script>
 
+<script src="~/MyApp/HR_Reimbursement.js"></script>
+
 <script>
     $(document).ready(function () {
 
     })
 </script>
+
+
+<script>
+    $(document).ready(function () {
+        vouchernew();
+    });
+    function vouchernew() {
+        debugger;
+        $.ajax({
+            type: 'POST',
+            url: '/HR_Reimbursement/GetMaxVoucher',
+            data: "{}",
+            dataType: "json",
+            success: function (result) {
+                $.each(result, function (i, v) {
+
+                    if ($("#Idencrept").val() != 0) {
+                        $("#VoucherNo").val($("#hdfVoucherNo").val());
+                    }
+                    else {
+                        var i = 'RSV-' + v.MaxID;
+                        $("#VoucherNo").val(i);
+                    }
+
+                    //var i = 'RSV-' + v.MaxID;
+                    //$("#VoucherNo").val(i);
+                })
+            }
+        })
+    }
+</script>
+
+<style>
+    .errortext {
+        border: 1px solid red !important;
+        background-color: #fff0f0 !important;
+    }
+</style>
 
 
 

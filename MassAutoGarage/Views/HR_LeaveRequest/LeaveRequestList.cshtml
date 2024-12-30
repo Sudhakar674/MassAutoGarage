@@ -1,4 +1,4 @@
-﻿@model List<MassAutoGarage.Models.HRMS_EmployeeDocuments.HRMSEmployeeDocumentsModel>
+﻿@model List<MassAutoGarage.Models.HR_LeaveRequest.HR_LeaveRequestModel>
 
 @{
     ViewBag.Title = "Leave Request List";
@@ -91,58 +91,65 @@
                         <thead>
                             <tr>
                                 <th style=" width: 1%;">S.N.</th>
-                                <th>Name</th>
-                                <th>Date</th>
+                                <th>Voucher No</th>
+                                <th>Employee Name</th>
+                                @*<th>Date</th>*@
                                 <th>Designation</th>
-                                <th>Branch</th>
-                                <th>Department</th>
-                                <th>EmpId</th>
+                                <th>EmpNo</th>
+                                <th>Company Name</th>
+                                <th>Department Name</th>
+                                @*<th>Branch Name</th>*@
+                                <th>From Date</th>
+                                <th>To Date</th>
+                                @*<th>Date Of Joining</th>
+                                    <th>Airport Name</th>
+                                    <th>AirPort From Name</th>
+                                    <th>AirPort To Name</th>
+                                    <th>Email</th>
+                                    <th>Mobile No</th>
+                                    <th>Medical Certificate File</th>*@
                                 <th style="width:20%;">Action</th>
                             </tr>
                         </thead>
                         <tbody id="tBodyId">
 
-                            @*@foreach (var item in Model)
-                                {
-                                    <tr>
-                                        <td data-th="Srl.No.">@i</td>
-                                        <td data-th="Srl.No.">@item.BranchName</td>
-                                        <td data-th="Code">@item.EmployeeName</td>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td data-th="Srl.No.">@i</td>
+                                    <td data-th="Srl.No.">@item.VoucherNo</td>
+                                    <td data-th="Code">@item.EmployeeName</td>
+                                    @*<td data-th="Srl.No.">@item.Date</td>*@
+                                    <td data-th="Srl.No.">@item.Designation</td>
+                                    <td data-th="Srl.No.">@item.EmpNo</td>
+                                    <td data-th="Srl.No.">@item.CompanyName</td>
+                                    <td data-th="Srl.No.">@item.DepartmentName</td>
+                                    @*<td data-th="Srl.No.">@item.BranchName</td>*@
+                                    <td data-th="Srl.No.">@item.LeaveFromDate</td>
+                                    <td data-th="Srl.No.">@item.LeaveToDate</td>
+                                    @*<td data-th="Srl.No.">@item.DateOfJoining</td>
+                                        <td data-th="Srl.No.">@item.AirportName</td>
+                                        <td data-th="Srl.No.">@item.FromAirportName</td>
+                                        <td data-th="Srl.No.">@item.ToAirportName</td>
+                                        <td data-th="Srl.No.">@item.Email</td>
+                                        <td data-th="Srl.No.">@item.MobileNo</td>
                                         <td data-th="Color Code">
-                                            <a href="@item.files" class="btn btn-sm btn-success edit-item-btn" tabindex="6">Download <i class="fa fa-edit"></i></a>
-                                        </td>
-                                        <td data-th="Color Code">
-                                            <a href="@item.EmirateFile" class="btn btn-sm btn-success edit-item-btn" tabindex="6">Download <i class="fa fa-edit"></i></a>
-                                        </td>
-                                        <td data-th="Color Code">
-                                            <a href="@item.PassportFile" class="btn btn-sm btn-success edit-item-btn" tabindex="6">Download <i class="fa fa-edit"></i></a>
-                                        </td>
-                                        <td data-th="Color Code">
-                                            <a href="@item.VisaFile" class="btn btn-sm btn-success edit-item-btn" tabindex="6">Download <i class="fa fa-edit"></i></a>
-                                        </td>
-                                        <td data-th="Color Code">
-                                            <a href="@item.InsuranceFile" class="btn btn-sm btn-success edit-item-btn" tabindex="6">Download <i class="fa fa-edit"></i></a>
-                                        </td>
-                                        <td data-th="Color Code">
-                                            <a href="@item.EmpCardFile" class="btn btn-sm btn-success edit-item-btn" tabindex="6">Download <i class="fa fa-edit"></i></a>
-                                        </td>
+                                            <a href="@item.MedicalCertificateFile" class="btn btn-sm btn-success edit-item-btn" tabindex="6">Download <i class="fa fa-edit"></i></a>
+                                        </td>*@
 
-                                        <td data-th="Action">
-
-                                            <div class="d-flex gap-2">
-                                                <div class="edit">
-
-                                                    <a href="/HRMS_EmployeeDocuments/EmployeeDocuments?Id=@item.EmpDocId" class="btn btn-sm btn-success edit-item-btn" tabindex="6">Edit <i class="fa fa-edit"></i></a>
-                                                </div>
-                                                <div class="remove">
-                                                    <a href="javascript:void(0)" onclick="return DeleteEmployeeDocuments('@item.EmpDocId')" class="btn btn-sm btn-danger remove-item-btn">Delete <i class="fa fa-trash" aria-hidden="true"></i></a>
-
-                                                </div>
+                                    <td data-th="Action">
+                                        <div class="d-flex gap-2">
+                                            <div class="edit">
+                                                <a href="/HR_LeaveRequest/LeaveRequest?Id=@item.Idincrept" class="btn btn-sm btn-success edit-item-btn" tabindex="6">Edit <i class="fa fa-edit"></i></a>
                                             </div>
-                                        </td>
-                                    </tr>
-                                    i++;
-                                }*@
+                                            <div class="remove">
+                                                <a href="javascript:void(0)" onclick="return DeleteLeaveRequest('@item.Idincrept')" class="btn btn-sm btn-danger remove-item-btn">Delete <i class="fa fa-trash" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                i++;
+                            }
                         </tbody>
                     </table>
                 </div>
@@ -167,6 +174,7 @@
     <!-- App js -->
     <script src="~/assets/js/app.js"></script>
 }
+<script src="~/MyApp/HR_LeaveRequest.js"></script>
 
 <script>
     $(document).ready(function () {
@@ -175,6 +183,8 @@
 
 <script>
     $(document).ready(function () {
+        /*      EmployeeDocumentsList();*/
+
         var queryString = new Array();
         if (queryString.length == 0) {
             if (window.location.search.split('?').length > 1) {
@@ -185,12 +195,23 @@
                     queryString[key] = value;
                 }
             }
+
             $('#txtsearch').val(queryString[key]);
         }
     });
+
     $('#txtsearch').change(function () {
+
         searchfromDB();
     });
+
+    function searchfromDB() {
+        debugger;
+
+        var SearchKey = $('#txtsearch').val();
+        var url = "/HR_LeaveRequest/LeaveRequestList?Key=" + SearchKey;
+        window.location.href = url;
+    }
 </script>
 
 

@@ -1,4 +1,4 @@
-﻿@model MassAutoGarage.Models.HRMS_EmployeeDocuments.HRMSEmployeeDocumentsModel
+﻿@model MassAutoGarage.Models.HR_StaffTransferReport.HR_StaffTransferReportModel
 
 @{
     ViewBag.Title = "Staff Transfer Report";
@@ -282,7 +282,9 @@
 
                                     <div class="col-xxl-3 col-md-3">
                                         <label for="labelInput" class="form-label"> Voucher Number <code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" readonly />
+                                        @Html.HiddenFor(m => m.Idincrept, new { @class = "form-control" })
+                                        @Html.HiddenFor(m => m.hdfVoucherNo, new { @class = "form-control" })
+                                        @Html.TextBoxFor(m => m.VoucherNo, new { @class = "form-control", @readonly = "readonly", tabindex = 1 })
                                     </div>
 
                                 </div>
@@ -290,65 +292,53 @@
                                 <div class="row gy-4" style="margin-bottom:15px;">
                                     <div class="col-xxl-6 col-md-6">
                                         <label for="labelInput" class="form-label">Employee Name <code>*</code></label>
-                                        <select class="form-control">
-                                            <option>--Select Employee--</option>
-                                            <option>Sudhakar Sharma</option>
-                                            <option>Jitu Kumar</option>
-                                        </select>
+                                        @Html.DropDownListFor(x => x.EmployeeId, new SelectList(ViewBag.ddlEmployee, "Id", "EmployeeName"), "- Select Employee -", new { @class = "form-control", tabindex = 2 })
+
                                     </div>
                                     <div class="col-xxl-6 col-md-6">
                                         <label for="labelInput" class="form-label">Date<code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" />
+                                        @Html.TextBoxFor(m => m.Date, new { @class = "form-control", @readonly = "readonly", tabindex = 3 })
                                     </div>
                                     <div class="col-xxl-6 col-md-6">
                                         <label for="labelInput" class="form-label">Designation<code>*</code></label>
-                                        <select class="form-control">
-                                            <option>--Select Designation--</option>
-                                            <option>Software Engineer</option>
-                                            <option>Singer</option>
-                                        </select>
+                                        @Html.DropDownListFor(x => x.DesignationId, new SelectList(ViewBag.ddlDesignation, "Id", "Designation"), "- Select Designation -", new { @class = "form-control", tabindex = 4 })
+
                                     </div>
                                     <div class="col-xxl-6 col-md-6">
                                         <label for="labelInput" class="form-label">Emp No<code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" readonly />
+                                        @Html.TextBoxFor(m => m.EmpNo, new { @class = "form-control", tabindex = 5 })
                                     </div>
                                     <div class="col-xxl-3 col-md-3">
                                         <label for="labelInput" class="form-label">Date Of Joining<code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" />
+                                        @Html.TextBoxFor(m => m.DateofJoining, new { @class = "form-control", @readonly = "readonly", tabindex = 6 })
                                     </div>
 
                                     <div class="col-xxl-3 col-md-3">
                                         <label for="labelInput" class="form-label">Time Of Joining<code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" />
+                                        @Html.TextBoxFor(m => m.TimeofJoining, new { @class = "form-control", tabindex = 7 })
                                     </div>
 
                                     <div class="col-xxl-3 col-md-3">
                                         <label for="labelInput" class="form-label">Branch/Dept From<code>*</code></label>
-                                        <select class="form-control">
-                                            <option>--Select Branch From--</option>
-                                            <option>Tamkuhi Raj</option>
-                                            <option>Kushinahar</option>
-                                        </select>
+                                        @Html.DropDownListFor(x => x.BranchDeptFrom, new SelectList(ViewBag.ddlBranch, "Id", "BranchName"), "- Select Branch/Dept From -", new { @class = "form-control", tabindex = 8 })
+
                                     </div>
 
                                     <div class="col-xxl-3 col-md-3">
                                         <label for="labelInput" class="form-label">Branch/Dept To<code>*</code></label>
-                                        <select class="form-control">
-                                            <option>--Select Branch To--</option>
-                                            <option>Tamkuhi Raj</option>
-                                            <option>Kushinahar</option>
-                                        </select>
+                                        @Html.DropDownListFor(x => x.BranchDeptTo, new SelectList(ViewBag.ddlBranch, "Id", "BranchName"), "- Select Branch/Dept To -", new { @class = "form-control", tabindex = 9 })
+
                                     </div>
 
-                                    <div class="col-xxl-6 col-md-6">
-                                        <label for="labelInput" class="form-label">Signature<code>*</code></label>
-                                        <input type="file" class="form-control" id="EmployeeId" />
-                                    </div>
+                                    @*<div class="col-xxl-6 col-md-6">
+                                            <label for="labelInput" class="form-label">Signature<code>*</code></label>
+                                            <input type="file" class="form-control" id="EmployeeId" />
+                                        </div>
 
-                                    <div class="col-xxl-6 col-md-6">
-                                        <label for="labelInput" class="form-label">Date<code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" />
-                                    </div>
+                                        <div class="col-xxl-6 col-md-6">
+                                            <label for="labelInput" class="form-label">Date<code>*</code></label>
+                                            <input type="text" class="form-control" id="EmployeeId" />
+                                        </div>*@
 
 
                                 </div>
@@ -359,8 +349,19 @@
                 <br />
                 <div class="col-xxl-12 col-md-12">
                     <div class="form-floating" style="float: right; padding-right: 2%;">
-                        <input type="button" value="Save" id="btnsave" class="btn btn-primary" />
-                        <a href="/HRMS_Employee/Employee" class="btn btn-danger">Reset</a>
+
+
+                        @if (Model.Idincrept == null || Model.Idincrept == "")
+                        {
+                            <button id="btnsave" class="btn btn-primary">Save</button>
+                            <a href="/HR_StaffTransferReport/StaffTransferReport" class="btn btn-danger">Reset</a>
+                        }
+                        else
+                        {
+                            <button id="btnsave" class="btn btn-primary">Update</button>
+                            <a href="/HR_StaffTransferReport/StaffTransferReport" class="btn btn-danger">Reset</a>
+                        }
+
                     </div>
                 </div>
                 <br />
@@ -389,10 +390,37 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="~/MyApp/AddONS.js"></script>
 
+<script src="~/MyApp/HR_StaffTransferReport.js"></script>
+
+
 <script>
     $(document).ready(function () {
+        vouchernew();
+    });
+    function vouchernew() {
+        debugger;
+        $.ajax({
+            type: 'POST',
+            url: '/HR_StaffTransferReport/GetMaxVoucher',
+            data: "{}",
+            dataType: "json",
+            success: function (result) {
+                $.each(result, function (i, v) {
 
-    })
+                    if ($("#Idincrept").val() != 0) {
+                        $("#VoucherNo").val($("#hdfVoucherNo").val());
+                    }
+                    else {
+                        var i = 'STRV-' + v.MaxID;
+                        $("#VoucherNo").val(i);
+                    }
+
+                    //var i = 'STRV-' + v.MaxID;
+                    //$("#VoucherNo").val(i);
+                })
+            }
+        })
+    }
 </script>
 
 

@@ -1,4 +1,4 @@
-﻿@model MassAutoGarage.Models.HRMS_EmployeeDocuments.HRMSEmployeeDocumentsModel
+﻿@model MassAutoGarage.Models.HR_FinalClearanceReport.HR_FinalClearanceReportModel
 
 @{
     ViewBag.Title = "Final Clearance Report";
@@ -213,7 +213,7 @@
         font-size: small;
     }
 
-   
+
 
 
 
@@ -235,7 +235,7 @@
         font-size: small;
     }
 
-    
+
 
 
     #legendLeaveDate {
@@ -303,53 +303,43 @@
                                 <div class="row gy-4" style="margin-bottom:15px;">
                                     <div class="col-xxl-3 col-md-3">
                                         <label for="labelInput" class="form-label"> Voucher Number <code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" readonly />
+                                        @Html.HiddenFor(m => m.Idincrept, new { @class = "form-control" })
+                                        @Html.HiddenFor(m => m.hdfVoucherNo, new { @class = "form-control" })
+                                        @Html.TextBoxFor(m => m.VoucherNo, new { @class = "form-control", @readonly = "readonly", tabindex = 1 })
                                     </div>
-
                                 </div>
                                 <hr />
                                 <div class="row gy-4" style="margin-bottom:15px;">
                                     <div class="col-xxl-4 col-md-4">
                                         <label for="labelInput" class="form-label">Employee Name <code>*</code></label>
-                                        <select class="form-control">
-                                            <option>--Select Employee--</option>
-                                            <option>Sudhakar Sharma</option>
-                                            <option>Jitu Kumar</option>
-                                        </select>
+                                        @Html.DropDownListFor(x => x.EmployeeId, new SelectList(ViewBag.ddlEmployee, "Id", "EmployeeName"), "- Select Employee -", new { @class = "form-control", tabindex = 2 })
+
                                     </div>
                                     <div class="col-xxl-4 col-md-4">
                                         <label for="labelInput" class="form-label">Date<code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" />
+                                        @Html.TextBoxFor(m => m.Date, new { @class = "form-control", @readonly = "readonly", tabindex = 3 })
                                     </div>
                                     <div class="col-xxl-4 col-md-4">
                                         <label for="labelInput" class="form-label">Designation<code>*</code></label>
-                                        <select class="form-control">
-                                            <option>--Select Designation--</option>
-                                            <option>Software Engineer</option>
-                                            <option>Singer</option>
-                                        </select>
+                                        @Html.DropDownListFor(x => x.DesignationId, new SelectList(ViewBag.ddlDesignation, "Id", "Designation"), "- Select Designation -", new { @class = "form-control", tabindex = 4 })
+
                                     </div>
                                     <div class="col-xxl-4 col-md-4">
                                         <label for="labelInput" class="form-label">Emp No<code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" readonly />
+                                        @Html.TextBoxFor(m => m.EmpNo, new { @class = "form-control", tabindex = 5 })
                                     </div>
                                     <div class="col-xxl-4 col-md-4">
                                         <label for="labelInput" class="form-label">Department<code>*</code></label>
-                                        <select class="form-control">
-                                            <option>--Select Department--</option>
-                                            <option>Software</option>
-                                            <option>Civil</option>
-                                        </select>
+                                        @Html.DropDownListFor(x => x.DepartmentId, new SelectList(ViewBag.ddlDepartment, "Id", "DepartmentName"), "- Select Department -", new { @class = "form-control", tabindex = 6 })
+
                                     </div>
                                     <div class="col-xxl-4 col-md-4">
                                         <label for="labelInput" class="form-label">Last Working Day<code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" />
+                                        @Html.TextBoxFor(m => m.LastWorkingDay, new { @class = "form-control", tabindex = 7 })
                                     </div>
                                 </div>
                             </fieldset>
                         </div>
-
-
 
 
                         <div class="row gy-4">
@@ -358,34 +348,41 @@
 
                                 <div class="row gy-4" style="margin-bottom: 15px;margin-top:3px; padding-left: 10px; padding-right: 10px;">
                                     <div class="col-xxl-2 col-md-2">
-                                        <label class="form-control"><input type="checkbox" />Vehicle</label>
+                                        <label class="form-control">
+                                            @Html.CheckBoxFor(m => m.Vehichle, new { tabindex = 8 }) Vehicle
+                                        </label>
                                     </div>
                                     <div class="col-xxl-2 col-md-2">
-                                        <label class="form-control"><input type="checkbox" />Laptop</label>
+                                        <label class="form-control">
+                                            @Html.CheckBoxFor(m => m.Laptop, new { tabindex = 9 }) Laptop
+                                        </label>
                                     </div>
                                     <div class="col-xxl-2 col-md-2">
-                                        <label class="form-control"><input type="checkbox" />Company Sim</label>
+                                        <label class="form-control">
+                                            @Html.CheckBoxFor(m => m.CompanySim, new { tabindex = 10 }) Company Sim
+                                        </label>
                                     </div>
                                     <div class="col-xxl-4 col-md-4">
-                                        <label class="form-control"><input type="checkbox" />Medical Insurance</label>
+                                        <label class="form-control">
+                                            @Html.CheckBoxFor(m => m.MedicalInsurance, new { tabindex = 11 }) Medical Insurance
+                                        </label>
                                     </div>
                                     <div class="col-xxl-2 col-md-2">
-                                        <label class="form-control"><input type="checkbox" />C3 Card</label>
+                                        <label class="form-control">
+                                            @Html.CheckBoxFor(m => m.C3Card, new { tabindex = 12 }) C3 Card
+                                        </label>
                                     </div>
 
-                                    <div class="col-xxl-6 col-md-6">
+                                    <div class="col-xxl-12 col-md-12">
                                         <label for="labelInput" class="form-label">Replacement/Handing Over Assigned To<code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" />
+                                        @Html.TextBoxFor(m => m.Replacement, new { @class = "form-control", tabindex = 13 })
                                     </div>
-                                    <div class="col-xxl-6 col-md-6">
-                                        <label for="labelInput" class="form-label">Signature<code>*</code></label>
-                                        <input type="file" class="form-control" id="EmployeeId" />
-                                    </div>
+
 
                                 </div>
                             </fieldset>
 
-                          
+
                         </div>
 
                     </div>
@@ -393,8 +390,8 @@
                 <br />
                 <div class="col-xxl-12 col-md-12">
                     <div class="form-floating" style="float: right; padding-right: 2%;">
-                        <input type="button" value="Save" id="btnsave" class="btn btn-primary" />
-                        <a href="/HRMS_Employee/Employee" class="btn btn-danger">Reset</a>
+                        <input type="button" value="@ViewBag.ButtonText" id="btnsave" class="btn btn-primary" />
+                        <a href="/HR_FinalClearanceReport/FinalClearanceReport" class="btn btn-danger">Reset</a>
                     </div>
                 </div>
                 <br />
@@ -423,10 +420,40 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="~/MyApp/AddONS.js"></script>
 
+<script src="~/MyApp/HR_FinalClearanceReport.js"></script>
+
+
 <script>
     $(document).ready(function () {
+        vouchernew();
+    });
+    function vouchernew() {
+        debugger;
+        $.ajax({
+            type: 'POST',
+            url: '/HR_FinalClearanceReport/GetMaxVoucher',
+            data: "{}",
+            dataType: "json",
+            success: function (result) {
+                $.each(result, function (i, v) {
 
-    })
+                    if ($("#Idincrept").val() != 0) {
+                        $("#VoucherNo").val($("#hdfVoucherNo").val());
+                    }
+                    else {
+                        var i = 'FCV-' + v.MaxID;
+                        $("#VoucherNo").val(i);
+                    }
+
+                    //var i = 'FCV-' + v.MaxID;
+                    //$("#VoucherNo").val(i);
+
+
+
+                })
+            }
+        })
+    }
 </script>
 
 
