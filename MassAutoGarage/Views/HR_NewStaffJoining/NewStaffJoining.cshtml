@@ -1,4 +1,4 @@
-﻿@model MassAutoGarage.Models.HRMS_EmployeeDocuments.HRMSEmployeeDocumentsModel
+﻿@model MassAutoGarage.Models.HR_NewStaffJoining.HR_NewStaffJoiningModel
 
 @{
     ViewBag.Title = "New Staff Joining";
@@ -214,7 +214,7 @@
         font-size: small;
     }
 
-    
+
 
     #legendLeaveDate {
         float: none;
@@ -282,7 +282,9 @@
 
                                     <div class="col-xxl-3 col-md-3">
                                         <label for="labelInput" class="form-label"> Voucher Number <code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" readonly />
+                                        @Html.HiddenFor(m => m.Idincrept, new { @class = "form-control" })
+                                        @Html.HiddenFor(m => m.hdfVoucherNumber, new { @class = "form-control" })
+                                        @Html.TextBoxFor(m => m.VoucherNumber, new { @class = "form-control", @readonly = "readonly", tabindex = 1 })
                                     </div>
 
                                 </div>
@@ -290,41 +292,33 @@
                                 <div class="row gy-4" style="margin-bottom:15px;">
                                     <div class="col-xxl-6 col-md-6">
                                         <label for="labelInput" class="form-label">Full Name <code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" />
+                                        @Html.TextBoxFor(m => m.EmployeeName, new { @class = "form-control", tabindex = 2, @onkeypress = "return onlyAlphabets();" })
                                     </div>
                                     <div class="col-xxl-6 col-md-6">
                                         <label for="labelInput" class="form-label">Date<code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" />
+                                        @Html.TextBoxFor(m => m.Date, new { @class = "form-control", @readonly = "readonly", tabindex = 3 })
                                     </div>
                                     <div class="col-xxl-6 col-md-6">
                                         <label for="labelInput" class="form-label">Department<code>*</code></label>
-                                        <select class="form-control">
-                                            <option>--Select Department--</option>
-                                            <option>Software</option>
-                                            <option>Civil</option>
-                                        </select>
+                                        @Html.DropDownListFor(x => x.DepartmentId, new SelectList(ViewBag.ddlDepartment, "Id", "DepartmentName"), "- Select Department -", new { @class = "form-control", tabindex = 4 })
                                     </div>
 
                                     <div class="col-xxl-6 col-md-6">
                                         <label for="labelInput" class="form-label">Designation<code>*</code></label>
-                                        <select class="form-control">
-                                            <option>--Select Designation--</option>
-                                            <option>Software Engineer</option>
-                                            <option>Singer</option>
-                                        </select>
+                                        @Html.DropDownListFor(x => x.DesignationId, new SelectList(ViewBag.ddlDesignation, "Id", "Designation"), "- Select Designation -", new { @class = "form-control", tabindex = 5 })
                                     </div>
                                     <div class="col-xxl-4 col-md-4">
                                         <label for="labelInput" class="form-label">Emp No<code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" readonly />
+                                        @Html.TextBoxFor(m => m.EmpNo, new { @class = "form-control", tabindex = 6 })
                                     </div>
                                     <div class="col-xxl-4 col-md-4">
                                         <label for="labelInput" class="form-label">Date Of Joining<code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" />
+                                        @Html.TextBoxFor(m => m.JoiningDate, new { @class = "form-control", @readonly = "readonly", tabindex = 7 })
                                     </div>
 
                                     <div class="col-xxl-4 col-md-4">
                                         <label for="labelInput" class="form-label">Time Of Joining<code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" />
+                                        @Html.TextBoxFor(m => m.JoiningTime, new { @class = "form-control", tabindex = 8 })
                                     </div>
                                 </div>
                             </fieldset>
@@ -337,7 +331,7 @@
                                 <div class="row gy-4">
                                     <div class="col-xxl-12 col-md-12">
                                         <label for="labelInput" class="form-label">Fill This Area<code>*</code></label>
-                                        <textarea class="form-control"></textarea>
+                                        @Html.TextAreaFor(m => m.FilledByEmployee, new { @class = "form-control", tabindex = 9 })
                                     </div>
 
                                 </div>
@@ -348,8 +342,16 @@
                 <br />
                 <div class="col-xxl-12 col-md-12">
                     <div class="form-floating" style="float: right; padding-right: 2%;">
-                        <input type="button" value="Save" id="btnsave" class="btn btn-primary" />
-                        <a href="/HRMS_Employee/Employee" class="btn btn-danger">Reset</a>
+                        @if (Model.Idincrept == null || Model.Idincrept == "")
+                        {
+                            <input type="button" value="Save" id="btnsave" class="btn btn-primary" />
+                            <a href="/HR_NewStaffJoining/NewStaffJoining" class="btn btn-danger">Reset</a>
+                        }
+                        else
+                        {
+                            <input type="button" value="Update" id="btnsave" class="btn btn-primary" />
+                            <a href="/HR_NewStaffJoining/NewStaffJoining" class="btn btn-danger">Reset</a>
+                        }
                     </div>
                 </div>
                 <br />
@@ -378,10 +380,35 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="~/MyApp/AddONS.js"></script>
 
+<script src="~/MyApp/HR_NewStaffJoining.js"></script>
+
 <script>
     $(document).ready(function () {
+        vouchernew();
+    });
+    function vouchernew() {
+        debugger;
+        $.ajax({
+            type: 'POST',
+            url: '/HR_NewStaffJoining/GetMaxVoucher',
+            data: "{}",
+            dataType: "json",
+            success: function (result) {
+                $.each(result, function (i, v) {
 
-    })
+                    if ($("#Idincrept").val() != 0) {
+                        $("#VoucherNumber").val($("#hdfVoucherNumber").val());
+                    }
+                    else {
+                        var i = 'NEJV-' + v.MaxID;
+                        $("#VoucherNumber").val(i);
+                    }
+                    //var i = 'NEJV-' + v.MaxID;
+                    //$("#VoucherNumber").val(i);
+                })
+            }
+        })
+    }
 </script>
 
 

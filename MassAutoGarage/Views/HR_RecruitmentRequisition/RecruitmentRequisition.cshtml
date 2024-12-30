@@ -1,4 +1,4 @@
-﻿@model MassAutoGarage.Models.HRMS_EmployeeDocuments.HRMSEmployeeDocumentsModel
+﻿@model MassAutoGarage.Models.HR_RecruitmentRequisition.HR_RecruitmentRequisitionModel
 
 @{
     ViewBag.Title = "Recruitment Requisition";
@@ -308,7 +308,11 @@
                                 <div class="row gy-4" style="margin-bottom:15px;">
                                     <div class="col-xxl-3 col-md-3">
                                         <label for="labelInput" class="form-label"> Voucher Number <code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" readonly />
+                                        @Html.HiddenFor(m => m.Idincrept, new { @class = "form-control" })
+
+                                        @Html.HiddenFor(m => m.hdfVoucherNo, new { @class = "form-control" })
+
+                                        @Html.TextBoxFor(m => m.VoucherNo, new { @class = "form-control", @readonly = "readonly", tabindex = 1 })
                                     </div>
 
                                 </div>
@@ -316,19 +320,22 @@
                                 <div class="row gy-4" style="margin-bottom:15px;">
                                     <div class="col-xxl-4 col-md-4">
                                         <label for="labelInput" class="form-label">Full Name <code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" />
+                                        @Html.TextBoxFor(m => m.FullName, new { @class = "form-control", tabindex = 2, @onkeypress = "return onlyAlphabets();" })
                                     </div>
                                     <div class="col-xxl-4 col-md-4">
                                         <label for="labelInput" class="form-label">Date<code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" />
+                                        @Html.TextBoxFor(m => m.Date, new { @class = "form-control", @readonly = "readonly", tabindex = 3 })
+
                                     </div>
                                     <div class="col-xxl-2 col-md-2">
                                         <label for="labelInput" class="form-label">Expected Salary<code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" />
+                                        @Html.TextBoxFor(m => m.ExpectedSalary, new { @class = "form-control", tabindex = 4, @onkeypress = "return isNumberOrDecimal(event);" })
+
                                     </div>
                                     <div class="col-xxl-2 col-md-2">
                                         <label for="labelInput" class="form-label">Salary Offered<code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" readonly />
+                                        @Html.TextBoxFor(m => m.SalaryOffered, new { @class = "form-control", tabindex = 5, @onkeypress = "return isNumberOrDecimal(event);" })
+
                                     </div>
                                 </div>
                             </fieldset>
@@ -340,13 +347,19 @@
 
                                 <div class="row gy-4" style="margin-bottom: 15px;margin-top:3px; padding-left: 10px; padding-right: 10px;">
                                     <div class="col-xxl-4 col-md-4">
-                                        <label class="form-control"><input type="checkbox" />New/Addition</label>
+                                        <label class="form-control">
+                                            @Html.CheckBoxFor(m => m.AdditionNew, new { tabindex = 8 }) New/Addition
+                                        </label>
                                     </div>
                                     <div class="col-xxl-4 col-md-4">
-                                        <label class="form-control"><input type="checkbox" />Budgeted</label>
+                                        <label class="form-control">
+                                            @Html.CheckBoxFor(m => m.Budgeted, new { tabindex = 8 }) Budgeted
+                                        </label>
                                     </div>
                                     <div class="col-xxl-4 col-md-4">
-                                        <label class="form-control"><input type="checkbox" />Replacement</label>
+                                        <label class="form-control">
+                                            @Html.CheckBoxFor(m => m.Replacement, new { tabindex = 8 }) Replacement
+                                        </label>
                                     </div>
                                 </div>
                             </fieldset>
@@ -356,8 +369,8 @@
                 <br />
                 <div class="col-xxl-12 col-md-12">
                     <div class="form-floating" style="float: right; padding-right: 2%;">
-                        <input type="button" value="Save" id="btnsave" class="btn btn-primary" />
-                        <a href="/HRMS_Employee/Employee" class="btn btn-danger">Reset</a>
+                        <input type="button" value="@ViewBag.ButtonText" id="btnsave" class="btn btn-primary" />
+                        <a href="/HR_RecruitmentRequisition/RecruitmentRequisition" class="btn btn-danger">Reset</a>
                     </div>
                 </div>
                 <br />
@@ -386,10 +399,41 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="~/MyApp/AddONS.js"></script>
 
+<script src="~/MyApp/HR_RecruitmentRequisition.js"></script>
 <script>
     $(document).ready(function () {
 
     })
+</script>
+
+<script>
+    $(document).ready(function () {
+        vouchernew();
+    });
+    function vouchernew() {
+        debugger;
+        $.ajax({
+            type: 'POST',
+            url: '/HR_RecruitmentRequisition/GetMaxVoucher',
+            data: "{}",
+            dataType: "json",
+            success: function (result) {
+                $.each(result, function (i, v) {
+
+                    if ($("#Idincrept").val() != 0) {
+                        $("#VoucherNo").val($("#hdfVoucherNo").val());
+                    }
+                    else {
+                        var i = 'RCMTV-' + v.MaxID;
+                        $("#VoucherNo").val(i);
+                    }
+
+                    //var i = 'RCMTV-' + v.MaxID;
+                    //$("#VoucherNo").val(i);
+                })
+            }
+        })
+    }
 </script>
 
 

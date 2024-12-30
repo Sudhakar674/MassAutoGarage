@@ -42,112 +42,112 @@ $("#btnsave").click(function (e) {
     var _EmpId = $("#EmpId").val();
 
     var SalaryCertificate = $("input[name=SalaryCertificate]:checked").val();
-    if (SalaryCertificate == "on") {
-        var _SalaryCertificate = "1";
+    if (SalaryCertificate == "true") {
+        var _SalaryCertificate = 1;
     }
     else {
-        var _SalaryCertificate = "0";
+        var _SalaryCertificate = 0;
     }
 
     var SalaryTransferLetter = $("input[name=SalaryTransferLetter]:checked").val();
-    if (SalaryTransferLetter == "on") {
-        var _SalaryTransferLetter = "1";
+    if (SalaryTransferLetter == "true") {
+        var _SalaryTransferLetter = 1;
     }
     else {
-        var _SalaryTransferLetter = "0";
+        var _SalaryTransferLetter = 0;
     }
 
     var NOC = $("input[name=NOC]:checked").val();
-    if (NOC == "on") {
-        var _NOC = "1";
+    if (NOC == "true") {
+        var _NOC = 1;
     }
     else {
-        var _NOC = "0";
+        var _NOC = 0;
     }
 
     var ExperienceCertificate = $("input[name=ExperienceCertificate]:checked").val();
-    if (ExperienceCertificate == "on") {
-        var _ExperienceCertificate = "1";
+    if (ExperienceCertificate == "true") {
+        var _ExperienceCertificate = 1;
     }
     else {
-        var _ExperienceCertificate = "0";
+        var _ExperienceCertificate = 0;
     }
 
     var _BankEstablishment = $("#BankEstablishment").val();
     var _AcctNoIBANNo = $("#AcctNoIBANNo").val();
 
     var OpneNewBankAcct = $("input[name=OpneNewBankAcct]:checked").val();
-    if (OpneNewBankAcct == "on") {
-        var _OpneNewBankAcct = "1";
+    if (OpneNewBankAcct == "true") {
+        var _OpneNewBankAcct = 1;
     }
     else {
-        var _OpneNewBankAcct = "0";
+        var _OpneNewBankAcct = 0;
     }
 
     var TransferLoanToOtherBank = $("input[name=TransferLoanToOtherBank]:checked").val();
-    if (TransferLoanToOtherBank == "on") {
-        var _TransferLoanToOtherBank = "1";
+    if (TransferLoanToOtherBank == "true") {
+        var _TransferLoanToOtherBank = 1;
     }
     else {
-        var _TransferLoanToOtherBank = "0";
+        var _TransferLoanToOtherBank = 0;
     }
 
     var PersonalLoan = $("input[name=PersonalLoan]:checked").val();
-    if (PersonalLoan == "on") {
-        var _PersonalLoan = "1";
+    if (PersonalLoan == "true") {
+        var _PersonalLoan = 1;
     }
     else {
-        var _PersonalLoan = "0";
+        var _PersonalLoan = 0;
     }
 
     var NOCToEmbassy = $("input[name=NOCToEmbassy]:checked").val();
-    if (NOCToEmbassy == "on") {
-        var _NOCToEmbassy = "1";
+    if (NOCToEmbassy == "true") {
+        var _NOCToEmbassy = 1;
     }
     else {
         var _NOCToEmbassy = "0";
     }
 
     var ConfirmationLettrToBank = $("input[name=ConfirmationLettrToBank]:checked").val();
-    if (ConfirmationLettrToBank == "on") {
-        var _ConfirmationLettrToBank = "1";
+    if (ConfirmationLettrToBank == "true") {
+        var _ConfirmationLettrToBank = 1;
     }
     else {
-        var _ConfirmationLettrToBank = "0";
+        var _ConfirmationLettrToBank = 0;
     }
 
     var LoanTopUp = $("input[name=LoanTopUp]:checked").val();
-    if (LoanTopUp == "on") {
-        var _LoanTopUp = "1";
+    if (LoanTopUp == "true") {
+        var _LoanTopUp = 1;
     }
     else {
-        var _LoanTopUp = "0";
+        var _LoanTopUp = 0;
     }
 
     var Others = $("input[name=Others]:checked").val();
-    if (Others == "on") {
-        var _Others = "1";
+    if (Others == "true") {
+        var _Others = 1;
     }
     else {
-        var _Others = "0";
+        var _Others = 0;
     }
 
     var _CashAdvance = $("#CashAdvance").val();
 
     var InitialNewEmp = $("input[name=InitialNewEmp]:checked").val();
-    if (InitialNewEmp == "on") {
-        var _InitialNewEmp = "1";
+    if (InitialNewEmp == "true") {
+        var _InitialNewEmp = 1;
     }
     else {
-        var _InitialNewEmp = "0";
+        var _InitialNewEmp = 0;
     }
 
     var Against = $("input[name=Against]:checked").val();
-    if (Against == "on") {
-        var _Against = "1";
+    if (Against == "true") {
+        var _Against = 1;
     }
     else {
-        var _Against = "0";
+        var _Against = 0;
     }
 
     var _BehalfAgainst = $("#BehalfAgainst").val();
@@ -155,29 +155,29 @@ $("#btnsave").click(function (e) {
     var _MonthlyDeduction = $("#MonthlyDeduction").val();
 
     var SalarySlips3Months = $("input[name=SalarySlips3Months]:checked").val();
-    if (SalarySlips3Months == "on") {
-        var _SalarySlips3Months = "1";
+    if (SalarySlips3Months == "true") {
+        var _SalarySlips3Months = 1;
     }
     else {
-        var _SalarySlips3Months = "0";
+        var _SalarySlips3Months = 0;
     }
 
     var SalarySlips6Months = $("input[name=SalarySlips6Months]:checked").val();
-    if (SalarySlips6Months == "on") {
-        var _SalarySlips6Months = "1";
+    if (SalarySlips6Months == "true") {
+        var _SalarySlips6Months = 1;
     }
     else {
-        var _SalarySlips6Months = "0";
+        var _SalarySlips6Months = 0;
     }
 
     var _TrafficFineDeductionAmt = $("#TrafficFineDeductionAmt").val();
 
     var SalaryCard = $("input[name=SalaryCard]:checked").val();
-    if (SalaryCard == "on") {
-        var _SalaryCard = "1";
+    if (SalaryCard == "true") {
+        var _SalaryCard = 1;
     }
     else {
-        var _SalaryCard = "0";
+        var _SalaryCard = 0;
     }
 
     var _EmpSignature = $("#EmpSignature").val();
@@ -186,7 +186,7 @@ $("#btnsave").click(function (e) {
     var _Idincrept = $("#Idincrept").val();
 
 
-    if (_EmployeeId != "" && _Date != "" && _DesignationId != "" && _BranchId != "" && _DepartmentId != "" && _EmpId != "" && _BankEstablishment != "" && _AcctNoIBANNo != "" && _CashAdvance != "" && _Reason != "" && _MonthlyDeduction != "" && _TrafficFineDeductionAmt != ""  && _MobileNumber != "") {
+    if (_EmployeeId != "" && _Date != "" && _DesignationId != "" && _BranchId != "" && _DepartmentId != "" && _EmpId != "" && _BankEstablishment != "" && _AcctNoIBANNo != "" && _CashAdvance != "" && _Reason != "" && _MonthlyDeduction != "" && _TrafficFineDeductionAmt != "" && _MobileNumber != "") {
 
         var GeneralRequestDetails = {
             VoucherNumber: _VoucherNumber,
@@ -219,7 +219,7 @@ $("#btnsave").click(function (e) {
             SalarySlips6Months: _SalarySlips6Months,
             TrafficFineDeductionAmt: _TrafficFineDeductionAmt,
             SalaryCard: _SalaryCard,
-          /*  EmpSignature: _EmpSignature,*/
+            /*  EmpSignature: _EmpSignature,*/
             MobileNumber: _MobileNumber,
             Idincrept: _Idincrept
         };

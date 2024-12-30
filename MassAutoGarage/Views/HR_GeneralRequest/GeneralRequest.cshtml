@@ -267,6 +267,9 @@
                                     <div class="col-xxl-3 col-md-3">
                                         <label for="labelInput" class="form-label"> Voucher Number <code>*</code></label>
                                         @Html.HiddenFor(m => m.Idincrept, new { @class = "form-control" })
+
+                                        @Html.HiddenFor(m => m.hdfVoucherNumber, new { @class = "form-control" })
+
                                         @Html.TextBoxFor(m => m.VoucherNumber, new { @class = "form-control", @readonly = "readonly", tabindex = 1 })
                                     </div>
                                 </div>
@@ -321,17 +324,33 @@
                                             }*@
 
                                         <div class="col-xxl-3 col-md-3">
-                                         <label class="form-control"><input type="checkbox" name="SalaryCertificate" tabindex=8 value="@Model.SalaryCertificate"/>Salary Certificate</label>
+                                            <label class="form-control">
+                                                @*<input type="checkbox" name="SalaryCertificate" id="SalaryCertificate1" tabindex=8 value="@Model.SalaryCertificate"  checked="@Model.SalaryCertificate"/>Salary Certificate*@
+                                                @Html.CheckBoxFor(m => m.SalaryCertificate, new { tabindex = 8 })Salary Certificate
+
+                                            </label>
 
                                         </div>
                                         <div class="col-xxl-3 col-md-3">
-                                            <label class="form-control"><input type="checkbox" name="SalaryTransferLetter" tabindex=9 />Salary Transfer Letter</label>
+                                            <label class="form-control">
+                                                @*<input type="checkbox" name="SalaryTransferLetter" tabindex=9 />Salary Transfer Letter*@
+                                                @Html.CheckBoxFor(m => m.SalaryTransferLetter, new { tabindex = 9 })Salary Transfer Letter
+                                            </label>
                                         </div>
                                         <div class="col-xxl-3 col-md-3">
-                                            <label class="form-control"><input type="checkbox" name="NOC" tabindex=10 />NOC</label>
+                                            <label class="form-control">
+                                                @*<input type="checkbox" name="NOC" tabindex=10 />NOC*@
+
+                                                @Html.CheckBoxFor(m => m.NOC, new { tabindex = 10 }) NOC
+                                            </label>
                                         </div>
                                         <div class="col-xxl-3 col-md-3">
-                                            <label class="form-control"><input type="checkbox" name="ExperienceCertificate" tabindex=11 />Experience Certificate</label>
+                                            <label class="form-control">
+                                                @*<input type="checkbox" name="ExperienceCertificate" tabindex=11 />Experience Certificate*@
+
+                                                @Html.CheckBoxFor(m => m.ExperienceCertificate, new { tabindex = 11 }) Experience Certificate
+
+                                            </label>
                                         </div>
 
                                         <div class="col-xxl-6 col-md-6" style="margin-top: 3px; padding-left:6px; padding-right: 16px;">
@@ -343,25 +362,61 @@
                                             @Html.TextBoxFor(m => m.AcctNoIBANNo, new { @class = "form-control", tabindex = 13 })
                                         </div>
                                         <div class="col-xxl-3 col-md-3">
-                                            <label class="form-control"><input type="checkbox" name="OpneNewBankAcct" tabindex=14 />Opne New Bank Acct</label>
+                                            <label class="form-control">
+                                                @*<input type="checkbox" name="OpneNewBankAcct" tabindex=14 />Opne New Bank Acct*@
+
+                                                @Html.CheckBoxFor(m => m.OpneNewBankAcct, new { tabindex = 14 }) Opne New Bank Acct
+
+
+                                            </label>
                                         </div>
                                         <div class="col-xxl-3 col-md-3">
-                                            <label class="form-control"><input type="checkbox" name="TransferLoanToOtherBank" tabindex=15 />Transfer Loan To Other Bank</label>
+                                            <label class="form-control">
+                                                @*<input type="checkbox" name="TransferLoanToOtherBank" tabindex=15 />Transfer Loan To Other Bank*@
+
+                                                @Html.CheckBoxFor(m => m.TransferLoanToOtherBank, new { tabindex = 15 }) Transfer Loan To Other Bank
+
+                                            </label>
                                         </div>
                                         <div class="col-xxl-3 col-md-3">
-                                            <label class="form-control"><input type="checkbox" name="PersonalLoan" tabindex=16 />Personal Loan</label>
+                                            <label class="form-control">
+                                                @*<input type="checkbox" name="PersonalLoan" tabindex=16 />Personal Loan*@
+
+                                                @Html.CheckBoxFor(m => m.PersonalLoan, new { tabindex = 16 }) Personal Loan
+
+                                            </label>
                                         </div>
                                         <div class="col-xxl-3 col-md-3">
-                                            <label class="form-control"><input type="checkbox" name="NOCToEmbassy" tabindex=17 />NOC To Embassy</label>
+                                            <label class="form-control">
+                                                @*<input type="checkbox" name="NOCToEmbassy" tabindex=17 />NOC To Embassy*@
+
+                                                @Html.CheckBoxFor(m => m.NOCToEmbassy, new { tabindex = 17 }) NOC To Embassy
+
+                                            </label>
                                         </div>
                                         <div class="col-xxl-3 col-md-3">
-                                            <label class="form-control"><input type="checkbox" name="ConfirmationLettrToBank" tabindex=18 />Confirmation Letter To Bank</label>
+                                            <label class="form-control">
+                                                @*<input type="checkbox" name="ConfirmationLettrToBank" tabindex=18 />Confirmation Letter To Bank*@
+
+                                                @Html.CheckBoxFor(m => m.ConfirmationLettrToBank, new { tabindex = 18 }) Confirmation Letter To Bank
+
+                                            </label>
                                         </div>
                                         <div class="col-xxl-3 col-md-3">
-                                            <label class="form-control"><input type="checkbox" name="LoanTopUp" tabindex=19 />Loan Top Up</label>
+                                            <label class="form-control">
+                                                @*<input type="checkbox" name="LoanTopUp" tabindex=19 />Loan Top Up*@
+
+                                                @Html.CheckBoxFor(m => m.LoanTopUp, new { tabindex = 19 }) Loan Top Up
+
+                                            </label>
                                         </div>
                                         <div class="col-xxl-6 col-md-6">
-                                            <label class="form-control"><input type="checkbox" name="Others" tabindex=20 />Others</label>
+                                            <label class="form-control">
+                                                @*<input type="checkbox" name="Others" tabindex=20 />Others*@
+
+                                                @Html.CheckBoxFor(m => m.Others, new { tabindex = 20 }) Others
+
+                                            </label>
                                         </div>
                                     </div>
                                 </fieldset>
@@ -374,10 +429,20 @@
                                             @Html.TextBoxFor(m => m.CashAdvance, new { @class = "form-control", tabindex = 21 })
                                         </div>
                                         <div class="col-xxl-3 col-md-3" style="margin-top:55px;">
-                                            <label class="form-control"><input type="checkbox" name="InitialNewEmp" tabindex=22 />Initial - New Employee</label>
+                                            <label class="form-control">
+                                                @*<input type="checkbox" name="InitialNewEmp" tabindex=22 />Initial - New Employee*@
+
+                                                @Html.CheckBoxFor(m => m.InitialNewEmp, new { tabindex = 22 }) Initial - New Employee
+
+                                            </label>
                                         </div>
                                         <div class="col-xxl-3 col-md-3" style="margin-top:55px;">
-                                            <label class="form-control"><input type="checkbox" id="toggleButton" name="Against" tabindex=23 />Against</label>
+                                            <label class="form-control">
+                                                @*<input type="checkbox" id="toggleButton" name="Against" tabindex=23 />Against*@
+
+                                                @Html.CheckBoxFor(m => m.Against, new { @id = "toggleButton", tabindex = 23 }) Against
+
+                                            </label>
                                         </div>
                                         <div class="col-xxl-3 col-md-3" style="margin-top:30px;display:none;" id="myDiv">
                                             <label for="labelInput" class="form-label"><code></code></label>
@@ -399,10 +464,21 @@
                                     <legend style="background-color:#151529;" id="legendSalarySlips">3) Salary Slips</legend>
                                     <div class="row gy-4" style="margin-bottom:15px;padding-left:10px;padding-right:10px;">
                                         <div class="col-xxl-6 col-md-6">
-                                            <label class="form-control"><input type="checkbox" name="SalarySlips3Months" tabindex=27 />3 Months</label>
+                                            <label class="form-control">
+                                                @*<input type="checkbox" name="SalarySlips3Months" tabindex=27 />3 Months*@
+
+                                                @Html.CheckBoxFor(m => m.SalarySlips3Months, new { tabindex = 27 }) 3 Months
+
+
+                                            </label>
                                         </div>
                                         <div class="col-xxl-6 col-md-6">
-                                            <label class="form-control"><input type="checkbox" name="SalarySlips6Months" tabindex=28 />6 Months</label>
+                                            <label class="form-control">
+                                                @*<input type="checkbox" name="SalarySlips6Months" tabindex=28 />6 Months*@
+
+                                                @Html.CheckBoxFor(m => m.SalarySlips6Months, new { tabindex = 28 }) 6 Months
+
+                                            </label>
                                         </div>
                                     </div>
                                 </fieldset>
@@ -416,7 +492,10 @@
                                         </div>
                                         <div class="col-xxl-6 col-md-6" style="padding-top:10px;">
                                             <label for="labelInput" class="form-label"></label>
-                                            <label class="form-control"><input type="checkbox" name="SalaryCard" tabindex=30 />Salary Card</label>
+                                            <label class="form-control">
+                                                @*<input type="checkbox" name="SalaryCard" tabindex=30 />Salary Card*@
+                                                @Html.CheckBoxFor(m => m.SalaryCard, new { tabindex = 30 }) Salary Card
+                                            </label>
                                         </div>
                                     </div>
                                 </fieldset>
@@ -504,15 +583,21 @@
             dataType: "json",
             success: function (result) {
                 $.each(result, function (i, v) {
-                    var i = 'GRV-' + v.MaxID;
-                    $("#VoucherNumber").val(i);
+
+                    if ($("#Idincrept").val() != 0) {
+                        $("#VoucherNumber").val($("#hdfVoucherNumber").val());
+                    }
+                    else {
+                        var i = 'GRV-' + v.MaxID;
+                        $("#VoucherNumber").val(i);
+                    }
+                    //var i = 'GRV-' + v.MaxID;
+                    //$("#VoucherNumber").val(i);
                 })
             }
         })
     }
 </script>
-
-
 
 <script>
     $(document).ready(function () {
