@@ -1,4 +1,4 @@
-﻿@model MassAutoGarage.Models.HRMS_EmployeeDocuments.HRMSEmployeeDocumentsModel
+﻿@model MassAutoGarage.Models.HR_TourIntimation.HR_TourIntimationModel
 
 @{
     ViewBag.Title = "Tour Intimation";
@@ -308,7 +308,9 @@
                                 <div class="row gy-4" style="margin-bottom:15px;">
                                     <div class="col-xxl-3 col-md-3">
                                         <label for="labelInput" class="form-label"> Voucher Number <code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" readonly />
+                                        @Html.HiddenFor(m => m.Idincrept, new { @class = "form-control" })
+                                        @Html.HiddenFor(m => m.hdfVoucherNo, new { @class = "form-control" })
+                                        @Html.TextBoxFor(m => m.VoucherNo, new { @class = "form-control", @readonly = "readonly", tabindex = 1 })
                                     </div>
 
                                 </div>
@@ -316,67 +318,64 @@
                                 <div class="row gy-4" style="margin-bottom:15px;">
                                     <div class="col-xxl-3 col-md-3">
                                         <label for="labelInput" class="form-label">Employee Name <code>*</code></label>
-                                        <select class="form-control">
-                                            <option>--Select Employee--</option>
-                                            <option>Sudhakar Sharma</option>
-                                            <option>Jitu Kumar</option>
-                                        </select>
+                                        @Html.DropDownListFor(x => x.EmployeeId, new SelectList(ViewBag.ddlEmployee, "Id", "EmployeeName"), "- Select Employee -", new { @class = "form-control", tabindex = 2 })
+
                                     </div>
 
                                     <div class="col-xxl-3 col-md-3">
                                         <label for="labelInput" class="form-label">Designation<code>*</code></label>
-                                        <select class="form-control">
-                                            <option>--Select Designation--</option>
-                                            <option>Software Engineer</option>
-                                            <option>Singer</option>
-                                        </select>
+                                        @Html.DropDownListFor(x => x.DesignationId, new SelectList(ViewBag.ddlDesignation, "Id", "Designation"), "- Select Designation -", new { @class = "form-control", tabindex = 3 })
+
                                     </div>
 
                                     <div class="col-xxl-3 col-md-3">
                                         <label for="labelInput" class="form-label">Tour Destination<code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" />
+                                        @Html.TextBoxFor(m => m.TourDestination, new { @class = "form-control", tabindex = 4 })
                                     </div>
                                     <div class="col-xxl-3 col-md-3">
                                         <label for="labelInput" class="form-label">Travel Mode<code>*</code></label>
-                                        <select class="form-control">
-                                            <option>--Select Travel Mode--</option>
-                                            <option>Travel Mode 1</option>
-                                            <option>Travel Mode 2</option>
-                                        </select>
+                                        @Html.DropDownList("TravelModeID", new List<SelectListItem>
+                                         {
+                                             new SelectListItem{ Text="--Select Travel Mode--", Value = "" },
+                                             new SelectListItem{ Text="By Road", Value = "1" },
+                                             new SelectListItem{ Text="By Air", Value = "2" },
+                                          },new { @class = "form-control" })
                                     </div>
                                 </div>
                             </fieldset>
                         </div>
-
                         <div class="row gy-4">
                             <fieldset style="margin-top:50px;">
                                 <legend style="background-color:#151529">Scheduled Travel Dates</legend>
                                 <div class="row gy-4" style="margin-bottom:15px;">
                                     <div class="col-xxl-4 col-md-4">
                                         <label for="labelInput" class="form-label">Start Date<code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" />
+                                        @Html.TextBoxFor(m => m.StartDate, new { @class = "form-control", @readonly = "readonly", tabindex = 6 })
+
                                     </div>
 
                                     <div class="col-xxl-4 col-md-4">
                                         <label for="labelInput" class="form-label">Return Date<code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" />
+                                        @Html.TextBoxFor(m => m.ReturnDate, new { @class = "form-control", @readonly = "readonly", tabindex = 7 })
+
                                     </div>
 
                                     <div class="col-xxl-4 col-md-4">
                                         <label for="labelInput" class="form-label">Purpose Of Tour<code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" />
+                                        @Html.TextBoxFor(m => m.PurposeOfTour, new { @class = "form-control", tabindex = 8 })
+
                                     </div>
                                     <div class="col-xxl-6 col-md-6">
                                         <label for="labelInput" class="form-label">Details<code>*</code></label>
-                                        <textarea class="form-control"></textarea>
+                                        @Html.TextAreaFor(m => m.Details, new { @class = "form-control", tabindex = 9 })
                                     </div>
                                     <div class="col-xxl-6 col-md-6">
                                         <label for="labelInput" class="form-label">Suggest Replacement/Handing Over To : (During Absence)<code>*</code></label>
-                                        <textarea class="form-control"></textarea>
+                                        @Html.TextAreaFor(m => m.SuggestReplacement, new { @class = "form-control", tabindex = 10 })
                                     </div>
                                     <div class="col-xxl-12 col-md-12">
                                         <label for="labelInput" class="form-label">Acknowledgement Of Taking Over<code>*</code></label>
-                                        <textarea class="form-control"></textarea>
+                                        @Html.TextAreaFor(m => m.Acknowledgement, new { @class = "form-control", tabindex = 11 })
                                     </div>
                                 </div>
                             </fieldset>
@@ -388,59 +387,56 @@
                                 <div class="row gy-4" style="margin-bottom:15px;">
                                     <h5 style="margin-top:40px;">Visa  Application :</h5>
                                     <div class="col-xxl-6 col-md-6">
-                                        <label class="form-control"><input type="checkbox" />Single Entry</label>
+                                        <label class="form-control">
+                                            @Html.CheckBoxFor(m => m.VisaSingleEntry, new { tabindex = 12 }) Single Entry
+                                        </label>
                                     </div>
                                     <div class="col-xxl-6 col-md-6">
-                                        <label class="form-control"><input type="checkbox" />Multiple Entry</label>
+                                        <label class="form-control">
+                                            @Html.CheckBoxFor(m => m.VisaMultipleEntry, new { tabindex = 13 }) Multiple Entry
+                                        </label>
                                     </div>
                                     <div class="col-xxl-5 col-md-5">
-                                        <label class="form-control"><input type="checkbox" />Hoten(Economical)............Nights.</label>
+                                        <label class="form-control">
+                                            @Html.CheckBoxFor(m => m.HotelEconomic, new { tabindex = 14 }) Hoten(Economical)............Nights.
+
+                                        </label>
                                     </div>
                                     <div class="col-xxl-7 col-md-7">
-                                        <label class="form-control"><input type="checkbox" />Passport Release:For Visa(Passport Release Form To Be Filled Separately)</label>
+                                        <label class="form-control">
+                                            @Html.CheckBoxFor(m => m.PassportRelease, new { tabindex = 15 }) Passport Release:For Visa(Passport Release Form To Be Filled Separately)
+                                        </label>
                                     </div>
                                 </div>
-
-
                                 <div class="row gy-4" style="margin-bottom:15px;">
                                     <h5>Travel Insurance :</h5>
                                     <div class="col-xxl-6 col-md-6">
-                                        <label class="form-control"><input type="checkbox" />Yes</label>
+                                        <label class="form-control">
+                                            @Html.CheckBoxFor(m => m.TravelInsuranceYes, new { tabindex = 16 })Yes
+                                        </label>
                                     </div>
                                     <div class="col-xxl-6 col-md-6">
-                                        <label class="form-control"><input type="checkbox" />No</label>
+                                        <label class="form-control">
+                                            @Html.CheckBoxFor(m => m.TravelInsuranceNo, new { tabindex = 17 })No
+                                        </label>
                                     </div>
                                 </div>
-
                                 <div class="row gy-4" style="margin-bottom:15px;">
                                     <h5>Accounts  Assistance :</h5>
-                                    <div class="col-xxl-4 col-md-4">
+                                    <div class="col-xxl-12 col-md-12">
                                         <label for="labelInput" class="form-label">Cash Advance Amount<code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" />
-                                    </div>
-                                    <div class="col-xxl-4 col-md-4">
-                                        <label for="labelInput" class="form-label">Applicant Signature<code>*</code></label>
-                                        <input type="file" class="form-control" id="EmployeeId" />
-                                    </div>
-                                    <div class="col-xxl-4 col-md-4">
-                                        <label for="labelInput" class="form-label">Date<code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" />
+                                        @Html.TextBoxFor(m => m.CashAdvanceAmt, new { @class = "form-control", tabindex = 18, @onkeypress = "return isNumberOrDecimal(event);" })
                                     </div>
                                 </div>
-
-
                             </fieldset>
                         </div>
-
                     </div>
                 </div>
-
-
                 <br />
                 <div class="col-xxl-12 col-md-12">
                     <div class="form-floating" style="float: right; padding-right: 2%;">
-                        <input type="button" value="Save" id="btnsave" class="btn btn-primary" />
-                        <a href="/HRMS_Employee/Employee" class="btn btn-danger">Reset</a>
+                        <input type="button" value="@ViewBag.ButtonText" id="btnsave" class="btn btn-primary" />
+                        <a href="/HR_TourIntimation/TourIntimation" class="btn btn-danger">Reset</a>
                     </div>
                 </div>
                 <br />
@@ -469,10 +465,36 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="~/MyApp/AddONS.js"></script>
 
+<script src="~/MyApp/HR_TourIntimation.js"></script>
+
 <script>
     $(document).ready(function () {
+        vouchernew();
+    });
+    function vouchernew() {
+        debugger;
+        $.ajax({
+            type: 'POST',
+            url: '/HR_TourIntimation/GetMaxVoucher',
+            data: "{}",
+            dataType: "json",
+            success: function (result) {
+                $.each(result, function (i, v) {
 
-    })
+                    if ($("#Idincrept").val() != 0) {
+                        $("#VoucherNo").val($("#hdfVoucherNo").val());
+                    }
+                    else {
+                        var i = 'TIV-' + v.MaxID;
+                        $("#VoucherNo").val(i);
+                    }
+
+                    //var i = 'TIV-' + v.MaxID;
+                    //$("#VoucherNo").val(i);
+                })
+            }
+        })
+    }
 </script>
 
 

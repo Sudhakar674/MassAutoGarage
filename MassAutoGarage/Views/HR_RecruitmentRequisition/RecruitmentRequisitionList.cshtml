@@ -114,17 +114,18 @@
                                     <td data-th="Code">@item.ExpectedSalary</td>
                                     <td data-th="Code">@item.SalaryOffered</td>
                                     @*<td data-th="Code">@item.AdditionNew</td>
-                                    <td data-th="Code">@item.Budgeted</td>
-                                    <td data-th="Code">@item.Replacement</td>*@
-
+                                        <td data-th="Code">@item.Budgeted</td>
+                                        <td data-th="Code">@item.Replacement</td>*@
 
                                     @if (item.AdditionNew == true)
                                     {
                                         <td>Yes</td>
+                                        @*<td><input type="checkbox" class="row-form property" id="Replacement" readonly="readonly" checked/></td>*@
                                     }
                                     else
                                     {
                                         <td>No</td>
+                                        @*<td><input type="checkbox" class="row-form" id="Replacement" readonly="readonly" /></td>*@
                                     }
                                     @if (item.Budgeted == true)
                                     {
@@ -143,9 +144,6 @@
                                     {
                                         <td>No</td>
                                     }
-
-
-
 
                                     <td data-th="Action">
                                         <div class="d-flex gap-2">
@@ -191,6 +189,12 @@
 </script>
 
 <script>
+
+
+
+
+
+
     $(document).ready(function () {
         var queryString = new Array();
         if (queryString.length == 0) {

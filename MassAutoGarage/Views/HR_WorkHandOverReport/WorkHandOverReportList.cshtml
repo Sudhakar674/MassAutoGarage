@@ -1,4 +1,4 @@
-﻿@model List<MassAutoGarage.Models.HRMS_EmployeeDocuments.HRMSEmployeeDocumentsModel>
+﻿@model List<MassAutoGarage.Models.HR_WorkHandOverReport.HR_WorkHandOverReportModel>
 
 @{
     ViewBag.Title = "Work Hand Over Report List";
@@ -41,7 +41,7 @@
 
     legend {
         float: none;
-        width: 29%;
+        width: 59%;
         background-color: #bbb1b1;
         color: white;
         padding: 5px 10px;
@@ -92,58 +92,48 @@
                         <thead>
                             <tr>
                                 <th style=" width: 1%;">S.N.</th>
-                                <th>Name</th>
+                                <th>Voucher No</th>
+                                <th>Employee Name</th>
                                 <th>Date</th>
                                 <th>Designation</th>
-                                <th>Branch</th>
-                                <th>Department</th>
-                                <th>EmpId</th>
-                                <th style="width:20%;">Action</th>
+                                <th>EmpNo</th>
+                                <th>Branch Name</th>
+                                <th>Reason For Work Hand Over</th>
+                                <th>Taken Over By</th>
+                                <th style="width:60%;">Action</th>
                             </tr>
                         </thead>
                         <tbody id="tBodyId">
 
-                            @*@foreach (var item in Model)
-                                {
-                                    <tr>
-                                        <td data-th="Srl.No.">@i</td>
-                                        <td data-th="Srl.No.">@item.BranchName</td>
-                                        <td data-th="Code">@item.EmployeeName</td>
-                                        <td data-th="Color Code">
-                                            <a href="@item.files" class="btn btn-sm btn-success edit-item-btn" tabindex="6">Download <i class="fa fa-edit"></i></a>
-                                        </td>
-                                        <td data-th="Color Code">
-                                            <a href="@item.EmirateFile" class="btn btn-sm btn-success edit-item-btn" tabindex="6">Download <i class="fa fa-edit"></i></a>
-                                        </td>
-                                        <td data-th="Color Code">
-                                            <a href="@item.PassportFile" class="btn btn-sm btn-success edit-item-btn" tabindex="6">Download <i class="fa fa-edit"></i></a>
-                                        </td>
-                                        <td data-th="Color Code">
-                                            <a href="@item.VisaFile" class="btn btn-sm btn-success edit-item-btn" tabindex="6">Download <i class="fa fa-edit"></i></a>
-                                        </td>
-                                        <td data-th="Color Code">
-                                            <a href="@item.InsuranceFile" class="btn btn-sm btn-success edit-item-btn" tabindex="6">Download <i class="fa fa-edit"></i></a>
-                                        </td>
-                                        <td data-th="Color Code">
-                                            <a href="@item.EmpCardFile" class="btn btn-sm btn-success edit-item-btn" tabindex="6">Download <i class="fa fa-edit"></i></a>
-                                        </td>
-
-                                        <td data-th="Action">
-
-                                            <div class="d-flex gap-2">
-                                                <div class="edit">
-
-                                                    <a href="/HRMS_EmployeeDocuments/EmployeeDocuments?Id=@item.EmpDocId" class="btn btn-sm btn-success edit-item-btn" tabindex="6">Edit <i class="fa fa-edit"></i></a>
-                                                </div>
-                                                <div class="remove">
-                                                    <a href="javascript:void(0)" onclick="return DeleteEmployeeDocuments('@item.EmpDocId')" class="btn btn-sm btn-danger remove-item-btn">Delete <i class="fa fa-trash" aria-hidden="true"></i></a>
-
-                                                </div>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td data-th="Srl.No.">@i</td>
+                                    <td data-th="Srl.No.">@item.VoucherNo</td>
+                                    <td data-th="Code">@item.EmployeeName</td>
+                                    <td data-th="Code">@item.Date</td>
+                                    <td data-th="Code">@item.Designation</td>
+                                    <td data-th="Code">@item.EmpNo</td>
+                                    <td data-th="Code">@item.BranchName</td>
+                                    <td data-th="Code">@item.ReasonForWorkHandOver</td>
+                                    <td data-th="Code">@item.TakenOverBy</td>
+                                    <td data-th="Action">
+                                        <div class="d-flex gap-2">
+                                            <div>
+                                                <a href="javascript:void(0)" onclick="return ViewWorkHandOverReport('@item.Idincrept')" class="btn btn-sm btn-primary remove-item-btn">View <i class="fa fa-eye" aria-hidden="true"></i></a>
                                             </div>
-                                        </td>
-                                    </tr>
-                                    i++;
-                                }*@
+                                            <div class="edit">
+                                                <a href="/HR_WorkHandOverReport/WorkHandOverReport?Id=@item.Idincrept" class="btn btn-sm btn-success edit-item-btn" tabindex="6">Edit <i class="fa fa-edit"></i></a>
+                                            </div>
+                                            <div class="remove">
+                                                <a href="javascript:void(0)" onclick="return DeleteWorkHandOverReport('@item.Idincrept')" class="btn btn-sm btn-danger remove-item-btn">Delete <i class="fa fa-trash" aria-hidden="true"></i></a>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                i++;
+                            }
                         </tbody>
                     </table>
                 </div>
@@ -151,6 +141,108 @@
         </div>
     </div>
 </div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="WorkHandOverReportModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="WorkHandOverReportModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="WorkHandOverReportModalLabel"><strong>Work Hand Over Report Details</strong></h5>
+                <button type="button" class="btn-close btn btn-danger" data-bs-dismiss="modal" aria-label="Close" onclick="return RemoveTableRecords();"></button>
+            </div>
+            <div class="modal-body">
+
+                @*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*@
+
+                <div class="card-body">
+                    <div class="live-preview">
+                        <div class="row gy-4">
+                            <fieldset>
+                                <legend style="background-color:#0a0a0a ">( Please Fill In The Information Inside The Box And Line Provided )</legend>
+
+                                <div class="row gy-4">
+                                    <div class="col-xxl-3 col-md-3">
+                                        <label for="labelInput" class="form-label">Voucher No <code>*</code></label>
+                                        <input type="text" id="txtVoucherNo" class="form-control" readonly="readonly" />
+                                    </div>
+                                    <div class="col-xxl-3 col-md-3">
+                                        <label for="labelInput" class="form-label">Employee Name<code>*</code></label>
+                                        <input type="text" id="txtEmployeeName" class="form-control" readonly="readonly" />
+
+                                    </div>
+                                    <div class="col-xxl-3 col-md-3">
+                                        <label for="labelInput" class="form-label"> Date<code>*</code></label>
+                                        <input type="text" id="txtDate" class="form-control" readonly="readonly" />
+
+                                    </div>
+                                    <div class="col-xxl-3 col-md-3">
+                                        <label for="labelInput" class="form-label">Designation<code>*</code></label>
+                                        <input type="text" id="txtDesignation" class="form-control" readonly="readonly" />
+
+                                    </div>
+                                    <div class="col-xxl-3 col-md-3 mb-3">
+                                        <label for="labelInput" class="form-label">EmpNo<code>*</code></label>
+                                        <input type="text" id="txtEmpNo" class="form-control" readonly="readonly" />
+
+                                    </div>
+                                    <div class="col-xxl-3 col-md-3 mb-3">
+                                        <label for="labelInput" class="form-label">Branch Name<code>*</code></label>
+                                        <input type="text" id="txtBranchName" class="form-control" readonly="readonly" />
+
+                                    </div>
+                                    <div class="col-xxl-3 col-md-3 mb-3">
+                                        <label for="labelInput" class="form-label">Reason For Work Hand Over<code>*</code></label>
+                                        <input type="text" id="txtReasonForWorkHandOver" class="form-control" readonly="readonly" />
+
+                                    </div>
+                                    <div class="col-xxl-3 col-md-3 mb-3">
+                                        <label for="labelInput" class="form-label">Taken Over By<code>*</code></label>
+                                        <input type="text" id="txtTakenOverBy" class="form-control" readonly="readonly" />
+
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+
+                @*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*@
+
+                <div class="card-body my-4">
+                    <div class="live-preview">
+                        <div class="row gy-4">
+
+                            <fieldset>
+                                <legend style="background-color:#0a0a0a;">
+                                    Any Tasks? Which Are Pending Or Under Process At The Time Of Hand Over
+                                </legend>
+                                <div class="table-responsive">
+                                    <table border="1" id="example" class="display table table-bordered" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>Tasks</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="tBodyId22">
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </fieldset>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                @*<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>*@
+            </div>
+        </div>
+    </div>
+</div>
+
 
 @section scripts{
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -168,6 +260,7 @@
     <!-- App js -->
     <script src="~/assets/js/app.js"></script>
 }
+<script src="~/MyApp/HR_WorkHandOverReport.js"></script>
 
 <script>
     $(document).ready(function () {
@@ -186,12 +279,23 @@
                     queryString[key] = value;
                 }
             }
+
             $('#txtsearch').val(queryString[key]);
         }
     });
+
     $('#txtsearch').change(function () {
+
         searchfromDB();
     });
+
+    function searchfromDB() {
+        debugger;
+
+        var SearchKey = $('#txtsearch').val();
+        var url = "/HR_WorkHandOverReport/WorkHandOverReportList?Key=" + SearchKey;
+        window.location.href = url;
+    }
 </script>
 
 

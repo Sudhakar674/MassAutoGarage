@@ -83,10 +83,13 @@ namespace MassAutoGarage.Controllers
                     model.ToDate = string.IsNullOrEmpty(model.ToDate) ? null : Common.ConvertToSystemDate(model.ToDate, "dd/MM/yyyy");
                     model.BranchId = PatientArr[0].BranchId;
                     model.Idencrept = PatientArr[0].Idencrept;
-
                     var Idencreptmain = model.Idencrept;
-
                     model = DL.AddUpdate(model);
+
+                    model.Id = Idencreptmain;
+                    model.QueryType = "42";
+                    model = DL.DeleteReimbursement(model);
+
                     var ReimbursementId = model.ReimbursementId;
                     foreach (var Attch in PatientArr)
                     {
@@ -100,8 +103,6 @@ namespace MassAutoGarage.Controllers
                         model.Amount = Attch.Amount;
                         model = DL.AddUpdateBulk(model);
                     }
-                    //if (model.Idencrept != null || model.Idencrept != "")
-                    //{
                     if (model.Message == "1")
                     {
                         model.Result = "yes1";
@@ -110,12 +111,9 @@ namespace MassAutoGarage.Controllers
                     {
                         model.Result = "";
                     }
-                    //}
-           
                 }
                 else
                 {
-
                     model.CreatedBy = Session["userId"].ToString();
                     model.QueryType = "11";
                     model.VoucherNo = PatientArr[0].VoucherNo;
@@ -140,8 +138,6 @@ namespace MassAutoGarage.Controllers
                         model.Amount = Attch.Amount;
                         model = DL.AddUpdateBulk(model);
                     }
-                    //if (model.Idencrept == null || model.Idencrept == "")
-                    //{
                     if (model.Message == "1")
                     {
                         model.Result = "yes";
@@ -150,7 +146,6 @@ namespace MassAutoGarage.Controllers
                     {
                         model.Result = "";
                     }
-                    //}
                 }
             }
             catch (Exception)

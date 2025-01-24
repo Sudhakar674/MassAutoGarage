@@ -1,4 +1,4 @@
-﻿@model MassAutoGarage.Models.HRMS_EmployeeDocuments.HRMSEmployeeDocumentsModel
+﻿@model MassAutoGarage.Models.HR_WorkHandOverReport.HR_WorkHandOverReportModel
 
 @{
     ViewBag.Title = "Work Hand Over Report";
@@ -291,7 +291,9 @@
                                 <div class="row gy-4" style="margin-bottom:15px;">
                                     <div class="col-xxl-3 col-md-3">
                                         <label for="labelInput" class="form-label"> Voucher Number <code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" readonly />
+                                        @Html.HiddenFor(m => m.Idincrept, new { @class = "form-control" })
+                                            @Html.HiddenFor(m => m.hdfVoucherNo, new { @class = "form-control" })
+                                        @Html.TextBoxFor(m => m.VoucherNo, new { @class = "form-control", @readonly = "readonly", tabindex = 1 })
                                     </div>
 
                                 </div>
@@ -299,52 +301,42 @@
                                 <div class="row gy-4" style="margin-bottom:15px;">
                                     <div class="col-xxl-4 col-md-4">
                                         <label for="labelInput" class="form-label">Employee Name <code>*</code></label>
-                                        <select class="form-control">
-                                            <option>--Select Employee--</option>
-                                            <option>Sudhakar Sharma</option>
-                                            <option>Jitu Kumar</option>
-                                        </select>
+                                        @Html.DropDownListFor(x => x.EmployeeId, new SelectList(ViewBag.ddlEmployee, "Id", "EmployeeName"), "- Select Employee -", new { @class = "form-control", tabindex = 2 })
+
                                     </div>
                                     <div class="col-xxl-4 col-md-4">
                                         <label for="labelInput" class="form-label">Date<code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" />
+                                        @Html.TextBoxFor(m => m.Date, new { @class = "form-control", @readonly = "readonly", tabindex = 3 })
+
                                     </div>
                                     <div class="col-xxl-4 col-md-4">
                                         <label for="labelInput" class="form-label">Designation<code>*</code></label>
-                                        <select class="form-control">
-                                            <option>--Select Designation--</option>
-                                            <option>Software Engineer</option>
-                                            <option>Singer</option>
-                                        </select>
+                                        @Html.DropDownListFor(x => x.DesignationId, new SelectList(ViewBag.ddlDesignation, "Id", "Designation"), "- Select Designation -", new { @class = "form-control", tabindex = 4 })
+
                                     </div>
                                     <div class="col-xxl-4 col-md-4">
                                         <label for="labelInput" class="form-label">Emp No<code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" readonly />
+                                        @Html.TextBoxFor(m => m.EmpNo, new { @class = "form-control", tabindex = 3 })
+
                                     </div>
 
                                     <div class="col-xxl-4 col-md-4">
                                         <label for="labelInput" class="form-label">Branch<code>*</code></label>
-                                        <select class="form-control">
-                                            <option>--Select Branch--</option>
-                                            <option>Tamkuhi Raj</option>
-                                            <option>Kushinahar</option>
-                                        </select>
+                                        @Html.DropDownListFor(x => x.BranchId, new SelectList(ViewBag.ddlBranch, "Id", "BranchName"), "- Select Branch -", new { @class = "form-control", tabindex = 5 })
+
                                     </div>
 
 
                                     <div class="col-xxl-4 col-md-4">
                                         <label for="labelInput" class="form-label">Taken Over By<code>*</code></label>
-                                        <select class="form-control">
-                                            <option>--Select Taken Over By--</option>
-                                            <option>Taken Over By 1</option>
-                                            <option>Taken Over By 2</option>
-                                        </select>
+                                        @Html.DropDownListFor(x => x.TakenOverBy, new SelectList(ViewBag.ddlEmployee, "Id", "EmployeeName"), "- Select Employee -", new { @class = "form-control", tabindex = 2 })
                                     </div>
 
 
                                     <div class="col-xxl-12 col-md-12">
                                         <label for="labelInput" class="form-label">Reason For Work Hand Over<code>*</code></label>
-                                        <textarea class="form-control"></textarea>
+                                        @Html.TextAreaFor(m => m.ReasonForWorkHandOver, new { @class = "form-control", tabindex = 3 })
+
                                     </div>
 
 
@@ -362,26 +354,35 @@
                                             <table border="1" id="example" class="display table table-bordered" style="width:100%">
                                                 <thead>
                                                     <tr>
-                                                        <th style=" width: 1%;">S.N.</th>
                                                         <th>Task(s)</th>
                                                         <th style="width:16%;">Status</th>
                                                         <th style="width:14%;">Action</th>
                                                     </tr>
                                                 </thead>
-                                                <tbody id="tBodyId">
+                                                <tbody>
+                                                    @if (ViewBag.WorkHandOverDetails != null)
+                                                    {
+                                                        foreach (var item in ViewBag.WorkHandOverDetails)
+                                                        {
+                                                            <tr>
+                                                                <td>@item.Tasks</td>
+                                                                <td>@item.Status</td>
+                                                                <td><input type="button" onclick=" return Remove(this);" value="Remove"></td>
+                                                            </tr>
+                                                        }
+                                                    }
+                                                </tbody>
+                                                <tfoot>
                                                     <tr>
-                                                        <td> </td>
+                                                        <td> <input type="text" name="Task" class="txtTask form-control" id="Tasks" /> </td>
                                                         <td>
-                                                            <input type="text" name="Task" class="Task form-control" id="Task" />
-                                                        </td>
-                                                        <td>
-                                                            <input type="text" name="Status" class="Status form-control" id="Status" />
+                                                            <input type="text" name="Status" class="txtStatus form-control" id="Status" />
                                                         </td>
                                                         <td>
                                                             <button type="button" id="btnAdd" class="btn btn-xs btn-primary classAdd" onclick="Add()">Add New Row</button>
                                                         </td>
                                                     </tr>
-                                                </tbody>
+                                                </tfoot>
                                             </table>
                                         </div>
                                     </div>
@@ -393,7 +394,7 @@
                 <br />
                 <div class="col-xxl-12 col-md-12">
                     <div class="form-floating" style="float: right; padding-right: 2%;">
-                        <input type="button" value="Save" id="btnsave" class="btn btn-primary" />
+                        <input type="button" value="@ViewBag.ButtonText" id="btnsave" class="btn btn-primary" />
                         <a href="/HRMS_Employee/Employee" class="btn btn-danger">Reset</a>
                     </div>
                 </div>
@@ -423,12 +424,45 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="~/MyApp/AddONS.js"></script>
 
+<script src="~/MyApp/HR_WorkHandOverReport.js"></script>
+
+
 <script>
     $(document).ready(function () {
+        vouchernew();
+    });
+    function vouchernew() {
+        debugger;
+        $.ajax({
+            type: 'POST',
+            url: '/HR_WorkHandOverReport/GetMaxVoucher',
+            data: "{}",
+            dataType: "json",
+            success: function (result) {
+                $.each(result, function (i, v) {
 
-    })
+                    if ($("#Idincrept").val() != 0) {
+                        $("#VoucherNo").val($("#hdfVoucherNo").val());
+                    }
+                    else {
+                        var i = 'WHOV-' + v.MaxID;
+                        $("#VoucherNo").val(i);
+                    }
+
+                    //var i = 'WHOV-' + v.MaxID;
+                    //$("#VoucherNo").val(i);
+                })
+            }
+        })
+    }
 </script>
 
+<style>
+    .errortext {
+        border: 1px solid red !important;
+        background-color: #fff0f0 !important;
+    }
+</style>
 
 
 

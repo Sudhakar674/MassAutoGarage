@@ -1,4 +1,4 @@
-﻿@model MassAutoGarage.Models.HRMS_EmployeeDocuments.HRMSEmployeeDocumentsModel
+﻿@model MassAutoGarage.Models.HR_RenualAndNonRenwal.HR_RenualAndNonRenwalModel
 
 @{
     ViewBag.Title = "Renual And Non Renwal";
@@ -308,80 +308,58 @@
                                 <div class="row gy-4" style="margin-bottom:15px;">
                                     <div class="col-xxl-3 col-md-3">
                                         <label for="labelInput" class="form-label"> Voucher Number <code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" readonly />
+                                        @Html.HiddenFor(m => m.Idincrept, new { @class = "form-control" })
+                                        @Html.HiddenFor(m => m.hdfVoucherNo, new { @class = "form-control" })
+                                        @Html.TextBoxFor(m => m.VoucherNo, new { @class = "form-control", @readonly = "readonly", tabindex = 1 })
                                     </div>
-
                                 </div>
                                 <hr />
                                 <div class="row gy-4" style="margin-bottom:15px;">
                                     <div class="col-xxl-3 col-md-3">
                                         <label for="labelInput" class="form-label">Employee Name <code>*</code></label>
-                                        <select class="form-control">
-                                            <option>--Select Employee--</option>
-                                            <option>Sudhakar Sharma</option>
-                                            <option>Jitu Kumar</option>
-                                        </select>
+                                        @Html.DropDownListFor(x => x.EmployeeId, new SelectList(ViewBag.ddlEmployee, "Id", "EmployeeName"), "- Select Employee -", new { @class = "form-control", tabindex = 2 })
+
                                     </div>
                                     <div class="col-xxl-3 col-md-3">
                                         <label for="labelInput" class="form-label">Date Of Joined<code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" />
+                                        @Html.TextBoxFor(m => m.DateOfJoined, new { @class = "form-control", @readonly = "readonly", tabindex = 3 })
+
                                     </div>
                                     <div class="col-xxl-3 col-md-3">
                                         <label for="labelInput" class="form-label">Designation<code>*</code></label>
-                                        <select class="form-control">
-                                            <option>--Select Designation--</option>
-                                            <option>Software Engineer</option>
-                                            <option>Singer</option>
-                                        </select>
+                                        @Html.DropDownListFor(x => x.DesignationId, new SelectList(ViewBag.ddlDesignation, "Id", "Designation"), "- Select Designation -", new { @class = "form-control", tabindex = 4 })
+
                                     </div>
                                     <div class="col-xxl-3 col-md-3">
                                         <label for="labelInput" class="form-label">Department<code>*</code></label>
-                                        <select class="form-control">
-                                            <option>--Select Department--</option>
-                                            <option>Software</option>
-                                            <option>Civil</option>
-                                        </select>
+                                        @Html.DropDownListFor(x => x.DepartmentId, new SelectList(ViewBag.ddlDepartment, "Id", "DepartmentName"), "- Select Department -", new { @class = "form-control", tabindex = 5 })
+
                                     </div>
                                     <div class="col-xxl-3 col-md-3">
                                         <label for="labelInput" class="form-label">Branch<code>*</code></label>
-                                        <select class="form-control">
-                                            <option>--Select Branch--</option>
-                                            <option>Tamkuhi Raj</option>
-                                            <option>Kushinahar</option>
-                                        </select>
+                                        @Html.DropDownListFor(x => x.BranchId, new SelectList(ViewBag.ddlBranch, "Id", "BranchName"), "- Select Branch -", new { @class = "form-control", tabindex = 6 })
                                     </div>
 
                                     <div class="col-xxl-3 col-md-3" style="margin-top:50px;">
-                                        <label class="form-control"><input type="checkbox" />Renew</label>
+                                        <label class="form-control">
+                                            @Html.CheckBoxFor(m => m.Renew, new { tabindex = 8 }) Renew
+                                        </label>
                                     </div>
                                     <div class="col-xxl-3 col-md-3" style="margin-top:50px;">
-                                        <label class="form-control"><input type="checkbox" />Not Renewing</label>
+                                        <label class="form-control">
+                                            @Html.CheckBoxFor(m => m.NotRenewing, new { tabindex = 8 }) Not Renewing
+                                        </label>
                                     </div>
-
-
-                                    <div class="col-xxl-3 col-md-3">
-                                        <label for="labelInput" class="form-label">Employee Signature<code>*</code></label>
-                                        <input type="file" class="form-control" id="EmployeeId" readonly />
-                                    </div>
-
-
-
                                 </div>
                             </fieldset>
                         </div>
-
-                        
-
-                        
                     </div>
                 </div>
-
-
                 <br />
                 <div class="col-xxl-12 col-md-12">
                     <div class="form-floating" style="float: right; padding-right: 2%;">
-                        <input type="button" value="Save" id="btnsave" class="btn btn-primary" />
-                        <a href="/HRMS_Employee/Employee" class="btn btn-danger">Reset</a>
+                        <input type="button" value="@ViewBag.ButtonText" id="btnsave" class="btn btn-primary" />
+                        <a href="/HR_RenualAndNonRenwal/RenualAndNonRenwal" class="btn btn-danger">Reset</a>
                     </div>
                 </div>
                 <br />
@@ -410,11 +388,39 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="~/MyApp/AddONS.js"></script>
 
+<script src="~/MyApp/HR_RenualAndNonRenwal.js"></script>
+
+
 <script>
     $(document).ready(function () {
+        vouchernew();
+    });
+    function vouchernew() {
+        debugger;
+        $.ajax({
+            type: 'POST',
+            url: '/HR_RenualAndNonRenwal/GetMaxVoucher',
+            data: "{}",
+            dataType: "json",
+            success: function (result) {
+                $.each(result, function (i, v) {
 
-    })
+                    if ($("#Idincrept").val() != 0) {
+                        $("#VoucherNo").val($("#hdfVoucherNo").val());
+                    }
+                    else {
+                        var i = 'RENWV-' + v.MaxID;
+                        $("#VoucherNo").val(i);
+                    }
+
+                    //var i = 'RENWV-' + v.MaxID;
+                    //$("#VoucherNo").val(i);
+                })
+            }
+        })
+    }
 </script>
+
 
 
 
