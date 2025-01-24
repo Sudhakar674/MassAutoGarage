@@ -1,4 +1,4 @@
-﻿@model MassAutoGarage.Models.HRMS_EmployeeDocuments.HRMSEmployeeDocumentsModel
+﻿@model MassAutoGarage.Models.HR_MainPowerRequisition.HR_MainPowerRequisitionModel
 
 @{
     ViewBag.Title = "Main Power Requisition";
@@ -182,6 +182,30 @@
         font-size: small;
     }
 
+
+    #legendQualification {
+        float: none;
+        width: 48%;
+        background-color: #bbb1b1;
+        color: white;
+        padding: 5px 10px;
+        font-size: small;
+    }
+
+
+    #legendEducationalRequirement {
+        float: none;
+        width: 20%;
+        background-color: #bbb1b1;
+        color: white;
+        padding: 5px 10px;
+        font-size: small;
+    }
+
+
+
+
+
     input {
         margin: 5px;
     }
@@ -307,7 +331,9 @@
                                 <div class="row gy-4" style="margin-bottom:15px;">
                                     <div class="col-xxl-3 col-md-3">
                                         <label for="labelInput" class="form-label"> Voucher Number <code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" readonly />
+                                        @Html.HiddenFor(m => m.Idincrept, new { @class = "form-control" })
+                                        @Html.HiddenFor(m => m.hdfVoucherNo, new { @class = "form-control" })
+                                        @Html.TextBoxFor(m => m.VoucherNo, new { @class = "form-control", @readonly = "readonly", tabindex = 1 })
                                     </div>
 
                                 </div>
@@ -315,179 +341,270 @@
                                 <div class="row gy-4" style="margin-bottom:15px;">
                                     <div class="col-xxl-3 col-md-3">
                                         <label for="labelInput" class="form-label">Requesting Department<code>*</code></label>
-                                        <select class="form-control">
-                                            <option>--Select Department--</option>
-                                            <option>Software</option>
-                                            <option>Civil</option>
-                                        </select>
+                                        @Html.DropDownListFor(x => x.DepartmentId, new SelectList(ViewBag.ddlDepartment, "Id", "DepartmentName"), "- Select Department -", new { @class = "form-control", tabindex = 2 })
+
                                     </div>
                                     <div class="col-xxl-3 col-md-3">
                                         <label for="labelInput" class="form-label">Date Requested<code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" />
+                                        @Html.TextBoxFor(m => m.RequestedDate, new { @class = "form-control", @readonly = "readonly", tabindex = 3 })
                                     </div>
                                     <div class="col-xxl-3 col-md-3">
                                         <label for="labelInput" class="form-label">Date Required<code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" />
+                                        @Html.TextBoxFor(m => m.RequiredDate, new { @class = "form-control", @readonly = "readonly", tabindex = 4 })
                                     </div>
                                     <div class="col-xxl-3 col-md-3">
                                         <label for="labelInput" class="form-label">Position/Title<code>*</code></label>
-                                        <select class="form-control">
-                                            <option>--Select Designation--</option>
-                                            <option>Software Engineer</option>
-                                            <option>Singer</option>
-                                        </select>
+                                        @Html.DropDownListFor(x => x.DesignationId, new SelectList(ViewBag.ddlDesignation, "Id", "Designation"), "- Select Designation -", new { @class = "form-control", tabindex = 5 })
+
                                     </div>
                                 </div>
                                 <div class="row gy-4" style="margin-bottom: 16px;padding-left: 10px; padding-right: 10px;">
                                     <h5>Employeement Type :</h5>
                                     <div class="col-xxl-4 col-md-4">
-                                        <label class="form-control"><input type="checkbox" />Full Time</label>
+                                        <label class="form-control">
+                                            @Html.CheckBoxFor(m => m.FullTime, new { tabindex = 6 }) Full Time
+                                        </label>
                                     </div>
                                     <div class="col-xxl-4 col-md-4">
-                                        <label class="form-control"><input type="checkbox" />Project Hire</label>
+                                        <label class="form-control">
+                                            @Html.CheckBoxFor(m => m.ProjectHire, new { tabindex = 7 }) Project Hire
+
+                                        </label>
                                     </div>
                                     <div class="col-xxl-4 col-md-4">
-                                        <label class="form-control"><input type="checkbox" />Temporary</label>
+                                        <label class="form-control">
+                                            @Html.CheckBoxFor(m => m.Temporary, new { tabindex = 8 })Temporary
+                                        </label>
                                     </div>
                                     <div class="col-xxl-12 col-md-12">
                                         <label for="labelInput" class="form-label">Brief Description Of Duties(Or Attach The Job Description)<code>*</code></label>
-                                        <textarea class="form-control"></textarea>
+                                        @Html.TextAreaFor(m => m.JobDescription, new { @class = "form-control", tabindex = 9 })
                                     </div>
                                 </div>
 
                                 <div class="row gy-4" style="margin-bottom:15px; padding-left: 10px; padding-right: 10px;">
                                     <h5>Nature Of Request :</h5>
                                     <div class="col-xxl-4 col-md-4">
-                                        <label class="form-control"><input type="checkbox" />New/Addition</label>
+                                        <label class="form-control">
+                                            @Html.CheckBoxFor(m => m.AdditionNew, new { tabindex = 10 })New/Addition
+                                        </label>
                                     </div>
                                     <div class="col-xxl-4 col-md-4">
-                                        <label class="form-control"><input type="checkbox" />Budgeted</label>
+                                        <label class="form-control">
+                                            @Html.CheckBoxFor(m => m.Budgeted, new { tabindex = 11 })Budgeted
+                                        </label>
                                     </div>
                                     <div class="col-xxl-4 col-md-4">
-                                        <label class="form-control"><input type="checkbox" />Replacement</label>
+                                        <label class="form-control">
+                                            @Html.CheckBoxFor(m => m.Replacement, new { tabindex = 12 })Replacement
+                                        </label>
                                     </div>
                                     <div class="col-xxl-2 col-md-2">
                                         <label for="labelInput" class="form-label">Age Range<code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" />
+                                        @Html.TextBoxFor(m => m.AgeRange, new { @class = "form-control", tabindex = 13 })
                                     </div>
                                     <div class="col-xxl-2 col-md-2">
                                         <label for="labelInput" class="form-label">Salary Range<code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" />
+                                        @Html.TextBoxFor(m => m.SalaryRange, new { @class = "form-control", tabindex = 14 })
                                     </div>
                                     <div class="col-xxl-4 col-md-4">
                                         <label for="labelInput" class="form-label">Status<code>*</code></label>
-                                        <select class="form-control">
-                                            <option>--Select Status--</option>
-                                            <option>Pass</option>
-                                            <option>Fail</option>
-                                        </select>
+                                        @Html.DropDownListFor(x => x.StatusID, new List<SelectListItem>
+                                        {
+                                         new SelectListItem() {Text = "--Select Status--", Value=""},
+                                         new SelectListItem() {Text = "Single", Value="1"},
+                                         new SelectListItem() {Text = "Married", Value="2"},
+                                         new SelectListItem() {Text = "No Preference", Value="3"},
+                                        }, new { @class = "form-control", tabindex = 15 })
                                     </div>
                                     <div class="col-xxl-4 col-md-4">
                                         <label for="labelInput" class="form-label">Gender<code>*</code></label>
-                                        <select class="form-control">
-                                            <option>--Select Gender--</option>
-                                            <option>Male</option>
-                                            <option>Female</option>
-                                        </select>
+                                        @Html.DropDownListFor(x => x.GenderID, new List<SelectListItem>
+                                       {
+                                        new SelectListItem() {Text = "--Select Gender--", Value=""},
+                                        new SelectListItem() {Text = "Male", Value="1"},
+                                        new SelectListItem() {Text = "Female", Value="2"},
+                                        new SelectListItem() {Text = "No Preference", Value="3"},
+                                       }, new { @class = "form-control", tabindex = 16 })
+
                                     </div>
                                 </div>
                             </fieldset>
                         </div>
 
+                        @*<div class="row gy-4">
+                                <fieldset style="margin-top:55px;">
+                                    <legend style="background-color:#151529" id="legendEmployeeUnderTaking">Educational Requirement</legend>
+                                    <div class="row gy-4" style="margin-bottom:15px;">
+                                        <div class="table-responsive" style="margin-top:45px;">
+                                            <table border="1" id="exampleEducationalRequirement" class="display table table-bordered" style="width:100%">
+                                                <thead>
+                                                    <tr>
+                                                        <th style=" width: 1%;">S.N.</th>
+                                                        <th>Qualification</th>
+                                                        <th>Passing Year</th>
+                                                        <th>Board</th>
+                                                        <th>Percentage(%)</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td><input type="text" class="form-control" placeholder="HighSchool" /></td>
+                                                        <td><input type="text" class="form-control" placeholder="Passing Year" /></td>
+                                                        <td><input type="text" class="form-control" placeholder="Board" /></td>
+                                                        <td><input type="text" class="form-control" placeholder="Percentage(%)" /></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td><input type="text" class="form-control" placeholder="InterMediate" /></td>
+                                                        <td><input type="text" class="form-control" placeholder="Passing Year" /></td>
+                                                        <td><input type="text" class="form-control" placeholder="Board" /></td>
+                                                        <td><input type="text" class="form-control" placeholder="Percentage(%)" /></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td><input type="text" class="form-control" placeholder="UG" /></td>
+                                                        <td><input type="text" class="form-control" placeholder="Passing Year" /></td>
+                                                        <td><input type="text" class="form-control" placeholder="Board" /></td>
+                                                        <td><input type="text" class="form-control" placeholder="Percentage(%)" /></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4</td>
+                                                        <td><input type="text" class="form-control" placeholder="PG" /></td>
+                                                        <td><input type="text" class="form-control" placeholder="Passing Year" /></td>
+                                                        <td><input type="text" class="form-control" placeholder="Board" /></td>
+                                                        <td><input type="text" class="form-control" placeholder="Percentage(%)" /></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>5</td>
+                                                        <td><input type="text" class="form-control" placeholder="Other" /></td>
+                                                        <td><input type="text" class="form-control" placeholder="Passing Year" /></td>
+                                                        <td><input type="text" class="form-control" placeholder="Board" /></td>
+                                                        <td><input type="text" class="form-control" placeholder="Percentage(%)" /></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                    <div class="row gy-4">
+                                        <h5>Preferred Qualifications/Experience(Not Mentioned Above Or In The JD) :</h5>
+                                        <div class="table-responsive">
+                                            <table border="1" id="examplePreferredQualifications" class="display table table-bordered" style="width:100%">
+                                                <thead>
+                                                    <tr>
+                                                        <th style=" width: 1%;">S.N.</th>
+                                                        <th>Preferred Qualification</th>
+                                                        <th>Experience</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+
+                                                        <td><input type="text" name="PreferredQualification" class="txtPreferredQualification form-control" placeholder="Preferred Qualification" id="PreferredQualificationId" /></td>
+                                                        <td><input type="text" name="PreferredExperience" class="txtPreferredExperience form-control" placeholder="Experience" id="PreferredExperienceId" /></td>
+                                                        <td>
+                                                            <button type="button" id="btnAdd" class="btn btn-xs btn-primary classAdd" onclick="Add()">Add New Row</button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>*@
+
+
+
+
                         <div class="row gy-4">
-                            <fieldset style="margin-top:50px;" id="fieldsetCashAdvance">
-                                <legend style="background-color:#151529;" id="legendEmployeeStatement">Employee Statement : State To Whome The Handing Over Is Done</legend>
-
-                                <div class="row gy-4" style="margin-bottom: 15px;margin-top:3px; padding-left: 10px; padding-right: 10px;">
-                                    <div class="col-xxl-2 col-md-2">
-                                        <label class="form-control"><input type="checkbox" />Vehicle</label>
-                                    </div>
-                                    <div class="col-xxl-2 col-md-2">
-                                        <label class="form-control"><input type="checkbox" />Laptop</label>
-                                    </div>
-                                    <div class="col-xxl-2 col-md-2">
-                                        <label class="form-control"><input type="checkbox" />Company Sim</label>
-                                    </div>
-                                    <div class="col-xxl-4 col-md-4">
-                                        <label class="form-control"><input type="checkbox" />Medical Insurance</label>
-                                    </div>
-                                    <div class="col-xxl-2 col-md-2">
-                                        <label class="form-control"><input type="checkbox" />C3 Card</label>
-                                    </div>
-
-                                    <div class="col-xxl-6 col-md-6">
-                                        <label for="labelInput" class="form-label">Replacement/Handing Over Assigned To<code>*</code></label>
-                                        <input type="text" class="form-control" id="EmployeeId" />
-                                    </div>
-                                    <div class="col-xxl-6 col-md-6">
-                                        <label for="labelInput" class="form-label">Signature<code>*</code></label>
-                                        <input type="file" class="form-control" id="EmployeeId" />
-                                    </div>
-
-                                </div>
-                            </fieldset>
-                        </div>
-
-                        <div class="row gy-4">
-                            <fieldset style="margin-top:55px;">
-                                <legend style="background-color:#151529" id="legendEmployeeUnderTaking">Educational Requirement</legend>
-                                <div class="row gy-4" style="margin-bottom:15px;">
-                                    <div class="table-responsive" style="margin-top:45px;">
-                                        <table border="1" id="example" class="display table table-bordered" style="width:100%">
-                                            <thead>
-                                                <tr>
-                                                    <th style=" width: 1%;">S.N.</th>
-                                                    <th>Qualification</th>
-                                                    <th>Passing Year</th>
-                                                    <th>Board</th>
-                                                    <th>Percentage(%)</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody id="tBodyId">
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td><input type="text" class="form-control" placeholder="HighSchool" /></td>
-                                                    <td><input type="text" class="form-control" placeholder="Passing Year" /></td>
-                                                    <td><input type="text" class="form-control" placeholder="Board" /></td>
-                                                    <td><input type="text" class="form-control" placeholder="Percentage(%)" /></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>2</td>
-                                                    <td><input type="text" class="form-control" placeholder="InterMediate" /></td>
-                                                    <td><input type="text" class="form-control" placeholder="Passing Year" /></td>
-                                                    <td><input type="text" class="form-control" placeholder="Board" /></td>
-                                                    <td><input type="text" class="form-control" placeholder="Percentage(%)" /></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>3</td>
-                                                    <td><input type="text" class="form-control" placeholder="UG" /></td>
-                                                    <td><input type="text" class="form-control" placeholder="Passing Year" /></td>
-                                                    <td><input type="text" class="form-control" placeholder="Board" /></td>
-                                                    <td><input type="text" class="form-control" placeholder="Percentage(%)" /></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>4</td>
-                                                    <td><input type="text" class="form-control" placeholder="PG" /></td>
-                                                    <td><input type="text" class="form-control" placeholder="Passing Year" /></td>
-                                                    <td><input type="text" class="form-control" placeholder="Board" /></td>
-                                                    <td><input type="text" class="form-control" placeholder="Percentage(%)" /></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>5</td>
-                                                    <td><input type="text" class="form-control" placeholder="Other" /></td>
-                                                    <td><input type="text" class="form-control" placeholder="Passing Year" /></td>
-                                                    <td><input type="text" class="form-control" placeholder="Board" /></td>
-                                                    <td><input type="text" class="form-control" placeholder="Percentage(%)" /></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
+                            <fieldset style="margin-top:50px;padding-bottom:25px;" id="fieldsetCashAdvance">
+                                <legend style="background-color:#151529;" id="legendEducationalRequirement">
+                                    Educational Requirement
+                                </legend>
 
                                 <div class="row gy-4">
-                                    <h5>Preferred Qualifications/Experience(Not Mentioned Above Or In The JD) :</h5>
-                                    <div class="table-responsive">
-                                        <table border="1" id="example" class="display table table-bordered" style="width:100%">
+                                    <div class="col-xxl-12 col-md-12">
+                                        <div class="table-responsive">
+                                            <table border="1" id="exampleEducationalRequirement" class="display table table-bordered" style="width:100%">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Qualification</th>
+                                                        <th>Passing Year</th>
+                                                        <th>Board</th>
+                                                        <th>Percentage(%)</th>
+                                                        <th style="width:14%;">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @if (ViewBag.MainPowerDetails != null)
+                                                    {
+                                                        foreach (var Item in ViewBag.MainPowerDetails)
+                                                        {
+                                                            <tr>
+                                                                <td>@Item.Qualification</td>
+                                                                <td>@Item.PassingYear</td>
+                                                                <td>@Item.Board</td>
+                                                                <td>@Item.Percentage</td>
+                                                                <td><input type="button" onclick="Remove1(this);" value="Remove"></td>
+                                                            </tr>
+                                                        }
+                                                    }
+
+
+                                                </tbody>
+                                                <tfoot>
+                                                    <tr>
+                                                        <td><input type="text" name="Qualification" class="txtQualification form-control" placeholder="Qualification" id="Qualification" /></td>
+                                                        <td><input type="text" name="PassingYear" class="txtPassingYear form-control" placeholder="Passing Year" id="PassingYear" /></td>
+                                                        <td><input type="text" name="Board" class="txtBoard form-control" placeholder="Board" id="Board" /></td>
+                                                        <td><input type="text" name="Percentage" class="txtPercentage form-control" placeholder="Percentage(%)" id="Percentage" /></td>
+                                                        <td>
+                                                            <button type="button" id="btnAdd" class="btn btn-xs btn-primary classAdd" onclick="AddEducationalRequirement()">Add New Row</button>
+                                                        </td>
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="row gy-4">
+                            <fieldset style="margin-top:50px;padding-bottom:25px;" id="fieldsetCashAdvance">
+                                <legend style="background-color:#151529;" id="legendQualification">
+                                    Preferred Qualifications/Experience(Not Mentioned Above Or In The JD)
+                                </legend>
+
+                                <div class="table-responsive">
+                                    <table border="1" id="example" class="display table table-bordered" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>Preferred Qualification</th>
+                                                <th>Experience</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                @*<td><input type="text" name="PreferredQualification" class="txtPreferredQualification form-control" placeholder="Preferred Qualification" id="PreferredQualification" /></td>
+                                                    <td><input type="text" name="PreferredExperience" class="txtPreferredExperience form-control" placeholder="Experience" id="PreferredExperience" /></td>*@
+                                                <td>
+                                                    @Html.TextBoxFor(m => m.PreferredQualification, new { @class = "txtPreferredQualification form-control", @placeholder = "Preferred Qualification", tabindex = 17 })
+                                                </td>
+                                                <td>
+                                                    @Html.TextBoxFor(m => m.PreferredExperience, new { @class = "txtPreferredExperience form-control", @placeholder = "Experience", tabindex = 18 })
+                                                </td>
+                                            </tr>
+                                            @*<tr>
+                                                    <td><input type="text" name="PreferredQualification" class="txtPreferredQualification form-control" placeholder="Preferred Qualification" id="PreferredQualification" /></td>
+                                                    <td><input type="text" name="PreferredExperience" class="txtPreferredExperience form-control" placeholder="Experience" id="PreferredExperience" /></td>
+                                                </tr>*@
+                                        </tbody>
+                                    </table>
+
+                                    @*<table border="1" id="examplePreferredQualifications" class="display table table-bordered" style="width:100%">
                                             <thead>
                                                 <tr>
                                                     <th style=" width: 1%;">S.N.</th>
@@ -495,30 +612,57 @@
                                                     <th>Experience</th>
                                                 </tr>
                                             </thead>
-                                            <tbody id="tBodyId">
+                                            <tbody>
                                                 <tr>
-                                                    <td>1</td>
-                                                    <td><input type="text" class="form-control" placeholder="Preferred Qualification" /></td>
-                                                    <td><input type="text" class="form-control" placeholder="Experience" /></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>2</td>
-                                                    <td><input type="text" class="form-control" placeholder="Preferred Qualification" /></td>
-                                                    <td><input type="text" class="form-control" placeholder="Experience" /></td>
+
+                                                    <td><input type="text" name="PreferredQualification" class="txtPreferredQualification form-control" placeholder="Preferred Qualification" id="PreferredQualificationId" /></td>
+                                                    <td><input type="text" name="PreferredExperience" class="txtPreferredExperience form-control" placeholder="Experience" id="PreferredExperienceId" /></td>
+                                                    <td>
+                                                        <button type="button" id="btnAdd" class="btn btn-xs btn-primary classAdd" onclick="Add()">Add New Row</button>
+                                                    </td>
                                                 </tr>
                                             </tbody>
-                                        </table>
-                                    </div>
+                                        </table>*@
                                 </div>
+
+                                @*<div class="row gy-4">
+                                        <div class="col-xxl-12 col-md-12">
+                                            <div class="table-responsive">
+                                                <table border="1" id="examplePreferredQualifications" class="display table table-bordered" style="width:100%">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Preferred Qualification</th>
+                                                            <th>Experience</th>
+                                                            <th style="width:14%;">Action</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <td> <input type="text" name="PreferredQualification" class="txtPreferredQualification form-control" id="PreferredQualification" /> </td>
+                                                            <td>
+                                                                <input type="text" name="PreferredExperience" class="txtPreferredExperience form-control" id="PreferredExperience" />
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" id="btnAdd" class="btn btn-xs btn-primary classAdd" onclick="AddPreferredQualifications()">Add New Row</button>
+                                                            </td>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>*@
                             </fieldset>
                         </div>
+
                     </div>
                 </div>
                 <br />
                 <div class="col-xxl-12 col-md-12">
                     <div class="form-floating" style="float: right; padding-right: 2%;">
-                        <input type="button" value="Save" id="btnsave" class="btn btn-primary" />
-                        <a href="/HRMS_Employee/Employee" class="btn btn-danger">Reset</a>
+                        <input type="button" value="@ViewBag.ButtonText" id="btnsave" class="btn btn-primary" />
+                        <a href="/HR_MainPowerRequisition/MainPowerRequisition" class="btn btn-danger">Reset</a>
                     </div>
                 </div>
                 <br />
@@ -546,12 +690,47 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="~/MyApp/AddONS.js"></script>
+<script src="~/MyApp/HR_MainPowerRequisition.js"></script>
 
 <script>
     $(document).ready(function () {
+        vouchernew();
+    });
+    function vouchernew() {
+        debugger;
+        $.ajax({
+            type: 'POST',
+            url: '/HR_MainPowerRequisition/GetMaxVoucher',
+            data: "{}",
+            dataType: "json",
+            success: function (result) {
+                $.each(result, function (i, v) {
 
-    })
+                    if ($("#Idincrept").val() != 0) {
+                        $("#VoucherNo").val($("#hdfVoucherNo").val());
+                    }
+                    else {
+                        var i = 'MPRV-' + v.MaxID;
+                        $("#VoucherNo").val(i);
+                    }
+
+                    //var i = 'MPRV-' + v.MaxID;
+                    //$("#VoucherNo").val(i);
+                })
+            }
+        })
+    }
 </script>
+
+<style>
+    .errortext {
+        border: 1px solid red !important;
+        background-color: #fff0f0 !important;
+    }
+</style>
+
+
+
 
 
 

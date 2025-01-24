@@ -1,4 +1,4 @@
-﻿@model List<MassAutoGarage.Models.HRMS_EmployeeDocuments.HRMSEmployeeDocumentsModel>
+﻿@model List<MassAutoGarage.Models.HR_TourIntimation.HR_TourIntimationModel>
 
 @{
     ViewBag.Title = "Tour Intimation List";
@@ -92,58 +92,52 @@
                         <thead>
                             <tr>
                                 <th style=" width: 1%;">S.N.</th>
-                                <th>Name</th>
-                                <th>Date</th>
+                                <th>Voucher No</th>
+                                <th>Employee Name</th>
                                 <th>Designation</th>
-                                <th>Branch</th>
-                                <th>Department</th>
-                                <th>EmpId</th>
+                                <th>Tour Destination</th>
+                                <th>Travel Mode</th>
+                                <th>Start Date</th>
+                                <th>Return Date</th>
+                                <th>Purpose Of Tour</th>
+                                <th>Details</th>
+                                <th>Suggest Replacement</th>
+                                <th>Acknowledgement</th>
+                                <th>Cash Advance Amt</th>
                                 <th style="width:20%;">Action</th>
                             </tr>
                         </thead>
                         <tbody id="tBodyId">
 
-                            @*@foreach (var item in Model)
+                            @foreach (var item in Model)
                                 {
                                     <tr>
                                         <td data-th="Srl.No.">@i</td>
-                                        <td data-th="Srl.No.">@item.BranchName</td>
+                                        <td data-th="Srl.No.">@item.VoucherNo</td>
                                         <td data-th="Code">@item.EmployeeName</td>
-                                        <td data-th="Color Code">
-                                            <a href="@item.files" class="btn btn-sm btn-success edit-item-btn" tabindex="6">Download <i class="fa fa-edit"></i></a>
-                                        </td>
-                                        <td data-th="Color Code">
-                                            <a href="@item.EmirateFile" class="btn btn-sm btn-success edit-item-btn" tabindex="6">Download <i class="fa fa-edit"></i></a>
-                                        </td>
-                                        <td data-th="Color Code">
-                                            <a href="@item.PassportFile" class="btn btn-sm btn-success edit-item-btn" tabindex="6">Download <i class="fa fa-edit"></i></a>
-                                        </td>
-                                        <td data-th="Color Code">
-                                            <a href="@item.VisaFile" class="btn btn-sm btn-success edit-item-btn" tabindex="6">Download <i class="fa fa-edit"></i></a>
-                                        </td>
-                                        <td data-th="Color Code">
-                                            <a href="@item.InsuranceFile" class="btn btn-sm btn-success edit-item-btn" tabindex="6">Download <i class="fa fa-edit"></i></a>
-                                        </td>
-                                        <td data-th="Color Code">
-                                            <a href="@item.EmpCardFile" class="btn btn-sm btn-success edit-item-btn" tabindex="6">Download <i class="fa fa-edit"></i></a>
-                                        </td>
-
+                                        <td data-th="Code">@item.Designation</td>
+                                        <td data-th="Code">@item.TourDestination</td>
+                                        <td data-th="Code">@item.TravelModeID</td>
+                                        <td data-th="Code">@item.StartDate</td>
+                                        <td data-th="Code">@item.ReturnDate</td>
+                                        <td data-th="Code">@item.PurposeOfTour</td>
+                                        <td data-th="Code">@item.Details</td>
+                                        <td data-th="Code">@item.SuggestReplacement</td>
+                                        <td data-th="Code">@item.Acknowledgement</td>
+                                        <td data-th="Code">@item.CashAdvanceAmt</td>
                                         <td data-th="Action">
-
                                             <div class="d-flex gap-2">
                                                 <div class="edit">
-
-                                                    <a href="/HRMS_EmployeeDocuments/EmployeeDocuments?Id=@item.EmpDocId" class="btn btn-sm btn-success edit-item-btn" tabindex="6">Edit <i class="fa fa-edit"></i></a>
+                                                    <a href="/HR_TourIntimation/TourIntimation?Id=@item.Idincrept" class="btn btn-sm btn-success edit-item-btn" tabindex="6">Edit <i class="fa fa-edit"></i></a>
                                                 </div>
                                                 <div class="remove">
-                                                    <a href="javascript:void(0)" onclick="return DeleteEmployeeDocuments('@item.EmpDocId')" class="btn btn-sm btn-danger remove-item-btn">Delete <i class="fa fa-trash" aria-hidden="true"></i></a>
-
+                                                    <a href="javascript:void(0)" onclick="return DeleteTourIntimation('@item.Idincrept')" class="btn btn-sm btn-danger remove-item-btn">Delete <i class="fa fa-trash" aria-hidden="true"></i></a>
                                                 </div>
                                             </div>
                                         </td>
                                     </tr>
                                     i++;
-                                }*@
+                                }
                         </tbody>
                     </table>
                 </div>
@@ -168,7 +162,7 @@
     <!-- App js -->
     <script src="~/assets/js/app.js"></script>
 }
-
+<script src="~/MyApp/HR_TourIntimation.js"></script>
 <script>
     $(document).ready(function () {
     })
@@ -186,12 +180,23 @@
                     queryString[key] = value;
                 }
             }
+
             $('#txtsearch').val(queryString[key]);
         }
     });
+
     $('#txtsearch').change(function () {
+
         searchfromDB();
     });
+
+    function searchfromDB() {
+        debugger;
+
+        var SearchKey = $('#txtsearch').val();
+        var url = "/HR_TourIntimation/TourIntimationList?Key=" + SearchKey;
+        window.location.href = url;
+    }
 </script>
 
 

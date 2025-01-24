@@ -40,12 +40,89 @@
 
     legend {
         float: none;
-        width: 29%;
+        width: 40%;
         background-color: #bbb1b1;
         color: white;
         padding: 5px 10px;
         font-size: small;
         margin-bottom: 20px;
+    }
+
+
+
+    #fieldsetRequestFor {
+        border: solid;
+        border-color: #151529;
+        border-width: thin;
+    }
+
+    #legendRequestFor {
+        float: none;
+        width: 15%;
+        background-color: #bbb1b1;
+        color: white;
+        padding: 5px 10px;
+        font-size: small;
+    }
+
+    #fieldsetCertificate {
+        border: solid;
+        border-color: #151529;
+        border-width: thin;
+    }
+
+    #legendCertificate {
+        float: none;
+        width: 13%;
+        background-color: #bbb1b1;
+        color: white;
+        padding: 4px 9px;
+        font-size: small;
+    }
+
+    #fieldsetCashAdvance {
+        border: solid;
+        border-color: #151529;
+        border-width: thin;
+    }
+
+    #legendCashAdvance {
+        float: none;
+        width: 13%;
+        background-color: #bbb1b1;
+        color: white;
+        padding: 4px 9px;
+        font-size: small;
+    }
+
+    #fieldsetSalarySlips {
+        border: solid;
+        border-color: #151529;
+        border-width: thin;
+    }
+
+    #legendSalarySlips {
+        float: none;
+        width: 13%;
+        background-color: #bbb1b1;
+        color: white;
+        padding: 4px 9px;
+        font-size: small;
+    }
+
+    #fieldsetOthers {
+        border: solid;
+        border-color: #151529;
+        border-width: thin;
+    }
+
+    #legendOthers {
+        float: none;
+        width: 13%;
+        background-color: #bbb1b1;
+        color: white;
+        padding: 4px 9px;
+        font-size: small;
     }
 </style>
 
@@ -93,36 +170,9 @@
                                 <th style=" width: 1%;">S.N.</th>
                                 <th>Voucher No.</th>
                                 <th>Emp Name</th>
-                                @*<th>Date</th>*@
                                 <th>Designation</th>
                                 <th>Branch Name</th>
-                                @*<th>Department Name</th>*@
                                 <th>EmpId</th>
-                                <th>Salary Certificate</th>
-                                <th>Salary Transfer Letter</th>
-                                @*<th>NOC</th>
-                                <th>Experience Certificate</th>
-                                <th>Bank/Establishment</th>
-                                <th>AcctNo/IBANNo</th>
-                                <th>Opne New Bank Acct</th>
-                                <th>Transfer Loan To Other Bank</th>
-                                <th>Personal Loan</th>
-                                <th>NOC To Embassy</th>
-                                <th>Confirmation Lettr To Bank</th>
-                                <th>Loan TopUp</th>
-                                <th>Others</th>
-                                <th>Cash Advance</th>
-                                <th>Initial NewEmp</th>
-                                <th>Against</th>
-                                <th>Behalf Of Against</th>
-                                <th>Reason</th>
-                                <th>Monthly Deduction</th>
-                                <th>Salary Slips 3 Months</th>
-                                <th>Salary Slips 6 Months</th>
-                                <th>Traffic Fine Deduction Amt</th>
-                                <th>Salary Card</th>*@
-                                @*<th>Employee Signature</th>*@
-                                @*<th>Mobile Number</th>*@
                                 <th style="width:20%;">Action</th>
                             </tr>
                         </thead>
@@ -134,52 +184,16 @@
                                     <td data-th="Srl.No.">@i</td>
                                     <td data-th="Code">@item.VoucherNumber</td>
                                     <td data-th="Code">@item.EmployeeName</td>
-                                    @*<td data-th="Code">@item.Date</td>*@
                                     <td data-th="Code">@item.Designation</td>
                                     <td data-th="Code">@item.BranchName</td>
-                                    @*<td data-th="Code">@item.DepartmentName</td>*@
                                     <td data-th="Code">@item.EmpId</td>
-                                    <td data-th="Code">@item.SalaryCertificate</td>
-                                    <td data-th="Code">@item.SalaryTransferLetter</td>
-                                    @*<td data-th="Code">@item.NOC</td>
-                                    <td data-th="Code">@item.ExperienceCertificate</td>
-                                    <td data-th="Code">@item.BankEstablishment</td>
-                                    <td data-th="Code">@item.AcctNoIBANNo</td>
-                                    <td data-th="Code">@item.OpneNewBankAcct</td>
-                                    <td data-th="Code">@item.TransferLoanToOtherBank</td>
-                                    <td data-th="Code">@item.PersonalLoan</td>
-                                    <td data-th="Code">@item.NOCToEmbassy</td>
-                                    <td data-th="Code">@item.ConfirmationLettrToBank</td>
-                                    <td data-th="Code">@item.LoanTopUp</td>
-                                    <td data-th="Code">@item.Others</td>
-                                    <td data-th="Code">@item.CashAdvance</td>
-                                    <td data-th="Code">@item.InitialNewEmp</td>
-                                    <td data-th="Code">@item.Against</td>
-                                    <td data-th="Code">@item.BehalfAgainst</td>
-                                    <td data-th="Code">@item.Reason</td>
-                                    <td data-th="Code">@item.MonthlyDeduction</td>
-                                    <td data-th="Code">@item.SalarySlips3Months</td>
-                                    <td data-th="Code">@item.SalarySlips6Months</td>
-                                    <td data-th="Code">@item.TrafficFineDeductionAmt</td>
-                                    <td data-th="Code">@item.SalaryCard</td>*@
-                                    @*<td data-th="Code">@item.EmpSignature</td>*@
-
-                                    @*<td data-th="Color Code">
-                                        <a href="@item.EmpSignature" class="btn btn-sm btn-success edit-item-btn" tabindex="6">Download <i class="fa fa-edit"></i></a>
-                                    </td>*@
-                                    @*<td data-th="Code">@item.MobileNumber</td>*@
-
-
-                                    @*<td data-th="Color Code">
-                                            <a href="@item.files" class="btn btn-sm btn-success edit-item-btn" tabindex="6">Download <i class="fa fa-edit"></i></a>
-                                        </td>*@
-
 
                                     <td data-th="Action">
-
                                         <div class="d-flex gap-2">
+                                            <div>
+                                                <a href="javascript:void(0)" onclick="return ViewGeneralRequestDetails('@item.Idincrept')" class="btn btn-sm btn-primary remove-item-btn">View <i class="fa fa-eye" aria-hidden="true"></i></a>
+                                            </div>
                                             <div class="edit">
-
                                                 <a href="/HR_GeneralRequest/GeneralRequest?Id=@item.Idincrept" class="btn btn-sm btn-success edit-item-btn" tabindex="6">Edit <i class="fa fa-edit"></i></a>
                                             </div>
                                             <div class="remove">
@@ -194,6 +208,219 @@
                         </tbody>
                     </table>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="GeneralRequestModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="GeneralRequestModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="GeneralRequestModalLabel"><strong>General Request Details</strong></h5>
+                <button type="button" class="btn-close btn btn-danger" data-bs-dismiss="modal" aria-label="Close" onclick="return RemoveTableRecords();"></button>
+            </div>
+            <div class="modal-body">
+                @*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*@
+
+                <div class="card-body">
+                    <div class="live-preview">
+                        <div class="row gy-4">
+                            <fieldset>
+                                <legend style="background-color:#0a0a0a ">( Please Fill In The Information Inside The Box And Line Provided )</legend>
+
+                                <div class="row gy-4" style="margin-bottom: 15px;">
+                                    <div class="col-xxl-3 col-md-3">
+                                        <label for="labelInput" class="form-label">Voucher Number<code>*</code></label>
+                                        <input type="text" id="txtVoucherNumber" class="form-control" readonly="readonly" />
+                                    </div>
+                                    <div class="col-xxl-3 col-md-3">
+                                        <label for="labelInput" class="form-label">Employee Name<code>*</code></label>
+                                        <input type="text" id="txtEmployeeName" class="form-control" readonly="readonly" />
+
+                                    </div>
+                                    <div class="col-xxl-3 col-md-3">
+                                        <label for="labelInput" class="form-label"> Date<code>*</code></label>
+                                        <input type="text" id="txtDate" class="form-control" readonly="readonly" />
+
+                                    </div>
+                                    <div class="col-xxl-3 col-md-3">
+                                        <label for="labelInput" class="form-label">Designation<code>*</code></label>
+                                        <input type="text" id="txtDesignation" class="form-control" readonly="readonly" />
+
+                                    </div>
+                                    <div class="col-xxl-3 col-md-3">
+                                        <label for="labelInput" class="form-label">Branch Name<code>*</code></label>
+                                        <input type="text" id="txtBranchName" class="form-control" readonly="readonly" />
+                                    </div>
+                                    <div class="col-xxl-3 col-md-3">
+                                        <label for="labelInput" class="form-label">Department Name<code>*</code></label>
+                                        <input type="text" id="txtDepartmentName" class="form-control" readonly="readonly" />
+                                    </div>
+                                    <div class="col-xxl-6 col-md-6">
+                                        <label for="labelInput" class="form-label">EmpId<code>*</code></label>
+                                        <input type="text" id="txtEmpId" class="form-control" readonly="readonly" />
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row gy-4">
+                    <fieldset style="margin-top:50px;" id="fieldsetRequestFor">
+                        <legend style="background-color:#151529;" id="legendRequestFor">Request For</legend>
+
+                        <fieldset style="margin-top:20px;" id="fieldsetCertificate">
+                            <legend style="background-color:#151529;" id="legendCertificate">1) Certificate</legend>
+
+                            <div class="row gy-4" style="margin-bottom: 15px; padding-left: 10px; padding-right: 10px;">
+                                <div class="col-xxl-3 col-md-3">
+                                    <label class="form-control">
+                                        <input type="checkbox" id="SalaryCertificate" tabindex=8 /> Salary Certificate
+                                    </label>
+                                </div>
+                                <div class="col-xxl-3 col-md-3">
+                                    <label class="form-control">
+                                        <input type="checkbox" id="SalaryTransferLetter" tabindex=9 /> Salary Transfer Letter
+                                    </label>
+                                </div>
+                                <div class="col-xxl-3 col-md-3">
+                                    <label class="form-control">
+                                        <input type="checkbox" id="NOC" tabindex=10 /> NOC
+                                    </label>
+                                </div>
+                                <div class="col-xxl-3 col-md-3">
+                                    <label class="form-control">
+                                        <input type="checkbox" id="ExperienceCertificate" tabindex=11 /> Experience Certificate
+                                    </label>
+                                </div>
+                                <div class="col-xxl-6 col-md-6" style="margin-top: 3px; padding-left:6px; padding-right: 16px;">
+                                    <label for="labelInput" class="form-label">Bank/Establishment<code>*</code></label>
+                                    <input type="text" id="txtBankEstablishment" class="form-control" readonly="readonly" />
+                                </div>
+                                <div class="col-xxl-6 col-md-6" style="margin-top: 3px; padding-left: 8px; padding-right:16px;">
+                                    <label for="labelInput" class="form-label">Acct No/IBAN No<code>*</code></label>
+                                    <input type="text" id="txtAcctNoIBANNo" class="form-control" readonly="readonly" />
+                                </div>
+                                <div class="col-xxl-3 col-md-3">
+                                    <label class="form-control">
+                                        <input type="checkbox" id="OpneNewBankAcct" tabindex=14 /> Opne New Bank Acct
+                                    </label>
+                                </div>
+                                <div class="col-xxl-3 col-md-3">
+                                    <label class="form-control">
+                                        <input type="checkbox" id="TransferLoanToOtherBank" tabindex=15 /> Transfer Loan To Other Bank
+                                    </label>
+                                </div>
+                                <div class="col-xxl-3 col-md-3">
+                                    <label class="form-control">
+                                        <input type="checkbox" id="PersonalLoan" tabindex=16 /> Personal Loan
+                                    </label>
+                                </div>
+                                <div class="col-xxl-3 col-md-3">
+                                    <label class="form-control">
+                                        <input type="checkbox" id="NOCToEmbassy" tabindex=17 /> NOC To Embassy
+                                    </label>
+                                </div>
+                                <div class="col-xxl-3 col-md-3">
+                                    <label class="form-control">
+                                        <input type="checkbox" id="ConfirmationLettrToBank" tabindex=18 /> Confirmation Letter To Bank
+                                    </label>
+                                </div>
+                                <div class="col-xxl-3 col-md-3">
+                                    <label class="form-control">
+                                        <input type="checkbox" id="LoanTopUp" tabindex=19 /> Loan Top Up
+                                    </label>
+                                </div>
+                                <div class="col-xxl-6 col-md-6">
+                                    <label class="form-control">
+                                        <input type="checkbox" id="Others" tabindex=20 /> Others
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset style="margin-top:20px;" id="fieldsetCashAdvance">
+                            <legend style="background-color:#151529;" id="legendCashAdvance">2) Cash Advance</legend>
+                            <div class="row gy-4" style="margin-bottom: 15px; padding-left: 10px; padding-right: 10px;">
+                                <div class="col-xxl-3 col-md-3">
+                                    <label for="labelInput" class="form-label">Cash Advance<code>*</code></label>
+                                    <input type="text" id="txtCashAdvance" class="form-control" readonly="readonly" />
+                                </div>
+                                <div class="col-xxl-3 col-md-3" style="margin-top:55px;">
+                                    <label class="form-control">
+                                        <input type="checkbox" id="InitialNewEmp" tabindex=22 /> Initial - New Employee
+                                    </label>
+                                </div>
+                                <div class="col-xxl-3 col-md-3" style="margin-top:55px;">
+                                    <label class="form-control">
+                                        <input type="checkbox" id="Against" tabindex=23 /> Against
+                                    </label>
+                                </div>
+                                <div class="col-xxl-3 col-md-3" style="margin-top:30px;" id="myDiv">
+                                    <label for="labelInput" class="form-label mt-2"><code></code></label>
+                                    <input type="text" id="txtBehalfAgainst" class="form-control" readonly="readonly" />
+                                </div>
+
+                                <div class="col-xxl-6 col-md-6" style="margin-top:3px;">
+                                    <label for="labelInput" class="form-label">Reason<code>*</code></label>
+                                    <input type="text" id="txtReason" class="form-control" readonly="readonly" />
+                                </div>
+                                <div class="col-xxl-6 col-md-6" style="margin-top:3px;">
+                                    <label for="labelInput" class="form-label">Monthly Deduction<code>*</code></label>
+                                    <input type="text" id="txtMonthlyDeduction" class="form-control" readonly="readonly" />
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset style="margin-top:20px;" id="fieldsetSalarySlips">
+                            <legend style="background-color:#151529;" id="legendSalarySlips">3) Salary Slips</legend>
+                            <div class="row gy-4" style="margin-bottom:15px;padding-left:10px;padding-right:10px;">
+                                <div class="col-xxl-6 col-md-6">
+                                    <label class="form-control">
+                                        <input type="checkbox" id="SalarySlips3Months" tabindex=27 /> 3 Months
+                                    </label>
+                                </div>
+                                <div class="col-xxl-6 col-md-6">
+                                    <label class="form-control">
+                                        <input type="checkbox" id="SalarySlips6Months" tabindex=28 /> 6 Months
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset style="margin-top:20px;margin-bottom:30px;" id="fieldsetOthers">
+                            <legend style="background-color:#151529;" id="legendOthers">4) Others</legend>
+                            <div class="row gy-4" style="margin-bottom: 15px; padding-left: 10px; padding-right: 10px;">
+                                <div class="col-xxl-6 col-md-6">
+                                    <label for="labelInput" class="form-label">Traffic Fine Deduction-Amount<code>*</code></label>
+                                    <input type="text" id="txtTrafficFineDeductionAmt" class="form-control" readonly="readonly" />
+                                </div>
+                                <div class="col-xxl-6 col-md-6" style="padding-top:10px;">
+                                    <label for="labelInput" class="form-label"></label>
+                                    <label class="form-control">
+                                        <input type="checkbox" id="SalaryCard" tabindex=30 /> Salary Card
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <div class="row gy-4" style="margin-bottom: 15px; padding-left: 10px; padding-right: 10px;">
+                            <div class="col-xxl-6 col-md-6" style="padding-left: 10px; padding-right:15px;">
+                                <label for="labelInput" class="form-label">Mobile Number<code>*</code></label>
+                                <input type="text" id="txtMobileNumber" class="form-control" readonly="readonly" />
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                @*<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>*@
             </div>
         </div>
     </div>

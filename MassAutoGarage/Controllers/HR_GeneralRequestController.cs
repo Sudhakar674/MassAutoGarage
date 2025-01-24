@@ -18,6 +18,8 @@ using System.IO;
 using MassAutoGarage.Models.HRMS_OverTime;
 using MassAutoGarage.Models.HRMS_EmployeeDocuments;
 using NPOI.SS.Formula.Functions;
+using Microsoft.VisualStudio.Services.Common;
+using Org.BouncyCastle.Ocsp;
 
 namespace MassAutoGarage.Controllers
 {
@@ -407,6 +409,55 @@ namespace MassAutoGarage.Controllers
             return Json(model, JsonRequestBehavior.AllowGet);
         }
 
+
+
+
+        public ActionResult ViewGeneralRequestDetails(string Id)
+        {
+
+            if (Id != null)
+            {
+                model.Idincrept = objcls.Decrypt(Id);
+                model.QueryType = "39";
+                var lst = DL.GetGeneralRequestDetaildById(model).FirstOrDefault();
+                if (lst != null)
+                {
+                    model.Result = "yes";
+                    model.VoucherNumber = lst.VoucherNumber;
+                    model.EmployeeName = lst.EmployeeName;
+                    model.Date = lst.Date;
+                    model.Designation = lst.Designation;
+                    model.BranchName = lst.BranchName;
+                    model.DepartmentName = lst.DepartmentName;
+                    model.EmpId = lst.EmpId;
+                    model.SalaryCertificate = lst.SalaryCertificate;
+                    model.SalaryTransferLetter = lst.SalaryTransferLetter;
+                    model.NOC = lst.NOC;
+                    model.ExperienceCertificate = lst.ExperienceCertificate;
+                    model.BankEstablishment = lst.BankEstablishment;
+                    model.AcctNoIBANNo = lst.AcctNoIBANNo;
+                    model.OpneNewBankAcct = lst.OpneNewBankAcct;
+                    model.TransferLoanToOtherBank = lst.TransferLoanToOtherBank;
+                    model.PersonalLoan = lst.PersonalLoan;
+                    model.NOCToEmbassy = lst.NOCToEmbassy;
+                    model.ConfirmationLettrToBank = lst.ConfirmationLettrToBank;
+                    model.LoanTopUp = lst.LoanTopUp;
+                    model.Others = lst.Others;
+                    model.CashAdvance = lst.CashAdvance;
+                    model.InitialNewEmp = lst.InitialNewEmp;
+                    model.Against = lst.Against;
+                    model.BehalfAgainst = lst.BehalfAgainst;
+                    model.Reason = lst.Reason;
+                    model.MonthlyDeduction = lst.MonthlyDeduction;
+                    model.SalarySlips3Months = lst.SalarySlips3Months;
+                    model.SalarySlips6Months = lst.SalarySlips6Months;
+                    model.TrafficFineDeductionAmt = lst.TrafficFineDeductionAmt;
+                    model.SalaryCard = lst.SalaryCard;
+                    model.MobileNumber = lst.MobileNumber;
+                }
+            }
+            return Json(model, JsonRequestBehavior.AllowGet);
+        }
 
 
 

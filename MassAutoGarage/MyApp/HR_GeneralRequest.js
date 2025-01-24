@@ -372,3 +372,156 @@ function DeleteGeneralRequest(Id) {
     }
 
 }
+
+
+
+function ViewGeneralRequestDetails(Id) {
+    debugger;
+    $.ajax({
+        type: "Get",
+        url: "/HR_GeneralRequest/ViewGeneralRequestDetails",
+        data: { Id: Id },
+        dataType: "json",
+        success: function (data) {
+            debugger;
+            if (data.Result == "yes") {
+                $("#txtVoucherNumber").val(data.VoucherNumber);
+                $("#txtEmployeeName").val(data.EmployeeName);
+                $("#txtDate").val(data.Date);
+                $("#txtRequiredDate").val(data.RequiredDate);
+                $("#txtDesignation").val(data.Designation);
+                $("#txtBranchName").val(data.BranchName);
+                $("#txtDepartmentName").val(data.DepartmentName);
+                $("#txtEmpId").val(data.EmpId);
+                $("#txtSalaryCertificate").val(data.SalaryCertificate);
+                $("#txtSalaryTransferLetter").val(data.SalaryTransferLetter);
+                $("#txtNOC").val(data.NOC);
+                $("#txtExperienceCertificate").val(data.ExperienceCertificate);
+
+                if (data.SalaryCertificate == true) {
+                    $("#SalaryCertificate").prop("checked", true);             
+                }
+                else {
+                    $("#SalaryCertificate").prop("checked", false);
+                }
+
+                if (data.SalaryTransferLetter == true) {
+                    $("#SalaryTransferLetter").prop("checked", true);
+                }
+                else {
+                    $("#SalaryTransferLetter").prop("checked", false);
+                }
+                if (data.NOC == true) {
+                    $("#NOC").prop("checked", true);
+                }
+                else {
+                    $("#NOC").prop("checked", false);
+                }
+                if (data.ExperienceCertificate == true) {
+                    $("#ExperienceCertificate").prop("checked", true);
+                }
+                else {
+                    $("#ExperienceCertificate").prop("checked", false);
+                }
+
+                $("#txtBankEstablishment").val(data.BankEstablishment);
+                $("#txtAcctNoIBANNo").val(data.AcctNoIBANNo);
+                $("#txtOpneNewBankAcct").val(data.OpneNewBankAcct);
+                $("#txtTransferLoanToOtherBank").val(data.TransferLoanToOtherBank);
+                $("#txtPersonalLoan").val(data.PersonalLoan);
+                
+
+                if (data.OpneNewBankAcct == true) {
+                    $("#OpneNewBankAcct").prop("checked", true);
+                }
+                else {
+                    $("#OpneNewBankAcct").prop("checked", false);
+                }
+                if (data.TransferLoanToOtherBank == true) {
+                    $("#TransferLoanToOtherBank").prop("checked", true);
+                }
+                else {
+                    $("#TransferLoanToOtherBank").prop("checked", false);
+                }
+                if (data.PersonalLoan == true) {
+                    $("#PersonalLoan").prop("checked", true);
+                }
+                else {
+                    $("#PersonalLoan").prop("checked", false);
+                }
+                if (data.NOCToEmbassy == true) {
+                    $("#NOCToEmbassy").prop("checked", true);
+                }
+                else {
+                    $("#NOCToEmbassy").prop("checked", false);
+                }
+                if (data.ConfirmationLettrToBank == true) {
+                    $("#ConfirmationLettrToBank").prop("checked", true);
+                }
+                else {
+                    $("#ConfirmationLettrToBank").prop("checked", false);
+                }
+                if (data.LoanTopUp == true) {
+                    $("#LoanTopUp").prop("checked", true);
+                }
+                else {
+                    $("#LoanTopUp").prop("checked", false);
+                }
+                if (data.Others == true) {
+                    $("#Others").prop("checked", true);
+                }
+                else {
+                    $("#Others").prop("checked", false);
+                }
+
+                $("#txtCashAdvance").val(data.CashAdvance);
+
+                if (data.InitialNewEmp == true) {
+                    $("#InitialNewEmp").prop("checked", true);
+                }
+                else {
+                    $("#InitialNewEmp").prop("checked", false);
+                }
+                if (data.Against == true) {
+                    $("#Against").prop("checked", true);
+                }
+                else {
+                    $("#Against").prop("checked", false);
+                }
+                $("#txtBehalfAgainst").val(data.BehalfAgainst);
+             
+                
+                $("#txtReason").val(data.Reason);
+                $("#txtMonthlyDeduction").val(data.MonthlyDeduction);
+
+                if (data.SalarySlips3Months == true) {
+                    $("#SalarySlips3Months").prop("checked", true);
+                }
+                else {
+                    $("#SalarySlips3Months").prop("checked", false);
+                }
+                if (data.SalarySlips6Months == true) {
+                    $("#SalarySlips6Months").prop("checked", true);
+                }
+                else {
+                    $("#SalarySlips6Months").prop("checked", false);
+                }
+                $("#txtTrafficFineDeductionAmt").val(data.TrafficFineDeductionAmt);
+              
+                if (data.SalaryCard == true) {
+                    $("#SalaryCard").prop("checked", true);
+                }
+                else {
+                    $("#SalaryCard").prop("checked", false);
+                }
+
+                $("#txtMobileNumber").val(data.MobileNumber);
+            }
+            else {
+                alert("Something went wrong.");
+            }
+        }
+    });
+    $("#GeneralRequestModal").modal('show');
+}
+
