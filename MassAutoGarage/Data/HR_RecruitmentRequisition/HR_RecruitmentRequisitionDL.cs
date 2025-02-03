@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using MassAutoGarage.DBContext;
+using MassAutoGarage.Models.HR_FinalClearanceReport;
 using MassAutoGarage.Models.HR_GeneralRequest;
 using MassAutoGarage.Models.HR_RecruitmentRequisition;
 using System;
@@ -122,6 +123,25 @@ namespace MassAutoGarage.Data.HR_RecruitmentRequisition
                 throw;
             }
         }
+
+
+        public List<HR_RecruitmentRequisitionModel> GetRecruitmentRequisitionDetailsById(string Querytype, string Id)
+        {
+            List<HR_RecruitmentRequisitionModel> obj = new List<HR_RecruitmentRequisitionModel>();
+            try
+            {
+                var perm = new DynamicParameters();
+                perm.Add("@QueryType", Querytype);
+                perm.Add("@ID", Id);
+                obj = DBHelperDapper.DAAddAndReturnModelList<HR_RecruitmentRequisitionModel>("USP_HR_RecruitmentRequisitionForm", perm);
+                return obj;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
 
 
     }

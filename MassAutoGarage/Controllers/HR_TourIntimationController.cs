@@ -260,5 +260,40 @@ namespace MassAutoGarage.Controllers
 
 
 
+        public ActionResult ViewTourIntimation(string Id)
+        {
+
+            if (Id != null)
+            {
+                Id = objcls.Decrypt(Id);
+                var lst = DL.GetTourIntimationDetailsById("38", Id).FirstOrDefault();
+                if (lst != null)
+                {
+                    model.Result = "yes";
+                    model.VoucherNo = lst.VoucherNo;
+                    model.EmployeeName = lst.EmployeeName;
+                    model.Designation = lst.Designation;
+                    model.TourDestination = lst.TourDestination;
+                    model.TravelMode = lst.TravelMode;
+                    model.StartDate = lst.StartDate;
+                    model.ReturnDate = lst.ReturnDate;
+                    model.PurposeOfTour = lst.PurposeOfTour;
+                    model.Details = lst.Details;
+                    model.SuggestReplacement = lst.SuggestReplacement;
+                    model.Acknowledgement = lst.Acknowledgement;
+                    model.VisaSingleEntry = lst.VisaSingleEntry;
+                    model.VisaMultipleEntry = lst.VisaMultipleEntry;
+                    model.HotelEconomic = lst.HotelEconomic;
+                    model.PassportRelease = lst.PassportRelease;
+                    model.TravelInsuranceYes = lst.TravelInsuranceYes;
+                    model.TravelInsuranceNo = lst.TravelInsuranceNo;
+                    model.CashAdvanceAmt = lst.CashAdvanceAmt;
+                }
+            }
+            return Json(model, JsonRequestBehavior.AllowGet);
+        }
+
+
+
     }
 }

@@ -3,6 +3,7 @@ using DocumentFormat.OpenXml.Bibliography;
 using MassAutoGarage.DBContext;
 using MassAutoGarage.Models.HR_FinalClearanceReport;
 using MassAutoGarage.Models.HR_GeneralRequest;
+using MassAutoGarage.Models.HR_MainPowerRequisition;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -174,6 +175,26 @@ namespace MassAutoGarage.Data.HR_FinalClearanceReport
                 throw;
             }
         }
+
+
+        public List<HR_FinalClearanceReportModel> GetFinalClearanceReportDetailsById(string Querytype, string Id)
+        {
+            List<HR_FinalClearanceReportModel> obj = new List<HR_FinalClearanceReportModel>();
+            try
+            {
+                var perm = new DynamicParameters();
+                perm.Add("@QueryType", Querytype);
+                perm.Add("@ID", Id);
+                obj = DBHelperDapper.DAAddAndReturnModelList<HR_FinalClearanceReportModel>("USP_HR_FinalClearanceReportForm", perm);
+                return obj;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
 
     }
 }

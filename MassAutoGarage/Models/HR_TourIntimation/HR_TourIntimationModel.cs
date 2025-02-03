@@ -20,6 +20,7 @@ namespace MassAutoGarage.Models.HR_TourIntimation
         public string DepartmentName { get; set; }
         public string TourDestination { get; set; }
         public string TravelModeID { get; set; }
+        public string TravelMode { get; set; }
         public string StartDate { get; set; }
         public string ReturnDate { get; set; }
         public string PurposeOfTour { get; set; }

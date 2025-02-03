@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using MassAutoGarage.DBContext;
+using MassAutoGarage.Models.HR_FinalClearanceReport;
 using MassAutoGarage.Models.HR_GeneralRequest;
 using MassAutoGarage.Models.HR_LeaveRequest;
 using System;
@@ -217,6 +218,31 @@ namespace MassAutoGarage.Data.HR_LeaveRequest
                 throw;
             }
         }
+
+
+
+        public List<HR_LeaveRequestModel> GetLeaveRequestDetailsById(string Querytype, string Id)
+        {
+            List<HR_LeaveRequestModel> obj = new List<HR_LeaveRequestModel>();
+            try
+            {
+                var perm = new DynamicParameters();
+                perm.Add("@QueryType", Querytype);
+                perm.Add("@ID", Id);
+                obj = DBHelperDapper.DAAddAndReturnModelList<HR_LeaveRequestModel>("USP_HR_LeaveRequestMaster", perm);
+                return obj;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+
+
+
+
 
     }
 }

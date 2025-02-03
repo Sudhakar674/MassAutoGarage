@@ -99,45 +99,38 @@
                                 <th>Travel Mode</th>
                                 <th>Start Date</th>
                                 <th>Return Date</th>
-                                <th>Purpose Of Tour</th>
-                                <th>Details</th>
-                                <th>Suggest Replacement</th>
-                                <th>Acknowledgement</th>
-                                <th>Cash Advance Amt</th>
                                 <th style="width:20%;">Action</th>
                             </tr>
                         </thead>
                         <tbody id="tBodyId">
 
                             @foreach (var item in Model)
-                                {
-                                    <tr>
-                                        <td data-th="Srl.No.">@i</td>
-                                        <td data-th="Srl.No.">@item.VoucherNo</td>
-                                        <td data-th="Code">@item.EmployeeName</td>
-                                        <td data-th="Code">@item.Designation</td>
-                                        <td data-th="Code">@item.TourDestination</td>
-                                        <td data-th="Code">@item.TravelModeID</td>
-                                        <td data-th="Code">@item.StartDate</td>
-                                        <td data-th="Code">@item.ReturnDate</td>
-                                        <td data-th="Code">@item.PurposeOfTour</td>
-                                        <td data-th="Code">@item.Details</td>
-                                        <td data-th="Code">@item.SuggestReplacement</td>
-                                        <td data-th="Code">@item.Acknowledgement</td>
-                                        <td data-th="Code">@item.CashAdvanceAmt</td>
-                                        <td data-th="Action">
-                                            <div class="d-flex gap-2">
-                                                <div class="edit">
-                                                    <a href="/HR_TourIntimation/TourIntimation?Id=@item.Idincrept" class="btn btn-sm btn-success edit-item-btn" tabindex="6">Edit <i class="fa fa-edit"></i></a>
-                                                </div>
-                                                <div class="remove">
-                                                    <a href="javascript:void(0)" onclick="return DeleteTourIntimation('@item.Idincrept')" class="btn btn-sm btn-danger remove-item-btn">Delete <i class="fa fa-trash" aria-hidden="true"></i></a>
-                                                </div>
+                            {
+                                <tr>
+                                    <td data-th="Srl.No.">@i</td>
+                                    <td data-th="Srl.No.">@item.VoucherNo</td>
+                                    <td data-th="Code">@item.EmployeeName</td>
+                                    <td data-th="Code">@item.Designation</td>
+                                    <td data-th="Code">@item.TourDestination</td>
+                                    <td data-th="Code">@item.TravelModeID</td>
+                                    <td data-th="Code">@item.StartDate</td>
+                                    <td data-th="Code">@item.ReturnDate</td>
+                                    <td data-th="Action">
+                                        <div class="d-flex gap-2">
+                                            <div>
+                                                <a href="javascript:void(0)" onclick="return ViewTourIntimation('@item.Idincrept')" class="btn btn-sm btn-primary remove-item-btn">View <i class="fa fa-eye" aria-hidden="true"></i></a>
                                             </div>
-                                        </td>
-                                    </tr>
-                                    i++;
-                                }
+                                            <div class="edit">
+                                                <a href="/HR_TourIntimation/TourIntimation?Id=@item.Idincrept" class="btn btn-sm btn-success edit-item-btn" tabindex="6">Edit <i class="fa fa-edit"></i></a>
+                                            </div>
+                                            <div class="remove">
+                                                <a href="javascript:void(0)" onclick="return DeleteTourIntimation('@item.Idincrept')" class="btn btn-sm btn-danger remove-item-btn">Delete <i class="fa fa-trash" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                i++;
+                            }
                         </tbody>
                     </table>
                 </div>
@@ -145,6 +138,147 @@
         </div>
     </div>
 </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="TourIntimationModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="TourIntimationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="TourIntimationModalLabel"><strong>Tour Intimation Details</strong></h5>
+                <button type="button" class="btn-close btn btn-danger" data-bs-dismiss="modal" aria-label="Close" onclick="return RemoveTableRecords();"></button>
+            </div>
+            <div class="modal-body">
+
+
+                <div class="card-body">
+                    <div class="live-preview">
+                        <div class="row gy-4">
+                            <fieldset>
+                                <legend style="background-color:#151529">Tour Intimation Form</legend>
+                             
+                                <div class="row gy-4" style="margin-bottom:15px;">
+                                    <div class="col-xxl-4 col-md-4">
+                                        <label for="labelInput" class="form-label">VoucherNo</label>
+                                        <input type="text" id="txtVoucherNo" class="form-control" readonly="readonly" />
+                                    </div>
+
+                                    <div class="col-xxl-4 col-md-4">
+                                        <label for="labelInput" class="form-label">Employee Name <code>*</code></label>
+                                        <input type="text" id="txtEmployeeName" class="form-control" readonly="readonly" />
+                                    </div>
+
+                                    <div class="col-xxl-4 col-md-4">
+                                        <label for="labelInput" class="form-label">Designation<code>*</code></label>
+                                        <input type="text" id="txtDesignation" class="form-control" readonly="readonly" />
+                                    </div>
+
+                                    <div class="col-xxl-4 col-md-4">
+                                        <label for="labelInput" class="form-label">Tour Destination<code>*</code></label>
+                                        <input type="text" id="txtTourDestination" class="form-control" readonly="readonly" />
+                                    </div>
+                                    <div class="col-xxl-4 col-md-4">
+                                        <label for="labelInput" class="form-label">Travel Mode<code>*</code></label>
+                                        <input type="text" id="txtTravelMode" class="form-control" readonly="readonly" />
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="row gy-4">
+                            <fieldset style="margin-top:50px;">
+                                <legend style="background-color:#151529">Scheduled Travel Dates</legend>
+                                <div class="row gy-4" style="margin-bottom:15px;">
+                                    <div class="col-xxl-4 col-md-4">
+                                        <label for="labelInput" class="form-label">Start Date<code>*</code></label>
+                                        <input type="text" id="txtStartDate" class="form-control" readonly="readonly" />
+                                    </div>
+
+                                    <div class="col-xxl-4 col-md-4">
+                                        <label for="labelInput" class="form-label">Return Date<code>*</code></label>
+                                        <input type="text" id="txtReturnDate" class="form-control" readonly="readonly" />
+                                    </div>
+
+                                    <div class="col-xxl-4 col-md-4">
+                                        <label for="labelInput" class="form-label">Purpose Of Tour<code>*</code></label>
+                                        <input type="text" id="txtPurposeOfTour" class="form-control" readonly="readonly" />
+                                    </div>
+                                    <div class="col-xxl-6 col-md-6">
+                                        <label for="labelInput" class="form-label">Details<code>*</code></label>
+                                        <input type="text" id="txtDetails" class="form-control" readonly="readonly" />
+                                    </div>
+                                    <div class="col-xxl-6 col-md-6">
+                                        <label for="labelInput" class="form-label">Suggest Replacement/Handing Over To : (During Absence)<code>*</code></label>
+                                        <input type="text" id="txtSuggestReplacement" class="form-control" readonly="readonly" />
+                                    </div>
+                                    <div class="col-xxl-12 col-md-12">
+                                        <label for="labelInput" class="form-label">Acknowledgement Of Taking Over<code>*</code></label>
+                                        <input type="text" id="txtAcknowledgement" class="form-control" readonly="readonly" />
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="row gy-4">
+                            <fieldset style="margin-top:50px;">
+                                <legend style="background-color:#151529">PR/HR Assistance</legend>
+                                <div class="row gy-4" style="margin-bottom:15px;">
+                                    <h5 style="margin-top:40px;">Visa  Application :</h5>
+                                    <div class="col-xxl-6 col-md-6">
+                                        <label class="form-control">
+                                            <input type="checkbox" class="row-form" id="VisaSingleEntry" readonly="readonly"/> Single Entry
+                                        </label>
+                                    </div>
+                                    <div class="col-xxl-6 col-md-6">
+                                        <label class="form-control">
+                                            <input type="checkbox" class="row-form" id="VisaMultipleEntry" readonly="readonly" /> Multiple Entry
+                                        </label>
+                                    </div>
+                                    <div class="col-xxl-5 col-md-5">
+                                        <label class="form-control">
+                                            <input type="checkbox" class="row-form" id="HotelEconomic" readonly="readonly" />  Hoten(Economical)............Nights.
+                                        </label>
+                                    </div>
+                                    <div class="col-xxl-7 col-md-7">
+                                        <label class="form-control">
+                                            <input type="checkbox" class="row-form" id="PassportRelease" readonly="readonly" /> Passport Release:For Visa(Passport Release Form To Be Filled Separately)
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="row gy-4" style="margin-bottom:15px;">
+                                    <h5>Travel Insurance :</h5>
+                                    <div class="col-xxl-6 col-md-6">
+                                        <label class="form-control">
+                                            <input type="checkbox" class="row-form" id="TravelInsuranceYes" readonly="readonly" /> Yes
+                                        </label>
+                                    </div>
+                                    <div class="col-xxl-6 col-md-6">
+                                        <label class="form-control">
+                                            <input type="checkbox" class="row-form" id="TravelInsuranceNo" readonly="readonly" /> No
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="row gy-4" style="margin-bottom:15px;">
+                                    <h5>Accounts  Assistance :</h5>
+                                    <div class="col-xxl-12 col-md-12">
+                                        <label for="labelInput" class="form-label">Cash Advance Amount<code>*</code></label>
+                                        <input type="text" id="txtCashAdvanceAmt" class="form-control" readonly="readonly" />
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="modal-footer">
+                @*<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>*@
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 @section scripts{
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>

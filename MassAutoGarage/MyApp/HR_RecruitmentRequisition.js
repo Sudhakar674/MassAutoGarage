@@ -207,3 +207,48 @@ function DeleteRecruitmentRequisition(Id) {
     }
 
 }
+
+
+function ViewGetRecruitmentRequisition(Id) {
+    debugger;
+    $.ajax({
+        type: "Get",
+        url: "/HR_RecruitmentRequisition/ViewGetRecruitmentRequisition",
+        data: { Id: Id },
+        dataType: "json",
+        success: function (data) {
+            debugger;
+            if (data.Result === "yes") {
+                $("#txtVoucherNo").val(data.VoucherNo);
+                $("#txtFullName").val(data.FullName);
+                $("#txtDate").val(data.Date);
+                $("#txtExpectedSalary").val(data.ExpectedSalary);
+                $("#txtSalaryOffered").val(data.SalaryOffered);
+        
+                if (data.AdditionNew === true) {
+                    $("#AdditionNew").prop("checked", true);
+                }
+                else {
+                    $("#AdditionNew").prop("checked", false);
+                }
+                if (data.Budgeted === true) {
+                    $("#Budgeted").prop("checked", true);
+                }
+                else {
+                    $("#Budgeted").prop("checked", false);
+                }
+                if (data.Replacement === true) {
+                    $("#Replacement").prop("checked", true);
+                }
+                else {
+                    $("#Replacement").prop("checked", false);
+                }
+            }
+            else {
+                alert("Something went wrong.");
+            }
+        }
+    });
+
+    $("#RecruitmentRequisitionModal").modal('show');
+}

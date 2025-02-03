@@ -409,91 +409,113 @@ function DeleteLeaveRequest(Id) {
 
 
 
+function ViewLeaveRequest(Id) {
+    debugger;
+    $.ajax({
+        type: "Get",
+        url: "/HR_LeaveRequest/ViewLeaveRequest",
+        data: { Id: Id },
+        dataType: "json",
+        success: function (data) {
+            debugger;
+            if (data.Result === "yes") {
+                $("#txtVoucherNo").val(data.VoucherNo);
+                $("#txtEmployeeName").val(data.EmployeeName);
+                $("#txtDate").val(data.Date);
+                $("#txtDesignation").val(data.Designation);
+                $("#txtEmpNo").val(data.EmpNo);
+                $("#txtDepartment").val(data.DepartmentName);
+                $("#txtCompany").val(data.CompanyName);
+                $("#txtDepartmentName").val(data.DepartmentName);
+                $("#txtBranch").val(data.BranchName);
+                $("#txtDateOfJoining").val(data.DateOfJoining);
+                $("#txtPleaseSpecifyOtherLeave").val(data.PleaseSpecifyOtherLeave);
+                $("#txtLeaveFromDate").val(data.LeaveFromDate);
+                $("#txtLeaveToDate").val(data.LeaveToDate);
+                $("#txtAirportName").val(data.AirportName);
+                $("#txtFromAirportName").val(data.FromAirportName);
+                $("#txtToAirportName").val(data.ToAirportName);
+                $("#txtReasonforSickLeave").val(data.ReasonforSickLeave);
+                $("#txtMedicalCertificate").val(data.MedicalCertificate);
+               /* $("#txtMedicalCertificateFile").val(data.MedicalCertificateFile);*/
 
-//$("#btnsave555").click(function (e) {
-//    debugger;
-//    e.preventDefault();
-//    var _VoucherNo = $("#VoucherNo").val();
-//    var _EmployeeId = $("#EmployeeId").val();
-//    var _Date = $("#Date").val();
-//    var _DesignationId = $("#DesignationId").val();
+                $("#txtMedicalCertificateFile").val("<img src='" + data.MedicalCertificateFile + "' />");
+                
 
-//    var fileUpload = $("#MedicalCertificateFile").get(0);
-//    var MedicalCertificateFile = fileUpload.files[0];
+                $("#txtEmail").val(data.Email);
+                $("#txtMobileNo").val(data.MobileNo);
+                $("#txtPleaseSpecifyOtherLeave").val(data.PleaseSpecifyOtherLeave);
+          
+           
+                if (data.MarriageLeave === true) {
+                    $("#MarriageLeave").prop("checked", true);
+                }
+                else {
+                    $("#MarriageLeave").prop("checked", false);
+                }
+
+                if (data.AnnualLeave === true) {
+                    $("#AnnualLeave").prop("checked", true);
+                }
+                else {
+                    $("#AnnualLeave").prop("checked", false);
+                }
+                if (data.AuthorizedUnpaidLeave === true) {
+                    $("#AuthorizedUnpaidLeave").prop("checked", true);
+                }
+                else {
+                    $("#AuthorizedUnpaidLeave").prop("checked", false);
+                }
+                if (data.EmergencyLeave === true) {
+                    $("#EmergencyLeave").prop("checked", true);
+                }
+                else {
+                    $("#EmergencyLeave").prop("checked", false);
+                }
+                if (data.SickLeave === true) {
+                    $("#SickLeave").prop("checked", true);
+                }
+                else {
+                    $("#SickLeave").prop("checked", false);
+                }
+
+                if (data.MaternityLeave === true) {
+                    $("#MaternityLeave").prop("checked", true);
+                }
+                else {
+                    $("#MaternityLeave").prop("checked", false);
+                }
+                if (data.Others === true) {
+                    $("#Others").prop("checked", true);
+                }
+                else {
+                    $("#Others").prop("checked", false);
+                }
+                if (data.LocalLeave === true) {
+                    $("#LocalLeave").prop("checked", true);
+                }
+                else {
+                    $("#LocalLeave").prop("checked", false);
+                }
+
+            }
+            else {
+                alert("Something went wrong.");
+            }
+        }
+    });
+
+    $("#LeaveRequestModal").modal('show');
+}
 
 
-//    var MarriageLeave = $("input[name=MarriageLeave]:checked").val();
-//    if (MarriageLeave == "true") {
-//        var _MarriageLeave = 1;
-//    }
-//    else {
-//        var _MarriageLeave = 0;
-//    }
 
-//    if (_EmployeeId != "") {
 
-//        var GeneralRequestDetails = {
-//            VoucherNo: _VoucherNo,
-//            EmployeeId: _EmployeeId,
-//            Date: _Date,
-//            DesignationId: _DesignationId,
-//            MarriageLeave: _MarriageLeave
-//            /*MedicalCertificateFile: files[0]*/
-//        };
 
-//        if (confirm("Are you sure you want to continue ?")) {
 
-//            $.ajax({
-//                type: 'POST',
-//                url: '/HR_LeaveRequest/SaveLeaveRequest',
-//                data: JSON.stringify(GeneralRequestDetails),
-//                contentType: "application/json; charset=utf-8",
-//                processData: false, // Not to process data
-//                dataType: 'json',
-//                success: function (data) {
-//                    debugger;
-//                    if (data.Result == "yes") {
-//                        swal({
-//                            title: "Success",
-//                            text: "Records Successfully Saved",
-//                            type: "success",
-//                        }).then(function (isConfirm) {
-//                            if (isConfirm) {
-//                                window.location.reload();
-//                            }
-//                            else {
 
-//                            }
-//                        });
-//                    }
-//                    else if (data.Result == "yes1") {
-//                        swal({
-//                            title: "Success",
-//                            text: "Records Successfully Updated",
-//                            type: "success",
-//                        }).then(function (isConfirm) {
-//                            if (isConfirm) {
-//                                window.location.href = '/HR_GeneralRequest/GeneralRequest';
-//                            }
-//                            else {
 
-//                            }
-//                        });
-//                    }
-//                    else {
-//                        swal("Warning", "Record not save!", "warning");
-//                    }
-//                },
-//                error: function (httpResponse) {
-//                    swal("Warning", "Something Went to Wrong!", "warning");
-//                }
-//            })
-//        }
-//    }
-//    else {
-//        if (_EmployeeId == "") {
-//            swal("Warning", "Please Enter Employee Name !", "warning");
-//            return false;
-//        }
-//    }
-//});
+
+
+
+

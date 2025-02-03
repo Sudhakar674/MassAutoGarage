@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using MassAutoGarage.DBContext;
+using MassAutoGarage.Models.HR_FinalClearanceReport;
 using MassAutoGarage.Models.HR_RenualAndNonRenwal;
 using MassAutoGarage.Models.HR_TourIntimation;
 using System;
@@ -161,5 +162,25 @@ namespace MassAutoGarage.Data.HR_TourIntimation
                 throw;
             }
         }
+
+
+        public List<HR_TourIntimationModel> GetTourIntimationDetailsById(string Querytype, string Id)
+        {
+            List<HR_TourIntimationModel> obj = new List<HR_TourIntimationModel>();
+            try
+            {
+                var perm = new DynamicParameters();
+                perm.Add("@QueryType", Querytype);
+                perm.Add("@ID", Id);
+                obj = DBHelperDapper.DAAddAndReturnModelList<HR_TourIntimationModel>("USP_HR_TourIntimationForm", perm);
+                return obj;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
     }
 }

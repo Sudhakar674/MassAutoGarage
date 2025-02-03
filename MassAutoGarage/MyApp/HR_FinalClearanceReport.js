@@ -243,3 +243,67 @@ function DeleteFinalClearanceReport(Id) {
     }
 
 }
+
+
+
+function ViewFinalClearanceReport(Id) {
+    debugger;
+    $.ajax({
+        type: "Get",
+        url: "/HR_FinalClearanceReport/ViewFinalClearanceReport",
+        data: { Id: Id },
+        dataType: "json",
+        success: function (data) {
+            debugger;
+            if (data.Result === "yes") {
+                $("#txtVoucherNo").val(data.VoucherNo);
+                $("#txtEmployeeName").val(data.EmployeeName);
+                $("#txtDate").val(data.Date);
+                $("#txtDesignation").val(data.Designation);
+                $("#txtEmpNo").val(data.EmpNo);
+                $("#txtDepartment").val(data.DepartmentName);
+                $("#txtLastWorkingDay").val(data.LastWorkingDay);
+
+                if (data.Vehichle === true) {
+                    $("#Vehichle").prop("checked", true);
+                }
+                else {
+                    $("#Vehichle").prop("checked", false);
+                }
+
+                if (data.Laptop === true) {
+                    $("#Laptop").prop("checked", true);
+                }
+                else {
+                    $("#Laptop").prop("checked", false);
+                }
+                if (data.CompanySim === true) {
+                    $("#CompanySim").prop("checked", true);
+                }
+                else {
+                    $("#CompanySim").prop("checked", false);
+                }
+                if (data.MedicalInsurance === true) {
+                    $("#MedicalInsurance").prop("checked", true);
+                }
+                else {
+                    $("#MedicalInsurance").prop("checked", false);
+                }
+                if (data.C3Card === true) {
+                    $("#C3Card").prop("checked", true);
+                }
+                else {
+                    $("#C3Card").prop("checked", false);
+                }
+
+                $("#txtReplacement").val(data.Replacement);
+          
+            }
+            else {
+                alert("Something went wrong.");
+            }
+        }
+    });
+
+    $("#FinalClearanceReportModal").modal('show');
+}
