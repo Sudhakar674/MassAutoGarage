@@ -53,7 +53,7 @@ $("#btnsave").click(function (e) {
     var _Details = $("#Details").val();
     var _SuggestReplacement = $("#SuggestReplacement").val();
     var _Acknowledgement = $("#Acknowledgement").val();
-    
+
 
     var VisaSingleEntry = $("input[name=VisaSingleEntry]:checked").val();
     if (VisaSingleEntry == "true") {
@@ -191,7 +191,7 @@ $("#btnsave").click(function (e) {
             swal("Warning", "Please Enter Tour Destination !", "warning");
             return false;
         }
-       
+
         if (_TravelModeID == "") {
             swal("Warning", "Please Enter Travel Mode !", "warning");
             return false;
@@ -268,4 +268,78 @@ function DeleteTourIntimation(Id) {
         return false;
     }
 
+}
+
+
+function ViewTourIntimation(Id) {
+    debugger;
+    $.ajax({
+        type: "Get",
+        url: "/HR_TourIntimation/ViewTourIntimation",
+        data: { Id: Id },
+        dataType: "json",
+        success: function (data) {
+            debugger;
+            if (data.Result === "yes") {
+                $("#txtVoucherNo").val(data.VoucherNo);
+                $("#txtEmployeeName").val(data.EmployeeName);
+                $("#txtDesignation").val(data.Designation);
+                $("#txtTourDestination").val(data.TourDestination);
+                $("#txtTravelMode").val(data.TravelMode);
+                $("#txtStartDate").val(data.StartDate);
+                $("#txtReturnDate").val(data.ReturnDate);
+                $("#txtPurposeOfTour").val(data.PurposeOfTour);
+                $("#txtDetails").val(data.Details);
+                $("#txtSuggestReplacement").val(data.SuggestReplacement);
+                $("#txtAcknowledgement").val(data.Acknowledgement);
+
+                if (data.VisaSingleEntry === true) {
+                    $("#VisaSingleEntry").prop("checked", true);
+                }
+                else {
+                    $("#VisaSingleEntry").prop("checked", false);
+                }
+
+                if (data.VisaMultipleEntry === true) {
+                    $("#VisaMultipleEntry").prop("checked", true);
+                }
+                else {
+                    $("#VisaMultipleEntry").prop("checked", false);
+                }
+                if (data.HotelEconomic === true) {
+                    $("#HotelEconomic").prop("checked", true);
+                }
+                else {
+                    $("#HotelEconomic").prop("checked", false);
+                }
+                if (data.PassportRelease === true) {
+                    $("#PassportRelease").prop("checked", true);
+                }
+                else {
+                    $("#PassportRelease").prop("checked", false);
+                }
+                if (data.TravelInsuranceYes === true) {
+                    $("#TravelInsuranceYes").prop("checked", true);
+                }
+                else {
+                    $("#TravelInsuranceYes").prop("checked", false);
+                }
+
+                if (data.TravelInsuranceNo === true) {
+                    $("#TravelInsuranceNo").prop("checked", true);
+                }
+                else {
+                    $("#TravelInsuranceNo").prop("checked", false);
+                }
+
+                $("#txtCashAdvanceAmt").val(data.CashAdvanceAmt);
+
+            }
+            else {
+                alert("Something went wrong.");
+            }
+        }
+    });
+
+    $("#TourIntimationModal").modal('show');
 }

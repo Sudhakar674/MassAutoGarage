@@ -40,7 +40,17 @@
 
     legend {
         float: none;
-        width: 29%;
+        width: 40%;
+        background-color: #bbb1b1;
+        color: white;
+        padding: 5px 10px;
+        font-size: small;
+        margin-bottom: 20px;
+    }
+
+    #legendNatureOfRequest {
+        float: none;
+        width: 13%;
         background-color: #bbb1b1;
         color: white;
         padding: 5px 10px;
@@ -96,9 +106,6 @@
                                 <th>Date</th>
                                 <th>Expected Salary</th>
                                 <th>Salary Offered</th>
-                                <th>New/Addition</th>
-                                <th>Budgeted</th>
-                                <th>Replacement</th>
                                 <th style="width:29%;">Action</th>
                             </tr>
                         </thead>
@@ -113,40 +120,14 @@
                                     <td data-th="Code">@item.Date</td>
                                     <td data-th="Code">@item.ExpectedSalary</td>
                                     <td data-th="Code">@item.SalaryOffered</td>
-                                    @*<td data-th="Code">@item.AdditionNew</td>
-                                        <td data-th="Code">@item.Budgeted</td>
-                                        <td data-th="Code">@item.Replacement</td>*@
-
-                                    @if (item.AdditionNew == true)
-                                    {
-                                        <td>Yes</td>
-                                        @*<td><input type="checkbox" class="row-form property" id="Replacement" readonly="readonly" checked/></td>*@
-                                    }
-                                    else
-                                    {
-                                        <td>No</td>
-                                        @*<td><input type="checkbox" class="row-form" id="Replacement" readonly="readonly" /></td>*@
-                                    }
-                                    @if (item.Budgeted == true)
-                                    {
-                                        <td>Yes</td>
-                                    }
-                                    else
-                                    {
-                                        <td>No</td>
-                                    }
-
-                                    @if (item.Replacement == true)
-                                    {
-                                        <td>Yes</td>
-                                    }
-                                    else
-                                    {
-                                        <td>No</td>
-                                    }
 
                                     <td data-th="Action">
                                         <div class="d-flex gap-2">
+
+                                            <div>
+                                                <a href="javascript:void(0)" onclick="return ViewGetRecruitmentRequisition('@item.Idincrept')" class="btn btn-sm btn-primary remove-item-btn">View <i class="fa fa-eye" aria-hidden="true"></i></a>
+                                            </div>
+
                                             <div class="edit">
                                                 <a href="/HR_RecruitmentRequisition/RecruitmentRequisition?Id=@item.Idincrept" class="btn btn-sm btn-success edit-item-btn" tabindex="6">Edit <i class="fa fa-edit"></i></a>
                                             </div>
@@ -165,6 +146,96 @@
         </div>
     </div>
 </div>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="RecruitmentRequisitionModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="RecruitmentRequisitionModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="RecruitmentRequisitionModalLabel"><strong>Recruitment Requisition Details</strong></h5>
+                <button type="button" class="btn-close btn btn-danger" data-bs-dismiss="modal" aria-label="Close" onclick="return RemoveTableRecords();"></button>
+            </div>
+            <div class="modal-body">
+
+
+                <div class="card-body">
+                    <div class="live-preview">
+                        <div class="row gy-4">
+                            <fieldset>
+                                <legend style="background-color:#151529">( Please Fill In The Information Inside The Box And Line Provided )</legend>
+
+                                <div class="row gy-4" style="margin-bottom:15px;">
+                                    <div class="col-xxl-4 col-md-4">
+                                        <label for="labelInput" class="form-label">Voucher Nomber <code>*</code></label>
+                                        <input type="text" id="txtVoucherNo" class="form-control" readonly="readonly" />
+                                    </div>
+
+                                    <div class="col-xxl-8 col-md-8">
+                                        <label for="labelInput" class="form-label">Full Name <code>*</code></label>
+                                        <input type="text" id="txtFullName" class="form-control" readonly="readonly" />
+                                    </div>
+                                    <div class="col-xxl-4 col-md-4">
+                                        <label for="labelInput" class="form-label">Date<code>*</code></label>
+                                        <input type="text" id="txtDate" class="form-control" readonly="readonly" />
+                                    </div>
+                                    <div class="col-xxl-4 col-md-4">
+                                        <label for="labelInput" class="form-label">Expected Salary<code>*</code></label>
+                                        <input type="text" id="txtExpectedSalary" class="form-control" readonly="readonly" />
+                                    </div>
+                                    <div class="col-xxl-4 col-md-4">
+                                        <label for="labelInput" class="form-label">Salary Offered<code>*</code></label>
+                                        <input type="text" id="txtSalaryOffered" class="form-control" readonly="readonly" />
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+
+
+                        <div class="row gy-4">
+                            <fieldset style="margin-top:50px;" id="fieldsetCashAdvance">
+                                <legend style="background-color:#151529;" id="legendNatureOfRequest">Nature Of Request</legend>
+
+                                <div class="row gy-4" style="margin-bottom: 15px;margin-top:3px; padding-left: 10px; padding-right: 10px;">
+                                    <div class="col-xxl-4 col-md-4">
+
+                                        <label class="form-control"><input type="checkbox" class="row-form" id="AdditionNew" readonly="readonly" /> New/Addition</label>
+
+                                    </div>
+                                    <div class="col-xxl-4 col-md-4">
+
+                                        <label class="form-control"><input type="checkbox" class="row-form" id="Budgeted" readonly="readonly" /> Budgeted</label>
+
+                                    </div>
+                                    <div class="col-xxl-4 col-md-4">
+
+                                        <label class="form-control"><input type="checkbox" class="row-form" id="Replacement" readonly="readonly" /> Replacement</label>
+
+                                    </div>
+
+                                </div>
+                            </fieldset>
+
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="modal-footer">
+                @*<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>*@
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
 
 @section scripts{
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>

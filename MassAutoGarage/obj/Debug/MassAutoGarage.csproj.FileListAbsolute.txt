@@ -2726,3 +2726,1035 @@ D:\Sudhakar Sharma\repository\MassAutoGarage\MassAutoGarage\obj\Debug\MassAutoGa
 D:\Sudhakar Sharma\repository\MassAutoGarage\MassAutoGarage\obj\Debug\MassAuto.FBF93F1D.Up2Date
 D:\Sudhakar Sharma\repository\MassAutoGarage\MassAutoGarage\obj\Debug\MassAutoGarage.dll
 D:\Sudhakar Sharma\repository\MassAutoGarage\MassAutoGarage\obj\Debug\MassAutoGarage.pdb
+D:\MassAutoGarage\MassAutoGarage\bin\MassAutoGarage.dll.config
+D:\MassAutoGarage\MassAutoGarage\bin\MassAutoGarage.dll
+D:\MassAutoGarage\MassAutoGarage\bin\MassAutoGarage.pdb
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\csc.exe
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\csc.exe.config
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\csc.rsp
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\csi.exe
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\csi.exe.config
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\csi.rsp
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\Microsoft.Managed.Core.targets
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\System.AppContext.dll
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\System.Collections.Immutable.dll
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\System.Console.dll
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\System.Globalization.Calendars.dll
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\System.IO.Compression.dll
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\System.IO.FileSystem.dll
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\System.Net.Http.dll
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\System.Net.Sockets.dll
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\System.Reflection.Metadata.dll
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\System.ValueTuple.dll
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\System.Xml.XmlDocument.dll
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\System.Xml.XPath.dll
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\vbc.exe
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\vbc.exe.config
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\vbc.rsp
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\VBCSCompiler.exe
+D:\MassAutoGarage\MassAutoGarage\bin\roslyn\VBCSCompiler.exe.config
+D:\MassAutoGarage\MassAutoGarage\bin\Antlr3.Runtime.dll
+D:\MassAutoGarage\MassAutoGarage\bin\BouncyCastle.Crypto.dll
+D:\MassAutoGarage\MassAutoGarage\bin\BouncyCastle.Cryptography.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ClosedXML.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Dapper.dll
+D:\MassAutoGarage\MassAutoGarage\bin\DocumentFormat.OpenXml.dll
+D:\MassAutoGarage\MassAutoGarage\bin\dotless.AspNet.dll
+D:\MassAutoGarage\MassAutoGarage\bin\dotless.Core.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Enums.NET.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ExcelNumberFormat.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ExtendedNumerics.BigDecimal.dll
+D:\MassAutoGarage\MassAutoGarage\bin\HtmlRenderer.dll
+D:\MassAutoGarage\MassAutoGarage\bin\HtmlRenderer.PdfSharp.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ICSharpCode.SharpZipLib.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Irony.dll
+D:\MassAutoGarage\MassAutoGarage\bin\itextsharp.dll
+D:\MassAutoGarage\MassAutoGarage\bin\MathNet.Numerics.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.Azure.DevOps.Comments.WebApi.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.Azure.Pipelines.WebApi.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.Bcl.AsyncInterfaces.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.Extensions.DependencyInjection.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.Identity.Client.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.IdentityModel.Abstractions.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.IdentityModel.Logging.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.IdentityModel.Tokens.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.IO.RecyclableMemoryStream.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Build.Client.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Build.Common.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Build2.WebApi.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Client.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Common.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Core.WebApi.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Dashboards.WebApi.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.DeleteTeamProject.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Diff.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Discussion.Client.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.DistributedTask.Common.Contracts.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Git.Client.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Pipelines.WebApi.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Policy.WebApi.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.ProjectManagement.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.SharePointReporting.Integration.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.SourceControl.WebApi.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Test.WebApi.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.TestImpact.Client.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.TestManagement.Client.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.TestManagement.Common.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.TestManagement.WebApi.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.VersionControl.Client.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.VersionControl.Common.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.VersionControl.Common.Integration.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Wiki.WebApi.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Work.WebApi.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.WorkItemTracking.Client.DataStoreLoader.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.WorkItemTracking.Client.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.WorkItemTracking.Client.QueryLanguage.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.WorkItemTracking.Common.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.WorkItemTracking.Process.WebApi.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.WorkItemTracking.Proxy.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.WorkItemTracking.WebApi.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.VisualStudio.Services.Client.Interactive.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.VisualStudio.Services.Common.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.VisualStudio.Services.TestManagement.TestPlanning.WebApi.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.VisualStudio.Services.TestResults.WebApi.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.VisualStudio.Services.WebApi.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.Web.Infrastructure.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Newtonsoft.Json.dll
+D:\MassAutoGarage\MassAutoGarage\bin\NPOI.Core.dll
+D:\MassAutoGarage\MassAutoGarage\bin\NPOI.OOXML.dll
+D:\MassAutoGarage\MassAutoGarage\bin\NPOI.OpenXml4Net.dll
+D:\MassAutoGarage\MassAutoGarage\bin\NPOI.OpenXmlFormats.dll
+D:\MassAutoGarage\MassAutoGarage\bin\PdfSharp.Charting.dll
+D:\MassAutoGarage\MassAutoGarage\bin\PdfSharp.dll
+D:\MassAutoGarage\MassAutoGarage\bin\SixLabors.Fonts.dll
+D:\MassAutoGarage\MassAutoGarage\bin\SixLabors.ImageSharp.dll
+D:\MassAutoGarage\MassAutoGarage\bin\System.Buffers.dll
+D:\MassAutoGarage\MassAutoGarage\bin\System.IdentityModel.Tokens.Jwt.dll
+D:\MassAutoGarage\MassAutoGarage\bin\System.IO.Packaging.dll
+D:\MassAutoGarage\MassAutoGarage\bin\System.Memory.dll
+D:\MassAutoGarage\MassAutoGarage\bin\System.Net.Http.Formatting.dll
+D:\MassAutoGarage\MassAutoGarage\bin\System.Numerics.Vectors.dll
+D:\MassAutoGarage\MassAutoGarage\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\MassAutoGarage\MassAutoGarage\bin\System.Security.AccessControl.dll
+D:\MassAutoGarage\MassAutoGarage\bin\System.Security.Cryptography.Pkcs.dll
+D:\MassAutoGarage\MassAutoGarage\bin\System.Security.Cryptography.Xml.dll
+D:\MassAutoGarage\MassAutoGarage\bin\System.Security.Principal.Windows.dll
+D:\MassAutoGarage\MassAutoGarage\bin\System.Text.Encoding.CodePages.dll
+D:\MassAutoGarage\MassAutoGarage\bin\System.Text.Encodings.Web.dll
+D:\MassAutoGarage\MassAutoGarage\bin\System.Text.Json.dll
+D:\MassAutoGarage\MassAutoGarage\bin\System.Threading.Tasks.Extensions.dll
+D:\MassAutoGarage\MassAutoGarage\bin\System.ValueTuple.dll
+D:\MassAutoGarage\MassAutoGarage\bin\System.Web.Helpers.dll
+D:\MassAutoGarage\MassAutoGarage\bin\System.Web.Http.dll
+D:\MassAutoGarage\MassAutoGarage\bin\System.Web.Http.WebHost.dll
+D:\MassAutoGarage\MassAutoGarage\bin\System.Web.Mvc.dll
+D:\MassAutoGarage\MassAutoGarage\bin\System.Web.Optimization.dll
+D:\MassAutoGarage\MassAutoGarage\bin\System.Web.Optimization.Less.dll
+D:\MassAutoGarage\MassAutoGarage\bin\System.Web.Razor.dll
+D:\MassAutoGarage\MassAutoGarage\bin\System.Web.Webpages.Deployment.dll
+D:\MassAutoGarage\MassAutoGarage\bin\System.Web.Webpages.dll
+D:\MassAutoGarage\MassAutoGarage\bin\System.Web.Webpages.Razor.dll
+D:\MassAutoGarage\MassAutoGarage\bin\WebGrease.dll
+D:\MassAutoGarage\MassAutoGarage\bin\XLParser.dll
+D:\MassAutoGarage\MassAutoGarage\bin\Antlr3.Runtime.pdb
+D:\MassAutoGarage\MassAutoGarage\bin\BouncyCastle.Cryptography.xml
+D:\MassAutoGarage\MassAutoGarage\bin\ClosedXML.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Dapper.xml
+D:\MassAutoGarage\MassAutoGarage\bin\DocumentFormat.OpenXml.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Enums.NET.pdb
+D:\MassAutoGarage\MassAutoGarage\bin\Enums.NET.xml
+D:\MassAutoGarage\MassAutoGarage\bin\ExcelNumberFormat.xml
+D:\MassAutoGarage\MassAutoGarage\bin\ExtendedNumerics.BigDecimal.xml
+D:\MassAutoGarage\MassAutoGarage\bin\HtmlRenderer.pdb
+D:\MassAutoGarage\MassAutoGarage\bin\HtmlRenderer.PdfSharp.pdb
+D:\MassAutoGarage\MassAutoGarage\bin\ICSharpCode.SharpZipLib.pdb
+D:\MassAutoGarage\MassAutoGarage\bin\ICSharpCode.SharpZipLib.xml
+D:\MassAutoGarage\MassAutoGarage\bin\itextsharp.xml
+D:\MassAutoGarage\MassAutoGarage\bin\MathNet.Numerics.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.Azure.DevOps.Comments.WebApi.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.Azure.Pipelines.WebApi.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.Bcl.AsyncInterfaces.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.Extensions.DependencyInjection.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.Identity.Client.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.Identity.Client.Extensions.Msal.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.IdentityModel.Abstractions.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.IdentityModel.JsonWebTokens.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.IdentityModel.Logging.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.IdentityModel.Tokens.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.IO.RecyclableMemoryStream.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Build.Client.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Build.Common.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Build2.WebApi.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Client.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Common.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Core.WebApi.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Dashboards.WebApi.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.DeleteTeamProject.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Diff.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Discussion.Client.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.DistributedTask.Common.Contracts.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Git.Client.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Pipelines.WebApi.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Policy.WebApi.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.ProjectManagement.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.SharePointReporting.Integration.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.SourceControl.WebApi.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Test.WebApi.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.TestImpact.Client.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.TestManagement.Client.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.TestManagement.Common.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.TestManagement.WebApi.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.VersionControl.Client.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.VersionControl.Common.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.VersionControl.Common.Integration.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Wiki.WebApi.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Work.WebApi.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.WorkItemTracking.Client.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.WorkItemTracking.Client.DataStoreLoader.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.WorkItemTracking.Client.QueryLanguage.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.WorkItemTracking.Common.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.WorkItemTracking.Process.WebApi.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.WorkItemTracking.Proxy.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.WorkItemTracking.WebApi.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.VisualStudio.Services.Client.Interactive.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.VisualStudio.Services.Common.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.VisualStudio.Services.TestManagement.TestPlanning.WebApi.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.VisualStudio.Services.TestResults.WebApi.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.VisualStudio.Services.WebApi.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Newtonsoft.Json.xml
+D:\MassAutoGarage\MassAutoGarage\bin\NPOI.Core.pdb
+D:\MassAutoGarage\MassAutoGarage\bin\NPOI.Core.xml
+D:\MassAutoGarage\MassAutoGarage\bin\NPOI.OOXML.pdb
+D:\MassAutoGarage\MassAutoGarage\bin\NPOI.OOXML.xml
+D:\MassAutoGarage\MassAutoGarage\bin\NPOI.OpenXml4Net.pdb
+D:\MassAutoGarage\MassAutoGarage\bin\NPOI.OpenXml4Net.xml
+D:\MassAutoGarage\MassAutoGarage\bin\NPOI.OpenXmlFormats.pdb
+D:\MassAutoGarage\MassAutoGarage\bin\NPOI.OpenXmlFormats.xml
+D:\MassAutoGarage\MassAutoGarage\bin\PdfSharp.xml
+D:\MassAutoGarage\MassAutoGarage\bin\PdfSharp.Charting.xml
+D:\MassAutoGarage\MassAutoGarage\bin\SixLabors.Fonts.xml
+D:\MassAutoGarage\MassAutoGarage\bin\SixLabors.ImageSharp.xml
+D:\MassAutoGarage\MassAutoGarage\bin\System.Buffers.xml
+D:\MassAutoGarage\MassAutoGarage\bin\System.IdentityModel.Tokens.Jwt.xml
+D:\MassAutoGarage\MassAutoGarage\bin\System.IO.Packaging.xml
+D:\MassAutoGarage\MassAutoGarage\bin\System.Memory.xml
+D:\MassAutoGarage\MassAutoGarage\bin\System.Net.Http.Formatting.xml
+D:\MassAutoGarage\MassAutoGarage\bin\System.Numerics.Vectors.xml
+D:\MassAutoGarage\MassAutoGarage\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\MassAutoGarage\MassAutoGarage\bin\System.Security.AccessControl.xml
+D:\MassAutoGarage\MassAutoGarage\bin\System.Security.Cryptography.Pkcs.xml
+D:\MassAutoGarage\MassAutoGarage\bin\System.Security.Cryptography.Xml.xml
+D:\MassAutoGarage\MassAutoGarage\bin\System.Security.Principal.Windows.xml
+D:\MassAutoGarage\MassAutoGarage\bin\System.Text.Encoding.CodePages.xml
+D:\MassAutoGarage\MassAutoGarage\bin\System.Text.Encodings.Web.xml
+D:\MassAutoGarage\MassAutoGarage\bin\System.Text.Json.xml
+D:\MassAutoGarage\MassAutoGarage\bin\System.Threading.Tasks.Extensions.xml
+D:\MassAutoGarage\MassAutoGarage\bin\System.ValueTuple.xml
+D:\MassAutoGarage\MassAutoGarage\bin\System.Web.Http.xml
+D:\MassAutoGarage\MassAutoGarage\bin\System.Web.Http.WebHost.xml
+D:\MassAutoGarage\MassAutoGarage\bin\System.Web.Optimization.xml
+D:\MassAutoGarage\MassAutoGarage\bin\System.Web.Optimization.Less.xml
+D:\MassAutoGarage\MassAutoGarage\bin\System.Web.Razor.xml
+D:\MassAutoGarage\MassAutoGarage\bin\System.Web.Webpages.xml
+D:\MassAutoGarage\MassAutoGarage\bin\System.Web.Webpages.Deployment.xml
+D:\MassAutoGarage\MassAutoGarage\bin\System.Web.Webpages.Razor.xml
+D:\MassAutoGarage\MassAutoGarage\bin\System.Web.Helpers.xml
+D:\MassAutoGarage\MassAutoGarage\bin\System.Web.Mvc.xml
+D:\MassAutoGarage\MassAutoGarage\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\MassAutoGarage\MassAutoGarage\bin\cs\Microsoft.TeamFoundation.Build.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\de\Microsoft.TeamFoundation.Build.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\es\Microsoft.TeamFoundation.Build.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\fr\Microsoft.TeamFoundation.Build.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\it\Microsoft.TeamFoundation.Build.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ja\Microsoft.TeamFoundation.Build.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ko\Microsoft.TeamFoundation.Build.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\pl\Microsoft.TeamFoundation.Build.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\pt-BR\Microsoft.TeamFoundation.Build.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ru\Microsoft.TeamFoundation.Build.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\tr\Microsoft.TeamFoundation.Build.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\zh-Hans\Microsoft.TeamFoundation.Build.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\zh-Hant\Microsoft.TeamFoundation.Build.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\cs\Microsoft.TeamFoundation.Build.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\de\Microsoft.TeamFoundation.Build.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\es\Microsoft.TeamFoundation.Build.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\fr\Microsoft.TeamFoundation.Build.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\it\Microsoft.TeamFoundation.Build.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ja\Microsoft.TeamFoundation.Build.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ko\Microsoft.TeamFoundation.Build.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\pl\Microsoft.TeamFoundation.Build.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\pt-BR\Microsoft.TeamFoundation.Build.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ru\Microsoft.TeamFoundation.Build.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\tr\Microsoft.TeamFoundation.Build.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\zh-Hans\Microsoft.TeamFoundation.Build.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\zh-Hant\Microsoft.TeamFoundation.Build.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\cs\Microsoft.TeamFoundation.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\de\Microsoft.TeamFoundation.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\es\Microsoft.TeamFoundation.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\fr\Microsoft.TeamFoundation.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\it\Microsoft.TeamFoundation.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ja\Microsoft.TeamFoundation.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ko\Microsoft.TeamFoundation.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\pl\Microsoft.TeamFoundation.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\pt-BR\Microsoft.TeamFoundation.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ru\Microsoft.TeamFoundation.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\tr\Microsoft.TeamFoundation.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\zh-Hans\Microsoft.TeamFoundation.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\zh-Hant\Microsoft.TeamFoundation.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\cs\Microsoft.TeamFoundation.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\de\Microsoft.TeamFoundation.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\es\Microsoft.TeamFoundation.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\fr\Microsoft.TeamFoundation.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\it\Microsoft.TeamFoundation.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ja\Microsoft.TeamFoundation.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ko\Microsoft.TeamFoundation.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\pl\Microsoft.TeamFoundation.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\pt-BR\Microsoft.TeamFoundation.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ru\Microsoft.TeamFoundation.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\tr\Microsoft.TeamFoundation.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\zh-Hans\Microsoft.TeamFoundation.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\zh-Hant\Microsoft.TeamFoundation.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\cs\Microsoft.TeamFoundation.Core.WebApi.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\de\Microsoft.TeamFoundation.Core.WebApi.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\es\Microsoft.TeamFoundation.Core.WebApi.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\fr\Microsoft.TeamFoundation.Core.WebApi.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\it\Microsoft.TeamFoundation.Core.WebApi.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ja\Microsoft.TeamFoundation.Core.WebApi.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ko\Microsoft.TeamFoundation.Core.WebApi.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\pl\Microsoft.TeamFoundation.Core.WebApi.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\pt-BR\Microsoft.TeamFoundation.Core.WebApi.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ru\Microsoft.TeamFoundation.Core.WebApi.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\tr\Microsoft.TeamFoundation.Core.WebApi.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\zh-Hans\Microsoft.TeamFoundation.Core.WebApi.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\zh-Hant\Microsoft.TeamFoundation.Core.WebApi.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\de\Microsoft.TeamFoundation.Dashboards.WebApi.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\es\Microsoft.TeamFoundation.Dashboards.WebApi.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\fr\Microsoft.TeamFoundation.Dashboards.WebApi.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\it\Microsoft.TeamFoundation.Dashboards.WebApi.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ja\Microsoft.TeamFoundation.Dashboards.WebApi.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ko\Microsoft.TeamFoundation.Dashboards.WebApi.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ru\Microsoft.TeamFoundation.Dashboards.WebApi.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\tr\Microsoft.TeamFoundation.Dashboards.WebApi.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\zh-Hans\Microsoft.TeamFoundation.Dashboards.WebApi.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\zh-Hant\Microsoft.TeamFoundation.Dashboards.WebApi.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\cs\Microsoft.TeamFoundation.Discussion.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\de\Microsoft.TeamFoundation.Discussion.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\es\Microsoft.TeamFoundation.Discussion.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\fr\Microsoft.TeamFoundation.Discussion.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\it\Microsoft.TeamFoundation.Discussion.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ja\Microsoft.TeamFoundation.Discussion.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ko\Microsoft.TeamFoundation.Discussion.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\pl\Microsoft.TeamFoundation.Discussion.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\pt-BR\Microsoft.TeamFoundation.Discussion.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ru\Microsoft.TeamFoundation.Discussion.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\tr\Microsoft.TeamFoundation.Discussion.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\zh-Hans\Microsoft.TeamFoundation.Discussion.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\zh-Hant\Microsoft.TeamFoundation.Discussion.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\cs\Microsoft.TeamFoundation.SharePointReporting.Integration.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\de\Microsoft.TeamFoundation.SharePointReporting.Integration.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\es\Microsoft.TeamFoundation.SharePointReporting.Integration.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\fr\Microsoft.TeamFoundation.SharePointReporting.Integration.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\it\Microsoft.TeamFoundation.SharePointReporting.Integration.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ja\Microsoft.TeamFoundation.SharePointReporting.Integration.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ko\Microsoft.TeamFoundation.SharePointReporting.Integration.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\pl\Microsoft.TeamFoundation.SharePointReporting.Integration.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\pt-BR\Microsoft.TeamFoundation.SharePointReporting.Integration.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ru\Microsoft.TeamFoundation.SharePointReporting.Integration.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\tr\Microsoft.TeamFoundation.SharePointReporting.Integration.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\zh-Hans\Microsoft.TeamFoundation.SharePointReporting.Integration.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\zh-Hant\Microsoft.TeamFoundation.SharePointReporting.Integration.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\cs\Microsoft.TeamFoundation.TestImpact.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\de\Microsoft.TeamFoundation.TestImpact.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\es\Microsoft.TeamFoundation.TestImpact.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\fr\Microsoft.TeamFoundation.TestImpact.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\it\Microsoft.TeamFoundation.TestImpact.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ja\Microsoft.TeamFoundation.TestImpact.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ko\Microsoft.TeamFoundation.TestImpact.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\pl\Microsoft.TeamFoundation.TestImpact.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\pt-BR\Microsoft.TeamFoundation.TestImpact.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ru\Microsoft.TeamFoundation.TestImpact.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\tr\Microsoft.TeamFoundation.TestImpact.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\zh-Hans\Microsoft.TeamFoundation.TestImpact.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\zh-Hant\Microsoft.TeamFoundation.TestImpact.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\cs\Microsoft.TeamFoundation.TestManagement.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\de\Microsoft.TeamFoundation.TestManagement.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\es\Microsoft.TeamFoundation.TestManagement.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\fr\Microsoft.TeamFoundation.TestManagement.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\it\Microsoft.TeamFoundation.TestManagement.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ja\Microsoft.TeamFoundation.TestManagement.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ko\Microsoft.TeamFoundation.TestManagement.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\pl\Microsoft.TeamFoundation.TestManagement.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\pt-BR\Microsoft.TeamFoundation.TestManagement.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ru\Microsoft.TeamFoundation.TestManagement.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\tr\Microsoft.TeamFoundation.TestManagement.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\zh-Hans\Microsoft.TeamFoundation.TestManagement.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\zh-Hant\Microsoft.TeamFoundation.TestManagement.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\cs\Microsoft.TeamFoundation.VersionControl.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\de\Microsoft.TeamFoundation.VersionControl.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\es\Microsoft.TeamFoundation.VersionControl.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\fr\Microsoft.TeamFoundation.VersionControl.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\it\Microsoft.TeamFoundation.VersionControl.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ja\Microsoft.TeamFoundation.VersionControl.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ko\Microsoft.TeamFoundation.VersionControl.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\pl\Microsoft.TeamFoundation.VersionControl.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\pt-BR\Microsoft.TeamFoundation.VersionControl.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ru\Microsoft.TeamFoundation.VersionControl.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\tr\Microsoft.TeamFoundation.VersionControl.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\zh-Hans\Microsoft.TeamFoundation.VersionControl.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\zh-Hant\Microsoft.TeamFoundation.VersionControl.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\cs\Microsoft.TeamFoundation.VersionControl.Common.Integration.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\de\Microsoft.TeamFoundation.VersionControl.Common.Integration.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\es\Microsoft.TeamFoundation.VersionControl.Common.Integration.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\fr\Microsoft.TeamFoundation.VersionControl.Common.Integration.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\it\Microsoft.TeamFoundation.VersionControl.Common.Integration.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ja\Microsoft.TeamFoundation.VersionControl.Common.Integration.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ko\Microsoft.TeamFoundation.VersionControl.Common.Integration.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\pl\Microsoft.TeamFoundation.VersionControl.Common.Integration.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\pt-BR\Microsoft.TeamFoundation.VersionControl.Common.Integration.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ru\Microsoft.TeamFoundation.VersionControl.Common.Integration.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\tr\Microsoft.TeamFoundation.VersionControl.Common.Integration.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\zh-Hans\Microsoft.TeamFoundation.VersionControl.Common.Integration.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\zh-Hant\Microsoft.TeamFoundation.VersionControl.Common.Integration.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\cs\Microsoft.TeamFoundation.WorkItemTracking.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\de\Microsoft.TeamFoundation.WorkItemTracking.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\es\Microsoft.TeamFoundation.WorkItemTracking.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\fr\Microsoft.TeamFoundation.WorkItemTracking.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\it\Microsoft.TeamFoundation.WorkItemTracking.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ja\Microsoft.TeamFoundation.WorkItemTracking.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ko\Microsoft.TeamFoundation.WorkItemTracking.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\pl\Microsoft.TeamFoundation.WorkItemTracking.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\pt-BR\Microsoft.TeamFoundation.WorkItemTracking.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ru\Microsoft.TeamFoundation.WorkItemTracking.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\tr\Microsoft.TeamFoundation.WorkItemTracking.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\zh-Hans\Microsoft.TeamFoundation.WorkItemTracking.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\zh-Hant\Microsoft.TeamFoundation.WorkItemTracking.Client.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\cs\Microsoft.TeamFoundation.WorkItemTracking.Client.QueryLanguage.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\de\Microsoft.TeamFoundation.WorkItemTracking.Client.QueryLanguage.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\es\Microsoft.TeamFoundation.WorkItemTracking.Client.QueryLanguage.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\fr\Microsoft.TeamFoundation.WorkItemTracking.Client.QueryLanguage.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\it\Microsoft.TeamFoundation.WorkItemTracking.Client.QueryLanguage.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ja\Microsoft.TeamFoundation.WorkItemTracking.Client.QueryLanguage.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ko\Microsoft.TeamFoundation.WorkItemTracking.Client.QueryLanguage.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\pl\Microsoft.TeamFoundation.WorkItemTracking.Client.QueryLanguage.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\pt-BR\Microsoft.TeamFoundation.WorkItemTracking.Client.QueryLanguage.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ru\Microsoft.TeamFoundation.WorkItemTracking.Client.QueryLanguage.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\tr\Microsoft.TeamFoundation.WorkItemTracking.Client.QueryLanguage.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\zh-Hans\Microsoft.TeamFoundation.WorkItemTracking.Client.QueryLanguage.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\zh-Hant\Microsoft.TeamFoundation.WorkItemTracking.Client.QueryLanguage.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\cs\Microsoft.TeamFoundation.WorkItemTracking.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\de\Microsoft.TeamFoundation.WorkItemTracking.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\es\Microsoft.TeamFoundation.WorkItemTracking.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\fr\Microsoft.TeamFoundation.WorkItemTracking.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\it\Microsoft.TeamFoundation.WorkItemTracking.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ja\Microsoft.TeamFoundation.WorkItemTracking.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ko\Microsoft.TeamFoundation.WorkItemTracking.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\pl\Microsoft.TeamFoundation.WorkItemTracking.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\pt-BR\Microsoft.TeamFoundation.WorkItemTracking.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ru\Microsoft.TeamFoundation.WorkItemTracking.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\tr\Microsoft.TeamFoundation.WorkItemTracking.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\zh-Hans\Microsoft.TeamFoundation.WorkItemTracking.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\zh-Hant\Microsoft.TeamFoundation.WorkItemTracking.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\cs\Microsoft.TeamFoundation.WorkItemTracking.Proxy.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\de\Microsoft.TeamFoundation.WorkItemTracking.Proxy.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\es\Microsoft.TeamFoundation.WorkItemTracking.Proxy.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\fr\Microsoft.TeamFoundation.WorkItemTracking.Proxy.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\it\Microsoft.TeamFoundation.WorkItemTracking.Proxy.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ja\Microsoft.TeamFoundation.WorkItemTracking.Proxy.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ko\Microsoft.TeamFoundation.WorkItemTracking.Proxy.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\pl\Microsoft.TeamFoundation.WorkItemTracking.Proxy.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\pt-BR\Microsoft.TeamFoundation.WorkItemTracking.Proxy.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ru\Microsoft.TeamFoundation.WorkItemTracking.Proxy.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\tr\Microsoft.TeamFoundation.WorkItemTracking.Proxy.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\zh-Hans\Microsoft.TeamFoundation.WorkItemTracking.Proxy.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\zh-Hant\Microsoft.TeamFoundation.WorkItemTracking.Proxy.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\cs\Microsoft.VisualStudio.Services.Client.Interactive.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\de\Microsoft.VisualStudio.Services.Client.Interactive.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\es\Microsoft.VisualStudio.Services.Client.Interactive.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\fr\Microsoft.VisualStudio.Services.Client.Interactive.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\it\Microsoft.VisualStudio.Services.Client.Interactive.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ja\Microsoft.VisualStudio.Services.Client.Interactive.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ko\Microsoft.VisualStudio.Services.Client.Interactive.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\pl\Microsoft.VisualStudio.Services.Client.Interactive.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\pt-BR\Microsoft.VisualStudio.Services.Client.Interactive.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ru\Microsoft.VisualStudio.Services.Client.Interactive.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\tr\Microsoft.VisualStudio.Services.Client.Interactive.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\zh-Hans\Microsoft.VisualStudio.Services.Client.Interactive.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\zh-Hant\Microsoft.VisualStudio.Services.Client.Interactive.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\cs\Microsoft.VisualStudio.Services.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\de\Microsoft.VisualStudio.Services.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\es\Microsoft.VisualStudio.Services.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\fr\Microsoft.VisualStudio.Services.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\it\Microsoft.VisualStudio.Services.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ja\Microsoft.VisualStudio.Services.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ko\Microsoft.VisualStudio.Services.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\pl\Microsoft.VisualStudio.Services.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\pt-BR\Microsoft.VisualStudio.Services.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ru\Microsoft.VisualStudio.Services.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\tr\Microsoft.VisualStudio.Services.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\zh-Hans\Microsoft.VisualStudio.Services.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\zh-Hant\Microsoft.VisualStudio.Services.Common.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\cs\Microsoft.VisualStudio.Services.WebApi.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\de\Microsoft.VisualStudio.Services.WebApi.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\es\Microsoft.VisualStudio.Services.WebApi.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\fr\Microsoft.VisualStudio.Services.WebApi.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\it\Microsoft.VisualStudio.Services.WebApi.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ja\Microsoft.VisualStudio.Services.WebApi.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ko\Microsoft.VisualStudio.Services.WebApi.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\pl\Microsoft.VisualStudio.Services.WebApi.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\pt-BR\Microsoft.VisualStudio.Services.WebApi.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\ru\Microsoft.VisualStudio.Services.WebApi.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\tr\Microsoft.VisualStudio.Services.WebApi.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\zh-Hans\Microsoft.VisualStudio.Services.WebApi.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\zh-Hant\Microsoft.VisualStudio.Services.WebApi.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\de\PdfSharp.resources.dll
+D:\MassAutoGarage\MassAutoGarage\bin\de\PdfSharp.Charting.resources.dll
+D:\MassAutoGarage\MassAutoGarage\obj\Debug\MassAutoGarage.csproj.AssemblyReference.cache
+D:\MassAutoGarage\MassAutoGarage\obj\Debug\MassAutoGarage.csproj.CoreCompileInputs.cache
+D:\MassAutoGarage\MassAutoGarage\obj\Debug\MassAuto.FBF93F1D.Up2Date
+D:\MassAutoGarage\MassAutoGarage\obj\Debug\MassAutoGarage.dll
+D:\MassAutoGarage\MassAutoGarage\obj\Debug\MassAutoGarage.pdb
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\MassAutoGarage.dll.config
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\MassAutoGarage.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\MassAutoGarage.pdb
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\csc.exe
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\csc.exe.config
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\csc.rsp
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\csi.exe
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\csi.exe.config
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\csi.rsp
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\System.AppContext.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\System.Collections.Immutable.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\System.Console.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\System.Globalization.Calendars.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\System.IO.Compression.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\System.IO.FileSystem.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\System.Net.Http.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\System.Net.Sockets.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\System.Reflection.Metadata.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\System.ValueTuple.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\System.Xml.XPath.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\vbc.exe
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\vbc.exe.config
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\vbc.rsp
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\VBCSCompiler.exe
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\roslyn\VBCSCompiler.exe.config
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Antlr3.Runtime.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\BouncyCastle.Crypto.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\BouncyCastle.Cryptography.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ClosedXML.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Dapper.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\DocumentFormat.OpenXml.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\dotless.AspNet.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\dotless.Core.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Enums.NET.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ExcelNumberFormat.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ExtendedNumerics.BigDecimal.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\HtmlRenderer.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\HtmlRenderer.PdfSharp.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ICSharpCode.SharpZipLib.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Irony.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\itextsharp.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\MathNet.Numerics.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.Azure.DevOps.Comments.WebApi.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.Azure.Pipelines.WebApi.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.Extensions.DependencyInjection.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.Identity.Client.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.IdentityModel.Abstractions.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.IdentityModel.Logging.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.IdentityModel.Tokens.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.IO.RecyclableMemoryStream.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Build.Client.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Build.Common.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Build2.WebApi.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Client.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Common.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Core.WebApi.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Dashboards.WebApi.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.DeleteTeamProject.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Diff.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Discussion.Client.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.DistributedTask.Common.Contracts.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Git.Client.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Pipelines.WebApi.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Policy.WebApi.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.ProjectManagement.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.SharePointReporting.Integration.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.SourceControl.WebApi.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Test.WebApi.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.TestImpact.Client.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.TestManagement.Client.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.TestManagement.Common.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.TestManagement.WebApi.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.VersionControl.Client.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.VersionControl.Common.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.VersionControl.Common.Integration.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Wiki.WebApi.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Work.WebApi.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.WorkItemTracking.Client.DataStoreLoader.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.WorkItemTracking.Client.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.WorkItemTracking.Client.QueryLanguage.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.WorkItemTracking.Common.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.WorkItemTracking.Process.WebApi.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.WorkItemTracking.Proxy.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.WorkItemTracking.WebApi.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.VisualStudio.Services.Client.Interactive.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.VisualStudio.Services.Common.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.VisualStudio.Services.TestManagement.TestPlanning.WebApi.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.VisualStudio.Services.TestResults.WebApi.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.VisualStudio.Services.WebApi.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.Web.Infrastructure.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Newtonsoft.Json.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\NPOI.Core.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\NPOI.OOXML.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\NPOI.OpenXml4Net.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\NPOI.OpenXmlFormats.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\PdfSharp.Charting.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\PdfSharp.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\SixLabors.Fonts.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\SixLabors.ImageSharp.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.Buffers.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.IdentityModel.Tokens.Jwt.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.IO.Packaging.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.Memory.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.Net.Http.Formatting.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.Numerics.Vectors.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.Security.AccessControl.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.Security.Cryptography.Pkcs.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.Security.Cryptography.Xml.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.Security.Principal.Windows.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.Text.Encoding.CodePages.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.Text.Encodings.Web.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.Text.Json.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.Threading.Tasks.Extensions.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.ValueTuple.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.Web.Helpers.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.Web.Http.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.Web.Http.WebHost.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.Web.Mvc.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.Web.Optimization.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.Web.Optimization.Less.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.Web.Razor.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.Web.Webpages.Deployment.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.Web.Webpages.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.Web.Webpages.Razor.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\WebGrease.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\XLParser.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Antlr3.Runtime.pdb
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\BouncyCastle.Cryptography.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ClosedXML.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Dapper.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\DocumentFormat.OpenXml.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Enums.NET.pdb
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Enums.NET.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ExcelNumberFormat.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ExtendedNumerics.BigDecimal.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\HtmlRenderer.pdb
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\HtmlRenderer.PdfSharp.pdb
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ICSharpCode.SharpZipLib.pdb
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ICSharpCode.SharpZipLib.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\itextsharp.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\MathNet.Numerics.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.Azure.DevOps.Comments.WebApi.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.Azure.Pipelines.WebApi.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.Extensions.DependencyInjection.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.Identity.Client.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.Identity.Client.Extensions.Msal.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.IdentityModel.Abstractions.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.IdentityModel.JsonWebTokens.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.IdentityModel.Logging.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.IdentityModel.Tokens.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.IO.RecyclableMemoryStream.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Build.Client.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Build.Common.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Build2.WebApi.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Client.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Common.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Core.WebApi.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Dashboards.WebApi.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.DeleteTeamProject.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Diff.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Discussion.Client.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.DistributedTask.Common.Contracts.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Git.Client.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Pipelines.WebApi.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Policy.WebApi.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.ProjectManagement.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.SharePointReporting.Integration.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.SourceControl.WebApi.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Test.WebApi.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.TestImpact.Client.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.TestManagement.Client.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.TestManagement.Common.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.TestManagement.WebApi.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.VersionControl.Client.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.VersionControl.Common.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.VersionControl.Common.Integration.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Wiki.WebApi.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.Work.WebApi.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.WorkItemTracking.Client.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.WorkItemTracking.Client.DataStoreLoader.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.WorkItemTracking.Client.QueryLanguage.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.WorkItemTracking.Common.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.WorkItemTracking.Process.WebApi.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.WorkItemTracking.Proxy.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.TeamFoundation.WorkItemTracking.WebApi.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.VisualStudio.Services.Client.Interactive.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.VisualStudio.Services.Common.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.VisualStudio.Services.TestManagement.TestPlanning.WebApi.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.VisualStudio.Services.TestResults.WebApi.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.VisualStudio.Services.WebApi.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Newtonsoft.Json.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\NPOI.Core.pdb
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\NPOI.Core.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\NPOI.OOXML.pdb
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\NPOI.OOXML.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\NPOI.OpenXml4Net.pdb
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\NPOI.OpenXml4Net.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\NPOI.OpenXmlFormats.pdb
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\NPOI.OpenXmlFormats.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\PdfSharp.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\PdfSharp.Charting.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\SixLabors.Fonts.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\SixLabors.ImageSharp.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.Buffers.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.IdentityModel.Tokens.Jwt.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.IO.Packaging.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.Memory.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.Net.Http.Formatting.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.Numerics.Vectors.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.Security.AccessControl.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.Security.Cryptography.Pkcs.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.Security.Cryptography.Xml.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.Security.Principal.Windows.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.Text.Encoding.CodePages.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.Text.Encodings.Web.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.Text.Json.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.Threading.Tasks.Extensions.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.ValueTuple.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.Web.Http.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.Web.Http.WebHost.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.Web.Optimization.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.Web.Optimization.Less.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.Web.Razor.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.Web.Webpages.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.Web.Webpages.Deployment.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.Web.Webpages.Razor.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.Web.Helpers.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\System.Web.Mvc.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\cs\Microsoft.TeamFoundation.Build.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\de\Microsoft.TeamFoundation.Build.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\es\Microsoft.TeamFoundation.Build.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\fr\Microsoft.TeamFoundation.Build.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\it\Microsoft.TeamFoundation.Build.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ja\Microsoft.TeamFoundation.Build.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ko\Microsoft.TeamFoundation.Build.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\pl\Microsoft.TeamFoundation.Build.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\pt-BR\Microsoft.TeamFoundation.Build.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ru\Microsoft.TeamFoundation.Build.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\tr\Microsoft.TeamFoundation.Build.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\zh-Hans\Microsoft.TeamFoundation.Build.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\zh-Hant\Microsoft.TeamFoundation.Build.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\cs\Microsoft.TeamFoundation.Build.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\de\Microsoft.TeamFoundation.Build.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\es\Microsoft.TeamFoundation.Build.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\fr\Microsoft.TeamFoundation.Build.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\it\Microsoft.TeamFoundation.Build.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ja\Microsoft.TeamFoundation.Build.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ko\Microsoft.TeamFoundation.Build.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\pl\Microsoft.TeamFoundation.Build.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\pt-BR\Microsoft.TeamFoundation.Build.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ru\Microsoft.TeamFoundation.Build.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\tr\Microsoft.TeamFoundation.Build.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\zh-Hans\Microsoft.TeamFoundation.Build.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\zh-Hant\Microsoft.TeamFoundation.Build.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\cs\Microsoft.TeamFoundation.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\de\Microsoft.TeamFoundation.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\es\Microsoft.TeamFoundation.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\fr\Microsoft.TeamFoundation.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\it\Microsoft.TeamFoundation.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ja\Microsoft.TeamFoundation.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ko\Microsoft.TeamFoundation.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\pl\Microsoft.TeamFoundation.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\pt-BR\Microsoft.TeamFoundation.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ru\Microsoft.TeamFoundation.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\tr\Microsoft.TeamFoundation.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\zh-Hans\Microsoft.TeamFoundation.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\zh-Hant\Microsoft.TeamFoundation.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\cs\Microsoft.TeamFoundation.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\de\Microsoft.TeamFoundation.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\es\Microsoft.TeamFoundation.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\fr\Microsoft.TeamFoundation.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\it\Microsoft.TeamFoundation.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ja\Microsoft.TeamFoundation.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ko\Microsoft.TeamFoundation.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\pl\Microsoft.TeamFoundation.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\pt-BR\Microsoft.TeamFoundation.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ru\Microsoft.TeamFoundation.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\tr\Microsoft.TeamFoundation.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\zh-Hans\Microsoft.TeamFoundation.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\zh-Hant\Microsoft.TeamFoundation.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\cs\Microsoft.TeamFoundation.Core.WebApi.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\de\Microsoft.TeamFoundation.Core.WebApi.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\es\Microsoft.TeamFoundation.Core.WebApi.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\fr\Microsoft.TeamFoundation.Core.WebApi.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\it\Microsoft.TeamFoundation.Core.WebApi.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ja\Microsoft.TeamFoundation.Core.WebApi.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ko\Microsoft.TeamFoundation.Core.WebApi.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\pl\Microsoft.TeamFoundation.Core.WebApi.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\pt-BR\Microsoft.TeamFoundation.Core.WebApi.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ru\Microsoft.TeamFoundation.Core.WebApi.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\tr\Microsoft.TeamFoundation.Core.WebApi.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\zh-Hans\Microsoft.TeamFoundation.Core.WebApi.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\zh-Hant\Microsoft.TeamFoundation.Core.WebApi.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\de\Microsoft.TeamFoundation.Dashboards.WebApi.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\es\Microsoft.TeamFoundation.Dashboards.WebApi.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\fr\Microsoft.TeamFoundation.Dashboards.WebApi.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\it\Microsoft.TeamFoundation.Dashboards.WebApi.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ja\Microsoft.TeamFoundation.Dashboards.WebApi.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ko\Microsoft.TeamFoundation.Dashboards.WebApi.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ru\Microsoft.TeamFoundation.Dashboards.WebApi.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\tr\Microsoft.TeamFoundation.Dashboards.WebApi.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\zh-Hans\Microsoft.TeamFoundation.Dashboards.WebApi.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\zh-Hant\Microsoft.TeamFoundation.Dashboards.WebApi.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\cs\Microsoft.TeamFoundation.Discussion.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\de\Microsoft.TeamFoundation.Discussion.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\es\Microsoft.TeamFoundation.Discussion.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\fr\Microsoft.TeamFoundation.Discussion.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\it\Microsoft.TeamFoundation.Discussion.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ja\Microsoft.TeamFoundation.Discussion.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ko\Microsoft.TeamFoundation.Discussion.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\pl\Microsoft.TeamFoundation.Discussion.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\pt-BR\Microsoft.TeamFoundation.Discussion.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ru\Microsoft.TeamFoundation.Discussion.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\tr\Microsoft.TeamFoundation.Discussion.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\zh-Hans\Microsoft.TeamFoundation.Discussion.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\zh-Hant\Microsoft.TeamFoundation.Discussion.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\cs\Microsoft.TeamFoundation.SharePointReporting.Integration.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\de\Microsoft.TeamFoundation.SharePointReporting.Integration.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\es\Microsoft.TeamFoundation.SharePointReporting.Integration.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\fr\Microsoft.TeamFoundation.SharePointReporting.Integration.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\it\Microsoft.TeamFoundation.SharePointReporting.Integration.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ja\Microsoft.TeamFoundation.SharePointReporting.Integration.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ko\Microsoft.TeamFoundation.SharePointReporting.Integration.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\pl\Microsoft.TeamFoundation.SharePointReporting.Integration.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\pt-BR\Microsoft.TeamFoundation.SharePointReporting.Integration.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ru\Microsoft.TeamFoundation.SharePointReporting.Integration.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\tr\Microsoft.TeamFoundation.SharePointReporting.Integration.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\zh-Hans\Microsoft.TeamFoundation.SharePointReporting.Integration.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\zh-Hant\Microsoft.TeamFoundation.SharePointReporting.Integration.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\cs\Microsoft.TeamFoundation.TestImpact.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\de\Microsoft.TeamFoundation.TestImpact.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\es\Microsoft.TeamFoundation.TestImpact.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\fr\Microsoft.TeamFoundation.TestImpact.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\it\Microsoft.TeamFoundation.TestImpact.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ja\Microsoft.TeamFoundation.TestImpact.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ko\Microsoft.TeamFoundation.TestImpact.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\pl\Microsoft.TeamFoundation.TestImpact.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\pt-BR\Microsoft.TeamFoundation.TestImpact.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ru\Microsoft.TeamFoundation.TestImpact.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\tr\Microsoft.TeamFoundation.TestImpact.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\zh-Hans\Microsoft.TeamFoundation.TestImpact.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\zh-Hant\Microsoft.TeamFoundation.TestImpact.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\cs\Microsoft.TeamFoundation.TestManagement.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\de\Microsoft.TeamFoundation.TestManagement.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\es\Microsoft.TeamFoundation.TestManagement.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\fr\Microsoft.TeamFoundation.TestManagement.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\it\Microsoft.TeamFoundation.TestManagement.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ja\Microsoft.TeamFoundation.TestManagement.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ko\Microsoft.TeamFoundation.TestManagement.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\pl\Microsoft.TeamFoundation.TestManagement.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\pt-BR\Microsoft.TeamFoundation.TestManagement.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ru\Microsoft.TeamFoundation.TestManagement.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\tr\Microsoft.TeamFoundation.TestManagement.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\zh-Hans\Microsoft.TeamFoundation.TestManagement.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\zh-Hant\Microsoft.TeamFoundation.TestManagement.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\cs\Microsoft.TeamFoundation.VersionControl.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\de\Microsoft.TeamFoundation.VersionControl.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\es\Microsoft.TeamFoundation.VersionControl.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\fr\Microsoft.TeamFoundation.VersionControl.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\it\Microsoft.TeamFoundation.VersionControl.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ja\Microsoft.TeamFoundation.VersionControl.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ko\Microsoft.TeamFoundation.VersionControl.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\pl\Microsoft.TeamFoundation.VersionControl.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\pt-BR\Microsoft.TeamFoundation.VersionControl.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ru\Microsoft.TeamFoundation.VersionControl.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\tr\Microsoft.TeamFoundation.VersionControl.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\zh-Hans\Microsoft.TeamFoundation.VersionControl.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\zh-Hant\Microsoft.TeamFoundation.VersionControl.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\cs\Microsoft.TeamFoundation.VersionControl.Common.Integration.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\de\Microsoft.TeamFoundation.VersionControl.Common.Integration.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\es\Microsoft.TeamFoundation.VersionControl.Common.Integration.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\fr\Microsoft.TeamFoundation.VersionControl.Common.Integration.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\it\Microsoft.TeamFoundation.VersionControl.Common.Integration.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ja\Microsoft.TeamFoundation.VersionControl.Common.Integration.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ko\Microsoft.TeamFoundation.VersionControl.Common.Integration.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\pl\Microsoft.TeamFoundation.VersionControl.Common.Integration.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\pt-BR\Microsoft.TeamFoundation.VersionControl.Common.Integration.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ru\Microsoft.TeamFoundation.VersionControl.Common.Integration.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\tr\Microsoft.TeamFoundation.VersionControl.Common.Integration.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\zh-Hans\Microsoft.TeamFoundation.VersionControl.Common.Integration.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\zh-Hant\Microsoft.TeamFoundation.VersionControl.Common.Integration.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\cs\Microsoft.TeamFoundation.WorkItemTracking.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\de\Microsoft.TeamFoundation.WorkItemTracking.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\es\Microsoft.TeamFoundation.WorkItemTracking.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\fr\Microsoft.TeamFoundation.WorkItemTracking.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\it\Microsoft.TeamFoundation.WorkItemTracking.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ja\Microsoft.TeamFoundation.WorkItemTracking.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ko\Microsoft.TeamFoundation.WorkItemTracking.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\pl\Microsoft.TeamFoundation.WorkItemTracking.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\pt-BR\Microsoft.TeamFoundation.WorkItemTracking.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ru\Microsoft.TeamFoundation.WorkItemTracking.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\tr\Microsoft.TeamFoundation.WorkItemTracking.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\zh-Hans\Microsoft.TeamFoundation.WorkItemTracking.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\zh-Hant\Microsoft.TeamFoundation.WorkItemTracking.Client.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\cs\Microsoft.TeamFoundation.WorkItemTracking.Client.QueryLanguage.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\de\Microsoft.TeamFoundation.WorkItemTracking.Client.QueryLanguage.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\es\Microsoft.TeamFoundation.WorkItemTracking.Client.QueryLanguage.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\fr\Microsoft.TeamFoundation.WorkItemTracking.Client.QueryLanguage.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\it\Microsoft.TeamFoundation.WorkItemTracking.Client.QueryLanguage.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ja\Microsoft.TeamFoundation.WorkItemTracking.Client.QueryLanguage.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ko\Microsoft.TeamFoundation.WorkItemTracking.Client.QueryLanguage.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\pl\Microsoft.TeamFoundation.WorkItemTracking.Client.QueryLanguage.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\pt-BR\Microsoft.TeamFoundation.WorkItemTracking.Client.QueryLanguage.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ru\Microsoft.TeamFoundation.WorkItemTracking.Client.QueryLanguage.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\tr\Microsoft.TeamFoundation.WorkItemTracking.Client.QueryLanguage.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\zh-Hans\Microsoft.TeamFoundation.WorkItemTracking.Client.QueryLanguage.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\zh-Hant\Microsoft.TeamFoundation.WorkItemTracking.Client.QueryLanguage.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\cs\Microsoft.TeamFoundation.WorkItemTracking.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\de\Microsoft.TeamFoundation.WorkItemTracking.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\es\Microsoft.TeamFoundation.WorkItemTracking.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\fr\Microsoft.TeamFoundation.WorkItemTracking.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\it\Microsoft.TeamFoundation.WorkItemTracking.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ja\Microsoft.TeamFoundation.WorkItemTracking.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ko\Microsoft.TeamFoundation.WorkItemTracking.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\pl\Microsoft.TeamFoundation.WorkItemTracking.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\pt-BR\Microsoft.TeamFoundation.WorkItemTracking.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ru\Microsoft.TeamFoundation.WorkItemTracking.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\tr\Microsoft.TeamFoundation.WorkItemTracking.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\zh-Hans\Microsoft.TeamFoundation.WorkItemTracking.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\zh-Hant\Microsoft.TeamFoundation.WorkItemTracking.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\cs\Microsoft.TeamFoundation.WorkItemTracking.Proxy.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\de\Microsoft.TeamFoundation.WorkItemTracking.Proxy.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\es\Microsoft.TeamFoundation.WorkItemTracking.Proxy.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\fr\Microsoft.TeamFoundation.WorkItemTracking.Proxy.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\it\Microsoft.TeamFoundation.WorkItemTracking.Proxy.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ja\Microsoft.TeamFoundation.WorkItemTracking.Proxy.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ko\Microsoft.TeamFoundation.WorkItemTracking.Proxy.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\pl\Microsoft.TeamFoundation.WorkItemTracking.Proxy.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\pt-BR\Microsoft.TeamFoundation.WorkItemTracking.Proxy.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ru\Microsoft.TeamFoundation.WorkItemTracking.Proxy.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\tr\Microsoft.TeamFoundation.WorkItemTracking.Proxy.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\zh-Hans\Microsoft.TeamFoundation.WorkItemTracking.Proxy.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\zh-Hant\Microsoft.TeamFoundation.WorkItemTracking.Proxy.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\cs\Microsoft.VisualStudio.Services.Client.Interactive.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\de\Microsoft.VisualStudio.Services.Client.Interactive.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\es\Microsoft.VisualStudio.Services.Client.Interactive.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\fr\Microsoft.VisualStudio.Services.Client.Interactive.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\it\Microsoft.VisualStudio.Services.Client.Interactive.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ja\Microsoft.VisualStudio.Services.Client.Interactive.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ko\Microsoft.VisualStudio.Services.Client.Interactive.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\pl\Microsoft.VisualStudio.Services.Client.Interactive.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\pt-BR\Microsoft.VisualStudio.Services.Client.Interactive.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ru\Microsoft.VisualStudio.Services.Client.Interactive.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\tr\Microsoft.VisualStudio.Services.Client.Interactive.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\zh-Hans\Microsoft.VisualStudio.Services.Client.Interactive.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\zh-Hant\Microsoft.VisualStudio.Services.Client.Interactive.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\cs\Microsoft.VisualStudio.Services.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\de\Microsoft.VisualStudio.Services.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\es\Microsoft.VisualStudio.Services.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\fr\Microsoft.VisualStudio.Services.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\it\Microsoft.VisualStudio.Services.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ja\Microsoft.VisualStudio.Services.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ko\Microsoft.VisualStudio.Services.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\pl\Microsoft.VisualStudio.Services.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\pt-BR\Microsoft.VisualStudio.Services.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ru\Microsoft.VisualStudio.Services.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\tr\Microsoft.VisualStudio.Services.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\zh-Hans\Microsoft.VisualStudio.Services.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\zh-Hant\Microsoft.VisualStudio.Services.Common.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\cs\Microsoft.VisualStudio.Services.WebApi.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\de\Microsoft.VisualStudio.Services.WebApi.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\es\Microsoft.VisualStudio.Services.WebApi.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\fr\Microsoft.VisualStudio.Services.WebApi.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\it\Microsoft.VisualStudio.Services.WebApi.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ja\Microsoft.VisualStudio.Services.WebApi.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ko\Microsoft.VisualStudio.Services.WebApi.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\pl\Microsoft.VisualStudio.Services.WebApi.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\pt-BR\Microsoft.VisualStudio.Services.WebApi.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\ru\Microsoft.VisualStudio.Services.WebApi.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\tr\Microsoft.VisualStudio.Services.WebApi.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\zh-Hans\Microsoft.VisualStudio.Services.WebApi.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\zh-Hant\Microsoft.VisualStudio.Services.WebApi.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\de\PdfSharp.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\bin\de\PdfSharp.Charting.resources.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\obj\Debug\MassAutoGarage.csproj.AssemblyReference.cache
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\obj\Debug\MassAutoGarage.csproj.CoreCompileInputs.cache
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\obj\Debug\MassAuto.FBF93F1D.Up2Date
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\obj\Debug\MassAutoGarage.dll
+D:\Sudhakar Sharma\MassAutoGarage\MassAutoGarage\obj\Debug\MassAutoGarage.pdb

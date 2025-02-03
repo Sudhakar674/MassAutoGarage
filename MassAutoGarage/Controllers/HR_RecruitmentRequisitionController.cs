@@ -205,7 +205,28 @@ namespace MassAutoGarage.Controllers
         }
 
 
+        public ActionResult ViewGetRecruitmentRequisition(string Id)
+        {
 
+            if (Id != null)
+            {
+                Id = objcls.Decrypt(Id);
+                var lst = DL.GetRecruitmentRequisitionDetailsById("35", Id).FirstOrDefault();
+                if (lst != null)
+                {
+                    model.Result = "yes";
+                    model.VoucherNo = lst.VoucherNo;
+                    model.FullName = lst.FullName;
+                    model.Date = lst.Date;
+                    model.ExpectedSalary = lst.ExpectedSalary;
+                    model.SalaryOffered = lst.SalaryOffered;
+                    model.AdditionNew = lst.AdditionNew;
+                    model.Budgeted = lst.Budgeted;
+                    model.Replacement = lst.Replacement;
+                }
+            }
+            return Json(model, JsonRequestBehavior.AllowGet);
+        }
 
     }
 }

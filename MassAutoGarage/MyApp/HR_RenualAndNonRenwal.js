@@ -136,7 +136,7 @@ $("#btnsave").click(function (e) {
             swal("Warning", "Please Enter Branch !", "warning");
             return false;
         }
-       
+
     }
 });
 
@@ -179,4 +179,45 @@ function DeleteRenualAndNonRenwal(Id) {
         return false;
     }
 
+}
+
+
+function ViewRenewAndNotRenewing(Id) {
+    debugger;
+    $.ajax({
+        type: "Get",
+        url: "/HR_RenualAndNonRenwal/ViewRenewAndNotRenewing",
+        data: { Id: Id },
+        dataType: "json",
+        success: function (data) {
+            debugger;
+            if (data.Result === "yes") {
+                $("#txtVoucherNo").val(data.VoucherNo);
+                $("#txtEmployeeName").val(data.EmployeeName);
+                $("#txtDateOfJoined").val(data.DateOfJoined);
+                $("#txtDesignation").val(data.Designation);
+                $("#txtDepartment").val(data.DepartmentName);
+                $("#txtBranch").val(data.BranchName);
+
+                if (data.Renew === true) {
+                    $("#Renew").prop("checked", true);
+                }
+                else {
+                    $("#Renew").prop("checked", false);
+                }
+
+                if (data.NotRenewing === true) {
+                    $("#NotRenewing").prop("checked", true);
+                }
+                else {
+                    $("#NotRenewing").prop("checked", false);
+                }
+            }
+            else {
+                alert("Something went wrong.");
+            }
+        }
+    });
+
+    $("#RenewAndNotRenewingModal").modal('show');
 }

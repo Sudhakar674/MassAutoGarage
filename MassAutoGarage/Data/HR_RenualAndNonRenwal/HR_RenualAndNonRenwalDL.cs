@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using MassAutoGarage.DBContext;
+using MassAutoGarage.Models.HR_FinalClearanceReport;
 using MassAutoGarage.Models.HR_GeneralRequest;
 using MassAutoGarage.Models.HR_RenualAndNonRenwal;
 using System;
@@ -182,6 +183,24 @@ namespace MassAutoGarage.Data.HR_RenualAndNonRenwal
             catch (Exception)
             {
                 throw;
+            }
+        }
+
+
+        public List<HR_RenualAndNonRenwalModel> GetRenewAndNotRenewingDetailsById(string Querytype, string Id)
+        {
+            List<HR_RenualAndNonRenwalModel> obj = new List<HR_RenualAndNonRenwalModel>();
+            try
+            {
+                var perm = new DynamicParameters();
+                perm.Add("@QueryType", Querytype);
+                perm.Add("@ID", Id);
+                obj = DBHelperDapper.DAAddAndReturnModelList<HR_RenualAndNonRenwalModel>("USP_HR_RenewAndNotRenewingForm", perm);
+                return obj;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
 

@@ -38,15 +38,29 @@
         border-width: thin;
     }
 
+  
+
     legend {
         float: none;
-        width: 29%;
+        width: 42%;
         background-color: #bbb1b1;
         color: white;
         padding: 5px 10px;
         font-size: small;
         margin-bottom: 20px;
     }
+
+    #legendEmployeeStatement {
+        float: none;
+        width: 43%;
+        background-color: #bbb1b1;
+        color: white;
+        padding: 4px 9px;
+        font-size: small;
+    }
+
+
+
 </style>
 
 <script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
@@ -98,14 +112,6 @@
                                 <th>EmpNo</th>
                                 <th>From</th>
                                 <th>To</th>
-                                <th>Department Name</th>
-                                <th>Last Working Day</th>
-                                <th>Vehichle</th>
-                                <th>Laptop</th>
-                                <th>Company Sim</th>
-                                <th>Medical Insurance</th>
-                                <th>C3 Card</th>
-                                <th>Replacement</th>
                                 <th style="width:20%;">Action</th>
                             </tr>
                         </thead>
@@ -122,63 +128,11 @@
                                     <td data-th="Code">@item.EmpNo</td>
                                     <td data-th="Code">@item.FromDate</td>
                                     <td data-th="Code">@item.ToDate</td>
-                                    <td data-th="Code">@item.DepartmentName</td>
-                                    <td data-th="Code">@item.LastWorkingDay</td>
-                                    @*<td data-th="Code">@item.Vehichle</td>
-                                        <td data-th="Code">@item.Laptop</td>
-                                        <td data-th="Code">@item.CompanySim</td>
-                                        <td data-th="Code">@item.MedicalInsurance</td>
-                                        <td data-th="Code">@item.C3Card</td>*@
-                                    @if (item.Vehichle == true)
-                                    {
-                                        <td data-th="Code">Yes</td>
-                                    }
-                                    else
-                                    {
-                                        <td data-th="Code">No</td>
-                                    }
-
-                                    @if (item.Laptop == true)
-                                    {
-                                        <td data-th="Code">Yes</td>
-                                    }
-                                    else
-                                    {
-                                        <td data-th="Code">No</td>
-                                    }
-
-                                    @if (item.CompanySim == true)
-                                    {
-                                        <td data-th="Code">Yes</td>
-                                    }
-                                    else
-                                    {
-                                        <td data-th="Code">No</td>
-                                    }
-
-                                    @if (item.MedicalInsurance == true)
-                                    {
-                                        <td data-th="Code">Yes</td>
-                                    }
-                                    else
-                                    {
-                                        <td data-th="Code">No</td>
-                                    }
-
-                                    @if (item.C3Card == true)
-                                    {
-                                        <td data-th="Code">Yes</td>
-                                    }
-                                    else
-                                    {
-                                        <td data-th="Code">No</td>
-                                    }
-
-
-                                    <td data-th="Code">@item.Replacement</td>
-
                                     <td data-th="Action">
                                         <div class="d-flex gap-2">
+                                            <div>
+                                                <a href="javascript:void(0)" onclick="return ViewLeaveClearance('@item.Idincrept')" class="btn btn-sm btn-primary remove-item-btn">View <i class="fa fa-eye" aria-hidden="true"></i></a>
+                                            </div>
                                             <div class="edit">
                                                 <a href="/HR_LeaveClearance/LeaveClearance?Id=@item.Idincrept" class="btn btn-sm btn-success edit-item-btn" tabindex="6">Edit <i class="fa fa-edit"></i></a>
                                             </div>
@@ -193,6 +147,121 @@
                         </tbody>
                     </table>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="LeaveClearanceModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="LeaveClearanceModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="LeaveClearanceModalLabel"><strong>Leave Clearance Details</strong></h5>
+                <button type="button" class="btn-close btn btn-danger" data-bs-dismiss="modal" aria-label="Close" onclick="return RemoveTableRecords();"></button>
+            </div>
+            <div class="modal-body">
+
+
+                <div class="card-body">
+                    <div class="live-preview">
+                        <div class="row gy-4">
+                            <fieldset>
+                                <legend style="background-color:#151529">( Please Fill In The Information Inside The Box And Line Provided )</legend>
+
+                                <div class="row gy-4" style="margin-bottom:15px;">
+                                    <div class="col-xxl-4 col-md-4">
+                                        <label for="labelInput" class="form-label">Voucher Nomber <code>*</code></label>
+                                        <input type="text" id="txtVoucherNo" class="form-control" readonly="readonly" />
+                                    </div>
+
+                                    <div class="col-xxl-4 col-md-4">
+                                        <label for="labelInput" class="form-label">Employee Name <code>*</code></label>
+                                        <input type="text" id="txtEmployeeName" class="form-control" readonly="readonly" />
+                                    </div>
+                                    <div class="col-xxl-4 col-md-4">
+                                        <label for="labelInput" class="form-label">Date<code>*</code></label>
+                                        <input type="text" id="txtDate" class="form-control" readonly="readonly" />
+                                    </div>
+                                    <div class="col-xxl-4 col-md-4">
+                                        <label for="labelInput" class="form-label">Designation<code>*</code></label>
+                                        <input type="text" id="txtDesignation" class="form-control" readonly="readonly" />
+                                    </div>
+                                    <div class="col-xxl-4 col-md-4">
+                                        <label for="labelInput" class="form-label">Emp No<code>*</code></label>
+                                        <input type="text" id="txtEmpNo" class="form-control" readonly="readonly" />
+                                    </div>
+                                    <div class="col-xxl-4 col-md-4">
+                                        <label for="labelInput" class="form-label">From<code>*</code></label>
+                                        <input type="text" id="txtFromDate" class="form-control" readonly="readonly" />
+                                    </div>
+                                    <div class="col-xxl-4 col-md-4">
+                                        <label for="labelInput" class="form-label">To<code>*</code></label>
+                                        <input type="text" id="txtToDate" class="form-control" readonly="readonly" />
+                                    </div>
+                                    <div class="col-xxl-4 col-md-4">
+                                        <label for="labelInput" class="form-label">Department<code>*</code></label>
+                                        <input type="text" id="txtDepartment" class="form-control" readonly="readonly" />
+                                    </div>
+                                    <div class="col-xxl-4 col-md-4">
+                                        <label for="labelInput" class="form-label">Last Working Day<code>*</code></label>
+                                        <input type="text" id="txtLastWorkingDay" class="form-control" readonly="readonly" />
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+
+
+                        <div class="row gy-4">
+                            <fieldset style="margin-top:50px;" id="fieldsetCashAdvance">
+                                <legend style="background-color:#151529;" id="legendEmployeeStatement">Employee Statement : State To Whome The Handing Over Is Done</legend>
+
+                                <div class="row gy-4" style="margin-bottom: 15px;margin-top:3px; padding-left: 10px; padding-right: 10px;">
+                                    <div class="col-xxl-2 col-md-2">
+
+                                        <label class="form-control"><input type="checkbox" class="row-form" id="Vehichle" readonly="readonly" /> Vehichle</label>
+
+                                    </div>
+                                    <div class="col-xxl-2 col-md-2">
+
+                                        <label class="form-control"><input type="checkbox" class="row-form" id="Laptop" readonly="readonly" /> Laptop</label>
+
+                                    </div>
+                                    <div class="col-xxl-2 col-md-2">
+
+                                        <label class="form-control"><input type="checkbox" class="row-form" id="CompanySim" readonly="readonly" /> CompanySim</label>
+
+                                    </div>
+                                    <div class="col-xxl-4 col-md-4">
+
+                                        <label class="form-control"><input type="checkbox" class="row-form" id="MedicalInsurance" readonly="readonly" /> Medical Insurance</label>
+
+                                    </div>
+                                    <div class="col-xxl-2 col-md-2">
+
+                                        <label class="form-control"><input type="checkbox" class="row-form" id="C3Card" readonly="readonly" /> C3Card</label>
+
+                                    </div>
+
+                                    <div class="col-xxl-12 col-md-12">
+                                        <label for="labelInput" class="form-label">Replacement/Handing Over Assigned To<code>*</code></label>
+                                        <input type="text" id="txtReplacement" class="form-control" readonly="readonly" />
+                                    </div>
+
+
+                                </div>
+                            </fieldset>
+
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="modal-footer">
+                @*<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>*@
             </div>
         </div>
     </div>

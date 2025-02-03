@@ -10,6 +10,7 @@ using MassAutoGarage.Data.HR_RenualAndNonRenwal;
 using MassAutoGarage.Models.HR_RenualAndNonRenwal;
 using MassAutoGarage.Models.HRMS_OverTime;
 using MassAutoGarage.Models;
+using System.Text.RegularExpressions;
 
 namespace MassAutoGarage.Controllers
 {
@@ -196,6 +197,32 @@ namespace MassAutoGarage.Controllers
             }
             return Json(model, JsonRequestBehavior.AllowGet);
         }
+
+        public ActionResult ViewRenewAndNotRenewing(string Id)
+        {
+
+            if (Id != null)
+            {
+                Id = objcls.Decrypt(Id);
+                var lst = DL.GetRenewAndNotRenewingDetailsById("39", Id).FirstOrDefault();
+                if (lst != null)
+                {
+                    model.Result = "yes";
+                    model.VoucherNo = lst.VoucherNo;
+                    model.EmployeeName = lst.EmployeeName;
+                    model.DateOfJoined = lst.DateOfJoined;
+                    model.Designation = lst.Designation;
+                    model.DepartmentName = lst.DepartmentName;
+                    model.BranchName = lst.BranchName;
+                    model.Renew = lst.Renew;
+                    model.NotRenewing = lst.NotRenewing;
+                }
+            }
+            return Json(model, JsonRequestBehavior.AllowGet);
+        }
+
+
+
 
     }
 }

@@ -11,6 +11,7 @@ using MassAutoGarage.Data.HR_FinalClearanceReport;
 using MassAutoGarage.Models.HRMS_OverTime;
 using MassAutoGarage.Models;
 using DocumentFormat.OpenXml.Bibliography;
+using Microsoft.VisualStudio.Services.Common;
 
 namespace MassAutoGarage.Controllers
 {
@@ -233,6 +234,41 @@ namespace MassAutoGarage.Controllers
             }
             return Json(model, JsonRequestBehavior.AllowGet);
         }
+
+
+
+        public ActionResult ViewFinalClearanceReport(string Id)
+        {
+
+            if (Id != null)
+            {
+                Id = objcls.Decrypt(Id);
+                var lst = DL.GetFinalClearanceReportDetailsById("38", Id).FirstOrDefault();
+                if (lst != null)
+                {
+                    model.Result = "yes";
+                    model.VoucherNo = lst.VoucherNo;
+                    model.EmployeeName = lst.EmployeeName;
+                    model.Date = lst.Date;
+                    model.Designation = lst.Designation;
+                    model.EmpNo = lst.EmpNo;
+                    model.DepartmentName = lst.DepartmentName;
+                    model.LastWorkingDay = lst.LastWorkingDay;
+                    model.Vehichle = lst.Vehichle;
+                    model.Laptop = lst.Laptop;
+                    model.CompanySim = lst.CompanySim;
+                    model.MedicalInsurance = lst.MedicalInsurance;
+                    model.C3Card = lst.C3Card;
+                    model.Replacement = lst.Replacement;
+                }
+            }
+            return Json(model, JsonRequestBehavior.AllowGet);
+        }
+
+
+
+
+     
 
 
 

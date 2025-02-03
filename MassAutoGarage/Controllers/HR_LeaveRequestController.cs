@@ -352,6 +352,49 @@ namespace MassAutoGarage.Controllers
         }
 
 
+        public ActionResult ViewLeaveRequest(string Id)
+        {
+
+            if (Id != null)
+            {
+                Id = objcls.Decrypt(Id);
+                var lst = DL.GetLeaveRequestDetailsById("40", Id).FirstOrDefault();
+                if (lst != null)
+                {
+                    model.Result = "yes";
+                    model.VoucherNo = lst.VoucherNo;
+                    model.EmployeeName = lst.EmployeeName;
+                    model.Date = lst.Date;
+                    model.Designation = lst.Designation;
+                    model.EmpNo = lst.EmpNo;
+                    model.DepartmentName = lst.DepartmentName;
+                    model.CompanyName = lst.CompanyName;
+                    model.BranchName = lst.BranchName;
+                    model.DateOfJoining = lst.DateOfJoining;
+                    model.MarriageLeave = lst.MarriageLeave;
+                    model.AnnualLeave = lst.AnnualLeave;
+                    model.AuthorizedUnpaidLeave = lst.AuthorizedUnpaidLeave;
+                    model.EmergencyLeave = lst.EmergencyLeave;
+                    model.SickLeave = lst.SickLeave;
+                    model.MaternityLeave = lst.MaternityLeave;
+                    model.Others = lst.Others;
+                    model.PleaseSpecifyOtherLeave = lst.PleaseSpecifyOtherLeave;
+                    model.LocalLeave = lst.LocalLeave;
+                    model.LeaveFromDate = lst.LeaveFromDate;
+                    model.LeaveToDate = lst.LeaveToDate;
+                    model.AirportName = lst.AirportName;
+                    model.FromAirportName = lst.FromAirportName;
+                    model.ToAirportName = lst.ToAirportName;
+                    model.ReasonforSickLeave = lst.ReasonforSickLeave;
+                    model.MedicalCertificate = lst.MedicalCertificate;
+                    model.MedicalCertificateFile = lst.MedicalCertificateFile;
+                    model.Email = lst.Email;
+                    model.MobileNo = lst.MobileNo;
+                }
+            }
+            return Json(model, JsonRequestBehavior.AllowGet);
+        }
+
 
     }
 }

@@ -174,5 +174,24 @@ namespace MassAutoGarage.Data.HR_LeaveClearance
                 throw;
             }
         }
+
+
+        public List<HR_LeaveClearanceModel> GetLeaveClearanceDetailsById(string Querytype, string Id)
+        {
+            List<HR_LeaveClearanceModel> obj = new List<HR_LeaveClearanceModel>();
+            try
+            {
+                var perm = new DynamicParameters();
+                perm.Add("@QueryType", Querytype);
+                perm.Add("@ID", Id);
+                obj = DBHelperDapper.DAAddAndReturnModelList<HR_LeaveClearanceModel>("USP_HR_LeaveClearanceForm", perm);
+                return obj;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }

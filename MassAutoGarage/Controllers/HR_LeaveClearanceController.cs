@@ -242,7 +242,35 @@ namespace MassAutoGarage.Controllers
             return Json(model, JsonRequestBehavior.AllowGet);
         }
 
+        public ActionResult ViewLeaveClearance(string Id)
+        {
 
+            if (Id != null)
+            {
+                Id = objcls.Decrypt(Id);
+                var lst = DL.GetLeaveClearanceDetailsById("38", Id).FirstOrDefault();
+                if (lst != null)
+                {
+                    model.Result = "yes";
+                    model.VoucherNo = lst.VoucherNo;
+                    model.EmployeeName = lst.EmployeeName;
+                    model.Date = lst.Date;
+                    model.Designation = lst.Designation;
+                    model.EmpNo = lst.EmpNo;
+                    model.FromDate = lst.FromDate;
+                    model.ToDate = lst.ToDate;
+                    model.DepartmentName = lst.DepartmentName;
+                    model.LastWorkingDay = lst.LastWorkingDay;
+                    model.Vehichle = lst.Vehichle;
+                    model.Laptop = lst.Laptop;
+                    model.CompanySim = lst.CompanySim;
+                    model.MedicalInsurance = lst.MedicalInsurance;
+                    model.C3Card = lst.C3Card;
+                    model.Replacement = lst.Replacement;
+                }
+            }
+            return Json(model, JsonRequestBehavior.AllowGet);
+        }
 
 
 
